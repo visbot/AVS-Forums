@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" do you want to read this...i think so, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" do you want to read this...i think so AVS" />
+	
+	<title> do you want to read this...i think so - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">do you want to read this...i think so</li>
+</ol>
+<!-- div class="pda"><a href="t-131526.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=131526">do you want to read this...i think so</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkoPii411</div><div class="date small text-muted">8th April 2003, 01:34</div></div>
+<br />
+<div class="posttext">ok so first of all...im a noob. haha, please make fun of me.<br />
+now heres the deal<br />
+-begin-<br />
+sqr(x)=(1/bc)(bi+(ay-aj))(ci+(az-ak));<br />
+sqr(y)=(1/ac)(aj+(bx-bi))(cj+(bz-bk));<br />
+sqr(z)=(1/ab)(ak+(cx-ci))(bk+(cy-cj));<br />
+-end-<br />
+I know how I want it too look, or how I think it should look. I dont know how to display it. PLEASE, help. thanks<br />
+skopii411@aol.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">8th April 2003, 02:47</div></div>
+<br />
+<div class="posttext">Originally posted by SkoPii411<br />
+ok so first of all...im a noob. haha, please make fun of me.<br />
+You stinky n00b.  Why do you want us to make fun of you?  Too bad for you, Atero isn't here.:p <br />
+<br />
+I don't know what all those a[letter] and b[letter] and c[letter] things are, but it isn't too difficult for me to try and explain what you want to do.<br />
+You have to solve for x, y, and z(although you actually want these to be called something else - most likely x1, y1, and z1) - simple enough.  Then you have to actually give all those variables values - you can just plug in the numbers you want to use, or you can write equations for them so that they aren't constant.  These equations can use any variable that you want - you can pick from the predefined ones or make some more of your own.  For example, a common variable is t - used for time - which is incremented each frame(t=t+.01 for example).<br />
+The hardest part is the 3D rotation and projection so that you can get the nice 2D coordinates.  I'll leave this part up to you - just search the forums and you will find plenty of threads on how to convert 3D to 2D and do the rotations.  If you find a post by Atero, check his signature for a link to his AVS Primer - this has some good things that could help you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">8th April 2003, 02:51</div></div>
+<br />
+<div class="posttext">3d projection isn't that hard,Anubis.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">8th April 2003, 03:09</div></div>
+<br />
+<div class="posttext">Yeah, but figuring out how to do the rotation is harder than anything else in this problem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkoPii411</div><div class="date small text-muted">8th April 2003, 03:45</div></div>
+<br />
+<div class="posttext">but I cant even get this to display in superscope. why not? Im sure im just retarded</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkoPii411</div><div class="date small text-muted">8th April 2003, 03:48</div></div>
+<br />
+<div class="posttext">thank you for the help anubis.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">8th April 2003, 04:47</div></div>
+<br />
+<div class="posttext">I assume you've already defined the other variables, so I won't go into them.<br />
+<br />
+AVS only recognises the base variables in a statement. You're familiar with transposing equations and stuff, yes? It should probably read like this:<br />
+<br />
+x=sqrt((1/bc)(bi+(ay-aj))(ci+(az-ak)));<br />
+y=sqrt((1/ac)(aj+(bx-bi))(cj+(bz-bk)));<br />
+z=sqrt((1/ab)(ak+(cx-ci))(bk+(cy-cj)));<br />
+<br />
+I'm not sure if that's right though. Can anyone who's good with numbers check it? (I promise, I'll get into researching this stuff once I finish my break after the MiniPaks are done! :p)<br />
+<br />
+BTW, z is a user variable, not an AVS variable, so you would want to translate it into a 2D space like this example (BTW, this won't account for rotation):<br />
+<br />
+init:<br />
+n=200; pi=acos(-1);<br />
+<br />
+point:<br />
+x1=sin(pi*i*2);<br />
+y1=v/2; z1=cos(pi*i*2);<br />
+x=x1/(1+z1); y=y1/(1+z1);<br />
+<br />
+Apparently though, this method isn't the best to use. Can't see why, it works fine for me.<br />
+<br />
+Hope that gets you at least started.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">8th April 2003, 06:49</div></div>
+<br />
+<div class="posttext">when you code in any language you cant use:<br />
+<br />
+sqr(x)=something as when the language reads it, it would consider sqr(x) as a variable and store 'something' in the memory.<br />
+what you should code is not an equation, you should give values to the variable.<br />
+I hope I am right :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">8th April 2003, 08:55</div></div>
+<br />
+<div class="posttext">you have to make your own variables and state what they will do,superscope knows only x,y.And...what exactly do you want it to show ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">8th April 2003, 12:13</div></div>
+<br />
+<div class="posttext">Yes UnDefineD, but that doesn't do the rotation, and 3D objects are hard to see without rotation.  That's what makes 3D-&gt;2D difficult at all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">8th April 2003, 12:24</div></div>
+<br />
+<div class="posttext">Originally posted by anubis2003 <br />
+but that doesn't do the rotation <br />
+<br />
+I said that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">8th April 2003, 12:33</div></div>
+<br />
+<div class="posttext">Sorry, didn't see that.  Anyways, if you want to know how to do the rotation - look it up.  It's posted many times in these forums.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">8th April 2003, 13:02</div></div>
+<br />
+<div class="posttext">I'm not sure what your code refers to (i,j,k remind me of quaternions, or maybe 3 base vectors), but the git of it is this:<br />
+<br />
+Most computer code looks like math expressions, but actually it isn't. You just define a set of instructions to calculate something, like as you would type it on a (simple) calculator.<br />
+<br />
+For example:<br />
+sqr(x) = 4<br />
+<br />
+Is not good. You're saying: &quot;The square of x equals 4&quot;. This is a statement, not a set of instructions. The part left of the '=' is the container/variable for the result and can only be a name. Instead, it has to be this:<br />
+<br />
+x = sqrt(4)<br />
+<br />
+Now you're saying: &quot;take the square root of 4 and put it into x&quot;. This is something the computer can understand because it's a set of instructions.<br />
+<br />
+<br />
+In a superscope, you have to calculate a set of (x,y) coordinates for every point. The scope will then draw these points (or connect them with lines). So if you want 3D, you'll have to do the projection yourself. Want to do voxels? Have fun tracing'em!<br />
+First, get started with basic shapes and most importantly: how to make them move around the way you want them to move around.<br />
+Typing random equations has resulted in some cool presets, but most of the time it's better to know what you're doing so you understand why typing x=cos(i*10)*i;y=sin(i*10)*i results in a spiral.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

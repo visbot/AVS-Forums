@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" cube-E question, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" cube-E question AVS" />
+	
+	<title> cube-E question - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">cube-E question</li>
+</ol>
+<!-- div class="pda"><a href="t-201357.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=201357">cube-E question</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">7th December 2004, 01:30</div></div>
+<br />
+<div class="posttext">my Code for a cube is like this (and im not interested in the &quot;quicker&quot; ways... of doing anything ... just want to know... how can i make the cube... no rotation etc... (do i need the rotation?) well here it is:<br />
+<br />
+init: n=5;<br />
+frame:drawmode=1;<br />
+linesize=2;<br />
+rot=1;<br />
+point:point=(point+1)%4;<br />
+x1=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+y1=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
+<br />
+x1=x1*0.2;<br />
+y1=y1*0.2;<br />
+<br />
+x=x1*cos(rot)-y1*sin(rot);<br />
+y=x1*sin(rot)+y1*cos(rot);<br />
+x = x1+0.2; y = y1+0.2; z = -0.2; //plane 1<br />
+x2 = x2-0.2; y2=y2-0.2; z= 0.2 //plane2<br />
+//plane 3<br />
+ now why cant  i make a cube? NOTE:i have another &quot;matrix&quot; thingo you make in the pak-9's tutorial i was going to put a cube above in this...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">7th December 2004, 07:19</div></div>
+<br />
+<div class="posttext">:cool: <br />
+first, i tell you some definitions. a cube is a 3 dimensional object that consists of much more points. Do you know what I am talking about, man? first, define n for this method. thats the most important. then you say you are doing no rotation.<br />
+<br />
+<br />
+x=x1*cos(rot)-y1*sin(rot);<br />
+y=x1*sin(rot)+y1*cos(rot);<br />
+<br />
+<br />
+this is rotation, just because you have &quot;rot&quot; variable assigned to 1, you will never see this guy rotating. but thats okay since you didn't need that did you?<br />
+<br />
+Moving on with the next lines of crap. cause that is it. if you want to make a cube, simply assign points like you did with the square. you gonna need n=(amount of lines in a cube)+1, because the starting point and ending point of the drawing is the same. do a point-per point assignment to x1,y1, and also z1.<br />
+<br />
+and in the end, to merge the variables back into 2D:<br />
+<br />
+<br />
+z2=1/(1+z1*0.5);<br />
+x=x1*z2;<br />
+y=y1*z2;<br />
+<br />
+<br />
+this code has no optimizations, no aspect ratios corrected, as your wish was. learn from it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">7th December 2004, 08:57</div></div>
+<br />
+<div class="posttext">Originally posted by hboy <br />
+<br />
+Moving on with the next lines of crap. cause that is it. if you want to make a cube, simply assign points like you did with the square. you gonna need n=(amount of lines in a cube)+1, because the starting point and ending point of the drawing is the same. do a point-per point assignment to x1,y1, and also z1.<br />
+ <br />
+no hboy, you need 16 points iirc if you want to draw it with one line. Because you have to draw some points over to have continious line.<br />
+<br />
+Anyways, as i have already sayd first try to make a cube out of 6 squares (6 superscopes), simply sync the movement and rotation of scopes, and you have a wireframe cube. thats the easiest and most logical way imo (im not saying its efficient or fast)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">7th December 2004, 12:11</div></div>
+<br />
+<div class="posttext">oops totally agreed Jaak, i forgot that :D and yeah it is also easier to sync 6 squares too :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">8th December 2004, 02:30</div></div>
+<br />
+<div class="posttext">why 6 squares? 4 are enough :)<br />
+you can leave out 2 opposing sides without anyone noticing ;)<br />
+also, the other ones need not be full squares, 3 borders would be enough</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">8th December 2004, 02:45</div></div>
+<br />
+<div class="posttext">here's the cube you'd have to draw (attachment)<br />
+each of these incomplete squares has another color</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">8th December 2004, 02:45</div></div>
+<br />
+<div class="posttext">Actually, all you really need are two parallel squares and 4 connecting lines.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">8th December 2004, 02:46</div></div>
+<br />
+<div class="posttext">yes, but if you do it with the incomplete squares, you can maybe put it in one scope</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">8th December 2004, 05:43</div></div>
+<br />
+<div class="posttext">Originally posted by TomyLobo <br />
+why 6 squares? 4 are enough :)<br />
+you can leave out 2 opposing sides without anyone noticing ;)<br />
+also, the other ones need not be full squares, 3 borders would be enough  <br />
+ofcourse you can, but like i sayd, i wanted to keep as simple and logical as possible. :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">8th December 2004, 22:29</div></div>
+<br />
+<div class="posttext">could you explain it better please? i am stupid! :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">9th December 2004, 08:28</div></div>
+<br />
+<div class="posttext">you know that a cube consists of 6 sides, each can be considered as squares. soo...you need 6 squares! one for every side of the cube. place them as you would place the sides of the cube, and then you get your cube, I promise :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">9th December 2004, 17:35</div></div>
+<br />
+<div class="posttext">There are numerous ways of doing it with one ssc, just think about it logically and do it the way that seems most natural. If you cant think of a way of doing it because its too complicated... maybe you shouldnt be doing it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">9th December 2004, 20:02</div></div>
+<br />
+<div class="posttext">Originally posted by PAK-9 <br />
+There are numerous ways of doing it with one ssc, just think about it logically and do it the way that seems most natural. If you cant think of a way of doing it because its too complicated... maybe you shouldnt be doing it.  <br />
+<br />
+i totally agree with this. a cube is really a basic shape, either with point-to-point coding in one scope or with 6 scopes synchronized. if you can't do this, stay with the less-code side of AVS. you know, many people started that way, no 3D and superscopes, still, they were and are amazing artists. speaking about for example horse-fly, yathosho, tuggummi didn't know 3D also in the first few packs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">10th December 2004, 07:55</div></div>
+<br />
+<div class="posttext">point=(point+1)%4;<br />
+x1=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+y1=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
+<br />
+x1=x1*0.2;<br />
+y1=y1*0.2;<br />
+x = x1+0.2; y = y1+0.2; z = -0.2; //plane 1<br />
+x2 = x2-0.2; y2=y2-0.2; z2= 0.2 //plane2<br />
+x3 = x3+0.2; y3=y3+0.2; z3= -0.2 //plane 3<br />
+x4 = x4-0.2; y4 =y4-0.2; z4=0.2 //plane 4<br />
+x5 = x5+0.2; y5 = y5+0.2; z5 =-0.2 //plane 5<br />
+x6 = x6-0.2; y6 = y6-0.2; z6=0.2 //plane 6<br />
+ <br />
+now what should i add in? nothing appears in the visual part of it...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Cat Squared</div><div class="date small text-muted">14th December 2004, 00:33</div></div>
+<br />
+<div class="posttext">Shouldn't shit like this be put under the AVS\Presets forum???<br />
+<br />
+Oh wait....guess who started this thread&gt;&gt;&gt;&gt;MaTTFURY:hang:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">14th December 2004, 00:47</div></div>
+<br />
+<div class="posttext">no point in holding a grudge to me i already feel like shit :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">14th December 2004, 01:41</div></div>
+<br />
+<div class="posttext">Cat Squared,<br />
+<br />
+http://www.pricenetwork.ca/gallery/albums/userpics/10047/stfu.jpg<br />
+<br />
+And this is a plenty good fourm for this type of question.<br />
+<br />
+About the cube, you don't need to go about and do all that stuff with planes like that, you just take a cube and use dots to draw a line all around it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Cat Squared</div><div class="date small text-muted">20th December 2004, 18:27</div></div>
+<br />
+<div class="posttext">Ahh its all fair in love and flaming MaTTFURY.<br />
+<br />
+and its cool now...aiiight?:p ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th December 2004, 20:10</div></div>
+<br />
+<div class="posttext">x = x1+0.2; y = y1+0.2; z = -0.2; //plane 1<br />
+x2 = x2-0.2; y2=y2-0.2; z2= 0.2 //plane2<br />
+x3 = x3+0.2; y3=y3+0.2; z3= -0.2 //plane 3<br />
+x4 = x4-0.2; y4 =y4-0.2; z4=0.2 //plane 4<br />
+x5 = x5+0.2; y5 = y5+0.2; z5 =-0.2 //plane 5<br />
+x6 = x6-0.2; y6 = y6-0.2; z6=0.2 //plane 6<br />
+<br />
+What the heck is this supposed to do? The only variables that matter to a superscope are &quot;x&quot; and &quot;y&quot; as far as geometry goes. You need to output the points of your cube in order as &quot;i&quot; goes from 0 to 1.<br />
+<br />
+AVS code consists of expressions and assignments, not equations.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">20th December 2004, 21:19</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+AVS code consists of expressions and assignments, not equations. [/B]Well, except for movements and DM's</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">20th December 2004, 21:20</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+What the heck is this supposed to do? The only variables that matter to a superscope are &quot;x&quot; and &quot;y&quot; as far as geometry goes. You need to output the points of your cube in order as &quot;i&quot; goes from 0 to 1.<br />
+<br />
+AVS code consists of expressions and assignments, not equations. [/B] <br />
+<br />
+The main problem is he does understand too little code, at least not enough for making nice presets. Maybe he doesn't understand anything, though I doubt that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">20th December 2004, 22:35</div></div>
+<br />
+<div class="posttext">my name is mattfury... <br />
+<br />
+seriously though, what do you mean OUTPUT as in HOW?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">21st December 2004, 13:21</div></div>
+<br />
+<div class="posttext">mattfury: please don't take this the wrong way, but you are trying to get into a topic that is slightly beyond your understanding. You need to first develop a good understanding of how AVS works before you can start making 3d presets.<br />
+<br />
+The following is not what you asked for, but please try it anyway, and PLEASE don't come back and ask about 3D again until you completely understand how this code works.<br />
+<br />
+INIT:<br />
+<br />
+n=5 //the scope will have 5 points.<br />
+<br />
+<br />
+FRAME:<br />
+<br />
+point=0; //We use the variable &quot;point&quot; to count which<br />
+//corner we are up to in the per point section. We need to reset it<br />
+//each frame or it will keep increasing larger and larger.<br />
+<br />
+angle=angle+0.01; //each frame we angle increases slightly so that the <br />
+//shape appears to rotate smoothly.<br />
+<br />
+af=w/h //since the avs window isn't always square, we need<br />
+//to make sure our shape doesn't get stetched. To do this, we multiply<br />
+//the y axis by the width/height of the avs window (don't worry if you<br />
+//don't get it, just remember to do it)<br />
+<br />
+<br />
+POINT:<br />
+<br />
+//this section will be run 5 times every frame, one for<br />
+//each of the points on our scope. To keep track of which point we are up<br />
+//to, I have use the variable &quot;point&quot;. eg. If point is equal to 0, we are<br />
+//up to the first point.<br />
+<br />
+//look the line for tempX, if point is equal to 0, 3 or 4, tempX will<br />
+//be 0.5. otherwise it will be -0.5.<br />
+//tempY is similar, this is how we create our shape.<br />
+tempX=equal(point,0)+equal(point,3)+equal(point,4)-0.5;<br />
+tempY=equal(point,2)+equal(point,3)-0.5;<br />
+<br />
+//this is the rotation sequence that you have probably<br />
+//already had explained to you. As i explained, &quot;angle&quot; is increasing<br />
+//slightly every frame, making the shape rotate around.<br />
+x=tempX*cos(angle)-tempY*sin(angle);<br />
+y=tempX*sin(angle)+tempY*cos(angle);<br />
+<br />
+y=y*af;//see the note on af in the frame section<br />
+<br />
+point=point+1;//go on to the next point.<br />
+<br />
+<br />
+There. feel free to ask questions about this. but don't go asking about 3D until you understand it all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">23rd December 2004, 09:33</div></div>
+<br />
+<div class="posttext">tempx/y are a variable or constant?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">23rd December 2004, 10:31</div></div>
+<br />
+<div class="posttext">Originally posted by MaTTFURY <br />
+tempx/y are a variable or constant?  <br />
+<br />
+constant is a type of variable. there are mainly two types: constant (their values are added once and then left that way) variables and dynamic (their value is changed over time)variables.<br />
+<br />
+guess of which kind are these then ;) if you assign points to it like the way sidd did it, it is a constant variable because it is not dynamically changed. but if you would do it dynamically it would be a dynamic variable. i wont explain how you do it dynamically.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">23rd December 2004, 22:23</div></div>
+<br />
+<div class="posttext">actually, there are no &quot;constant variables&quot;, because that'd be a contradiction ;)<br />
+<br />
+constants are:<br />
+$pi, $e and so on<br />
+numbers like 1.2345<br />
+and that's about it<br />
+<br />
+variables are:<br />
+things like a, d, u, foo, moo,<br />
+<br />
+some variables are pre-set by the component you write your code into (such as red, green, blue, b, i and v for SuperScope)<br />
+others are read by the component and evaluated for rendering (like n, red, green, blue, x, y and skip for SuperScope)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">24th December 2004, 06:41</div></div>
+<br />
+<div class="posttext">erm i know what all of those are... :p ok, back to the point... how would i make my code work with that code? another ssc? or rewrite my code?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">24th December 2004, 09:37</div></div>
+<br />
+<div class="posttext">You don't understand how my code works.<br />
+<br />
+Ask about the bits you don't understand first, then move on to more complicated things.<br />
+<br />
+To answer your first question, tempX and tempY are variables that are created the first time avs executes the per point code. <br />
+<br />
+They are user defined, which means that they have no special meaning in avs. They are just a place created especially for this scope to store values which will be used later. <br />
+<br />
+You could rename them to anything else, like x1 and y1, and it would do exactly the same thing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">24th December 2004, 11:29</div></div>
+<br />
+<div class="posttext">ok how do i get mine to work? im lost.... (your code, my code, everyones fucking code :p)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th December 2004, 12:52</div></div>
+<br />
+<div class="posttext">matt are you sure that you understood sidd's code? thats what you're supposed to do at first! Please do so and try to undesrtand this first step.<br />
+DAMN! YOU WONT UNDERSTAND EVERYTHNG AT ONCE!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">24th December 2004, 13:13</div></div>
+<br />
+<div class="posttext">I am now utterly convinced that mattfury is nothing more than some evil psychology experiment designed to test people's theshold for idiocy. <br />
+<br />
+i totally completely give up. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th December 2004, 13:30</div></div>
+<br />
+<div class="posttext">certainly! That would be the only logical explanation. How else could it be that someone asks for help and -instead of doing as he is told- always knows it better.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">24th December 2004, 14:01</div></div>
+<br />
+<div class="posttext">Originally posted by ^..^ <br />
+[..] always knows it better.  <br />
+true. Then let him answer his own question this time.<br />
+<br />
+MaTT, What's your first idea on how to use this code?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th December 2004, 15:15</div></div>
+<br />
+<div class="posttext">probably he will contradict himself as well as he contradicts us ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">24th December 2004, 22:23</div></div>
+<br />
+<div class="posttext">my first idea was from jaak he told me, faces of a cube, make that many square / lines then connect them</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th December 2004, 23:23</div></div>
+<br />
+<div class="posttext">¿que? What he says?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">25th December 2004, 00:38</div></div>
+<br />
+<div class="posttext">make squares, connect them all</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">25th December 2004, 11:45</div></div>
+<br />
+<div class="posttext">good idea, try it and then post the preset so we can help you further</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">26th December 2004, 00:50</div></div>
+<br />
+<div class="posttext">think in your head, not on the forum, please :)<br />
+and please, learn step by step, do not try to learn the more complex things before learning the basics.<br />
+<br />
+none of us did 3D presets in the first place. all of us had to learn how to code first</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">26th December 2004, 02:50</div></div>
+<br />
+<div class="posttext">ok</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

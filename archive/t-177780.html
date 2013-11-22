@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Frequency, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Frequency AVS" />
+	
+	<title> Frequency - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Frequency</li>
+</ol>
+<!-- div class="pda"><a href="t-177780.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=177780">Frequency</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">jppoulin</div><div class="date small text-muted">24th April 2004, 01:45</div></div>
+<br />
+<div class="posttext">I am very new to AVS.  Please excuse my questions if they seem simple, pointless or stupid.  That aside I am curious if one is able to detect the specific frequencies in the song?  My plan is to do beat detection.  However from what I have read in the forums they are not tailored to what I would like.  I want the avs to bump to the frequencies a subwhoofer would move to.  This would be 25-100 hz for me. Can somebody help or give me a place to find what I am looking for? Thank you in advance.<br />
+<br />
+Jon</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">24th April 2004, 01:58</div></div>
+<br />
+<div class="posttext">getspec(band,width,channel) and getosc(band,width,channel)<br />
+band and width are 0 to 1, channel is 0- center, 1- left, 2- right</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th April 2004, 02:35</div></div>
+<br />
+<div class="posttext">m²k: that won't help one bit, if you don't know the spectrum and frame size.<br />
+<br />
+To figure out framesize, use a superscope like this:<br />
+x=i*2-1;y=getspec(i/576*3,0,0)<br />
+<br />
+The framesize is 576, so a width (relative to 0..1) of 3/576 gives you 3 samples in the spectrum plot.<br />
+As far as I know, framesize is independent on sampling rate. <br />
+<br />
+The highest frequency in the spectrum plot is the nyquist frequency, which is half your sampling rate. Most commonly the sampling rate is 44kHz, so the nyquist frequency is 22kHz.<br />
+<br />
+The lowest sample in the frequency component is the DC/0 Hz component. The second sample is 22 kHz / 576 = 38.2 Hz.<br />
+<br />
+The frequency scales up linearly, where frequency = (zero-based index) * 22 kHz / 576:<br />
+<br />
+So getspec(x,0,0), where x is:<br />
+0/576 -&gt; 0 Hz/DC<br />
+1/576 -&gt; 38.19 Hz<br />
+2/576 -&gt; 76.39 Hz<br />
+3/576 -&gt; 114.6 Hz<br />
+...<br />
+574/576 -&gt; 21.92 kHz<br />
+575/576 -&gt; 21.96 kHz<br />
+576/576 -&gt; 22 kHz<br />
+<br />
+The frequency samples are discrete (as the superscope to discover framesize showed). To figure out in betweens, you would need to convolve the spectrum as dirac impulses, with sin(x****964; )/(x****964; ) where 2***960;/***964; = frequency spacing.<br />
+<br />
+However, you might get away with just linear interpolation though.<br />
+<br />
+For MP3s with other sampling rates, the frequencies are different. As far as I know you can't access the sampling rate from AVS, but 99% of all MP3s are sampled at 44kHz anyway. Maybe you'll find some at 48kHz, but then the frequency shift is minimal.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">24th April 2004, 03:04</div></div>
+<br />
+<div class="posttext">Unconed:It's likely the n00b will get much more out of that than he would out of m²k's post.  It's ummmm..., rather technical.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">24th April 2004, 03:17</div></div>
+<br />
+<div class="posttext">Nice post UnConeD<br />
+:D<br />
+<br />
+You know way to many things for your own good...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jppoulin</div><div class="date small text-muted">24th April 2004, 04:30</div></div>
+<br />
+<div class="posttext">That helps a lot.  I will have to learn some of the things you talk about but I get the jist of it.  Just out of curiousity.  Everything I listen to is wav files. So would the sampling be 48.1khz and the nyquist be 24.05kz?  And if you guys could give me a link to a good site to learn more that would be great.  Maybe like a tutorial? Thanks so much.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DynamicMovement</div><div class="date small text-muted">24th April 2004, 05:09</div></div>
+<br />
+<div class="posttext">I have a question: If my getspec was around 100/222 then what's frequency I will get?<br />
+<br />
+I experienced this question many times, But, I did not get my favorite answer.<br />
+If UnConeD knows please tell me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">24th April 2004, 05:37</div></div>
+<br />
+<div class="posttext">WAV files? o_O big files :D<br />
+on what do you need a tutorial?<br />
+<br />
+To use what unconed just explained:<br />
+value=getspec(Hz/nyquist,0,channel);<br />
+or<br />
+value=getspec(Hz/sampling*2,0,channel);<br />
+<br />
+where channel is 0 for center, 1 for left and 2 for right channel</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th April 2004, 08:17</div></div>
+<br />
+<div class="posttext">DynamicMovement: use your brain for 5 seconds and you should be able to figure it out with what I said.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">24th April 2004, 10:52</div></div>
+<br />
+<div class="posttext">For some good Tutorials search the forums for Atero's Primer and PiR's AVS tutorial. There's some good stuff on visbot as well. I'm still working on my own tutorials which will eventually come on www.iabvisuals.tk .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">blaz</div><div class="date small text-muted">8th June 2004, 20:41</div></div>
+<br />
+<div class="posttext">Originally posted by DynamicMovement <br />
+I have a question: If my getspec was around 100/222 then what's frequency I will get?<br />
+<br />
+<br />
+I thing it will be 9909,909... Hz.<br />
+<br />
+100/220*22khz=9909,909... Hz<br />
+or<br />
+100*22Khz/220=9909,909... Hz<br />
+;) <br />
+<br />
+I hope I am right:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">8th June 2004, 21:54</div></div>
+<br />
+<div class="posttext">Please don't revive dead threads with useless information. <br />
+It is most likely the guy doesn't even read these threads anymore since these are his only two posts over the entire WA forum.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

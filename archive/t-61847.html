@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Sin, Cos, Tan, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Sin, Cos, Tan AVS" />
+	
+	<title> Sin, Cos, Tan - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Sin, Cos, Tan</li>
+</ol>
+<!-- div class="pda"><a href="t-61847.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=61847">Sin, Cos, Tan</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">n_ick2000</div><div class="date small text-muted">8th October 2001, 00:30</div></div>
+<br />
+<div class="posttext">I learned in my geometry class that sine, cosine, and tangent were triangle angle ratios. Exactly how do sin, cos, and tan effect superscopes and movements. I heard something about triangle angle ratios being in degress and superscopes and movements being in rads, but I don't know what that means. Can somebody please explain this to me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">8th October 2001, 16:30</div></div>
+<br />
+<div class="posttext">i find that this will do fine for movement:<br />
+y=cos(t+i);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">9th October 2001, 23:38</div></div>
+<br />
+<div class="posttext">The easiest way to explain is this:<br />
+<br />
+Given a circle with radius 1 (the so called 'unit-circle'). We take a random point on this circle. We can describe this point uniquely by the angle of the radius through this point and the X-axis, for example 90°, 140°, ...<br />
+<br />
+Mathematically however, radians are used instead of degrees. Without going into much theory, you should just remember that 360° = 2*PI.<br />
+So suppose we have a point lying at N radians on our unit circle. Then the X coordinate will be given by cos(N), and the Y coordinate by sin(N). That's the definition of cosine and sine.<br />
+So if you want to draw a circle, take every value A from 0 to 2*PI, and plot the points (cos(A), sin(A)). Easy.<br />
+The relationship of sine and cosing with right-angled triangles is pretty easy to see. Draw a circle using the origin (0,0) as center. Take a point on this circle, connect the point with the center, project the point on the X axis. Voilà: a right-angled triangle appears :)<br />
+<br />
+Sin and cos have other uses as well. Because they are coordinates of points lying on a circle, they are periodic. A point traveling along a circle will eventually arrive at its starting point. This means that their values are repetive after a while (2*PI to be exact).<br />
+<br />
+So you can use sine and cosine as a source for a pulsing/wavy scope or movement.<br />
+<br />
+The tangent tan is defined as sin divided by cos. It ranges from negative infinity to positive infinity in -PI/2 to PI/2, and repeates itself every PI.<br />
+<br />
+Usually you won't need the actual mathematical uses of these functions, but you'll rather be using their characteristics (e.g. repetiveness).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">n_ick2000</div><div class="date small text-muted">10th October 2001, 01:57</div></div>
+<br />
+<div class="posttext">Thanks uncloned. That makes more sence to me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th October 2001, 20:21</div></div>
+<br />
+<div class="posttext">While I'm pretty sure I have not been cloned, I'd appreciate it if you'd stick to my actual nickname :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">n_ick2000</div><div class="date small text-muted">13th October 2001, 03:56</div></div>
+<br />
+<div class="posttext">sorry, finger sliped:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">buffer_brazil</div><div class="date small text-muted">28th October 2001, 05:34</div></div>
+<br />
+<div class="posttext">I Want to Make Cool Equations on My AVS Editor but i Don´t Know very few About Sin, Cos, Tan ... Where can I Get Documentation about it??<br />
+<br />
+If You Have Documentation about it, please send me!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Angry Weasel</div><div class="date small text-muted">16th November 2001, 22:11</div></div>
+<br />
+<div class="posttext">There's also arcsine(asin), arccosine(acos) and arctangent(atan).<br />
+<br />
+I find that d=atan(d) has a nice effect as demonstrated in Justin's age-old plugin that's no longer available, Gold Shower in Pseudo 3D.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">n_ick2000</div><div class="date small text-muted">17th November 2001, 02:04</div></div>
+<br />
+<div class="posttext">Justin didn't make it. Lone did. It was in an older version of winamp. Justin removed a blur and added biliner filtering because bilinear filtering wasn't there when lone made it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Angry Weasel</div><div class="date small text-muted">17th November 2001, 14:06</div></div>
+<br />
+<div class="posttext">Sorry...Lone made it but it was sweet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Kagnar</div><div class="date small text-muted">22nd December 2002, 22:56</div></div>
+<br />
+<div class="posttext">I noticed something.  If you highlight (click and drag) over a smiley face emoticon, it turns to a sad face!  Well, sort of.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">23rd December 2002, 01:59</div></div>
+<br />
+<div class="posttext">Only in browsers that don't support true alphablending (*cough*IE*cough*)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Kagnar</div><div class="date small text-muted">23rd December 2002, 02:52</div></div>
+<br />
+<div class="posttext">What does that mean?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Kagnar</div><div class="date small text-muted">23rd December 2002, 02:53</div></div>
+<br />
+<div class="posttext">Oh wait, I got it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">23rd December 2002, 22:37</div></div>
+<br />
+<div class="posttext">1: Use the edit button<br />
+2: Don't revive dead posts for no reason</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">24th December 2002, 22:09</div></div>
+<br />
+<div class="posttext">What! This post is a zombie! AAhhhh! (sorry, couldn't help it):p</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

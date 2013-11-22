@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" arrays in superscope, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" arrays in superscope AVS Wishlist" />
+	
+	<title> arrays in superscope - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">arrays in superscope</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-103049.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=103049">arrays in superscope</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">1st September 2002, 20:52</div></div>
+<br />
+<div class="posttext">i quickly read the list but didn't spot any requests for arrays<br />
+<br />
+arrays... i want arrays. i have had to abandon so many cool ideas cos handling 50 variables where a single array could do the job has made it to hard to finish code (i don't have the patience to code huge ssc's and dm's, i like to make my presets in less than half an hour each). even 1 dimensional arrays would suit me fine but 2 or 3 would be nice too and excessively useful.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">11th September 2002, 13:38</div></div>
+<br />
+<div class="posttext">You R ABS right!!!<br />
+Arrays and fast.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">9th October 2003, 12:47</div></div>
+<br />
+<div class="posttext">I know : I don't have to wake up old threads, but, in this case, it's now or never.<br />
+<br />
+The imminent new version of AVS gives us more local variables and globals. That's very well, but the lack of arrays is still there.<br />
+<br />
+<br />
+If Justin is reading this, I suggest :<br />
+<br />
+* A special function array() with one parameter (or more) that is the dimension of the array. Example :<br />
+<br />
+  t=array(40); // Creates (and initializes) an array t of 40 occurrences<br />
+<br />
+* A new syntax to use the occurences of an array, using square brackets. Example :<br />
+<br />
+  t[8]  is the 9th occurrence (t[0] is the first) of the array t<br />
+  t[n]  is the occurrence n-1 (n converted into integer)<br />
+<br />
+* AVS must then manage an internal array with the adresses of the allocated memory for each new user array, and it has to free them before loading a new preset, or before living AVS.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">9th October 2003, 15:08</div></div>
+<br />
+<div class="posttext">It's shitloads easier to structure it like a null return function, ie.<br />
+<br />
+t=setarray(arraynum,index,value);<br />
+and<br />
+value=getarray(arraynum,index);<br />
+<br />
+Although might be good to have a t=dimarray(arraynum,size) first.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">9th October 2003, 17:48</div></div>
+<br />
+<div class="posttext">You can already have implicit looping with a superscope or DM, using a var like p=p+1.<br />
+<br />
+Arrays with setarray(), getarray() would be neat. Though I expect it to be easier syntactically if it uses the c convention of array[].</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

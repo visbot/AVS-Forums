@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Variables!, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Variables! AVS" />
+	
+	<title> Variables! - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Variables!</li>
+</ol>
+<!-- div class="pda"><a href="t-108728.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=108728">Variables!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">ryan</div><div class="date small text-muted">7th October 2002, 03:28</div></div>
+<br />
+<div class="posttext">I was wondering if someone could list all the vars for Dynamic Movments, Movments, Superscopes, DDM etc... And explain what they do.<br />
+<br />
+And another question...<br />
+<br />
+I write presets for milkdrop *recieves a bunch of ugly stares*<br />
+<br />
+And I was wondering if D and R have any relation to Rad and Ang that we use.. If so what? If not then are do R and D do?<br />
+<br />
+<br />
+<br />
+<br />
+- idiot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zylot</div><div class="date small text-muted">7th October 2002, 03:29</div></div>
+<br />
+<div class="posttext">I dunno much for I am a milkdrop loser too, in fatc,y ou bloody damn well better know who I am ;)<br />
+<br />
+D is distance, and r is radius.. from what i gathered.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">7th October 2002, 05:06</div></div>
+<br />
+<div class="posttext">You've been here before idiot24-7. Didn't you make some AVS presets a while back?<br />
+<br />
+I'm sure this has been answered before. There's probably a link in the FAQ, but I'm too lazy to look. Here's a quick explanation.<br />
+<br />
+<br />
+DM<br />
+<br />
+r = rads (2 pi is 360 degrees, though you probably know that already)<br />
+d = distance (1 is at the corners)<br />
+x = x value in (x,y) (-1 .. 1)<br />
+y = y (-1 .. 1)<br />
+alpha = alpha value (0 .. 1)<br />
+b = beat (1 in it's a beat frame, 0 if not)<br />
+<br />
+x,y,r,d can be changed by specifying the source for each new point. eg. d=d*.98 makes a slow zoom.<br />
+<br />
+<br />
+<br />
+Superscope vars (taken from the superscope screen)<br />
+<br />
+n = number of points on scope<br />
+i = location of point on scope (0 .. 1)<br />
+red = red value (0 .. 1)<br />
+blue = see above<br />
+green = see above<br />
+w = width of the window<br />
+h = height of the window<br />
+x = see DM<br />
+y = see above<br />
+b = see above<br />
+v = value for a point on the scope (gotten from the music) (either osciliscope or spectrum data)<br />
+<br />
+x,y,red,blue,green,n can be changed, or just set</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">ryan</div><div class="date small text-muted">7th October 2002, 13:24</div></div>
+<br />
+<div class="posttext">Yeah, I did make soem AVS presets... Although they were the same old stuff thats sent to winamp.com every day, But I did.<br />
+<br />
+Thats why I asked for all the vars.. I wanted to try and do somthing work while... <br />
+<br />
+BTW Anyone heard that DJ Azirphaeli guy? I heard his music sucks :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">7th October 2002, 16:01</div></div>
+<br />
+<div class="posttext">Never heard of him. Is his music so bad it's good (seventies porn music), or is it just bad (any other seventies music)?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">7th October 2002, 18:48</div></div>
+<br />
+<div class="posttext">Jaheckelsafar, you're WRONG!!!<br />
+<br />
+:p<br />
+<br />
+d=distance, sqrt(2)=1.414... at the corners, 1 at the sides.<br />
+<br />
+&lt;another shameless=&quot;plug&quot;&gt; AVS Primer, available at DeviantART: http://atero.deviantart/com/deviations/ &lt;/another&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">7th October 2002, 19:03</div></div>
+<br />
+<div class="posttext">Atero: nope.<br />
+Actually AVS isn't very consistent in its scaling anyway. For example, (x,y) range -1...1. Which would logically dictate that d=1 lies at the sides, not corners.<br />
+<br />
+Yet if you use a movement:<br />
+d=min(1,d);<br />
+it has no effect, which means d=1 lies at the corners.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">ryan</div><div class="date small text-muted">7th October 2002, 21:38</div></div>
+<br />
+<div class="posttext">BTW Anyone heard that DJ Azirphaeli guy? I heard his music sucks<br />
+<br />
+That was a stab at Zylot :) thanks his name he uses for his music..<br />
+____________<br />
+Edit1<br />
+<br />
+BTW<br />
+<br />
+Nobody answered my Rad/Ang question.. They are vars in MD but I dont see them in AVS I suspect they have somthing to do with D and R since from playing around I can get the same effects with certain code used in MD and AVS.<br />
+____________<br />
+<br />
+Edit2<br />
+<br />
+Is there a var similar to what we use in MD called time? If you dont know if I had d=d*.83+.01*sin(time) (as he said above) It would make the zoom go forward then backward some? Is there a var or a line of code that does this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Karnov</div><div class="date small text-muted">7th October 2002, 21:53</div></div>
+<br />
+<div class="posttext">just make an above() or below() statement<br />
+it works for me<br />
+(not that im that great of a coder or anything....)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zylot</div><div class="date small text-muted">7th October 2002, 22:14</div></div>
+<br />
+<div class="posttext">Indeed, haha, and how bad it is is dependant entirely on the foolish who dare listen to it ;)  I write stories better than I write music, obviously ;)<br />
+<br />
+Well, now I have a better understanding of r, thanx folks!<br />
+Oh, idiot, just define time in per frame yerself.. t = t + (desired intervel).<br />
+<br />
+As for Rad and Ang...  d is sorta like rad.. but I think working with milkdrops ang in AVS will be slightly more difficult.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">8th October 2002, 05:35</div></div>
+<br />
+<div class="posttext">Oops, I forgot that polar coordinates are calculated pixel-by-pixel as opposed to rectangular coordinates, which are just 1 to -1 stretched to the window sides.<br />
+<br />
+R and D are polar coordinates, used commonly in trigonometry for defining angles.  R is the angle, measured in radians, and D is the distance from the origin, where 1 is at the closest sides.<br />
+<br />
+Time can be done simply with custom variables:<br />
+frame: t=t+0.01;</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

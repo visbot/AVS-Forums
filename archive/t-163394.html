@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 1st Pack - Spectrum, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 1st Pack - Spectrum AVS Presets" />
+	
+	<title> 1st Pack - Spectrum - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">1st Pack - Spectrum</li>
+</ol>
+<!-- div class="pda"><a href="t-163394.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=163394">1st Pack - Spectrum</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">wedefine</div><div class="date small text-muted">5th January 2004, 19:21</div></div>
+<br />
+<div class="posttext">After a long time messing with AVS I thought I ought to get off my ass and actually put a pack together. Any thoughts greatly appreciated - mathamatics is very much NOT my strong point, so I'd be expecially grateful for any advice with the dm's - there's an occasional glitch in 'vinyl' that I'd like to get rid of, and I'd like to change the rotation in 'ocean' so that the horizon is never visible.<br />
+<br />
+And that's it. Cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th January 2004, 21:07</div></div>
+<br />
+<div class="posttext">Vinyl: if you mean the oscilloscope occasionally appearing, replace your y= statement by &quot;y=-1;&quot;. Look at your preset without the DM to see why; y=-1 means you only use the top row of the screen. Also in this same preset, the buffersave and the effect list it's in are useless. Buffers are extra images you can use, but if you only save to a buffer and never restore from the buffer, they are useless.<br />
+<br />
+For ocean, change the pbz statement (add 0.2 or so) to change the apparent rotation angle. You'll want to change the init value for pbz/pfz too.<br />
+<br />
+These are all very newbie-ish in terms of color and movement. Try making your own simple superscopes and movements: once you understand how elementary stuff works, you can move ahead with more complicated stuff. Currently you're using other people's code (which, with credit, is perfectly okay), but once you understand what's going on you can modify them just the way you want or create your own.<br />
+<br />
+Check the AVS FAQ in the main forum for some guides on math/coding.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">6th January 2004, 04:02</div></div>
+<br />
+<div class="posttext">Decent effects, because you did borrow a bunch from other people, but like UnConeD said, you did give credit, so it's not bad. I suggest you start and keep working more on your own things, not just borrowing other people's code, but making your own.<br />
+Oh, and there is no real need to make a pack, I mean, my first one has been in the works for a couple years even before I got on these fourms, it might get done, it might not, I'm just too lazy ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">wedefine</div><div class="date small text-muted">6th January 2004, 21:44</div></div>
+<br />
+<div class="posttext">Hmmm. Unconed - thanks for the tips.<br />
+<br />
+I wasn't sure what the reaction would be to the presets, but (here we go) I can't help feeling that there's a definite bias towards judging presets based on the mathematical nowse shown within, rather than their aesthetic quality (I realise this probably just sounds like I'm peeved 'cos you dissed my 'sets, man, but please bear with me :) )<br />
+<br />
+My best work, and the vast majority of my total body of work aren't suitable for a pack because they are based around other types of media - self-made dingbat fonts; bitmaps via your own Picture II, and avi's via the pixel corps avi renderer. Some of the stuff I've made blows me away, and I can only assume that other non-mathsy folk could make as could or better if the avs interface wasn't so maths heavy and impenetrable. I think at least 4 of the 12 presets use the dm from Duo's drunk driving preset, but a) I hope that none of them look similar and b) without the time, ability or inclination to learn 3d triggenometry I'm not sure that I have much choice? And yeah, I've read the faq. My math's will get me as far as gradients, then I'm screwed.<br />
+<br />
+Sorry to rant; it's this evening's shandy. But there's no need to tell me that my maths sucks - i knew that already. :)<br />
+<br />
+Cheers<br />
+<br />
+Paul.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">6th January 2004, 22:22</div></div>
+<br />
+<div class="posttext">that particles preset i like a lot, nevermind how simple it might be</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th January 2004, 23:34</div></div>
+<br />
+<div class="posttext">The reason we prefer coded components is that the standard stuff is only so customizable and requires much more time/skill to squeeze good stuff out. Aesthetics is definitely an important criterium, as is response/visualisation of music. I just didn't like most of your presets.<br />
+<br />
+You have to remember though that it's very easy to create certain things with AVS (like the effect you get from Blitter Feedback + Water). Your pack contains a lot of those simple tricks that most people will figure out when they start making presets.<br />
+AVS is about creating art, but you can't blame us for taking novelty and originality into account too.<br />
+<br />
+To show that AVS is more than coding, check out some of the submissions to the Simple-As-Possible contest which was held at DA a while ago. The rules were that none of the complicated codable effects were allowed (only a static trans/movement), and still, wicked presets were created:<br />
+<br />
+http://www.deviantart.com/deviation/2977369/<br />
+http://www.deviantart.com/deviation/2888196/<br />
+http://www.deviantart.com/deviation/2856479/<br />
+http://www.deviantart.com/deviation/2844895/<br />
+http://www.deviantart.com/deviation/2908571/<br />
+http://www.deviantart.com/deviation/2843518/<br />
+http://www.deviantart.com/deviation/2885593/<br />
+(there are more, but Deviantart search is offline for now)<br />
+<br />
+Attached is a simple modification to one of your presets: I used a very low adjustable-blend on the dynamic movement to make it less intense... then I used a colormap to strip most of the green, and then an additive white unique tone to make it brighter.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">7th January 2004, 02:30</div></div>
+<br />
+<div class="posttext">without the time, ability or inclination to learn 3d triggenometry I'm not sure that I have much choice <br />
+<br />
+You don't need 3d trig.  It just helps.  I don't know trig.  Just try getting a rough idea of what the functions do and use that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">7th January 2004, 12:31</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+(there are more, but Deviantart search is offline for now)<br />
+<br />
+it's not offline, it only works for subscribed users</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">wedefine</div><div class="date small text-muted">7th January 2004, 18:30</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+The reason we prefer coded components is that the standard stuff is only so customizable and requires much more time/skill to squeeze good stuff out. Aesthetics is definitely an important criterium, as is response/visualisation of music. I just didn't like most of your presets.<br />
+<br />
+ <br />
+<br />
+Sure, but from my point of view my lack of any maths ability doesn't make for a very level playing field. My approach has been to bypass the code in most respects and work with tools that I'm happier using; 3d, bitmap &amp; video editors. Does deviantart or anywhere else cater for &lt;cough&gt; larger presets? I came to avs from a vjing point of view, and it frustrates me because I believe that avs is more powerful &amp; flexible than probably any vj tool out there, but is so un user-friendly that barely anyone with an arts background can get anywhere near it.<br />
+<br />
+&lt;sigh&gt; Anyway. Thanks for the tips and for the balls remix. It is quite excellent. :)<br />
+<br />
+Cheers</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">8th January 2004, 04:35</div></div>
+<br />
+<div class="posttext">Personally, I think the exact opposite of you on your view-point of AVS being &quot;unuser-Friendly&quot;. You don't need fancy math to do anything in AVS, the best part about AVS is, as you said, it is extremly flexible. You can make mathamticly genius presets like UnConeD or some of those other tech-heavy people, or can you also make amazing stylish things like Degenic or Yathosho(sp). <br />
+<br />
+The thing is, that using the built in effects has been so over done, that it is almost impossible to make a stylish, good looking preset that hasn't already been made a billion or so times by every n00b or at the start of every experienced AVSer career. Things like the superscope and the dynamic movement or probably the most flexible tools in the AVS toolbox! With the superscope you can make things from Volume Lines all the way through to advanced 3D particle fields. The dynamic movement can make things things from simple swirls to Quartic shapes. <br />
+<br />
+You also don't need advanced math like some people have to understand how to do AVS, myself, like many other AVSers, am a Highschool student, and I am also in Algebra I for the second year at my school, and doing quite a nice job at failing it again... That has less to do with the math and more to do with my dislike of school, but is it off the point. You don't need that much math to make AVS, but it does help to have a good general understanding of concepts like trigonometry(sp) because you can make so many things by not just using the &quot;correct&quot; way of using the functions, but by coming with new and intriguing(sp) things by using the principles behind them.<br />
+<br />
+Finally, I would like very much to see what you can do with more work on bitmaps, movies, etc... Good luck with your future AVSing!<br />
+<br />
+-Off topic- What type of vjing do you do? An example of VJ friendly presets would be Tuggummi's(sp)AVS party packs(I think he made 2 or three of them), they are an excellent mix of aesthetics, some math, and just general know-how about making AVS presets.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

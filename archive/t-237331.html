@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Desktop Overlay w/Background image, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Desktop Overlay w/Background image AVS" />
+	
+	<title> Desktop Overlay w/Background image - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Desktop Overlay w/Background image</li>
+</ol>
+<!-- div class="pda"><a href="t-237331.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=237331">Desktop Overlay w/Background image</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">CulleokaDMB</div><div class="date small text-muted">6th February 2006, 16:41</div></div>
+<br />
+<div class="posttext">Ok I am a noob but have a simple question. Is it possible to have desktop overlay enabled while having a .jpg in the back of the visualization? Having the visualization transparent and an embedded .jpg behind it non transparent. Not too concerned with full screen or adjustability. If you take a .jpg 400 x 400 and set the avs window to that size.<br />
+<br />
+I am not posting without searching and I'm currently continuing the search though it looks doubtful.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">6th February 2006, 18:26</div></div>
+<br />
+<div class="posttext">okay theres a (not noob) friendly possibility to do that<br />
+all you need to do for every preset you want to watch is:<br />
+get a .jpg<br />
+add at the very start of the preset a buffer save set to restore buffer 8<br />
+add at the very end of the preset a buffer save set to <br />
+save buffer 8<br />
+add at the very end then a effectslist with a picture.ape inside<br />
+and output mode set to 50/50</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">CulleokaDMB</div><div class="date small text-muted">6th February 2006, 18:38</div></div>
+<br />
+<div class="posttext">Thanks for the response. I got the avs programming guide which will hopefully shed some light on your response. I do have some programming knowledge. Greatly appriciate the push in the right direction.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DummyDDD</div><div class="date small text-muted">6th February 2006, 18:41</div></div>
+<br />
+<div class="posttext">There is also a more noob friendly version.<br />
+Use overlay with an odd color (like bright purple or orange), without using set desktop to color.<br />
+Then edit you background image to use that color for spots that should be transparent. Also it would be best to save in png or bmp format, to prevent the colors from being slightly different, which would look ugly.<br />
+<br />
+Basicly the overlay replaces all pixels that have the selected color, with the AVS visual, hence you could for instance use white to replace most of windows view with AVS (which btw. looks quite odd, with most visuals, but can look quite cool with bright visuals)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">CulleokaDMB</div><div class="date small text-muted">6th February 2006, 22:05</div></div>
+<br />
+<div class="posttext">I managed to do what your suggesting but wasn't quite what I was looking for. This way meshes the bmp with the visualization. I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
+<br />
+ Is this possible?????</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">7th February 2006, 05:09</div></div>
+<br />
+<div class="posttext">Originally posted by CulleokaDMB <br />
+I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
+<br />
+ Is this possible?????  <br />
+<br />
+You assume badly...<br />
+<br />
+No. If you want to do some fancy blending you have to do the blending before it gets to the overlay. i.e. make a preset like this:<br />
+<br />
+Main<br />
+-- Render \ Picture &lt;- picture to go at back<br />
+-- Effect List  &lt;- set blend modes you want<br />
+ ---\    Your preset stuff in here<br />
+<br />
+Then it creates the preset with the picture already 'behind it'. Running two instances of AVS rendering into the overlay, I would expect it to render one of them consistently, or to switch between both. Either way, there is no reason for it to work how you expect... and no indication in any of the menus/options either.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">7th February 2006, 11:09</div></div>
+<br />
+<div class="posttext">Peoples must learn how to AVSing... ;)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

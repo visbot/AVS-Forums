@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" $(getplaylisttitle:n) text render option, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" $(getplaylisttitle:n) text render option AVS Wishlist" />
+	
+	<title> $(getplaylisttitle:n) text render option - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">$(getplaylisttitle:n) text render option</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-174532.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=174532">$(getplaylisttitle:n) text render option</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">toqer</div><div class="date small text-muted">29th March 2004, 03:18</div></div>
+<br />
+<div class="posttext">It would be nice if I could get the title from any item in the playlist.<br />
+<br />
+$(getplaylisttitle:n)<br />
+<br />
+Where n is the playlist item number who's title it is I want to grab.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">30th March 2004, 14:25</div></div>
+<br />
+<div class="posttext">That prolly will only apply to your playlist.<br />
+<br />
+Think about the others...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">toqer</div><div class="date small text-muted">30th March 2004, 23:43</div></div>
+<br />
+<div class="posttext">Can you explain what you're saying a bit more?  <br />
+<br />
+I dunno if this is what i'm looking for, but does this.<br />
+IPC_GETPLAYLISTTITLE 212 [somenumber]<br />
+<br />
+Returns the title value of playlistentry [somenumber] right?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">31st March 2004, 00:10</div></div>
+<br />
+<div class="posttext">maybe you are looking for something like this:<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=174631<br />
+scroll down and look at the my 2nd remix of snoozin_hermit's preset</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">toqer</div><div class="date small text-muted">31st March 2004, 01:30</div></div>
+<br />
+<div class="posttext">Nah not like that tommy, i've done that already with $(title). Maybe I should explain the context of what i'm doing.<br />
+<br />
+I run a karaoke show Friday and saturday nights.  Whenever I cue up a song, I change the Id3 title tag to the name of the person that will be singing that song. This way I can just show the customers the winamp playlist if they want to see where they are in line.<br />
+<br />
+Using the overlay color feature of AVS I can display AVS behind the karaoke lyrics.  So far I can display a countdown timer behind the lyrics, so the singer know's how long they have to sing for...<br />
+<br />
+I'd like to put the name of the next title in the playlist instead of the current one, that way the countdown timer basically say's &quot;This is who is singing next, and this is how long you have to wait&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">31st March 2004, 01:59</div></div>
+<br />
+<div class="posttext">hmm what about a freeform skin with a slightly resized time display? :)<br />
+another option would be to write you own (general purpose) plugin which displays the counter</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">toqer</div><div class="date small text-muted">5th April 2004, 11:29</div></div>
+<br />
+<div class="posttext">god sometimes i type like i smoke crack.. <br />
+<br />
+ok lets say this is the playlist..<br />
+<br />
+1. Banannas<br />
+2. Summer Lovin<br />
+3. Hot for teacher &lt;----currently playing<br />
+4. Hound Dog<br />
+5. Cruisin USA<br />
+<br />
+I'd like to specify which position i'd like to grab the title from. <br />
+<br />
+Right now we have $(title:n) which returns the currently playing title.  I'd like it if I could do a $(title:n)+1 to grab the next title, or $(title:n)+2 to grab the title 2 entries down the list. Alternatively having $(title:n)-1 to grab the previous title.<br />
+<br />
+I wouldn't care if it was added to the text renderer or a new superscope function as long as I could declare it as a reg function and render reg text.<br />
+<br />
+It just seems like too usefull a something too pass up.  Please consider adding this function to avs. Or if someone would be so l33t as to write an ape, i'd be very grateful.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">D12</div><div class="date small text-muted">9th April 2004, 08:05</div></div>
+<br />
+<div class="posttext">I don't know any thing about $(getplaylisttitle).</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

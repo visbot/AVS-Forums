@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Winamp 5.01 with AVS loops and stuff (AVS v2.81b), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Winamp 5.01 with AVS loops and stuff (AVS v2.81b) AVS" />
+	
+	<title> Winamp 5.01 with AVS loops and stuff (AVS v2.81b) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Winamp 5.01 with AVS loops and stuff (AVS v2.81b)</li>
+</ol>
+<!-- div class="pda"><a href="t-160893.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=160893">Winamp 5.01 with AVS loops and stuff (AVS v2.81b)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Shock Value</div><div class="date small text-muted">20th December 2003, 03:32</div></div>
+<br />
+<div class="posttext">Winamp 5.01:<br />
+* fixed gen_ml selection bug<br />
+* added gen_ml option for no guessing at all<br />
+* made AVS and SPS support loop() in user code<br />
+* made AVS support megabuf() in user code <br />
+* made pro installer not prompt for regkey if already valid<br />
+* improved font directory retrieval in gen_ff<br />
+* added content rating system in Internet TV's listing<br />
+* added bandwidth usage statistic in Internet Radio/TV listings<br />
+* made media library guess from filename only when NO metadata found<br />
+* added seperate recent items tracking options for files/streams<br />
+* made installer better handle installing wa5 directly over wa3.<br />
+* added milkdrop docs to installer<br />
+* made uninstaller not remove winamp directory if not empty (user is <br />
+now required to do so manually to avoid people going &quot;oops&quot;)<br />
+* made installer check sonic px.dll versions and prompt for reboot<br />
+accordingly<br />
+* fixed nsv metadata querying bugs<br />
+* fixed gen_ml guessing bugs for files with metadata that are not in DB <br />
+<br />
+ Download Winamp 5.01 (http://www.winamp.com/player/)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">20th December 2003, 03:51</div></div>
+<br />
+<div class="posttext">Could somebody just post the new AVS .dll so I don't have to dowload a whole new version of winamp on my 14.4 modem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th December 2003, 04:02</div></div>
+<br />
+<div class="posttext">:(<br />
+<br />
+This array support is REALLY wankass...I'm really disappointed that it was needed so badly that it had to be implemented so poorly.  I hope we can get rid of this function before people start using it extensively, and implement proper array support later.  It'd really be well worth the time and effort to implement some proper parsing.<br />
+<br />
+BTW, Zeven just had a good idea (not sure whether he was joking or not but it's still a nice idea): EvalLib2.  Add an option in the Main tree to use EvalLib2, and if it's on, add a watermark to the preset.  That way, we could throw away all the wank comparison functions and add in a host of new boolean/bitwise/logical operators.  Also, you could add real if/elseif/else and for structures.  Then, we wouldn't have to worry about compatibility with old presets, but still have decent code support.<br />
+<br />
+I know this would all be quite difficult to implement, but I think AVS is going down the wrong road ATM.  The easiest way to do things isn't always the best :|</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">20th December 2003, 04:09</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+:(<br />
+I know this would all be quite difficult to implement, but I think AVS is going down the wrong road ATM.  The easiest way to do things isn't always the best :|  <br />
+<br />
+On the contrary, often the easiest way to do things can be the most efficient and most reliable. The current array setting, while a bit of a kludge to program for, is extremely powerful and useful. It's just lower level than you would have liked. <br />
+<br />
+-Justin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">20th December 2003, 04:17</div></div>
+<br />
+<div class="posttext">Just a question, could AVS maybe have it's own section on the winamp site so I wouldn't have to download the whole full winamp5 every time a new AVS comes out?  Because I'm on dial-up and so are a lot of other users.<br />
+<br />
+Luckily I'm using somebody elses PC today so I can download it again.<br />
+<br />
+As for arrays I don't mind it being complicated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">20th December 2003, 04:46</div></div>
+<br />
+<div class="posttext">vis_Avs.dll v2.7.9.2 (http://www.overthemonkey.com/vis_Avs.dll)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">20th December 2003, 10:01</div></div>
+<br />
+<div class="posttext">bah... so many new ideas... sure they are hard to be done with current array support... I really hoped for 3D,2D arrays, but its not THAT hard to make 1D array &quot;2D,3D&quot;<br />
+But arrays and loops are just great, thanks Justin man</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">20th December 2003, 10:20</div></div>
+<br />
+<div class="posttext">gmegabuff is cool thing. that's for resolutions up to 1000x1000 i guess :p<br />
+But can someone explain me what is the difference between exec(), exec2() and undocumented exec3() ???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">20th December 2003, 12:13</div></div>
+<br />
+<div class="posttext">WTF are you talking about resolution!?<br />
+megabuf() and gmegabuf() are simply arrays, where you can store data... megabuf() is local to scope (dm, movement etc.) but gmegabuf() is global...<br />
+oh dear...<br />
+<br />
+[edit]<br />
+deleted unworking example :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">20th December 2003, 12:31</div></div>
+<br />
+<div class="posttext">gmegabuf() example: storing 2D precalculated points into 1d array<br />
+<br />
+[edit]<br />
+bit buggy code, but it works... somewhat</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">20th December 2003, 14:20</div></div>
+<br />
+<div class="posttext">Originally posted by S-uper_T-oast <br />
+Could somebody just post the new AVS .dll so I don't have to dowload a whole new version of winamp on my 14.4 modem.  <br />
+<br />
+justin should put it on the NSDN site</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th December 2003, 14:37</div></div>
+<br />
+<div class="posttext">I don't mind megabuf() at all: I played around with it already in SPS and you do a lot with it.<br />
+<br />
+To make an array of n elements where the first element is removed and the last element is added: you just keep a fixed array, and calculate your indices dynamically so that the first element is in fact always a different one (so you don't have to shift the array every time you add a point). See attachment.<br />
+<br />
+Like this: (virtual is the imaginary array we are simulating).<br />
+<br />
+1st frame:<br />
+<br />
+megabuf = [ 1 | . | . | . | . ]<br />
+virtual = [ . | . | . | . | 1 ]<br />
+<br />
+<br />
+2nd frame:<br />
+<br />
+megabuf = [ 1 | 2 | . | . | . ]<br />
+virtual = [ . | . | . | 1 | 2 ]<br />
+<br />
+<br />
+3rd frame:<br />
+<br />
+megabuf = [ 1 | 2 | 3 | . | . ]<br />
+virtual = [ . | . | 1 | 2 | 3 ]<br />
+<br />
+<br />
+...<br />
+5th frame:<br />
+<br />
+megabuf = [ 1 | 2 | 3 | 4 | 5 ]<br />
+virtual = [ 1 | 2 | 3 | 4 | 5 ]<br />
+<br />
+<br />
+6th frame:<br />
+<br />
+megabuf = [ 6 | 2 | 3 | 4 | 5 ]<br />
+virtual = [ 2 | 3 | 4 | 5 | 6 ]<br />
+<br />
+<br />
+7th frame:<br />
+<br />
+megabuf = [ 6 | 7 | 3 | 4 | 5 ]<br />
+virtual = [ 3 | 4 | 5 | 6 | 7 ]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">20th December 2003, 16:36</div></div>
+<br />
+<div class="posttext">/edit<br />
+I think you posted the wrong AVS version, anubis. All it seems to be is the same as avs2.8 w/ no loop or array support.<br />
+/edit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st December 2003, 05:39</div></div>
+<br />
+<div class="posttext">uhh no that's not what i meant justin.  what i meant was that this is not extendable, it's really tough to use - especially if you want to use more than 1 array - and it's EXTREMELY low level.  my biggest problem is the variable limits.  i honestly don't see what the big deal is with making extendable variable limits.  i mean, why are the variable limits there in the first place?  i'm not being accusative here, but i'd really like to know, since it doesn't make any sense.  especially if you can extend it eightfold internally and not have a massive hit on performance.<br />
+the other problem i have is, when you add a function in avs it has very little possibility of ever improving.  so that's why i don't like it when you add low level functions...they're not going to become high level functions in the future.  along with the fact that since avs isn't parsing on the fly, a high level array management feature will have the same performance as megabuf() (I think).  that's also why i suggested evallib2 - is there any chance that's gonna happen?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">21st December 2003, 17:28</div></div>
+<br />
+<div class="posttext">FYI, there are no longer variable limits (Since 2.8). It only took a small compile-time hit to add that, but it did require a lot of code reworking.<br />
+<br />
+Anyway, once you get used to megabuf()/gmegabuf(), dividing it up into your own arrays is pretty easy.. and having megabuf() doesnt prevent us from adding array_alloc() etc later on -- this just provides a nice low level means to access a block of memory.<br />
+<br />
+Having said that, doing dynamic array allocation could have equal performance to megabuf() type functionality, but it really depends on how it would be implemented, and that we will determine someday heh...<br />
+<br />
+-Justin<br />
+<br />
+Originally posted by Atero <br />
+uhh no that's not what i meant justin.  what i meant was that this is not extendable, it's really tough to use - especially if you want to use more than 1 array - and it's EXTREMELY low level.  my biggest problem is the variable limits.  i honestly don't see what the big deal is with making extendable variable limits.  i mean, why are the variable limits there in the first place?  i'm not being accusative here, but i'd really like to know, since it doesn't make any sense.  especially if you can extend it eightfold internally and not have a massive hit on performance.<br />
+the other problem i have is, when you add a function in avs it has very little possibility of ever improving.  so that's why i don't like it when you add low level functions...they're not going to become high level functions in the future.  along with the fact that since avs isn't parsing on the fly, a high level array management feature will have the same performance as megabuf() (I think).  that's also why i suggested evallib2 - is there any chance that's gonna happen?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">21st December 2003, 17:42</div></div>
+<br />
+<div class="posttext">All i'm really arsed about now is turning off that godawful 'effect lists open whenever you go near them' crap. And that crashing before never bothered me because you could save it quickly, can't do that anymore.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">21st December 2003, 19:12</div></div>
+<br />
+<div class="posttext">agree with raz. And the order of stuff in the menu is still wrong sometimes:(. But otherwise the new AVS rocks, and it rarley crashes during projections in fact there was only one crash yesterday and i wasnt there (sleeping), so i dont know if it was AVSs fault. Great work Justin!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">21st December 2003, 23:23</div></div>
+<br />
+<div class="posttext">Firstly in responce to fragmers question: There is no &quot;exec&quot; function, only an 'exec2' and apparantly 'exec3' undocumented.<br />
+The syntasx is clearly documented in the expression help.<br />
+st=exec2(assign(t,t+0.01),sin(t));would replace the standard: t=t+0.01; st=sin(t);<br />
+<br />
+i assume exec3 just extends the syntax to exec3(a,b,c), where a and b are executed plainly, and c is returned.<br />
+<br />
+<br />
+I havnt had a &quot;mystery&quot; crash since 2.8 (i think).<br />
+<br />
+There is a problem with old installers reinstalling ape'S, and having them crash when you click. Ive never had a problem with this before, so i assumed it was something to do with the ape's uniqueidstring being doubled with the integrated version.<br />
+<br />
+The array functionality is quite interesting. Im sure ill get used to it. and by now i can feel i trust Justin to come up with the most logical solution for the time. After all, he is realistically only doing this for the sake of a very small community. The rest of the world doesnt give a shit about arrays or loops.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">21st December 2003, 23:51</div></div>
+<br />
+<div class="posttext">Only time i get crashes is when changing the variable names for 3d rotation. Usually after a lot of unsaved tinkering but that's my own fault. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">22nd December 2003, 23:09</div></div>
+<br />
+<div class="posttext">eg:<br />
+http://www.geocities.com/raz_oo5/crashing.txt<br />
+everything excpet the floor was done without saving.<br />
+<br />
+I think i'll go cry for a while.<br />
+<br />
+Edit: well, i sat down, and redid the entire thing. Ack.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">27th December 2003, 02:59</div></div>
+<br />
+<div class="posttext">someone complained that 2d 3d array support is not there. even in c++ array[10][10] can be treated just like array[100] and using % you can use a 1d array just like an nd array.<br />
+<br />
+Raz: I feel for you... I think everyone in these forums has probably lost 90% of some killer preset to a crash.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">26th February 2004, 03:54</div></div>
+<br />
+<div class="posttext">sidd: yeah, mine does that too. Gotta be careful to uncheck the plugins box on some pack installers. Luckly, the newer versions of Pimpbot exclude the plugins (I think). Anyway, my AVS rarely crashes. <br />
+<br />
+Anyway, I figured I'd write something up for this place, so I'm gonna write a doc on making simple 3d geometric SSC primatives (sphere, cube, cone, etc.)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

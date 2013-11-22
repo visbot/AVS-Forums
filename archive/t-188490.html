@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" cannot render perfectly 45 degree lines, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" cannot render perfectly 45 degree lines AVS Troubleshooting" />
+	
+	<title> cannot render perfectly 45 degree lines - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> cannot render perfectly 45 degree lines</li>
+</ol>
+<!-- div class="pda"><a href="t-188490.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=188490">cannot render perfectly 45 degree lines</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">1st August 2004, 02:46</div></div>
+<br />
+<div class="posttext">This is in reference to the problem I was having this thread:<br />
+<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=184860<br />
+<br />
+So I'm working on a scope that basically moves in 45 degrees, point by point.  So, its at one spot, then moves a certain distance 45 degrees away from that spot.<br />
+<br />
+But, due to what seems to be a rounding error in AVS, every couple of frames, the point will move off by one pixel, &amp; then back to the correct per-pixel path.<br />
+<br />
+&amp; the real kicker is that when you set the width of the AVS window to 284 or 756 (height does not matter), this doesn't happen at all.<br />
+<br />
+I'm quite perplexed &amp; if anyone could help, it would be of great assistance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">vanderphunck</div><div class="date small text-muted">4th August 2004, 10:05</div></div>
+<br />
+<div class="posttext">I suppose you do something like this:<br />
+<br />
+<br />
+[frame]<br />
+speed=1/w;<br />
+<br />
+<br />
+[beat]<br />
+rr=rand(8)*$pi/4;<br />
+vx=cos(rr);<br />
+vy=sin(rr);<br />
+<br />
+x=0;y=0;<br />
+<br />
+[point]<br />
+x=x+speed*vx;<br />
+y=y+speed*vy;<br />
+<br />
+<br />
+There's definitely some rounding errors in this... My first suggestion would be to round vx and vy like this:<br />
+<br />
+vx=floor(cos(rr)+.5);<br />
+vy=floor(sin(rr)+.5);<br />
+<br />
+That helped for me... But is ofcourse not exactly the same...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">vanderphunck</div><div class="date small text-muted">4th August 2004, 10:58</div></div>
+<br />
+<div class="posttext">Actually the above does not work... but this does:<br />
+<br />
+[init]<br />
+n=1000;rr=1;<br />
+[frame]<br />
+vx=floor(cos(rr*$pi/4)+.5);<br />
+vy=floor(sin(rr*$pi/4)+.5);<br />
+<br />
+[beat]<br />
+rr=rr+1;<br />
+xp=floor(w/2);yp=floor(h/2);<br />
+<br />
+[point]<br />
+xp=xp+vx;<br />
+yp=yp+vy;<br />
+<br />
+x=(xp+.5)*2/w-1;<br />
+y=(yp+.5)*2/h-1;<br />
+<br />
+<br />
+<br />
+--------- <br />
+<br />
+here i'm calculating the position in pixels. The weird thing is that it does not work unless i add the .5 as in the last 2 lines. I hope this helps...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">5th August 2004, 11:21</div></div>
+<br />
+<div class="posttext">Yeah don't worry to much about the .5 thing I have seen similar things in MilkDrop and R4 visualizations among other and I can imagine AVS being no different.<br />
+<br />
+This coudl well be due to a grid like system and positioning the 'centre' point of teh grid. you will have to shift the 'centre' along.<br />
+<br />
+I explain more here<br />
+<br />
+http://www.rabidhamster.org/phpBB2/viewtopic.php?t=108&amp;highlight=map<br />
+<br />
+but it is in a bit of R4 pseudo-code speak though. and talking about mapping....umm I suppose DM's would be a similar thing. MAybe not the same thing but maybe gives some ideas about the theory behind the 0.5 bit. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">9th August 2004, 16:18</div></div>
+<br />
+<div class="posttext">Thanks so much Phunck!<br />
+<br />
+The pixel positioning solution is exactly what I was looking for.  Works perfectly.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

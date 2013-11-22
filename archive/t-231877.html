@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Boolean Operators I need to break them., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Boolean Operators I need to break them. AVS" />
+	
+	<title> Boolean Operators I need to break them. - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Boolean Operators I need to break them.</li>
+</ol>
+<!-- div class="pda"><a href="t-231877.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=231877">Boolean Operators I need to break them.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">25th November 2005, 09:34</div></div>
+<br />
+<div class="posttext">I was a bit frightend to revive this old thread (http://forums.winamp.com/showthread.php?s=&amp;threadid=115737), because there already was 2 resurrections made to it and UnConeD bitched both times ;)<br />
+<br />
+Anyway, my problem is as follows:<br />
+Before the &amp; operator was fixed, i made a bunch of presets that used that operator with some cool (although random) results. Now that i look back into the presets, they don't work because of the fixed operator :cry:<br />
+<br />
+Now i need something that i can replace the fixed &amp; operator with that does the same thing the broken &amp; operator did.<br />
+<br />
+Don't bother posting loads of mathematical explanations, just gimme something i can use straight in AVS.<br />
+<br />
+Im also pretty sure there's lots of other people who would find use for this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th November 2005, 12:10</div></div>
+<br />
+<div class="posttext">try floor() or ceil() they work in some cases (if you used &amp; to make stuff into integers). but i dont think there is anything that does the same dogdy function as the old &amp;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">25th November 2005, 13:36</div></div>
+<br />
+<div class="posttext">What operations do you need?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">26th November 2005, 09:11</div></div>
+<br />
+<div class="posttext">Nothing specific, i was just looking for a quick fix for this, most of the code is something along the lines x=x&amp;sin(x)&amp;y&amp;y&amp;y&amp;y and other n00b shit like that. But i guess i have to fix my presets the &quot;hard way&quot; :hang:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th November 2005, 15:34</div></div>
+<br />
+<div class="posttext">btw, i did a lot of stuff like that in the 'Mechanical Curvature' series of presets in my packs... they all seem to work fine here. :P<br />
+<br />
+just tweak the existing &amp;s and you may well get a comparable result.. although since i dont know what you are using it for its hard to give specifics.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">26th November 2005, 17:16</div></div>
+<br />
+<div class="posttext">just install an older version of AVS :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">26th November 2005, 17:50</div></div>
+<br />
+<div class="posttext">I thought you were talking about boolean operations. I never get what the little help box means about the operators. Does convert values to interger mean ceil or somethings? Besides, by my understanding of things, | is completely useless, it would give the same as &amp;...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th November 2005, 18:23</div></div>
+<br />
+<div class="posttext">here is how it works:<br />
+<br />
+the idea of a boolean values is that they are true or false, this lines up with a lot of avs functionality where 0 is false and non zero is true. e.g. below(a,b) returns 1 if a&lt;b and 0 otherwise. <br />
+<br />
+using 0 as false and non-zero as true, operators like band(a,b) and bor(a,b) do 'boolean and' and 'boolean or' operations, i.e. if a and b are true then return true for band, otherwise false and if a or b or both are true then return true for bor, otherwise false. these are boolean operators since they take boolean values as their parameters and produce a boolean result.<br />
+<br />
+what &amp; and | do is different but related. internally avs stores stuff as floating point numbers. even integers are stored as floats. a &amp; b rounds the two operands a and b and converts them from float to integer representation (proably using floor, maybe doing a proper rounding) it then goes along each bit and does band to produce the resulting bit in the output:<br />
+<br />
+e.g.<br />
+62&amp;96 = ?<br />
+<br />
+<br />
+62:   00111110<br />
+96:   01100000 <br />
+and:  00100000 = 32<br />
+<br />
+<br />
+each bit is compared to produce a bit in the result, so above only where two 1s line up is there a 1 in the output. | works the same way except that it does a boolean or operation, e.g.:<br />
+<br />
+33|98 = ?<br />
+<br />
+<br />
+33:   00100001<br />
+98:   01100010 <br />
+or:   01100011 = 99<br />
+<br />
+<br />
+its not exactly useful in avs though. most commonly i use these operators in programming languages to implement 'bit-flags', where you can use an integer like a small array of boolean values by using | and &amp; to see which bits are turned on or off in the binary representation.<br />
+<br />
+hope this helps clear it up a bit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">26th November 2005, 19:42</div></div>
+<br />
+<div class="posttext">and integer means &quot;whole number&quot; [can you say that in english?] or &quot;number without stuff behind the comma&quot; :)<br />
+[just for clarity I don't think Jheriko pointed that out]<br />
+maybe one says integer in everyday english for that, so this post might be useless, but hey...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">26th November 2005, 21:22</div></div>
+<br />
+<div class="posttext">Hehe...comma. <br />
+<br />
+USA! USA! USA! <br />
+<br />
+Anyway, that does clear things up for me...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">26th November 2005, 22:16</div></div>
+<br />
+<div class="posttext">For the record, I've used &amp; several times in my presets. I've used | less often, but I've still used it. There are some pretty cool effects possible that require this kind of binary math.<br />
+<br />
+I'm unsure about what method these use to convert fractional values to integers, though. I would think, though, that they'd either use floor(n) or a rounding function roughly equivalent to floor(n+0.5). It sounds like the latter could be close to what the broken &amp; may have done.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">30th November 2005, 22:33</div></div>
+<br />
+<div class="posttext">I've only been doing AVS for about a year and a half, what was so broken about the &amp; ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">1st December 2005, 10:45</div></div>
+<br />
+<div class="posttext">Originally posted by JFASI <br />
+about a year and a half<br />
+<br />
+<br />
+.. you will never know :P<br />
+<br />
+<br />
+Nah, basically they didnt do the logic operations correctly and just did something similar to rounding the numbers.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">1st December 2005, 23:21</div></div>
+<br />
+<div class="posttext">Oh, so they just sucked?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">2nd December 2005, 00:54</div></div>
+<br />
+<div class="posttext">Apparently Tug found a way to make some use out of them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">2nd December 2005, 01:46</div></div>
+<br />
+<div class="posttext">Ah, that's good. But does he know how it was broken, or did he just find that they made arandom cool effect?</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" I need to make the DM stop., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" I need to make the DM stop. AVS Presets" />
+	
+	<title> I need to make the DM stop. - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">I need to make the DM stop.</li>
+</ol>
+<!-- div class="pda"><a href="t-104714.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=104714">I need to make the DM stop.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">11th September 2002, 13:55</div></div>
+<br />
+<div class="posttext">But I dont want it to be at the moment.<br />
+I want it to be like car breck.<br />
+Any codes?<br />
+<br />
+P.S.<br />
+Sorry 4 the spelling!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">11th September 2002, 14:46</div></div>
+<br />
+<div class="posttext">I don't understand at all what you are after. <br />
+<br />
+Could you post more details/ exmaples of presets and hopefully someone can help you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">11th September 2002, 16:25</div></div>
+<br />
+<div class="posttext">You could try something like this:<br />
+<br />
+frame:<br />
+a=a*.97;<br />
+<br />
+beat:<br />
+a=1;<br />
+<br />
+per pixel:<br />
+x=x+whatever*a;<br />
+y=y+whatever*a;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">11th September 2002, 21:17</div></div>
+<br />
+<div class="posttext">this will turn the dm on/off on beat<br />
+<br />
+beat: t=1-t;<br />
+frame: k1=if(t,k1,k1+0.05);k2=if(t,k2,k2+0.01);<br />
+point: x=x+k1;y=y+k2;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">12th September 2002, 13:09</div></div>
+<br />
+<div class="posttext">I meen like frame stop.<br />
+Like this:<br />
+Init:<br />
+a=30;fc=0;<br />
+Frame:<br />
+fc=fc+1;<br />
+s=if(above(fc,framestop),a-1&amp;if(equal(a,0),s,a),a);<br />
+<br />
+But i think there is somthing wrong in this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">12th September 2002, 16:08</div></div>
+<br />
+<div class="posttext">Are you trying for a gradual slow down?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">13th September 2002, 15:00</div></div>
+<br />
+<div class="posttext">Yep I want to slow down until the dm stops and then count 85 Frames 'til the speed inscreted.<br />
+<br />
+<br />
+P.S.<br />
+Still sorry 4 the spelling erorrs.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

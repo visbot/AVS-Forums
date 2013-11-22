@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Switch, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Switch AVS Wishlist" />
+	
+	<title> Switch - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">Switch</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-91786.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91786">Switch</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">20th June 2002, 18:49</div></div>
+<br />
+<div class="posttext">a function that switching 2 numbers or more every beat or avry frame.<br />
+EG:-<br />
+on beat:<br />
+rnd=switch(10,5);<br />
+EG:-<br />
+on beat:<br />
+rnd=switch(num,num1,num2);<br />
+num=rand(10);<br />
+num1=rand(10);<br />
+num2=rand(10);<br />
+<br />
+and slow fade:<br />
+in DM's i want 2 do fade.<br />
+so it gona be slowly gone and slowly come back.<br />
+i know that i can do it with alpha but its compliceted.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st June 2002, 00:13</div></div>
+<br />
+<div class="posttext">Both things you mention are perfectly possible, but you seem to want an easy solution because AVS's way of doing it is too complex...<br />
+Well don't know about you, but I prefer powerful vs. easy to a certain degree.<br />
+<br />
+If you want to switch between two numbers, you can use an alternating condition. For example:<br />
+c=bnot(c);<br />
+Every time this statement is executed, the value of 'c' is negated. If it is true (non-zero), then it becomes false (zero) and vice-versa. If you don't initialise 'c' yourself, it will start out 0, which means false.<br />
+<br />
+So suppose that you wanted a movement to alternate between a fast and slow zoom, you could use:<br />
+<br />
+Onbeat:c=bnot(c);<br />
+Pixel:d=d*if(c,.95,.85);<br />
+<br />
+In fact you seem to be a bit intimidated by AVS's powerful scripting abilities. A good place to start is to try and copy AVS's built-in effects. The little zoom code above is a good example of how to imitate a &quot;Blitter Feedback&quot;. Once you know how to do basic effects, you can combine them into new, complicated things.<br />
+<br />
+Something that is interesting to know is when you want a variable (e.g. a zoom factor) to move towards a new value rather than jumping to it.<br />
+Suppose your target value is &quot;vt&quot; and your current value is &quot;vc&quot;. You could use:<br />
+vc=vc*0.8+vt*0.2<br />
+What this code does is replace 20% of 'vc' value with vt's value. This is easy to understand with a numeric example. Suppose vc starts out as 0 and vt as 1, then the value of vc will evolve like this every time the statement is executed:0, (0*0.8 + 0.2) = 0.2, (0.2*0.8 + 0.2) = 0.36, (0.36*0.8 + 0.2) = 0.488, 0.5904, ...<br />
+You can see how it moves towards the target value. Notice too that the jumps between 2 values decrease as 'vc' gets closer to 'vt'.<br />
+<br />
+Suppose you wanted it to change value at a constant rate though. You could use:vc=vc + 0.1*sign(vt-vc);<br />
+Let's see what's going on. The sign() function returns '1' for positive numbers, and '-1' for negative numbers. So we first check the sign of (vt-vc), to see if we need to go up or down. Then, we use the result of sign(), multiply it by 0.1 and add it to our existing value.<br />
+<br />
+In our previous example (vc=0, vt=1), vc will evolve linearly:0, 0.1, 0.2, ..., 0.9, 1<br />
+<br />
+There's a small problem with this code though: it doesn't stop. So suppose your 'vc' was 0, and 'vt' was 0.15. Then vc will evolve like this:0, 0.1, 0.2, 0.1, 0.2, 0.1, 0.2, .... As you can see, it 'wobbles' around the value, because it becomes too large after the jump from 0.1 to 0.2.<br />
+To prevent this, you could check if the distance between vc and vt is less than the jump value (0.1 in our case), and if it is, we jump directly to vt because we're close enough.<br />
+Our new improved code is:vc=if(below(abs(vt-vc),0.1),vt,vc+0.1*sign(vt-vc));</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">21st June 2002, 07:17</div></div>
+<br />
+<div class="posttext">Sorry but i still think that its a good idea.<br />
+cos i anderstand only half of that.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

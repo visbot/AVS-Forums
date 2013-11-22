@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" difficulty with keyboard/mouse input, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" difficulty with keyboard/mouse input AVS" />
+	
+	<title> difficulty with keyboard/mouse input - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">difficulty with keyboard/mouse input</li>
+</ol>
+<!-- div class="pda"><a href="t-165159.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=165159">difficulty with keyboard/mouse input</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th January 2004, 17:15</div></div>
+<br />
+<div class="posttext">I'm working on a preset called AvsCAD and I want to be able to set the linewidth from 1 to 2 .. to 5 and back to 1. This is not a problem, it's just that if you hold the key for multiple frames, the counter keeps adding on. I thought I had a solution, but it doesn't seem to work.<br />
+<br />
+Could anyone tell me what I'm doing wrong?<br />
+I've attached a tryout instead of the preset itself to prevent people from making remixes before final release.<br />
+<br />
+Edit: general idea of what it does:<br />
+<br />
+<br />
+qpulse=<br />
+ if qold=qnew<br />
+    then<br />
+        0<br />
+    else<br />
+        if qold=0<br />
+           then<br />
+               1<br />
+           else<br />
+               0<br />
+ <br />
+<br />
+--So:-----<br />
+<br />
+keyold|keynew|goal<br />
+------|------|----<br />
+     0|0    =|0   <br />
+     0|1    =|1   <br />
+     1|0    =|0   <br />
+     1|1    =|0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Neoavs</div><div class="date small text-muted">16th January 2004, 18:23</div></div>
+<br />
+<div class="posttext">Well, I've attached the fixed file. It seems to work now. If you would add a counter such as reg01=reg01+reg27; then you would see that it is really working. Coz' on high FPS you wont able to see the 0 changing to 1, of course, I slowed my FPS to minimum and tested. The first line of text really changes from 0 to 1 and then quickly back to 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th January 2004, 19:01</div></div>
+<br />
+<div class="posttext">Thanks a lot for fixing that. I had been staring at it 'til I didn't understand my own code anymore :igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Neoavs</div><div class="date small text-muted">16th January 2004, 20:06</div></div>
+<br />
+<div class="posttext">No problem. Keep up the work. Do you have any AVS packs, I would like to see some?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th January 2004, 23:03</div></div>
+<br />
+<div class="posttext">You can check out my website, but all that is at least 1.5 years old (EyeCandy minipack being the newest, (don't bother looking at the so called 'new' presets on the site))<br />
+<br />
+I've been neglecting my packs since to do tests and master SSC's.<br />
+<br />
+But a few days ago I decided to start with my second pack, and here's an underway preview of the preset I needed your help for. It leakes out my new nickname and it will be in my new pack (if I get it all done).<br />
+<br />
+(wow, I've been working on this all night from 18:30 to now, 00:05) :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">17th January 2004, 00:47</div></div>
+<br />
+<div class="posttext">You can have also a more concise code replacing:<br />
+<br />
+  qpulse=if(equal(qold,qnew),0,if(equal(qold,0),1,0));<br />
+<br />
+by:<br />
+<br />
+  qpulse=qnew*bnot(qold)<br />
+<br />
+It may be also faster ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">17th January 2004, 20:09</div></div>
+<br />
+<div class="posttext">@piR:<br />
+Thanks, I'll use that.<br />
+<br />
+Just wondering: What are the opinions on this kind of presets (and this one in special :) ), do you like it or is it too far off from 'music visualization'?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Shock Value</div><div class="date small text-muted">18th January 2004, 05:42</div></div>
+<br />
+<div class="posttext">Well personally I think these kinds of presets are great if you can do something origional. You're off to a great start with this preset, but keep adding features to make it more interesting. Right now I'm working on an architectual design preset where you can design your own buildings floor-by-floor, for example.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th January 2004, 11:57</div></div>
+<br />
+<div class="posttext">I don't see the point in releasing this as part of a preset-pack with visualisations.<br />
+<br />
+I'll take fsk's digital artist preset over this any time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">19th January 2004, 10:55</div></div>
+<br />
+<div class="posttext">As the comment says, there'll be at least a line option and there is a bonus in already... try to find it ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Neoavs</div><div class="date small text-muted">19th January 2004, 11:31</div></div>
+<br />
+<div class="posttext">Found It. It is a rect-coords disabled movement. Enable rect coords to get paintbrush effect. Got any cookies for finding that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">19th January 2004, 14:12</div></div>
+<br />
+<div class="posttext">nope, as I said, it's a bonus for now - In the fianl version, it'll probably be just an option</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Neoavs</div><div class="date small text-muted">19th January 2004, 16:33</div></div>
+<br />
+<div class="posttext">You'll have to find a way to combine both paintbrush and normal modes. Then you can do cool drawings.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">19th January 2004, 20:32</div></div>
+<br />
+<div class="posttext">Hey how did you read my mind? I'm working on the MSPaint simulator right now :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">19th January 2004, 21:53</div></div>
+<br />
+<div class="posttext">Please leave out the MS-part - unless you want to include the systemcrashes of course ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">20th January 2004, 03:48</div></div>
+<br />
+<div class="posttext">Oh wait! I have an idea! AVS-OS!<br />
+Complete shell emulator done in AVS :)<br />
+Noone touch this idea! I'm making it already :F</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" serveTV, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" serveTV AVS" />
+	
+	<title> serveTV - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">serveTV</li>
+</ol>
+<!-- div class="pda"><a href="t-149852.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=149852">serveTV</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">20th September 2003, 19:42</div></div>
+<br />
+<div class="posttext">i made a kinda stupid software, called serveTV v0.0.4 (http://nsis.whyeye.org/servetv.zip) . the purpose of this freeware tool is to make screenshots in custom intervals and upload them to a server (ftp, not sure about http).<br />
+<br />
+current features:<br />
+* capture fullscreen<br />
+* customizable jpeg compression<br />
+* upload to ftp in intervals<br />
+<br />
+todo list:<br />
+* create html file<br />
+* more jpeg custumization<br />
+* advanced upload controls<br />
+* abort process button<br />
+* documentation<br />
+<br />
+the software uses cURL (http://curl.haxx.se/) for file transfer and cjpeg (http://www.ijg.org) (modified by steven wittens (http://acko.net)) for compression.<br />
+<br />
+most will find this tool pretty useless, since it's even slow in my 100mbit lan (pentium 4 2.4ghz/1gb ram runs serveTV, powermac g3 667mhz/512mb ram) displays images). i admit it's kinda absurd (like a read-only vnc), but i will put this in my portfolio for the university of applied arts. beside this, i use this to *stream* images of some visualizations to my httpd.<br />
+<br />
+enjoy or ignore :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">21st September 2003, 02:59</div></div>
+<br />
+<div class="posttext">thats pretty nice.. i was doing somthng similar a week or two ago. Trying to catch my friend hunting pr0n on my computer.<br />
+<br />
+but um.. yath.. &quot;AVS&quot;?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">22nd September 2003, 22:12</div></div>
+<br />
+<div class="posttext">its not stupid,its kinda sweet :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">30th September 2003, 13:01</div></div>
+<br />
+<div class="posttext">i figured the mistake and sent a pm to rova in the very second after posting this.<br />
+<br />
+unfortunately i could not let this capture the avs window only, since it's a sub-window of winamp. maybe in future, this software is like a joke anyway.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">30th September 2003, 22:49</div></div>
+<br />
+<div class="posttext">Sorry I didn't really know where to repost it more relevant. *shrug* so left it here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">1st October 2003, 11:22</div></div>
+<br />
+<div class="posttext">Originally posted by killahbite <br />
+unfortunately i could not let this capture the avs window only, since it's a sub-window of winamp. <br />
+<br />
+This is no problem at all.<br />
+<br />
+Do the following (for avs2.6):<br />
+<br />
+Find the avs-window. (the winamp onwed one)<br />
+Use FindWindowEx to get the client avswnd.<br />
+Get avswnd's position.<br />
+Make a screenshot of this section.<br />
+<br />
+I can give you some ready-made code for this (Hotlist-Source excerpt) if you want. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">1st October 2003, 11:36</div></div>
+<br />
+<div class="posttext">apfel + birne = ??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">1st October 2003, 11:48</div></div>
+<br />
+<div class="posttext">apfel + birne = polymorphe Frucht :D<br />
+<br />
+//edit<br />
+<br />
+It wont be too hard to change te code from delphi to c++.<br />
+The shell commands are all the same and the rest wont take long.<br />
+<br />
+Btw, when i found a solution to the screenshot problem in general, it was in vBasic (thanx to goeb again). I had to change a lot. Now the code is more advanced and only some lines long.<br />
+<br />
+I'll post it here tomorrow. (i if remember to copy it when i'm home)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">1st October 2003, 12:03</div></div>
+<br />
+<div class="posttext">Originally posted by Magic.X <br />
+<br />
+<br />
+It wont be too hard to change te code from delphi to c++<br />
+<br />
+maybe, but i'm neither using delphi nor c++ :p<br />
+<br />
+Originally posted by Magic.X <br />
+apfel + birne = polymorphe Frucht<br />
+<br />
+interessant, dass alle mathelehrer eines übersehen haben. geld lässt uns dinge vergleichen, die nicht vergleichbar sind (ein apfel = halbe stunde auto waschen) ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">1st October 2003, 13:48</div></div>
+<br />
+<div class="posttext">Rofl! :blah:<br />
+<br />
+<br />
+Ein hoch auf unsere kommerzialisierte Gesellschaft!<br />
+<br />
+<br />
+What the heck do you use for programming?<br />
+<br />
+At least it should support win32 commands, does it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">2nd October 2003, 07:32</div></div>
+<br />
+<div class="posttext">Now here my crappy Code ;)<br />
+<br />
+<br />
+procedure THotlistScreenshot.FormCreate(Sender: TObject);<br />
+<br />
+Var //declaring all the vars we need<br />
+H,H2 :hwnd;<br />
+DeskHdC :Longint;<br />
+r :TRect;<br />
+z :string;<br />
+b :integer;<br />
+xp,new :boolean;<br />
+<br />
+begin<br />
+new:=false;<br />
+//scan for the avswnd of avs 2.51<br />
+H:=findwindow('avswnd',nil);<br />
+//if avswnd is not found for 2.51, scan for higher versions, which are bound into a Winaamp Gen Window. set new=true if found<br />
+if H=0 then<br />
+  begin<br />
+  H2:=findwindow('Winamp Gen','AVS');<br />
+  H:=findwindowex(H2,0,'avswnd',nil);<br />
+  new:=true;<br />
+  end;<br />
+//get avswnd's screen rectangle<br />
+GetWindowRect(H,r);<br />
+//move avswnd or WA Gen on top to ensure you get a full uncovered image<br />
+If new then SetWindowPos(H2,hwnd_top,0,0,0,0,swp_nomove+swp_nosize)<br />
+else SetWindowPos(H,hwnd_top,0,0,0,0,swp_nomove+swp_nosize);<br />
+//sleeping according to custom responsiveness, not needed in serveTV<br />
+Sleep(HotlistMain.resp);<br />
+//now we do repeat the following code until we don't get any exception. this is used because xp tends to retrieve errors instead of results when using GetDC<br />
+repeat<br />
+try<br />
+xp:=false;<br />
+DeskHdc:=GetDC(H);<br />
+  except<br />
+  xp:=true;<br />
+  end;<br />
+until (xp=false);<br />
+//clean up the Image that may have been used before<br />
+Image1.Picture:=nil;<br />
+//lets make the screenshot. for versions 2.51 and before we need to substract the borders. higher versions don't have any borders due to the WAGen window<br />
+  try<br />
+  if new then<br />
+    begin<br />
+    Image1.height:=r.Bottom-r.Top;<br />
+    Image1.width:=r.Right-r.Left;<br />
+    BitBlt(Image1.Canvas.Handle,0,0,r.Right,r.Bottom,DeskHdc,0,0,SRCCOPY);<br />
+    end<br />
+  else<br />
+    begin<br />
+    Image1.height:=r.Bottom-20-r.Top;<br />
+    Image1.width:=r.Right-13-r.Left;<br />
+    BitBlt(Image1.Canvas.Handle,-7,-15,r.Right-6,r.Bottom+5,DeskHdc,0,0,SRCCOPY);<br />
+    end;<br />
+  except<br />
+  end;<br />
+//repaint the image, this may be not nessecary<br />
+Image1.Repaint;<br />
+//move our window back on top<br />
+SetWindowPos(HotlistScreenshot.Handle,hwnd_top,0,0,0,0,swp_nomove+swp_nosize);<br />
+end;<br />
+<br />
+<br />
+This should work with a bit of changing in nearly ecvery language on a w32 system. The w32 commands will stay the same, its just messing with the syntax. :)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

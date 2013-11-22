@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Bicubic Béziér Patch, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Bicubic Béziér Patch AVS Presets" />
+	
+	<title> Bicubic Béziér Patch - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Bicubic Béziér Patch</li>
+</ol>
+<!-- div class="pda"><a href="t-102766.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=102766">Bicubic Béziér Patch</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">31st August 2002, 03:21</div></div>
+<br />
+<div class="posttext">(follow up of the bezier-talk in the 'Lamé curve' thread).<br />
+<br />
+I've made a nice bicubic bezier patch scope... it can render at any arbitrary resolution. The patch's control points are limited to vertical movement only, for variable storage reasons (16 control points).<br />
+<br />
+Not very interesting on the visual side and the responsiveness is just something I plugged in quickly. Definitely not finished :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">31st August 2002, 05:49</div></div>
+<br />
+<div class="posttext">nice... is that just a set of big bicubics or is it generating multiple bicubics for each set of three (or six) control points? i cant sift through your code its too, well, solid. <br />
+<br />
+i assumed bicubics were x6+ax5+bx4+cx3+dx2+ex+f, since biquadratic is another term used for quartic, but it doesn't look like that in the code (i could be wrong of course since i can barely read the code). <br />
+<br />
+also something you might like to look up is the horner method, it is a more efficient way of evaluating a given polynomial. i'm pretty sure it goes like this (you could use it to speed up calculation of x1) if this isn't the horner method this still works (expand the brackets)<br />
+<br />
+ill use a standard cubic as example<br />
+<br />
+ax3+bx2+cx+d = ((ax+b)*x+c)*x+d<br />
+<br />
+this way you use less multiplications and the same number of additions to get the same result. something i learned in alevel further maths, also used it a lot when studying polynomial interpolation in the computing modules of my maths degree course.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">31st August 2002, 11:22</div></div>
+<br />
+<div class="posttext">Umm...yeah....:confused:<br />
+<br />
+I have no idea how this works, so mind an explanation, Stevey? :P<br />
+<br />
+BTW, the animation is uber-spastic, especially the rotation.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">31st August 2002, 15:59</div></div>
+<br />
+<div class="posttext">It's a 4x4 point patch, where every intersection of the patch along one of its axes results in a cubic bezier curve. That's where bi-cubic comes from (cubic in 2D).<br />
+<br />
++----+.---+----+<br />
+|    |.   |    |<br />
+|    |.   |    |<br />
++----+.---+----+<br />
+|    |.   |    |<br />
+x....x*...x....x<br />
++----+.---+----+<br />
+|    |.   |    |<br />
+|    |.   |    |<br />
++----+.---+----+<br />
+<br />
+Suppose we want point '*'. You evaluate by first calculating the 4 control points of either the horizontal or the vertical dotted line. Each dashed line is a cubic bezier curve with known control points, so finding them is not a problem. For example, we evaluated the horizontal line and got the 4 x's.<br />
+Then, you treat those 4 x's as control points for another bezier, and you're done.<br />
+<br />
+Because of the properties of bezier curves, it doesn't matter if you evaluate it horizontal first or vertical first.<br />
+<br />
+Oh by the way jheriko, biquadratic is not the same as quartic. A bi-quadratic polynomial is a quartic with only even powers:<br />
+<br />
+ax^4 + bx^2 + c<br />
+<br />
+You can solve them by setting y=x^2 and solving it like a regular quadratic. Then you take the roots and find the solution to the quartic.<br />
+<br />
+This bi-cubic has nothing to do with that though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">31st August 2002, 17:33</div></div>
+<br />
+<div class="posttext">right, now i understand what nurbs mean :P and yeah i forgot you need it 4 control points for a cubic (not 3) so i really should have been able to figure out that it was a 4x4 patch... and on that biquadratic thing, i got that out of one of my algebra books... think it was one on set theory in the back it has a list of terms and in brackets after quartic it has 'or biquadratic'... books can often be wrong tho'. but still, if you are generating a large number of points on a cubic everyframe horner's method should speed it up a bit... wouldn't it be cooler to make a nurbs surface in avs tho? no that you've done this cubic patch making a nurbs surface shouldn't be to difficult right?<br />
+<br />
+(for those who don't know nurbsstands for non-uniform rational bi-cubic spline, and is basically where you split the spline into sets of four control points and make a cubic beizer spline for each set)<br />
+<br />
+i'm gonna go play with some curves now :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">31st August 2002, 19:15</div></div>
+<br />
+<div class="posttext">Wasn't nurbs &quot;non-uniform rational b-spline&quot;? B-splines aren't béziérs as far as I know, but they're cubic as well.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">31st August 2002, 20:03</div></div>
+<br />
+<div class="posttext">b-spline means bicubic spline and unless you want to solve a cubic for every control point (exceedingly slow due to large amount of sqrts and couple of cbrts) i'd guess it would use the bezier spline method.. hang-on i have a big fat opengl book lying around somewhere with a huge section on curves...<br />
+<br />
+'b-splines are essentially the same as bezier curves except that b-splines are divided into fragments of four control points per fragment. this division of the entire curve into segments essentially produces a combination of cubic bezier curves that combine to form a single, more complex curve.' - primatech's opengl game programming (hawkings and astle)<br />
+<br />
+thats a pretty nice description, i guess that the fragments would have have to share 'end' control points to ensure that the curves all flowed together seamlessly</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">11th December 2006, 13:56</div></div>
+<br />
+<div class="posttext">I'm sure I will get ripped for bumping such an old post... but I must correct my mistakes!!!<br />
+<br />
+Hawkings and Astle were wrong. B-Splines are something totally different... <br />
+<br />
+If you take a a piecewise continuous function x where each range is a constant, (e.g. 0&lt;t&lt;1 ==&gt; x=1; t&lt;0 ==&gt; x=-1 ; t&gt;1 ==&gt; x=0). Call it x and convolve it with itself to get x*x, again and we get x*x*x, again to get x*x*x*x ....<br />
+<br />
+These x*x*x..*x curves are called B-splines. They are piecewise continuous and have continuous (n-1)th derivatives and continuous piecewise (n-2)th  derivatives, where n is the number of x's convolved.<br />
+<br />
+Now, if you take two cubic splines and force the together with the right continuity, the curve you get out does happen to obey this definition... but still.<br />
+<br />
+I'm sure everyone will find this very useful. Â¬<br />
+<br />
+4 years ago... doesn't seem that long at all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">11th December 2006, 19:14</div></div>
+<br />
+<div class="posttext">I AM GLAD YOU ARE NOT BORED AT YOUR WORK</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">11th December 2006, 19:38</div></div>
+<br />
+<div class="posttext">O.o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">12th December 2006, 05:25</div></div>
+<br />
+<div class="posttext">I thought this was a new thread..oh well :igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">12th December 2006, 07:23</div></div>
+<br />
+<div class="posttext">you know, if you're bored anyway, you could of course put WA on an USB drive and continue with J10</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">12th December 2006, 10:15</div></div>
+<br />
+<div class="posttext">Actually. I was reading something else and I came across a definition of B-splines. Having a stupidly good memory and being bitter about making mistakes because a book misinforms me... I felt duty bound to correct this thread.<br />
+<br />
+WotL: I never seem to finish whatever preset I make to finish J10.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hornet777</div><div class="date small text-muted">13th December 2006, 08:58</div></div>
+<br />
+<div class="posttext">Running across something while looking for something else is one of my favourite way of learning. It accentuates the &quot;light-bulb&quot; affect :)<br />
+<br />
+bravo, jheriko</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WildJack77</div><div class="date small text-muted">25th December 2006, 08:16</div></div>
+<br />
+<div class="posttext">Old thread?</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

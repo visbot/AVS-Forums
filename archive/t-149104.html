@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" avs 2.7pre2 woo hoo, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" avs 2.7pre2 woo hoo AVS" />
+	
+	<title> avs 2.7pre2 woo hoo - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">avs 2.7pre2 woo hoo</li>
+</ol>
+<!-- div class="pda"><a href="t-149104.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=149104">avs 2.7pre2 woo hoo</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">13th September 2003, 22:25</div></div>
+<br />
+<div class="posttext">http://genghis.winamp.com/~deadbeef/avs27pre2.zip<br />
+<br />
+Lots of fixes for issues described in the last post, and other stuff:<br />
+<br />
+<br />
+  made config change detection a little more accurate<br />
+  made superscope/dmove/shift/etc reinit on edit work right (Now variables are cleared on edit, always, but the init code is run too)<br />
+  made trans / movement only replace usereval with preseteval if editted<br />
+  fixed trans / movement backwards compatible stuff (no crashy at least)<br />
+  updated eval documentation stuff, need people to write docs for it, too.. heheh (see the help then send me the docs)<br />
+ lots of ui cleanups (more edit room!)<br />
+ fixed some fullscreen new fbresize bugs<br />
+ updated fullscreen overlay mode some<br />
+<br />
+<br />
+<br />
+-J</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">13th September 2003, 22:30</div></div>
+<br />
+<div class="posttext">*DROOL*<br />
+<br />
+Mmm... a lot of room in sscs...<br />
+This is getting better and better...<br />
+*me hands more beer to Justin*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th September 2003, 22:35</div></div>
+<br />
+<div class="posttext">Could you add the beat value to the extended APE sdk too? It's currently passed by value, making a clean Custom BPM II impossible (well I have managed to get around this by declaring -&gt;render(...) as naked and writing into the calling function's stack in the epilog code, but it's an ugly hack to say the least).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">13th September 2003, 22:36</div></div>
+<br />
+<div class="posttext">cool, i like this,<br />
+<br />
+about the mini-tuts in the helpfile, ask atero to use the docs &amp; stuff from avs primer1.75</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">13th September 2003, 22:43</div></div>
+<br />
+<div class="posttext">I got only one request:<br />
+<br />
+Really useful would be self definable global varjables... to use something like regrx (rotation x) otherways the code will get really messy :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">13th September 2003, 22:49</div></div>
+<br />
+<div class="posttext">Originally posted by Jack the king <br />
+I got only one request:<br />
+<br />
+Really useful would be self definable global varjables... to use something like regrx (rotation x) otherways the code will get really messy :P  <br />
+<br />
+Well, I'd suggest you just use globals sparingly.<br />
+<br />
+The main reason I have against self definable global variables, is <br />
+scope. Once a preset creates a global variable, does that mean it is there forever? Do we have a limited number of globals? How do you handle these things?<br />
+<br />
+-Justin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">13th September 2003, 22:51</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+Could you add the beat value to the extended APE sdk too? It's currently passed by value, making a clean Custom BPM II impossible (well I have managed to get around this by declaring -&gt;render(...) as naked and writing into the calling function's stack in the epilog code, but it's an ugly hack to say the least).  <br />
+<br />
+Actually there is already a way to do this.<br />
+In your render() function, you can return one of the two values (actually you can just set those bits in the return value):<br />
+<br />
+#define SET_BEAT		0x10000000<br />
+#define CLR_BEAT		0x20000000<br />
+<br />
+SET_BEAT changes the beat status to &quot;beat&quot;, CLR_BEAT clears it to<br />
+&quot;no beat&quot; :)<br />
+<br />
+-Justin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">13th September 2003, 23:17</div></div>
+<br />
+<div class="posttext">Just updated the zip, with a fix to the dynamic distance modifier (it would at certain resolutions at certain times cause a crash). Woot.<br />
+<br />
+-J</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">13th September 2003, 23:33</div></div>
+<br />
+<div class="posttext">no, you can't make me 1337 by packaging the primer with wa5, i won't allow it!  YOU'LL NEVER CATCH ME ALIVE!  NEVAR!11<br />
+<br />
+:D<br />
+<br />
+if i get some time next weekend I'll update teh primer...<br />
+<br />
+<br />
+<br />
+(and next time could you update teh old thread?  kinda pointless to make a new one...)<br />
+<br />
+/me hides from the administrative powers of teh j</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">14th September 2003, 00:23</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+no, you can't make me 1337 by packaging the primer with wa5, i won't allow it!  YOU'LL NEVER CATCH ME ALIVE!  NEVAR!11<br />
+<br />
+:D<br />
+<br />
+if i get some time next weekend I'll update teh primer...<br />
+<br />
+<br />
+<br />
+(and next time could you update teh old thread?  kinda pointless to make a new one...)<br />
+<br />
+/me hides from the administrative powers of teh j  <br />
+<br />
+<br />
+Hehe if you want to make a trimmed down version of each section,<br />
+to put in there, that'd be rad. You could put links to the full primer in there, too, I suppose.<br />
+<br />
+Or if you don't want to, maybe I could edit it? Or if you don't<br />
+want that, I'll be sad. :(<br />
+<br />
+-J</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">zamuz</div><div class="date small text-muted">14th September 2003, 01:11</div></div>
+<br />
+<div class="posttext">again, really nice :) but, as if you haven't heard this yet, please get rid of the window snapping. i know it'll be gone when wa5 is released, but... well i really hate it.<br />
+<br />
+thanks btw :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">14th September 2003, 01:12</div></div>
+<br />
+<div class="posttext">Why can't you just package the full thing with it?  It's not like you have to put each file in the config dialogue.  Just put a help menu up there and make one of the options &quot;Help on [currently selected component]&quot; or something.<br />
+And since I know jack diddly about windows help files you'll have to do it yourself :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">14th September 2003, 02:16</div></div>
+<br />
+<div class="posttext">I'm very, very very pished but i must comment./ must must must comment, so much backsapacing alreadfy. ah tho shell with it. JUsdtinh, you pwn teh.. uhh place. just is teh pqwnage, ja that will do. Now i must return tpo my lair and perform certain deeds involving females and some sort of booze.... god damn readin through this is like  agrammmatical  nightmare of sme sort, involving the simpsonms and principal skinner amd his thing, erm, shuit#<br />
+<br />
+anyway, JYSRTIUN IS TEH PWMAGE,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">14th September 2003, 02:31</div></div>
+<br />
+<div class="posttext">omg.  how much did you drink anyway?<br />
+<br />
+<br />
+<br />
+on second thought i don't think i want to know.  just...stay in bed...and don't break anything....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th September 2003, 02:38</div></div>
+<br />
+<div class="posttext">You think that was bad - look at his thread in the Recycle Bin(the new forum on these forums).<br />
+<br />
+It makes even less since.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">14th September 2003, 03:45</div></div>
+<br />
+<div class="posttext">Those 'ol superscope examples dont load until you edit the boxes... <br />
+<br />
+Nice new help :).<br />
+<br />
+btw, is the fact that the recycling bin forum is listed in the vis category meant to be some sniggered remark towards us visjunkies?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th September 2003, 04:53</div></div>
+<br />
+<div class="posttext">it's not in the vis group.<br />
+<br />
+It's not in any group.  They just get thrown down to the end.<br />
+<br />
+If you notice - there is a slight difference - there is some gray space to the left of the AVS forums and such, but white space to the left of the recycle bin.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">14th September 2003, 07:34</div></div>
+<br />
+<div class="posttext">hehe this is awesome:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">14th September 2003, 09:31</div></div>
+<br />
+<div class="posttext">Originally posted by justin <br />
+Well, I'd suggest you just use globals sparingly.<br />
+<br />
+The main reason I have against self definable global variables, is <br />
+scope. Once a preset creates a global variable, does that mean it is there forever? Do we have a limited number of globals? How do you handle these things?<br />
+<br />
+-Justin <br />
+<br />
+Oh well... all is true<br />
+Seems we just must start using // and /* */<br />
+:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">14th September 2003, 10:10</div></div>
+<br />
+<div class="posttext">I love the round up/round down function with blur :)<br />
+<br />
+<br />
+Is it possible to make the Color modifier work with coords? To make things like &quot;red=if(above(x,0),1,0);&quot; (for example) possible? Shouldn't be to hard, it works in Superscopes, I bet it can work this way as well.<br />
+<br />
+Hope you can find some time to do this.<br />
+<br />
+<br />
+<br />
+Beat detection doesn't seem to work correctly over here with Color Modifier, though I'm not sure yet how to use it correctly. Maybe somebody could post a simple preset which uses color modifier with Beat Detection?<br />
+<br />
+<br />
+<br />
+Never mind edit 2, I think I got it now. Sorry for the inconvience</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th September 2003, 11:08</div></div>
+<br />
+<div class="posttext">I was also wondering why color modifier doesn't have the ability to use x and y.  I think that could make things really cool.  Would make it pretty easy to make some nice morphing alpha-blended channels.  Fun.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">14th September 2003, 11:13</div></div>
+<br />
+<div class="posttext">there is probably 4 or 5 posts scattered around the forums at the moment which explain why the color mod cant use coords.<br />
+<br />
+And there is a preset here using color mod and beat detection:<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=149154<br />
+<br />
+<br />
+i fealt rude saying that...so.. this thread http://forums.winamp.com/showthread.php?s=&amp;threadid=149042 explains the color mod pretty well. the bottom line is, it doesnt work witht he individual pixels when recoloring, it just uses a color-map-like method.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th September 2003, 11:41</div></div>
+<br />
+<div class="posttext">thanks sidd.  That thread must have slipped passed me, as a lot has these last couple of days.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th September 2003, 17:59</div></div>
+<br />
+<div class="posttext">i think the new avs version should have some often used dynamic movements in a preset list (similiar to movement). most people here might disagree, but think of the non-techies too! i'm particularly thinking of basic DMs, like rotation, zooms etc.<br />
+<br />
+this would allow newbies to have some more variety (and maybe stop using water/rotoblitter/mirror combinations only).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">14th September 2003, 18:00</div></div>
+<br />
+<div class="posttext">Or the ability to add custom DMs/SSCs to the list (to make it easier to add the 3D conversion template).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">14th September 2003, 18:02</div></div>
+<br />
+<div class="posttext">Or just add a funtion to roto blitter to move on the x and y axis.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">14th September 2003, 18:41</div></div>
+<br />
+<div class="posttext">Globals, 256 vars, subdirs, color modifier - im getting so horny<br />
+<br />
+And it would be possible to make a coloring tool using x,y,d,r just relpace alpha blend whith red,green and blue channels</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">14th September 2003, 19:16</div></div>
+<br />
+<div class="posttext">Originally posted by siddhartha_one <br />
+there is probably 4 or 5 posts scattered around the forums at the moment which explain why the color mod cant use coords.<br />
+<br />
+And there is a preset here using color mod and beat detection:<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=149154<br />
+<br />
+<br />
+i fealt rude saying that...so.. this thread http://forums.winamp.com/showthread.php?s=&amp;threadid=149042 explains the color mod pretty well. the bottom line is, it doesnt work witht he individual pixels when recoloring, it just uses a color-map-like method.<br />
+ <br />
+<br />
+Somehow i dont think so... it wouöd be same as dm with rgb and THAT would be slow as hell</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">15th September 2003, 06:55</div></div>
+<br />
+<div class="posttext">So Justin...<br />
+Are you going to force me to use wa2.9x or the other wa3 half-breeds or are you going to make this new AVS version compatible with the old&amp;true wa2 versions? (like 2.81, which i happen to like&amp;use and wouldn't change for anything)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">15th September 2003, 11:05</div></div>
+<br />
+<div class="posttext">Tugg I think it works with w8.1 already (at least it does for me).<br />
+<br />
+Justin could you give ColorMod a recalculate on beat thing.<br />
+That could make some stuff faster IMHO?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">15th September 2003, 11:15</div></div>
+<br />
+<div class="posttext">Well the first pre version didn't work with my 2.81 and since there isn't any mentioning about it in this post i just assumed that this new version doesn't work either with wa2.81 (or older versions)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">15th September 2003, 11:24</div></div>
+<br />
+<div class="posttext">they all work on my 2.92<br />
+<br />
+but thats really not the issue is it.. :\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">15th September 2003, 11:48</div></div>
+<br />
+<div class="posttext">but thats really not the issue is it.. :\<br />
+<br />
+<br />
+Wow, and you figured that out all by yourself?! :igor: :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">15th September 2003, 12:27</div></div>
+<br />
+<div class="posttext">Originally posted by Tuggummi <br />
+So Justin...<br />
+Are you going to force me to use wa2.9x or the other wa3 half-breeds or are you going to make this new AVS version compatible with the old&amp;true wa2 versions? (like 2.81, which i happen to like&amp;use and wouldn't change for anything) <br />
+<br />
+hello? on what lonely island were you hiding the last year? winamp 2.81 had a serious vulnerability (http://slashdot.org/article.pl?sid=02/12/19/1329243&amp;mode=thread&amp;tid=128). and there's no real reason why winamp 2.9 should be any slower (if you have a slow computer, don't install the media library).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">15th September 2003, 12:48</div></div>
+<br />
+<div class="posttext">Three things i don't have on my comp:<br />
+<br />
+1) Any kind of Net connection.<br />
+2) WindowsXP<br />
+3) Mp3's that have been downloaded in the past 2 years...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Adasha</div><div class="date small text-muted">15th September 2003, 13:30</div></div>
+<br />
+<div class="posttext">I have a Q:<br />
+<br />
+the global vars seem to persist after the preset is changed - does that open up the possibility of presets morphing into each other or am i being silly?<br />
+<br />
+if so, maybe we could decide on standard meanings for them (eg i've got reg00 set to the aspect ratio, or reg2* holds various y rotation things) so that they'd all be 'compatible'?<br />
+<br />
+ps. I just changed a synched preset over into globals, and jumped from 18 to 26fps! yay!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">15th September 2003, 14:15</div></div>
+<br />
+<div class="posttext">Tugg im sory but I forgot that I instaled it on W2.9x and it doesnt work in older ones like I said, Im a big fat liar:D (realised it when i got home). <br />
+<br />
+adasha:<br />
+I had the same idea when Justin mentioned it with the first previev, but it seems that if you change the value of any Greg in your preset <br />
+that Greg will get cleared on load. <br />
+But you can for example do this:<br />
+<br />
+first preset:<br />
+reg00=blabla;<br />
+<br />
+second preset:<br />
+init{ reg01=reg00 }<br />
+must not have any reg00=blabla in it.<br />
+<br />
+That way you catch the value.<br />
+Im not comleatly sure that what im saying is true:D but i think it is.<br />
+And that is one of the reasons why the idea isnt a good one:).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">15th September 2003, 14:28</div></div>
+<br />
+<div class="posttext">Yeah i always knew you're a liar, i bet you lied about your preset being nothing more than simple stuff used allover again :p<br />
+<br />
+But anyway, is it really that hard to make it compatible? Tho im prolly the only who would need it, i can understand if you don't want to apply such thing because of one user.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">15th September 2003, 14:47</div></div>
+<br />
+<div class="posttext">I was just wondering whther we could get multiply and minimum blend modes for buffer save?(justin?)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">15th September 2003, 20:33</div></div>
+<br />
+<div class="posttext">Originally posted by Ishan_Rocky <br />
+I was just wondering whther we could get multiply and minimum blend modes for buffer save?(justin?)  <br />
+<br />
+Will do. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">15th September 2003, 21:11</div></div>
+<br />
+<div class="posttext">also good idea would be HSV support for CMo<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">15th September 2003, 21:23</div></div>
+<br />
+<div class="posttext">Can be handy, though I expect that the RGB2HSV code used with scopes can be easily implented in the CMo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">15th September 2003, 23:18</div></div>
+<br />
+<div class="posttext">How can I get it to work with Winamp3 ? It won't show up in the thinger. I tried renaming it to avs.wac but it didn't work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">16th September 2003, 00:34</div></div>
+<br />
+<div class="posttext">i think i found a bug/missing feature in 2.7pre2 (or is it just me).<br />
+<br />
+when i choose a folder for the random mode, and navigate through the presets with U, the first preset doesnt get loaded when you're pressing U viewing the final preset.<br />
+<br />
+please change that back, i wanna jump from LAST to FIRST!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">16th September 2003, 08:33</div></div>
+<br />
+<div class="posttext">please! *sigh* Some people never learn... ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">16th September 2003, 09:54</div></div>
+<br />
+<div class="posttext">Yesterday I DL the pre2 version and I checked the SSC UI and a big smile visited my face. Triple hura for all the new UIs. May I ask why is it better if beat and frame blocks are switched?. And Init could be executed on sizechange in all all components IMHO, or even better the 'main' could have an 'on resize' block.<br />
+<br />
+The SSC bug I was talkin about on the other thread is in fact an overlay bug.For some reason the color chanells don't align right!?  You can see this as ugly stuff on borders between colors. This is a real pain in the ass when I project AVS in clubs, since overlay is the only way to do it and still have the editor open. Im not sure this doesnt only happen on my computer. <br />
+I noticed one on the SSC too (if the line goes offscreen on the bottom or right side it doesnt draw the last line of pixels on the bottom or right side).<br />
+I attached a preset that shows these two bugs and the text one. <br />
+Another very anoying one is the main list not showing everything in correct order all the time.<br />
+<br />
+And two things that would realy kick ass: <br />
+codable linewidth - a realy usefull one IMO<br />
+     antialiseing - a major SSC cosmetic fix (now all SSC stuff is either blured beyond recognition or jagged as hell:D + a lot of my presets look ugly :cry: )<br />
+<br />
+Enough whineing:), 2.7 version kicks lammas balls, Im still trying to contemplate how all the new stuff will effect presets from here on. Looking forward to W5 and the first packs.<br />
+<br />
+edit&gt; just read a post by unconed in the other thread(dunno how I missed it last time). He sais that overlay thing isnt a bug at all and that it's suposed to be that way :cry:. Just ignore that part then:).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">16th September 2003, 10:02</div></div>
+<br />
+<div class="posttext">To Justin :<br />
+<br />
+I don't know if someone else has already done a translation of the previous versions, so it may be a stupid request ...<br />
+<br />
+In order to make the translations easier, is it possible to have all the strings (specially the new helps) at the same place (in the resource would be the best) rather than dispatched in the (binary) code ?<br />
+<br />
+<br />
+Anyway, it's a nice job ...<br />
+<br />
+Congratulations !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">18th September 2003, 01:10</div></div>
+<br />
+<div class="posttext">Could somebody please help me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">18th September 2003, 02:51</div></div>
+<br />
+<div class="posttext">Why do you use Winamp3 Hungryskull?  That's a better question....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">19th September 2003, 00:33</div></div>
+<br />
+<div class="posttext">Can anyone answer my question?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">19th September 2003, 08:23</div></div>
+<br />
+<div class="posttext">You cannot get it to work with Winamp 3. Winamp 3 does not use vis_avs.dll but a .wac file. You have to download winamp 2 or 5 to run AVS 2.7.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shabaviz55</div><div class="date small text-muted">3rd October 2003, 17:16</div></div>
+<br />
+<div class="posttext">Cool man, I am wait for final version...</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Freq. field AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Freq. field AVS AVS" />
+	
+	<title> Freq. field AVS - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Freq. field AVS</li>
+</ol>
+<!-- div class="pda"><a href="t-141609.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=141609">Freq. field AVS</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">9th July 2003, 06:09</div></div>
+<br />
+<div class="posttext">Im such a nub I dont know how to write super scope code I got most of it but i dont want it to spin and what not i want it to be like a EKG thing. I here is what i have please help!!!<br />
+<br />
+Init: dt=0.5;t=0;n=60;r=0.5;mx=0;my=0;mz=0;dst=2;rx=0;ry=0;rz=0;rdx=1;rdy=1;rdz=1;p=3.14159265;p2=2.0*p;p3=180/p<br />
+<br />
+On beat: rdx=sin(t)*4;rdy=sin(t)*4;rdz=sin(t)*4;dt=-dt<br />
+<br />
+Per frame: t=t+dt;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
+<br />
+Per point: y1=r*cos(2*p2*i+t)+v/10;z1=0;z1=r*(i-0.5)*2;y2=y1*xc-z1*xs;z2=y1*xs+z1*xc;x2=z2*ys+x1*yc;z3=z2*yc-x1*ys;x3=x2*zc-y2*zs;y3=y2*zc+x2*zs;x4=mx+x3;y4=my+y3;z4=mz+z3;x=x4/(1+z4/dst);y=y4/(1+z4/dst)<br />
+<br />
+Thank you if you can help!!<br />
+<br />
+:blah: :blah: :blah: :blah: :blah:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">9th July 2003, 06:16</div></div>
+<br />
+<div class="posttext">Go to the avs forums in the future.<br />
+<br />
+OK...I assune you did not write any of this code.  If you didn't, you have to give explicit credit.  If you want an oscilloscope, then you just need to write this: x=i*2-1;y=v;<br />
+<br />
+You also messed too much with the code, because I don't see anything when copying it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">9th July 2003, 20:24</div></div>
+<br />
+<div class="posttext">Thank you I got that from my friend and i dont know where he go it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">9th July 2003, 22:43</div></div>
+<br />
+<div class="posttext">He probably ripped it from another thing then screwed around with the code.  When you say EKG I assume you mean an oscilloscope (like a sine wave or the basic built-in vis).  If that's what you want, what I said earlier will work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">11th July 2003, 23:12</div></div>
+<br />
+<div class="posttext">Thank you and for the comment how do you want me to add you? basicly i have &quot;Special Thanks To m2k for superscope coding&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">12th July 2003, 01:52</div></div>
+<br />
+<div class="posttext">umm<br />
+<br />
+m2k, that's el's 3d.  you should know that.<br />
+<br />
+and you - the one with the obnoxious handle - take a look at avs primer.  and please try not to be a n00b, mmk?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">12th July 2003, 06:59</div></div>
+<br />
+<div class="posttext">well, yeah and this guy is crazy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">12th July 2003, 07:09</div></div>
+<br />
+<div class="posttext">lol, funny user name he's got:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">12th July 2003, 09:57</div></div>
+<br />
+<div class="posttext">Originally posted by m²k <br />
+When you say EKG I assume .... <br />
+<br />
+Never assume anything. EKG = Electrocardiogram. That heart monitor thing.<br />
+<br />
+EDIT: Its called an EKG and not ECG because there is also an electrocephalogram, which is called an EEG, not using ECG is meant to avoid confusion, although since the cardiogram came first is is sometimes still refered to as an ECG.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">12th July 2003, 15:44</div></div>
+<br />
+<div class="posttext">I know that- I had an EEG done in 4th grade</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">12th July 2003, 16:09</div></div>
+<br />
+<div class="posttext">init: n=2;<br />
+point: x=if(above(x,1),-1,x)+if(equal(i,0),0,0.03);<br />
+y=if(equal(i,0),y,getosc(i,0,0));<br />
+use whith 5 pixels set render mode and a light fadeout</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">12th July 2003, 17:04</div></div>
+<br />
+<div class="posttext">Dude,I-did-your-mom,you know that code you have will get you a 3d object ? You could try learning the basics of superscopes first...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 00:35</div></div>
+<br />
+<div class="posttext">Thank you nixa that is EXACTLY what i wanted you get the 1337 award of the week! Thank you all and Im giving cedit to those helping me since i didnt write the code i stayed up to about 6AM trying to learn how to do it if you know any good sites that will help me please let me know</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">13th July 2003, 01:54</div></div>
+<br />
+<div class="posttext">the 1337 award of the week?  :igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">13th July 2003, 03:32</div></div>
+<br />
+<div class="posttext">Good sites to look at would be to just search the fourms, read the FAQ, look at the Atero's AVS primer and just try things on your own based on other people's work that is at your level (Don't go around looking at UnConed's work, or somebody like that, you will just get a headache and kick your computer out a window)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">13373571</div><div class="date small text-muted">13th July 2003, 03:33</div></div>
+<br />
+<div class="posttext">good sites?  search the forum and look at the faq and the primer.<br />
+<br />
+edit: doh we posted at same time, is there a way that I can delete?  It says I don't have access.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">13th July 2003, 04:11</div></div>
+<br />
+<div class="posttext">No, you can't.  A moderator can, but I just wouldn't worry about that post.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 07:50</div></div>
+<br />
+<div class="posttext">Thank You guys a ton! Im going to work on my brothers car as it has to be ready for the car show.. and work on my friends top.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 08:09</div></div>
+<br />
+<div class="posttext">Is there such a way as an easy way to learn :-D hehehe Im not new to winamp but my ADHD doesnt work with me it seems to work agianst me and well say with being a NOOB!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">13th July 2003, 08:35</div></div>
+<br />
+<div class="posttext">hey, didn't i tell you to stop being a noob?  use the goddamned edit button.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 08:42</div></div>
+<br />
+<div class="posttext">Well it blows but hey Im getting the hang of it and it will be cool some day!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">13th July 2003, 12:30</div></div>
+<br />
+<div class="posttext">You were asking help regarding 3d code and then you dont use it ? :rolleyes: Anyway,remove the movement,it sucks.And try using(or tinker around) with your own code,almost everything in the preset is from other people.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th July 2003, 14:54</div></div>
+<br />
+<div class="posttext">Totally off topic, but I'm pretty sure EEG = electro-encephalo-gram (Greek: kephalos = head, en- = inside). The abbreviation is correct.<br />
+The reason an electrocardiogram is spelled EKG is probably because in Greek, heart is kardia (Greek has no 'c', it's only through Latinization that it was introduced).<br />
+<br />
+(edit: removed greek because Winamp.com doesn't like it and I don't feel like putting down HTML encodings)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">13th July 2003, 15:45</div></div>
+<br />
+<div class="posttext">Yeah, the letter c is pointless - it doesn't have a sound of its own, besides when used in combination with h as in cherry.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 19:44</div></div>
+<br />
+<div class="posttext">*Changes Junior Member to Major Newb*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 19:58</div></div>
+<br />
+<div class="posttext">blah blah it blows thanks im know but im a newb thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">13th July 2003, 21:00</div></div>
+<br />
+<div class="posttext">Stop whining dude.The preset is quite...original,but thats all.Nice effort writing all those drugs :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 22:20</div></div>
+<br />
+<div class="posttext">:D thank you thats what I call ADHD at work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">13th July 2003, 22:46</div></div>
+<br />
+<div class="posttext">My newest 2 i was just messing around I got a cool one and a lame one I will tell you its only worth looking at the file names &quot;something.avs&quot; Its cool building blocks is yet FAR too easy and boring with a tub full of NOTHING SPECIAL.. :D But I made one cool it still isnt as good as your guys</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">14th July 2003, 00:52</div></div>
+<br />
+<div class="posttext">...why havent you attached the presets in the previous post ? :confused:<br />
+The presets ? Both are very n00bish,you can do better than that.The building blocks preset is something everyone did and the second one is too chaotic and that r=y movements does more harm than good.Look at my version,i tuned it up a bit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">14th July 2003, 00:59</div></div>
+<br />
+<div class="posttext">Weak shit,i forgot quick reply doesnt have an option to attach.My bad!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th July 2003, 03:24</div></div>
+<br />
+<div class="posttext">Can you use .zip? I have winrar, but zip's are a bit more often used on this site.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">14th July 2003, 05:45</div></div>
+<br />
+<div class="posttext">Here it is *.zip :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">14th July 2003, 05:59</div></div>
+<br />
+<div class="posttext">Eh, that's still a n00bish preset.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">14th July 2003, 06:28</div></div>
+<br />
+<div class="posttext">Well this is some new ones I whiped up and I hope you will comment on them. I look at what i started at 2 moving particals with a blur :blah: :blah: and then what it is i have now. I think I have come a long way!:up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">14th July 2003, 17:53</div></div>
+<br />
+<div class="posttext">I said i tuned it up a bit,not remixed or added my stuff :P<br />
+ new presets - still very n00bish,but i see you begin to experiment with the code,keep it going!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">14th July 2003, 23:46</div></div>
+<br />
+<div class="posttext">Well either way you get some credit. :D Better some then none. Well Im out of ideas but Im brain storming and writing and drawing ideas and hoping i can put them into motion with the help of Phaze to edit the bugs and his thoughts on it. I have been working up something pretty sweet in my eyes but im sure its not so sweet to your eyes... But im working on it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">15th July 2003, 01:52</div></div>
+<br />
+<div class="posttext">I'm sure you are and i'm glad, but we really don't need a running commentary. Keep working &quot;and just keep cranking stuff out, you'll get better fast&quot; as xenibalt said to me when i was but a noob :blah: Very true though.<br />
+<br />
+As for the presets, still basic but there's potential in them, good work. Keep trying.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">15th July 2003, 06:25</div></div>
+<br />
+<div class="posttext">heres a quick one on (Timescope)<br />
+This effect makes ravel of left on the right, a vertical line whose intensity of each point depends on the importance of the various frequencies</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">15th July 2003, 08:24</div></div>
+<br />
+<div class="posttext">where is it???<br />
+ should'nt this be in the presets forum?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">16th July 2003, 03:57</div></div>
+<br />
+<div class="posttext">I was explaining what timescope is I found out what it is</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">16th July 2003, 04:43</div></div>
+<br />
+<div class="posttext">This is for the Advanced Micro Devices (AMD) fans out there. This is EXTREMLY n00bish but Im out of ideas i lack creativity.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">16th July 2003, 07:40</div></div>
+<br />
+<div class="posttext">uh...where is the pic.???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">16th July 2003, 07:57</div></div>
+<br />
+<div class="posttext">heres the pic i forgot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">16th July 2003, 07:59</div></div>
+<br />
+<div class="posttext">Sorry for not using edit, but i used quick reply that time so it wont let me attach the preset.<br />
+Anyway, i managed to create an EKG which looks cool in my opinion, Just needs colormap and some music ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">17th July 2003, 05:55</div></div>
+<br />
+<div class="posttext">Well hell heres one i whiped up tell me what you think of it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">17th July 2003, 10:38</div></div>
+<br />
+<div class="posttext">colours are nice but needs to be a little more dynamic.<br />
+by the way you liked that EKG i made up?:rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">17th July 2003, 22:26</div></div>
+<br />
+<div class="posttext">Well no offence i personaly didnt like it because of the ssc only would work to the beat in a small spot not the whole thing. Im not saying I could do any better matter of fact I cant do anything equal to that. but we are all entitled to think what we want</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">17th July 2003, 23:11</div></div>
+<br />
+<div class="posttext">heres my lame ass intro <br />
+<br />
+And this time i actully ziped the picture file in it so it will work lol :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">17th July 2003, 23:37</div></div>
+<br />
+<div class="posttext">Nice,it aint too bad :) I like it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">18th July 2003, 11:14</div></div>
+<br />
+<div class="posttext">Well no offence i personaly didnt like it because of the ssc only would work to the beat in a small spot not the whole thing.i am not saying I could do any better matter of fact I cant do anything equal to that. but we are all entitled to think what we want<br />
+<br />
+duh! i thought EKGs are like that.:confuesd:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">I-Did-Your-Mom</div><div class="date small text-muted">18th July 2003, 18:07</div></div>
+<br />
+<div class="posttext">nixa gave me this code so he gets the credit but this is what they look like for the most part</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

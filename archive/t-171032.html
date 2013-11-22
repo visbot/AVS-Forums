@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" global variable problem, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" global variable problem AVS Troubleshooting" />
+	
+	<title> global variable problem - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> global variable problem</li>
+</ol>
+<!-- div class="pda"><a href="t-171032.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=171032">global variable problem</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">26th February 2004, 04:07</div></div>
+<br />
+<div class="posttext">Ok, I got a large problem here. I am working on a AVS port of the classic Space Invaders arcade game. Now, in the first level, there is a total of 55 enemy sprites on screen. However, each sprite uses 3 global variables: 1 for x possission, 1 for y possission, and 1 for whether it exists or not (IE, whether you have destroyed it or not). Plus, I have a bunch of other global variables (about 20) for various things such as mouse possission, state of the left mouse button, and whether or not your mouse is in the AVS window or not (the game goes into a demo mode if your mouse is not in the AVS window). In total, I would need about 185 global variables. <br />
+<br />
+Now, the enemies are in one giant rectangular group, consisting of 5 rows of 11 sprites. Each row is a different enemy. Would it be possible to do each row as an array? I have no idea how to use the gmegabuf() functions, and yes, I searched the forum, yes I downloaded and looked at the example files, and yes, I still don't understand it. <br />
+<br />
+PS: Hi #ff guys! I got kicked off the internet for 2 weeks (due to going over the bandwidth limit too many times) last Friday, so I should be back next weekend and such. Oh, and I'm using a library computer to type all this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Shock Value</div><div class="date small text-muted">26th February 2004, 18:33</div></div>
+<br />
+<div class="posttext">This should definitely be possible. Just make a multidimensional array with gmegabuf(). You can assign variables to it like this (example):<br />
+<br />
+assign(gmegabuf(5000*c+25*r+v),number)<br />
+<br />
+c=column number (from 1 to 200)<br />
+r=row number (from 1 to 200)<br />
+v=variable (25 variables are available for each row/column position).<br />
+<br />
+And 'number' would be the value that you are assigning to the variable. Also, you can tweek the constants (5000 and 25) to have different limits for each dimension. Just keep in mind that gmagabuf() can only handle a maximum of 1,000,000 variables (I think).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">26th February 2004, 18:36</div></div>
+<br />
+<div class="posttext">OOH! :D I think I am beginning to understand this whole array thing! Thanks! Oh, and what is the 5000 for? Also, for v, would I just put a variable name?<br />
+<br />
+Now if I could only figure out how to work the movement for the enemies...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">26th February 2004, 23:29</div></div>
+<br />
+<div class="posttext">(Dang edit limit, I hate double-posting.)<br />
+<br />
+The problem seems to be that I don't know how to set up a multidimensional array.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">27th February 2004, 06:45</div></div>
+<br />
+<div class="posttext">here it is in quick. :)<br />
+<br />
+Use one array, but break it up in your head.<br />
+<br />
+instead of XXXXXXXXXXXXXXXXXXX<br />
+think of XXXXX XXXXX XXXXX XXXXX<br />
+<br />
+You can index the above example with something like index=row*5+col</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">27th February 2004, 11:54</div></div>
+<br />
+<div class="posttext">BTW, I really can't see why you need such an array !<br />
+IMO, the only useful global variables are :<br />
+- the status of a sprite : Killed, Stationary, On attack, <br />
+- the current position of a line of sprites : each sprite coordinates are computed depending on its state (K: nothing, S: static offset, O: dynamic offset),<br />
+- the coordinates of the shots : to know if someone has been hit,<br />
+- the status of each wall (if you manage them),<br />
+- the mouse coordinates and state (not really, in fact, as they are only useful for your ship ...).<br />
+<br />
+Knowing all the coordinates of all the ships is only meaningful if you want to manage collisions between them ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">27th February 2004, 15:31</div></div>
+<br />
+<div class="posttext">well, the way each sprite works is a bit complicated. Don't bother downloading the attachment I posted, cause it's old and I redid the entire sprite system. And since each sprite is animated on beat, I have 2 effects list, and one is enabled and the other is disabled every other beat. Therefore, I need two more variables for the on beat movement so that the movement of the sprite in the first effects list transfers over to the second.<br />
+<br />
+Each sprite uses 5 global variables:<br />
+<br />
+- whether it exists or not (IE, you killed it)<br />
+- X posission<br />
+- Y posission<br />
+- On beat X movement<br />
+- On beat Y movement<br />
+<br />
+Now, 55*5=275. IE, I need 275 global variables, and I only have 99 without using the gmegabuf(), which I still have no idea how to work. <br />
+<br />
+And I need to know the cordinates of each sprite so that I can tell if the shot has hit the sprite or not. IE, if the cordinates of the shot equal the cordiantes of the sprite, then said sprite has been hit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">27th February 2004, 16:51</div></div>
+<br />
+<div class="posttext">I think you only realy need the position of one and can derive the position of the rest relative to that one. Then you only need keep whether the ship still exists global.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">OnionRingOfDoom</div><div class="date small text-muted">28th February 2004, 18:18</div></div>
+<br />
+<div class="posttext">Hmmm, interesting, but how would I keep whether the ship still exists global? If I destroy the ship that all the other ship's movements are based off of, then all the other ships would disapear as well, right?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">1st March 2004, 12:50</div></div>
+<br />
+<div class="posttext">The fact that the ship still exists or not has nothing to do with its position on the screen. It is always computed but you just don't draw anything if it doesn't exist anymore (using skip=1 or n=0, if you use a superscope).</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

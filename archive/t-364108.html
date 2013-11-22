@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Superscope: 'v' variable in frame code, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Superscope: 'v' variable in frame code AVS" />
+	
+	<title> Superscope: 'v' variable in frame code - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Superscope: 'v' variable in frame code</li>
+</ol>
+<!-- div class="pda"><a href="t-364108.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=364108">Superscope: 'v' variable in frame code</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">16th June 2013, 21:50</div></div>
+<br />
+<div class="posttext">Hi,<br />
+<br />
+Im trying to figure out how some of the superscope codes work. Im checking<br />
+&quot;Marco - science of superscope&quot; preset from classic winamp presets list.<br />
+<br />
+here is the code:<br />
+<br />
+init: n=800<br />
+frame: t=t-v*0.5<br />
+beat: t=t+0.3;n=100+rand(900);<br />
+point: d=D/n;r=(i-(t*3));<br />
+ x=(atan(r+d-t)*cos(r+d-t+i));<br />
+ y=((i+cos(d+v*1.2))-1.5)*1.7;<br />
+ z=-(cos(t+i)+log(v)*cos(r*3))*3;<br />
+ red=cos(r)+1;<br />
+ blue=sin(r);<br />
+ green=sin(i)/2<br />
+<br />
+Here,<br />
+<br />
+ what does the value of variable 'v' hold inside the frame section? I know it holds the spectrum data at point 'i' inside the point section, but what does it mean in the frame section?<br />
+ what is the variable 'D'?<br />
+ does the z variable actually do anything?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">16th June 2013, 22:53</div></div>
+<br />
+<div class="posttext">Open the (Settings -&gt; )debug window and add reg00 = var; then you can watch the value, and see if it does anything. (reg goes from 00 to 99)<br />
+<br />
+1:<br />
+I will take a guess at v being the same as i=0 at that point as it's ran before the point section.<br />
+In fact it does.<br />
+frame:<br />
+reg00 = v;<br />
+point:<br />
+reg01 = if(equal(i, 0), v, reg01);<br />
+<br />
+Both reg00 and reg01 show the same value.<br />
+I am an idiot and it's too late to be thinking. The code I tested was wrong, which I've now amended and it looks like they're different values. It's not equal to i=1 either.<br />
+<br />
+2: Variables aren't case sensitive. (I can't remember if I knew that :))<br />
+Example: D=1; d=0; reg02=D; (this will show 0)<br />
+<br />
+3: Doesn't look like it, nope.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">InCUbuS-94</div><div class="date small text-muted">16th June 2013, 23:54</div></div>
+<br />
+<div class="posttext">Well, &quot;V&quot; in this case is used to change the speed of the scope, and it's excecuted every frame, stating the obvious.<br />
+<br />
+Z is useless, so go ahead, annihilate it.<br />
+<br />
+It's 1 A.M. here and I'm tired, so my answer may not be what you're seeking.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">17th June 2013, 07:25</div></div>
+<br />
+<div class="posttext">Open the (Settings -&gt; )debug window and add reg00 = var; then you can watch the value, and see if it does anything. (reg goes from 00 to 99)<br />
+<br />
+1:<br />
+I will take a guess at v being the same as i=0 at that point as it's ran before the point section.<br />
+In fact it does.<br />
+frame:<br />
+reg00 = v;<br />
+point:<br />
+reg01 = if(equal(i, 0), v, reg01);<br />
+<br />
+Both reg00 and reg01 show the same value.<br />
+I am an idiot and it's too late to be thinking. The code I tested was wrong, which I've now amended and it looks like they're different values. It's not equal to i=1 either.<br />
+<br />
+2: Variables aren't case sensitive. (I can't remember if I knew that :))<br />
+Example: D=1; d=0; reg02=D; (this will show 0)<br />
+<br />
+3: Doesn't look like it, nope.<br />
+<br />
+Thanks, didnt know how to use the debugger. This is really useful. still dont understand what v in frame code does. if i remove it the scope moves more uniformly and looks different.<br />
+<br />
+Also the d=D/n; code doesnt do anything either since D was never initialized, will always be zero (im assuming this is the case, the debugger confirms: uninitialized variables are 0)<br />
+<br />
+Well, &quot;V&quot; in this case is used to change the speed of the scope, and it's excecuted every frame, stating the obvious.<br />
+<br />
+Z is useless, so go ahead, annihilate it.<br />
+<br />
+It's 1 A.M. here and I'm tired, so my answer may not be what you're seeking.<br />
+<br />
+how does it control the speed? what values is assigned to it? is 'v' something provided internally by the Superscope?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">InCUbuS-94</div><div class="date small text-muted">17th June 2013, 10:12</div></div>
+<br />
+<div class="posttext">Using 'v' should be the same as using the getosc(), the only difference is that with the getosc function you can control more parameters (that is: band, width or channel)<br />
+<br />
+For example:<br />
+<br />
+POINT<br />
+x=i*2-1;<br />
+y=v*0.5<br />
+<br />
+is the same as<br />
+POINT<br />
+x=i*2-1;<br />
+y=getosc(i,0.0,0)*0.5<br />
+<br />
+That being said, with &quot;control the speed&quot; I mean you use a variable, called 't', where its value depends on 'v', and you use it on the point section to change the speed of the scope. It all depends where you put the 't'.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">17th June 2013, 18:20</div></div>
+<br />
+<div class="posttext">I think value of 'v' maintains the last assigned value. ie. 'v' in frame section will be equal to last 'v' from the point section ie. when i = 1. I tried the following code<br />
+<br />
+init: n=800<br />
+<br />
+frame: t=t-v*0.5;<br />
+reg01 = if(equal(reg00, v), 1, 0);<br />
+<br />
+beat: t=t+0.3;n=100+rand(900);<br />
+<br />
+point: d=D/n;r=(i-(t*3));<br />
+ x=(atan(r+d-t)*cos(r+d-t+i));<br />
+ y=((i+cos(d+v*1.2))-1.5)*1.7;<br />
+ z=-(cos(t+i)+log(v)*cos(r*3))*3;<br />
+ red=cos(r)+1;<br />
+ blue=sin(r);<br />
+ green=sin(i)/2<br />
+reg00 = v;<br />
+<br />
+and reg01 shows up as 1 in the debug window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">InCUbuS-94</div><div class="date small text-muted">17th June 2013, 18:51</div></div>
+<br />
+<div class="posttext">Ugh, that if statement is superfluous, at least use this<br />
+reg01=equal(reg00,v)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">17th June 2013, 19:42</div></div>
+<br />
+<div class="posttext">No need for debugging, the answer is rather low-tech.<br />
+<br />
+When that preset was created, we didn't have a rand() function yet (AVS 2.5). We used the audio to generate random values.<br />
+In this case I assume (as I don't have the preset installed here) that v is used as a waveform and varies between -1 and 1. That means that t increases or decreases with that value. Today you'd have used something like t=t-(100-rand(200))*.005;<br />
+<br />
+D and z are normal variables with no special meaning in a ssc<br />
+<br />
+Looking more closely, d is never really used. It's set to be 0 like stated above, and its always added. Adding 0 does nothing. The preset would be the same without it.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

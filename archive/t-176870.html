@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" The Superformula Oscilliscope, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" The Superformula Oscilliscope AVS Presets" />
+	
+	<title> The Superformula Oscilliscope - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">The Superformula Oscilliscope</li>
+</ol>
+<!-- div class="pda"><a href="t-176870.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=176870">The Superformula Oscilliscope</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Klingon</div><div class="date small text-muted">16th April 2004, 15:09</div></div>
+<br />
+<div class="posttext">The Superformula Oscilliscope<br />
+Based on the superformula developed by the Belgian biologist Johan Gielis http://www.geniaal.be/.<br />
+<br />
+The Superformula describes a huge amount of organic shapes with only a small set of parameters.<br />
+<br />
+Greetings.<br />
+<br />
+Jan</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">16th April 2004, 15:59</div></div>
+<br />
+<div class="posttext">small set of parameters, huh?<br />
+<br />
+m=getspec(0.1,1,0);<br />
+m=abs(m*10);<br />
+a=getosc(0.1,0.1,1);<br />
+b=getosc(0.1,0.1,2);<br />
+n1=getspec(0.1,0.1,0);<br />
+n2=getspec(0.1,0.1,1);<br />
+n3=getspec(0.1,0.1,2);<br />
+<br />
+I never heard of that superformula before. And I don't really see why a biologist should invent such a formula :)<br />
+But then again, there are other formulae which don't seem to be connected to their normal use, too :)<br />
+About the shapes... I suggest you use line mode instead of dot mode in that superscope :) this makes the structures of that formula more clearly visible. <br />
+btw: I think your interest in that formula is somehow connected to your forum screen name, not? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Klingon</div><div class="date small text-muted">16th April 2004, 18:26</div></div>
+<br />
+<div class="posttext">Originally posted by TomyLobo<br />
+small set of parameters, huh?<br />
+Yes, I thinking these are really only few parameters.<br />
+I never heard of that superformula before. And I don't really see why a biologist should invent such a formula :)<br />
+Johan Gielis tried to describe a huge amount of natural (organic) shapes with one formula. Why? I don't know.<br />
+But then again, there are other formulae which don't seem to be connected to their normal use, too :)<br />
+Yes, the superformula is:<br />
+r=pow(pow(abs(cos(s*m/4)/a),n2)+pow(abs(sin(s*m/4)/b),n3),-1/n1);<br />
+Where s is the angle and r the radius (polar coordinates).<br />
+About the shapes... I suggest you use line mode instead of dot mode in that superscope :) this makes the structures of that formula more clearly visible.<br />
+Good idea. Preset is updated.<br />
+btw: I think your interest in that formula is somehow connected to your forum screen name, not? :)<br />
+Yes.<br />
+Greetings.<br />
+Jan</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">16th April 2004, 19:44</div></div>
+<br />
+<div class="posttext">The formula is nice but you should really change the expressions for the parameters so they produce more interesting shapes all the time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">16th April 2004, 20:44</div></div>
+<br />
+<div class="posttext">Sort of like this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Klingon</div><div class="date small text-muted">16th April 2004, 23:08</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD<br />
+Sort of like this.<br />
+Nice thing.<br />
+<br />
+But I like &quot;Wormhole&quot;-effects.<br />
+<br />
+I've updated my preset. It is now possible to change the complexness and amplitude with the mouse (clicking left button into the avs-screen).<br />
+<br />
+Greetings.<br />
+<br />
+Jan</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">16th April 2004, 23:25</div></div>
+<br />
+<div class="posttext">The superformula is a polar function r(theta). Why do you draw for s = 0...100*PI when 0..2*PI would suffice?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Klingon</div><div class="date small text-muted">17th April 2004, 12:07</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD<br />
+The superformula is a polar function r(theta). Why do you draw for s = 0...100*PI when 0..2*PI would suffice?<br />
+Yes, the superformula is a polar function. But it is not always symmetrically for n*(0..2*PI).<br />
+Another reason for the enhanced range is that the angle is divided into steps of 0.1 (s=s+0.1). 0.1 never fits PI, and if you set s back to zero at s&gt;2*PI, you will have always the same angles (0, 0.1, 0.2, 0.3, ..., 3.0, 3.1). If you do not set it back, then will you fill the gaps (3.2=0.058, 3.3=0.158, 7=0.717).<br />
+<br />
+I've made some minor fixes in the new version.<br />
+<br />
+Greetings.<br />
+<br />
+Jan</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

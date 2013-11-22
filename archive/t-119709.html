@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Silver speaker AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Silver speaker AVS AVS Presets" />
+	
+	<title> Silver speaker AVS - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Silver speaker AVS</li>
+</ol>
+<!-- div class="pda"><a href="t-119709.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=119709">Silver speaker AVS</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">KiD cHaMeLeOn</div><div class="date small text-muted">1st January 2003, 10:51</div></div>
+<br />
+<div class="posttext">Hey i know i shouldnt post a new thread for 1 AVS but its too tempting :P.<br />
+Please have fun with it<br />
+AND PAY ATTENTION TO THE COMMENT &gt;:(<br />
+lol:igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">KiD cHaMeLeOn</div><div class="date small text-muted">2nd January 2003, 06:26</div></div>
+<br />
+<div class="posttext">Feel free to Critisize me all you want.<br />
+BTW <br />
+Atero:<br />
+If you read this i had this in mind befor i did it thank you for the halpfull tip.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd January 2003, 07:39</div></div>
+<br />
+<div class="posttext">whosawhatsit????<br />
+<br />
+first thing: never edit other peoples' code if you don't know what it does, and never use other peoples' code (even if it's edited) without crediting them.  i am referring to the ddm, which is a slightly edited version of the ddm from tag's &quot;bitter paper&quot; - edited so that it basically doesn't work, but still...<br />
+anyway, using trans effects such as color map, invert, and so on are really not a good idea if they're feeding back (as in you color map an image, and then the color mapped image is color mapped again, and so on).  instead, use them outside an effect list, or use clear every frame.<br />
+the color map in this is equivalent to a white utone, so i suggest you use that instead (since it's faster...right?).  using bilinear filtering with the ddm not only helps the preset look a whole lot smoother, it gets rid of the strobing problem.  try to make the superscope a bit more dynamic (like, make it move some more).  maybe use a texer to make the superscope come out a bit more, too...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">KiD cHaMeLeOn</div><div class="date small text-muted">2nd January 2003, 07:42</div></div>
+<br />
+<div class="posttext">ummm whats a ddm?<br />
+and i really didnt steal anything from TAG serious<br />
+even ask minus he was here when i made it.....<br />
+thank you for the tips tho<br />
+your always a good helping hand</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">2nd January 2003, 21:35</div></div>
+<br />
+<div class="posttext">Atero... stfu, thats near enough the default ddm (dynamic distance modifier btw) that you get when you insert it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd January 2003, 00:52</div></div>
+<br />
+<div class="posttext">Augh...I apologize, I was thinking of something else.<br />
+But the fact remains that it [using the default/example code] is, effectively, stealing code - even if it isn't it's just as tacky.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">3rd January 2003, 01:45</div></div>
+<br />
+<div class="posttext">After looking at the code, all I can say is... Learn coding.<br />
+<br />
+First SSC : You forgot a semicolon.<br />
+Both SSCs : Turn all colors into the same, there's no point in any colorcoding because of that colormap - Give a value to red, then green=red and blue=red, and eliminate colormap.<br />
+<br />
+Simplified DDM : d=d-sigmoid(-0.45,2)<br />
+<br />
+Why? &quot;T&quot; have to be smaller than 5 if you want &quot;T&quot;, otherwise 5. t=min(5,t) means that t is whichever is smaller, &quot;5&quot; or &quot;t&quot;. This way, the loop is broken, and the DDM is static, other than the first five frames (Like that's going to make any difference). Either change it to the simplification, or switch the min to max and max to min. but even then....<br />
+<br />
+No matter what time other than the first frame, the &quot;u&quot; changing times will never be reached. After you eliminate the min/max problem, &quot;t&quot; can only be greater/equal to 5 and smaller/equal to 50. &quot;u&quot; will only change when &quot;t&quot; is 0 or 100, and as we know, both 0 and 100 is not within that range - So we'll end up with d=d-sigmoid(0,2).<br />
+<br />
+Fix that darn preset, you don't want to embarass yourself in front of other viewers.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">KiD cHaMeLeOn</div><div class="date small text-muted">3rd January 2003, 19:18</div></div>
+<br />
+<div class="posttext">Ok<br />
+Coding<br />
+i dont like that name<br />
+i will keep doing what i do<br />
+does it not look good?<br />
+thats all that matters<br />
+i dont care bout coding or n e thing<br />
+just making it look good</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">3rd January 2003, 22:02</div></div>
+<br />
+<div class="posttext">Two suggestions for the DDM- try bilinear filtering for a smoother look, and try using getosc to make the speaker reactive to the music.<br />
+<br />
+d=d-sigmoid(-0.45,(2+getosc(.5,.1,0)*2))<br />
+<br />
+Bilinear filtering ON<br />
+<br />
+Play around with this until you get the desired effect.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd January 2003, 22:46</div></div>
+<br />
+<div class="posttext">a summary of nic's and my posts: you should learn coding so you can make your AVS look good, because this one doesn't.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">3rd January 2003, 23:57</div></div>
+<br />
+<div class="posttext">I agree with Atero on this one, coding is the basis for making avs look good, if you dont learn coding the possibilities of what you create and make look good is limited to the defaults and accidents you stumble across.<br />
+<br />
+Anyway if what your trying to do is please people on here then coding is what they are looking for, if what your looking to do is please your own eyes then dont complain if people want you to learn coding, just dont post things.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th January 2003, 08:59</div></div>
+<br />
+<div class="posttext">AVS isn't about coding, it's about what the code creates.  Frankly, I don't give a crap about how the preset is coded as long as it looks good - it's just when someone randomly throws functions together, makes some shitty unwatchable preset, and says &quot;It's supposed to look that way&quot; when people complain - that's when I tell them to learn wtf they're doing....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MinuS_PeDaL</div><div class="date small text-muted">9th January 2003, 03:06</div></div>
+<br />
+<div class="posttext">:winamp: Hey, your Silver Speaker is still a seizure when it runs at 50fps. :down: It still looks much better on your computer. :up: None-the-less, good AVS. Later:igor:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

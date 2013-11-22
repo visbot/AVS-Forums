@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" superscope problem, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" superscope problem AVS" />
+	
+	<title> superscope problem - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">superscope problem</li>
+</ol>
+<!-- div class="pda"><a href="t-276882.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=276882">superscope problem</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">gelo</div><div class="date small text-muted">3rd September 2007, 23:00</div></div>
+<br />
+<div class="posttext">hello, im sorta new to the superscope system but i do kn ow my maths (lol) im trying to simulate an x by y oscilloscope system with superscope, the type of thing where the left channel will move a dot left and right and the right channel will move the dot up and down. combining those two move the dot to a certain position. has anyone coded this before? im in dire need of somthing like this since im making a laser display which will do it litterally but i need a display on screen to compare the movements if anyone can supply equations for this id be most greatfull!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">J.Melo</div><div class="date small text-muted">3rd September 2007, 23:37</div></div>
+<br />
+<div class="posttext">I'm not quite sure if this is what your looking for, but I made something simple init:<br />
+n=1000;<br />
+<br />
+point:<br />
+x=i*2-1+getosc(i,0,1)*0.2;<br />
+y=-i*2+1+getosc(i,0,2)*0.2  Or is it more like this:  init:<br />
+n=1;<br />
+<br />
+point:<br />
+x=getosc(0,0,1);<br />
+y=getosc(0,0,2);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">gelo</div><div class="date small text-muted">3rd September 2007, 23:47</div></div>
+<br />
+<div class="posttext">this is sorta what i aim, not the effects shown but what the oscilloscope is actually presenting from the audio signal.<br />
+<br />
+http://www.youtube.com/watch?v=s1eNjUgaB-g<br />
+<br />
+its a vector based audio to 2 tone image converter...<br />
+<br />
+and that oscillo was drawing that image from a wav sound file...</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

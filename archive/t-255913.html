@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Please, explain me this:, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Please, explain me this: AVS Troubleshooting" />
+	
+	<title> Please, explain me this: - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Please, explain me this:</li>
+</ol>
+<!-- div class="pda"><a href="t-255913.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=255913">Please, explain me this:</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Paufer</div><div class="date small text-muted">21st September 2006, 14:25</div></div>
+<br />
+<div class="posttext">I was reading PAK-9's progamming guide, in the superscope section, when realized that this will draw a square:<br />
+<br />
+INIT:<br />
+n=6;<br />
+x1=0.5; y1=0.5;<br />
+x2=0.5; y2=-0.5; <br />
+x3=-0.5; y3=-0.5;<br />
+x4=-0.5; y4= 0.5;<br />
+x5=-0.5; y5=0.5;<br />
+x6=0.5; y6=0.5;<br />
+<br />
+FRAME: <br />
+curpoint=0;<br />
+<br />
+POINT:<br />
+curpoint=curpoint+1;<br />
+x=(if(equal(curpoint,1),x1,<br />
+if(equal(curpoint,2),x2,<br />
+if(equal(curpoint,3),x3,<br />
+if(equal(curpoint,4),x4,<br />
+if(equal(curpoint,5),x5,x6))))));<br />
+<br />
+y=(if(equal(curpoint,1),y1,<br />
+if(equal(curpoint,2),y2,<br />
+if(equal(curpoint,3),y3,<br />
+if(equal(curpoint,4),y4,<br />
+if(equal(curpoint,5),y5,y6))))));<br />
+<br />
+<br />
+BUT, why this draws a square:<br />
+<br />
+Init<br />
+<br />
+n=5;<br />
+<br />
+Frame<br />
+<br />
+Rot=0;<br />
+Point=0;<br />
+<br />
+Beat<br />
+<br />
+Point<br />
+<br />
+x1=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+y1=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
+<br />
+x1=x1*0.5;<br />
+y1=y1*0.5;<br />
+<br />
+x=x1*cos(rot)-y1*sin(rot);<br />
+y=x1*sin(rot)+y1*cos(rot);<br />
+<br />
+point=if(equal(point,3),0,point+1);<br />
+<br />
+<br />
+  WHY??????????<br />
+<br />
+ok, I know it's a rotating square, but still is a square...<br />
+<br />
+<br />
+Thanks in advance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">21st September 2006, 18:08</div></div>
+<br />
+<div class="posttext">It'd take me four pages to explain that.. the best suggestion that I can give is that you write an input&gt;output scheme:<br />
+<br />
+if 'point' is 0, then what would happen with all of the values?<br />
+<br />
+etc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Paufer</div><div class="date small text-muted">21st September 2006, 20:54</div></div>
+<br />
+<div class="posttext">Well, I tried to think this way already, but I don't see the square in these codes...<br />
+<br />
+Any other sugestion??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">21st September 2006, 23:21</div></div>
+<br />
+<div class="posttext">Okay, I'll go through it with you:<br />
+I'll just handle the postion on the x-axis for the first point of the line.<br />
+<br />
+The formula:<br />
+x1=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+<br />
+point=0. (since it hasn't been defined yet)<br />
+<br />
+I'll split it in four parts:<br />
+<br />
+the first part: -equal(point,0)<br />
+point=0, so this results in: -equal(0,0)<br />
+equal(0,0) is true, so equal() returns 1.<br />
+There's a &quot;-&quot; in front of it, so here stands &quot;-1&quot; now.<br />
+<br />
+second part: +equal(point,1)<br />
+point=0, so this results in: +equal(0,1)<br />
+equal(0,1) is false, so equal() returns 0.<br />
+There's a &quot;+&quot; in front of it, so here stands &quot;+0&quot; now.<br />
+The complete line so far is: -1+0.<br />
+<br />
+Third part: +equal(point,2)<br />
+point=0, so this results in: +equal(0,2)<br />
+equal(0,2) is false, so equal() returns 0.<br />
+There's a &quot;+&quot; in front of it, so here stands &quot;+0&quot; now.<br />
+The complete line so far is: -1+0+0.<br />
+<br />
+Fourth part: -equal(point,3);<br />
+point=0, so this results in: -equal(0,4);<br />
+equal(0,4) is false, so equal() returns 0.<br />
+There's a &quot;-&quot; in front of it, so here stands &quot;-0&quot; now.<br />
+The complete line so far is: -1+0+0-0.<br />
+a &quot;;&quot; ends the line.<br />
+<br />
+-1+0+0-0=-1<br />
+<br />
+So, for the first point, x1=-1<br />
+<br />
+then we find that x1=x1*.5<br />
+-1*.5=.5<br />
+x1=-.5<br />
+<br />
+x=x1*cos(rot)-y1*sin(rot);<br />
+(I'll omit the rotation mumbojumbo as it is not relevant at this time)<br />
+<br />
+point=if(equal(point,3),0,point+1);<br />
+if point=3, then point=0. Otherwise point=point+1. <br />
+In this case, point was 0, so point becomes 1 now (0+1=1).<br />
+<br />
+This is done for the next point of the square (or better: line) that will be calculated.<br />
+(and when the line is finished, point'll be reset to 0)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Paufer</div><div class="date small text-muted">22nd September 2006, 00:24</div></div>
+<br />
+<div class="posttext">Okay, now I see a light in the end of the tunnel, but it is very complicated yet...<br />
+<br />
+I must be stupid or something, I get how the codes works, but I still don't see a square. I don't know how to explain it in english but I'll try:<br />
+<br />
+&quot;-1+0+0-0=-1<br />
+<br />
+So, for the first point, x1=-1<br />
+<br />
+then we find that x1=x1*.5<br />
+-1*.5=.5<br />
+x1=-.5&quot;<br />
+<br />
+ok, thats clear to me, but why or how does it change to 0.5 or the other values??<br />
+<br />
+<br />
+Sorry for bothering you with that... and thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">22nd September 2006, 23:35</div></div>
+<br />
+<div class="posttext">Take a simpler example and imagine the code is just this<br />
+<br />
+---<br />
+<br />
+frame:<br />
+<br />
+n=5;<br />
+point=0;<br />
+<br />
+point:<br />
+<br />
+x=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+y=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
+<br />
+point=if(equal(point,3),0,point+1);<br />
+<br />
+---<br />
+<br />
+the point code is executed 5 times because n=5; for each pass of the point code the variable 'point' will be 0,1,2,3,0 in that order.<br />
+<br />
+When point=0:<br />
+<br />
+equal(point,1) = 0<br />
+equal(point,2) = 0<br />
+equal(point,3) = 0<br />
+<br />
+only 'equal(point,0)' is non-zero, it equals 1. So for this value of point, x=-1 and y=1<br />
+<br />
+When point=1:<br />
+<br />
+equal(point,0) = 0<br />
+equal(point,2) = 0<br />
+equal(point,3) = 0<br />
+<br />
+only 'equal(point,1)' is non-zero, it equals 1. So for this value of point, x=1 and y=1<br />
+<br />
+if you follow this logic for each execution of the point code you get:<br />
+<br />
+(first pass, point=0)  x=-1,y=1<br />
+(second pass, point=1) x=1,y=1<br />
+(third pass, point=2)  x=1,y=-1<br />
+(fourth pass, point=3) x=-1,y=-1<br />
+(fifth pass, point=0)  x=-1,y=1<br />
+<br />
+It should (hopefully) be apparent that this renders a closed square.<br />
+<br />
+Hope this helps</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Paufer</div><div class="date small text-muted">23rd September 2006, 16:58</div></div>
+<br />
+<div class="posttext">yeah, thanks PAK-9 and Warrior!!!<br />
+Now I understand, but still, you have to think quite a bit to draw things in the SSC...<br />
+<br />
+Well, I think that just practicing I'll get it...<br />
+<br />
+Thanks again!!</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

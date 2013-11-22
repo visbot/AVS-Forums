@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Glass Cubes, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Glass Cubes AVS Presets" />
+	
+	<title> Glass Cubes - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Glass Cubes</li>
+</ol>
+<!-- div class="pda"><a href="t-130235.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=130235">Glass Cubes</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 02:35</div></div>
+<br />
+<div class="posttext">Well this had the potential for greatness but that collapsed when i realised the major problem. I was originally making a glass rubix cube with 27 separate cubes out of translucent sides using the bnot function but after making 5 i realised it had a tremendouslylow FPS. This is what i stuck with eventually but the FPS is utter shite. I might just scrap it on the grounds that FPS is greatly important. What do you think?<br />
+<br />
+edit: just did this at 2am, realised some wstupid things i did, will change attatchment/repost it very soon.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 02:45</div></div>
+<br />
+<div class="posttext">You could calculate the 'n' value of the scopes dynamically so only the minimum points required is used... oh and why are you using all those effect lists? They are a source of slowdown too.<br />
+<br />
+Oh and use the correct aspect ratio! Your scopes all look squashed in a rectangular window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 03:00</div></div>
+<br />
+<div class="posttext">I think it looks nice, but it is extremely slow.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 03:12</div></div>
+<br />
+<div class="posttext">I managed to drag up the FPS quite a bit and made it look even better. I've yet to optimise the code don't worry it will get done. It has that awful &quot;monster&quot; for the 3d rotation in x and y and i've yet to fix aspect ratio. The effect is there though. Fix the code tomorrow need sleep now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 03:22</div></div>
+<br />
+<div class="posttext">Yeah, the code could definitely use some optimizations.  Take out the effect lists and all but one of the render modes(at the beginning).  Also, I would try doing the &quot;lighting&quot; a bit better.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">30th March 2003, 06:49</div></div>
+<br />
+<div class="posttext">This may be of help.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">30th March 2003, 08:26</div></div>
+<br />
+<div class="posttext">unconed...please...please...please...please...stop bitching about aspect ratios.  if it's not fixed by the time the pack is released, then you can bitch.  otherwise STFU N00B</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">30th March 2003, 10:36</div></div>
+<br />
+<div class="posttext">raz..what kinda pc do you have, a SUPER COMPUTER?<br />
+i dont get even 4 fps on my pc!<br />
+please remove all those effect lists with the input/output both set to replace</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">30th March 2003, 13:44</div></div>
+<br />
+<div class="posttext">Atero, did you even LOOK at my sexy 3x3x3 glass cube?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 14:25</div></div>
+<br />
+<div class="posttext">Atero: here's the deal... I fire up the preset, notice the squashed rotation immediately and it looks ugly to me. I didn't even look at the code.<br />
+<br />
+It takes 5 seconds to fix this and it ruins a preset for me. Just like bouncy camera movement or scopes that are unnecessarily repetitive and or restricted (like using sin(t) and cos(t) for two rotation angles).<br />
+<br />
+Maybe I'll do a grep 'Atero getosc rand %' and see how much comes up?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 14:43</div></div>
+<br />
+<div class="posttext">I suppose this is an error?<br />
+z3=z2*(cos(xx))-y2*(sin(xx));<br />
+y3=y2*(cos(xx))+z2*(sin(xz));</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 14:49</div></div>
+<br />
+<div class="posttext">Used a hexeditor to remove some inefficiencies (fixed the x/y calculation and cached the cosines/sine). Et voilà: the preset goes from 13.4 FPS to 18.4 here.<br />
+<br />
+Raz is lucky all the scopes are nearly the same, so he could simply optimize one and duplicate it around the place, but still it's best to optimize a bunch of nearly-identical scopes from the beginning.<br />
+<br />
+(ignore the £---;, it's there to preserve the length of the code)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 15:42</div></div>
+<br />
+<div class="posttext">Wow, thanks man. I just finished doing near enough the exact same thing though with the sin's and cos's, jesus i've even used the same variable names for them. maybe ive been staring at your code in wonder too long. You've done the x and y thing differently though and i'm going to presume your way is better so i'll probably combine some things from my way and yours. Thanks a lot though, great optimisations.<br />
+<br />
+this is what i did:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 16:11</div></div>
+<br />
+<div class="posttext">I thought one of you would do this, but yyy and zzz aren't used and they can be removed.  Don't know how big of a difference it will make FPS-wise, but it could help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 17:31</div></div>
+<br />
+<div class="posttext">Now this, i love. It brings the FPS down again a little but it also turns it into a preset and not an idea. I've done a shit-ton of optimising and here it is:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 17:41</div></div>
+<br />
+<div class="posttext">That's nice, but it is a tad slower.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">30th March 2003, 19:39</div></div>
+<br />
+<div class="posttext">I like it, but it looks a little to chaotic and fast at times.  To me, the silvery ones look better.  The glassy one looks wierd at times.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">30th March 2003, 19:57</div></div>
+<br />
+<div class="posttext">no i didn't, cos i was on my uberuberubershitty computer, and seeing as how slow everybody said it was, i wasn't even going to fuck with it.<br />
+<br />
+but i'll look at it now...<br />
+<br />
+as for the look: i think you should be rendering each scope w/maxblend, but adding them to the rest of the picture:<br />
+EL (ignore, additive)<br />
+.render mode: maxblend<br />
+.superscope<br />
+EL (ignore, additive)<br />
+...<br />
+haven't tested it yet, but it's worth a try.  the cubes should also change color.  lastly: don't use straight up getosc for syncing!  use something like (getosc(...)*bignumber)%returns as a replacement for rand(returns).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 21:09</div></div>
+<br />
+<div class="posttext">Hate to sound nasty, but it's still inefficient... divisions are slower than multiplications. So:<br />
+<br />
+iz=(1+(5+z3)*0.3);<br />
+x=x3/iz;<br />
+y=y3/iz*(w/h);<br />
+<br />
+can be changed into:<br />
+<br />
+iz=0.3/(8+z3);<br />
+x=x3*iz;<br />
+y=y3*iz*(w/h);<br />
+<br />
+Oh and you should store w/h into some variable onframe, so you lose that division too. Remember that this stuff is being executed for every point (a couple hundred times), so small optimizations in per-point can make a huge difference!<br />
+<br />
+About your 3D scope code... I wonder why you divide z3 by 3. This has the effect of zooming in on the picture (reducing the camera angle) and makes everything looks flatter. Check out the attachment (note: I'm editing, attachment will be in next post), where I quickly modified your preset so it has a normal, 90° field-of-view. Notice how there is much more depth-perception. Anyway you might've done this on purpose, I don't know.<br />
+<br />
+As for the preset, I like the looks, but you should play with it some more. How about you make every cube-surface light on/off onbeat, perhaps in a certain color? Because the cubes are glass, the incorrect depth occlusion won't matter much.<br />
+The edges are a nice touch, but the color changes are hardly noticable.<br />
+Oh and if you have really loud music, the movement goes pretty nuts: try playing with it some more so it moves at a more constant speed. You can use getspec(0,0,0) as a volume indicator, especially when averaged over time (vol=vol*.9 + getspec(0,0,0)*.1 or something)<br />
+<br />
+I ridiculed Atero's nagging a bit, but it's valuable nevertheless. Using a regular getosc for responsiveness makes you preset respond to only one sample of sound. This is good if all you want is a random-ish number, but not for variables such as rotation and speed, because they'll be too chaotic.<br />
+<br />
+The best way to learn this kind of stuff is to make a moving-particle-like scope. Try making a dot that moves around at constant speed towards a random point, or one that accelerates and slows down in accordance with the beat.<br />
+<br />
+Sometimes, the most important dimension in a preset is time: if a preset doesn't 'flow' nicely, it won't matter how it looks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th March 2003, 21:24</div></div>
+<br />
+<div class="posttext">(Attachment for post above)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">30th March 2003, 21:34</div></div>
+<br />
+<div class="posttext">Looks great.  I like how the central cube that faces the screen is brighter than the cubes on the other sides.  Good job Raz,UnConeD and other &quot;remixers.&quot;:up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 22:02</div></div>
+<br />
+<div class="posttext">Hmm, i'd forgotten about that thanks. I originally did it because i thought it would look too much like my electric cube preset because i started with the same rotations and then modified them so that the z axis was smaller. I  divided it by something smaller and additive blended things. Here's what i got now<br />
+<br />
+btw thanks for all your help and comments everyone. You're all great :up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">30th March 2003, 23:44</div></div>
+<br />
+<div class="posttext">Wow, even better.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">31st March 2003, 09:30</div></div>
+<br />
+<div class="posttext">Hah! Sweet preset(s) ! Raz I WANT YOUR PACK !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shape</div><div class="date small text-muted">31st March 2003, 17:58</div></div>
+<br />
+<div class="posttext">I optimize some there, get 60fps in docked...<br />
+optimized points num,<br />
+optimized rotation algorithm.<br />
+But my answer is late...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">31st March 2003, 18:14</div></div>
+<br />
+<div class="posttext">thanks man, great optimisations. I'd already done the cos and the sin thing but i hadn't done the n optimisations. Thanks :up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">unripeLemon</div><div class="date small text-muted">31st March 2003, 19:38</div></div>
+<br />
+<div class="posttext">:eek: God, it is slow.  On my computer it's 1 frame per second</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">31st March 2003, 19:46</div></div>
+<br />
+<div class="posttext">I have the tossest of computers and it runs at 13 with all the optimisations that i've done but not posted.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">unripeLemon</div><div class="date small text-muted">31st March 2003, 19:53</div></div>
+<br />
+<div class="posttext">I think that this post has had the most exchange of presets I have ever seen!</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

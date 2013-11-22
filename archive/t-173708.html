@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS Debug Information, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS Debug Information AVS" />
+	
+	<title> AVS Debug Information - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">AVS Debug Information</li>
+</ol>
+<!-- div class="pda"><a href="t-173708.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=173708">AVS Debug Information</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Hip Hop</div><div class="date small text-muted">17th March 2004, 15:00</div></div>
+<br />
+<div class="posttext">Please tell me general functionality of this option if you know.<br />
+<br />
+What's meaning Disable SEH for effects (for APE developers who want to debug their APEs)?<br />
+<br />
+Please tell me completely information about Debug Window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">17th March 2004, 15:59</div></div>
+<br />
+<div class="posttext">the debug window is for debugging your AVS presets ;)<br />
+<br />
+Global register (reg00-reg99) watch:<br />
+you can enter register numbers (00-99) on left and the window displays the corresponding register content on the right side.<br />
+<br />
+Unchecking the &quot;Clear all local variables on all code recompiles&quot; keeps the content of the local variables when changing code in SuperScope, Texer II, Effect List or Dynamic Movement.<br />
+<br />
+AVS provides an extension mechanism called APE (Advanced Plugin Effects i think :) ).<br />
+an .ape file is basically a renamed DLL file containing an effect for AVS<br />
+SEH is some kind of bullet-proof error handling which is normally nice because it catches errors caused by plugins.<br />
+If you need the errors, probably to debug your plugin, you'll have to check the &quot;Disable SEH for effects&quot; checkbox to disable this function.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">17th March 2004, 19:49</div></div>
+<br />
+<div class="posttext">SEH = standard exception handler.<br />
+<br />
+If a plug-in crashes, Winamp captures it and says &quot;Plugin performed illegal operation, it is advised to restart Winamp.&quot;, but your music keeps playing.<br />
+When the SEH is disabled, you will get a 'regular' crash which allows for easier debugging for plug-in authors.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

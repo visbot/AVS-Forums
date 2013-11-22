@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" New edit box in codable effects, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" New edit box in codable effects AVS Wishlist" />
+	
+	<title> New edit box in codable effects - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">New edit box in codable effects</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-172028.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=172028">New edit box in codable effects</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Neoavs</div><div class="date small text-muted">4th March 2004, 15:43</div></div>
+<br />
+<div class="posttext">I was thinking of an On KbMouse edit box in AVS' codable effects. Now we use getkbmouse on frame. OK. To get the key it's simple. But how to fix the result? Yes it's an easy code (when you know it), but more simple if we have an on kbmouse edit box which code is executed everytime a key is pressed (this also can save fps, i think).<br />
+<br />
+So instead of (i took my mouse press detection):<br />
+ONFRAME:<br />
+*code locating mouse position*<br />
+in=cx&amp;cy; //check if both coordinates are in range<br />
+mb=getkbmouse(3); //check if mouse is pressed<br />
+pip=in&amp;mb; //check if mouse pressed in range<br />
+p=(p+pip)*pip; //is like when you press the button, it's keeps adding up, but when you release it becomes 0<br />
+reg10=if(equal(p,1),bnot(reg10),reg10); //if there is press, makes reg10, if 0 then 1, if 1 then 0 (bnot), if there is no press, then it remains what it was. you can't just use pip instead of p because it remains 1 all the time if there is press so it keeps bnot'ing.<br />
+<br />
+We can use:<br />
+ONKBMOUSE:<br />
+*code locating mouse position*<br />
+in=cx&amp;cy;<br />
+mb=getkbmouse(3);<br />
+pip=in&amp;mb;<br />
+reg10=if(pip,bnot(reg10),reg10); //we removed p because this ONKBMOUSE executes only when key is pressed, when there is keydown or smth. it doesn't execute while key is pressed, it executes when it is pressed.<br />
+<br />
+So we save 1 variable, and code doesn't execute every frame doing nothing (when key not pressed).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Shock Value</div><div class="date small text-muted">4th March 2004, 20:57</div></div>
+<br />
+<div class="posttext">As far as saving variables goes, the limit was removed in the latest version of AVS so don't worry about that. And executed code in the frame box really shouldn't slow AVS down noticably unless you are using very large loops. I should know--one of my presets has about 200 lines of code in the frame box (although I'll admit that not all lines are executed each frame, but the majority are). When I removed the code, I saw no increase in speed at all, at most it was .1 or .2 frames per second (and the framerate was about 100fps, so small changes should have been noticable).</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

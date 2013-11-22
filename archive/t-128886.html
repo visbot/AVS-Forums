@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Surface fading, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Surface fading AVS Troubleshooting" />
+	
+	<title> Surface fading - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Surface fading</li>
+</ol>
+<!-- div class="pda"><a href="t-128886.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=128886">Surface fading</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">18th March 2003, 11:47</div></div>
+<br />
+<div class="posttext">I got a question.<br />
+<br />
+How to make a surface fade in the distance?<br />
+<br />
+I use the following code to make a surface:<br />
+<br />
+d=d/((y*2.2+3)*2)<br />
+<br />
+<br />
+Now this works perfectly, but if i make the last 2 bigger (for example 5) it gets a little messy in the further parts of the surface.<br />
+<br />
+Is there an easy way to make a sort of fade or smog in that distance? Any help would be greatly appreciated,<br />
+<br />
+Thanks in advance,<br />
+<br />
+Deamon</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 12:01</div></div>
+<br />
+<div class="posttext">You want to use alpha blending.  Search the forums to figure out how.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">18th March 2003, 15:47</div></div>
+<br />
+<div class="posttext">ok, I will. Thank you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">19th March 2003, 05:29</div></div>
+<br />
+<div class="posttext">finished?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th March 2003, 22:34</div></div>
+<br />
+<div class="posttext">wtf are you talking about, shreyas....the thread was ended, don't drag it out</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">20th March 2003, 10:44</div></div>
+<br />
+<div class="posttext">ok, since something about movement is started, i wanted to ask a question, but didnt want to start a new thread for it, because it is probably stupid.<br />
+in static movment for polar coord d=0..1. then how does d=-d work.<br />
+does avs convert polar into rectangular coords?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">20th March 2003, 12:04</div></div>
+<br />
+<div class="posttext">It reverses the distance from the center of the screen for each pixel.  This effectively rotates it about the origin(I believe).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">21st March 2003, 08:37</div></div>
+<br />
+<div class="posttext">so id  d=-1 then does avs convert it into rect coords so:<br />
+x=sin(r)*d;<br />
+ =sin(r)*-1<br />
+y=cos(r)*d;<br />
+ =cos(r)*-1;<br />
+i think this will rotate the thing, otherwise how can distance be negative?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st March 2003, 15:57</div></div>
+<br />
+<div class="posttext">Arg, my reply didn't post. :mad:<br />
+<br />
+Imagine a series of lines all going through origin (d=0). Each point on the screen is identified a distance down the line. When d is negative, it goes down the line in the opposite direction.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st March 2003, 20:15</div></div>
+<br />
+<div class="posttext">Shreyas: ALWAYS start a new thread if it's about something else. Adding stuff to non-related threads makes the forum harder to search.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">22nd March 2003, 05:10</div></div>
+<br />
+<div class="posttext">ok, I will remember</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

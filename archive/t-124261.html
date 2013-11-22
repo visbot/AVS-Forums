@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 3d sphere, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 3d sphere AVS Troubleshooting" />
+	
+	<title> 3d sphere - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> 3d sphere</li>
+</ol>
+<!-- div class="pda"><a href="t-124261.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=124261">3d sphere</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">7th February 2003, 21:30</div></div>
+<br />
+<div class="posttext">Hey :)<br />
+ I have searched the forums and i came up with several presets containing code to make a sphere...None of them was too great so i was wondering if you can tell me the simplest way to make one :) I`ve seen movements that create a sphere from a simple scope and scopes recreating the effect but i didnt like it.You need pi in the ecuation right ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">7th February 2003, 22:00</div></div>
+<br />
+<div class="posttext">The easiest way to create a sphere is to create a spiral on the xz plane, but have the y variable change from -r to r.  This will create the sphere that looks like a coil that starts small at the top, gets big in the middle, and gets small again at the bottom.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">7th February 2003, 23:47</div></div>
+<br />
+<div class="posttext">If you make a spiral like that, you should have an equal spread across the surface, not have the y var increase linearly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">7th February 2003, 23:48</div></div>
+<br />
+<div class="posttext">parameterization for a sphere:<br />
+x=sin(theta)*sin(phi);<br />
+y=cos(theta)*sin(phi);<br />
+z=cos(phi);<br />
+where theta and phi are angles.  this gives you a point on the sphere, gravitating towards two poles...anyone know of any way to make a randomly-generated point sphere that doesn't do this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">9th February 2003, 00:11</div></div>
+<br />
+<div class="posttext">Create a 3D box of points, then normalize each one to the radius required.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">9th February 2003, 21:31</div></div>
+<br />
+<div class="posttext">Thanks for your ideas...Im working on a scope right now to make a 3d sphere that moves...I believe it will replace a dm with success :) Now another small question : is theta recognised by AVS ? i saw a preset with theta and it had no value in init or anywhere else...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">9th February 2003, 21:43</div></div>
+<br />
+<div class="posttext">No its not recognized by avs.  Are you sure it wasn't used in x=... or y=...?  Variables don't have to be initialized - they default to zero.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">9th February 2003, 21:46</div></div>
+<br />
+<div class="posttext">It was in x=... I`ll try to look it up in my preset library hehe.Except x,y,d,r and all that crap are there some other variables avs have incorporated ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">9th February 2003, 21:47</div></div>
+<br />
+<div class="posttext">Search the forums.  This has been adressed.  Probably somewhere in the FAQ. Also, look below the per pixel box.  It tells you all of the variables there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">9th February 2003, 21:53</div></div>
+<br />
+<div class="posttext">I have that forum thread with variables saved :) I meant unknown variables as in easter eggs or hidden in the code...like pi(i hope avs would contain it...writing pi=acos(-1) everytime is boring).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">9th February 2003, 22:27</div></div>
+<br />
+<div class="posttext">No, there are no easter egg variables in AVS.  They didn't document a couple of functions, though.  atan2(x,y) and another one(can't remember what it is).  These have also been mentioned in the forums.  Use the search feature.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">10th February 2003, 02:03</div></div>
+<br />
+<div class="posttext">the other one is:<br />
+exp(var)::e^var<br />
+as in the inverse of:<br />
+log(var)::ln var</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">10th February 2003, 02:06</div></div>
+<br />
+<div class="posttext">Thanks Atero.  I'd forgotten that one as I never use it(or log for that matter).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">10th February 2003, 06:05</div></div>
+<br />
+<div class="posttext">Something that is stupidly missing though is a Base X log of Y function. They should implement a Log2(x,y) that should be is the same as: Log Y / Log X</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">10th February 2003, 08:58</div></div>
+<br />
+<div class="posttext">Zevensoft, there's no point in that really, because your CPU calculates it exactly the same way. An x86 cpu can only take base-2 logarithms.<br />
+<br />
+Any other logarithm is calculated as log2(y) / log2(x).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">11th February 2003, 11:39</div></div>
+<br />
+<div class="posttext">Thanks for your tips...Im working on a superscope trying to recreate a sphere :) I want to make a big big one change into dots and make it move.I`ve seen it several times and its amazing how it goes :) Btw...does AVS have any easter eggs at all ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">11th February 2003, 12:34</div></div>
+<br />
+<div class="posttext">No, just two functions that aren't documented - atan2(x,y) and exp(x).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">14th February 2003, 17:03</div></div>
+<br />
+<div class="posttext">I dont know who made this, but it was on my comp... maybe it could help?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">16th February 2003, 20:47</div></div>
+<br />
+<div class="posttext">Thanks for the file but i already have it :) Im trying to figure it out and i dont understand why the creator used such big numbers when i modified the preset and it work with smaller numbers too...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">16th February 2003, 21:39</div></div>
+<br />
+<div class="posttext">He used bigger numbers to create a better random number generator.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">16th February 2003, 22:22</div></div>
+<br />
+<div class="posttext">Now that i think about it.. I think it was made by UnConeD but im not 100% sure.. actually i'm not sure at all, but I get this feeling it was.<br />
+<br />
+I'm not saying im physcic or anything..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">17th February 2003, 05:19</div></div>
+<br />
+<div class="posttext">Yeah, that was UnConed.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

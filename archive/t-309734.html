@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS v2.82 in Winamp 5.56: SuperScope defect, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS v2.82 in Winamp 5.56: SuperScope defect AVS Troubleshooting" />
+	
+	<title> AVS v2.82 in Winamp 5.56: SuperScope defect - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> AVS v2.82 in Winamp 5.56: SuperScope defect</li>
+</ol>
+<!-- div class="pda"><a href="t-309734.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=309734">AVS v2.82 in Winamp 5.56: SuperScope defect</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">LigH</div><div class="date small text-muted">10th August 2009, 08:11</div></div>
+<br />
+<div class="posttext">What used to work for months and years, doesn't work anymore in the latest AVS plugin: It appears to me that the SuperScope waveform viewer does not create any output. Or did you change something completely about parameters or value ranges?<br />
+<br />
+Example: A colored phase display<br />
+<br />
+[Init]<br />
+n=1024; d=7/n; qpi=atan(1)*1.05;<br />
+<br />
+[Frame]<br />
+x=0; y=0;<br />
+<br />
+[Beat]<br />
+<br />
+[Point]<br />
+l=getosc(i,d,1); r=getosc(i,d,2);<br />
+c=sin(qpi*(l+r)); s=sin(qpi*(l-r)); <br />
+y=c*0.9; x=s*0.95;<br />
+blue=abs(x*2); red=abs(y*1.5);<br />
+green=1.2-(sqr(x)+sqr(y));<br />
+<br />
+Drawing mode: Waveform, Center, Lines, 1 color = white<br />
+<br />
+Used to work in all versions up to 5.55x; now with Winamp 5.56 there was an update to AVS v2.82, and suddenly there is no more output.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">10th August 2009, 11:11</div></div>
+<br />
+<div class="posttext">It's a known bug, please see this thread: http://forums.winamp.com/showthread.php?threadid=303684</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

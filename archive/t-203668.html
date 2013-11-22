@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" preset, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" preset AVS Presets" />
+	
+	<title> preset - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">preset</li>
+</ol>
+<!-- div class="pda"><a href="t-203668.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=203668">preset</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">varun_mark</div><div class="date small text-muted">2nd January 2005, 06:14</div></div>
+<br />
+<div class="posttext">i tried to co-ordinate the texer ii and the ssc but alas!failed miserably.could someone hellp me out here?<br />
+anyway it worked 2 my advantage in the second one.Would make a pretty good base for a preset or so i think;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">2nd January 2005, 09:03</div></div>
+<br />
+<div class="posttext">umm change the rotation values to the same maybe?.......</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">2nd January 2005, 09:16</div></div>
+<br />
+<div class="posttext">To mattfury:<br />
+shut the fuck up, you cannot make anything yourself, this was no help you have offered. he asked for syncing rotation, he will get the help for it cause we do know that is his problem.<br />
+<br />
+To varun-mark:<br />
+the solution is dead easy. so is the cause why it doesn't work.<br />
+<br />
+you assigned random values to &quot;p&quot; in each renders. what you don't know (i assume you don't because you made the mistake), is that every render generates its values independantly. so there are two values generated randomly. thats why there can be 1 and 2 and 1 and 1 and so on.<br />
+<br />
+solutions for the problem:<br />
+1. easiest is to use possibilities of the regXX features of avs. you store the rotation of one scope (or texer2) in regXX (this can be reg00-reg99 and is used in scopes, texer2s, DMs and movements), and then recall the value in other scopes.<br />
+<br />
+Don't change anything else, just type this into the first render's per frame section:<br />
+<br />
+t=t+.03;<br />
+p=(p-pp);<br />
+reg01=t;<br />
+reg02=p;<br />
+<br />
+<br />
+and then in the other render into per frame:<br />
+<br />
+t=reg01;<br />
+p=reg02;<br />
+<br />
+<br />
+it should work like a charm. the other solution is to assign not random values, but music values to variables, because they have the same value in every effect. write this into both render's onbeat section:<br />
+<br />
+pp=0.1*getspec(0.1,0.1,0)<br />
+<br />
+<br />
+hope this helped.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">varun_mark</div><div class="date small text-muted">2nd January 2005, 16:53</div></div>
+<br />
+<div class="posttext">thanks hboy.it worked out pretty well,also gave me the idea for this one.what do you think?<br />
+<br />
+he who knows no fear,basically knows no fear :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">2nd January 2005, 17:08</div></div>
+<br />
+<div class="posttext">no fear of what? anyways, not bad preset, nice pseudo-3D you have made. boring after 20 seconds, but a nice try :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">StoneyMahoney</div><div class="date small text-muted">2nd January 2005, 20:33</div></div>
+<br />
+<div class="posttext">Ditch the text and you've got a very nice component. Drop a load more stuff in there with it, and it'll rule. Maybe throw a sphere in the middle, like a rings of Saturn kinda thing maybe?<br />
+<br />
+Shall I shut up now? ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">varun_mark</div><div class="date small text-muted">3rd January 2005, 01:39</div></div>
+<br />
+<div class="posttext">yes.bit i couldn't make any great looking combo for it'stoney,so i put it up with some trash text.anyway,working on it though,hope 2 put it up soon for your visual pleasure:cool:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

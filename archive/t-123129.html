@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Ever wanted to make a torus...., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Ever wanted to make a torus.... AVS" />
+	
+	<title> Ever wanted to make a torus.... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Ever wanted to make a torus....</li>
+</ol>
+<!-- div class="pda"><a href="t-123129.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=123129">Ever wanted to make a torus....</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th January 2003, 23:13</div></div>
+<br />
+<div class="posttext">Okay. I have had a lot of requests for a parameterisation for a torus. Here is one complete with explaination:<br />
+<br />
+where u and v are the parameters (u from -pi to pi or spread over any 2pi wide interval)<br />
+<br />
+x=(r*(cos(v)+1)+R)*cos(u));<br />
+y=r*sin(v);<br />
+z=-(r*(sin(v)+R)*sin(u));<br />
+<br />
+Where r is the radius of one of the circles from a slice through the torus (the minor radius) and R is the radius of the circle made up from the centres of all of the circles comprising the torus (the major radius). The way that I made this parameterisation is pretty simple. Firstly I defined a circle in the xy plane with x=cos(v),y=sin(v) then offset it in the x axis by R+r. The final step was to rotate the circle parametrically around the y axis using the y-axis rotation matrix with u as the rotation angle to create a helix that would bend round into a torus.<br />
+<br />
+Unfrotunately this method can *not* be extended simply for n-tori. To find parameterisations for these shapes you would need to rotate the circle first in the desired way and then shift it around a 3 dimensional path... something that I can't be bothered to work out right how to do right now.<br />
+<br />
+NOTE: There may be better/faster parameterisations for the torus, this is just the easiest one to workout.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th January 2003, 15:07</div></div>
+<br />
+<div class="posttext">Strange, a torus was one of the things I found easiest to figure out myself... take a circle and swoop it around a point :).<br />
+<br />
+Oh and don't forget, if it's a FAQ for you, get it added to the FAQ.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th January 2003, 16:43</div></div>
+<br />
+<div class="posttext">Waaah...no n-tori :( *tear, tear*</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

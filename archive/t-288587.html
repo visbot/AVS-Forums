@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" glowing effects, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" glowing effects AVS" />
+	
+	<title> glowing effects - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">glowing effects</li>
+</ol>
+<!-- div class="pda"><a href="t-288587.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=288587">glowing effects</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">kaanersan</div><div class="date small text-muted">16th March 2008, 11:08</div></div>
+<br />
+<div class="posttext">Hi developers,<br />
+<br />
+First thank you for creating such cool visualizations.<br />
+I'm going to be making a presentation on winamp plug-in development. I was just wondering how are those glowing effects are made on visualizations? Not just basic vector graphics but the glowing effects kind of like light effects fading into black background usually.<br />
+<br />
+Any help is very much appreciated.<br />
+Cheers,<br />
+Kaan</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">17th March 2008, 01:43</div></div>
+<br />
+<div class="posttext">you're going to have to be more specific. can you give us a certain example of where you've seen the effect?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">AJ Sindri</div><div class="date small text-muted">17th March 2008, 05:50</div></div>
+<br />
+<div class="posttext">There are several effects you could be talking about; but first, let me explain how the AVS basically works.<br />
+ <br />
+The two main ways of creating a preset is rendering, or â€œdrawingâ€, an object and the second is applying a transition, or manipulating the picture that you made. For example, if I wanted to render a light-saber-like-thing, I would create multiple see though particles periodically along an imaginary line defined by a parametric equation. Depending on how the particles are blended into their surroundings and what kind of particles I used, the line could be a thick solid line, a line with a glow or even subtract from their surroundings. <br />
+<br />
+Once Iâ€™ve made an object, I can apply transition effects, like a blur or convolution matrix. If I place one of these effects in a feed-back loop, like a blur rounded up, one particle placed in one frame will eventually engulf the screen. Of course, most presets also have a limit on how far a blur can expand, fading into black. These particles can then be mapped to a color map. One effect you may be talking about it called trans&gt;bump, which projects a light onto an image.<br />
+<br />
+I really agree with Mr_Nudge, you need to be specific to what effect or effect in a preset youâ€™re talking about. You can access the AVS editor by left clicking on the AVS window. For further questions, a great resource is PAK-9â€™s programming guide, at http://<br />
+pak-9.deviantart.com/art/AVS-Programming-Guide-11200891. <br />
+<br />
+I hope this helps...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">kaanersan</div><div class="date small text-muted">17th March 2008, 15:56</div></div>
+<br />
+<div class="posttext">Wow, thanks a lot, this really helped.<br />
+<br />
+Actually, I'm going to have to ask my prof. what he exactly meant when he said the glowing effects because I'm not even sure and I couldn't find an example of what I thought he meant anywhere so I'll ask him to show me an example or the effect name he means.. However I'm still not sure about presets in AVS and actual visualizations... Is this a language where you create visualizations using a set of presets and definig parameters of these presets?? I will be reading the AVS-Programming Guide-11200891 very soon...<br />
+<br />
+Oh and I really liked the Unconed - Mister Santa visualization... Is there a specific way to do that (i.e. loading images) or is he just drawing objects as you explained?<br />
+<br />
+And I think I want to do something similar to that one, I'm thinking of doing dancing stick figures with beat detection... Wish me luck :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">20th March 2008, 22:36</div></div>
+<br />
+<div class="posttext">AVS is basically assembling effects and modifying the parameters. however, AVS does support custom code in a few more powerful effects which makes it far more versatile than most visualizers.<br />
+<br />
+Unconed is not using images in this preset, he is using one of the more powerful tools mentioned above to actually write the objects through code (e.g. mathematical expressions)<br />
+<br />
+grandchild</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">21st March 2008, 20:56</div></div>
+<br />
+<div class="posttext">basically you do it the same way as in photoshop, though there are multiple ways to do it. most commonly you add a layer (=effectlist) add a blur (convolution filter is the better blur) and change the layer effect (=blending)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th March 2008, 11:42</div></div>
+<br />
+<div class="posttext">A nice trick is to downsize the render with a movement before doing a convo, then scale it back up. This way the blur becomes much bigger, giving a nice tasty bloom effect if you use with additive blend and an appropriate color map.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">29th March 2008, 20:49</div></div>
+<br />
+<div class="posttext">Here this will help ya.<br />
+its a convo based bloom filter on a 3d torus.<br />
+i nailed it here sometime gao.<br />
+maybe it will be useful you never know.<br />
+rhyming not intended :P</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" superscope query, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" superscope query AVS" />
+	
+	<title> superscope query - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">superscope query</li>
+</ol>
+<!-- div class="pda"><a href="t-313073.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=313073">superscope query</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">gelo</div><div class="date small text-muted">27th September 2009, 13:04</div></div>
+<br />
+<div class="posttext">hey guys im wonderin if you can guide me on creating a simple box that changes brightness depending on the sound comming in.<br />
+<br />
+so basically a time domain scope but is brightest when the wave is at its peak?<br />
+<br />
+if oyu see what i mean?<br />
+<br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">27th September 2009, 19:18</div></div>
+<br />
+<div class="posttext">I really don't get it..<br />
+<br />
+I think you mean a (rotating?) 3D 'wireframe' (open) box where the lines are the scopes, but with brightness instead of vertical movement.. Then, how would time be involved? or am I completely wrong?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">gelo</div><div class="date small text-muted">27th September 2009, 20:03</div></div>
+<br />
+<div class="posttext">na all im trying to do is create a solid square which changes brightness goverend by the sound NOT the beat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">27th September 2009, 22:01</div></div>
+<br />
+<div class="posttext">Here is a quicky made one:<br />
+<br />
+(Add a superscope and use this as the code.)<br />
+<br />
+Init:<br />
+n=1000;<br />
+<br />
+Frame:<br />
+asp=h/w;<br />
+c=0;<br />
+<br />
+Point:<br />
+x=(i-.5)*asp;<br />
+y=if(c,0,1)-.5;<br />
+c=bnot(c);<br />
+<br />
+col=getspec(0.1,.1,0);<br />
+red=col;green=col;blue=col;<br />
+<br />
+<br />
+Hope that helps.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">gelo</div><div class="date small text-muted">28th September 2009, 19:53</div></div>
+<br />
+<div class="posttext">THANKS DUDE!!!<br />
+<br />
+just what i needed!! no i can experiment my idea!<br />
+<br />
+<br />
+:D</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

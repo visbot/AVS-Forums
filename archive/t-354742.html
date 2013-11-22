@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" adapting AVS to HTML5, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" adapting AVS to HTML5 AVS" />
+	
+	<title> adapting AVS to HTML5 - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">adapting AVS to HTML5</li>
+</ol>
+<!-- div class="pda"><a href="t-354742.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=354742">adapting AVS to HTML5</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">18th January 2013, 13:37</div></div>
+<br />
+<div class="posttext">is there maybe already an adaption to HTML5 made or is someone interested to start a project to do that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">19th January 2013, 00:11</div></div>
+<br />
+<div class="posttext">erm.. no! unconed has ported an old preset of his to javascript though<br />
+<br />
+http://acko.net/blog/js1k-demo-the-making-of/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">19th January 2013, 15:55</div></div>
+<br />
+<div class="posttext">There's a html5 version of milkdrop if you're interested: http://blog.nihilogic.dk/2009/03/javascript-canvas-sm2-milkdrop.html<br />
+<br />
+<br />
+An actual html5 AVS clone would be a lot of work.<br />
+Although with Adobe adding all the photoshop blend modes to the css/canvas specs and WebGL it should be possible from the rendering perspective.<br />
+You'd also need to interrupt the language (maybe some regex and eval could help) and clone all the drawing functions and popular apes.<br />
+Also what is the actual state of the audio api? http://en.wikipedia.org/wiki/HTML5_Audio :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">28th January 2013, 14:07</div></div>
+<br />
+<div class="posttext">There's a html5 version of milkdrop if you're interested: http://blog.nihilogic.dk/2009/03/javascript-canvas-sm2-milkdrop.html<br />
+<br />
+<br />
+Although with Adobe adding all the photoshop blend modes to the css/canvas specs and WebGL it should be possible from the rendering perspective.<br />
+<br />
+unconed and nemoorange are experimenting a lot with webgl, i suggest following them on twitter. as you said, it's uncertain how audio can be incorporated into this (javascript?), though i'd find an any-data-input approach far more interesting.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">28th January 2013, 17:07</div></div>
+<br />
+<div class="posttext">You can access the audio stream data using previously mentioned audio APIs. You can also create audio with it.<br />
+It's just that you'd probably have to use soundmanager2 as it has a flash fall back for browsers that don't support an audio API (which is anything other than chrome and firefox, I assume), so it wouldn't be a pure html solution.<br />
+<br />
+For the end user they could simply drag and drop tracks on to the web page and have them played/visualised. Playing music from another website is likely to fall foul of security implementations unless the site supports cross origin requests. And also each browser supports a different selection of audio formats.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">15th March 2013, 02:36</div></div>
+<br />
+<div class="posttext">I did a bit of playing with the audio buffers thing in firefox about a year ago. It's neat, but I didn't think it had legs as a big project when compared with a native app, mainly because the performance just isn't good enough for doing lots of effects, you could totally do something with it and it would be cool as hell, but for something serious like AVS it's gotta be native if you ask me, at least where we're at now with support and performance.<br />
+<br />
+Have a little looksie at a basic detection thing I did with it here (http://sixtypixels.net/dump/vis/) if you want. Only works in FF.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

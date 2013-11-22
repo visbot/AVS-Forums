@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Drop Shadows, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Drop Shadows AVS Presets" />
+	
+	<title> Drop Shadows - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Drop Shadows</li>
+</ol>
+<!-- div class="pda"><a href="t-85992.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=85992">Drop Shadows</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">26th April 2002, 13:19</div></div>
+<br />
+<div class="posttext">Have a look at the attached file.<br />
+<br />
+PS. Don't judge the preset, it's just a demo one to show the effect.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">27th April 2002, 12:29</div></div>
+<br />
+<div class="posttext">That's some seriously tight stuff my friend. I'd definitely consider using that, especially if it was made into a Trans in a future update.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">28th April 2002, 01:34</div></div>
+<br />
+<div class="posttext">It does add a 3D effect, but I've yet to see a preset that uses something like this well. It means both the foreground *and* background need to be interesting :).<br />
+I did use real projected shadows in Whacko AVS IV intro, but that's something totally different, and it's not meant to be an interesting preset :)<br />
+<br />
+I don't see how it can be made into a trans though... you need to do have several buffers anyway, so it would probably not be faster than just using the separate AVS components.<br />
+<br />
+By the way, why is a dynamic movement used for the shifting? Wouldn't a regular movement, or even a static dynamic shift be faster?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">28th April 2002, 09:20</div></div>
+<br />
+<div class="posttext">You could change it to a normal movement, but the reason a shift isn't used is because for some reason the shadow kept slowly moving further and further.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">28th April 2002, 19:35</div></div>
+<br />
+<div class="posttext">Well, it IS good... but it is very slow... Only using moving particle, Simple, and blue shouldn't make a preset go down to around 10 FPS...<br />
+<br />
+About the DShift problem :<br />
+<br />
+Try this :<br />
+<br />
+Init : t=33<br />
+PerFrame : x=x+t;y=y+t;t=0;<br />
+<br />
+EDIT : The reason of that problem is that Dshift only have &quot;Init&quot;,&quot;PerFrame&quot;, and &quot;OnBeat&quot;... since you were forced to put most things in &quot;Perframe&quot;...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th April 2002, 00:22</div></div>
+<br />
+<div class="posttext">A shift works differently from a regular movement: you need to specify how many pixels to move in the x and y direction (I believe it's mentioned in its config dialog). So if you use &quot;x=x-.1&quot;, then that means that each frame, the shadow will move one tenth of a pixel more to the left.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">29th April 2002, 06:51</div></div>
+<br />
+<div class="posttext">Ok, I used a DShift instead and the fps nearly doubled.<br />
+<br />
+The effect is more suited to when you want a foreground and a background which are both interesting.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

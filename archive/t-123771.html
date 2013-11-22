@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 3D rotation, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 3D rotation AVS Troubleshooting" />
+	
+	<title> 3D rotation - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> 3D rotation</li>
+</ol>
+<!-- div class="pda"><a href="t-123771.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=123771">3D rotation</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">3rd February 2003, 16:33</div></div>
+<br />
+<div class="posttext">Hi, I'm new here, so I hope this is the correct forum! :D<br />
+<br />
+anyways, after working out my equation for converting 3D coords into 2D:<br />
+<br />
+x=x1*z1/dst<br />
+y=y1*z1/dst<br />
+<br />
+I am looking to implement rotation. I am working with superscopes, and have worked with winamp for quite a while, so most of the jargon you use i should be familiar with!<br />
+<br />
+I have d/led el-vis's 3D t'ing and looked at his .txt file to go with it. I see the xs, xc etc etc and am wondering what it all means!<br />
+<br />
+basically, what is this, along with the equations leading up to x,y,z4 and why are they there?<br />
+(It's all very well making scopes, but i like to know how it all works, and then make one myself!)<br />
+<br />
+thankyou in advance, I hope I make sense!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 21:25</div></div>
+<br />
+<div class="posttext">first of all, don't use the el-vis method of 3D.  it's slow and not very dynamic.  download avs primer :down: which has an explanation of 3D - a rough and non-precise one, but it works.  i'll be updating it soon, and it'll have a better version...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">4th February 2003, 08:14</div></div>
+<br />
+<div class="posttext">Thanks! The AVS primer set t'ings out much better, along with other explanations<br />
+BUT...<br />
+It doesn't explain what:<br />
+<br />
+x2=x1*sin(zt)-y1*cos(zt); y2=x1*cos(zt)+y1*sin(zt);<br />
+x3=x2*sin(yt)-z1*cos(yt); z2=x2*cos(yt)+z1*sin(yt);<br />
+y3=y2*sin(xt)-z2*cos(xt); z3=y2*cos(xt)+z2*sin(xt);<br />
+<br />
+means, and this is what I want to know. also, exactly what x,y,zt mean would be useful.<br />
+Thanks again!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">4th February 2003, 12:24</div></div>
+<br />
+<div class="posttext">xt, yt, and zt are variables used to rotate the 3-D object.  Those three lines are an implementation of a rotation matrix, but since AVS doesn't support matrices, the crossproduct has to be spelled out.  Basically, you can modify xt, yt, and zt to make it move.  A complete explanation of 3-D will be coming out once Atero updates his primer(which I believe will be soon).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">4th February 2003, 16:11</div></div>
+<br />
+<div class="posttext">'Kay, i shall wait till then, then!<br />
+In the mean time, I will work on non-3D presets, and may well release a pack of them for reviewing.<br />
+Oh, and one question: what exactly do d and r mean in DMs?<br />
+r seems to be rotation, but d...? :D<br />
+anywho, thanks for help so far!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th February 2003, 20:17</div></div>
+<br />
+<div class="posttext">And as I said in the primer...don't just use my code because it's there, use it knowing how it works and why.  Again, I'll be updating soon, with a better explanation of all that....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">5th February 2003, 08:29</div></div>
+<br />
+<div class="posttext">d = distace from 0,0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">5th February 2003, 15:57</div></div>
+<br />
+<div class="posttext">thanks Jaheck<br />
+And don't worry Atero, I generally pick code apart before using it in anyway! (My dad conditioned me well...)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">5th February 2003, 17:57</div></div>
+<br />
+<div class="posttext">finally, a noob that dosent irritate the hell out of everyone, n1. GL with the avsing, took me ages to figure out 3d rotation. Pretty worthless post really but im exceptionally bored</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">6th February 2003, 07:32</div></div>
+<br />
+<div class="posttext">lol, so's this but hey!<br />
+I wouldn't consider myself a n00b, as I have worked on AVS for some time, but there we go!<br />
+<br />
+p.s.<br />
+The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">6th February 2003, 07:41</div></div>
+<br />
+<div class="posttext">Originally posted by Fish-face<br />
+Hi, I'm new here, so I hope this is the correct forum! <br />
+<br />
+Originally posted by Fish-face<br />
+I wouldn't consider myself a n00b<br />
+<br />
+So which is it?:p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">6th February 2003, 15:42</div></div>
+<br />
+<div class="posttext">lol, i'm new here, but not to winamp.<br />
+basically, I meant I might not know conventions or whatever... but I ramble... *rambles pointlessly*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">6th February 2003, 17:44</div></div>
+<br />
+<div class="posttext">Originally posted by Fish-face <br />
+<br />
+p.s.<br />
+The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it?  <br />
+<br />
+I cannot beleive people still use Pimp :) NSIS was the follow up to Pimp and now NSIS is open source and all the info you need is here<br />
+<br />
+http://forums.winamp.com/showthread.php?&amp;threadid=102650<br />
+<br />
+I am pretty sure that Nullsofts Pimp has been official discontinued now and has been for some time.<br />
+<br />
+I honestly want to reject AVS preset packs that have the old Pimp installer. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">6th February 2003, 19:46</div></div>
+<br />
+<div class="posttext">okey dokey, then!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">6th February 2003, 22:45</div></div>
+<br />
+<div class="posttext">fish-face, read the forum rules.  signatures are restricted to three lines only.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Fish-face</div><div class="date small text-muted">7th February 2003, 15:41</div></div>
+<br />
+<div class="posttext">This is what I mean when I say &quot;i'm new here&quot;, hope this is better for ya!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">14th February 2003, 17:19</div></div>
+<br />
+<div class="posttext">From AVS Primer: <br />
+This particular preet shows the ability to use one effect, and then<br />
+effect the effected effect without effecting the effect effecting the<br />
+effect. <br />
+<br />
+It took me 6 times to understand that, although I still don't understand it! :igor: <br />
+<br />
+BTW... You spelt preset wrong.;) :weird:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">14th February 2003, 18:53</div></div>
+<br />
+<div class="posttext">that's from the effect list preset, isn't it?  i can't even figure that out :igor: :p<br />
+I'M BUSY UPDATING IT.  keep your pants on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">14th February 2003, 19:59</div></div>
+<br />
+<div class="posttext">The verb is written as &quot;to affect&quot;. That should clear up some confusion.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">15th February 2003, 00:55</div></div>
+<br />
+<div class="posttext">LOL Atero just wanted to put something in there to rival the old children's book authors.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

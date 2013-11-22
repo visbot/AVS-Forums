@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" A couple questions, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" A couple questions AVS" />
+	
+	<title> A couple questions - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">A couple questions</li>
+</ol>
+<!-- div class="pda"><a href="t-106283.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=106283">A couple questions</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">21st September 2002, 00:23</div></div>
+<br />
+<div class="posttext">1. What is the easiest way to create a solid superscope<br />
+<br />
+2. What is the easiest way to write code to do 3d movement in dynamic movement.  I want to be able to &quot;zoom&quot; with adding 1 to z, and pan by adjusting x and y.  The final result can be in either d or x/y coordinates.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Karnov</div><div class="date small text-muted">21st September 2002, 01:20</div></div>
+<br />
+<div class="posttext">Well, I can help you with your first question<br />
+<br />
+the very best example ive seen on how to do this came from someone asking about how to make a good square. (see attachment)<br />
+<br />
+(I AM REALLY SORRY, BUT FOR THE LIFE OF ME, I CANNOT REMEMBER WHO MADE THIS(it was posted recently)<br />
+<br />
+see, they just made a ziggy(?) line and set it the &quot;n&quot; var to 800 so you couldnt tell<br />
+<br />
+try setting it to 30<br />
+<br />
+also, the line width func on the misc-&gt;set render mode is very helpful<br />
+<br />
+im sorry i cant help you on your second question :(<br />
+<br />
+(remember, just waste your life with superscopes and you might (i havent yet)understand them)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st September 2002, 02:07</div></div>
+<br />
+<div class="posttext">Zooming isn't that hard. Just multply x and y by the inverse of your zoom factor.<br />
+<br />
+eg.<br />
+<br />
+  frame:<br />
+    zoom = 1.5;<br />
+    zf = 1/zoom;<br />
+<br />
+  pixel:<br />
+    x=x*zf;<br />
+    y=y*zf;<br />
+<br />
+To move around, just do it the way you would normally. (x=x+whatever)<br />
+<br />
+I made a preset once that did something like that. Feel free to dissect and stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st September 2002, 02:10</div></div>
+<br />
+<div class="posttext">Originally posted by Michaelthecat <br />
+2. What is the easiest way to write code to do 3d movement in dynamic movement.  I want to be able to &quot;zoom&quot; with adding 1 to z, and pan by adjusting x and y.  The final result can be in either d or x/y coordinates. <br />
+<br />
+That one is actually quite simple since you don't have to do any rotaions (so it will be pretty fast too)<br />
+<br />
+just put something like this in the last box<br />
+<br />
+x1=x;<br />
+y1=y;<br />
+z1=z;<br />
+<br />
+x=x1/(k+s*z1);<br />
+y=y1/(k+s*z1);<br />
+<br />
+where k and s are constants you choose to alter the strength and scale of the perspective calculation. that is the based of doing a 3d projection onto a 2d plane.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

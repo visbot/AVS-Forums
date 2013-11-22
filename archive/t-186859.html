@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 3d Blazing Flower - Several Versions, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 3d Blazing Flower - Several Versions AVS Presets" />
+	
+	<title> 3d Blazing Flower - Several Versions - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">3d Blazing Flower - Several Versions</li>
+</ol>
+<!-- div class="pda"><a href="t-186859.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=186859">3d Blazing Flower - Several Versions</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">17th July 2004, 09:46</div></div>
+<br />
+<div class="posttext">http://www.lggaming.com/user/xerol/avs<br />
+<br />
+Zipped only because yahoo doesn't allow files of unknown extentions...anyway, the one to look for is 3d Blazing Flower 6(the latest). I should mention a few things about this:<br />
+<br />
+1) The effect you get depends entirely on the type of music you're listening to. I've got a lot of ambient and orchestral, so that's mainly what I tested it with, but also some rock too. Just about every aspect of the visualisation reacts to the music in some way.<br />
+<br />
+2) In this latest version I added the distance fading(3 more calculations, one for each color) and modified the movement of the lightsources slightly(they're closer to the scope and move more).<br />
+<br />
+Miscellaneous notes:<br />
+-The intensity of the lightsources are derived from getspec() calls, the Blue is affected by the entire left channel, green by the entire right, and red by the top 60% of the center channel. So in mostly bass-driven songs with little treble(although cymbals/hihats/etc do affect it) you won't see much red. Usually the difference between the left &amp; right channels isn't all that much, so you probably won't see it unless you're listening to something with extreme panning.<br />
+-I'm still looking for a good way to get an anti-aliasing effect. You can see a sharp line at the bottom edge of the 'flower', especially in lower resolutions. I tried using blur, but that didn't give the effect I wanted and really didn't do much more than lower the framerate.<br />
+-Also, regardless of the resolution I can't get it to run any faster than 40fps, although in fullscreen(1152x864) with pixel doubling it doesn't lose too much(31.4 on my machine).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">17th July 2004, 12:45</div></div>
+<br />
+<div class="posttext">its so dark, i can hardly see anything. also you could've put all of them in ONE zip-file.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">17th July 2004, 20:42</div></div>
+<br />
+<div class="posttext">Rather than have to wait till it draws the flower (which takes a looong time) why not spare the viewer from such agony and set t on init to something higher?<br />
+<br />
+Well anyway, don't like it so much, but then again i don't listen to any of those types of music :p</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

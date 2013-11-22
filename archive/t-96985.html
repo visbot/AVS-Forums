@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" running AVS with series of computers &quot;in sync&quot;, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" running AVS with series of computers &quot;in sync&quot; AVS Troubleshooting" />
+	
+	<title> running AVS with series of computers &quot;in sync&quot; - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> running AVS with series of computers &quot;in sync&quot;</li>
+</ol>
+<!-- div class="pda"><a href="t-96985.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=96985">running AVS with series of computers &quot;in sync&quot;</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">rudi</div><div class="date small text-muted">6th August 2002, 09:28</div></div>
+<br />
+<div class="posttext">:cool: Party installation:<br />
+I intend to run a set of computers (10 or more, all connected to projectors) running AVS and all &quot;listening&quot; to the same source of music.<br />
+My presets are optimated for low resolution (320x240), but high framerates (20-70 fps)- thus &quot;perfect&quot; on beat visualisation. <br />
+<br />
+What should be the best approach to technicaly accomplish this?<br />
+- Network: streaming the content from source to all Networked PCs`?, If yes: which software options are best.<br />
+- Analog: using Line in on each computer , running &quot;isolated&quot; Winamp? If yes: ´Hints, Tips and Tricks available?<br />
+<br />
+- other ideas?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th August 2002, 11:48</div></div>
+<br />
+<div class="posttext">I'm not sure about network because it will undoubtably introduce a lot of latency, unless you have a very specialized solution. Things like SHOUTcast always introduce lag. Line-in is easier because lag is minimal.<br />
+<br />
+There are tons of line-in tips around the forum, you can find em by doing a search. You'll need the special low-latency plug-ins and make sure you turn off AVS's advanced beat detection (it'll think line-in is just one huge song and never re-adapts the beat).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">6th August 2002, 12:01</div></div>
+<br />
+<div class="posttext">If They're all gonna be runnnng the same vis at the same time, it may be easier to get a whole bunch of splitters and just split the video signal.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">rudi</div><div class="date small text-muted">6th August 2002, 15:37</div></div>
+<br />
+<div class="posttext">thank you all!<br />
+<br />
+concernig lag in a possible Network solution:<br />
+I was supposed to use one of the &quot;slave&quot; WINAMP-PC-receivers as the source-input for the sound amplifiers. Since all the other slaves would run exactly the same software (Winamp + Visualisation), my hope was that all &quot;slaves&quot; (and in turn their AVS visualisations) would be more ore less In Sync with the other slaves (but of course not the master, transmitting the stream).<br />
+My hope was also that maybe even some additional plug-in that forces all receiving Winamp-&quot;nodes&quot; in a close LAN-network environment to run pretty much synchronized would exist.<br />
+But if you say I should go for SHOUTcast for the streaming I will consider this next - thank you.<br />
+<br />
+concerning content &amp; beamspiltter<br />
+My plan is to &quot;overwhelm&quot; (or even shock :D ) my audience by dozens of simultaneous DIFFERENTs AVS (but in Sync) thus no beamsplitter possible.<br />
+<br />
+conserning linein:<br />
+thank you I´ll consider this and look for the plug ins in the forums</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th August 2002, 16:54</div></div>
+<br />
+<div class="posttext">Actually I'm discouraging you to use SHOUTcast because it was made for internet-streaming, not LAN-streaming. It also re-encodes the music into MP3. You might get low latency by turning the buffering all the way down on the clients, but even then you'll get a tiny bit of lag. And visuals are only good if they are near-perfectly synched with the music :p.<br />
+<br />
+In any case, you *could* try it, but I seriously doubt you can get satisfactory results with shoutcast and similar products.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Abdi110</div><div class="date small text-muted">19th December 2002, 08:31</div></div>
+<br />
+<div class="posttext">I tried this exact thing a summer or two ago at a LAN party, except I was using about 5 systems ranging in build and OS and we were using Milkdrop and other stuff along with AVS. The network was pretty speedy, we setup a 6th system as main shoutcast server and the rest ran as clients with pretty close to no buffer. It worked well and the music felt like they were all synced up ok, for a wile. After about 10 min all 5 client systems started to go off on their own paths. An hour later the gaps ranged from about 5 sec to 10 sec.<br />
+<br />
+So my $0.02 on this is unless all 10 of your systems are running the exact same hardware and software/config, shoutcast isn't what you want to use. I'd say the linein thing is your best bet. A friend of mine has a spiffy Mac laptop with iTunes. Whenever I come over to chill out I just plug my laptop into his headphone out, and his speakers into mine (doing it this way and not the other way around because he's the one with the bigger drive/music collection ;P ). It worked nice, two screens with pretty visz, some black lights, and one of those liquid light things that spin around slowly, you know what I'm talking about. :)<br />
+<br />
+If you're planning to just do chill out music and stuff with no real BPM, you shouldn't have to worry about buffer sizes all that much, I actually just go ahead and mute WinAMP, letting the linein go in and back out with no delay. If what you're into has more of a bump to it, it really doesn't take all that long to mess with buffer sizes before you get something pretty close to what's really happening. It only took me about 5 min before I got some settings that were close to what I needed, and I was only running AVS, not a plugin that had good BPM detection. :P<br />
+<br />
+If you're really worried about buffer delay, and what you're playing isn't live, you might want to go ahead and mute linein, have what your speakers are playing out be the delayed audio. Then again that'll only work if all the systems you're using are exactly the same.<br />
+<br />
+Bleh, I should go to bed. :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th December 2002, 18:34</div></div>
+<br />
+<div class="posttext">It always amuses me when people sign up *just* to give out one piece of advice... :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">20th December 2002, 05:55</div></div>
+<br />
+<div class="posttext">At least he's giving advice and not a question already asked in the FAQ. There's nothing wrong with trying to help. (despite the fact that the thread is 4 1/2 months old :p)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Abdi110</div><div class="date small text-muted">20th December 2002, 08:07</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+It always amuses me when people sign up *just* to give out one piece of advice... :rolleyes:  <br />
+<br />
+Actually I used to post here a wile ago, looks like my account got deleted or something. And sorry about bringing it back from the dead, I only noticed the time stamps now.<br />
+<br />
+...<br />
+<br />
+How do you full screen AVS? :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">22nd December 2002, 07:54</div></div>
+<br />
+<div class="posttext">Select the window and hit 'Enter'<br />
+<br />
+Despite what Atero might say, typing 'format c /y' in console is not the solution.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">22nd December 2002, 19:45</div></div>
+<br />
+<div class="posttext">hey...it was a joke, man!  leemeealone!<br />
+<br />
+abdi: welcome back :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Abdi110</div><div class="date small text-muted">22nd December 2002, 21:55</div></div>
+<br />
+<div class="posttext">Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">23rd December 2002, 05:12</div></div>
+<br />
+<div class="posttext">So was that. :p</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

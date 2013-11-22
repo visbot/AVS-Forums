@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Help with Cubes II, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Help with Cubes II AVS" />
+	
+	<title> Help with Cubes II - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Help with Cubes II</li>
+</ol>
+<!-- div class="pda"><a href="t-200434.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=200434">Help with Cubes II</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">28th November 2004, 07:15</div></div>
+<br />
+<div class="posttext">WARNING DO NOT FLAME/FLAME WARS - please....!!!<br />
+Flame war- a deliberate exchange of insults between two parties. This usually involves a series of insulting, irrelevant posts in the same thread.<br />
+<br />
+<br />
+I'm probably stupid for this but i just finished reading Pak-9's Tutorial, and then i looked at jaaks cube preset, then looked at pak-9's tutorial (doing this process ehh 7 or 8 times), im trying to figure out what he's done, he's got like 8 superscopes, and a few misc comments... not helping me at all...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">28th November 2004, 08:11</div></div>
+<br />
+<div class="posttext">what do you mean with not helping at all? the preset you attached seems to be cool. what is the part you need help with?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">28th November 2004, 12:26</div></div>
+<br />
+<div class="posttext">yeah nice preset, just add some colors and make a &quot;magic dice(tm)&quot; out of it. (the thing they searched for in &quot;dude, wehre´s my car?&quot;) :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">28th November 2004, 16:22</div></div>
+<br />
+<div class="posttext">point per point superscope making multiple cubes around individual centers.<br />
+<br />
+btw-that is jaaks coding, not yours right? Because if you made it and didn't know what you were doing you would be a god among men...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">28th November 2004, 16:40</div></div>
+<br />
+<div class="posttext">i doubt that a lot :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">29th November 2004, 01:43</div></div>
+<br />
+<div class="posttext">jaaks cube preset and im trying to figure out what he's doing with the cube, (please dont tell me nobody knows? or otherwise lol) 1st superscope i think he declared values for the reg00(etc) with rotation ones? then started making the cube however he knows...!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">29th November 2004, 02:09</div></div>
+<br />
+<div class="posttext">It easy to understand.<br />
+<br />
+The first scope is his global variables.<br />
+The second scope draws the shape by point-to-point scoping of each cube, then mapping them to a center.<br />
+<br />
+And... nobody knows</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">29th November 2004, 02:52</div></div>
+<br />
+<div class="posttext">rotation... then thats it? (what do u mean globals???)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">29th November 2004, 08:54</div></div>
+<br />
+<div class="posttext">btw why is it advantageous to calculate some variables in a sperate scope? Can't it be done with the same one?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">29th November 2004, 23:19</div></div>
+<br />
+<div class="posttext">The advantage of having a global variable scope is to keep things in your preset synchrnoized; like rotation, colors, position...etc. This is used now to replace the old way of synchronization, combined getosc() onbeat, because it is nicer and works better for most applications.<br />
+<br />
+//added<br />
+It also will suposedly make a fps increase because there is nothing being calculated per-pixel in the scope or something like that. I don't know if that is true or not.<br />
+//added</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">30th November 2004, 01:42</div></div>
+<br />
+<div class="posttext">good or bad, and how do i use it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">30th November 2004, 09:53</div></div>
+<br />
+<div class="posttext">The main reason for putting rotations etc... in a seperate scope is cleanliness. With just one scope/texer2/dm etc.. It is actually sligtly more efficient to put everything in the scope that renders because you aren't writing to and reading from registers which is essentially a superflous operation.<br />
+<br />
+In a complex preset though, where more than one ssc/texer2/dm etc.. needs to be syncronised or in any way use the same values you are going to have to put the values in registers anyway so you might as well do it in a seperate scope for easy access and tidyness.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">30th November 2004, 18:30</div></div>
+<br />
+<div class="posttext">so that is just has got more style...<br />
+tss tss. nowadays they aren't satisfied with cool looking presets. No no. Also the code has to be arranged in a stylish way. Where does this end?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">30th November 2004, 23:09</div></div>
+<br />
+<div class="posttext">stylish? , are we gay or just women? .. lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">1st December 2004, 06:32</div></div>
+<br />
+<div class="posttext">if the preset contains an insane amount of code, no one will be able to handle it. commenting does indeed help, but multiple scopes are even better :) and no Matt we are neither of those, we are just sexah!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">1st December 2004, 18:20</div></div>
+<br />
+<div class="posttext">that's the way MATT.<br />
+Unfortunately you cannot see our overwhelmig attractivity. :cool: <br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">2nd December 2004, 00:43</div></div>
+<br />
+<div class="posttext">lmao, i got a gf... if u didnt read my signatures for 400th time!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">2nd December 2004, 06:36</div></div>
+<br />
+<div class="posttext">your signature does really suck, matt.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">2nd December 2004, 07:56</div></div>
+<br />
+<div class="posttext">For THE MOMENT... im working on it... :P http://forums.winamp.com/showthread.php?s=&amp;postid=1531271#post1531271, <br />
+<br />
+ops it's: http://forums.winamp.com/showthread.php?s=&amp;postid=1531319#post1531319</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">2nd December 2004, 17:28</div></div>
+<br />
+<div class="posttext">Originally posted by ^..^ <br />
+so that is just has got more style...<br />
+I didnt think it was possible but your grammar is just has got worse</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">2nd December 2004, 23:33</div></div>
+<br />
+<div class="posttext">lmao it has tooo!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">2nd December 2004, 23:48</div></div>
+<br />
+<div class="posttext">&quot;:igor: Please excuse to me for wrong grammar. i have had meanted the word &quot;it&quot; instead of the word &quot;is&quot;. Much sorry for that mistake.&quot;<br />
+<br />
+Seems to be a really really serious mistake, i guess<br />
+:p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">3rd December 2004, 00:44</div></div>
+<br />
+<div class="posttext">lol, &quot;im a senior member!&quot; :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">3rd December 2004, 07:26</div></div>
+<br />
+<div class="posttext">Matt, please, we do see YOU made it. but seriously, I could also tell everyone I became a member too but thats not the thing I really care about. be serious. or at least try to behave yourself :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">3rd December 2004, 17:05</div></div>
+<br />
+<div class="posttext">at least i do now understand what the great ugly barcode-like signature was suposed to be.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">5th December 2004, 02:48</div></div>
+<br />
+<div class="posttext">little off-topic?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">5th December 2004, 11:26</div></div>
+<br />
+<div class="posttext">right!<br />
+and what's the problem? ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">10th December 2004, 08:52</div></div>
+<br />
+<div class="posttext">understanding this stuff... :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">10th December 2004, 19:40</div></div>
+<br />
+<div class="posttext">perhaps you should accept mysterious_w's help (he offered in another thread, right?), before he changes his mind ;)<br />
+I think the general idea of this preset has already been explained here.<br />
+But if you're looking for some more detailed information about the differnet &quot;techniques&quot;... you should utter a concrete question like: &quot;How did jaak manage to render the cube?&quot; Then you will surely get an satisfying answer like: &quot;He used a point-per-point scope, ... bla bla bla.&quot; I would give a more detailed answer, but i'm also doing my first steps on this kind of stuff.. :(</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

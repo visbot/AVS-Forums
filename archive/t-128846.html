@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Candy Man, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Candy Man AVS Presets" />
+	
+	<title> Candy Man - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Candy Man</li>
+</ol>
+<!-- div class="pda"><a href="t-128846.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=128846">Candy Man</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th March 2003, 02:36</div></div>
+<br />
+<div class="posttext">Made this one in about 2.5 hrs...i think it's damn cool......<br />
+<br />
+&lt;edit&gt; Attached 2 remixes, both of which are a lot faster than the original... &lt;/edit&gt;<br />
+<br />
+&lt;edit&gt; Actually attached it this time &lt;/edit&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 02:53</div></div>
+<br />
+<div class="posttext">The SSC's go nice together, but there are a bit too many colors.  Try restricting the band of colors used.(Or making them all in the same basic scheme).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">18th March 2003, 03:00</div></div>
+<br />
+<div class="posttext">Nice scopes.<br />
+<br />
+The middle part is a bit cluttered and the sub-2 blended scopes doesn't exactly add much...<br />
+<br />
+Just needs a little cleaning up (somehow... :/ ), then it'll be better.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">18th March 2003, 06:45</div></div>
+<br />
+<div class="posttext">The scopes do look nice and i have no problem with the colors, i think they fit in. My only problem with it is the onbeat change of the scope, isn't there a way to smoothen it up without losing beat response?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">18th March 2003, 16:20</div></div>
+<br />
+<div class="posttext">i liked the speed remix the best, it looked cleaner, it looked less &quot;random shit thrown together&quot; type thing. what are you talking about anubis? The colours look good.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th March 2003, 20:29</div></div>
+<br />
+<div class="posttext">Tuggummi: I thought it needed a bit of &quot;shock&quot; to it, and smoothing it out is a PAIN IN THE ASS for this kind of scope.  You have to keep the old coefficient of R in memory, then fade between the two...you can't simply change the coefficient smoothly, or else...bad things happen.  Check this out:<br />
+<br />
+init: n=576; tpi=acos(-1)*2;<br />
+beat:<br />
+frame: t=t+0.01; coef=sin(t)*4+9;<br />
+pixel:<br />
+r=i*tpi; d=sin(r*coef)/3+0.5;<br />
+x=sin(r)*d; y=cos(r)*d;<br />
+<br />
+...Bad things happen... (or at least I think they do, I haven't checked the scope ;) )<br />
+<br />
+And the colors do look cool...I dun care what you say :p<br />
+<br />
+&lt;edit&gt; fixed the scope &lt;/edit&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 20:44</div></div>
+<br />
+<div class="posttext">The colors are nice, but there are too many of them in the center.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th March 2003, 21:07</div></div>
+<br />
+<div class="posttext">,.I.. u_u ..I.,<br />
+it wouldn't be CANDY if there weren't, now would it? ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 22:26</div></div>
+<br />
+<div class="posttext">Most candies don't have every color of the rainbow.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">18th March 2003, 23:45</div></div>
+<br />
+<div class="posttext">Nice preset!:)  Anubis is right there are a lot of colors but it doesn't look bad.:up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th March 2003, 23:52</div></div>
+<br />
+<div class="posttext">not just one piece...have YOU ever tried eating JUST ONE SKITTLE???  it's impossible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 23:55</div></div>
+<br />
+<div class="posttext">No, not really.  I don't like skittles.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">19th March 2003, 00:07</div></div>
+<br />
+<div class="posttext">I like skittles.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">19th March 2003, 00:54</div></div>
+<br />
+<div class="posttext">no one cares, anyway... its ateros preset, if he likes the colours, hes not going to change them. The colours look good anyway i dont know what all the fuss is about.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">19th March 2003, 05:54</div></div>
+<br />
+<div class="posttext">i liked the start of the preset..when everything springs up...and i wont say anymore...because its already said... ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st March 2003, 00:25</div></div>
+<br />
+<div class="posttext">&lt;- :D<br />
+<br />
+Total HDD space wasted on making this avatar: 1136.15 MB.<br />
+Total HDD space wasted on the avatar itself: 32 KB.<br />
+<br />
+;p<br />
+<br />
+attached is the avs i used to make the thing, if anyone cares ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">21st March 2003, 00:33</div></div>
+<br />
+<div class="posttext">How did you spend 1Gb on that avatar?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st March 2003, 00:47</div></div>
+<br />
+<div class="posttext">lots and lots and lots of uncompressed avi streams mostly :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">21st March 2003, 00:49</div></div>
+<br />
+<div class="posttext">That's amazing.  Nice results though.  But like I said - speed it up a bit.  It will make it run so much smoother.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">21st March 2003, 16:32</div></div>
+<br />
+<div class="posttext">i agree, speed it up, sweet preset and avatar :up:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

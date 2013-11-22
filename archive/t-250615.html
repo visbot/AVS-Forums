@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Evolving presets?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Evolving presets? AVS Presets" />
+	
+	<title> Evolving presets? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Evolving presets?</li>
+</ol>
+<!-- div class="pda"><a href="t-250615.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=250615">Evolving presets?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">DarracottDude</div><div class="date small text-muted">7th July 2006, 20:35</div></div>
+<br />
+<div class="posttext">I'm a beginner at this avs thing, so this is probably just another dumb beginner question. I'm wondering if it's possible to create evolving presets, what i mean is visualizations that evolve, in form or shape, over time. I have searched the forums, but didn't find an answer. Does anyone know of a method, using gettime(), or some other method, to create, or even simulate, evolving visualizations? And can you point me to some examples?<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">7th July 2006, 20:50</div></div>
+<br />
+<div class="posttext">Depends what you mean by &quot;evolving&quot;. It wouldnt be particularily difficult to make a preset that looked different depending on the time of the song, or based on how long it had been running... but generally people prefer a preset to just &quot;do&quot; one thing and look good while doing it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">7th July 2006, 20:58</div></div>
+<br />
+<div class="posttext">DarracottDude you should look on some of the intros. Some of them &quot;evolve&quot; but then they start again. It's like someone runing in a circle. Maybe one of those intros can help you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">8th July 2006, 00:05</div></div>
+<br />
+<div class="posttext">a simple idea is to try and make a 3d pyramid that changes it shape over time. heh seen one like it but not very smooth transformation. simple way of doing this is to get knowledge on very powerful 3d engines and learn how they tick and you might learn enough math to create one that does it. simpler, learn how to make it look and work like a fractal but in the shape of a pyramid, example a Pythogoras Pyramid fractal evolves over time by creating millions of infinitely replicating pyramids that form a larger pyramid.<br />
+yes i know my spelling needs work. anyway if there are somethings i left out please quote about it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">8th July 2006, 02:54</div></div>
+<br />
+<div class="posttext">Originally posted by Nanakiwurkz <br />
+.....simple way of doing this......  <br />
+<br />
+There is no simple way here.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DarracottDude</div><div class="date small text-muted">8th July 2006, 13:39</div></div>
+<br />
+<div class="posttext">Originally posted by PAK-9 <br />
+Depends what you mean by &quot;evolving&quot;. It wouldnt be particularily difficult to make a preset that looked different depending on the time of the song, or based on how long it had been running... <br />
+<br />
+I suppose something like this is what i had in mind. What's the best way to accomplish this? I haven't tried anything yet, but an idea of variable values changing based on running time comes to mind.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">8th July 2006, 23:59</div></div>
+<br />
+<div class="posttext">This is sample preset i made to go with fastingaciu's post about using gettime.<br />
+<br />
+i've put a regular music activated scope and gave you the barebones for it.<br />
+<br />
+just enable the second effect list.<br />
+<br />
+p.s. <br />
+<br />
+you<br />
+will have to open the bmp file in notepad and save it as a avs file by typing in the name &quot;Photonic Eruption.avs&quot;<br />
+include the quotes. set the file type selector to all files or it won't work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DarracottDude</div><div class="date small text-muted">9th July 2006, 05:08</div></div>
+<br />
+<div class="posttext">Thanks for this sample. I'll look it over and try to learn how to use gettime to create my own evolving presets.<br />
+<br />
+Any particular reason you uploaded it as a bmp file? I did have some trouble getting it to work. Opening and saving in notepad as you suggest didn't work for me. After trying different things, i got it to work by downloading as &quot;Photonic Eruption.avs&quot; with the all files selector set. <br />
+<br />
+I'm still not sure it's working right, as there is only one effect list, with 3 superscopes. Is this correct?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">10th July 2006, 09:28</div></div>
+<br />
+<div class="posttext">in most cases, making a preset with a lot of &quot;evolving&quot; states, needs a lot of time to actually code/assemble all the different effects and code their apearance time in the preset.<br />
+It's not that hard but needs time and patience...<br />
+<br />
+Originally posted by Nanakiwurkz <br />
+you will have to open the bmp file in notepad and save it as a avs file by typing in the name &quot;Photonic Eruption.avs&quot;<br />
+include the quotes. set the file type selector to all files or it won't work.<br />
+<br />
+:blah:<br />
+has to be the most complicated way ever to evade simple filetype renaming. DarracottDude your way was better :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">10th July 2006, 11:05</div></div>
+<br />
+<div class="posttext">Or you could have a loads of simple functions and statements and have them activate/deactivate randomly, but that would probably be more of a &quot;controlled&quot; mutation than evolving in concept...<br />
+<br />
+So that's the problem i guess, even if it has 10 different stages it goes through, that's it, there's not really a way to make random evolution like it has to be.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">10th July 2006, 13:10</div></div>
+<br />
+<div class="posttext">Well the simplest way to have a preset change after a certain period of time is to just have a codable effect list which turns on. You can stick whatever effects you like into it.<br />
+<br />
+I'm still not entirely sure what effect you are going for... and I'm not sure you know either. The first step towards solving a problem is identifying it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DarracottDude</div><div class="date small text-muted">10th July 2006, 14:22</div></div>
+<br />
+<div class="posttext">Originally posted by PAK-9 <br />
+<br />
+<br />
+I'm still not entirely sure what effect you are going for... and I'm not sure you know either. The first step towards solving a problem is identifying it.  <br />
+<br />
+Well, this thread is what got me to thinking about evolving shapes or forms ...<br />
+<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=122804&amp;highlight=neoglasms<br />
+<br />
+Maybe what i have in mind isn't really possible. Perhaps morphing might be a better term? I just have a vision of presets that changed their look over time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">13th July 2006, 01:48</div></div>
+<br />
+<div class="posttext">ok i gave up on the raw format of the bmp thing and i put the original in a zip enjoy Dude. p.s. if you want to see the bare bones in action just enable the second effect list. also please don't criticize me for the t=t-gettime(-2)\gettime(-1) thing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DarracottDude</div><div class="date small text-muted">4th August 2006, 20:13</div></div>
+<br />
+<div class="posttext">Maybe i should have started a new thread rather than reviving this one. :-)<br />
+<br />
+Anyway i've been playing with this idea, and came up with this superscope that changes shape and color based on song length. This sample kinda demonstrates my evolving preset idea. This is my first effort, i'm still trying different things and learning. Perhaps some of you experts could expand on this idea, maybe even for dynamic movements also?</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

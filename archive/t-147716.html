@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Superscope newbie question, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Superscope newbie question AVS Troubleshooting" />
+	
+	<title> Superscope newbie question - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Superscope newbie question</li>
+</ol>
+<!-- div class="pda"><a href="t-147716.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=147716">Superscope newbie question</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">charm</div><div class="date small text-muted">31st August 2003, 18:48</div></div>
+<br />
+<div class="posttext">I'm new to this whole AVS thing so I'm not too familiar with all of the math commands available (I have no trouble with the purely mathematical part of it, just the notation used and stuff like that).<br />
+What I want to know is, how do I make logic statements like<br />
+IF l&gt;f<br />
+THAN<br />
+l=l-f<br />
+ELSE<br />
+l=l+1<br />
+Any help with how to make statements like that in the superscope would be greatly appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">31st August 2003, 19:46</div></div>
+<br />
+<div class="posttext">I think this is what you need (I'll use X and Y for variables):<br />
+<br />
+x=if(below(x,y),x-y,x+1)<br />
+<br />
+That should work... have you read the Expression Help thoroughly?  That explains it as well, if I remember correctly.<br />
+<br />
+Hey look... my first post in HOW long? :)<br />
+<br />
+EDIT: OK, here's a concise explanation of the operators:<br />
+-In the statement x=if(x,y,z) x is the condition.  There are several conditions, the ones most commonly used being above, below, and equal.  I will explain these in a sec, but for now, just know that if the condition is true (1), then the if(...) statement returns y.  If the condition is false (0), then it returns z.<br />
+-The conditions: <br />
+&gt; above(a,b) returns 1 if a&gt;b, 0 if a&lt;b<br />
+&gt; below(a,b) returns 1 if a&lt;b, 0 if a&gt;b<br />
+&gt; equal(a,b) returns 1 if a=b, else 0<br />
+<br />
+Hope that helps.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">31st August 2003, 21:27</div></div>
+<br />
+<div class="posttext">The if(x,y,z) statement will return y with any non-zero number for x.  You can also you the bor(x,y) and band(x,y) statements for boolean and and or operators.  Search the forums for more information.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">31st August 2003, 21:32</div></div>
+<br />
+<div class="posttext">to your vars:<br />
+<br />
+l=if(above(l,f),l-f,l+1);<br />
+<br />
+var = if(statement,statement true, statement not true);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">1st September 2003, 00:05</div></div>
+<br />
+<div class="posttext">no offense...but i would think anyone who was actually into logical programming would know the difference between &quot;then&quot; and &quot;than&quot;...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">1st September 2003, 16:31</div></div>
+<br />
+<div class="posttext">:p Let's just call it a typo ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">1st September 2003, 20:28</div></div>
+<br />
+<div class="posttext">Oh nertz... I just realized that it should have been &quot;above&quot; and not &quot;below&quot;.  Thanks Deamon. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">2nd September 2003, 06:05</div></div>
+<br />
+<div class="posttext">Remember also what UnConeD mentioned a while back ago that AVS calculates both y&amp;z regardless of x, so if there is a way around using the logical statements, use it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">3rd September 2003, 09:10</div></div>
+<br />
+<div class="posttext">you're welcome, glad I could help you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">3rd September 2003, 09:53</div></div>
+<br />
+<div class="posttext">Originally posted by Tuggummi <br />
+If there is a way around using the logical statements, use it.  Can you give me example code for that? I cant imagein where this would be possible (or would make sense, atleast its always possible)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">3rd September 2003, 11:10</div></div>
+<br />
+<div class="posttext">I did say IF did i? :weird:<br />
+IF there is a way around it. It's up to the situation &amp; effect desired wheter or not it can be done without the statements, but yes i can't imagine any example situations either or a way around it...<br />
+<br />
+<br />
+Well i can think up of one simple example...<br />
+If you want for example: var=if(equal(var2,var3),1,0) you can just do it with var=equal(var2,var3) to avoid using the if statement. And if you want something like var=if(equal(var2,var3),1.378914,0) then you can just multiply the equal(var2,var3) with 1.378914.<br />
+<br />
+A simple scope examle:<br />
+<br />
+per beat:<br />
+color=rand(3) ;<br />
+<br />
+per frame:<br />
+red=equal(color,0) ; green=equal(color,1) ; blue=equal(color,2)<br />
+<br />
+per pixel:<br />
+x=i*2-1 ;<br />
+y=v ;<br />
+<br />
+<br />
+This will create a simple oscilliscope analyzer that changes onbeat between the red,green &amp; blue colors, if color=2 it will change to blue as in rgb: 0,0,255.<br />
+<br />
+This is just a small &amp; very simple example and i can't think of any other examples, but still it's best to think about the code structure a bit rather than just use stacks&amp;stacks of code, because it's easier :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">3rd September 2003, 12:41</div></div>
+<br />
+<div class="posttext">Okay, it works as long as one condition can be zero.<br />
+<br />
+But take this one:<br />
+<br />
+x=if(above(x,0.5),x-0.2,x+0.2);<br />
+<br />
+Would be:<br />
+<br />
+x=x-above(x,0.5)*0.2+bnot(above(x,0.5))*0.2;<br />
+<br />
+This is more likely to be slower than faster!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">3rd September 2003, 19:26</div></div>
+<br />
+<div class="posttext">Magic.X: Instead of using bnot(above(x,0.5)), wouldn't it be faster to use below(x,0.5)?  If x&gt;0.5 then the 'above' statement would return 1 and the 'below' statement would return 0, and if x&lt;0.5 it would be the other way around, correct?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">4th September 2003, 07:09</div></div>
+<br />
+<div class="posttext">As magic pointed out, it works as long as one condition can be zero AND as long as you're doing it with numbers only. When you involve the x,y,r &amp; d coordinates it gets tricky, might be impossible even, but as i know someone comes and proves me wrong as soon as i say it, so im not saying it :p<br />
+<br />
+The reason why it doesn't work is because you need two different conditions above&amp;below of the certain point in the x-axis. If you just use x=x+above(x,0.5)-below(x,0.5) it... well see for yourself :igor: i can't explain &amp; don't even know what it does exactly, but it doesn't work.<br />
+<br />
+All im saying is that try to &quot;code wisely&quot;... and i can't believe how much text i have to spill out just because i wanted to say that :blah:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">4th September 2003, 09:28</div></div>
+<br />
+<div class="posttext">above, below, and equal provide BOOLEAN RESULTS, which by using BOOLEAN MATHS can solve logical equations. Example:<br />
+<br />
+a &gt; b AND c &gt; d == above(a,b)*below(c,d)<br />
+a &gt;= b OR c &lt; d == above(0,(1-below(b,a)) + below(c,d))<br />
+<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">4th September 2003, 09:35</div></div>
+<br />
+<div class="posttext">originally posted by a stupid idiot:<br />
+<br />
+The reason why it doesn't work is because you need two different conditions above&amp;below of the certain point in the x-axis. If you just use x=x+above(x,0.5)-below(x,0.5) it... well see for yourself  i can't explain &amp; don't even know what it does exactly, but it doesn't work. <br />
+<br />
+<br />
+Actually i just tested it, it does work :igor: But is it any faster... i doubt so :igor:<br />
+<br />
+I'll shut my mouth now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">5th September 2003, 10:28</div></div>
+<br />
+<div class="posttext">Lol@ Tugg :p<br />
+<br />
+It isnt the same anyway because clinical ttreated the x=0.5 case diffrently then i did.<br />
+<br />
+The point goes to then global fonze ;)<br />
+<br />
+You can solve anything with boolena math, which is exactly what is done within the cpu! It can only differ between current and no current.<br />
+<br />
+This may be even a tiny bit faster but requires a better logical understanding.<br />
+<br />
+But hey, what are we argueing about? 0.005 fps diffrence?? :blah:<br />
+Lets forget about it, hey. I like my code to be easy understandable (although i dont code that much). ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th September 2003, 13:09</div></div>
+<br />
+<div class="posttext">Magic.X: the difference can be quite big<br />
+<br />
+For scopes that alternate between complex shapes, it's often best to make separate scopes, and set n to 0 for all but one. This calculates only one shape per frame rather than all shapes.<br />
+<br />
+You could even do this for interpolation: implement a scope for any change between any two scopes, though that would be quite big for any reasonable amount of shapes.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

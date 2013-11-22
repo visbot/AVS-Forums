@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Weird Rip Report, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Weird Rip Report AVS" />
+	
+	<title> Weird Rip Report - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Weird Rip Report</li>
+</ol>
+<!-- div class="pda"><a href="t-99172.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=99172">Weird Rip Report</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">14th August 2002, 01:44</div></div>
+<br />
+<div class="posttext">I have a rather unusual rip report to make... it's about the AVS preset &quot;LazerZ&quot;:<br />
+<br />
+http://www.winamp.com/components3/detail.jhtml?componentId=118452<br />
+<br />
+Most people won't know this, but my first AVS pack was a tiny one called &quot;Laser Effects&quot;, which was based on a cool laser-like superscope I made. Unfortunately I removed it because it was my first work and not really impressive. I didn't keep the presets either<br />
+<br />
+It seems to me that the scope in the preset above is the one I made. I recognize it can fully explain how it works:<br />
+<br />
+px=r*(2*cos(al)+sin((al+t*2)*m));py=r*(2*sin(al)+cos((al+t*1)*m));<br />
+al=i*tpi;r=(i*n%n%8);r=if(equal(r*(b-1),0),0,sh);pz=r*9;a=if(equal(r,0),1,r);x=px*cy+a*sy;y=py*cx+a*sx;<br />
+<br />
+It draws a spirograph shape in (px,py) for the point in angle 'al'. The spirograph shape has a multiplication factor 'm' which changes to provide different shapes (triange, flower, star, ...). This is the projected shape.<br />
+To make the beams of the laser, the scope goes back to the center point every 8 points. That's what r is for: a counter. This causes the laser to look like a broken up shape at the edges, where 1/8th of a piece is always missing.<br />
+There's an error in the code by the way. The 't*1' on the first line in the py assignment should be 't*2' (like in the px calculation). It doesn't make sense to multiply with 1 anyway.<br />
+<br />
+The code itself is very similar to my scopes. Using rx,ry,rz for rotation angles is nothing special: using 'rxo' as rotation increase offset is something different. I also notice that the code divides by constants rather than multiplying with the reciprocal. This is something I didn't know either at that time, so it's another indication.<br />
+<br />
+There's also something about the cosine/sine calculations. It wraps the angle ry into a folling construct: sin(ry)/4;. This causes the rotation to be limited to 1/4th radians either way which is needed for the laser to point to the camera all the time.<br />
+<br />
+It also uses numerical input of 'pi' (and 'tpi' as two-pi) rather than using acos(-1). My preset was made before tonic started using this technique, but it's very common now.<br />
+<br />
+<br />
+I'm going to look for my original presets... if I still have it I can confirm this rip, but until them I guess it's just my word against his. I sent him an email asking about the source: if he admits it, it can removed as well. I just think that the preset uses a few antiquated techniques which are well known today to be inefficient.<br />
+<br />
+One explanation I can think of is that the person downloaded my mini pack of laser effects and used it, thinking it was a standard avs preset that came with the download.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">16th August 2002, 08:31</div></div>
+<br />
+<div class="posttext">If the Nullsoft people don't believe you...tell them someone who doesn't realize that not everyone puts their presets in c:\program files\winamp3\wacs\avs or whatever it was, he's probably not smart enough to create that scope in the first place.<br />
+<br />
+Bah, ripping assholes....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">16th August 2002, 15:14</div></div>
+<br />
+<div class="posttext">Do you want the rip removed from the site Steve?<br />
+<br />
+I'll get it removed if you want.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">16th August 2002, 18:51</div></div>
+<br />
+<div class="posttext">If you don't object to removing something without hard evidence. But I think most people here have come to know me as a fair person and I wouldn't wrongly accuse someone of ripping unless I was sure.<br />
+<br />
+I just sent him a mail about some peculiarities in the code (which I *can* explain). If he can't answer them, it can be deleted for sure ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th August 2002, 11:04</div></div>
+<br />
+<div class="posttext">He published a second version (LazerZ v2) which contains variations on the same scope. The only differences are minor code tweaks (changing a number here, adding a cosine there), but nothing big. By tweaking the code, he's added some non-sensical statements too:<br />
+<br />
+- t=t+0<br />
+- m=2;m=if(equal(m,0),1,m);<br />
+<br />
+This supports the case that he has no idea what he's doing, which means he couldn't have possibly written a superscope this complex.<br />
+<br />
+Sent him a final mail (no reply on the code questions), if he doesn't reply he's a ripper for sure.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">20th August 2002, 11:41</div></div>
+<br />
+<div class="posttext">Ok just keep us posted.:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th August 2002, 11:59</div></div>
+<br />
+<div class="posttext">Bah, my last mail bounced because his hotmail account is full (why don't people get decent email accounts?). I've already spent more time on this than needed, so I say get rid of it.<br />
+<br />
+I've presented enough evidence which favors my case :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">23rd August 2002, 18:02</div></div>
+<br />
+<div class="posttext">Been away for a couple of days but these have now been zapped.:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clashman</div><div class="date small text-muted">30th August 2002, 14:57</div></div>
+<br />
+<div class="posttext">Bad pun, Rova...<br />
+<br />
+:D Best kind, though! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th November 2002, 12:02</div></div>
+<br />
+<div class="posttext">I don't know have you noticed, but the guy has a winamp2 plugin as well named: &quot;Kick Ass Lasers&quot;<br />
+Here is the Link (http://classic.winamp.com/plugins/detail.jhtml;$sessionid$?componentId=118750)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">14th November 2002, 18:21</div></div>
+<br />
+<div class="posttext">yeesh, this guy doesn't quit, does he</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

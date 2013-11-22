@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS in Javascript, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS in Javascript AVS" />
+	
+	<title> AVS in Javascript - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">AVS in Javascript</li>
+</ol>
+<!-- div class="pda"><a href="t-364566.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=364566">AVS in Javascript</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">23rd June 2013, 20:16</div></div>
+<br />
+<div class="posttext">Hi guys,<br />
+<br />
+Im working on a Winamp AVS like clone for HTML5/WebGL/Webaudio. Please check https://github.com/azeem/webvs<br />
+<br />
+Only fairly basic work done so far. Hoping to build AVS objects one by one and fill the gaps. What is working currently:<br />
+<br />
+ Very Basic Effectslist<br />
+ OnBeat Clear<br />
+ Mostly working Superscope<br />
+ Dynamic Movement<br />
+ Fadeout<br />
+ Simple 3x3 Convolution<br />
+ Image loader<br />
+ Basic avs expressions. with avs expression to javascript/glsl parser<br />
+<br />
+<br />
+Presets are defined as JSON. <br />
+The demo loads a soundcloud track and runs the animation in the background.<br />
+Paste a soundcloud track url (or use the prefilled value) and hit &quot;Play&quot;.<br />
+You can edit the JSON and hit &quot;Run Preset&quot; to reload it.<br />
+<br />
+Any Help/Contributions/Suggestions/Criticism are welcome. Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">24th June 2013, 12:46</div></div>
+<br />
+<div class="posttext">This is really cool, it's like you read my mind (http://forums.winamp.com/showthread.php?t=354742).<br />
+<br />
+That said, this doesn't work in firefox as it spews a lot of security errors. (I assume it's due to cross domain file access)<br />
+<br />
+I also broke it when I copied over some DM code from a jheriko preset. (I was using chrome)<br />
+<br />
+But cool nevertheless.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">24th June 2013, 13:08</div></div>
+<br />
+<div class="posttext">This is really cool, it's like you read my mind (http://forums.winamp.com/showthread.php?t=354742).<br />
+<br />
+That said, this doesn't work in firefox as it spews a lot of security errors. (I assume it's due to cross domain file access)<br />
+<br />
+I also broke it when I copied over some DM code from a jheriko preset. (I was using chrome)<br />
+<br />
+But cool nevertheless.<br />
+<br />
+Yeah there are some problems with firefox, for me it throws &quot;HTTP &quot;Content-Type&quot; of &quot;audio/mpeg&quot; is not supported.&quot; so i was guessing it was some codec issue.<br />
+<br />
+Yes the expression support is pretty basic right now. Only simple trigonometric and math functions are supported. Could you give me the DM code/Preset that broke? will be helpful in debugging.<br />
+<br />
+The way im going about right now is picking Presets starting from simpler ones and then try to implement AVS objects and or make improvements such that they run on webvs. It will be useful if anyone can suggest some simple presets to work with.<br />
+<br />
+There is also a very simple APE like setup for writing components.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">24th June 2013, 17:17</div></div>
+<br />
+<div class="posttext">Firefox supports system codecs now, I guess it's not supported on your system then.<br />
+(Here's the bug for it (https://bugzilla.mozilla.org/show_bug.cgi?id=799318), and you can quickly check what browsers support on your machine with the html5test (http://html5test.com/))<br />
+<br />
+Just testing a superscope now and the rand function is wrong, it should return an integer.<br />
+This should fix it: return Math.floor(Math.random() * max) + 1;<br />
+Adding a randf function might be nice, in the future.<br />
+<br />
+I've been out since I tested this earlier and I can't reproduce the error I had (it was function overloading related), so I wouldn't worry about that for now.<br />
+(It was the DM from the bottom of Jheriko - Pack VIII - Tachyon Based Data Hub)<br />
+<br />
+For simple presets, winamp used to ship a pack called &quot;newpicks&quot;, these presets are pretty ancient in AVS terms.<br />
+I've attached it for your convenience.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">3rd July 2013, 12:36</div></div>
+<br />
+<div class="posttext">if only the format of avs was more understandable, would love to contribute a conversion tool</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">7th July 2013, 21:34</div></div>
+<br />
+<div class="posttext">if only the format of avs was more understandable, would love to contribute a conversion tool<br />
+<br />
+That is a brilliant idea, will be really useful, for debugging also.<br />
+<br />
+I was checking the AVS cpp code to see how the files are read/written. Here is what i've understood so far, if its of any help to anyone. Will need more help from someone with better understanding of the code.<br />
+<br />
+The basic preset reading starts at __LoadPreset method in r_list.cpp. From there it goes on to read a root effectlist, and subsequently all the effects in the preset,<br />
+<br />
+The basic structure is something like this:<br />
+<br />
+<br />
+  AVS Signature string - &quot;Nullsoft AVS Preset 0.2\x1a&quot;<br />
+  Root Effectlist Config - Effectlist config contains the following<br />
+		<br />
+      mode (1 BYTE + 1 optional INT depending on the value of the first byte) - Not exactly sure how this is used. but i think it determines how some of the effectlist settings are read.<br />
+      several INT values containing effect list settings. These i think are optional depending on the mode<br />
+      config data for all sub effects<br />
+		<br />
+<br />
+<br />
+The structure for each effect including effectlist (other than the root) is as follows.<br />
+<br />
+  EffectId INT - This indicates the effect type. There are three cases for this<br />
+		<br />
+      if EffectId == LIST_ID (0xfffffffe) then this is an effectlist<br />
+      if EffectId &lt; DLLRENDERBASE (16384) then this is a built in effect and EffectId is the index in the effect initializer declarations ie. DECLARE_EFFECT calls in rlib.cpp.<br />
+      if EffectId &gt; DLLRENDERBASE then i think the effect is loaded externally. The EffectId in this case is followed by a 32 byte string identifying the effect.<br />
+    <br />
+  Length INT - Length number of bytes that follow make the config for this effect.<br />
+  Config Code (Length BYTES) - This data i think is passed to load_config method of corresponding effect classes to initialize each effect.<br />
+<br />
+<br />
+Further, for externally loaded effects, it seems that the Config Code Section again has a structure like<br />
+<br />
+  use_code INT - Not sure what this means exactly.<br />
+  length INT - number of bytes of config data that follows.<br />
+  actual config data?<br />
+<br />
+<br />
+Meanwhile, on WebVS side, i ve added more stuff<br />
+<br />
+  More Effects<br />
+  Blending related stuff<br />
+  Support for Registers and more avs functions<br />
+  The demo now runs UnConeD's &quot;Silk Strings&quot; preset.<br />
+<br />
+<br />
+Not sure how far i can maintain compatibility with AVS. I am also adding some improvements, like<br />
+<br />
+  Named global vars - variables starting with @ symbol are global.<br />
+  clone - Effects can contain a clone parameter, an integer that would create multiple instances of the same effect. The clone index is then available as a variable in the avs expressions.<br />
+<br />
+<br />
+I am also trying to figure out a way to do an AVS editor like UI.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">11th July 2013, 22:03</div></div>
+<br />
+<div class="posttext">Webgl/shader stuff is alien to me, so I've started working on an editor for this.<br />
+<br />
+Here's a screen shot of how it currently looks:<br />
+http://i.imgur.com/sE9QSSI.png<br />
+<br />
+The idea I have for this is that besides the main editor (Which is resizeable), you can pop out effects into their own window.<br />
+It should also allow for the visualisation to be shown in the page background, or in a window.<br />
+And in an ideal world you'll be able to drag &amp; drop avs presets on to the window to load them.<br />
+<br />
+I'll post a link to it when it starts getting usable.<br />
+<br />
+I don't have WebVS running locally because I don't have whatever is used to build it (I assume it's node), so there is no integration with that currently.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">11th July 2013, 22:39</div></div>
+<br />
+<div class="posttext">Webgl/shader stuff is alien to me, so I've started working on an editor for this.<br />
+<br />
+Here's a screen shot of how it currently looks:<br />
+http://i.imgur.com/sE9QSSI.png<br />
+<br />
+The idea I have for this is that besides the main editor (Which is resizeable), you can pop out effects into their own window.<br />
+It should also allow for the visualisation to be shown in the page background, or in a window.<br />
+And in an ideal world you'll be able to drag &amp; drop avs presets on to the window to load them.<br />
+<br />
+I'll post a link to it when it starts getting usable.<br />
+<br />
+I don't have WebVS running locally because I don't have whatever is used to build it (I assume it's node), so there is no integration with that currently.<br />
+<br />
+This looks really nice. Is this is a standalone desktop tool?<br />
+I have also put together a somewhat basic HTML5 UI that could replace the textbox in the demo.<br />
+<br />
+Here is a screenshot of what it looks like:<br />
+http://i.imgur.com/byeJ1NT.png<br />
+http://i.imgur.com/cN9OyWH.png<br />
+<br />
+Somewhat basic stage right now, please check the code, i have put it on a separate branch on the repo (https://github.com/azeem/webvs/tree/editor).<br />
+The UI is pretty much similar to AVS itself. Popout and Drag and Drop are great ideas, the visualization can be played in the background, just like the demo we have right now.<br />
+<br />
+WebVS uses grunt for building. You need to have nodejs, npm and grunt installed.<br />
+<br />
+Clone the repo and run<br />
+npm install<br />
+This will install all the build tools.<br />
+<br />
+To build, i run<br />
+grunt.<br />
+This will generate all the files in the build directory.<br />
+<br />
+To test, i run a simple http server in the repo directory with<br />
+python -m SimpleHTTPServer<br />
+and hit localhost:8000 in the browser.<br />
+<br />
+Also, if you run<br />
+grunt watch<br />
+it'll run a continuous build, whenever you save files it'll regenerate, so you just have to refresh the browser.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">11th July 2013, 22:48</div></div>
+<br />
+<div class="posttext">A more ambitious idea is to have a WebVS editor + Gallery kind of site.<br />
+Where users can create, save, share, rate, view and fork presets.<br />
+Something similar to http://sketchpad.cc and the likes, but for AVS presets.<br />
+Thats still a long way though :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">11th July 2013, 23:05</div></div>
+<br />
+<div class="posttext">This looks really nice. Is this is a standalone desktop tool?<br />
+It's HTML5. :)<br />
+I had a simple window system laying around that I was going to use as a backend for websites, but I never got around to that, so I've re-purposed it.<br />
+<br />
+<br />
+I'll have a look at your editor branch in the morning, but you seem to have made some good progress judging from those screens. Certainly ahead of me, even if it's not as pretty.<br />
+<br />
+<br />
+Along with D&amp;D for presets it would be trivial to support audio too that way.<br />
+<br />
+<br />
+Ah, great! Thank you for the build instructions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">11th July 2013, 23:15</div></div>
+<br />
+<div class="posttext">It's HTML5. :)<br />
+I had a simple window system laying around that I was going to use as a backend for websites, but I never got around to that, so I've re-purposed it.<br />
+<br />
+<br />
+Wow, thats really cool. I have a hard time getting the CSS right, even for this primitive looking UI :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">12th July 2013, 21:35</div></div>
+<br />
+<div class="posttext">that's awesome. since it's still in early stages, think of adding an option to the editor to load custom css (rather than demanding users to use a userstyle/greasemonkey script etc.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">12th July 2013, 22:05</div></div>
+<br />
+<div class="posttext">i did a pull request on github in which i added working cdn links for codemirror and jquery. also, the (current) editor is now draggable.<br />
+<br />
+haven't figured out your soundcloud code yet, but i think it'd be great to have support for playlists as well. also, i tried adding an option to hide the fps counter through a url parameter (e.g. &quot;?showfps=false&quot;), but i don't even know how the html source is generated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">12th July 2013, 23:36</div></div>
+<br />
+<div class="posttext">a couple of other things i noticed:<br />
+<br />
+webkit/bink based browsers:<br />
+- works in chrome<br />
+- doesn't work in chromium (no sound)<br />
+- doesn't work in opera 5 or opera next (no sound)<br />
+- doesn't work in safari (no sound, no visual - just the editor)<br />
+<br />
+i also noticed that when i edited the default soundcloud track in the demo, a second instance of the track started sometimes (in particular with this track (http://soundcloud.com/hyetal/northwest-passage), others worked fine). when reloading the page, i sometimes experienced chopped sounds.<br />
+<br />
+since the actual html of the demo seems to be rendered the javascript, it would be nice if you could put the un-minified files on github. reading one-letter variable names can be very confusing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">13th July 2013, 02:43</div></div>
+<br />
+<div class="posttext">i've committed a second example that allows passing url parameters to control the initial zoom factor, the initial soundcloud track and to hide controls.<br />
+<br />
+demos:<br />
+-zoom=4 (http://webvs.visbot.net/params.html?zoom=4)<br />
+-different soundcloud track (http://webvs.visbot.net/params.html?sound=http://soundcloud.com/mrbeatnick/parallax-scroll)<br />
+-controls=hide (http://webvs.visbot.net/params.html?controls=hide)<br />
+<br />
+parameters can be combined (http://webvs.visbot.net/params.html?zoom=8&amp;sound=https://soundcloud.com/xlr8r/letherette-after-dawn-bibio) as well</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">13th July 2013, 20:31</div></div>
+<br />
+<div class="posttext">i played around a bit more with the editor and there are a couple of things i'd like to add. however, i would like you to explain a couple of things first.<br />
+<br />
+1. is demo.min.js what a preset file would look like or is it a combination of the preset (as json) and some extra stuff?<br />
+<br />
+2. i tried to add the code from the codemirror theme demo to the editor, but i'm not sure how that editor works. the input fields are being displayed a pre tags, not input or textareas. i think it would be a nice option to be able to change the theme of the syntax highlighter.<br />
+<br />
+3. what else is codemirror doing than providing the editor with syntax highlighting?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">13th July 2013, 21:07</div></div>
+<br />
+<div class="posttext">Thanks for the changes you've submitted. The url param idea is cool. An interesting hack would be to encode the entire preset as base64 and accept it as a urlparam. This would allow us to share preset code as well in the url.<br />
+<br />
+i played around a bit more with the editor and there are a couple of things i'd like to add. however, i would like you to explain a couple of things first.<br />
+<br />
+1. is demo.min.js what a preset file would look like or is it a combination of the preset (as json) and some extra stuff?<br />
+<br />
+<br />
+I'll try to explain the basic structuring of the code in the repo.<br />
+<br />
+<br />
+  /js - This contains the main WebVS library. I have designed things around a core visualization library. This is pure JS, just few dependencies. Essentially anyone can plug this library into any application, create a webvs object with proper options and start playing visualizations.<br />
+  /js/core.js - This file contains all the base stuff including the base webvs object and base classes for all the components.<br />
+  /js/** - All other files have one effect component or contain utility classes and stuff<br />
+  /test/** - this contains just some very basic qunit test cases, for the expression parser mainly.<br />
+  /demo - This contains the demo app that i have hosted at url<br />
+  /demo/demo.js - This code runs the demo app with the editor and stuff. It uses the webvs library. This code contains a hardcoded preset, which is shown in the editor.<br />
+<br />
+<br />
+when you build the code 1.) all the webvs library files are assembled into one js file 2.) most of the other stuff are just copied into build directory, so you can run the demo from there.<br />
+<br />
+when you build the code with &quot;grunt dist&quot;. It generates all the same stuff in dist directory, but with minification. Its this dist directory that i have put on the demo page.<br />
+<br />
+<br />
+2. i tried to add the code from the codemirror theme demo to the editor, but i'm not sure how that editor works. the input fields are being displayed a pre tags, not input or textareas. i think it would be a nice option to be able to change the theme of the syntax highlighter.<br />
+<br />
+3. what else is codemirror doing than providing the editor with syntax highlighting?<br />
+<br />
+Code mirror simply creates an editor inside a container div that we have on the page https://github.com/azeem/webvs/blob/master/src/demo/demo.js#L257<br />
+<br />
+I do not know what could be the scope of the JSON editor based UI. I am working on the an AVS editor like UI, which should be much more simpler to use. The JSON format was meant to be a structure consumable by the WebVS library.<br />
+<br />
+I would like to push the editor UI out into master and use it as the main app. Please take a look at the code in /editor in the editor branch.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th July 2013, 00:35</div></div>
+<br />
+<div class="posttext">Thanks for the changes you've submitted. The url param idea is cool. An interesting hack would be to encode the entire preset as base64 and accept it as a urlparam. This would allow us to share preset code as well in the url.<br />
+<br />
+this idea is awesome, though probably not applicable (http://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers).<br />
+<br />
+ /demo/demo.js - This code runs the demo app with the editor and stuff. It uses the webvs library. This code contains a hardcoded preset, which is shown in the editor.<br />
+<br />
+once webvs is at a stage that it can load files, will these be contain only the json portion?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th July 2013, 14:35</div></div>
+<br />
+<div class="posttext">quick and dirty loader (http://webvs.visbot.net/loader.php) that reads preset files from a directory. i won't be able to refine this before later tonight or tomorrow. it currently only works after the second selection (applying the first) and it currently appends an editor window to the bottom. will get there eventually, but if someone wants to post suggestions in the meantime...<br />
+<br />
+ps: i previously reported simultaneous tracks playing at times, i guess that can be caused when using multiple editors</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th July 2013, 18:12</div></div>
+<br />
+<div class="posttext">okay, since i shared that terribly miserable loader prototype (http://webvs.visbot.net/loader.php), i not only travelled 50km by bike, i also gave webvs a little thought.<br />
+<br />
+1. webvs as a service<br />
+the loader is the first demo that relies ln the usage of a server-side language, namely the immensely horrible php scripting language. the script populates the dropdown menu for the presets. would i be fluent in cool languages like python, i wouldn't have taken such matters, while rails wasn't applicable as a quick solution. anyway, clear is on thing: webvs can run online and certain stuff will have to be done dynamically on the server side.<br />
+<br />
+2. webv as an app<br />
+one would want to avoid duplicate work wherever possible. the combination of modern javascript and html5 enables webvs to run on all platforms that provide modern browser technology. since the current version of webvs runs on google chrome only (bizarrly other webkit browsers are not supported), i think it's worth thinking about using nodejs as a platform to deploy webvs on the desktop. this would eliminate the need of a variety of languages and little to no adjustments to let webvs run on the server or locally. that said, i probably should have populated the afforementioned preset dropdown using javascript.<br />
+<br />
+so far i have enjoyed playing around with the available code, especially to test out what could be done on the frontend. i'm not particularly happy about the use of codemirror, as it seem a bit over the top for a rather simple task. also i'd prefer using real html textareas in the editor. regarding the syntax highlighting, there are several simpler solutions in the form of javascript. also, i'm not too happy about the current state of modules. things should be kept simple and modular, the current demo.js contains both the presets plus some additional code.<br />
+<br />
+what are your plans for webvs' future regarding the scale of avs-compatibility and how do judge the level of accuracy? what are your plans regarding web platform and desktop deployment?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th July 2013, 19:13</div></div>
+<br />
+<div class="posttext">i think i will rebuild the frontend from ground up, replacing the editor library with something simpler, then add support to load (and later save) presets. i will then think about how to run server-side code on the nodejs platform. (did i mentioned how extremely well nodejs performs multithreaded?)<br />
+<br />
+for the future, i could see some great ways to integrate music playback. besides soundcloud, other audio and video platforms should be integrated, interacting with all the user features (favourites, libary) that platform offers. needless to say, local music playback should be supported as well, again including library capability and favourites from popular players.<br />
+<br />
+z33m: you started a fire!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">14th July 2013, 19:22</div></div>
+<br />
+<div class="posttext">and one more idea:<br />
+<br />
+so far the code is mostly clean and modular (apart from demo.js), so i think if somebody doesn't agree with my ideas for the ui (or simply prefers the classic avs editor approach qoal has taken), the ui part should be kept just as simple as the rest of the plugin. users should be able to install and select a various frontend themes. the webvs core should make it easy for such third party addons to use a variety of libraries (in a similar way jsfiddle offers jquery, mootools etc.). syntax highlighting should be optional from the frontend decisions (though a theme could override that), providing a variety of userstyles in a seperate library. most of the javascript highlighting solutions i prefer over the current editor (i.e. enlighter, highlight.js etc.) already support a variety of highlighting themes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">14th July 2013, 23:09</div></div>
+<br />
+<div class="posttext">okay, since i shared that terribly miserable loader prototype (http://webvs.visbot.net/loader.php), i not only travelled 50km by bike, i also gave webvs a little thought.<br />
+<br />
+1. webvs as a service<br />
+the loader is the first demo that relies ln the usage of a server-side language, namely the immensely horrible php scripting language. the script populates the dropdown menu for the presets. would i be fluent in cool languages like python, i wouldn't have taken such matters, while rails wasn't applicable as a quick solution. anyway, clear is on thing: webvs can run online and certain stuff will have to be done dynamically on the server side.<br />
+<br />
+<br />
+This is definitely a good direction, this is precisely what i meant by the &quot;webvs gallery + editor site&quot;. I was hacking around with a little bit of https://www.firebase.com/ to getaway with having to write serverside code, though having a server side backend does sound more robust.<br />
+<br />
+<br />
+2. webv as an app<br />
+one would want to avoid duplicate work wherever possible. the combination of modern javascript and html5 enables webvs to run on all platforms that provide modern browser technology. since the current version of webvs runs on google chrome only (bizarrly other webkit browsers are not supported), i think it's worth thinking about using nodejs as a platform to deploy webvs on the desktop. this would eliminate the need of a variety of languages and little to no adjustments to let webvs run on the server or locally. that said, i probably should have populated the afforementioned preset dropdown using javascript.<br />
+<br />
+<br />
+Browser compatibility is a bit rough right now, I'll need to find some time to fix this. I havnt thought about this possibility of running webvs in node. This should be possible theoretically. However state of webgl support in headless browser kits or projects like node-webgl seems limited, need to investigate.<br />
+<br />
+<br />
+so far i have enjoyed playing around with the available code, especially to test out what could be done on the frontend. i'm not particularly happy about the use of codemirror, as it seem a bit over the top for a rather simple task. also i'd prefer using real html textareas in the editor. regarding the syntax highlighting, there are several simpler solutions in the form of javascript. also, i'm not too happy about the current state of modules. things should be kept simple and modular, the current demo.js contains both the presets plus some additional code.<br />
+<br />
+demo.js was a small hack that i put together to test/demonstrate the library. I just kept adding some smaller changes to it. Never meant it to be used as a real editor, IMO its rather cumbersome to edit avs expressions inside the JSON since they are quoted as strings.<br />
+<br />
+<br />
+what are your plans for webvs' future regarding the scale of avs-compatibility and how do judge the level of accuracy? what are your plans regarding web platform and desktop deployment?<br />
+I am trying to build components one by one, eventually i hope we'll get to a point where a good number of presets can be supported. As for accuracy, results look pretty good so far, There are a lots of issues and loose ends, like eg. the color of unconed's silk string preset is somewhat messed up, the movement is very shaky compared to AVS and so on.<br />
+<br />
+i think i will rebuild the frontend from ground up, replacing the editor library with something simpler, then add support to load (and later save) presets. i will then think about how to run server-side code on the nodejs platform. (did i mentioned how extremely well nodejs performs multithreaded?)<br />
+<br />
+for the future, i could see some great ways to integrate music playback. besides soundcloud, other audio and video platforms should be integrated, interacting with all the user features (favourites, libary) that platform offers. needless to say, local music playback should be supported as well, again including library capability and favourites from popular players.<br />
+<br />
+z33m: you started a fire!<br />
+<br />
+and one more idea:<br />
+<br />
+so far the code is mostly clean and modular (apart from demo.js), so i think if somebody doesn't agree with my ideas for the ui (or simply prefers the classic avs editor approach qoal has taken), the ui part should be kept just as simple as the rest of the plugin. users should be able to install and select a various frontend themes. the webvs core should make it easy for such third party addons to use a variety of libraries (in a similar way jsfiddle offers jquery, mootools etc.). syntax highlighting should be optional from the frontend decisions (though a theme could override that), providing a variety of userstyles in a seperate library. most of the javascript highlighting solutions i prefer over the current editor (i.e. enlighter, highlight.js etc.) already support a variety of highlighting themes.<br />
+<br />
+I agree with this, any larger UI/Frontend work is big project in itself with lots of dependencies, it is nicer to keep the webvs core library simple.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">14th July 2013, 23:13</div></div>
+<br />
+<div class="posttext">I have pushed the new working webvs UI on the demo page http://azeemarshad*****webvs/ http://i.imgur.com/wH9gqkc.png</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">30th August 2013, 22:19</div></div>
+<br />
+<div class="posttext">I've attached the editor I worked on as-is.<br />
+<br />
+Sadly I got fed up failing to code recursive drag &amp; drop for the tree list, that coupled with depression and not wanting to fix the small css issues outside of firefox (so frustrating that after all these years there are still miss matches between browsers, even with css3 stuff). (I may fix them at some point)<br />
+<br />
+I didn't get around to adding the pop-out windows, it would be a little ↗ icon on the right hand side, opposite the element label.<br />
+<br />
+Anyway, I'm sure the code is ghastly for others to see, but it doesn't use any external libraries.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">25th September 2013, 18:40</div></div>
+<br />
+<div class="posttext">@qoal since i noticed you have a github account, could you please put it there? there are some changes i'd like to do for better browser compatibility and i think that would be the best way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">26th September 2013, 12:19</div></div>
+<br />
+<div class="posttext">https://github.com/QOAL/qios-webvseditor</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">28th September 2013, 20:14</div></div>
+<br />
+<div class="posttext">That is a brilliant idea, will be really useful, for debugging also.<br />
+<br />
+I was checking the AVS cpp code to see how the files are read/written. Here is what i've understood so far, if its of any help to anyone. Will need more help from someone with better understanding of the code.<br />
+<br />
+The basic preset reading starts at __LoadPreset method in r_list.cpp. From there it goes on to read a root effectlist, and subsequently all the effects in the preset,<br />
+<br />
+The basic structure is something like this:<br />
+<br />
+<br />
+  AVS Signature string - &quot;Nullsoft AVS Preset 0.2\x1a&quot;<br />
+  Root Effectlist Config - Effectlist config contains the following<br />
+		<br />
+      mode (1 BYTE + 1 optional INT depending on the value of the first byte) - Not exactly sure how this is used. but i think it determines how some of the effectlist settings are read.<br />
+      several INT values containing effect list settings. These i think are optional depending on the mode<br />
+      config data for all sub effects<br />
+		<br />
+<br />
+<br />
+The structure for each effect including effectlist (other than the root) is as follows.<br />
+<br />
+  EffectId INT - This indicates the effect type. There are three cases for this<br />
+		<br />
+      if EffectId == LIST_ID (0xfffffffe) then this is an effectlist<br />
+      if EffectId &lt; DLLRENDERBASE (16384) then this is a built in effect and EffectId is the index in the effect initializer declarations ie. DECLARE_EFFECT calls in rlib.cpp.<br />
+      if EffectId &gt; DLLRENDERBASE then i think the effect is loaded externally. The EffectId in this case is followed by a 32 byte string identifying the effect.<br />
+    <br />
+  Length INT - Length number of bytes that follow make the config for this effect.<br />
+  Config Code (Length BYTES) - This data i think is passed to load_config method of corresponding effect classes to initialize each effect.<br />
+<br />
+<br />
+Further, for externally loaded effects, it seems that the Config Code Section again has a structure like<br />
+<br />
+  use_code INT - Not sure what this means exactly.<br />
+  length INT - number of bytes of config data that follows.<br />
+  actual config data?<br />
+<br />
+<br />
+Meanwhile, on WebVS side, i ve added more stuff<br />
+<br />
+  More Effects<br />
+  Blending related stuff<br />
+  Support for Registers and more avs functions<br />
+  The demo now runs UnConeD's &quot;Silk Strings&quot; preset.<br />
+<br />
+<br />
+Not sure how far i can maintain compatibility with AVS. I am also adding some improvements, like<br />
+<br />
+  Named global vars - variables starting with @ symbol are global.<br />
+  clone - Effects can contain a clone parameter, an integer that would create multiple instances of the same effect. The clone index is then available as a variable in the avs expressions.<br />
+<br />
+<br />
+I am also trying to figure out a way to do an AVS editor like UI.<br />
+<br />
+i came across this today:<br />
+<br />
+https://github.com/Libvisual/libvisual-avs/blob/master/docs/avs_format.txt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">30th September 2013, 17:28</div></div>
+<br />
+<div class="posttext">Just to let people know that I've started working on an automatic converter from .avs to (what yathosho and I feel should be called) .webvs files.<br />
+https://github.com/grandchild/AVS-File-Decoder<br />
+<br />
+i came across this today:<br />
+<br />
+https://github.com/Libvisual/libvisu...avs_format.txt<br />
+this is a nice doc, but it's also seemingly an older version of the file format, or a not-always-well-researched one. it has much good information, but some errors. just to let people know.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">30th September 2013, 21:44</div></div>
+<br />
+<div class="posttext">Oh that's great, Grandchild!<br />
+<br />
+Contrary to the read me, it does work in Firefox too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">1st October 2013, 09:11</div></div>
+<br />
+<div class="posttext">demo time (http://decoder.visbot.net/)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">2nd October 2013, 11:15</div></div>
+<br />
+<div class="posttext">Hello again,<br />
+the Decoder is basically done - and I would appreciate some help hacking apart the various effects that are available.<br />
+It'd be great if some people would pick apart some of the many basic built-in &quot;checkbox/slider/number/color&quot;-type of effects.<br />
+Read https://github.com/grandchild/AVS-File-Decoder#avs-file-decoder<br />
+<br />
+I'll be mostly doing APEs for now because those might require some slightly deeper digging and function writing in the code...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">7th October 2013, 00:03</div></div>
+<br />
+<div class="posttext">nevermind the call for help... i'm mostly done by myself now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">9th October 2013, 14:27</div></div>
+<br />
+<div class="posttext">Okay, I feel ill at the end of last week (so I'm sorry for not lending a hand), but I'm better now so I feel like suggesting an IRC channel for WebVS related development. Maybe on freenode?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">9th October 2013, 22:21</div></div>
+<br />
+<div class="posttext">updated online decoder (http://decoder.visbot.net/) so people can test the conversion for errors or unsupported effects</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">9th October 2013, 22:37</div></div>
+<br />
+<div class="posttext">I feel like suggesting an IRC channel for WebVS related development. Maybe on freenode?<br />
+<br />
+what's wrong with the forum or github? the big shortcoming of irc is that everybody needs to be online all the time to be able to follow the discussion.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">10th October 2013, 09:50</div></div>
+<br />
+<div class="posttext">wow. lot of cool stuff. Ive been off for a little while, and AVS forum stopped sending me notifications for some reason.<br />
+<br />
+Been working on some major refactoring (https://github.com/azeem/webvs/tree/refactr) of webvs core code. cleaning up lot of the shader code and internals. Also writing some tests. I guess these changes + other fixes etc. can be put together as the first numbered version. I will write some detailed documentation or maybe a blog post about the internal wirings and how to write Effect components, would like lots of help on this.<br />
+<br />
+I have separated out the editor UI project into a separate repo (https://github.com/azeem/webvsed), the webvs library contains only the core library, the examples directory contains individual examples and tests.<br />
+<br />
+Also checkout https://github.com/rogerwang/node-webkit this is an awesome platform. Its basically nodejs+stripped-down-chrome that allows javascript applications to work standalone and it supports webgl too. I was able to quickly put together a standalone version of webvs that works on the desktop. This IMO is super exciting.<br />
+<br />
+Also working on the firefox issues. FF 24 release supports mp3 so the streaming issue is fixed, meanwhile some other problems have cropped up with dancer.js. Either ways webvs uses an adapter to interface with audio, so im thinking of looking at a more reliable audio library like using the flash support with soundmanager2 or something. Need to look at the beat detection also. The one in dancer.js is not very good.<br />
+<br />
+Just to let people know that I've started working on an automatic converter from .avs to (what yathosho and I feel should be called) .webvs files.<br />
+https://github.com/grandchild/AVS-File-Decoder<br />
+<br />
+this is a nice doc, but it's also seemingly an older version of the file format, or a not-always-well-researched one. it has much good information, but some errors. just to let people know.<br />
+<br />
+demo time (http://decoder.visbot.net/)<br />
+<br />
+wow so much awesomeness. This is really brilliant. Also, presently, avs presets and webvs preset are not a one to one map. so we might have to do some preprocessing in between, to make the output work directly.<br />
+<br />
+what's wrong with the forum or github? the big shortcoming of irc is that everybody needs to be online all the time to be able to follow the discussion.<br />
+<br />
+I agree, forum is better. Particularly for me, i think my timezone is 5+ hours ahead of most of you guys, been hanging out at the avs irc channel for sometime but rarely see any activity because of this. Having to put all discussion under one thread is getting a bit hairy though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">10th October 2013, 09:58</div></div>
+<br />
+<div class="posttext">Can any explain the difference between trans/Movement and trans/DynamicMovement internally. In Webvs ive written only a dynamicmovement effect, i thought movement is equivalent to dynamic movement with the code inside perpixel. However some effects look significantly different.<br />
+<br />
+Im going crazy trying debug this, getting weird artifacts in some cases. Could be because of difference in floating point calculations in webgl vs all integer calc in avs.<br />
+<br />
+Also coudnt find trans/movement code in the avs source. Found dynamic movement code in r_dmove.cpp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">11th October 2013, 16:54</div></div>
+<br />
+<div class="posttext">According to the comments in Grandchild's converter, Trans/Movement is in r_trans.cpp.<br />
+<br />
+As for forum notifications, this explains the default setting: Instant Email Notification - sends an email as soon as a new post is added to the thread. This is not sent for every reply and will only be sent once until you revisit the forums.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">14th October 2013, 01:53</div></div>
+<br />
+<div class="posttext">@azeem: Yes, have a look at<br />
+https://github.com/grandchild/AVS-File-Decoder/blob/master/js/components.js<br />
+and its comments, there is every source file as a comment behind the name, and every now and then i wrote the ranges or even the formula i saw in AVS or in the source code behind the fields.<br />
+<br />
+the same goes for<br />
+https://github.com/grandchild/AVS-File-Decoder/blob/master/js/tables.js<br />
+only there are less comments.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">15th October 2013, 08:39</div></div>
+<br />
+<div class="posttext">@azeem: Yes, have a look at<br />
+https://github.com/grandchild/AVS-File-Decoder/blob/master/js/components.js<br />
+and its comments, there is every source file as a comment behind the name, and every now and then i wrote the ranges or even the formula i saw in AVS or in the source code behind the fields.<br />
+<br />
+the same goes for<br />
+https://github.com/grandchild/AVS-File-Decoder/blob/master/js/tables.js<br />
+only there are less comments.<br />
+<br />
+Thanks a lot for this. The main difference that i found is that movement doesnt use interpolation while dynamic movement does, this creates some artifacts even if we set grid size to 1x1. The other was a problem with rectangular-polar conversion, avs coordinate system is so confusing.<br />
+<br />
+Also, if everyones interested we could use this google group https://groups.google.com/forum/#!forum/webvs for webvs related discussions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">15th October 2013, 13:34</div></div>
+<br />
+<div class="posttext">Also, the C++/Qt batch converter is taking shape:<br />
+https://github.com/grandchild/AVS-File-Decoder-Qt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">16th October 2013, 05:16</div></div>
+<br />
+<div class="posttext">Azeem:<br />
+I think there is some commentary in dmove.cpp, describing the interpolation (if only loosely iirc). Apart from that you are right, Movement is 'just' a static variant of a DM with pixel-exact transformation.<br />
+<br />
+Don't know about google-groups or something... What's wrong with this forum for now?<br />
+Apart from that, we could also take some of the discussion to github, to the repo pages, if necessary.<br />
+<br />
+Also, in the converter, I have all the builtin components - except for one, apparently. All I know is that is has the ID code '9'. The rest is contiguous from 0 to 45. If anyone finds the one builtin(!) component I am missing, please tell me. You can look at the component checklist (https://github.com/grandchild/AVS-File-Decoder#component-checklist) in the AVS Decoder repo, or into the components.js source directly.<br />
+It might very well be, that it's just not there/disabled...<br />
+<br />
+PS: If you find (or know) where in its source AVS assigns these IDs, I'd be happy to know that too :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">16th October 2013, 06:54</div></div>
+<br />
+<div class="posttext">Azeem:<br />
+I think there is some commentary in dmove.cpp, describing the interpolation (if only loosely iirc). Apart from that you are right, Movement is 'just' a static variant of a DM with pixel-exact transformation.<br />
+<br />
+<br />
+Yeah, didnt quite understand most of it though. AVS source code is really difficult to follow. Im using glsl variable interpolation, getting somewhat okay results, have to test it out a bit though.<br />
+<br />
+<br />
+Don't know about google-groups or something... What's wrong with this forum for now?<br />
+Apart from that, we could also take some of the discussion to github, to the repo pages, if necessary.<br />
+<br />
+<br />
+Nothing wrong with this forum for now really,. I had created this group, so just putting it out here. IIRC github doesnt have a discussion board as such, using the issues list like a discussion board, makes issue tracking all cluttered.<br />
+<br />
+<br />
+Also, in the converter, I have all the builtin components - except for one, apparently. All I know is that is has the ID code '9'. The rest is contiguous from 0 to 45. If anyone finds the one builtin(!) component I am missing, please tell me. You can look at the component checklist (https://github.com/grandchild/AVS-File-Decoder#component-checklist) in the AVS Decoder repo, or into the components.js source directly.<br />
+It might very well be, that it's just not there/disabled...<br />
+<br />
+PS: If you find (or know) where in its source AVS assigns these IDs, I'd be happy to know that too :)<br />
+<br />
+IIRC the ids are assigned in the declarations in rlib.cpp. there are several DECLARE_EFFECT calls. This call assigns the id from an incrementing integer. id 9 according to this is Roto Blitter</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">18th October 2013, 01:16</div></div>
+<br />
+<div class="posttext">Of course! Roto Blitter! Thanks :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">21st October 2013, 12:40</div></div>
+<br />
+<div class="posttext">Hi guys,<br />
+<br />
+I've put together most of the changes that i've been working on into Webvs v1.0.0 (https://github.com/azeem/webvs/releases).<br />
+<br />
+Changes<br />
++ Lot of refactoring. Pretty much rewrote lots of stuff.<br />
++ Lot of shader code uncluttering<br />
++ Source tree organization is now slightly different. Moved out editor program<br />
++ Added many tests<br />
++ Documentation (http://bit.ly/19n6pcN), lots of it<br />
++ Added ColorClip<br />
++ Added BufferSave<br />
++ DynamicMovement fixed, more accurate.<br />
++ New example UnConed-JelloCube (http://bit.ly/1damzud)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">21st October 2013, 14:18</div></div>
+<br />
+<div class="posttext">Awesome.<br />
+<br />
+Heads up if you download the release archive from github:<br />
+ The examples will not run without editing the javascript includes in them, or renaming the dist folder/files.<br />
+<br />
+Strange that one of the faces of the JelloCube doesn't show up.<br />
+<br />
+I'll give it a more thorough look later. (And try adding support for it in my editor)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">21st October 2013, 14:38</div></div>
+<br />
+<div class="posttext">Awesome.<br />
+<br />
+Heads up if you download the release archive from github:<br />
+ The examples will not run without editing the javascript includes in them, or renaming the dist folder/files.<br />
+<br />
+<br />
+hmm, have to do something about this. examples work on the build files. you can just run grunt that would generate all the build files.<br />
+<br />
+<br />
+Strange that one of the faces of the JelloCube doesn't show up.<br />
+<br />
+I'll give it a more thorough look later. (And try adding support for it in my editor)<br />
+<br />
+Yes a cube face is missing (https://github.com/azeem/webvs/issues/2), lemme know if you figure out the problem. Im guessing this has something to do with the clone feature in webvs.  I saw that lots of presets have to create several copies of the same superscope only with slight variations. In Webvs you can specify a clone number and that effect will be cloned N times at the same time a variable called &quot;cid&quot; becomes available in the superscope. The scope can change conditions based on cid.<br />
+<br />
+Also check webvsed (https://github.com/azeem/webvsed). This is probably all completely broken now. But i had done some amount work on automatically generating the UI for each component. Basically, each component defines a JSON-Schema of its options object. A library then generates HTML form from this schema.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">21st October 2013, 23:04</div></div>
+<br />
+<div class="posttext">Could you look into why loadPreset fails when you call it again after the initial load?<br />
+<br />
+You can test the issue quickly by adding:setTimeout(function(){webvs.loadPreset(samplePreset);}, 1000);<br />
+to the end of the the onload function in the examples.<br />
+<br />
+My editor (https://github.com/QOAL/qios-webvseditor) doesn't look quite as robust as yours, however it's quite functional now. Although it supports the output of Grandchild's convert, and I'm not sure if there is total parity with WebVS with that yet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">24th October 2013, 18:44</div></div>
+<br />
+<div class="posttext">I'm missing the implementation of three of the most important effects of early AVS: Simple (Scope), Unique Tone and Movement. I'm sure they could be implemented—as aliases—within the existing SuperScope, ColorMap and Dynamic Movement effects. Actually, there are a couple of more render effects that I'm sure can be rebuild using SSC: Bass Spin, Dot Fountain and all that jazz.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">24th October 2013, 19:18</div></div>
+<br />
+<div class="posttext">I'm missing the implementation of three of the most important effects of early AVS: Simple (Scope), Unique Tone and Movement. I'm sure they could be implemented—as aliases—within the existing SuperScope, ColorMap and Dynamic Movement effects. Actually, there are a couple of more render effects that I'm sure can be rebuild using SSC: Bass Spin, Dot Fountain and all that jazz.<br />
+<br />
+I think yes it is possible. It should be really simple to create a component Classes that inherits existing SuperScope, ColorMap or DynamicMovement classes and pass the appropriate parameters to the super constructor.<br />
+<br />
+To emulate winamp Trans/Movement behaviour, Webvs Dynamic movement has two settings 1) &quot;noGrid&quot;: setting this to true disables grid interpolation, giving pixel accurate movement. 2) &quot;compat&quot;: setting this to true makes webvs switch to a low precision bilinear filter code, makes things behave more like avs. Not very sure about Unique tone have to check the code, but should be a fairly simple shader code either ways.<br />
+<br />
+I'll add these to the issues list.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">29th October 2013, 22:59</div></div>
+<br />
+<div class="posttext">As the release version of Firefox now supports all the necessary web audio spec I would like to point out a problem with Dancer.<br />
+The version of the web audio spec it targets is slightly different to how the spec is now, it seems.<br />
+<br />
+Two functions have been renamed (I assume Chrome has the old names as aliases):<br />
+createJavaScriptNode is now createScriptProcessor<br />
+createGainNode is now createGain<br />
+More info here (https://developer.mozilla.org/en-US/docs/Web_Audio_API/Porting_webkitAudioContext_code_to_standards_based_AudioContext).<br />
+<br />
+Alas, even with those errors fixed there is still a problem where the audio only plays for about 250ms. (It reports it as still playing through.)<br />
+<br />
+Dancer has a distinct lack of activity on Github, and I'd like to think that its at fault not Firefox.<br />
+<br />
+Anyway with that I've enabled the editor as standard in my editor.<br />
+<br />
+<br />
+z33m: Would there be any benefit if WebVS used web workers? Pause reduction on the main thread etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">31st October 2013, 21:56</div></div>
+<br />
+<div class="posttext">As the release version of Firefox now supports all the necessary web audio spec I would like to point out a problem with Dancer.<br />
+The version of the web audio spec it targets is slightly different to how the spec is now, it seems.<br />
+<br />
+Two functions have been renamed (I assume Chrome has the old names as aliases):<br />
+createJavaScriptNode is now createScriptProcessor<br />
+createGainNode is now createGain<br />
+More info here (https://developer.mozilla.org/en-US/docs/Web_Audio_API/Porting_webkitAudioContext_code_to_standards_based_AudioContext).<br />
+<br />
+Alas, even with those errors fixed there is still a problem where the audio only plays for about 250ms. (It reports it as still playing through.)<br />
+<br />
+Dancer has a distinct lack of activity on Github, and I'd like to think that its at fault not Firefox.<br />
+<br />
+<br />
+I agree, Dancer is quite inactive now. There are a couple of things, in this area, that i think should be done in webvs.<br />
+1) Create a separate, nicer AnalyserAdapter implementation. use some other well maintained library or write our own.<br />
+<br />
++ SoundManager2 looks promising. the downside is that its flash + doesnt have beat detection afaik.<br />
++ Implementing our own doesnt seem too far fetched either, both firefox and chrome supports AnalyserNodes which gives you FFT spectrum and waveform data directly, unlike dancer which uses a JS FFT library on the raw sound samples. The browser implementation should be a lot faster also.<br />
+<br />
+2) Implement custom beat detection logic. For things like &quot;Custom BPM&quot; etc<br />
+<br />
+<br />
+Anyway with that I've enabled the editor as standard in my editor.<br />
+<br />
+<br />
+z33m: Would there be any benefit if WebVS used web workers? Pause reduction on the main thread etc.<br />
+Havnt looked into this much yet. Im guessing nothing much, atleast from my limited understanding of how webworkers work. Basically they work through message passing, so dont know what kind of data can be passed around safely. They do not have access to the DOM and hence probably the webgl context too. So its pretty much limited to raw processing stuff, maybe to speed up expression parsing or something. The PEGS parser is a bit slow actually.<br />
+<br />
+But the UI responsiveness should be somewhat solved by the issue#5, since it greatly reduces expression+shader recompilations. Especially since the UI is only ever going to update components one at a time, so atmost max(clone) effect reinitialization per user interaction, which should be fast enough.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">4th November 2013, 10:09</div></div>
+<br />
+<div class="posttext">I have pushed the next increment of webvs. 1.1.0<br />
+<br />
+Changes:<br />
++ added Texer Component and resources.<br />
++ DynamicMovement aspect ratio fix<br />
++ shader MULTIPLY blend fix<br />
++ added EffectList expression support<br />
++ Container component<br />
++ Tree CRUD with clone support.<br />
++ added Simple scope.<br />
++ added UniqueTone.<br />
++ added Movement.<br />
++ DynamicMovement grid size fix</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">z33m</div><div class="date small text-muted">5th November 2013, 07:16</div></div>
+<br />
+<div class="posttext">Can anyone tell me, or point to resources on how to build and step through the AVS C++ source code?<br />
+<br />
+Also, check this issue: https://github.com/azeem/webvs/issues/8. if anyone has a build setup and can spare some time, please check it out.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">6th November 2013, 15:34</div></div>
+<br />
+<div class="posttext">DrO (http://forums.winamp.com/member.php?u=122037) and Justin are the only people I'm aware of that have complied AVS of late, asking one of them nicely for build environment would be your best bet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">6th November 2013, 20:19</div></div>
+<br />
+<div class="posttext">Can anyone tell me, or point to resources on how to build and step through the AVS C++ source code?<br />
+<br />
+wotl and grandchild might able to shed some light on. from what i remember, you need 1998's (!) visual studio 6 to compile the source.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">8th November 2013, 08:43</div></div>
+<br />
+<div class="posttext">Never attempted to compile it myself, I suck at coding presets, let alone writing software. Yes, you need that version and I know there are no resources or added comments or anything like that. Steve and Co. probably knew the code by heart and worked from there. There are some threads on this topic but I think DrO is the only one active on this board who ever really got it to work. I'm just hosting the files because noone else did</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">12th November 2013, 13:30</div></div>
+<br />
+<div class="posttext">btw https://github.com/visbot/vis_avs</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

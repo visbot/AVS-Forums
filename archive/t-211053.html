@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 2d -&gt; 3d conversion, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 2d -&gt; 3d conversion AVS Troubleshooting" />
+	
+	<title> 2d -&gt; 3d conversion - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> 2d -&gt; 3d conversion</li>
+</ol>
+<!-- div class="pda"><a href="t-211053.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=211053">2d -&gt; 3d conversion</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">21st March 2005, 23:36</div></div>
+<br />
+<div class="posttext">I'm having trouble thinking of how to convert to the 3D instead of 2D, e.g.<br />
+<br />
+x1=bla<br />
+y2=bla<br />
+x1=0;<br />
+<br />
+--pak-9's rotation stuff <br />
+<br />
+should i use something like:<br />
+x1=x(0);<br />
+y1=y(0);<br />
+z1=z(0); <br />
+??? a little help would be greatly appreciated</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 00:02</div></div>
+<br />
+<div class="posttext">well, i'd be pleased if i could help! But that would unfortunately provide that i could understand what your problem is anyway...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">22nd March 2005, 11:52</div></div>
+<br />
+<div class="posttext">er... superscope nor triangle.ape nor texer2 doesn`t support 3D drawing, you HAVE to convert 3D to 2D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 12:03</div></div>
+<br />
+<div class="posttext">perhaps he tries to convert from 4D to 3D, then want's to apply some code. And after that he wants to convert to 2D first. Just an assumption, cause i have no inkling of what he actually wants.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">22nd March 2005, 12:16</div></div>
+<br />
+<div class="posttext">2d to 3d? 2d stays flat no matter how much more dimensions you add because the original isn't affected by adding dimensions alone.<br />
+<br />
+In other words:<br />
+Even if you do have a 3D monitor (which I HIGHLY doubt) it still would be flat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 12:45</div></div>
+<br />
+<div class="posttext">It could be that i now got what he asked for! If you convert 3D to 2D you assign the z-coordinates as a zoom factor to your 2D image (you know, near objects are big and vice versa...). And now you want to get back 3D coordinates from the 2D image, right? Wel if so i have to tell you that this isn't possible. As soon as you convert 3D into 2D you lose all perspective information. You recognize the following drawing as a cube, but AVS only recognizes three connected quadrangles.<br />
+ _____<br />
+/____/|<br />
+|    ||<br />
+|____|/  (a bit crappy, i know)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">22nd March 2005, 13:39</div></div>
+<br />
+<div class="posttext">right... 2D=3D if ***8710;z=0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 13:51</div></div>
+<br />
+<div class="posttext">and 2D=3D if ***916;x=0 or if ***916;y=0 ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">22nd March 2005, 13:58</div></div>
+<br />
+<div class="posttext">xor rather.. it would be 1D if both were zero and 0D if all dimensions are 0.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 14:11</div></div>
+<br />
+<div class="posttext">:D<br />
+well actually i used the or from the normal usage of language like in 'either... or..'! or so...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">22nd March 2005, 15:40</div></div>
+<br />
+<div class="posttext">From the Programming guide:<br />
+<br />
+&quot;One last step is needed before we can implement this, once we have passed our values through the rotation matrices we need to ‘project’ the pixels onto our 2D area, this is a little like interpreting the result to fit our window. The projection is:<br />
+<br />
+x=x4/(z4+2);<br />
+y=y4/(z4+2);&quot;<br />
+<br />
+This stage is projecting the 3D into 2D, you can project orthogonally with just x=x3*c;y=y3*c where c is a constant for scaling. However the two lines above are a perspective projection, i.e. things further away are smaller.<br />
+<br />
+You can google and search the forums for all this stuff, please just look harder</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">22nd March 2005, 20:06</div></div>
+<br />
+<div class="posttext">or at least ask your questions in a better way. 80% of this thread was trying to figure out what you actually wanted...<br />
+please, matt, read this, you seem to really need it:<br />
+http://www.catb.org/~esr/faqs/smart-questions.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">22nd March 2005, 21:01</div></div>
+<br />
+<div class="posttext">Can't we imply tomylobos link somewhere in the stickies? ;)<br />
+It could be pretty useful!<br />
+<br />
+i specially liked this sentence: ;)<br />
+Write in clear, grammatical, correctly-spelled language</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">23rd March 2005, 01:16</div></div>
+<br />
+<div class="posttext">I think what I'm trying to say is:<br />
+I can create some 2D Objects and rotate in a &quot;3rd dimension&quot; *I think*, so how would I make a &quot;3d&quot; object? please and/or if replies @ expellidilition@gmail.com please? 0hh &amp; tomy thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">23rd March 2005, 08:20</div></div>
+<br />
+<div class="posttext">my template + explanation.<br />
+<br />
+learn, don't rip.<br />
+<br />
+..and yes some use other methods for aspect ratio but i know some people use AVS with h&gt;w so I prefer this one</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">23rd March 2005, 08:56</div></div>
+<br />
+<div class="posttext">Matt it's not our job to tell you which objects you shall render. Just try out something. For example you could pick a random 2D object you already made and assign 'i' to the third dimension (don't forget the whole roataion &amp; 2D-&gt;3D code of course). Then that object will automatically extend along the z-axis. Sometimes it's nothing but 'trial and error'. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">23rd March 2005, 11:03</div></div>
+<br />
+<div class="posttext">Originally posted by MaTTFURY <br />
+I think what I'm trying to say is:<br />
+I can create some 2D Objects and rotate in a &quot;3rd dimension&quot; *I think*, so how would I make a &quot;3d&quot; object? please and/or if replies @ expellidilition@gmail.com please? 0hh &amp; tomy thanks <br />
+<br />
+If you make 2D object and rotate it in all 3 dimensions Z value of the object is static. To make 3D object and rotate it in all 3 dimensions just make Z value dynamic, like:<br />
+<br />
+<br />
+foo = pi*i * (n-1)*(2/5);<br />
+px = 0.5 * sin(foo);<br />
+py = 0.5 * cos(foo);<br />
+pz = 2.0 * (i-0.5);<br />
+<br />
+//(...rotation foo...)<br />
+<br />
+z = 1/(rz + 2); //note that z doesn`t do anything, its just used for sake of optimization<br />
+x = rx*z;<br />
+y = ry*z;<br />
+<br />
+<br />
+now if you multiply any of the coordinates (px, py or pz) with 0 instead of current number (thus making the coordinate static) it will simply be 2D object.<br />
+But if you`re asking how to FORM a 3D object, then it`s bit more complicated, you just have to use your imagination and learn from other code (no, not rip, learn... as try to understand others code).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">23rd March 2005, 13:01</div></div>
+<br />
+<div class="posttext">Originally posted by TomyLobo <br />
+or at least ask your questions in a better way. 80% of this thread was trying to figure out what you actually wanted...<br />
+please, matt, read this, you seem to really need it:<br />
+http://www.catb.org/~esr/faqs/smart-questions.html I never realised we were part of the hacker community.<br />
+<br />
+Does this mean I'm elite now?<br />
+<br />
+/runs off<br />
+<br />
+Mummy mummy I'm l33tx0r!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">24th March 2005, 00:23</div></div>
+<br />
+<div class="posttext">that guide applies to any kind of forum or help channel</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">24th March 2005, 00:58</div></div>
+<br />
+<div class="posttext">So I'm... not... 3l33x0r?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th March 2005, 01:01</div></div>
+<br />
+<div class="posttext">no, if so you would have known earlier. Hackers know that they are cool. sorry bad luck you're none..<br />
+after all you're just erm... a fR34k or somethin.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">24th March 2005, 01:42</div></div>
+<br />
+<div class="posttext">Does that mean I have to have my tatoo removed?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th March 2005, 10:37</div></div>
+<br />
+<div class="posttext">yepp, also you have to remove the pennant of the 'q-basic programming club (est. 1988)' and all the directories on your PC called 'HakzZ', 'WarezZZZz', 'Spy-Proggzz' etc.<br />
+Neither should you forget to remove the posters from the movie hackers and the one from matrix with neo infront of his PC from your walls...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">1st April 2005, 03:51</div></div>
+<br />
+<div class="posttext">stop being script kiddies :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">1st April 2005, 10:33</div></div>
+<br />
+<div class="posttext">Stop being dumb</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">1st April 2005, 10:44</div></div>
+<br />
+<div class="posttext">i guess that's impossible. would be the same as if i told you: 'stop beeing WotL!'</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">12th April 2005, 00:39</div></div>
+<br />
+<div class="posttext">where foo = point?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th April 2005, 13:30</div></div>
+<br />
+<div class="posttext">Being a (real) hacker has nothing to do with being 'cool'. Someone who hacks is someone who has a fondness for tinkering with computers and their insides. To hack something is basically the same as working on something, but hacking tends to have an air of untidyness associated with it.<br />
+<br />
+I.e. &quot;I hacked up a solution&quot; = I came up with something that works but has wires hanging out and loose screws everywhere.<br />
+<br />
+However, this negative connotation is not always present. Being up all night 'hacking at the source code' is an admirable thing.<br />
+<br />
+Sometimes the meaning is that the method of coming up with the solution was chaotic, but that the end result is in fact very elegant and clean.<br />
+<br />
+A 'hacker' is thus mostly the same as a 'programmer', with the difference that a hacker enjoys what he does. Working 9 to 5 fixing bugs in some mind numbing desktop tax form app is not hacking. People who do that are 'code monkeys'.<br />
+<br />
+The media of course always refers to 'crackers' as 'hackers'. Some hackers complain endless about it, wearing the hacker badge and consistently pointing out to people that it's not the same as cracking. But most hackers just know when to use the word and when not to ;). To the uninformed masses, saying &quot;I'm a hacker but I don't break into computers&quot; is similar to saying &quot;I'm a pedophile but it's only platonic!&quot;.<br />
+<br />
+Of course, the real crackers are usually also hackers: you can't learn how to break (into) things unless you know what they look like from the inside. Crackers who are not hackers are script kiddies.<br />
+<br />
+I'm off to do some hacking :P.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">14th April 2005, 16:25</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+I'm a pedophile but it's only platonicMost awesome quote taken out of context... EVER</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">18th April 2005, 04:42</div></div>
+<br />
+<div class="posttext">UnConeD is platonicist</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">18th April 2005, 13:44</div></div>
+<br />
+<div class="posttext">1) That isn't a word<br />
+2) That isn't funny<br />
+3) Shut up</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">18th April 2005, 13:48</div></div>
+<br />
+<div class="posttext">just look at his last few posts:<br />
+Originally posted by MaTTFURY <br />
+stop being script kiddies :D  Originally posted by MaTTFURY <br />
+where foo = point?  Originally posted by MaTTFURY <br />
+UnConeD is platonicist <br />
+is there anything more to say?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">18th April 2005, 14:41</div></div>
+<br />
+<div class="posttext">I'm slowly beginning to regret my apology to Matt.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th April 2005, 01:52</div></div>
+<br />
+<div class="posttext">Should it be plutonicist?<br />
+<br />
+:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th April 2005, 03:18</div></div>
+<br />
+<div class="posttext">Of course not. I only do Uranus.<br />
+Okay that one was really bad... :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">19th April 2005, 05:59</div></div>
+<br />
+<div class="posttext">Well I was hoping UnConeD would take it with good humour (my stupidity or joke)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st April 2005, 04:50</div></div>
+<br />
+<div class="posttext">i love it when unconed makes things gay<br />
+it's an indication that my vulgar stupidity is rubbing off on him<br />
+<br />
+and with that, this thread has gone totally off whatever semblence of a topic it had when it started.  i propose a lock.<br />
+<br />
+<br />
+heh...rubbing off</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">22nd April 2005, 00:21</div></div>
+<br />
+<div class="posttext">heh... 'gay'</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Cyclic Array, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Cyclic Array AVS Presets" />
+	
+	<title> Cyclic Array - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Cyclic Array</li>
+</ol>
+<!-- div class="pda"><a href="t-176095.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=176095">Cyclic Array</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Synth-C</div><div class="date small text-muted">10th April 2004, 12:27</div></div>
+<br />
+<div class="posttext">A little experiment with a cyclic array.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">D12</div><div class="date small text-muted">10th April 2004, 13:23</div></div>
+<br />
+<div class="posttext">There is black window, without any motion &amp; color.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Synth-C</div><div class="date small text-muted">10th April 2004, 14:15</div></div>
+<br />
+<div class="posttext">You'll need Avs 2.81b</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">10th April 2004, 15:53</div></div>
+<br />
+<div class="posttext">you could optimize the whole thing a lot by using a cyclic buffer. that is, if you had 5 buffer entries you now do this<br />
+<br />
+copy 3 to 4<br />
+copy 2 to 3<br />
+copy 1 to 2<br />
+copy 0 to 1<br />
+put new data into 0<br />
+use 0, 1, 2, 3, 4<br />
+<br />
+<br />
+using a cyclic buffer means you do the following:<br />
+bufnum=5<br />
+<br />
+bufbase=(bufbase+1)%bufnum<br />
+use (bufbase+0)%bufnum, (bufbase+1)%bufnum, (bufbase+2)%bufnum, (bufbase+3)%bufnum, (bufbase+4)%bufnum<br />
+<br />
+understood? :)<br />
+you save the copying time and shift the base index by +1 (the % is the modulo operation, which does a division and returns the rest</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Synth-C</div><div class="date small text-muted">15th April 2004, 15:25</div></div>
+<br />
+<div class="posttext">you could optimize the whole thing a lot by using a cyclic buffer. that is, if you had 5 buffer entries you now do this <br />
+<br />
+Uhm, i used a cyclic buffer...<br />
+<br />
+Just look at the (simplified) code;<br />
+<br />
+per frame:<br />
+ww=80; points per ring   <br />
+hh=100; amount of rings<br />
+fc=(fc+1)%hh; offset, your bufbase<br />
+loop(ww,exec2(assign( gmegabuf(cc+ww*fc),<br />
+(getosc((cc/ww),.1,0))) ,assign(cc,cc+1))); assign <br />
+   getosc data for each point on the ring. <br />
+<br />
+per point:<br />
+z1=gmegabuf((pc+fc*ww+ww)%n); retreive array data and <br />
+  counter the offset.<br />
+pc=pc+1;     pointcounter</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">15th April 2004, 16:10</div></div>
+<br />
+<div class="posttext">oops i must have overread that, sorry :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">16th April 2004, 22:43</div></div>
+<br />
+<div class="posttext">/me demands interactive 3d rotation &quot;drag'n'drop&quot; style :P<br />
+nice curves! :)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

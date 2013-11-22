@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Blending Question, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Blending Question AVS" />
+	
+	<title> Blending Question - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Blending Question</li>
+</ol>
+<!-- div class="pda"><a href="t-231027.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=231027">Blending Question</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">15th November 2005, 01:00</div></div>
+<br />
+<div class="posttext">I have a question that's been bugging me for a while (not unlike most of my questions). When a render mode, say, XOR, does its math, like exclusive or in XOR's case, what is it comparing? Better put, does it compare the colors of two pixels, or the brightness, or some other more transient quality? i.e. Maximum blending, does it display the brighter image, more colorful, etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">15th November 2005, 01:14</div></div>
+<br />
+<div class="posttext">TomyLobo's Buffer blend APE explains it a bit, if this is what you're looking for. It shows:<br />
+<br />
+a=b (Replace)<br />
+a=a+b (Additive)<br />
+a=max(a,b) (Maximum)<br />
+a=(a+b)/2 (50/50)<br />
+a=a-b (Subtractive 1)<br />
+a=b-a (Subtractive 2)<br />
+a=a*b/256 (Multiply)<br />
+a=a*x+b*(1-x) (Adjustable)<br />
+a=a xor b (XOR)<br />
+a=min(a,b) (Minimum)<br />
+a=|a-b| (Absolute difference)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">15th November 2005, 01:28</div></div>
+<br />
+<div class="posttext">Ok, but I still don't get, for example, max what. If you put two frames together, what determines what aspects and colors stay and what don't. What about say, the first frame, makes it greater, in max for example, than the second one?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">15th November 2005, 01:50</div></div>
+<br />
+<div class="posttext">Well in the case of the max, it returns the greatest of a and b. I don't really understand it myself, I just know what will happen if I select a particular blending or rendering mode.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">15th November 2005, 01:54</div></div>
+<br />
+<div class="posttext">:weird: :weird: :weird: Huh??? :weird: :weird: :weird: <br />
+<br />
+Can someone help me, scratch that, us???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">15th November 2005, 02:14</div></div>
+<br />
+<div class="posttext">In the case of an Effect List, the output mode affects how the EL's data is placed upon the pixels that are already there. The &quot;Set Render Mode&quot; works the same way: Superscopes or Texer IIs use the current render mode to determine how the line or image is added to the previous image.<br />
+<br />
+Also, all of this math is done with the individual red, green, and blue components of each pixel.<br />
+<br />
+For example:<br />
+Replace: The pixel of the previous image is simply overwritten by the new pixel.<br />
+Additive: Each component (red, green, and blue) of the new pixel is added to the same component of the previous pixel.<br />
+Maximum: Each component (r, g, and b) of the previous pixel is increased (if necessary) to match the same component of the new pixel.<br />
+<br />
+And so on.<br />
+<br />
+&quot;New pixel&quot; means whatever image is created by the Effect List, Superscope, Texer, et cetera. The &quot;previous pixel&quot; is simply what was there before. In the equations such as &quot;a=a+b&quot;, the &quot;a&quot; represents the previous pixel and the &quot;b&quot; is the new pixel.<br />
+<br />
+The resulting image then becomes the new &quot;previous pixel&quot; of whatever operation comes next.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">15th November 2005, 21:10</div></div>
+<br />
+<div class="posttext">Ah. So its execute 3 times per pixel, for blue, green, and red?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">15th November 2005, 23:24</div></div>
+<br />
+<div class="posttext">Originally posted by JFASI <br />
+Ah. So its execute 3 times per pixel, for blue, green, and red? <br />
+<br />
+Essentially correct, but under the hood all the blending uses MMX so that the red green and blue are operated on in parallel.<br />
+<br />
+Also all the colors are always capped to 0..1 (0..255) after the blend is done.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">16th November 2005, 02:03</div></div>
+<br />
+<div class="posttext">Originally posted by jheriko <br />
+Essentially correct, but under the hood all the blending uses MMX so that the red green and blue are operated on in parallel.<br />
+<br />
+Also all the colors are always capped to 0..1 (0..255) after the blend is done.  <br />
+<br />
+<br />
+I'm confused. MMX??? and capped to 0..1??? I don't get it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">16th November 2005, 02:09</div></div>
+<br />
+<div class="posttext">I think MMX just has to do with the processor performing specific operations for sound and video.  As far as capping between 0 and 1, that's just done to keep values correct.  Having a value outside of that range means nothing to AVS in terms of colors so it's just more convenient to cap it inbetween.  Both of these topics are behind the scenes stuff anyways so as long as you're aware that colors range from 0 to 1, you're set unless you really want to know the abstract details.<br />
+<br />
+I'm curious as to exactly how/what buffer blend does.  And I think I'm slightly confused as to the what two frames the input blending uses for effects lists.  Anyone?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">16th November 2005, 02:14</div></div>
+<br />
+<div class="posttext">Aha, so 0..1 equals (1..255)/255. Cool. i'll let the MMX go.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">16th November 2005, 02:20</div></div>
+<br />
+<div class="posttext">Uhh yeah or you could go with straight 0 to 1 and skip the conversion completely.  That would be faster in code, but yes scaling 0 to 255 would work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">16th November 2005, 12:43</div></div>
+<br />
+<div class="posttext">in the Color Modifier it's sometimes better to have a value ranging [0...255] divided by 255, especially when you have &quot;equal()&quot; expressions. for example an expression like &quot;red = equal(red,0.5)&quot; will always return zero, since no color value will ever be exactly 0.5 [rather 127/255 or 128/255].</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">16th November 2005, 22:44</div></div>
+<br />
+<div class="posttext">Ok, so the strength of a color could be 0-255? (Realizes 256 color depth) Oooh... so doing like n=1000 on a massive colormorphing scope is completely pointless. Aha.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">gordmoo</div><div class="date small text-muted">19th November 2005, 20:09</div></div>
+<br />
+<div class="posttext">it depends on how many colours you have in the scope. you arn't limited to 255 colours, more like 2 to the power of 24... 16,777,216 colours then. unless of course your running in 16-bit colour mode in that case its 2 to the power of 16... <br />
+<br />
+and just to make things a lil' clearer. mmx is just a fancy thing that works in the back of your processor to speed things up some, it can be ignored ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">19th November 2005, 20:34</div></div>
+<br />
+<div class="posttext">Hmm... that's a lot of colors. Now how to program them all...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">21st November 2005, 18:44</div></div>
+<br />
+<div class="posttext">Ok I'm gonna ask this again cause I think my question go overlooked, but what exactly does input blending and buffer blending do?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">21st November 2005, 19:29</div></div>
+<br />
+<div class="posttext">In Effect Lists, you mean? Input blending is pretty much the same as the output blending, but it affects the image at the very beginning of the Effect List.<br />
+<br />
+For example:<br />
+Ignore: The Effect List starts with whatever data it had before. (Unless you have &quot;Clear every frame&quot; enabled.)<br />
+Replace: The current image data (before the Effect List) is copied into the Effect List.<br />
+Additive: The current data is added to the Effect List's data.<br />
+...And so on. The important thing to remember is that each Effect List maintains its own image data, much like a separate preset. Just as the output blend option controls how (and if) the Effect List's data modifies the data that comes after it, the input blend option controls how the Effect List is modified (at the beginning) by the data that comes before it.<br />
+<br />
+The &quot;Buffer #&quot; blending modes are rather unique, in that they use the data of one of the &quot;Buffer Save&quot; buffers as a kind of &quot;Alpha map&quot;. It's similar to &quot;Adjustable&quot;, except the amount of blending is controlled for each pixel by the brightness of the pixels in the selected buffer.<br />
+<br />
+Put another way:<br />
+Foreach pixel { Outputdata = (Effectlistdata * Buffer) + (Previousdata * 1-Buffer) }<br />
+Where &quot;Buffer&quot; is the red, green, or blue component of each pixel (whichever is greatest).<br />
+<br />
+It's really a pretty cool feature, although using it too much can slow a preset down quite a bit.<br />
+<br />
+It took me some experimenting to figure this out, by the way. If you're still confused, try some experiments of your own. After a while, it may start to make sense.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">23rd November 2005, 17:55</div></div>
+<br />
+<div class="posttext">Ahh thank you!  I knew this stuff at one point, but couldn't figure it out after not doing anything with AVS for a while.  Thanks again StevenRoy!</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

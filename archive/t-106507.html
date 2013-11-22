@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" messing around with an old one, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" messing around with an old one AVS Presets" />
+	
+	<title> messing around with an old one - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">messing around with an old one</li>
+</ol>
+<!-- div class="pda"><a href="t-106507.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=106507">messing around with an old one</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">22nd September 2002, 17:50</div></div>
+<br />
+<div class="posttext">Hey. I was just messing around with an old preset and I though the result looked kinda neat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">22nd September 2002, 20:44</div></div>
+<br />
+<div class="posttext">Slightly tweaked version that was when I should've studied. (does not contain the APEs included in th first one though if you come her even somwhat regularly, you probably already have them)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">22nd September 2002, 21:38</div></div>
+<br />
+<div class="posttext">cool...but i wouldn't use the convolution filter in this case.  and if i did i'd set scale to an exponent of 2, they seem to work best<br />
+the scope is neat, tho.  i like odd numbers for sides :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Spetz Naz</div><div class="date small text-muted">22nd September 2002, 22:39</div></div>
+<br />
+<div class="posttext">Hi,<br />
+<br />
+nice preset. Isn't possible to add more degrees of fredom to the figures? I think that there are many more figures that can be cretated given that fix amount of bending points.<br />
+<br />
+/Spetz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">23rd September 2002, 01:21</div></div>
+<br />
+<div class="posttext">Atero: I tweaked it a bit more and made the convolution filter all powers of two. It gaind a couple of FPS. I also messed with the order of things and tossed in another effect list so the channel shift only affects the rays. The convolution filter works better in this case than a whole bunch of blurs. I tried that.<br />
+<br />
+Spetz: I'm not sure exactly what you mean. Do you mean an irregular shape? One with more sides? I tried to make the scope easy to change (check the comment), but some things just don't quite work. Odd number of sides with a radius change, for instance. Try it and take a look. It isn't quite as customizable as I'd hoped. :(<br />
+<br />
+Added a DM to blend in the rays. (makes them look softer and more like lights) Unfortunately this makes it drop below 20 FPS for me. If you like the harder, faster, look, the movement code was:<br />
+<br />
+d=if(above(d,.1),.025*4,d);<br />
+<br />
+I think this one's going in my next pack. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">23rd September 2002, 05:03</div></div>
+<br />
+<div class="posttext">Definately a cool ssc, good job! <br />
+<br />
+The reason that and odd number of sides won't work is because you can only have stars with an even number of sides.<br />
+<br />
+The ray effect is pretty neat-o too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">23rd September 2002, 05:37</div></div>
+<br />
+<div class="posttext">Right, that makes sence. Stars are symmetrical.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">23rd September 2002, 14:05</div></div>
+<br />
+<div class="posttext">jaheckelsafar, the scope is awesome, i tell you,<br />
+the 2nd effect list make cool things but i just like the scope, it's very good made, reminds me of something that fsk made, i have to agree when i say that odd number shapes are cooler than even number shapes</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">23rd September 2002, 16:43</div></div>
+<br />
+<div class="posttext">:o Thanks :o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">23rd September 2002, 18:35</div></div>
+<br />
+<div class="posttext">That :o looks like a yawn to me<br />
+<br />
+You should randomize the number of sides on the star on-beat.  That way you clould get even-sided and skewing stars.<br />
+<br />
+I think what Spetz was getting at was something where every other point was on an outer ring and the rest were on an inner ring, and the rings spun around each other, making a 'circular-saw' effect.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">24th September 2002, 05:59</div></div>
+<br />
+<div class="posttext">:o Is the closest thing to blush there is.<br />
+<br />
+As to the &quot;circular saw&quot; idea I suppose it could be done without too much trouble. I'm pretty happy with the star though.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

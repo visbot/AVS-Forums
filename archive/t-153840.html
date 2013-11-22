@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Integers?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Integers? AVS Troubleshooting" />
+	
+	<title> Integers? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Integers?</li>
+</ol>
+<!-- div class="pda"><a href="t-153840.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=153840">Integers?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">24th October 2003, 18:27</div></div>
+<br />
+<div class="posttext">Is there a way to convert numbers to integers in AVS?  I was thinking about making a preset using contour maps of multivariable functions and since the mod command converts to integer before I want it to I was just gonna create my own mod but I cant figure out a way to convert a number to an integer.  Is it it possible to return just the integer value of a number??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th October 2003, 18:58</div></div>
+<br />
+<div class="posttext">I use var|0.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">24th October 2003, 19:29</div></div>
+<br />
+<div class="posttext">Does that only work on the new version of AVS because it doesn't seem to work on the older one I'm running.  I always get zero for the return on that.<br />
+<br />
+edit:<br />
+Oh...  hmm 0|var works though...  That's wierd.<br />
+<br />
+edit:<br />
+crap that rounds it though...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th October 2003, 21:22</div></div>
+<br />
+<div class="posttext">Binary operators were broken up till AVS2.7, they simply rounded the second argument to int. Using 0|var should work on both versions.<br />
+<br />
+Not sure what you mean by 'crap that rounds it', but if you want to floor/ceil a number, just subtract/add 0.5 before rounding.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th October 2003, 08:47</div></div>
+<br />
+<div class="posttext">Ok here's the idea.  I wanna use multivariable functions to create contour maps for presets.  So the idea is to set an increment value that defines the spacing between each level.  So it would take value%inc to get the remainder.  If the remainder is small than the bias value it would consider that value part of a curve and color it white.  If the value was above the bias value it would remain black.  I can get it to work great when I program it but I can't seem to get it to work in AVS.  I think I'm just going to multiply the value of the function and increment by 100, take the mod, then both back down again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th October 2003, 14:55</div></div>
+<br />
+<div class="posttext">I still don't quite get what you want to do. What do you mean with a contour map? Scopes? Colormap tricks?<br />
+You seem to explain everything except the essential :weird:.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th October 2003, 18:43</div></div>
+<br />
+<div class="posttext">Contour map?  Level curves?  That's what it's called.  Have you ever seen a topographic map where it has lines that signify different heights?  Just google it or something...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">25th October 2003, 20:50</div></div>
+<br />
+<div class="posttext">Eh?<br />
+<br />
+And how exactly are you using integers for contourmapping?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th October 2003, 20:52</div></div>
+<br />
+<div class="posttext">Exactly what Nic asked. I understand what a contourmap is, but you didn't specify how you want to do it in AVS.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th October 2003, 21:33</div></div>
+<br />
+<div class="posttext">f(x,y)%inc to get the remainder of the value of the function divided by the value that defines the difference between each level.  Then I setup a bias value.  If the remainder is lower than the bias value then it is on the curve.<br />
+<br />
+Basically it tests each value of the function and sees whether it is close enough to one of the curves.  If it is, it colors that spot.  Get it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th October 2003, 22:47</div></div>
+<br />
+<div class="posttext">Argh, so HOW are you drawing it? Your method would require a per-pixel evaluating gridscope and that'd be much too slow I think.<br />
+<br />
+Attached is a very fast and simple contour preset. Change the 9 in the convo to an 8 to get iso-lines only. And here's a kernel for fatter lines:<br />
+<br />
+<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -1<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp; -1 -2 -1<br />
+ -1 -2 17 -2 -1<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp; -1 -2 -1<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -1<br />
+<br />
+<br />
+IMO this approach is much more flexible than yours, and much faster in AVS. You could also use a colormap with a banded gradient, but that would give isolines of varying width depending on the gradient of the surface.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th October 2003, 23:49</div></div>
+<br />
+<div class="posttext">I had worked with the DM to do do the same sort of deal, but at the moment I was just playing around with the movement fuction.  I've never really played around with the convolution filter so quite frankly I have no idea what any of those numbers mean.  I am quite impressed with your preset though.  Mind explaining how the convultion filter works?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">26th October 2003, 01:53</div></div>
+<br />
+<div class="posttext">...<br />
+<br />
+Alright, firstly, it takes 9 times the original spot and -1 parts of the parts around it - If it's, say, a plain white surface, all cells will turn out 1 (/1), thus giving you a plain white surface.<br />
+<br />
+On color changes, the edge of the brighter color gets brighter since the darker front will result in less subtraction - brightening the edge. On the flipside, this occurs the other direction - the brighter sight results in more subtraction, darkening the edge.<br />
+<br />
+Get the idea? good.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">26th October 2003, 01:18</div></div>
+<br />
+<div class="posttext">Ok how about just explaining exactly what the numbers mean mathematically?  What does the filter due?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th October 2003, 10:25</div></div>
+<br />
+<div class="posttext">The 7x7 grid is called the convolution-kernel and represents weights assigned to a pixel and its surrounding pixels.<br />
+<br />
+Per pixel, convolution will multiply each constant by the appropriate pixel's color, sum the result, divide and put it back.<br />
+<br />
+The filter above is a simple edge-detection filter (take the difference between 'current pixel x 8' and its eight surrounding values).<br />
+<br />
+A blur is any sort of average of pixels:<br />
+<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;1<br />
+ &amp;nbsp;1 &amp;nbsp;4 &amp;nbsp;1<br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;1<br />
+div: 8, bias: 0<br />
+<br />
+<br />
+embossing<br />
+<br />
+ -1 -1 &amp;nbsp;0<br />
+ -1 &amp;nbsp;1 &amp;nbsp;1<br />
+&amp;nbsp; 0 &amp;nbsp;1 &amp;nbsp;1<br />
+div: 1, bias: 0<br />
+<br />
+<br />
+For speed reasons, you should try to use a power of two as divider.<br />
+<br />
+In fact this is identical to a 'custom filter' in Photoshop or Paint Shop Pro.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">26th October 2003, 21:58</div></div>
+<br />
+<div class="posttext">Thanks for explaing that UnConeD!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th October 2003, 23:18</div></div>
+<br />
+<div class="posttext">so...can someone explain to me how x|0 rounds x to the nearest integer?  afaik the &quot;old&quot; b0rk3d bitwise operators just chopped off the mantissa....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">28th October 2003, 00:59</div></div>
+<br />
+<div class="posttext">Atero:<br />
+Using 0|var should work on both versions. <br />
+<br />
+The old b0rked operators just cast the right-hand value to int, though with some minor integer fuzzyness (e.g. negative numbers). The new b0rked operators should work as expected.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">28th October 2003, 02:15</div></div>
+<br />
+<div class="posttext">that still doesn't explain how x|0 rounds x to the nearest integer...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">28th October 2003, 12:11</div></div>
+<br />
+<div class="posttext">Yup Id wanna know also:). What the hell does | do anyway?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">28th October 2003, 12:15</div></div>
+<br />
+<div class="posttext">From the help:<br />
+<br />
+|<br />
+  converts two values to integer, returns bitwise OR of both values<br />
+  example:  var=var2|31;<br />
+<br />
+Or'ing with 0 has no effect, so it does nothing but cast to int.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">28th October 2003, 21:39</div></div>
+<br />
+<div class="posttext">AVS 2.7: floor(value) and ceil(value) work. You might want to use that. <br />
+<br />
+(Read the expression help)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th October 2003, 03:12</div></div>
+<br />
+<div class="posttext">arg.  forgot those had to cast to int first.  but doesn't...that...truncate?  to round don't you have to add .5 and cast to int?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th October 2003, 19:01</div></div>
+<br />
+<div class="posttext">That's something you can answer for yourself in 1 minute.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

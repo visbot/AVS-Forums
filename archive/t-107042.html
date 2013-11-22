@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Synching SSC and DM, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Synching SSC and DM AVS" />
+	
+	<title> Synching SSC and DM - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Synching SSC and DM</li>
+</ol>
+<!-- div class="pda"><a href="t-107042.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=107042">Synching SSC and DM</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th September 2002, 22:48</div></div>
+<br />
+<div class="posttext">I can't seem to figure out how to do even a simple SSC and DM synchronisation. I've tried just plain copying the 3d transformation out of the superscope that I want to synch with into the DM but the rotation axes seem to have a mind of their own even after restarting the preset, i cant figure out whats wrong :(<br />
+(I also don't wan't to give to much SSC code away ;))<br />
+<br />
+Can somebody around here do me a big favour and give a very simple example of synching a dynamic movement plane to a superscope?<br />
+<br />
+Say, drawing SSC x=0;y=0;z=2*i-1; and DM x=x;y=y;z=-1; so that it looks like the scope is touching the dm plane.<br />
+<br />
+This has been infuriating me for ages now so any help will be appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">26th September 2002, 04:06</div></div>
+<br />
+<div class="posttext">Never tried it myself, but isn't it just a matter of using getosc and getspec instead of random numbers?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th September 2002, 07:58</div></div>
+<br />
+<div class="posttext">I have 10 synched superscopes in the preset that I want to have the synched DM in, they all run fine and when making a fake plane in superscope that draws in the right place. The DM is synched in a certain way (like when it moves it moves at the same time and speed) but it always moves/rotates in the wrong direction and in a seemingly random fashion at times.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th September 2002, 09:13</div></div>
+<br />
+<div class="posttext">Okay. Here is a part of the preset that I'm trying to make work so that you can see what I'm doing and hopefully be able to tell me why it isn't working.<br />
+<br />
+It uses a render/picture for demonstration purposes, you can put any picture in there, as long as it enables you to see the dm at work.<br />
+<br />
+It is meant to look like the superscope is attached to the dm plane.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th September 2002, 11:56</div></div>
+<br />
+<div class="posttext">AAAAARRRGGGHHH!!!!<br />
+<br />
+I figured out what was really screwing it all up, I was using a really crap cheaty method in my ssc that can't be transfered across to dm :(<br />
+<br />
+Oh well... I'l just have to make my planar surface out of superscopes instead.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th September 2002, 03:21</div></div>
+<br />
+<div class="posttext">FOR CHRIST'S SAKE, DON'T USE GETOSC/GETSPEC FOR RANDOM SEEDING!<br />
+<br />
+*pant pant pant pant pant pant*<br />
+<br />
+Using the getosc/getspec functions is never a good idea because the seeds tend toward 0, which is exactly what you don't want.  Use a timer/sine setup like this:<br />
+<br />
+frame:<br />
+timer1=timer1+arbitrary1;<br />
+<br />
+beat:<br />
+random1=sin(timer1)<br />
+<br />
+Now your random numbers tend to 1 and -1, making your scopes and DMs more active.<br />
+<br />
+As for syncing SSC and DM, your rotations need to be done in reverse on the SSC.  So if you're doing xy first, then xz, then yz in the DM, do yz first, then xz, then xy on the SSC.  I believe the rotations on each axis on the SSC also have to be reversed (pi/3 radians on the DM becomes -pi/3 radians on the SSC).  You'd have to ask UnConeD, tho, cos he's better at it than I am.  I'm not at the level (creation-wise) that I need to be syncing SSCs and DMs :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">27th September 2002, 09:49</div></div>
+<br />
+<div class="posttext">Okay, I *DO NOT* use getspec and getosc for random seeding because like you just said they are sh*t. That has been my opinion for ages, they are there for adding responsiveness and not randomness. The best way to generate a string of non repeating psuedo random numbers is to do:<br />
+<br />
+frame:<br />
+a=a+1;<br />
+<br />
+beat:<br />
+ran=(largeprime1*a+smallerprime)%somenumber;<br />
+<br />
+Only reason that I really prefer this method to the sine one (which I used to use occasionally) is that it is a faster calculation than sine.<br />
+<br />
+The reason I wanted to make a synched ssc to dm was because I had made a preset with lots of superscope made objects 'rolling' along a plane with others being fixed to a plane, I just thought that it would be nice if i drew the plane itself using a dm rather than ssc since it makes everything look nicer and less wireframe.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">27th September 2002, 13:10</div></div>
+<br />
+<div class="posttext">Thanks for that reversing the order of rotations advice Atero, that made it work! Almost, anyway...<br />
+<br />
+I'm not going to use it for the preset that I intended it for though because I think that it actually looks better with a superscope made plane, it gives it a look of consistency.<br />
+<br />
+There are still a few little clipping issues to work out (if you check out my attachment you can see what I mean) but I made a simple oscilloscope in between two planes that moves around a bit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th September 2002, 15:02</div></div>
+<br />
+<div class="posttext">The sines are only calculated on beat.  I seriously doubt it slows down the process any, and the code for it is much simpler.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">27th September 2002, 22:16</div></div>
+<br />
+<div class="posttext">Actually I do use getosc a lot, but multiplied and modulated so that it's nearly uniform-distributed:<br />
+<br />
+e.g. foo=(getosc(0.3,0,0)*256%10);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">27th September 2002, 22:36</div></div>
+<br />
+<div class="posttext">The thing is that using the (p*a+c)%m method gives a uniform distribution over time, unlike sin and getosc/getspec.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">28th September 2002, 05:26</div></div>
+<br />
+<div class="posttext">Sine just tends towards 1 and -1.  Which is what you want, IMHO...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th September 2002, 01:27</div></div>
+<br />
+<div class="posttext">Yeah but since it works onbeat, it's not as handy for per-frame stuff, and you'll have to track a variable for each one you need. Getosc requires no additional storage either.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">29th September 2002, 01:33</div></div>
+<br />
+<div class="posttext">i'm gonna admit to using getosc recently.. it works quite well for rotating 3d objects.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">29th September 2002, 06:52</div></div>
+<br />
+<div class="posttext">getosc worked prety well for me on my star. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th September 2002, 16:29</div></div>
+<br />
+<div class="posttext">Well, unless you're doing rollercoaster-type-SSC's, a sinusoidal generator shouldn't be that much of a burden.  Then again, you could theoretically do a uniform distribution from pi to -pi and use that sine....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">29th September 2002, 17:49</div></div>
+<br />
+<div class="posttext">if you want getosc to tend towards 1 and -1 thy whith:<br />
+var1=getosc(0,0,0);var2=(1-abs(var1))*if(var1,sign(var1),1);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">29th September 2002, 18:05</div></div>
+<br />
+<div class="posttext">Did you try raytracing?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">29th September 2002, 19:08</div></div>
+<br />
+<div class="posttext">I sorted it out :)<br />
+<br />
+I'm only just starting to look into raytracing dms.. i cant see any use untill i want to make some dm cubes or something though. Besides isn't a regular 3d projection raytraced?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">30th September 2002, 05:39</div></div>
+<br />
+<div class="posttext">Yeah but most people use the standard z=y-2;x=x/z;y=y/z which causes the plane to actually be slanted, and use the wrong texture axis (x,y) when it should be (x,z). This is why raytracing works, because you get the right texture axis for the plane. That's what's so different about DM's and 3D, you use them for texture co-ords, not polygon co-ords.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">30th September 2002, 08:23</div></div>
+<br />
+<div class="posttext">Yeah that makes sense, thats why you need to invert and flip the axes to a dm to synch it with a scope.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

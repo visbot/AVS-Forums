@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Fullscreen overlay mode, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Fullscreen overlay mode AVS" />
+	
+	<title> Fullscreen overlay mode - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Fullscreen overlay mode</li>
+</ol>
+<!-- div class="pda"><a href="t-146126.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=146126">Fullscreen overlay mode</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th August 2003, 03:31</div></div>
+<br />
+<div class="posttext">Okay, I searched the forum and came up with nothing of relevance - or, I should say, I *tried* to search the forum; apparently the search engine sucks donkey and I can't search for phrases (or at least it's not obvious how).<br />
+Anyway, I want to know what the hell fullscreen overlay mode does.  I've fiddled with it for the last half hour and I still haven't figured it out.<br />
+(Deepest apologies if I missed a relevant thread but all the searches I tried turned up crap)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">18th August 2003, 03:35</div></div>
+<br />
+<div class="posttext">As far as I can guess it works just like regular Overlay mode but sets the whole screen to the overlay color.<br />
+I usually use fullscreen overlay mode and have only found one glitch with it, it sometimes freezes up winamp and doesn't go fullscreen, and then it locks up mostly everything and my screen gets really messy, but this rarely happens. Don't know if it was talked about anywere else though, don't care either.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th August 2003, 07:50</div></div>
+<br />
+<div class="posttext">I think that all it does is use the hardware overlay for fullscreen in the same way that Windows Media Player uses it for fullscreen video. I can't see the use of it since it would mean that on a multi monitor system it would only draw avs to one monitor.. on the flipside it might be a more stable alternative to the regular fullscreen mode (I'm not 100% sure of this), which I have occasionally had problems with (like the drawing of the winamp window every other frame in the middle of my fullscreen avs).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">18th August 2003, 07:59</div></div>
+<br />
+<div class="posttext">Fullscreen Overlay is also VERY fast compared to normal Fullscreen. Mainly because it uses your video cards acceleration to grab the AVS frame directly from the hDC and output it through the overlay filter, thus smoothing it or whatever your video card does to help overlays.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th August 2003, 09:17</div></div>
+<br />
+<div class="posttext">Doesn't hDC = handle for Device Context, so how can you grab a frame from it? Surely it grabs the frame from the actual 'device', which I'd assume is the square of AVS window that is drawn to, which is probably a control which has a DC because it is set up as a 'window class', right? Then again Windows programming terminology does tend to make no sense, both 'device' and 'window class' don't mean what you think they would.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">18th August 2003, 10:08</div></div>
+<br />
+<div class="posttext">hDC's are handles to bitmaps (basically).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">18th August 2003, 10:15</div></div>
+<br />
+<div class="posttext">... where objects are to be drawn on the screen.<br />
+<br />
+IMHO Fullscreen Overlay draws directly to the overlay and avoids using a hdc. Maybe i'm just wrong but this seems logical to me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th August 2003, 10:41</div></div>
+<br />
+<div class="posttext">Originally posted by Zevensoft <br />
+hDC's are handles to bitmaps (basically).  <br />
+<br />
+You use Visual Basic too much.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">18th August 2003, 11:33</div></div>
+<br />
+<div class="posttext">To demystify the hDC:<br />
+<br />
+A device context is a structure that defines a set of graphic objects and their associated attributes, and the graphic modes that affect output. The graphic objects include a pen for line drawing, a brush for painting and filling, a bitmap for copying or scrolling parts of the screen, a palette for defining the set of available colors, a region for clipping and other operations, and a path for painting and drawing operations.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th August 2003, 00:45</div></div>
+<br />
+<div class="posttext">lmao.  i ask what fullscreen overlay does and i've already gotten 3 entirely different explanations of it (one from nic on #ff).  what i can tell you is my comp is doing something entirely different to anything you guys have told me :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">19th August 2003, 06:16</div></div>
+<br />
+<div class="posttext">:D<br />
+In this case, my dear Atero, why the heck don't you tell us what your comp DOES? :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">19th August 2003, 07:24</div></div>
+<br />
+<div class="posttext">because he likes it when we ask him for it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th August 2003, 20:51</div></div>
+<br />
+<div class="posttext">Actually the description I gave and the description by Zevensoft are of the same thing... he just knows more about its guts than I do. Its also probably the correct description because there really isn't any other way to use the hardware overlay for fullscreen.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th August 2003, 01:23</div></div>
+<br />
+<div class="posttext">well, what my comp is doing is going fullscreen with neither the current windowed screensize or the selected fullscreen screensize OR the current Windows screensize, and it has a hexagonal mesh of dots on it.  which makes absolutely no sense to me.  hence this post.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">20th August 2003, 06:15</div></div>
+<br />
+<div class="posttext">Duh! This is weird. Maybe this is caused by some hardware reasons? As this function is based on video card acceleration, maybe your vc has problems displaying it correctly.<br />
+<br />
+Does normal Overlay and Video Fullscreen work?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th August 2003, 07:50</div></div>
+<br />
+<div class="posttext">fullscreen works...overlay has that same mesh of dots :wierd:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">20th August 2003, 08:05</div></div>
+<br />
+<div class="posttext">wtf's a bpp? Beat per pixel???<br />
+<br />
+<br />
+The only difference i could pick up was the colours. Fullscrean overlay, duller colours.<br />
+Without fullscrean overlay, brighter colours and sharper viewing but it's a few FPS's slower though</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">20th August 2003, 08:16</div></div>
+<br />
+<div class="posttext">Atero, you're using a 16 bit (or lower :igor: ) resolution. Try 24/32 bit instead.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">20th August 2003, 08:29</div></div>
+<br />
+<div class="posttext">Is it posible to edit someone elses message?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">20th August 2003, 08:33</div></div>
+<br />
+<div class="posttext">Use the http://forums.winamp.com/images/edit.gif Button to edit your posts (should work for 3 hours after the post has been made). Of course you can NOT edit others Messages.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">20th August 2003, 08:41</div></div>
+<br />
+<div class="posttext">I know ho to edit my messages, but I wasn't sure if you could edit someone elses messages. I would had some fun if that was possible. Oh well</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">20th August 2003, 09:29</div></div>
+<br />
+<div class="posttext">*sigh*, the misunderstandings afterwards would be so extremely big, you could have figured that out yourself, right?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">21st August 2003, 08:54</div></div>
+<br />
+<div class="posttext">Originally posted by Zevensoft <br />
+Atero, try 24/32 bit <br />
+<br />
+Did this help?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">21st August 2003, 09:20</div></div>
+<br />
+<div class="posttext">I guess 24 won't. Though 32 might, since AVS is originally calculated in 32bit. Every other setting has to be recalculated and therefor slower.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st August 2003, 15:31</div></div>
+<br />
+<div class="posttext">In case you're wondering what overlays are, here's the deal... when you're playing video on the screen, it has to be updated a lot. But in effect, it's only one small area that is updated, and it's located somewhere in the center of the screen (windowed) or all over the place (full-screen). That's quite memory/cache intensive.<br />
+<br />
+So someone thought of overlay mode: rather than doing all the copying in software, just put the video in a separate buffer, and let the videocard draw it as it sends the image to your monitor. After all, a video card is continuously scanning over the image anyway as it sends it to your monitor, so doing a simple switch between video and regular screen at the appropriate pixels is no big deal. On top of that, the video-card can scale/stretch the image very fast, because that sort of stuff can be put into silicon at no cost.<br />
+<br />
+Unfortunately, there's the problem that in a windowed system, the video-area can be partially (or wholly) occluded. There's no easy way to get this info from windows, and even if you could, building support for irregularly shaped viewports for overlay would defeat the whole point because then the videocard would need a lot of extra logic too.<br />
+<br />
+So, they use colorkeying: the video-area is filled with an uncommon, unique color, and the overlay is only drawn inside the designated viewport and when the color in the framebuffer (the 'screen') matches the color-key.<br />
+<br />
+Now fullscreen overlay mode. Normally, going fullscreen required a resolution change, because otherwise the stretching would be done in software, which is either slow (bilinear) or ugly (point). Plus it wouldn't be able to handle arbitrary sizes anyway. So mediaplayers use the overlay functionality for the entire screen. This has some advantages:<br />
+<br />
+- Bilinear filtering is done for free<br />
+- No resolution change is required<br />
+- Arbitrary sizes are allowed (though not in AVS)<br />
+<br />
+Unfortunately, the overlay buffer's format is not RGB I believe, but YUV or a similar one. YUV or YCrCb stores the color as a brightness 'Y' plus a redness/blueness factor. It's halfway between HSL and RGB.<br />
+Interpolating in YUV gives you great results for natural photos and film, but looks like crap for computer generated stuff because the color can bleed at sharp edges.<br />
+<br />
+As far as grabbing the image from the hDC, that would be very slow on Windows. I'm pretty sure AVS just creates a 32-bit DIBs (CreateDIBSection) and uses the returned pointer to directly read/write to the bitmap's pixels.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st August 2003, 17:04</div></div>
+<br />
+<div class="posttext">d00d...that is so not cool...one of my m$ games musta set my mon to 16 bit while i was looking &gt;_&lt; yea it did help get rid of that mesh, thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">21st August 2003, 22:13</div></div>
+<br />
+<div class="posttext">Now that certainly cleared some things up over here, thanks UnConeD.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">22nd August 2003, 07:17</div></div>
+<br />
+<div class="posttext">UnConeD = Computer Encyclopedia :D<br />
+<br />
+Thank ya!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">22nd August 2003, 10:08</div></div>
+<br />
+<div class="posttext">lol, yep, that's a pretty accurate description. :)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

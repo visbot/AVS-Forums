@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Are AVS normal winamp vis?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Are AVS normal winamp vis? AVS" />
+	
+	<title> Are AVS normal winamp vis? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Are AVS normal winamp vis?</li>
+</ol>
+<!-- div class="pda"><a href="t-210711.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=210711">Are AVS normal winamp vis?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">hadees</div><div class="date small text-muted">17th March 2005, 22:54</div></div>
+<br />
+<div class="posttext">Okay I am sorry if this isn't the best place to ask about this but its seems like the best place I have found here and it seems like all the smart Visualization pepole are here.  Anyway I have alot of questions but I should first tell you what I am trying to do.  I want to take the xmms-winamp (http://www.emulinks.de/xmms-winamp/) (that lets you use winamp vis in xmms (http://www.xmms.org)) and port it to MythTV (http://www.mythtv.org)(specifically mythmusic).<br />
+<br />
+Okay so my question is are there still just plain old  Visualizations for winamp?  <br />
+<br />
+Does AVS output them or is it how it seems to me, a diffrent way to have Visualizations in winamp.  Right now I can only access the  Visualization that are dll files (i think this is the oldway and/or normal way to make viulizations).<br />
+<br />
+Also if you know anywhere that lays out the winamp Visualization api that would be a big help<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">17th March 2005, 23:35</div></div>
+<br />
+<div class="posttext">all avs presets are the same for any winamp, but i don't think certain AVS 0.0+ -&gt; avs 2.x for xmms I don't think it supports AVS</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">18th March 2005, 04:11</div></div>
+<br />
+<div class="posttext">another mattfury post without knowledge behind it<br />
+AVS is a visualisation plugin for winamp. there are other visualisation plugins, too, but dont confuse these with avs presets. avs presets are just data files that need an interpreter (AVS) to work.<br />
+according to that xmms-winamp page avs should work, at least the winamp2 versions of it. the latest versions of avs support docking with the main window and some other things which could cause problems with xmms-winamp.<br />
+you shouldn't use the avs that comes with winamp2 though as it lacks a lot of important features and most new presets will not run on it. better try wine+winamp5+avs. it's known to work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th March 2005, 04:12</div></div>
+<br />
+<div class="posttext">There is no API for AVS. You start the plug-in in vis_avs.dll and load them that way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">18th March 2005, 10:26</div></div>
+<br />
+<div class="posttext">maybe this (http://www.msu.edu/~singergr/bacon.html) helps, it's a plugin for foobar2000 to play winamp plugins. source is available.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hadees</div><div class="date small text-muted">18th March 2005, 20:24</div></div>
+<br />
+<div class="posttext">hmm okay so it seems like AVS will work, can you tell me more about how Visualization windows are drawn? i know winamp calls the render function but is there a diffrence with opengl and directX?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">18th March 2005, 22:00</div></div>
+<br />
+<div class="posttext">AVS is nearly purely CPU dependant, it uses neither directX nor openGL. though it depends on video cards, only slight changes in speed are experienced on different cards. AVS is a realtime plugin that has a mostly mathematical language that is executed every frame and is the image you see.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">24th March 2005, 12:30</div></div>
+<br />
+<div class="posttext">Originally posted by hboy <br />
+AVS is nearly purely CPU dependant, ... <br />
+<br />
+i think you missed his question...<br />
+<br />
+the windows are drawn by the plugin (using windows api i would expect). directx/ogl need an existing window to work...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">24th March 2005, 15:10</div></div>
+<br />
+<div class="posttext">true :) dunno about the other stuff then.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th March 2005, 11:12</div></div>
+<br />
+<div class="posttext">you can get the source for a standard plugin in the sdk i think. i cant remember what it does. there are also some other sources around, i found an ogl framework before...</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

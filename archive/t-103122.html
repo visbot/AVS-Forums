@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" level trigger, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" level trigger AVS Wishlist" />
+	
+	<title> level trigger - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">level trigger</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-103122.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=103122">level trigger</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">rabidcow</div><div class="date small text-muted">2nd September 2002, 06:40</div></div>
+<br />
+<div class="posttext">I don't know if you people have ever used a real oscilloscope, but they usually have a level trigger that will start the trace at a certain level and slope.  This allows the waveform to synchronize and generally look a lot spiffier.<br />
+<br />
+In WinAmp's visualizations, (at least for wa2) the 'scope wave looks like it's having a seizure, whereas on a real scope it would dance.<br />
+<br />
+I've got a simple wa2 vis plugin that sorta does this to see the difference, but it could do better: http://www.technoirotica.com/~rabidcow/vis_test.dll<br />
+<br />
+It works best with songs that have strong vocals or other midrange stuff, stuff with loud high freq or noise tend to confuse it.<br />
+<br />
+So yeah, I think the AVS would be a *lot* nicer if it had a level trigger on the scope, so it actually worked.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">4th September 2002, 04:49</div></div>
+<br />
+<div class="posttext">my guess is that your talking about making everything look smoother and nicer by offseting the start point of the osc? wouldn't you have to change that for every song though to get the right effect every time.<br />
+<br />
+if you played around with superscope code you could probably emulate that, in fact you can do tons with superscopes if you cant make ssc do it then i'd be surprised. i guess you would have to use getosc and not use v...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">rabidcow</div><div class="date small text-muted">16th September 2002, 23:37</div></div>
+<br />
+<div class="posttext">Yeah, that's the stuff.  With a regular scope, you have to manually adjust the trigger level, so there you'd have to adjust it for each song.  Since this is on a computer tho, it can be a little smarter and autodetect the trigger level.<br />
+<br />
+The way this version works is to start the trace at the first point in a certain slope range that's at least 75% or so of the peak in the last trace (or some time in history, I don't remember exactly since I did this a while ago).  It does a little filtering first to try to ignore the strong high frequencies, but could use more filtering.<br />
+<br />
+I don't know if you could use ssc for this, honestly I haven't bothered trying, and I don't really have the time anymore myself.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">16th September 2002, 23:46</div></div>
+<br />
+<div class="posttext">judging by the number of posts this topic has no-one else cares so it probably wont happen.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">17th September 2002, 02:10</div></div>
+<br />
+<div class="posttext">To be honest I don't quite understand what you're talking about. A lo/hi-pass filter? A threshold? Can you express what you mean mathematically?<br />
+<br />
+Your plug-in looks like a plain-vanilla line-scope to me, though with the higher frequencies filtered out. It looks very buggy over here too: the only 2 colors are blueish cyan and red, and the winamp window is partially updating through it.<br />
+<br />
+Considering AVS processes all superscope points serially, you could emulate a real scope's behaviour quite easily.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">17th September 2002, 04:54</div></div>
+<br />
+<div class="posttext">like on oscilloscopes that you get in physics labs.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

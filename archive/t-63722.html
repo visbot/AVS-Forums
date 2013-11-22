@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" How do I post an AVS?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" How do I post an AVS? AVS" />
+	
+	<title> How do I post an AVS? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">How do I post an AVS?</li>
+</ol>
+<!-- div class="pda"><a href="t-63722.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=63722">How do I post an AVS?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">golferboy32531</div><div class="date small text-muted">25th October 2001, 15:11</div></div>
+<br />
+<div class="posttext">Earlier this year, I tried using MakePiMP, but I couldn't get it to work. Help!!!:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Matt</div><div class="date small text-muted">25th October 2001, 16:13</div></div>
+<br />
+<div class="posttext">Pimp - http://ftp.winamp.com/winamp/nsdn/pimp131.exe <br />
+The FAQ - http://www.winamp.com/nsdn/pimp/faq.jhtml <br />
+The Howto - http://www.winamp.com/nsdn/pimp/howto.jhtml <br />
+<br />
+You to create a pimp script file. This is a text file. Looks like this (the bold parts are things that you can change)- <br />
+<br />
+; start lines with ; or # for comments <br />
+Name My AVS Files <br />
+;name displayed during setup <br />
+Text This will install My AVS Presets<br />
+;text displayed when install program is started <br />
+Outfile myavs.exe <br />
+;names the file that PIMP will output. <br />
+DefaultDir $PROGRAMFILES\Winamp\Plugins\avs\ <br />
+;tells the directory where PiMP will place the file that is output (best to leave this as it is) <br />
+SetOutPath \mypresets <br />
+;places the presets into the AVS directory e.g program <br />
+files\winamp\plugins\avs\mypresets <br />
+Addfile mypreset.avs<br />
+Addfile another preset.avs <br />
+;add your avs files to be included in the pimp file here <br />
+;end <br />
+<br />
+<br />
+Save the text above as avs.psc or whatever and then use the makepimp command - <br />
+makepimp avs.psc <br />
+<br />
+It should then create myavs.exe or whatever name you gave in the .psc file. If there is an error read what it says. Or post back here if you don't get it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">golferboy32531</div><div class="date small text-muted">1st November 2001, 21:01</div></div>
+<br />
+<div class="posttext">Where do I need to type the line &quot;makepimp avs.psc&quot;???<br />
+:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">golferboy32531</div><div class="date small text-muted">1st November 2001, 21:49</div></div>
+<br />
+<div class="posttext">MakePiMP isn't making an exe!<br />
+THe attatched file is my .psc file.<br />
+HELP!!!<br />
+:eek: <br />
+BTW: I had to make it a TXT file for the forums to accept it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">golferboy32531</div><div class="date small text-muted">1st November 2001, 21:50</div></div>
+<br />
+<div class="posttext">My txt wont post...<br />
+grrr...</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Christmas Tree Contest, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Christmas Tree Contest AVS Presets" />
+	
+	<title> Christmas Tree Contest - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Christmas Tree Contest</li>
+</ol>
+<!-- div class="pda"><a href="t-116618.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=116618">Christmas Tree Contest</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Diesto</div><div class="date small text-muted">4th December 2002, 18:59</div></div>
+<br />
+<div class="posttext">Hey guys,<br />
+<br />
+what do you think about a Christmas Tree Contest? Please submit your contribution in this thread. First prize will be a :up: <br />
+<br />
+waiting for Christmas trees ...<br />
+Diesto</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th December 2002, 20:39</div></div>
+<br />
+<div class="posttext">This isn't AVS, but it sure is nice...<br />
+<br />
+link (http://kringles.mondominishows.com/tree.asp?affil=fan&amp;amp;speed=low)<br />
+<br />
+I'll make a preset too :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">4th December 2002, 21:58</div></div>
+<br />
+<div class="posttext">Here is one. Hope you like :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">5th December 2002, 06:50</div></div>
+<br />
+<div class="posttext">I have a kick-ass idea...but I need to know how IFS work (I assume anybody that knows what IFS are know what I'm planning ;) )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">5th December 2002, 09:16</div></div>
+<br />
+<div class="posttext">Nixa, your christmas tree r0x!<br />
+<br />
+I want to make one too, although it will be a totally flat tree :( Maybe a postcard tree? ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Diesto</div><div class="date small text-muted">5th December 2002, 13:21</div></div>
+<br />
+<div class="posttext">okay, here it is ...<br />
+<br />
+Diesto</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">5th December 2002, 13:30</div></div>
+<br />
+<div class="posttext">Diesto, Nice tree you got there also :) I like the snow falling down, but why the hell you used a DYNAMIC movement with &quot;d=d*0.98&quot; ? You can do the same effect with a regular movement if you don't want to add any dynamics into it and even the blitter feedback works fine! A dm just sucks up so much fps :igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Diesto</div><div class="date small text-muted">5th December 2002, 13:49</div></div>
+<br />
+<div class="posttext">Originally posted by Tuggummi <br />
+Diesto, Nice tree you got there also :) I like the snow falling down, but why the hell you used a DYNAMIC movement with &quot;d=d*0.98&quot; ? You can do the same effect with a regular movement if you don't want to add any dynamics into it and even the blitter feedback works fine! A dm just sucks up so much fps :igor: <br />
+<br />
+Thanks!<br />
+<br />
+Regarding the DynaMove: I'm still learning, so I'm grateful for every hint. But I just checked it, and there was no difference in speed between Move and DynaMove. A DynaMove with (almost) no calculations should be as fast as the Move. And due to my test it is. For the Blitter Feedback you are right: That gives a few extra fps.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">5th December 2002, 18:23</div></div>
+<br />
+<div class="posttext">I replaced the DM with a regular movement and gained 4 FPS.<br />
+<br />
+Nice tree. That's a whole whack of superscopes. :up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th December 2002, 18:34</div></div>
+<br />
+<div class="posttext">Actually a regular movement works quite differently from a dynamic movement.<br />
+<br />
+A regular movement calculates the formula once per pixel at the beginning of the preset, and stores this in a lookup table. This lookup table is then used to perform the movement every frame.<br />
+<br />
+A dynamic movement calculates the formula once per gridpoint every frame, and uses that.<br />
+<br />
+So in practically all cases, a movement will be faster because it has nothing to calculate per frame.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nobady</div><div class="date small text-muted">10th December 2002, 18:54</div></div>
+<br />
+<div class="posttext">this is my Christmas Tree. I hope you like it.<br />
+008MVkerst.avs (http://www.xs4all.nl/~vis737/avs/008MVkerst.avs)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">10th December 2002, 21:52</div></div>
+<br />
+<div class="posttext">I must say, even for a 8th preset, you've done better :D <br />
+<br />
+Sorry<br />
+<br />
+Keep up the good work!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nobady</div><div class="date small text-muted">16th December 2002, 06:55</div></div>
+<br />
+<div class="posttext">Originally posted by ;-c ,rattaplan <br />
+I must say, even for a 8th preset, you've done better :D <br />
+<br />
+<br />
+<br />
+Try number 10.<br />
+You will find it on my site.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

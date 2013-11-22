@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Custom moving particles, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Custom moving particles AVS Troubleshooting" />
+	
+	<title> Custom moving particles - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Custom moving particles</li>
+</ol>
+<!-- div class="pda"><a href="t-205769.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=205769">Custom moving particles</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">AndyPeck</div><div class="date small text-muted">24th January 2005, 00:49</div></div>
+<br />
+<div class="posttext">Hey guys, I got this idea from one of (I think it was) Tuggummi's presets.  Basically he created moving particles using superscopes.  Not too advanced of an idea, but I like it because it gives you control of the particle.<br />
+Anyways...  I'm trying ot replicate what he did, but am having one problem.  As long as I clear every frame, everything looks fine, but if I don't, I sometimes get a washout effect of whatever color the particle is.  I think that this has something to do with the dynamic shift, but I am not sure.<br />
+Anyways, if anyone can help me with this, I would appreciate it.<br />
+Andy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">24th January 2005, 22:32</div></div>
+<br />
+<div class="posttext">With &quot;washout effect&quot; you mean that the whole screen becomes white, right?<br />
+Well, first of all it has to do with the movement r=0. Cause this sets all lines running from the middle to the border of the screen, like that what is drawn from the middle upwards.<br />
+(hope you are a bit familiar with polar coordinates and understand this, if not feel free to ask again)<br />
+<br />
+Now, if this line is completly white (from the middle till the border of the screen) the whole screen becomes white.<br />
+As long as &quot;clear every frame&quot; is disabled, the next frame will be rendered upon the last. So when the ball is moved to the upper middle by the dyn-shift and is big enough, the whole screen becomes white as soon as the old frame passes the r=0 movement.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

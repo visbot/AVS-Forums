@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS mysteries, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS mysteries AVS" />
+	
+	<title> AVS mysteries - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">AVS mysteries</li>
+</ol>
+<!-- div class="pda"><a href="t-138609.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=138609">AVS mysteries</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">11th June 2003, 02:10</div></div>
+<br />
+<div class="posttext">GODDAMNIT. I had just nearly finished typing up a LONG, informative post with commented code, when I was going to do some final debugging. Except that I accidentally hit the 'Power' button instead of 'F11'. And that button just happens to shut down my computer in 2 seconds. Poof. Bye.<br />
+<br />
+That key has now been pried off the keyboard.<br />
+<br />
+I won't type it up all again, I'll just summarize my conclusions. If you want to know the how's and why's, you'll have to do it yourself.<br />
+--------------------------<br />
+<br />
+Using MSVC++'s debugger and one of my APEs, I got down and dirty with AVS's internals. Lots of messy assembly to figure out.<br />
+<br />
+The basic procedure is to make an APE in debug mode. Then make a preset with only the APE and then e.g. a scope. Now put a breakpoint at the end of the APE's render function and start winamp with the debugger. Open AVS and the preset. Turn on the breakpoint and it'll kick in. Now press F11 to step out of the render function and into vis_avs.dll. Set a breakpoint at the line that called your ape (the one before the current one normally) and hit F5 to run until it arrives back at that point. Now it's time for the scope to get called. Hit F11 again and you'll be inside the superscope code. Place a breakpoint here so you don't have to find it again, and start digging :rolleyes:.<br />
+<br />
+<br />
+- AVS does not optimize anything. '5/2' will be calculated explicitly, it will not get replaced by '2.5'. Similarly, x/a, where a is a constant will not be replaced by x*(1/a). So use x*.5 instead of x/2.<br />
+<br />
+- AVS uses function calls for EVERYTHING. Loading a source variable is done by putting the variable's address in the eax register. This is done using a mini-function call per var.<br />
+The compiler probably splits an expression into a tree of operations, with variable and constants at the leafs, operations at the branches and target variables at the roots.<br />
+However these are naked jumps and calls, without any of the extra stuff (parameter passing, stack pushing, local vars, ...) that is normally associated with a function call. So the performance hit could be minor on a modern cpu.<br />
+<br />
+- if(a,b,c) calculates b and c, regardless of a. Proven using test statement if(cos(1),cos(2),cos(3)) because I've figured out where the cosine gets calculated. cos was called both with argument 2.0 and 3.0.<br />
+<br />
+- AVS uses 64-bit double floats internally.<br />
+<br />
+<br />
+Conclusion: AVS was never made for rollercoasters...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">11th June 2003, 03:41</div></div>
+<br />
+<div class="posttext">r4wk ucd.<br />
+because i don't know a damn thing about this kind of stuff and i'd rather not go hunting it down in any of my books, does a 64-bit double float imply 63 bits of precision + the sign bit?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">11th June 2003, 04:38</div></div>
+<br />
+<div class="posttext">Normally, it's 3/4 of the bits for number, 1/4-1 bits for floating point, and the sign bit.<br />
+<br />
+So for 64 bit, it would be 48 bits number, 11 bits float, and 1 bit sign.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">11th June 2003, 13:20</div></div>
+<br />
+<div class="posttext">Atero: it's in that PDF I sent you, chapter on the floating point unit (14), section IEEE Floating Point Formats :rolleyes:. If you'd bothered to read it, you wouldn't say stuff like that anymore...<br />
+<br />
+IEEE 64-bit float = 53 bits of mantissa, 11-bits of exponent + 1 sign bit.<br />
+This makes 65 bits and not 64, because the highest bit of the mantissa is always 1, so it is left out, and only 52 and saved.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">11th June 2003, 14:00</div></div>
+<br />
+<div class="posttext">well excuse me mr fancy pants<br />
+<br />
+seriously, i really do have more pressing issues than assembler language...i'm almost sorry i asked for that pdf now...:|</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">11th June 2003, 21:36</div></div>
+<br />
+<div class="posttext">how very friendly...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">11th June 2003, 22:58</div></div>
+<br />
+<div class="posttext">if(a,b,c) calculates b and c, regardless of a. Proven using test statement if(cos(1),cos(2),cos(3)) because I've figured out where the cosine gets calculated. cos was called both with argument 2.0 and 3.0.  <br />
+<br />
+So if i say if(equal(x,y),x,y) AVS wont take equal(x,y) into calculation ? I dont understand quite well what you said</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">11th June 2003, 23:15</div></div>
+<br />
+<div class="posttext">take the equation if(equal(x,y),a*c-b,b*c-a);<br />
+<br />
+the equations a*c-b and b*c-a will always be calculated regardless of the state of equal(x,y)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">11th June 2003, 23:29</div></div>
+<br />
+<div class="posttext">aaah...so this slows AVS a little right ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">12th June 2003, 00:28</div></div>
+<br />
+<div class="posttext">And all these, &quot;slow AVS a little&quot;'s accumulate into one big slow program.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th June 2003, 02:34</div></div>
+<br />
+<div class="posttext">Yup. You can test it like this:<br />
+a=if(1,1,sqrt(2)/sqrt(3)/sqrt(4)/sqrt(5) ...);<br />
+<br />
+Extend up to enough square roots, copy/paste this line a bunch of times and notice the slowdown.<br />
+<br />
+I'll illustrate with a practical example. Suppose you have a scope that can switch between 5 shapes. You'd have something like this in the per-point:<br />
+<br />
+x=if(equal(shape,0),...,if(equal(shape,1)..., . ...);<br />
+<br />
+However, AVS will calculate all 5 shapes every frame (and throw 4 away). So instead, it is better to make 5 scopes that are synchronized, and set 'n=0' for 4 of them. That way only 1 will be evaluated every frame.<br />
+<br />
+If you don't think this is serious, suppose the scope above had 300 points. It would be doing the equivalent of 1500 points every frame...<br />
+<br />
+If you can't avoid it, you should try putting as much common elements outside the if function (or save them in variables) so that they only get calculated once. Like:<br />
+<br />
+x=if(a,cos(t)*sin(t)*p,sqr(cos(t))*q);<br />
+<br />
+=<br />
+<br />
+x=cos(t)*if(a,sin(t)*p,cos(t)*q);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">12th June 2003, 02:46</div></div>
+<br />
+<div class="posttext">that is an awesome idea (turning scopes off like that)...thanks for the tip :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">12th June 2003, 06:16</div></div>
+<br />
+<div class="posttext">I used that ages ago... geez :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">12th June 2003, 07:27</div></div>
+<br />
+<div class="posttext">But this would mean that avs is going to run faster on my new Athlon 64 right? At least faster than it does now, splitting up 64 bit into 2*32 or something like that, given a 64 Bit supporting OS.<br />
+<br />
+Anyway, UCD do you know where to find the transition mode settings within the avs memory block. I'd like to access them out of hotlist but i can't get the handles of the control elements if they're hidden. I don't know anything about hacking maybe you have any idea... ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th June 2003, 12:21</div></div>
+<br />
+<div class="posttext">Unlikely. That value is only read once every thousand frames or so, and has nothing to do with the rendering buffer itself. Locating it would be a pain.<br />
+<br />
+Plus, you'd need an APE to get its memory location anyway.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">12th June 2003, 23:14</div></div>
+<br />
+<div class="posttext">thanks for the tips...i really understood smth out of them :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">16th June 2003, 12:02</div></div>
+<br />
+<div class="posttext">It has to be read on transition anyway. But i dont feel like learn hacking, i'd rather bug justin (or his successor) to add some funktions.<br />
+<br />
+It would be so easy to make avs customizeble (in this case). They only need to declare some WM's, thats it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">23rd June 2003, 19:01</div></div>
+<br />
+<div class="posttext">:igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">23rd June 2003, 19:03</div></div>
+<br />
+<div class="posttext">you revived this post and  didn't add anything except a smiley?<br />
+<br />
+pity Atero didn't get here first.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">23rd June 2003, 20:43</div></div>
+<br />
+<div class="posttext">:p he will read, sooner or later.<br />
+<br />
+Anyway, to update this topic: Found a way to &quot;cheat&quot; AVS and to pass a input to the check and combo boxes (besides i found ot the laser stuff which ya all already seem to know :-( ) you'll see in Hotlist 2.3 wheter i get it to work in a stabile way :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">23rd June 2003, 22:52</div></div>
+<br />
+<div class="posttext">MagicX: send the appropriate menu WM_COMMAND's, find the HWND of the config dialog and then send the command to the appropriate control. Nothing hard about that ;).<br />
+<br />
+Not sure if I mentioned this already, but I have some code sitting here to modify the onbeat value through an APE, allowing for Custom BPM II. Should get around to making that once really.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">1st July 2003, 18:44</div></div>
+<br />
+<div class="posttext">Ok, this is quite easy. (as you describe it)<br />
+<br />
+But i hafta go a damn painfull way to open the appropriate dialog. But even i got it open, checking and unchecking things wont have any effect unless you can send a hex coded notification message to the parent handle includeing the controls internal id.<br />
+<br />
+I did it anyway. *cough* :)<br />
+<br />
+PM me if you want to know in detail or some code.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">3rd July 2003, 01:32</div></div>
+<br />
+<div class="posttext">c'mon Steve, just write AVS 3.0 by yourself.  We all know it'd be so much better than what we have now.  Enough teasing us with posts like these.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">3rd July 2003, 05:22</div></div>
+<br />
+<div class="posttext">atero, i laugh at him *HA*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">3rd July 2003, 17:12</div></div>
+<br />
+<div class="posttext">Horse Fly, please stop argueing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">5th July 2003, 06:55</div></div>
+<br />
+<div class="posttext">me argue? never!! me play around? always!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">5th July 2003, 09:39</div></div>
+<br />
+<div class="posttext">screwing around you mean...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">7th July 2003, 08:04</div></div>
+<br />
+<div class="posttext">playing, screwing, both have sexual conotations.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">7th July 2003, 08:40</div></div>
+<br />
+<div class="posttext">shut.<br />
+<br />
+the.<br />
+<br />
+fuck.<br />
+<br />
+up.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">9th July 2003, 06:42</div></div>
+<br />
+<div class="posttext">well excuse me...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">9th July 2003, 06:55</div></div>
+<br />
+<div class="posttext">We don't look kindly upon postpumping here.  Run along to GD.  Shoo!</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

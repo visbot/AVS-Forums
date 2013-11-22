@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Wondering if this exists:, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Wondering if this exists: AVS Presets" />
+	
+	<title> Wondering if this exists: - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Wondering if this exists:</li>
+</ol>
+<!-- div class="pda"><a href="t-270533.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=270533">Wondering if this exists:</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">benn</div><div class="date small text-muted">3rd May 2007, 01:24</div></div>
+<br />
+<div class="posttext">Hey everyone...lurker here. :-D<br />
+<br />
+I've been programming software that generates ambient music for a couple years, and I was thinking about making an installation with it.<br />
+<br />
+Basically, I'm looking for an AVS preset (or even tips) that would simply fade the screen to a color from a black screen when it hears a certain peak level of sound.<br />
+<br />
+I've been searching for something that could do this easily for a long time, and AVS seems like my best option. Funny how something so basic can be so hard to find!<br />
+<br />
+Any help would be greatly appreciated!<br />
+<br />
+-b</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">3rd May 2007, 02:06</div></div>
+<br />
+<div class="posttext">Originally posted by benn <br />
+<br />
+Basically, I'm looking for an AVS preset (or even tips) that would simply fade the screen to a color from a black screen when it hears a certain peak level of sound.<br />
+ <br />
+<br />
+<br />
+it sounds easy enough, but you'll need to be more specific. what does it do after the colour fades in? what colour do you want and at what volume will trigger it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">benn</div><div class="date small text-muted">3rd May 2007, 02:25</div></div>
+<br />
+<div class="posttext">thanks for the reply!<br />
+white would be fine...this should be easily changable i'm sure. i have a bit of noob avs knowledge to sort that out.<br />
+<br />
+the volume of the audio would trigger the brightness, however, i can't seem to work one out that &quot;fades in and out&quot;. i could get it to fade out...but it just flashes in. no &quot;fade in&quot; effect. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">4th May 2007, 02:03</div></div>
+<br />
+<div class="posttext">i get what you want i get it now. i'll have a shot when i get home.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">4th May 2007, 14:11</div></div>
+<br />
+<div class="posttext">okay the preset's too small for me to bother zipping and posting so here's the code.<br />
+<br />
+superscope with the code<br />
+<br />
+init//<br />
+<br />
+n=1<br />
+<br />
+frame//<br />
+<br />
+col1=getspec(0.16,0.27,0);<br />
+col1=col1*0.9;<br />
+col=col*0.9+sin(col1)*0.25<br />
+<br />
+point//<br />
+<br />
+x=0;<br />
+y=0;<br />
+red=col;<br />
+blue=red;<br />
+green=red;<br />
+<br />
+<br />
+followed by a movement trans with the code<br />
+x=0;<br />
+y=0;<br />
+(rect-coords on)<br />
+<br />
+hope thats what you're after</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">4th May 2007, 14:37</div></div>
+<br />
+<div class="posttext">protips(tm):<br />
+<br />
+There are three tasks in your question:<br />
+<br />
+- Detect if the music is above a certain volume (which is what you mean by 'peak level of sound')<br />
+- Interpolate from one colour to another<br />
+- Fill the screen with that colour<br />
+<br />
+To detect the volume of the music at any particular time it is easiest to take the DC component of the frequency <br />
+<br />
+spectrum, you can do this using getspec(0,0,0) which will take the zero'th bin of the FFT with a width of zero on <br />
+<br />
+the centre (average of left and right) channel. To test it is above a value you can use above(getspec(0,0,0),&lt;value&gt;), so for example to set the value of register 0 to 1 when the music goes above a normalised 'volume' of 0.9 you can use reg00=if(above(getspec(0,0,0),&lt;value&gt;),1,reg00); note that this will set it to 1 and leave it at 1. You can be more clever when detecting volume by taking a rolling average or using a more sophisticated algorithm but this way is simple and effective. Rather than just switching from 0 to 1 you would probably want a register to smoothly transition from 0 to 1, to do this you can have a second variable which tends towards the value of the other variable over time.<br />
+<br />
+Interpolating from one colour to another is a simple case of linear interpolation:<br />
+pal1r=128/255; //define your pallete<br />
+pal1g=255/255;<br />
+pal1b=0/255;<br />
+pal2r=0/255;<br />
+pal2g=128/255;<br />
+pal2b=255/255;<br />
+<br />
+red=pal1r+(pal2r-pal1r)*lvl;  //interpolate (lvl is a value from 0-1)<br />
+green=pal1g+(pal2g-pal1g)*lvl;<br />
+blue=pal1b+(pal2b-pal1b)*lvl;<br />
+<br />
+Filling the screen with this colour is easiest achieved with a superscope and movement. You render a dot of the desired colour in the centre of the screen and use a movement to set ever other pixel equal to that colour. So create a superscope with n=0, x=0, y=0 and red/green/blue equal to your desired colour. Place a movement after it with the user code 'd=0', this means for every pixel, make the pixel colour equal to the pixel at d=0 in radial coordinates (i.e. the very centre of the screen)<br />
+<br />
+Put that all together and you're done</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">zhadoomzx</div><div class="date small text-muted">4th May 2007, 19:56</div></div>
+<br />
+<div class="posttext">@pak-9, just a little correction:<br />
+So create a superscope with n=0, x=0, y=0 and red/green/blue equal to your desired colour.<br />
+I think n has to be at least 1 (well exactly 1 in this case :) ) or nothing will be rendered.<br />
+<br />
+greets, zha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">benn</div><div class="date small text-muted">5th May 2007, 02:07</div></div>
+<br />
+<div class="posttext">works lovely! thanks so much for your help. now if only there was a stable way to render it to AVI....but that'll be another battle. :-D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">zhadoomzx</div><div class="date small text-muted">5th May 2007, 02:22</div></div>
+<br />
+<div class="posttext">Why not just use fraps?  :up:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

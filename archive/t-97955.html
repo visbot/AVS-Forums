@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" mindcube, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" mindcube AVS Presets" />
+	
+	<title> mindcube - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">mindcube</li>
+</ol>
+<!-- div class="pda"><a href="t-97955.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=97955">mindcube</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">10th August 2002, 15:30</div></div>
+<br />
+<div class="posttext">my latest preset, the pattern to the preset looks like a dos visualizer, which i love about the preset</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">10th August 2002, 21:27</div></div>
+<br />
+<div class="posttext">The mosaic hides those awesome scopes...I'd get rid of it or make the blocks smaller.<br />
+The DM could also do with some improvements - first of all, don't leave the gridsize at 16x16!  That resolution SUCKS...Use something like 40x30, especially with DMs like this that have major differences between blocks.<br />
+<br />
+And you might think about syncing your scopes up a bit - the formation as well as the color.  It's pretty random right now, and random colors all over the place is REALLY ugly.  If you could somehow synchronize it so that there's only small changes in each scope's color at a time, that'd be really cool<br />
+<br />
+<br />
+Keep it up!<br />
+--Atero</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">11th August 2002, 06:35</div></div>
+<br />
+<div class="posttext">Pretty bad ass DM there. I love it. I'm afraid I gotta agree with Artero about the colours though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">3dino</div><div class="date small text-muted">12th August 2002, 00:33</div></div>
+<br />
+<div class="posttext">i like it too! :up: <br />
+here is a remix :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">12th August 2002, 11:31</div></div>
+<br />
+<div class="posttext">after little experimenting i removed the mosaic and did my own mosaic, which has the simplest code in the world<br />
+<br />
+and if you wonder about certain parts being very ugly, it's because i used no bilinear blend to get the pattern to stick to the screen and not just fade away<br />
+<br />
+also, i included a preset called &quot;neon syndrome&quot; wich is a simple preset that i like</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">12th August 2002, 11:53</div></div>
+<br />
+<div class="posttext">Neon Syndrome is just great. But now Mindcube had a paintwater thing going on. If you let it go, the background becomes as unattractive mess of colours. Hmm...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Xion(810)</div><div class="date small text-muted">13th August 2002, 00:58</div></div>
+<br />
+<div class="posttext">I like the way the music morphs the preset, and the random colors add that effect of uniqueness...Who would want to watch a preset where you know what colors are coming when?  Not me...<br />
+<br />
+Tested listening to Andrew W. K.'s &quot;She is Beautiful&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">16th August 2002, 08:53</div></div>
+<br />
+<div class="posttext">Much better...still think u should set the DM gridsize higher.<br />
+<br />
+I think I understand why the colors in the original were kind of ugly...they were completely random, thus letting uglier shades (brownish gray, dark yellow-green, gray-blue, etc) into the mix.  The new version still does that, but the new blending makes up for it.  Still, you might try just shifting around the hues:<br />
+<br />
+init<br />
+pit=acos(-1)/3;<br />
+<br />
+beat<br />
+hue=rand(100)/20;<br />
+<br />
+pixel<br />
+...<br />
+red=abs(sin(hue));<br />
+green=abs(sin(hue+pit));<br />
+blue=abs(sin(hue+pit*2));</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

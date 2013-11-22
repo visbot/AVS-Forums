@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Set render mode, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Set render mode AVS Troubleshooting" />
+	
+	<title> Set render mode - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Set render mode</li>
+</ol>
+<!-- div class="pda"><a href="t-152075.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=152075">Set render mode</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">shabaviz55</div><div class="date small text-muted">9th October 2003, 15:28</div></div>
+<br />
+<div class="posttext">I have a question:<br />
+How can I work with Set render mode?<br />
+<br />
+I don't know this option how to work?<br />
+Please tell me<br />
+Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">9th October 2003, 22:02</div></div>
+<br />
+<div class="posttext">From the primer:<br />
+<br />
+Global Effects: Render Blends<br />
+   Render blends affect how two effect lists blend with each other, or<br />
+   how a signle effect renders or changes everything else.<br />
+<br />
+Ignore<br />
+   Disables the effect's blending entirely<br />
+<br />
+Replace<br />
+   Replaces the picture entirely with the new frame<br />
+<br />
+50/50 Blend<br />
+   Takes the average of the two frames.<br />
+<br />
+Maximum Blend<br />
+   Uses the greatest amount of color between the two frames.<br />
+<br />
+Additive Blend<br />
+   Adds the color values of the render to the previous frame.<br />
+<br />
+Subtractive Blend 1<br />
+   Subtracts the previous frame from the new one<br />
+<br />
+Subtractive Blend 2<br />
+   Subtracts the new frame from the previous<br />
+<br />
+Every Other Line<br />
+   Renders every other line of the previous frame and the rest of the<br />
+   lines from the new one.<br />
+<br />
+Every Other Pixel<br />
+   Same as Every Other Line, but in pixels<br />
+<br />
+XOR<br />
+   Don't know anything about what this is, but it's trippy.<br />
+<br />
+Adjustable Blend<br />
+   The bar is how much of the previous frame should be used in<br />
+   relation to the new one (i.e., one quarter of the way down takes<br />
+   25% of the previous and 75% of the new)<br />
+<br />
+Multiply Blend<br />
+   The end product is the new pixel's values multiplied by the previous<br />
+   pixel's values divided by 256 (i.e., the percentage of the previous<br />
+   pixel's values relative to white)<br />
+<br />
+Buffer Blend<br />
+   Blends with the specified buffer (I don't know how)<br />
+   Invert<br />
+      Uses the negative of the buffer<br />
+<br />
+Minimum Blend<br />
+   Uses the least amount of color between the two frames.  I can't<br />
+   remember where this is used, but it's not usable in effect lists.<br />
+<br />
+So, using a previous pixel of the color<br />
+red = 62<br />
+green = 64<br />
+blue = 63<br />
+and an edited pixel of the color<br />
+red = 30<br />
+green = 32<br />
+blue = 31<br />
+this is the end product of each blend:<br />
+<br />
+Ignore<br />
+red = 62<br />
+green = 64<br />
+blue = 63<br />
+<br />
+Replace<br />
+red = 30<br />
+green = 32<br />
+blue = 31<br />
+<br />
+50/50<br />
+red = (62 + 30) / 2 = 92 / 2 = 46<br />
+green = (64 + 32) / 2 = 96 / 2 = 48<br />
+blue = (63 + 31) / 2 = 94 / 2 = 47<br />
+<br />
+Maximum<br />
+red = 62<br />
+green = 64<br />
+blue = 63<br />
+<br />
+Additive<br />
+red = 62 + 30 = 92<br />
+green = 64 + 32 = 96<br />
+blue = 63 + 31 = 94<br />
+<br />
+Subtractive 1<br />
+red = 30 - 62 = 0*<br />
+green = 32 - 64 = 0*<br />
+blue = 31 - 63 = 0*<br />
+<br />
+Subtractive 2<br />
+red = 62 - 30 = 32<br />
+green = 64 - 32 = 32<br />
+blue = 63 - 31 = 32<br />
+<br />
+XOR<br />
+Don't know<br />
+<br />
+Adjustable (one quarter)<br />
+red = 30 x 0.25 + 62 x 0.75 = 7.5 + 46.5 = 54<br />
+green = 32 x 0.25 + 64 x 0.75 = 8 + 48 = 58<br />
+blue = 31 x 0.25 + 63 x 0.75 = 7.75 + 47.25 = 55<br />
+<br />
+Adjustable (three quarters)<br />
+red = 30 x 0.75 + 62 x 0.25 = 22.5 + 15.5 = 38<br />
+green = 32 x 0.75 + 64 x 0.25 = 24 + 16 = 40<br />
+blue = 31 x 0.75 + 63 x 0.25 = 23.25 + 15.75 = 39<br />
+<br />
+Multiply<br />
+red = 62 x (30 / 256) = 62 x 0.1171875 = 7**<br />
+green = 64 x (32 / 256) = 64 x 0.125 = 8<br />
+blue = 63 x (31 / 256) = 63 x 0.13109375 = 7**<br />
+<br />
+Minimum<br />
+red = 30<br />
+green = 32<br />
+blue = 31<br />
+<br />
+I left out Every Other Line/Pixel and Buffer Blend because they can't<br />
+be explained this way.<br />
+<br />
+<br />
+<br />
+Any help is appreciated; if I'm wrong about anything (or if you know<br />
+something I don't know), e-mail me at therealatero@hotmail.com<br />
+<br />
+<br />
+*No negative numbers<br />
+**No fractions/decimals (truncation)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">9th October 2003, 22:49</div></div>
+<br />
+<div class="posttext">For XOR :<br />
+<br />
+32/96/32<br />
+<br />
+XOR ----&gt;&gt;&gt; Change the values into binary, XOR the values, change them back. Very useful for special inversing using SSC...<br />
+(XOR : Exclusive OR. One but not both.)<br />
+<br />
+I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">10th October 2003, 23:25</div></div>
+<br />
+<div class="posttext">ups?  did i not put that in the recent version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">11th October 2003, 08:48</div></div>
+<br />
+<div class="posttext">I still have the oldie ;) I'm going to reinstall all my avs again (including the new primer) when I get wa5 final with the final avs version.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

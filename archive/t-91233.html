@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" TI-83's?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" TI-83's? AVS" />
+	
+	<title> TI-83's? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">TI-83's?</li>
+</ol>
+<!-- div class="pda"><a href="t-91233.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91233">TI-83's?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">DJDecepticon</div><div class="date small text-muted">16th June 2002, 06:02</div></div>
+<br />
+<div class="posttext">How well could one translate between equations and expressions used on a TI calculator to the superscope?  I know beat transitions I'd have to do on my own, but what about the shape of the scope?  Just picked one up for about 5 bux, thought it would be worth a shot...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">16th June 2002, 07:47</div></div>
+<br />
+<div class="posttext">No reason why not. You just gotta type it in.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">16th June 2002, 14:21</div></div>
+<br />
+<div class="posttext">Originally posted by DJDecepticon <br />
+How well could one translate between equations and expressions used on a TI calculator to the superscope?  I know beat transitions I'd have to do on my own, but what about the shape of the scope?  Just picked one up for about 5 bux, thought it would be worth a shot... <br />
+<br />
+well to translate &quot;R=10(2.5D)&quot; (i'm using D instead of (-) ), which will draw a 10-petal (polar) rose, to avs, then this is the setup:<br />
+<br />
+init:<br />
+n=w; t=0; p=acos(-1);<br />
+pixel:<br />
+r=i*p*4; d=sin(r*2.5);<br />
+x=cos(r)*d; y=sin(r)*d;<br />
+<br />
+for the traditional rectangular scope then setup is, i will use &quot;y=sin(x)&quot; for this setup;:<br />
+<br />
+init:<br />
+n=w; <br />
+pixel:<br />
+x=i*2-1; y=sin(x);<br />
+<br />
+remember that avs uses radians instead of degrees, the &quot;zoom&quot; of the avs window is like ZTrig (in radian mode)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cmountford</div><div class="date small text-muted">16th June 2002, 21:01</div></div>
+<br />
+<div class="posttext">Even my TI-89 has some limitations for graphs.  But graphing calculators are a great tool for getting a beginner's understanding of what makes different graphs.  If you think of AVS superscopes &amp; DMs as one giant equation that it constantly solves, then it make more sense than when you compare it to the standard output for linear graphing y=mx+b and whatever the standard form for polar graphing<br />
+<br />
+Now of course the only way to get something that isn't polar graphing that doesn't pass the vertical line test is a special kind of graphing, but I'd recommend purchasing some computer software instead of getting a TI-89 or 92.  Software is much easier to learn to use than a new graphing calculator (I can't work with TI-83s because they're so different.  Where the Y= editor button is on the 83 is the F1 button on my 89, so you have to use keystrokes to access the different things.  <br />
+<br />
+But if you can learn to compare AVS graphs to those your graphing calculator outputs, then it can be a great learning tool if you keep in mind that AVS is constantly calculating things that are usually continually changing movements or scopes.  :)  Any graphing machine (computer or calculator) is always a plus.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">21st June 2002, 23:44</div></div>
+<br />
+<div class="posttext">does the same apply for Microsoft's Powertoys Calculator?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cmountford</div><div class="date small text-muted">22nd June 2002, 03:21</div></div>
+<br />
+<div class="posttext">Probably, but I've never used what you were referring to.  I've heard that what helps the most is just waiting to get into more advanced math classes (never gotten into one yet that's helped me-but I've only taken basic Geometry so far-only trig that applied was numerical only)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Sadarqii</div><div class="date small text-muted">1st July 2002, 13:41</div></div>
+<br />
+<div class="posttext">I use Graph+ (http://download.com.com/3000-2053-5066634.html?tag=lst-0-3) . Works fine for me.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

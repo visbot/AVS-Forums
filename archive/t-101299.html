@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS saving issue in notepad, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS saving issue in notepad AVS Troubleshooting" />
+	
+	<title> AVS saving issue in notepad - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> AVS saving issue in notepad</li>
+</ol>
+<!-- div class="pda"><a href="t-101299.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=101299">AVS saving issue in notepad</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Ketrid</div><div class="date small text-muted">23rd August 2002, 06:32</div></div>
+<br />
+<div class="posttext">I have been working on some visualizations.  I opened them in notepad and added a single space in the same place in the comment text. :igor:  I saved them in (win2k) notepad, overwriting the original file.  Now the visualizations come up as blank in the editor.  :eek: <br />
+<br />
+Is there anyway I can fix them so that they will function again?<br />
+<br />
+Thanks for the help<br />
+-Eric W</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">23rd August 2002, 12:03</div></div>
+<br />
+<div class="posttext">Find the space and take it out. Get the presets again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Ketrid</div><div class="date small text-muted">23rd August 2002, 12:34</div></div>
+<br />
+<div class="posttext">I don't think the space I added is what created the problem.  I think that when I saved it in notepad it changed which end of line characters are used and maybe some of the asci characters, but I am not sure.  That's the only thing I know of that would create this problem.  I can't redownload them because they are the ones I've been working on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">23rd August 2002, 18:10</div></div>
+<br />
+<div class="posttext">AVS files are *not* text files, they're binary. Notepad probably truncated the file at the first null character which means your preset is gone...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Ketrid</div><div class="date small text-muted">24th August 2002, 01:27</div></div>
+<br />
+<div class="posttext">I added the two versions of a preset I'm working on.  I have others that I am working on, but I don't have a working version to compare it to.  If you open the two presets in DOS edit you'll see that the code at the end of the files is very similar.  I haven't done a character by character comparison, but I know there is some difference between them or else they would both work.  Does anyone know of a program that will find the binary differences in two files?<br />
+<br />
+Thanks for the help<br />
+-Eric W</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th August 2002, 14:55</div></div>
+<br />
+<div class="posttext">&quot;fc /b&quot; does a binary comparison, it's a standard dos command.<br />
+<br />
+For more info, use &quot;fc /?&quot;.<br />
+<br />
+Maybe you should get a hex editor (Hex Workshop is good).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Ketrid</div><div class="date small text-muted">25th August 2002, 07:10</div></div>
+<br />
+<div class="posttext">Thanks for the help UnConed.  I used the fc command and used acsii and binary comparisons and both said the files were too different to compare.  From what I saw, it looks like notepad added a bunch of return characters in bad places in the code.  Hmmm... I think I'm screwed.  Darn I liked what I had created too.  If anyone has any other ways to recover avs files, please let me know.  <br />
+<br />
+-Eric W</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

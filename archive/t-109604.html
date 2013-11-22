@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" video delay ape (new), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" video delay ape (new) AVS" />
+	
+	<title> video delay ape (new) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">video delay ape (new)</li>
+</ol>
+<!-- div class="pda"><a href="t-109604.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=109604">video delay ape (new)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">13th October 2002, 04:26</div></div>
+<br />
+<div class="posttext">here we go again...<br />
+<br />
+i've knocked up another ape cos i couldn't bring myself to write my first essay of the term...<br />
+<br />
+it does video delay like the cool scene in ghost dog.<br />
+<br />
+basically it just outputs whatever came into the ape however many frames/beats ago. thus if you stick it on its own in an effect list with the input on blend and the output on either blend or replace, you get &quot;reverb&quot;<br />
+<br />
+tom<br />
+<br />
+p.s. absoloutely no docs, but its pretty self explanatory.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">13th October 2002, 08:40</div></div>
+<br />
+<div class="posttext">Cool...You should add an option for the render blending of the delay, so you could make the 'echo' brighter than the original, or tone down the original but not the echo.<br />
+<br />
+You should do another one that delays the getspec/getosc functions for a certain number of frames (for Whitecap-like effects).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">13th October 2002, 10:31</div></div>
+<br />
+<div class="posttext">Wow, great job. Keep it up! :up: <br />
+<br />
+Also, do you think you could make a radial blur APE? Or perhaps a fast directional emboss?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th October 2002, 13:09</div></div>
+<br />
+<div class="posttext">Zeven: directional emboss can be done through convolution.ape.<br />
+<br />
+By the way, wouldn't it be cooler if you could have it work like Buffer save? I.e. you define one instance of the APE which saves the video, and another which loads it. That way you have a lot more freedom. You could supply 8 delay buffers, that should be enough for most purposes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">13th October 2002, 13:58</div></div>
+<br />
+<div class="posttext">atero: to add any form of blending would slow it down a lot i think and would be unnecessary hastle cos at the moment it copies memory frame at a time. if you want to change brightness either use something like unconed's multiplier and effect lists. also i don't think delaying getosc and getspec would be possible, i'd have to write complete new versions of superscope etc for that to work.<br />
+<br />
+unconed: yeah thats a good idea. i'll do it on tuesday night.<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">13th October 2002, 14:23</div></div>
+<br />
+<div class="posttext">Spose you're right about the emboss thing unconed. What about an enhanced water filter? With controls for damping and also a target level.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th October 2002, 15:21</div></div>
+<br />
+<div class="posttext">Yeah Atero, APEs can hardly do anything that interacts with the rest of AVS. For example, a 'Misc / Set Render Mode' kind of functionality is impossible in an APE, because AVS doesn't expose that information.<br />
+<br />
+A water filter might be possible, though you have to remember that the water effect is just a cheap hack. It's in no way an accurate or correct simulation of water. You can probably simulate it through convolution and a buffer save.<br />
+<br />
+The general formula for pixel (x,y) is:<br />
+<br />
+((x+1,y) + (x-1,y) + (x,y-1) + (x,y+1)) / 2  - (x,y)<br />
+<br />
+Except that (x,y) has to be the value of the pixel in the *previous* frame, not the current one.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">13th October 2002, 22:54</div></div>
+<br />
+<div class="posttext">updated version of &quot;video delay&quot; (better at coping with changing delays e.g. when on beat mode)<br />
+new &quot;multi delay&quot; (you can input and output to the same buffer at several different points in your avs. later inputs overwrite earlier ones of the same frame, but this is still useful, say when coupled with an &quot;on beat effect list&quot;. later outputs give exactly the same outputs as earlier ones.)<br />
+<br />
+have fun<br />
+<br />
+if you find any bugs post them here.<br />
+<br />
+the multi delay may occasionally generate errors while you are developing, (though it hasn't done for me recently) but when people are viewing avs's the chances of the same errors are much much reduced.<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th October 2002, 06:10</div></div>
+<br />
+<div class="posttext">Umm...how do you work the Video Delay?  Could you make some documentation w/examples?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">29th October 2002, 09:42</div></div>
+<br />
+<div class="posttext">i'm going to give it a proper release e.g. with docs at the same time as my next ape which i've got the idea for sitting in my head, but until then i'll give a quick explanation.<br />
+<br />
+all the video delay does is to output whatever was inputed into it the number of frames/beats ago you specify. thus a standard use of it is to put it on its own inside an effect list, with the effect list on don't clear every frame, input 50/50, output replace and the loop (main or effect list) which this effect list is in on clear every frame.<br />
+<br />
+to get the same behaviour out of the multi, you need two of them in the effect list, both on the same buffer, but with one on input and one on output (order doesn't actually matter).<br />
+<br />
+there's a really simple example attached. its got two effect lists, one doing video delay and one doing multi and the effect list with the multis is disabled to start with.<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">30th October 2002, 00:08</div></div>
+<br />
+<div class="posttext">Hmm... That example... im confused... that explaination... im confused... and in that example... the.. &quot;Multi&quot; ape as you call it.. i dont have it... Help a guy out when hes confused... please?:igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">30th October 2002, 00:26</div></div>
+<br />
+<div class="posttext">err get the multi from my post above. its always the latest version of something in a thread that is the most recent.<br />
+<br />
+err what is it that's confusing sorry? maybe i'm not being very clear but i'm not quite sure what else you need to know.<br />
+<br />
+you could maybe think of it like a queue at a checkout. people are frames. so people (frames) come into the back of the queue and are then stuck there until all the people (frames) in front of them have &quot;left&quot; e.g. been outputed.<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">30th October 2002, 02:07</div></div>
+<br />
+<div class="posttext">Ahh... yes that helped :) ... but .. is it just me or is there no multi? Im gonna look again..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">30th October 2002, 02:14</div></div>
+<br />
+<div class="posttext">Oh geez... Found the multi... I must be blind or something.. sorry :D :weird: :weird:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">30th October 2002, 02:31</div></div>
+<br />
+<div class="posttext">S'called an 'edit button,' codered<br />
+<br />
+Thanx cfp :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">30th October 2002, 03:18</div></div>
+<br />
+<div class="posttext">Oh sorry.. heh.. oh dang i couldve edited this too.. oh dang.. sorry.. oh oops..  sorry .. oh.. &lt;knocks down flower vase&gt; ohh... sorry.. :rolleyes: :rolleyes: :confused: :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">30th October 2002, 10:40</div></div>
+<br />
+<div class="posttext">cool well glad it's all sorted.<br />
+<br />
+how stable has the multi been for anyone that's using it?<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">31st October 2002, 01:54</div></div>
+<br />
+<div class="posttext">purdy stable</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">31st October 2002, 09:05</div></div>
+<br />
+<div class="posttext">!r!o!c!k!<br />
+<br />
+it uses the doggiest routine ever to tell how many copies of it there are and in what order winamp is accessing them...<br />
+<br />
+but if its working i won't complain.<br />
+<br />
+thanks atero<br />
+<br />
+tom</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">5th November 2002, 08:03</div></div>
+<br />
+<div class="posttext">Or, it is for ME...in the small amount of time I've played with it since I couldn't figure out how to use it, or why it was crashing so much.<br />
+<br />
+<br />
+<br />
+(j/k about that last part)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">5th November 2002, 11:38</div></div>
+<br />
+<div class="posttext">did you check out the example? are you using the latest version?<br />
+<br />
+have a look at my modification of one of jericho's presets in his &quot;i need you&quot; thread, cos it uses the video delay.<br />
+<br />
+you only need to use the multi if you're doing something really complex like doing something different on beat, or if you want two copies of the output at different points in your routine. to get the same kind of behaviour out of the multi as you do from the video delay, you need two copies of it both in the same effect list (empty apart from them, with input 50/50 output replace clear every frame off) and one of them needs to be set to input and the other to output.<br />
+<br />
+tom</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

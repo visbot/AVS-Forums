@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" searching for improvement in a present, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" searching for improvement in a present AVS Presets" />
+	
+	<title> searching for improvement in a present - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">searching for improvement in a present</li>
+</ol>
+<!-- div class="pda"><a href="t-233339.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=233339">searching for improvement in a present</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">17th December 2005, 00:22</div></div>
+<br />
+<div class="posttext">so i have this presnet that is very simple and i need someone to add some things in it or to give me some ideas what do add next.<br />
+<br />
+<br />
+PS. i dont think it worts</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">17th December 2005, 01:26</div></div>
+<br />
+<div class="posttext">It needs some beat responsivness. It's kinda borring. The background effect itself is pretty cool, try to go off on a tangent with that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">17th December 2005, 03:08</div></div>
+<br />
+<div class="posttext">can u be more specific with the beat thing?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">17th December 2005, 03:32</div></div>
+<br />
+<div class="posttext">By the beat responsiveness he means adding some response, in the beat sections, to the Dynamic Movements.<br />
+<br />
+Something as simple as this (see attachment) makes it all the more interesting. What this does is it changes the rotation speed to a random value every time a beat is detected, added with the previous constants. To make it even more interesting, we subtract by half of the division so that we can get negative variables in the speed as well, making the movements go into the opposite directions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">17th December 2005, 03:48</div></div>
+<br />
+<div class="posttext">Tnx what do yuo think i should do next i meen like do you have any ideea what to do with it or is it enugh.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">17th December 2005, 04:14</div></div>
+<br />
+<div class="posttext">Firstly, remove the convolution filter or move it lower in the editor. As it is, it is convoluting nothing. AVS works from the top to the bottom, so with nothing before the filter, the filter is useless.<br />
+<br />
+As for other style fix-ups, that comes down to personal preference. If you like the way it is now, leave it alone.<br />
+<br />
+Now, the Dynamic Movement, on the other hand, could use a few fix ups. What I would do is to change the alpha blending a bit. If you divide z1 by t, this should create a nice change. Another thing to do would be to add some more movement, specifically to the x and y variables.<br />
+<br />
+In the frame section of the DM (Dynamic Movement), add this to the end:<br />
+mx=mxb*2+mx*.99;<br />
+my=myb*2+my*.99;<br />
+<br />
+In the beat section, add this:<br />
+mxb=rand(10)/100-.05;<br />
+myb=rand(10)/100-.05;<br />
+<br />
+In the pixel section, add this:<br />
+x=x+mx;<br />
+y=y+my;<br />
+<br />
+It's not much, just a few ideas to make it a bit more interesting. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">17th December 2005, 04:33</div></div>
+<br />
+<div class="posttext">tnx i added all of those and it loks great i will post it to see what others say about it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">17th December 2005, 04:35</div></div>
+<br />
+<div class="posttext">u dont mind if i add u in my commmnet rite?i need to think about a name for the present though</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">22nd December 2005, 02:50</div></div>
+<br />
+<div class="posttext">i fell i am missing something in this present can u help me??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hornet777</div><div class="date small text-muted">22nd December 2005, 07:53</div></div>
+<br />
+<div class="posttext">As I thought a week ago, this dude is looking to have others do his shit for him, not learn. Too bad y'all fell for it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">22nd December 2005, 13:21</div></div>
+<br />
+<div class="posttext">That's not true hornet777.i was asking for an idea i wasant asking someone to do it for me.it's true that in my last present a lot of guys helped me and i have a lot of tanks to give and i'm sorry if u think that about me and i know that ur not the only one so i am sorry.i was just looking for help so i colod learn</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">22nd December 2005, 14:33</div></div>
+<br />
+<div class="posttext">Originally posted by hornet777 <br />
+As I thought a week ago, this dude is looking to have others do his shit for him, not learn. Too bad y'all fell for it.<br />
+Originally posted by fastingaciu <br />
+That's not true hornet777.i was asking for an idea i wasant asking someone to do it for me.it's true that in my last present a lot of guys helped me and i have a lot of tanks to give and i'm sorry if u think that about me and i know that ur not the only one so i am sorry.i was just looking for help so i colod learn<br />
+Damn you both!:hang: Why should both of you fighting on just a little thing?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hornet777</div><div class="date small text-muted">22nd December 2005, 20:03</div></div>
+<br />
+<div class="posttext">Not fighting at all, simply making an observation,. If I'm wrong, I just am, and own to it, with apologies.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">22nd December 2005, 20:49</div></div>
+<br />
+<div class="posttext">k man. peace</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">23rd December 2005, 03:46</div></div>
+<br />
+<div class="posttext">nice :) peace!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th December 2005, 06:35</div></div>
+<br />
+<div class="posttext">Originally posted by fastingaciu <br />
+...present... <br />
+<br />
+Originally posted by fastingaciu <br />
+...present... <br />
+<br />
+Originally posted by fastingaciu <br />
+...present... <br />
+<br />
+Originally posted by fastingaciu <br />
+...present... <br />
+<br />
+Its preset. Its spelled correctly throughout these forums and everywhere in the UI of AVS. Also, could you try to improve your other spellings too... continual bad spelling makes you look stupid, and you can always edit it to fix it...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">26th December 2005, 06:42</div></div>
+<br />
+<div class="posttext">Jheriko finally cracked :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">26th December 2005, 10:25</div></div>
+<br />
+<div class="posttext">preset and present..different.<br />
+i'm confused</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">27th December 2005, 04:30</div></div>
+<br />
+<div class="posttext">srry i'l try improving my spelling</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th December 2005, 03:35</div></div>
+<br />
+<div class="posttext">Originally posted by JaVS_v2.5 <br />
+preset and present..different.<br />
+i'm confused  <br />
+<br />
+preset: (noun) something which was previously setup<br />
+<br />
+present: 1. (noun&lt;adjective&gt;) &lt;of&gt; the current timeframe, 2. (noun) a gift 3. (verb) to give or show<br />
+<br />
+i made up the definitions on the fly, but they are essentially accurate... as such, they are two unrelated words with distinct meanings<br />
+<br />
+i've seen this mistake before and it really annoys me, because no matter how foreign you are, you have to be blind to not notice how the word is spelled everywhere...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">28th December 2005, 11:10</div></div>
+<br />
+<div class="posttext">Important Infos!<br />
+<br />
+I'm not in a damn confused mood right after read out your<br />
+definitions :), thanks Jheriko.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">31st December 2005, 07:06</div></div>
+<br />
+<div class="posttext">wow even i got the riddle :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hornet777</div><div class="date small text-muted">2nd January 2006, 04:29</div></div>
+<br />
+<div class="posttext">Coders that think its incumbent upon them to somehow &quot;reinvent&quot; language bug the hell outta me too (l33t), but its often hard to tell them from peeps for whom English is a second language, so I usually keep my peace. Still no excuse for arrogance for those for whom it is the first one. Just goes to show there is no such thing as perfection, no matter how much belief is given to it. Genuine mastery is open-ended, makes lots of mistakes, has nothing to do with domination or control, and is always earned.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

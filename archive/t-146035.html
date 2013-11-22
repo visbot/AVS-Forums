@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" dm mosaic?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" dm mosaic? AVS" />
+	
+	<title> dm mosaic? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">dm mosaic?</li>
+</ol>
+<!-- div class="pda"><a href="t-146035.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=146035">dm mosaic?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">17th August 2003, 06:19</div></div>
+<br />
+<div class="posttext">I've had this idea for a while. I've been wondring if it's posible (most likely) to create a dm that has the same effect as a mosaic but it changes on beat from really small to really big and everthing between.<br />
+<br />
+I don't know if it's been done (if so plz tell me where I can find it), but if know one knows where to find it, plz try and make it. Then attach it as a code or .avs file.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">17th August 2003, 06:34</div></div>
+<br />
+<div class="posttext">Why not make it yourself.. I don't think a perfect version would be plausible due to the generally crappyness of the DM interpolation (and its glaringly obvious bug). What you can do is cheat and scale down the frame being mosaiced then zoom in on it with two seperate DMs.. then it will look pixelated, i.e. mosaiced. I would make it for you, but you should learn to code your own stuff, hopefully I've pointed you in the correct direction. :)<br />
+<br />
+Hint: Turn off bilinear filtering in the 'zoom in' DM otherwise your mosaic tiles will look like glowy points.<br />
+<br />
+Eidt: Wrap helps too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">17th August 2003, 07:11</div></div>
+<br />
+<div class="posttext">I seriously don't know how to make dm's. I've tried and tried and tried and I cant make anything good. The only kinda dm I know hoe to make are flat walls that move to the music. I'd include a screenshot if I knew how to.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">17th August 2003, 07:37</div></div>
+<br />
+<div class="posttext">Well then you know how to make a dm. Here is an example of a mosaic... I've made it really crap so you'll have to edit it to make it any good. I'll explain it all very carefully even though it is mind numbingly simple.<br />
+<br />
+First DM:<br />
+<br />
+init: a=0;<br />
+<br />
+this sets the variable a (variable is a name for a letter representing a stored number (or any data) in memory.<br />
+<br />
+frame: a=a+1;<br />
+<br />
+here a has 1 added to it every frame.. this makes it count so on frame 1 a=1, frame 2 a=2.. etc<br />
+<br />
+beat: dt=(a%5)*4+4;<br />
+<br />
+we take a and use the % operator with 5 on it which divides a by 5 and leaves us with a remainder between 0 and 4... because we are increasing a every frame this is a cheap way of getting a random number between (and including) 0 and 4 that we can duplicate in the other dm without losing 'synch' (since putting rand(5) will not be guaranteed to have the same result in both dms) the *4 and +4 should be pretty self explainatory.<br />
+<br />
+pixel:<br />
+<br />
+d=d*dt;<br />
+<br />
+we multiply d by our psuedo-random number giving us a zoomed out version of the original image.<br />
+<br />
+duplicate this DM and change the pixel code to d=d/dt; this zooms back in (think of it as * and / cancel each other out if its easier), turning of bilinear filtering on the second scope is critical, and the first should have wrap turned on (this stops some distortion that i can't explain.. its just a result of dm buggyness). hey presto Dynamic Mosaic. Restart the preset to synch the DMs and you now have a DM mosaic which jumps between a possible 5 different block sizes every beat.<br />
+<br />
+<br />
+Hope this helps you with coding more than with making a mosaic. I've attached a working version so that you can see it in action if you somehow manage to bodge up the copying.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">17th August 2003, 07:57</div></div>
+<br />
+<div class="posttext">I'll save this as a .txt and go over it untill I understand it. If not i'll come back some other time.<br />
+<br />
+Also, how do you copy something someone has said, e.g.<br />
+    ___________________________<br />
+    Origonally posted by ???????<br />
+    &lt;text here&gt;<br />
+    ___________________________</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">17th August 2003, 15:17</div></div>
+<br />
+<div class="posttext">can this be shifted to troubleshooting forums?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">17th August 2003, 15:55</div></div>
+<br />
+<div class="posttext">Right below their post will be a quote button.  Click that and it will open up a new reply window with the quote stuff already added, or you can do it manually.<br />
+<br />
+{QUOTE}{I}Originally posted by XXXXXX{/I}<br />
+{B}message{/B}{/QUOTE}<br />
+<br />
+just change the curly brackets to square brackets.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">17th August 2003, 17:24</div></div>
+<br />
+<div class="posttext">Stuff before the mosaic effect<br />
+movement, no bi-linear filter - d=d*intensity<br />
+movement, no bi-linear filter - d=d/intensity</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">17th August 2003, 20:51</div></div>
+<br />
+<div class="posttext">The closest (and most recent) I've seen to one-pass regular-size DM mosaic is made by Atero (namely Cellophane, TFF 3.0)...<br />
+Is it the first? Nope.<br />
+Is it the fastest? Nope.<br />
+Is it the best method? You decide.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th August 2003, 23:01</div></div>
+<br />
+<div class="posttext">Jheriko: what do you mean with the glaringly obvious bug? It does exactly what it's supposed to do, we're just using it in a very weird way.<br />
+<br />
+The only thing I can think of is to use affine (perspective) interpolation rather than linear, but that wouldn't really help much I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th August 2003, 01:02</div></div>
+<br />
+<div class="posttext">it's not even a mosaic movement...raz's method works perfectly and is an actual mosaic....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">19th August 2003, 18:21</div></div>
+<br />
+<div class="posttext">I made a mosaic movement(DM) a while back. Its in the Squared preset which you can find in the devartart third birthday thread. I dont know if its the best way to do it but it works. There is one catch to it dough it works ok in a movement(slower than ordinary mosaic:( ) but in dm its a bit weird because of the dm grid stuff.<br />
+<br />
+edit:<br />
+<br />
+here is the link<br />
+http://forums.winamp.com/attachment.php?s=&amp;postid=900105</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th August 2003, 21:22</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+Jheriko: what do you mean with the glaringly obvious bug? It does exactly what it's supposed to do, we're just using it in a very weird way.<br />
+<br />
+The only thing I can think of is to use affine (perspective) interpolation rather than linear, but that wouldn't really help much I think.  <br />
+<br />
+There must be a bug in the linear interpolation method.. otherwise the contents of every grid wouldn't move to the corner gradually, or at differing rates for each grid square (which it does).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">20th August 2003, 08:13</div></div>
+<br />
+<div class="posttext">Jheriko, what it does is clip the regions at the corners of each tile, not after being interpolated.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

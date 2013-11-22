@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Accessing Global Variables in APE s, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Accessing Global Variables in APE s AVS" />
+	
+	<title> Accessing Global Variables in APE s - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Accessing Global Variables in APE s</li>
+</ol>
+<!-- div class="pda"><a href="t-265704.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=265704">Accessing Global Variables in APE s</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">c-here</div><div class="date small text-muted">13th February 2007, 17:15</div></div>
+<br />
+<div class="posttext">I remember hearing somewhere (i think) that APE's should be able to modify Register and gmegabuff contents as of Winamp 5? is  this true or just wishfull dillusion on my part? If so could somebody give me an example of how to do it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">13th February 2007, 18:51</div></div>
+<br />
+<div class="posttext">You may have been heard of Jheriko's &quot;Global&quot; Variable Manager<br />
+ Get it here (http://www.deviantart.com/deviation/16424051/) <br />
+But i am afraid to tell you that the registers and buffers it accesses are avs-internal.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">0verhaul</div><div class="date small text-muted">18th February 2007, 21:15</div></div>
+<br />
+<div class="posttext">Actually, as I recall, the gmegabuf call is public, so anybody can modify the buffer through that call.  That's a good idea anyway because gmegabuf allocates space as needed, so to try to modify its values directly you'd have to do that too.<br />
+<br />
+I don't remember where the registers are stored, but they almost have to be public too.<br />
+<br />
+Check the nseel source.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

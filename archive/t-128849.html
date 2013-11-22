@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Figure this one out..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Figure this one out... AVS Troubleshooting" />
+	
+	<title> Figure this one out... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Figure this one out...</li>
+</ol>
+<!-- div class="pda"><a href="t-128849.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=128849">Figure this one out...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">18th March 2003, 03:00</div></div>
+<br />
+<div class="posttext">Okay, I have two different versions of a dynamic movement.  One of them works fine, the other doesn't work when you first load it; you have to cut and re-paste the contents of the &quot;pixel&quot; box.  The problem is that I don't like the way that the one that works looks. :cry:  Can somebody spot why the other one's not working?<br />
+<br />
+The one that works:Init:<br />
+int=acos(-1)/4096;t=0;fs=1;fc=1<br />
+<br />
+Frame:<br />
+t=t+int;<br />
+st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br />
+cs=st*sy;cc=ct*cx;<br />
+fs=fs*.7+cs*.3;fc=fc*.7+cc*.3<br />
+<br />
+Pixel:<br />
+x=x/fc;<br />
+y=y/fs<br />
+<br />
+blend off, wrap on, rect coords on, BF on, grid 1x1<br />
+The one that doesn't work:Init:<br />
+int=acos(-1)/4096;t=0;cs=1;cc=1;sy=1;cx=1;st=1;ct=1;<br />
+<br />
+Frame:<br />
+t=t+int;<br />
+st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br />
+cs=st*sy;cc=ct*cx;<br />
+<br />
+Pixel:<br />
+x=x/cc;<br />
+y=y/cs;<br />
+<br />
+all other options same as previous<br />
+If you're wondering why all those &quot;xxx=1&quot;s are in the init in the second one, it's because I was trying to make sure that it wasn't trying to divide by zero.<br />
+By the way, I don't care if you don't like how this DM looks.  I'm not asking for your opinion, I'm asking why it doesn't work.  Thank you very much.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th March 2003, 03:07</div></div>
+<br />
+<div class="posttext">What's with having sin(y) and cos(x) in the FRAME: area?  That will always be the same(just the sine of the last y value and cosine of the last x value).  Also, you don't need to do that &quot;xxx=1&quot; stuff, because AVS will just ignore divide by zero's.  One possible error is because the second one multiplies 2 trig functions, which can fairly often result in a very low number.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">18th March 2003, 03:20</div></div>
+<br />
+<div class="posttext">-I figured that calculating the sin and cos of y and x in the &quot;frame&quot; box would recalculate the values every frame (because wouldn't x and y be different for every frame?)... or maybe I'm just a dimwit... :p<br />
+-I didn't know AVS ignored &quot;divide by zero&quot;s... thanks for the tip.<br />
+-A resulting very low number still wouldn't explain why it works if you cut (i.e. remove) the stuff in &quot;pixel&quot; and then put it back in...<br />
+<br />
+Thanks for the help anyway. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">18th March 2003, 03:40</div></div>
+<br />
+<div class="posttext">Change the variable names. Some names are known to not work. Tested and proven.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">18th March 2003, 04:21</div></div>
+<br />
+<div class="posttext">Actually, in an earlier version of the not-working one, I used the same variable names (fc and fs) as in the working one.  It still didn't work then, but the variable names do work, because they're in the current working one. *reads that back and gets all googly-eyed* :S  I will try changing the variable names, though.  ANYthing to get this damn preset working. :hang:<br />
+<br />
+Why is it I always ask these questions that don't really get resolved?  Bad luck?  Idiocy?  What do you think? :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">19th March 2003, 01:28</div></div>
+<br />
+<div class="posttext">Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br />
+<br />
+Anything you're up to with that, I don't really see how it's going to be a beauty...<br />
+<br />
+Can you tell me what it's supposed to be like? I thought it's one of those fake 1-axis 3d rotation of a plane.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">19th March 2003, 01:47</div></div>
+<br />
+<div class="posttext">Oh and clinical, the only thing that may make sin(x) and cos(y) different each frame is the fact that you assign new values to them, but I still don't think that it will be different.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">19th March 2003, 05:35</div></div>
+<br />
+<div class="posttext">Originally posted by Nic01 <br />
+Change the variable names. Some names are known to not work. Tested and proven.  <br />
+can you name a few?<br />
+i fail to understand the reason why some varible names dont work<br />
+:weird: :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">19th March 2003, 12:03</div></div>
+<br />
+<div class="posttext">AVS is using them, so you can't.  Don't know of any, but I have come across them messing up presets before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th March 2003, 22:40</div></div>
+<br />
+<div class="posttext">not those, others.  wierd ones like &quot;spdx&quot; (outta the blue, don't ask) don't work in SOME scopes, but work in others.  very odd indeed.  if you've checked your math and your syntax a hundred and seventeen times over and it still doesn't work the way it's supposed to...find where the errors start and change the name of the variable.  nine times out of ten it'll work like a charm</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">23rd March 2003, 21:02</div></div>
+<br />
+<div class="posttext">Originally posted by Nic01 <br />
+Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br />
+<br />
+Anything you're up to with that, I don't really see how it's going to be a beauty...<br />
+<br />
+Can you tell me what it's supposed to be like? I thought it's one of those fake 1-axis 3d rotation of a plane.  Actually, even I'm not quite sure what it's supposed to be.  It's one of those presets that you'll hate if you don't like intensely &quot;flashy&quot; presets.  I used a couple bass spins, a scatter, that dm, and a dynamic distance modifier (in case you didn't know, I'm not really &quot;about&quot; technically impressive presets).  My friends and I think it looks pretty neat, and that's really all I care about. :)  I'll try changing the variable names tonight, thanks for the help everyone.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">24th March 2003, 00:37</div></div>
+<br />
+<div class="posttext">&quot;Actually, even I'm not quite sure what it's supposed to be.&quot;<br />
+<br />
+when you do a preset...please, please, please, please, please have a point in mind...thank you........</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">24th March 2003, 01:32</div></div>
+<br />
+<div class="posttext">I usually don't have a point in mind, but knows what kind of DM it needs and knows what is good and what is bad.<br />
+You just gotta have that little voice inside guiding you. (okay, most of you will probably think I'm insane after that little sentence)<br />
+<br />
+I think my 7th pack will be rather based on objectives though<br />
+<br />
+Okay, time to stop changing topics...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">24th March 2003, 04:50</div></div>
+<br />
+<div class="posttext">As a matter of fact the simplest variable I know which doesn't work is 'ch', weird though why it wouldn't work. Another weird thing is that the variable 'b' (which is used for beat detection) is only set at the start of a frame, and can have any value you like between then. Odd.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clinical</div><div class="date small text-muted">25th March 2003, 15:28</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+when you do a preset...please, please, please, please, please have a point in mind...thank you........  Forget it.  Some of my best presets had no point when I created them.  Maybe it's not your style, but ordered chaos works fine for some people. :p <br />
+<br />
+Anyway, I think I've solved the problem: AVS hates me.  I tried changing the variable names to several different things... nothing.  I tried rearranging the equations... nothing.  I wonder if this has something to do with the fact that I created the original preset in WA2 and am running it in WA3... nah...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">3rd April 2003, 20:51</div></div>
+<br />
+<div class="posttext">I've noticed that some of my code with variables beginning with c have broken and been fine when i have removed the offending variable.. hence i use q for a counter and not c.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

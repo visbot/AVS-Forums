@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS Wishlist, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS Wishlist AVS Wishlist" />
+	
+	<title> AVS Wishlist - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">AVS Wishlist</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-61696.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=61696">AVS Wishlist</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th October 2001, 18:14</div></div>
+<br />
+<div class="posttext">Huge wishlist for AVS, not sure if it should go here or in AVS discussion... Some ideas are more realistic than others, but all should be considered.<br />
+<br />
+- Wrap-ability for dynamic shift (have to use a 1x1 DM now) <br />
+- XOR, bit-negation and bit-shifting operators (^, ~, &gt;&gt;, &lt;&lt;) <br />
+- Add built-in constants like pi, 2pi, pi/2, e, ln(2), log2(e), ... into the language. <br />
+- Ability to set dot-size for drawing (like line-width) <br />
+- Ability to change between dot/lines mode in a SSC dynamically per frame and per point <br />
+- A complete change out of resolution-dependent units. They are still used in line width, font size, ... Or provide the option for pixel-units or avs-units (0..1) <br />
+- Replace all color selectors by either a color-blender (like most are now) or add a piece of code to assign red/green/blue-values. <br />
+- Add &quot;current&quot; to the buffer-list for Buffer Blending an effect-list. This would be like placing a Buffer Save at the end of your effect list and using that as blend-buffer. <br />
+- Add a contrast slider to the buffer-blending mode for effect-lists. It would apply this contrast to the blend-buffer in order to provide a quicker transition from transparent into opaque. <br />
+- Document *all* functions :) (missing functions docs: atan2 and exp). Exp would probably not be used a lot, but atan2 is vital for conversion between cartesian and polar coordinates. <br />
+- Expand the 'language' with conditional jumps and returns. It would allow much better code to be written. Of course you would need to teach people things like &quot;minimize the number of jumps&quot; or &quot;make sure that the lesser frequent outcome of condition causes the jump and not the most frequent outcome&quot;. <br />
+- Fix a dynamic movement not handling extremely large (both pos and neg) alpha values too well. Auto-clamping would be nice. <br />
+- An option to alternatively mirror movements and/or dynamic movements in both X and Y direction. Like the alternate buffer save/restore. Preferably separate for X and Y. <br />
+- An option to alternatively switch between 2 user defined movements, like alternate buffer save/restore.<br />
+- Even better: allow 'n' movements to be entered and let the presetter write an expression that sets a var to a value in the range 0 - (n-1) selecting the correct movement table.<br />
+- (this is hard to explain) A checkbox for the Dynamic movement that, when wrapping is on, chooses the nearest X,Y coordinates for a gridsquare (preferably separate checkbox for x and y). For example when one gridspot contains the coordinate (0.1,0.1) and the next contains (0.99, 0.99), then it would convert the second into (-0.01,-0.01). Or of course the first into (1.1,1.1), so that the 'shorter route' is taken instead of the long route for interpolating the pixels in between.<br />
+- A checkbox for the dynamic movement that, when wrapping is on, tiles the image mirrored at the edges so that you don't get non-matching edges. The same as using x=asin(sin(x*1.57))/1.57. Preferably separate for X and Y. <br />
+- Ability for APE's to use the built-in expression evaluation library...or make it publicly usable through a DLL. <br />
+- Ability for Render -&gt; Bitmap to read JPEG and PNG (support is standard built-in into Windows98 and higher). No GIF, because GIF is bad (software patents suck) and PNG is a much better replacement. <br />
+- Improved beat detection. I've noticed that it performs bad even on techno tracks where there is a clear beat. Maybe AVS' b-detection is made for unclear beats and weird drums? (Idea: a simply &quot;nudge&quot; button that allows the user to indicate a beat... press the button a few times yourself in order to hint AVS in the right direction -&gt; handy for VJ's) <br />
+- An explanation of just what those sliders in Colorfade mean... I think most people sorta get them, but a correct description would be nice :)<br />
+- Syntax hilighting and bracket colouring<br />
+- No length restriction on code (ok an 8K limit should be acceptable :)<br />
+- Multi-line editboxes everywhere... I like to space out my code. Perhaps adding tabs to the more complex effect-dialogs would help?<br />
+ <br />
+I think that's about it... for now :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sutiban</div><div class="date small text-muted">17th October 2001, 17:32</div></div>
+<br />
+<div class="posttext">An 'always on top' feture would be nice with AVS.  Typing while watching AVS would be really cool, esp on Win2K! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">philipp.graf</div><div class="date small text-muted">7th December 2001, 04:03</div></div>
+<br />
+<div class="posttext">ah shit, it seems i posted my wish on the false place.<br />
+But it should be noticed so watch here:<br />
+http://forums.winamp.com/showthread.php?threadid=67912</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">waveform</div><div class="date small text-muted">7th December 2001, 17:53</div></div>
+<br />
+<div class="posttext">Wow! That's some wish list! While I wouldn't pretend to understand everything (without resorting to A-Level pure math which I've long forgotten!) I couldn't agree more with it...<br />
+<br />
+On the beat detection, I made a post to this forum about that, but a button (mentioned in UnConed's post) is much better than my idea of just clicking the mouse - though a key binding would be useful for performing the same operation when in full-screen mode.<br />
+<br />
+On the language side of things I'd love to see a full blown AVS language including all the usual gubbins like flow control operations (repeat..until, while..do, if..then..else, case..of), commenting (/*..*/, //..CRLF), sub-routine definitions (function cube(x)=x*x*x), additional unary and binary operators (div, mod, shl, shr, inc, dec, etc.). Possibly, expanding on UnConed's idea of a syntax highlighting editor, simply combine all the event boxes (OnInit, OnFrame, etc) into one large syntax highlighting editor in which one would write :<br />
+<br />
+<br />
+event OnInit { /* some code */ }<br />
+<br />
+event OnFrame { /* some more code */ }<br />
+<br />
+event OnPoint { /* yet more code */ }<br />
+<br />
+<br />
+I realise all of this sounds like a pipe dream, but it's not actually that complex. While I've no idea about graphics coding, I've got fairly extensive experience of language parsing and code-planting / compilation and it's not acutally that difficult! Once you've got some code that can parse your language, syntax highlighting becomes pretty simple and the compilation simply becomes a matter of knowing the architecture (potentially non-existant / imaginary if you build a virtual machine too) that you're translating to.<br />
+<br />
+Anyway, enough of my insane ramblings and dreaming (OTOH - what is Winamp if not a dream come true? :D )<br />
+<br />
+Dave.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">14th January 2002, 19:07</div></div>
+<br />
+<div class="posttext">UnConeD,<br />
+<br />
+Although requested could you explain what atan2 does as I am at a loss?<br />
+<br />
+This would help me lots.<br />
+<br />
+Cheers,<br />
+<br />
+Rovastar</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">X-Fixer</div><div class="date small text-muted">15th January 2002, 11:34</div></div>
+<br />
+<div class="posttext">BTW there is no built-in support for JPEG and PNG decoding in win98+.<br />
+<br />
+MSDN says:<br />
+<br />
+Starting with the Microsoft® Windows® 98 and Windows 2000 operating systems, the StretchDIBits and SetDIBitsToDevice functions have been extended to allow JPEG and PNG images to be passed as the source image to printer devices. This extension is not intended as a means to supply general JPEG and PNG decompression to applications, but rather to allow applications to send JPEG- and PNG-compressed images directly to printers having hardware support for JPEG and PNG images.<br />
+<br />
+The BITMAPINFOHEADER, BITMAPV4HEADER and BITMAPV5HEADER structures are extended to allow specification of biCompression values indicating that the bitmap data is a JPEG or PNG image. These compression values are only valid for SetDIBitsToDevice and StretchDIBits when the hdc parameter specifies a printer device. To support metafile spooling of the printer, the application should not rely on the return value to determine whether the device supports the JPEG or PNG file. The application must issue QUERYESCSUPPORT with the corresponding escape before calling SetDIBitsToDevice and StretchDIBits. If the validation escape fails, the application must then fall back on its own JPEG or PNG support to decompress the image into a bitmap.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">s_kupers</div><div class="date small text-muted">6th February 2002, 22:13</div></div>
+<br />
+<div class="posttext">I would like to add:<br />
+  - builtin 3d/z-coördinate, would make coding a lot more easier!!!<br />
+  - support for imaginairy numbers ( i=sqrt(-1) ) for fractals<br />
+  - more options on render/moving particles, like being able to program their path<br />
+  - ability to store your own presets for trans/movement, trans/dynamic movement and render/superscope<br />
+  - source map on trans/dynamic movement? (not sure if it's possible)<br />
+  - fix the bug in render/text additive blend which makes it look blueish<br />
+  - better support for misc/svp's<br />
+  - dynamic rendermodes, means to be able to write your own rendermodes: additive if red&gt;0.5.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">12th February 2002, 17:52</div></div>
+<br />
+<div class="posttext">some small things like.....<br />
+fix the irritating render/text bug, the backgrounds turns blueish when using render/text<br />
+<br />
+muliple colors for the moving particle, always annoyed me that you can only have one color<br />
+<br />
+some color codes for the dynamic movement, so you changec colors like superscope colors<br />
+<br />
+a help file, i know everyone already said that but still it nead to be said<br />
+<br />
+some more renders....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">15th February 2002, 01:14</div></div>
+<br />
+<div class="posttext">For my upcoming pack, I've been writing some APE's that could implemented in AVS:<br />
+- Larger &quot;Fast Brightness&quot;. Does *.125,*.25,*.5,*2,*4,*8.<br />
+- Infinite-root: any non-black pixels are white<br />
+- Infinite-square: any non-white pixels are black<br />
+<br />
+(PS: Thanks to the mods for moving this old thread here. I'd already reposted it.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">15th February 2002, 05:37</div></div>
+<br />
+<div class="posttext">i would like to see:<br />
+- a presetmanager or so, to create a better directory-structur<br />
+example:<br />
+avs-El_vis-pack1<br />
+..........-pack2<br />
+...........-...<br />
+...-Whacko-pack1<br />
+..........-pack2<br />
+..........-...<br />
+...-...<br />
+<br />
+- a save-button<br />
+- a refresh/reload-button<br />
+- a fadeout for effectlist (when i use the onBeat)<br />
+- colorus change onBeat(Oscilloscope Star, unique tone....)<br />
+- a possibility to save only superscopes(*.ss?), Dynamic Movement (*.dm)....<br />
+-a possibility to definie the presetchanges (change after time/n beats, the kind of change(fade in, mosaic...like it's on random, only that it's controled by myselfe)) per script<br />
+- maybe a german version, but that would maybe made by MPeX.net Staff<br />
+ <br />
+<br />
+that's all for this moment<br />
+<br />
+<br />
+GreatWho</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Adasha</div><div class="date small text-muted">15th February 2002, 12:49</div></div>
+<br />
+<div class="posttext">I'd like to see a bit more control with AVI rendering - you can't force the aspect ratio like with pictures. It would also be nice to see 'skip n frames on beat' and 'change speed on beat' options. There is no play once, play backwards or ping-pong option either.<br />
+<br />
+Also, why can't you cut/copy/paste the effects in the left pane? Its a pain in the arse when you want to copy chunks of one preset into another. Maybe even it could be an MDI app and we could drag effects around between presets?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">15th February 2002, 15:25</div></div>
+<br />
+<div class="posttext">atan2(a,b) calculates atan(a/b) but returns an angle in the range of [-PI;PI] instead of [-PI/2;PI/2], depending on which quadrant the point (a,b) is in. <br />
+<br />
+    Y<br />
+    ^<br />
+    |<br />
+  a-|-          *<br />
+    |        /<br />
+    |      / <br />
+    |    / .<br />
+    |  /    .<br />
+    |/   th .<br />
+----------------|----------&gt; X<br />
+    |           b<br />
+<br />
+th = atan2(a,b);<br />
+<br />
+<br />
+Note that AVS's axes are oriented differently, you'll most probably want to use atan2(x,-y); instead of atan2(y,x);.<br />
+<br />
+(Now that we have a wishlist forum, why not post seperate threads instead of adding to this age-old post)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">15th February 2002, 16:43</div></div>
+<br />
+<div class="posttext">UnConeD,<br />
+<br />
+I presume that was for my benefit. You have already explained it to me before on another post to the general AVS forum when I started a new topic.<br />
+<br />
+My post on this thread was from over a month ago.;)<br />
+<br />
+But thanks again for the time spend. The more info the better. This time with diagram.;)<br />
+<br />
+Cheers,<br />
+<br />
+Rova<br />
+<br />
+PS why not create a 'sticky' post so at the top of this forum with all current wishlist wishes. ANd lock it so only mods can add. ANd discuss the wishlist further in other posts wih the pros and cons of each. That every few weeks update the 'sticky' post at the top.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NoSage</div><div class="date small text-muted">16th February 2002, 04:56</div></div>
+<br />
+<div class="posttext">I don't know if anyone mentioned this or not but maybe there should be a undo button.  I just love it when I'm wizzin' through an AVS and I click [-] instead of [+], then loose either a 20 line scope or an entire Effects List.  Just my 2 pennies.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">transfrmr</div><div class="date small text-muted">16th February 2002, 07:31</div></div>
+<br />
+<div class="posttext">Okay, <br />
+<br />
+ I've said it before, but this is apparently the time and the place..  I don't have any unconed-type suggestions, because, unlike unconed, I still don't understand most of what I do. <br />
+<br />
+ However, I've used Avs pretty often with line-in and in a VJ-manner, and a few things could really make theplaying of AVS's a lot more practical and convenient.<br />
+<br />
+ My main suggestion? Apply the Winamp playlist to AVS... I don't know if it can be done, but being able to create avs playlists, AND use the hotkeys would be such a dream come true! Right now, I have to manually move the files around and create directories if I want to organise them... This would also allow the avs's to run in a mode other than random.. OOooo, linear fropm first to last and last to first! Think of all the fun we could have creating &quot;sets&quot;...<br />
+<br />
+ Also, I agree with unconed about the beat detection, with the line-in, I also noticed that it would occasinally seem to &quot;freeze&quot; , as if it just couldn't figure out what the heck was going on. I found that if I played an mp3 and got it going, then stopped the mp3 and went back to the line-in, it could carry on and would pick up the beat again. No clue what caused this, just noticed it while vj'ing.. It works great when playing the file, and I understand that asking it to be perfect working from a line-input processing in real-time would probably be unreasonable. Just give it what you can eh? please!<br />
+<br />
+ Anyways, you guys already do such a great job on most stuff, anything we can suggest is mere details towards the perfection of a tool/toy that we all love so much..<br />
+<br />
+ Anyone mind if I take this time to say thanks again to those who code endlessly so we may play around?<br />
+<br />
+<br />
+ THANKS!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">16th February 2002, 11:23</div></div>
+<br />
+<div class="posttext">a kind of &quot;Unique Var&quot; would be nice, so we could make any random vars and use it with the same value over the whole preset in diffrent SS,DM....<br />
+a debugger for any complex strings in SS, DM.. would also be nice, it could be heavy to find a forgotten character or var</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">17th February 2002, 02:13</div></div>
+<br />
+<div class="posttext">a timecounter var in SuperScope and DynamicMovement, so SS or DM could detect if the song has a high or low bpm<br />
+<br />
+example:<br />
+the var &quot;time&quot; would count the seconds<br />
+<br />
+init:<br />
+beat=0;time=0<br />
+on Beat:<br />
+beat=beat+1<br />
+counts the beat<br />
+<br />
+per Poin:<br />
+bpm=beat*60/time;<br />
+calculates the bpm<br />
+beat=if(equal(time,30),0,beat);<br />
+time=if(equal(time,30),0,time) <br />
+restes beat and time synchonously every 30 seconds, it also may reset all 15 seconds.. its only a question how exactly the bpm should be. <br />
+<br />
+pleas make possible</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">flatmatt</div><div class="date small text-muted">17th February 2002, 20:00</div></div>
+<br />
+<div class="posttext">Allow subdirectories in the preset selection menu.  I have too many directories and I don't want to take time scrolling down when they do off the screen.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">17th February 2002, 21:07</div></div>
+<br />
+<div class="posttext">bigger fields to edit strings<br />
+<br />
+to edit a SS with a lot of vars, sometimes the edit fiels are to small, above all &quot;init&quot;, &quot;onBeat&quot; and &quot;per Frame&quot; but sometimes i must look, what a var i had tooken for what and it's pedantically to go to the end of the string. an editor would be nice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th February 2002, 12:22</div></div>
+<br />
+<div class="posttext">Argh... just because this (old!) topic is named AVS Wishlist doesn't mean that everyone has to post here. We've got a whole Wishlist forum now. Please, stop posting to this topic unless it's a response to a comment in here!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">10th March 2002, 21:59</div></div>
+<br />
+<div class="posttext">Hmm, time function... that oughtta be great! remembering that different comps have different framerate...<br />
+<br />
+I have some wishes :<br />
+<br />
+-Fast Brightness is now in form of a text-box - Enter your percentage =)<br />
+<br />
+-A sort of &quot;wrap&quot; function for SSCs...<br />
+<br />
+-FireWurx - An option of blast size, amount of blasts/beat, location of blasts, and if posible, gradient color from inner to outer color (If possible, middle too)<br />
+<br />
+-Buffer Save - OnBeat switch between save/restore.<br />
+<br />
+-Custom BPM - Textbox, PLEASE!<br />
+<br />
+-Set Render Mode - Perhaps percentage of blending, in any/most sorts of blending in sort of a textbox. 100% is max.<br />
+<br />
+-Blur - Either a slider or textbox of blur-ishness.<br />
+<br />
+-Invert, XOR, subtractive Blend 1 (or is it 2?) - Fix the bug that makes the AVS screen flicker like mad between Inverted and not-inverted - Happens most of the time. Only luckiness prevents that from happening...<br />
+<br />
+-DM - The ability to use D and R movement and X and Y movement in the same DM... if possible.<br />
+<br />
+-Mosaic - An option for width and height of the rectangular mosaics... in pixels.<br />
+<br />
+-Water Bump - Possibly replaced by a ripple effect?<br />
+<br />
+-Overall - A better help menu, that contains descriptions of things (What does the bars in Colorfade do? I'm confused...)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">11th March 2002, 07:41</div></div>
+<br />
+<div class="posttext">This thread is very old... now that we have a whole FORUM for AVS Wishes, you should not add to it unless you're replying to a specific comment here. Despite earlier requests:<br />
+<br />
+Post new wishes as new threads, not as replies here.<br />
+<br />
+And please check the sticky titled 'Current AVS Wishlist' before posting here. I scrape together all the new ideas here once in a while and it would save time if people wouldn't post the same things over and over again :).<br />
+<br />
+By the way:<br />
+Invert, XOR, subtractive Blend 1 (or is it 2?) - Fix the bug that makes the AVS screen flicker like mad between Inverted and not-inverted - Happens most of the time. Only luckiness prevents that from happening<br />
+<br />
+This is NOT a bug, this is totally correct behaviour. If you don't understand why this happens, remember that usually, the previous frame is taken as input for the current frame (depends on your preset really). Let's consider a preset like this:<br />
+<br />
+* Trans / Blur: heavy<br />
+* Render / Simple: color white<br />
+* Trans / Invert<br />
+<br />
+The previous frame will be used as input for the next (i.e. 'clear every frame' is off). For frame #1, the input is all black. After it's done, we'll get a white spectrum on a black background, and then we invert it: we get a black spectrum on a white background. The next frame, we use this inverted frame as input. It is drawn on and inverted again. As this loop goes on, the preset will flicker. The blur will make it end up gray.<br />
+<br />
+If you wish to observe this process more, set the performance slider to the lowest setting in Display settings, and/or add a dummy (input/output: ignore) effect list with lots of heavy effects in it to slow AVS down.<br />
+<br />
+What you'll probably want is:<br />
+<br />
+* Effect List: (input: ignore, output: replace)<br />
+--- Trans / Blur<br />
+--- Render / Simple<br />
+* Trans / Invert<br />
+<br />
+Now, the preset will render normally inside the Effect List, but it'll be inverted at the end. Because Effect Lists are really 'presets-in-presets', the inverted frame is *not* used as input for the next frame, so there's no flicker.<br />
+<br />
+<br />
+Oh and if you want wrapping superscopes, try this hack in the meantime:<br />
+<br />
+x=(abs(x)*500%1000/500-1)*sign(x);<br />
+y=(abs(y)*500%1000/500-1)*sign(y);<br />
+<br />
+There's some precision loss, but unless you're running at more than 1000 pixels horizontally, you won't notice.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

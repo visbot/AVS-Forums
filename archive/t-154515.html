@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" getosc &amp; getspec, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" getosc &amp; getspec AVS Troubleshooting" />
+	
+	<title> getosc &amp; getspec - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> getosc &amp; getspec</li>
+</ol>
+<!-- div class="pda"><a href="t-154515.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=154515">getosc &amp; getspec</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">29th October 2003, 22:56</div></div>
+<br />
+<div class="posttext">Ok so I'm assuming you use these to get certain values of v at specified spots on the scope and what not, but what do all the parameters mean?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th October 2003, 23:48</div></div>
+<br />
+<div class="posttext">Read the fricking AVS help. Sheesh.<br />
+<br />
+getosc(band,width,channel)<br />
+  = returns waveform data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
+    'channel' can be: 0=center, 1=left, 2=right. return value is (-1..1)<br />
+<br />
+getspec(band,width,channel)<br />
+  = returns spectrum data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
+    'channel' can be: 0=center, 1=left, 2=right. return value is (0..1)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">30th October 2003, 00:55</div></div>
+<br />
+<div class="posttext">I think he was asking for a more in depth about what the different things inside the parenthesis mean.<br />
+Band=Position along the Waveform or Spectrum Data=0 for lowest frequencies, 1 for highest frequencies.<br />
+Width=Width of the Waveform of Spectrum Data being used around the set point in band=0 for just the data at band, 1 for the whole set of data<br />
+channel=channel your listening to=0-center, 1-left, 2-right</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th October 2003, 01:48</div></div>
+<br />
+<div class="posttext">You can just make a x=i*2-1;y=getosc(...); scope and experiment with all the options. Last time I checked, AVS didn't explode when I tried out new stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">30th October 2003, 02:17</div></div>
+<br />
+<div class="posttext">Yeah thanks for that unconed, real nice.  Anyways, you've been quite helpful Super Toast, thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">30th October 2003, 03:14</div></div>
+<br />
+<div class="posttext">No problem, but UnConeD does have a point, like for myself I learn better when I do it myself, but that is just me, glad I could help you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">30th October 2003, 08:48</div></div>
+<br />
+<div class="posttext">does v equal getosc(i,0,i)? I believe it does, since I tried by overlaying them, though some certainty is never wrong ;).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th October 2003, 11:44</div></div>
+<br />
+<div class="posttext">Deamon: the third parameter should only be 0, 1 or 2, nothing else. Using 'i' means it's rounded, and that it uses the center channel for the left half, and the left channel for the right half.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">31st October 2003, 22:53</div></div>
+<br />
+<div class="posttext">ok, :) thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">1st November 2003, 02:49</div></div>
+<br />
+<div class="posttext">but yes, v is meant to be getspec(i,0,0).<br />
+<br />
+(as far as i know)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">1st November 2003, 10:13</div></div>
+<br />
+<div class="posttext">getspec or getosc depending on which input type (waveform or spectrum) you select, I assume?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">1st November 2003, 15:53</div></div>
+<br />
+<div class="posttext">Nope. They're totally independent of the osc/spec selection.... that one is perfectly restricted to v.<br />
+SSC by default is set to waveform, so v is getosc(i,0,0) by default, getspec(i,0,0) if you choose so.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">2nd November 2003, 12:56</div></div>
+<br />
+<div class="posttext">yeah, I meant that :p. Thanks for clearing it up anyways.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">3rd November 2003, 00:39</div></div>
+<br />
+<div class="posttext">although if I remember correctly, there is still a difference between v and get***(i,0,0).  I believe that they don't work with the exact same part of the spectrum(may be wrong).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">3rd November 2003, 01:03</div></div>
+<br />
+<div class="posttext">Your right anubis, I did some equal() tests and they never would equal each other, but the rounded, (ceil or floor or |0 values), would equal each other.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

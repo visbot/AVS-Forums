@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" getframerate(), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" getframerate() AVS Wishlist" />
+	
+	<title> getframerate() - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">getframerate()</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-173259.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=173259">getframerate()</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th March 2004, 11:10</div></div>
+<br />
+<div class="posttext">I really would find a function that gets the current framerate very useful. The purpose of course would be to make the presets &quot;run&quot; faster/slower depending on the framerate. Sure you can nowadays use gettime, but the method with that seems to me a bit complicated, with getframerate it could be as easy as: time=time+speed/getframerate()<br />
+this would really help the less advanced people like myself to make presets run at correct speed depending on the framerate.<br />
+Also there would be no more need for framerate limiter ape i think ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">14th March 2004, 13:37</div></div>
+<br />
+<div class="posttext">True dat Tuggummi. :) I'm messing around with getting time indpendent movement because the presets I make on my 700 system run pretty damn fast on my 2k system :)<br />
+<br />
+You wouldn't even need a function, just a varible like b or i. AVS already keeps track of it, just drop it in.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">14th March 2004, 14:36</div></div>
+<br />
+<div class="posttext">How is the current method harder than what you said?<br />
+<br />
+time=gettime(0);framerate=1/(time-ltime);ltime=time;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th March 2004, 20:11</div></div>
+<br />
+<div class="posttext">would help less advanced people<br />
+<br />
+I can't even understand how is that method you posted suppose to work...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">14th March 2004, 21:50</div></div>
+<br />
+<div class="posttext">Frames = frames per second<br />
+<br />
+time between current frame and last frame = seconds per frame.<br />
+<br />
+Better now?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th March 2004, 23:10</div></div>
+<br />
+<div class="posttext">time=gettime(0);framerate=1/(time-ltime);ltime=time;<br />
+Uhm where is the time difference then? Well in theory there must be a 0.000001ms time difference between when the code is executed, yet i fail to understand how it's suppose measure the framerate or make presets framerate independent.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">15th March 2004, 02:55</div></div>
+<br />
+<div class="posttext">The time is in ltime in the end. If you've tried pre-megabuf progression, you'll know how it works (I believe Skupers made something of this sort)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">15th March 2004, 03:16</div></div>
+<br />
+<div class="posttext">Here is an easier to read piece of code:<br />
+<br />
+changeintime = gettime(lasttime);  // here lasttime is what was set last frame<br />
+lasttime = gettime(0);<br />
+<br />
+framerate = 1/changeintime;<br />
+<br />
+the method is the same i just thought it would be clearer like this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">15th March 2004, 03:30</div></div>
+<br />
+<div class="posttext">Explanation<br />
+(all goes in the perframe section)<br />
+time=gettime(0); //sets time to the current time<br />
+<br />
+secondsperframe=time-ltime; //calculates the seconds perframe by subtracting the current time from the last time<br />
+<br />
+framespersecond=1/secondsperframe;//calculates the frames per second by dividing 1 by the number of seconds per frame<br />
+<br />
+ltime=time; sets ltime to the current time for the next frame<br />
+<br />
+That can all be simplified to-<br />
+ltime=gettime(0);<br />
+fps=1/(time-ltime);<br />
+ltime=time;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">15th March 2004, 08:53</div></div>
+<br />
+<div class="posttext">Regardless, AVS keeps track of the fps. Why not use it in the next release (hoping against hope)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">15th March 2004, 12:33</div></div>
+<br />
+<div class="posttext">Because this is more accurate of course. AVS' counter only refreshes every second or so. Using this snippet you can catch sudden changes in FPS, I needed that for e.g. Tokyo Bullet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">17th March 2004, 10:07</div></div>
+<br />
+<div class="posttext">If you need a framerate limiter, try this SSC:<br />
+<br />
+Init:<br />
+<br />
+n=0; ncalib=100;<br />
+//calibrate to fit your cpu<br />
+t=gettime(0);<br />
+loop(ncalib,<br />
+  loop(1000,<br />
+    exp(1.1)<br />
+  )<br />
+);<br />
+tcalib=gettime(0)-t;<br />
+<br />
+t=gettime(0);<br />
+<br />
+<br />
+Frame:<br />
+<br />
+//calculate currentframe length<br />
+lastt=t;<br />
+t=gettime(0);<br />
+distt=t-lastt;<br />
+//and maximum frame length<br />
+maxt=max(maxt,distt);<br />
+//calculate needed loops to achieve frame length<br />
+a=(maxt-distt)/tcalib*ncalib;<br />
+//and loop often enough to fill the rest of the frame<br />
+loop(a,<br />
+  loop(1000,<br />
+    exp(1.1)<br />
+  )<br />
+);<br />
+//get t for distance to next frame<br />
+t=gettime(0);<br />
+<br />
+<br />
+Beat:<br />
+<br />
+//reset Maximum frame length on beat,<br />
+//in case it got screwed up<br />
+maxt=distt;<br />
+<br />
+<br />
+Add this SSC at the end of your preset and you have an almost constant FPS around the lowest FPS your preset had before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">8th April 2004, 00:26</div></div>
+<br />
+<div class="posttext">that's completely offtopic...<br />
+<br />
+and i second ucd, there's no point in a getframerate function/variable.  the code really isn't that hard to work out :\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">8th April 2004, 02:41</div></div>
+<br />
+<div class="posttext">It may not be hard, but it's 3 lines of extra code that isn't needed.  He wants it for the sake of simplicity, not because he can't do it with code.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">8th April 2004, 05:08</div></div>
+<br />
+<div class="posttext">that was not off-topic<br />
+Also there would be no more need for framerate limiter ape i think<br />
+i replied to that and posted my framerate limiter SSC to point out that you dont need an APE for that<br />
+<br />
+besides: i also agree with unconed, i never neede a getframerate function anywhere. it's plain useless: this function would calculate the framerate from the frame time(or take a value that's calculated this way) and most times you'd need to divide something by the framerate, which is slow and adding to that, it's converting something back and forth...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">D12</div><div class="date small text-muted">8th April 2004, 17:39</div></div>
+<br />
+<div class="posttext">Any time between frame rate I think give frame per second.<br />
+I mean there is relationship between second time &amp; frame rates.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">26th April 2004, 10:46</div></div>
+<br />
+<div class="posttext">what about using getframe() in a ssc code or a dynamic movement, you could make it become less dense if your framerate dropped or something like that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">26th April 2004, 13:04</div></div>
+<br />
+<div class="posttext">there is no getframe() and i don't think it's ever going to be implemented<br />
+use the usual method<br />
+t=gettime(0);<br />
+timesincelastframe=lastframet-t;<br />
+lastframet=t<br />
+<br />
+making an SSC or a DM less dense to compensate framerate dropdowns is a good idea though... if only one could set the DM gridsize by code ;)<br />
+this method should work with SSC, though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">27th April 2004, 06:25</div></div>
+<br />
+<div class="posttext">When i posted this i didn't know better, now i have seen the light... :igor:<br />
+<br />
+Lock it please.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

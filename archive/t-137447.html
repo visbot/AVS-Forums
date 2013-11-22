@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 3d orientation problem, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 3d orientation problem AVS Troubleshooting" />
+	
+	<title> 3d orientation problem - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> 3d orientation problem</li>
+</ol>
+<!-- div class="pda"><a href="t-137447.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=137447">3d orientation problem</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Adasha</div><div class="date small text-muted">1st June 2003, 23:37</div></div>
+<br />
+<div class="posttext">I'm going to have to admit defeat and ask for some help with a scope problem I have<br />
+<br />
+I'm drawing a flat scope so that z=0, then spinning it in 3d. Up until now my rotations were done in the wrong order (z last) so I changed things around.<br />
+<br />
+Now although the object seems to spin correctly it starts off facing the wrong way, side-on, and the axes don't seem to be in the right places. Also, if the rotation is wrong, then the shading calculations are wrong too.<br />
+<br />
+Can anyone help? I've got to the point where I'm just staring blankly at the code. It would be less frustrating if I wasn't so sure its something REALLY obvious...<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">1st June 2003, 23:59</div></div>
+<br />
+<div class="posttext">The axes look fine to me...not much time to look at the code, but I really don't see a problem except for how the rotation seems a bit stiff and unnatural.  The scope itself is really nice, though.<br />
+<br />
+And as UnConeD put it...don't use blur as a replacement for anti-aliasing, becuase they're simply not the same :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">2nd June 2003, 05:11</div></div>
+<br />
+<div class="posttext">the perspective is fine, i dont know what you think is wrong with it.<br />
+<br />
+there are some tmes when your color code makes the distance/angle slightly confusing, but the actual axes are fine.<br />
+<br />
+Atero, do you think you could give us a rundown of 'proper' anti-aliasing?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">2nd June 2003, 08:21</div></div>
+<br />
+<div class="posttext">The problem is you're not initializing you rotation values. Set xrot, yrot and zrot to pi/2 in init and you'll see it head on when you start.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd June 2003, 09:53</div></div>
+<br />
+<div class="posttext">siddhartha: proper anti aliasing is impossible with avs.  but you shouldn't use blur as a replacement, because it looks fugly :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">2nd June 2003, 10:00</div></div>
+<br />
+<div class="posttext">fuck+ugly=fuckly :D Cool. Anyway, there is some problem with the rotation, and when all rotations are 0 then you can see only one line which indicates that y is 0 or something. rx and rz seem to be the same :igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">2nd June 2003, 11:34</div></div>
+<br />
+<div class="posttext">blur is better than nothing no?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Adasha</div><div class="date small text-muted">2nd June 2003, 12:07</div></div>
+<br />
+<div class="posttext">Jaheckelsafar: yeah, I was doing that before, but I'm trying to do things properly, and as far as I can tell it should be drawing in the x/y axes in the first place, so why am I having to compensate?<br />
+<br />
+Here's a version which highlights the problem - I've taken out the on beat stuff, and set a fixed y rotation speed, only its rotating in z instead<br />
+<br />
+re: blur, would some sort of convolution filter do any better a job?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">2nd June 2003, 17:09</div></div>
+<br />
+<div class="posttext">It definitely looks like something IS wrong with your scope, though I can't pinpoint it. It could just be the round shapes though... an ellipse in projected 3D looks wrong until you draw the stuff around it and it turns out it was okay all along ;).<br />
+<br />
+By the way, whoever said anti-aliasing couldn't be done in AVS? It's just not very fast or practical... this is an antialiased cubic bézier scope. Of course it still suffers from the 45° linedrawing problem, but that's AVS' fault, not mine ;).<br />
+<br />
+And blur is not the same as AA, but usually you can fake simple AA by blurring and turning up the contrast. Especially great when combined with the previous technique, as I did in the attachment (delete conv+colormap to get 'pure' superscope only antialiasing).<br />
+The reason blur is not real AA is because anti-aliasing requires sub-pixel information, whereas all you can do with blur is attempt to guess it. This causes sharp spikes to get rounded off and can cause meta-blob-ish behaviour.<br />
+<br />
+If you want this to work with solid scopes, you'll have to maxblend each layer separately and then add them together. Or you could fake it and use additive with lower opacity, but this will result in a pattern on the scope (but this might look cool).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd June 2003, 19:50</div></div>
+<br />
+<div class="posttext">Siddhartha: That's like saying really ugly is better than only slightly ugly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">3rd June 2003, 00:43</div></div>
+<br />
+<div class="posttext">Atero: depends on the individual yes yes. Blur can look happy and nice at times. :) :D<br />
+<br />
+You can also creat a like effect by using small texer particles and a really narrow-between dot scope.<br />
+Unconed: Waaah0000t that looks nice! I dont get why you have used eight scope though..</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

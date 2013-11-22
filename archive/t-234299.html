@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS pack, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS pack AVS Presets" />
+	
+	<title> AVS pack - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">AVS pack</li>
+</ol>
+<!-- div class="pda"><a href="t-234299.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=234299">AVS pack</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">29th December 2005, 19:34</div></div>
+<br />
+<div class="posttext">Dont forget i'm a beginer:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">30th December 2005, 04:45</div></div>
+<br />
+<div class="posttext">Beginner?  Excellent, I'll go harsh.<br />
+<br />
+Small pack, so I'll go really really in-depth.<br />
+<br />
+---<br />
+<br />
+technicals:<br />
+<br />
+Cristal:<br />
+Stray buffer save.  Useless last effect list [no input!]<br />
+<br />
+Human Mind:<br />
+Oof, lots of nonsense.<br />
+Unused alpha in superscope, red/blue/green in per Frame...<br />
+Another useless water effect list...<br />
+It appears that you forgot to blend the last DM, with the alpha and all, and there seems to be a lot of nonsense in it...  It's really haphazard to write a 3D DM the way you would an SSC.  It... doesn't turn out well.<br />
+<br />
+Inside the Jelly:<br />
+Don't need that first Clear Screen.<br />
+x=acos(-1)*2 &lt;-- That's a constant, and you're certainly not using rect coords... (1st DM)<br />
+Lots of things that looked a bit like you're punching in random numbers.<br />
+<br />
+Molecules Dividing:<br />
+Iffy superscopes again, with the alpha and such.<br />
+Did you forget the blend on the DMs?  Some of the parts also look close to nonsense...<br />
+<br />
+Simple:<br />
+Oof, forgot to blend away the ugly stuff - at least, not properly.<br />
+The 2nd DM has tons of nonsense.  The 2nd last assignment of y [y=(y1*t-oy)*acos(ox);] is useless.<br />
+You also don't need smooth transition on the mirror if it's not going to change OnBeat :)<br />
+<br />
+---<br />
+<br />
+Everything else: (aesthetics, suggestions)<br />
+<br />
+Cristal:<br />
+Pretty up the colors a bit, a little dull.  A unique tone set to additive to the end seems to do the job well, a color map also works.<br />
+Last effect list -- Change the input to 50/50.<br />
+A mirror in the right place can fix up the ugly tiling problem, don't forget to enable wrap on the 2nd DM.<br />
+<br />
+Human Mind:<br />
+Blech...  Can't say much about this one, but do handle the DMs a bit better...<br />
+Fix up the superscopes, they want you to. (especially since they're recycled often...)<br />
+<br />
+Inside the Jelly:<br />
+Actually looks almost good.  Needs a bit of fixing in coloring (sometimes dull, but the convolution is a nice touch) and blending (Make the tiled image only blended in where the dark space in the 3D DM is blended in), but otherwise, looks pretty good.  Try to fix up the tiling breaks in the 3D DM (mirror, etc)<br />
+<br />
+Molecules Dividing:<br />
+Consider enabling the blend on one or more of the DMs (particularly the 1st and 3rd ones).<br />
+Color needs help, definitely, don't just vie for random ones.<br />
+Blur seems useless, you may want to figure out how it can actually take effect.<br />
+<br />
+Simple:<br />
+Fix up the colors just a bit, there's a nice theme there.<br />
+Fix the blends, the odd nonsense at the end makes the formula for alpha irrelevant to what's actually there.<br />
+The convolution can be fixed a bit to make actual blurring.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">30th December 2005, 04:53</div></div>
+<br />
+<div class="posttext">Not bad at all, beginner luck.<br />
+<br />
+Human Mind is different than the others but it need a bit more improvement, especially on some of DM. But, why you added a DM codes into SSC? It really weird.<br />
+<br />
+Inside The Jelly is my fav, no comment. :p<br />
+<br />
+The others, need more revision.<br />
+<br />
+p.s.: Don't forget to remove useless Buffer Save in some of presets and a pack need at least 10 presets :) Good Luck, Soldier!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">31st December 2005, 07:05</div></div>
+<br />
+<div class="posttext">You should really stop using PAK-9's dm matrix code ... although i can't really judge anyone else eh?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">2nd January 2006, 20:38</div></div>
+<br />
+<div class="posttext">i worked on then and this is what i got:<br />
+1.cristal: i did some blendings and it workded out to be nice<br />
+2.human mind:i adeed a nice background and that chnaged every thing.it worked out to be really nice<br />
+3.inside the jelly: i didant do anything.<br />
+4.molecules dividing:i tryed to blend the 1 and 3 dm but it loked awful so i left it like that.<br />
+5.simple:i am not happy with it at all. it dosant look good and i dont know what to do to make it right</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Water by Convo Filter, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Water by Convo Filter AVS Troubleshooting" />
+	
+	<title> Water by Convo Filter - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Water by Convo Filter</li>
+</ol>
+<!-- div class="pda"><a href="t-162556.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=162556">Water by Convo Filter</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">31st December 2003, 02:52</div></div>
+<br />
+<div class="posttext">http://www.deviantart.com/deviation/725794/<br />
+<br />
+According to the comment given by Tom Holden, the Convolution Filter is able to produce a water effect.  I have tried to make such an effect, but with no success. Is this really possible, and if so, what's the matrix?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">31st December 2003, 04:27</div></div>
+<br />
+<div class="posttext">The water effect is both a function of the current frame and the last frame, so a simple convolution will not work.<br />
+<br />
+The formula in (x,y) coordinates, t time, is:<br />
+<br />
+p[x,y,t+1] = ((p[x+1,y,t] + p[x-1,y,t] + p[x,y+1,t] + p[x,y-1,t])/2 - p[x,y,t-1]) * (1 - damping)<br />
+<br />
+Here's an implementation using convo, multidelay and an exponential fade-out (using adj blend).<br />
+It's not identical to the AVS water filter, but pretty close. I think it's because negative values are clipped to zero.<br />
+<br />
+You can change the convolution matrix to control the shapes and size of the waves, as long as the divider is the total/2.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">6th January 2004, 06:59</div></div>
+<br />
+<div class="posttext">Thanks so much!</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

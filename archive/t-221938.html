@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Working Logic?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Working Logic? AVS Troubleshooting" />
+	
+	<title> Working Logic? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Working Logic?</li>
+</ol>
+<!-- div class="pda"><a href="t-221938.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=221938">Working Logic?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkarlathAmon</div><div class="date small text-muted">20th July 2005, 03:39</div></div>
+<br />
+<div class="posttext">Is it just me or is the If, Above and Below functions broken? I've tried multiple tests to see if they work and it appears that they make no change whatsoever to anything.<br />
+<br />
+I may be using them wrong but... <br />
+<br />
+init: m=0;n=800<br />
+<br />
+beat: if(0,m=.99,m=-.99)<br />
+perpoint: x=m; y=m<br />
+<br />
+then the moment i get a beat in the music, the point should move to the bottom right, (or if the documentation's reversed the top left) but it does neither. Can anyone tell me what i'm doing wrong?<br />
+<br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th July 2005, 04:50</div></div>
+<br />
+<div class="posttext">either a) avs is not registering beats or b) there's something wonky with your code.  for one, you don't need to render 800 points, and if nothing's showing up at all with that, you're probably rendering lines.  try reinstalling winamp and see if that helps.<br />
+<br />
+btw, +y is bottom, +x is right, so the point ought to move to the top left.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkarlathAmon</div><div class="date small text-muted">20th July 2005, 06:41</div></div>
+<br />
+<div class="posttext">I had just left it on what it defaulted to for the spiral, even when i put it in the frame code, or the point code, i can't make it evaluate the above functions. I have winamp on two machines, neither of which can successfully use it. Though both are using AVS 2.81b. <br />
+<br />
+But your saying that my code should is correct for the if statement right?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">20th July 2005, 11:47</div></div>
+<br />
+<div class="posttext">beat: if(0,m=.99,m=-.99)<br />
+<br />
+you shouldnt expect that to work. I wouldnt, in ANY programming language. wspecially evallib with its simple and consistent syntax.<br />
+<br />
+read the expression help. PROPERLY.<br />
+<br />
+above() below() or equals() return 1 if the expression they represent is true and 0 if false. so above(2,3) is 0, below(5,6) is 1 etc... ifs first parameter determines the code path. 1 it executes the then parameter, 0 and it executes the else parameter.<br />
+<br />
+try looking at other presets if you find the expression help hard.<br />
+<br />
+look at your current code and your if statement is always comparing zero. so it always runs the else path. which is an invalid block of code anyway. so it does nothing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkarlathAmon</div><div class="date small text-muted">20th July 2005, 17:23</div></div>
+<br />
+<div class="posttext">... I know how to program. I know what they do, i read the help MULTIPLE times. My problem is... it runs NEITHER command. My question was that if anyone else was having a problem with IF not working, or if my syntax was wrong, but you have confirmed that my syntax is right to make the true value trigger...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">20th July 2005, 18:09</div></div>
+<br />
+<div class="posttext">First: YOUR CODE IS WRONG!<br />
+<br />
+as jheriko already said: if you're really using this code:Originally posted by SkarlathAmon <br />
+init: m=0;n=800<br />
+beat: if(0,m=.99,m=-.99)<br />
+perpoint: x=m; y=m in AVS it simply won't work. Cause it's not AVS syntax!<br />
+<br />
+<br />
+btw: if there is code in the beat box, it'll only be executed whenever AVS detects a beat.<br />
+So, if you want to have a point jump to the opposite corner whenever there is a beat, just do that:<br />
+init: m=0; n=1; &lt;- you only need one single point (as you said yourself) <br />
+<br />
+frame: m=.99;<br />
+<br />
+beat: m=-.99;<br />
+<br />
+perpoint: x=m; y=mnow your point will be in the opposite corner whenever there is a beat.<br />
+<br />
+<br />
+If you still want to use the if() function (though it would be pretty stupid, cause we already found a much faster and simpler solution), then do the following:<br />
+ if( b , assign(m,-.99) , assign(m,.99) )  <br />
+'b' is a variable used by AVS which is either 1 (if there currently is a beat)<br />
+or 0 (when there isn't a beat).<br />
+And what assign() does, should be pretty obvious.<br />
+<br />
+Now, as long as b has the value 1 the if-function processes the code in the middle-part: assign(m,-.99). Otherwise (if b has the value 0) the last part of the code will be processed: assign(m,0.99).<br />
+<br />
+<br />
+wow, guess that is enough explanation...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">20th July 2005, 21:48</div></div>
+<br />
+<div class="posttext">/Lights flamethrower</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">20th July 2005, 21:53</div></div>
+<br />
+<div class="posttext">hehe...<br />
+but wait pak! The very last ultimatum hasn't run out yet!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">SkarlathAmon</div><div class="date small text-muted">21st July 2005, 07:37</div></div>
+<br />
+<div class="posttext">Ah and that was my problem, not using assign. it was my understanding that = did the same thing, but i guess i was wrong.<br />
+<br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">21st July 2005, 17:12</div></div>
+<br />
+<div class="posttext">no prob...<br />
+<br />
+and don't forget that the if(0... part doesn't do what you wanted it to either!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">22nd July 2005, 03:38</div></div>
+<br />
+<div class="posttext">The major difference between = and assign() is that the former doesn't work inside functions, such as if(). However, you can just as easily use = if you rearrange the equation a little. (Yes, if() is a function. It's like the ?: operator in C and Java and other languages.)<br />
+<br />
+For example, the following three lines are equivalent:if(b,assign(m,-.99),assign(m,.99));<br />
+assign(m,if(b,-.99,.99));<br />
+m=if(b,-.99,.99);Of course, if you're using the &quot;b&quot; variable to determine when there's a beat, it's usually a good idea to consider dividing the code into the &quot;frame&quot; and &quot;beat&quot; sections. There's a good example of this posted by ^..^ about five posts ago.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

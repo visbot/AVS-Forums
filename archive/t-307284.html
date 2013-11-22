@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" need coding help ... i'm stuck here, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" need coding help ... i'm stuck here AVS" />
+	
+	<title> need coding help ... i'm stuck here - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">need coding help ... i'm stuck here</li>
+</ol>
+<!-- div class="pda"><a href="t-307284.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=307284">need coding help ... i'm stuck here</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">HuRriC4nE</div><div class="date small text-muted">11th June 2009, 14:14</div></div>
+<br />
+<div class="posttext">Hello everybody,<br />
+<br />
+I'd like to make a preset with &quot;objects&quot; (planets, whatever)<br />
+in an gravitationpotential.<br />
+<br />
+the differential equations for a masspoint is (2dimensional)<br />
+<br />
+x''(t) + (G*M/r^3)*x(t) == 0;<br />
+y''(t) + (G*M/r^3)*x(t) == 0;<br />
+<br />
+r == sqrt(x^2 + y^2)<br />
+_________________________<br />
+<br />
+This differential equation(s)<br />
+must be calculated numerical - that is just the way avs is calculating - from frame to frame.<br />
+<br />
+so i thought:<br />
+<br />
+xx - x-position<br />
+yy - y-position<br />
+vx - x-velocity<br />
+vy - y-velocity<br />
+_________________<br />
+//frame<br />
+<br />
+rr = sqrt(xx^2 + yy^2)<br />
+<br />
+R = 1/rr;<br />
+<br />
+vx = vx - xx/(R^3)*stepsize<br />
+vy = vy - yy/(R^3)*stepsize<br />
+xx = xx + vx<br />
+yy = yy + vy<br />
+<br />
+<br />
+//render<br />
+x = xx<br />
+y = yy<br />
+<br />
+why does this not work???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th June 2009, 13:44</div></div>
+<br />
+<div class="posttext">I did point gravity in one of my j10 presets... that might help. I think its the first one... can't remeber the name (Physics or something totally uninspired).<br />
+<br />
+Rather than messing with potentials etc the best way (imo) is to model the acceleration due to gravity by combining newton's gravity with his second law:<br />
+<br />
+f = G m_1 m_2 / r^2 and f = m a<br />
+<br />
+If we call m_1 the &quot;free&quot; mass in the field of a &quot;static&quot; m_2 and consider m_2 to be static then we can take the distance from m_1 to m_2 to get r and get the acceleration as G m_2 / r^2. You can then use Euler steps, Verlet, RK4 or whatever to move m_1 and update its position/velocity. Euler steps are usually sufficient and look like this (assuming we fill out G m_2 and r, and s is the position of m_1):<br />
+<br />
+a = G * m_2 / sqr(r);<br />
+v = v + a * dt;<br />
+s = s + v * dt;<br />
+<br />
+This is a simplified case. If you want multiple objects to gravitate with each other properly then you will have to work out the changes in velocity for and from all of the particles first, then apply their sum to update the positions, otherwise the changes in positions will corrupt the accelerations/velocities generated for the next particle once applied. If you have a bunch of particles with equal mass, whichever one comes first in the loop will seem to drag the others around with it...<br />
+<br />
+so, for a bunch of gravitating particles the algorithm is then:<br />
+<br />
+<br />
+loop across all particles (p_i):<br />
+ initialise velocity sum for p_i to zero<br />
+ loop across all particles (p_j):<br />
+  work out acceleration due to gravity on p_i from p_j<br />
+  work out resultant velocity change (a * dt, from v = v + a * dt)<br />
+  add this change to the velocity sum for p_i<br />
+  repeat<br />
+repeat<br />
+<br />
+loop across all particles (p_i):<br />
+ add velocity sum for p_i to p_i's velocity<br />
+ update position using s = s + v * dt<br />
+repeat<br />
+<br />
+<br />
+iirc this should work whilst avoiding most of the major pitfalls.<br />
+<br />
+btw, use inverse square root (invsqrt) its faster and probably has around a 0.1% error at worst. i wrote an article on that a while ago you may or may not like to read... http://jheriko-rtw.blogspot.com/2009/04/understanding-and-improving-fast.html</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

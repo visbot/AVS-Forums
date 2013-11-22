@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" SS for those VJ's out there., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" SS for those VJ's out there. AVS Presets" />
+	
+	<title> SS for those VJ's out there. - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">SS for those VJ's out there.</li>
+</ol>
+<!-- div class="pda"><a href="t-85549.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=85549">SS for those VJ's out there.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">22nd April 2002, 08:53</div></div>
+<br />
+<div class="posttext">This will enable you to mix 4 waveforms into one SS, with interpolation between presets, added Hue Saturation Brightness colour option, and onBeat Rotation/Scaling offsets.<br />
+<br />
+Init: cb=1;cb2=1;bb=1;bb2=1;ti=20;ts=50;pi=acos(-1);rs=.01;zt=.01;zs=.5<br />
+<br />
+Beat: bt=bt+1;bb=if(above(bt,ti-1),1-bb,bb);bt=if(above(bt,ti-1),0,bt);bt2=bt2+1;bb2=if(above(bt2,ti*2-1),1-bb2,bb2);bt2=if(above(bt2,ti*2-1),0,bt2);rs=rand(100)/500-.1;zt=rand(100)/100+.5<br />
+<br />
+Frame: cb=(cb*(ts-1)+bb)/ts;cb2=(cb2*(ts-1)+bb2)/ts;cf=if(above(cf,1),0,cf+.01);ra=if(above(ra,1),-1,ra+rs);za=(za+zt*zs)/(zs+1)<br />
+<br />
+Point: x1=(cos(i*pi*2)/(v*2+2));y1=(sin(i*pi*6)/(v*2+2));<br />
+x2=i*2-1;y2=v/2;<br />
+x3=v*cos(i*pi*2);y3=v*sin(i*pi*2);<br />
+x4=v/2;y4=i*2-1;<br />
+x5=x1*cb2+x2*(1-cb2);y5=y1*cb2+y2*(1-cb2);<br />
+x6=x3*cb2+x4*(1-cb2);y6=y3*cb2+y4*(1-cb2);<br />
+xx=x5*cb+x6*(1-cb);yy=y5*cb+y6*(1-cb);<br />
+x=xx*cos(ra*pi)*za-yy*sin(ra*pi)*za;y=xx*sin(ra*pi)*za+yy*cos(ra*pi)*za;<br />
+h=((i+cf)*4);s=(v/4+.75);b=abs(cf-.5)+.5;<br />
+red=((.5+sin((h+(2/3))*pi)/2)*s+(.5+sin((h)*pi)/2)*(1-s)+(.5+sin((h-(2/3))*pi)/2)*(1-s))*b;<br />
+green=((.5+sin((h)*pi)/2)*s+(.5+sin((h+(2/3))*pi)/2)*(1-s)+(.5+sin((h-(2/3))*pi)/2)*(1-s))*b;<br />
+blue=((.5+sin((h-(2/3))*pi)/2)*s+(.5+sin((h)*pi)/2)*(1-s)+(.5+sin((h+(2/3))*pi)/2)*(1-s))*b;<br />
+<br />
+Explanations of variables:<br />
+cb,cb2,bb,bb2,bt,bt2,za,ra - Do not touch these.<br />
+ti - Amount of beats per preset (includes time taken for interpolation).<br />
+ts - Amount of frames it takes per interpolation.<br />
+rs - Current rotation speed.<br />
+zt - Next zoom level 'target'<br />
+zs - Amount of frames required to reach zoom 'target'<br />
+h - Hue of current point ([R,G,B] = [0,0.33,0.66])<br />
+s - Saturation of current point (-1..1)<br />
+b - Brightness of current point (0..1)<br />
+cf - Reciprocal of current frame out of 100 (0..1)<br />
+<br />
+x1,y1,x2,y2,x3,y3,x4,y4 - Set these in pairs per waveform.<br />
+<br />
+Hope this makes some things easier for a few of you :D<br />
+<br />
+Newbie Tip. Using clear every frame on the main option, and an effect list with an adjustable blend input(Set nearly all to the right), and clear every frame enabled on the EL, will work as a fadeout.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd April 2002, 10:22</div></div>
+<br />
+<div class="posttext">I didn't quite get your newbie tip... if both main and the effect list have 'clear every frame' checked, then the result of the blend will of course always be black, right?<br />
+<br />
+In any case, an adjustable blend combined with 'clear every frame' should definately be slower than a regular trans / fadeout... T/F blends to a constant colour for each pixel, while adjustable blend has totally different inputs for each pixel. Not to mention the minor overhead you'd get from setting the buffer to zero ('clear every frame').</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">26th April 2002, 09:11</div></div>
+<br />
+<div class="posttext">Oops, I meant that the preset was NOT being cleared every frame, and BTW it's a divisional fade to black, rather than the normal fadeout.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th April 2002, 10:37</div></div>
+<br />
+<div class="posttext">Ah ok... actually I didn't think the difference between linear fadeout and a decaying fadeout would be noticable. Is it? And I wonder if it justifies the extra slowdown :).<br />
+<br />
+By the way, you seem to know your way around AVS's code... have you been AVSing for a long time and/or have you released presets?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">26th April 2002, 11:34</div></div>
+<br />
+<div class="posttext">I haven't 'released' any presets, but I do muck around a fair bit experimenting with this and that.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

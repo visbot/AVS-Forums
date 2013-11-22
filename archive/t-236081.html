@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" More tools..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" More tools... AVS" />
+	
+	<title> More tools... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">More tools...</li>
+</ol>
+<!-- div class="pda"><a href="t-236081.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=236081">More tools...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st January 2006, 19:57</div></div>
+<br />
+<div class="posttext">I have just finished a slightly updated version of Image2GVM (1.1) and a beta version of a new tool, Model2GVM. They are both dependent on the Microsoft .net framework.<br />
+<br />
+http://jheriko.kicks-ass.net/avs_projects/GVMTools_0_5_beta_1.exe<br />
+(130k, slightly too large to attach)<br />
+<br />
+Model2GVM allows loading of .obj and .3ds model files with correct normals, diffuse, ambient and specular materials to be exported to .gvm in a few different formats.<br />
+<br />
+It provides a preview pane (with slightly dodgy mouse control... I will fix this) which renders the model using triangle.ape with zbuf and back face culling.<br />
+<br />
+It is a little unstable, but the bugs I know about will produce a small message box with a &quot;Fatal error:...&quot; message. For any other crashes I haven't encountered yet please paste all details here so I can try to decipher it and fix the problem.<br />
+<br />
+<br />
+<br />
+There are several features I intend to add before version 1.0<br />
+<br />
+(*)'Fraction' compression on materials, using the same technique as Image2GVM<br />
+(*)Output of indexed vertex, normal and material lists from which the triangles are defined (this produces MUCH smaller files and is generally efficient)<br />
+(*)Complete help<br />
+(*)Outputting simple subdivision code with .GVM<br />
+(*)obj4avs.exe compatible options<br />
+(*)Simple Render / Triangle code output<br />
+(*)Improved renderer (the current one doesn't do anything with specular or ambient components)<br />
+(*)Removal of (virtually) all bugs<br />
+<br />
+Some features I might implement in a post 1.0 version:<br />
+(*)MD2 and MD3 model support (no materials)<br />
+(*)Evallib code window to allow custom renderer (similar to Render / Triangle APE)<br />
+(*)Generating triangle material from texture map<br />
+(*)In editor triangle subdivision/merging<br />
+(*)Precomputed lighting/shadowing options<br />
+<br />
+If there are any features which you would find useful, please let me know. Also if there are any other model formats which you would like supported, let me know and I will look into it... no promises tho, most formats are hell to work out.<br />
+<br />
+Enjoy :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd January 2006, 15:18</div></div>
+<br />
+<div class="posttext">GVM Tools 0.5 beta 2 (http://jheriko.kicks-ass.net/avs_projects/GVMTools_0_5_beta_2.exe) <br />
+<br />
+Slightly updated version...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">24th January 2006, 02:58</div></div>
+<br />
+<div class="posttext">I put a newer version up here...<br />
+<br />
+http://www.deviantart.com/deviation/28096463/<br />
+<br />
+Should be faster than my crappy http server..<br />
+<br />
+Now includes some sample presets</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">24th January 2006, 10:48</div></div>
+<br />
+<div class="posttext">I've installed this program to my computer.. (include with the updates from another thread of yours too).<br />
+<br />
+But, some kind an idiot error kept popping out when I'm trying to open it (Error Starting Program). It said; &quot;A required .DLL file, MSCOREE.DLL, was not found.&quot;<br />
+<br />
+So, am I missed some of your updates?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">24th January 2006, 13:13</div></div>
+<br />
+<div class="posttext">Originally posted by jheriko <br />
+ They are both dependent on the Microsoft .net framework. <br />
+<br />
+http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&amp;displaylang=en<br />
+<br />
+Update your windows with this. Future other software will require this framework too... M$ is pushing it as their next target platform. I am working on getting it to work without .net without having to port the code to c++ but its a while off yet... sorry bout that. <br />
+<br />
+.net helps me make stuff a lot lot faster</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

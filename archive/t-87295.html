@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" per point SS vars, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" per point SS vars AVS" />
+	
+	<title> per point SS vars - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">per point SS vars</li>
+</ol>
+<!-- div class="pda"><a href="t-87295.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=87295">per point SS vars</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">10th May 2002, 07:21</div></div>
+<br />
+<div class="posttext">Does anyone know if it is possible to have a user defined variable with a different value for each point that is saved from one frame to the next?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">10th May 2002, 09:30</div></div>
+<br />
+<div class="posttext">I do not think so...If you like to store values you have to setup manually a var for every single point which is for high n almost impossible.<br />
+<br />
+If you like to store the current look of the SSC you might use buffers i.e. like this<br />
+<br />
+...+effectlist ignore ignore active on beat 1 frame<br />
+......-SSC<br />
+......-save buffer<br />
+...-restore buffer (or DynamicMovement using buffer)<br />
+<br />
+unfortunately with this setup it is impossible to do smooth fluid changes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">10th May 2002, 13:54</div></div>
+<br />
+<div class="posttext">Dang. :(  Well, that makes things a little more difficult.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">10th May 2002, 16:34</div></div>
+<br />
+<div class="posttext">I'm not sure what you want to accomplish, but I managed to 'store' particle-positions (Whacko AVS II: The Source) by using a seedable random number generator. Because I reset the seed every frame, it always generates the same numbers. Of course, you don't have much control over it, but it's a start.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">13th May 2002, 05:00</div></div>
+<br />
+<div class="posttext">I'm thinking a 3d starfield.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">13th May 2002, 08:08</div></div>
+<br />
+<div class="posttext">Ok, I think Whackos THE SOURCE will be the right thing for you then because for a starfield you'll need no music values only more or less randomly set points.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">13th May 2002, 08:57</div></div>
+<br />
+<div class="posttext">Yeah, the problem is understanding it. :confused: <br />
+<br />
+Time for some reading and figuring out stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">16th May 2002, 17:50</div></div>
+<br />
+<div class="posttext">Here's what I have so far. I still have to toss in a movement before the rotation, but am running into a snag with looping the stars. :(<br />
+<br />
+Here's a work in progress.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">17th May 2002, 10:00</div></div>
+<br />
+<div class="posttext">Very nice so far. Only thing is that these single pixel stars look a little small.<br />
+<br />
+I messed with the setup to make 'em look bigger and attached the file. Instead of multiple fastbrightnesses you perhaps better use unconeds multiplier ape out of whackoIV.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">18th May 2002, 15:58</div></div>
+<br />
+<div class="posttext">Hmm... I like the single pixel stars myself.<br />
+<br />
+Anyway, got the looping down, now I'm trying to rig the movement to follow the rotation (so that you'll always be flying forwards, nomatter how you're facing)<br />
+<br />
+It looks much better with the movement IMHO. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th May 2002, 17:30</div></div>
+<br />
+<div class="posttext">I think if you rotate a unit vector (0,0,1) along with your stars, and move the camera in that direction, it should work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">19th May 2002, 01:14</div></div>
+<br />
+<div class="posttext">That's what I figured, but it didn't work at first try. Seeing as it was 5 a.m. I probably had a typo in there somewhere.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">19th May 2002, 11:23</div></div>
+<br />
+<div class="posttext">starfield 3<br />
+<br />
+<br />
+Wow, love this additional movement. I wonder if it is possible to do some bulks of stars or galaxys...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st May 2002, 05:27</div></div>
+<br />
+<div class="posttext">Don't see why not, just generate random nuber weighted toward the middle of the spectrum (don't ask me how to do that though :igor: ). <br />
+<br />
+The major problem would be speed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">5th June 2002, 06:56</div></div>
+<br />
+<div class="posttext">I almost have it. Actually, I think it looks pretty good the way it is but something is bugging me. I can't for the life of me figureout why the camera sometimes gets turned around. Could someone point me in the right direction?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">15th June 2002, 07:38</div></div>
+<br />
+<div class="posttext">Just testing my sig, and bumping, hoping to get some help. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">21st June 2002, 08:25</div></div>
+<br />
+<div class="posttext">i tried 2 make the stars go forward.<br />
+but its coming back.<br />
+i want 2 stop it.<br />
+and than it will look like U traveling in space.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st June 2002, 18:56</div></div>
+<br />
+<div class="posttext">Yeah, that's because of the rotation of the movement vector (mx,my,mz). That out that rotation in the perframe section and just set them init if you don't want it to change direction.<br />
+<br />
+This one's kinda been moved to the back burner for me. Working on making a sphere with a DM right now.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

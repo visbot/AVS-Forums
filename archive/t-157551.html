@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" new AVS with mouse/kb support, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" new AVS with mouse/kb support AVS" />
+	
+	<title> new AVS with mouse/kb support - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">new AVS with mouse/kb support</li>
+</ol>
+<!-- div class="pda"><a href="t-157551.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=157551">new AVS with mouse/kb support</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">25th November 2003, 16:23</div></div>
+<br />
+<div class="posttext">OK added a new eval function, getkbmouse(), that lets you query the mouse position, button states, and keyboard button states. I'll let you guys figure out the implications of this (interactive presets, games, whatnot). Here's the latest DLL:<br />
+<br />
+http://firehose.net/~deadbeef/smp_avs_5.zip<br />
+<br />
+Word. Try a superscope like this:<br />
+<br />
+<br />
+mousex=getkbmouse(1);<br />
+mousey=getkbmouse(2);<br />
+mousea=atan2(mousex,mousey);<br />
+x=(i-0.5)*mousex - v *0.5*cos(mousea);<br />
+y=(i-0.5)*mousey + v*0.5*sin(mousea);<br />
+red=if(getkbmouse(3),0,1);<br />
+<br />
+<br />
+-Justin<br />
+<br />
+P.S. Edit:<br />
+&quot;&lt;THEMike&gt; db|not|at|home: why say &quot;I'll let you guys figure out the implications of this&quot; then tell them what they are?&quot;<br />
+<br />
+Well, because you guys always blow me away, so what I think the implications are and what they will turn out to be will likely be very different =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">liquidmotion</div><div class="date small text-muted">25th November 2003, 16:24</div></div>
+<br />
+<div class="posttext">mm.  my erection can hardly be contained :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">25th November 2003, 16:32</div></div>
+<br />
+<div class="posttext">I made an AVSpaint preset, haha.<br />
+Turn off clear framebuffer, set blend mode to additive, and <br />
+superscope with n=2:<br />
+<br />
+<br />
+x=if(i,getkbmouse(1),lastx);<br />
+y=if(i,getkbmouse(2),lasty);<br />
+red=getkbmouse(3);<br />
+blue=red;<br />
+green=red;<br />
+lastx=if(i,x,lastx);<br />
+lasty=if(i,y,lasty);<br />
+<br />
+<br />
+<br />
+ha ha.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QuadHeliX</div><div class="date small text-muted">25th November 2003, 16:41</div></div>
+<br />
+<div class="posttext">OMG yes!!   The Matrix trilogy skin AVS will be the first to use it,  we got some neat Texer 2 stuff in there that needs mouse support!! Justins been eatin his Wheaties.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Kaboon</div><div class="date small text-muted">25th November 2003, 16:42</div></div>
+<br />
+<div class="posttext">Awesome stuff! :D Going to play with it in a sec!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">25th November 2003, 17:17</div></div>
+<br />
+<div class="posttext">now we still need $artist/$track/etc support in render/text :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">25th November 2003, 17:21</div></div>
+<br />
+<div class="posttext">And here's my first hacked up game, hehe.<br />
+based on unconed's and gaekwad2's presets.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">25th November 2003, 17:22</div></div>
+<br />
+<div class="posttext">Thise is sweet Justin, now there is only two things i w8 :)<br />
+arrays and vectors ;)<br />
+<br />
+<br />
+oh bloody darn! I just noticed how good is the mouse controlled rotation, fianly I dont have to worry if the face of plyherdon is in correct spot YAY!<br />
+And avs games, I am allready expecting something very cool from some ppl :]<br />
+A M A Z I N G</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QuadHeliX</div><div class="date small text-muted">25th November 2003, 17:44</div></div>
+<br />
+<div class="posttext">hahah nice justin,  thanks for the coding of the game saves us time!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">25th November 2003, 18:04</div></div>
+<br />
+<div class="posttext">\o/<br />
+<br />
+if i find somewhere how rot. dalay works im gonna do 3d one also :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QuadHeliX</div><div class="date small text-muted">25th November 2003, 18:14</div></div>
+<br />
+<div class="posttext">very nice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">YtseJam</div><div class="date small text-muted">25th November 2003, 18:26</div></div>
+<br />
+<div class="posttext">AVS games? I think once this becomes a trend, I might finally have a reason to install AVS. Very neat...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">25th November 2003, 18:48</div></div>
+<br />
+<div class="posttext">so much for music visualization.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 18:49</div></div>
+<br />
+<div class="posttext">&quot;Reason to install AVS?&quot;<br />
+<br />
+Heathen!<br />
+<br />
+By the way, nemo, mousecontrol might still be useful for VJing and such. Don't dismiss the idea.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">blazer1504</div><div class="date small text-muted">25th November 2003, 19:14</div></div>
+<br />
+<div class="posttext">hey with this version the fps doesn't jam into 32 or 64 animo (like it did with all the earlier versions) !!!! YAY!:eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 21:08</div></div>
+<br />
+<div class="posttext">I'm not downloading all this until it is officially released so here's an idea for someone to work with.  Since we can make games I think a real time DDR preset would rock</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">25th November 2003, 21:32</div></div>
+<br />
+<div class="posttext">:D :D<br />
+<br />
+bestest creation evaarrrr</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">25th November 2003, 22:03</div></div>
+<br />
+<div class="posttext">Hmm, that sonic preset that zevensoft made is seeming like we'll be seeing something good in the not too distant future. :D<br />
+<br />
+Thanks Justin. :up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">25th November 2003, 22:05</div></div>
+<br />
+<div class="posttext">Wow, this is sweet. Justin is tha man. A few months ago, all us avsers thought that avs wasn't going to be updated anymore. Now we got things we didn't even dream of. I think I speak for the whole AVS community, when I say: 'Thank you, Justin'!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">25th November 2003, 22:18</div></div>
+<br />
+<div class="posttext">omfg this is fucking great! Now all I have to do is understand it :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 22:20</div></div>
+<br />
+<div class="posttext">If you dont mind me asking, when is Winamp 5 going to be officially released?  I thought it was supposed to be in mid October?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">25th November 2003, 22:34</div></div>
+<br />
+<div class="posttext">Who gives a fuck, as long there is no final version, updates like this can always happen :D. I love it. Btw, I think I'm getting a hang at this... sweeet :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QuadHeliX</div><div class="date small text-muted">26th November 2003, 00:07</div></div>
+<br />
+<div class="posttext">Dec 4 is justins date<br />
+<br />
+.plan (http://www.winamp.com/team/finger.jhtml;$sessionid$U4WBVFZI0KM0A5YAAAARC0A?who=Justin)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Shock Value</div><div class="date small text-muted">26th November 2003, 01:11</div></div>
+<br />
+<div class="posttext">Very nice! Blazer's right, no more locking to 64fps. Mouse controls - awesome! Check it out. Click and hold to ignite, use mouse position to control direction.<br />
+<br />
+EDIT: I just hope you get the crashy bugs out of this version of AVS before it is released. So far it has crashed three times today while editing presets. Unfortunately I couldn't find any specific causes - just out of nowhere a hang, and then an end program popup. Again though, great work Justin!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">26th November 2003, 02:34</div></div>
+<br />
+<div class="posttext">ack, sob... this just revolutionises avs.<br />
+<br />
+sob<br />
+<br />
+so many uses<br />
+...<br />
+<br />
+however.. i still stand by the idea that vis' should be just a sit back and watch thingo. <br />
+<br />
+but games are different, w00t!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">26th November 2003, 03:32</div></div>
+<br />
+<div class="posttext">yay!!!!!! oh man this is just so f*cking sweet :D:D:D <br />
+oooh mouse sentivity would kick ass!!!:D:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">26th November 2003, 06:19</div></div>
+<br />
+<div class="posttext">Originally posted by NemoOrange <br />
+so much for music visualization. <br />
+<br />
+I think that says it all.<br />
+I've got a gut feeling that this will tear apart the avs community into the &quot;gamers&quot; and into the &quot;visualizers&quot;. Just like devart now has the more artistic avsters and the forums the more technical ones :hang:<br />
+<br />
+But i know i might get a bit over-dramatic sometimes, so i will of course test it first. But aah, i don't want to be a test bunny. I will still wait for the final wa5, thank you.<br />
+<br />
+But seems like you really pushed the forumers buttons ( heh heh :rolleyes: ) with this justin, points for you on that ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WhiteRayven</div><div class="date small text-muted">26th November 2003, 06:39</div></div>
+<br />
+<div class="posttext">Man I dont make avs's. I dont have the time.  But I cant wait to see what you guys can do with this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">26th November 2003, 07:52</div></div>
+<br />
+<div class="posttext">it's going to be awesome :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">26th November 2003, 08:01</div></div>
+<br />
+<div class="posttext">just one problem tho, in fullscreen you cant use the click function(getkbmouse(3)) cause it closes if we do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">pure-krypton</div><div class="date small text-muted">26th November 2003, 08:11</div></div>
+<br />
+<div class="posttext">Think about the possabliites, a 3d maze controled by keyboard, a mini rpg game or a mouse contoled DM bump :D :D :D<br />
+w00t w00t w00t<br />
+<br />
+just imagine fragmer's Hybridium controled by mouse having a certain time limit to kill a certain amount of fish :D :D :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">26th November 2003, 08:21</div></div>
+<br />
+<div class="posttext">Code controlled effect lists. With the ability to turn off&amp;on the el's with global variables or other vars. Now this would truly allow to make some real games without the lost of fps... Im just saying this because if there is really going to be avs games, then there should atleast be the tools to make some decent ones...<br />
+<br />
+<br />
+okay, maybe not so real games, but a step more complex than pong's, worm or shooter games atleast...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">26th November 2003, 09:14</div></div>
+<br />
+<div class="posttext">well, i think tug and nemo are being a tad dramatic. <br />
+<br />
+I think this has definatly opened up a completely new avs field, but i dont think it will cause a split in the population. Myself, im planning on using it, no doubt about it, but that doesnt change how much i like to sit back and watch a good set of presets, without pressing buttons and moving the mouse.<br />
+<br />
+Plus, this isnt the only new tool about, dont forget the countless evallib fixes and additions, colormod, global reg's etc, all of which arent really being explored by avsers yet, because they arent officially released. <br />
+<br />
+I think you boys need to lighten up. This is a good thing. If people decide to switch to making games etc only, then they cant have been very good at visualisations in the first place, so it would be no great loss to the community.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">26th November 2003, 10:01</div></div>
+<br />
+<div class="posttext">I guess this is usefull as a kind of optional use for vj'ing like UCD pointed out. Somehow similar to what i want do do with LiveFX, but not exactly.<br />
+<br />
+Justin, we've got one bug here: if i use the mouse or keys, the standard actions will still be executed like popup menu opening on rightclick or switching to fullscreen/editor opening on double leftclick. <br />
+These should be disabled as soon as thei're defined within the code.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">26th November 2003, 11:32</div></div>
+<br />
+<div class="posttext">I've got some feeling UnConeD is going to upgrade his Wolfenstein...<br />
+:)<br />
+<br />
+Justin, you rule. This is just ... (GREAT*10^infinity)<br />
+<br />
+And I agree with Magic and all the above when it comes to mouseclicking. Just keep the [Esc] function working, or else you can't return to normal mode.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">26th November 2003, 12:51</div></div>
+<br />
+<div class="posttext">An attempt at a interface for one of my presets. Go to the left-top corner and click 'Mouse 1' for control over the rotation, click 'Mouse 2' for size and color control. Texer II is required for this preset.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">26th November 2003, 15:05</div></div>
+<br />
+<div class="posttext">hehe man! with these new features the AVS-world is gonna change considerably.:):D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">26th November 2003, 15:35</div></div>
+<br />
+<div class="posttext">Hmmm... Jack, think mathword polyhedra models, the way they're mouse controlled? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QuadHeliX</div><div class="date small text-muted">26th November 2003, 17:15</div></div>
+<br />
+<div class="posttext">justin will this for sure be in winamp 5 AVS?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">26th November 2003, 22:49</div></div>
+<br />
+<div class="posttext">I'm happy and all, but please change the shortcut for fullscreen from doubleclick to something else. It really messes things up...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th November 2003, 22:56</div></div>
+<br />
+<div class="posttext">You'll have to turn this off yourself in the AVS fullscreen options. Or if you use the modern skin you can configure it so the vis options buttons opens the config instead of the context menu (this should be a default IMO).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">WhiteRayven</div><div class="date small text-muted">26th November 2003, 23:04</div></div>
+<br />
+<div class="posttext">Yeah that double click to full screen, put it back the way it was, double click for config.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">27th November 2003, 05:29</div></div>
+<br />
+<div class="posttext">there only one fear i have in my mind about this new AVS , with this new technology AVS n00bs like me who are still learning will no longer be recognized:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">27th November 2003, 06:02</div></div>
+<br />
+<div class="posttext">You do avs to be recognized?<br />
+<br />
+Man, you're totally lost... :hang:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">27th November 2003, 06:17</div></div>
+<br />
+<div class="posttext">nay tuggummi, it is you who is lost. <br />
+<br />
+Avs is a tool to aid the recognition of geeks world wide. Need i direct you to the good book?<br />
+<br />
+Chapter 1, Verse 2, the purposes of the holy tool:<br />
+<br />
+&quot;Advanced Visualisation Studio: What we (at Nullsoft) use to (try to) get chicks at parties&quot; <br />
+<br />
+amen</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">27th November 2003, 06:40</div></div>
+<br />
+<div class="posttext">heh, amen to that then :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">27th November 2003, 07:24</div></div>
+<br />
+<div class="posttext">Originally posted by WhiteRayven <br />
+Yeah that double click to full screen, put it back the way it was, double click for config.  <br />
+<br />
+<br />
+Settings-&gt;Fullscreen Settings<br />
+[Checkbox] Doubleclick in main window goes fullscreen (instead of config)<br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">27th November 2003, 14:41</div></div>
+<br />
+<div class="posttext">hey tugg i do AVS for fun as well as to be recognized:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">27th November 2003, 16:06</div></div>
+<br />
+<div class="posttext">I found out a nice trick while coding interactive rotation on a DM. First I had the following code (state=1 means that the user has switched to interactive mode 1, more modes can ofcourse be coded as well):<br />
+<br />
+<br />
+init:<br />
+state=1<br />
+<br />
+frame:<br />
+mxo=mx;myo=my;<br />
+mx=getkbmouse(1);<br />
+my=getkbmouse(2);<br />
+pl=if(below(abs(mx),1)*below(abs(my),1),getkbmouse(3),pl);<br />
+<br />
+r1d=if(pl,atan2(mx,my),rmr);<br />
+r1=if(equal(state,1),r1*0.9+r1d*0.1,r1+r1r);<br />
+<br />
+beat:<br />
+r1r=rand(10)/100-0.05;<br />
+<br />
+pixel:<br />
+r=r+r1;d=d*0.5;<br />
+<br />
+<br />
+It seems nice until you move over the mark between -pi and pi. The screen rotates very fast in the other direction, covering almost an entire circle. This is because of the r1=r1*0.9+r1d*0.1 interpolation. It does needs this, to make the rotation smooth. Otherwise the screen would jump if the user clicked somewhere.<br />
+<br />
+I fixed this problem by checking if the interpolation is being done between either r1o&lt;-0.5*pi and r1d&gt;0.5*pi (r1o the last rotation, r1d the new one), ot r1o&gt;0.5*pi and r1d&lt;-0.5*pi. The coded version of that follows below:<br />
+<br />
+<br />
+init:<br />
+state=1;<br />
+<br />
+frame:<br />
+mxo=mx;myo=my;<br />
+mx=getkbmouse(1);<br />
+my=getkbmouse(2);<br />
+pl=if(below(abs(mx),1)*below(abs(my),1),getkbmouse(3),pl);<br />
+<br />
+r1o=if(pl,atan2(mxo,myo),r1o);<br />
+r1d=if(pl,atan2(mx,my),r1d);<br />
+r1f=if(pl*bor(below(r1d,-0.5*$pi)*above(r1o,0.5*$pi),above(r1d,0.5*$pi)*<br />
+below(r1o,-0.5*$pi)),r1f-above(r1d,0.5*$pi)+below(r1d,-0.5*$pi),r1f);<br />
+r1=if(equal(state,1),r1*0.9+(r1d+r1f*2*$pi)*0.1,r1+r1r);<br />
+<br />
+beat:<br />
+r1r=rand(10)/100-0.05;<br />
+<br />
+pixel:<br />
+r=r+r1;d=d*0.5;<br />
+<br />
+<br />
+Try the two differents DM's and see the difference. I hope this will help you fix the problem if it happens in one of your own presets.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">27th November 2003, 16:17</div></div>
+<br />
+<div class="posttext">Skupers: For angle interpolation, I use:<br />
+<br />
+a=a+sin(ta-a)*.1;<br />
+<br />
+Works fine, except if the difference between ta and a is close to 180°.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">27th November 2003, 19:18</div></div>
+<br />
+<div class="posttext">When I try making your code go round in circles, sometimes it rotates a bit in the wrong direction. Is this that problem with 180 or is it just my preset?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th November 2003, 21:23</div></div>
+<br />
+<div class="posttext">I have the perfect idea for the fullscreen shortcut problem.  A function that changes the hotkeys within the preset (like fullscreen(getkbmouse(whatever)) or something).<br />
+<br />
+A shitty demo preset:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">28th November 2003, 13:57</div></div>
+<br />
+<div class="posttext">nice one atero. Maybe someone can remake UCD's Whacko AVS 6 - Strange Recursion.(i'm trying)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">28th November 2003, 15:06</div></div>
+<br />
+<div class="posttext">How do I know which keyboard key has which number?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">28th November 2003, 15:50</div></div>
+<br />
+<div class="posttext">if you take out all the keys, youll find that the number is written on the backside of each key.<br />
+<br />
+:)<br />
+<br />
+or not</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">28th November 2003, 15:59</div></div>
+<br />
+<div class="posttext">That's not true, I tried it ;). Me dumb fuck. Still, I also like to know which number is which key.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">28th November 2003, 16:06</div></div>
+<br />
+<div class="posttext">www.asciitable.com<br />
+and oh yeah, avs reads all letters as caps so ignore the other letters</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">28th November 2003, 21:11</div></div>
+<br />
+<div class="posttext">OMG...AVS got a huge boost since i last visited the forums...gotta check out all these new things :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th November 2003, 22:19</div></div>
+<br />
+<div class="posttext">ditto.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th November 2003, 04:33</div></div>
+<br />
+<div class="posttext">Gah with all these different threads, I misposted ;).<br />
+<br />
+Correct keycode listing at:<br />
+http://forums.winamp.com/showthread.php?threadid=157731<br />
+It's not ASCII.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

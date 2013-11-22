@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" this makes no sense..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" this makes no sense... AVS Presets" />
+	
+	<title> this makes no sense... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">this makes no sense...</li>
+</ol>
+<!-- div class="pda"><a href="t-126786.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=126786">this makes no sense...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">1st March 2003, 03:10</div></div>
+<br />
+<div class="posttext">So, after reading a few of the threads on cubes n'stuff, I made this.  I'm pretty pleased with it, except for the weird flicker that happens sometimes on the beat.  Any ideas?  Thanks a bunch!<br />
+<br />
+-MoltarX</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">1st March 2003, 03:41</div></div>
+<br />
+<div class="posttext">never mind, it seems as though beat was executing during the pixel portion of the ssc, so i updated it to store the variable change in temp variables, and update the main ones in frame.  i put the fixed version up, if anyone is interested :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st March 2003, 03:46</div></div>
+<br />
+<div class="posttext">Yeah, I was thinking that was what was wrong with it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">2nd March 2003, 02:01</div></div>
+<br />
+<div class="posttext">;)  Interesting cube but you should rename it because it isn't a cube the whole time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">2nd March 2003, 02:32</div></div>
+<br />
+<div class="posttext">thats true.... i think i should also find a way to work it into a full blown preset :)<br />
+<br />
+it would be awesome if i could get it to generate objects other than a cube as well... any ideas on that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">2nd March 2003, 04:25</div></div>
+<br />
+<div class="posttext">Cube : (done)<br />
+Rectangular Prism : (done)<br />
+Pyramid : Simply make the cube/rectangular prism converge into one point. (x1=x1*(z1*0.5+0.5);y1=y1*(z1*0.5+0.5); for z1=-1...1)<br />
+Triangular prism : Same as pyramid, but make it converge into a line (Omit either extra x1 or y1 line, but not both)<br />
+Other prisms : Most of these are not regular...<br />
+Hexagonal Prism : I'm not sure, but x1=x1*(2-abs(y1));</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd March 2003, 05:08</div></div>
+<br />
+<div class="posttext">Wow, and I thought Jheriko was the only king of those things.  Looks like several people know more than me.:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">3rd March 2003, 08:08</div></div>
+<br />
+<div class="posttext">Made one that does all sorts of extruded regularly sided shapes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">3rd March 2003, 09:09</div></div>
+<br />
+<div class="posttext">Nice work Moltarx :up:<br />
+But maybe you could make the cube a bit bigger and use texer? Looked cool when i tried it with texer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">3rd March 2003, 16:40</div></div>
+<br />
+<div class="posttext">if i could find a small enough texture that wouldnt clump together that would be awesome.  i spose i could just drop the number of points it is generating to fix that though...<br />
+<br />
+Jaheckelsafar - do you have that ssc?  i would really love to take a look at it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">4th March 2003, 05:19</div></div>
+<br />
+<div class="posttext">Sure. There's a few bugs, but it works pretty well.<br />
+<br />
+This must be the tenth time I've posted this or some variant on it. Damn, I need to make a new cool scope.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">4th March 2003, 17:11</div></div>
+<br />
+<div class="posttext">well, it is a damn cool scope :)  maby ill try and wrap my head around it later today ^_^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">moltarx</div><div class="date small text-muted">4th March 2003, 23:49</div></div>
+<br />
+<div class="posttext">ack... in my quest to get it to morph into different shapes, i keep getting a 3d hyperbole... :S   ill post it later tonight, its actually kinda neat looking :)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

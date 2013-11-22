@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" 3d Timescope (for AVS2.70), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" 3d Timescope (for AVS2.70) AVS Presets" />
+	
+	<title> 3d Timescope (for AVS2.70) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">3d Timescope (for AVS2.70)</li>
+</ol>
+<!-- div class="pda"><a href="t-152152.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=152152">3d Timescope (for AVS2.70)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">10th October 2003, 10:01</div></div>
+<br />
+<div class="posttext">With the 256 variables of AVS2.70 (thank you, Justin!), I was finally able to make a 3d timescope. I'll tell you about some of the tricks used in the scopes.<br />
+<br />
+It uses rounding to put the getspec data for 5 frequencies (gi0, gi1, gi2, gi3, gi4) in a single variable (g1):<br />
+<br />
+<br />
+Frame:<br />
+<br />
+gi0=((getspec(0,0,0))*100)%100/100;<br />
+gi1=((getspec(0.05,0,0))*100)%100/100;<br />
+gi2=((getspec(0.1,0,0))*100)%100/100;<br />
+gi3=((getspec(0.2,0,0))*100)%100/100;<br />
+gi4=((getspec(0.3,0,0))*100)%100/100;<br />
+<br />
+g1=gi0+gi1*100+gi2*10000+gi3*10000*100+gi4*10000*10000;<br />
+<br />
+<br />
+And then in pixel it puts all that getspec data in different variables (j4, j3, j2, j1, (j0)). j0 isn't actually created in the preset, it's included in the z1.<br />
+<br />
+<br />
+pixel:<br />
+<br />
+j4=(j/10000/10000*100)%100/100;j4=if(above(j4*10000*10000,j),j4-0.01,j4);<br />
+j3=((j-j4*10000*10000)/10000/100*100)%100/100;j3=if(above(j3*10000*100,j-j4*10000*10000),j3-0.01,j3);<br />
+j2=((j-j3*10000*100-j4*10000*10000)/10000*100)%100/100;j2=if(above(j2*10000,j-j3*10000*100-j4*10000*10000),j2-0.01,j2);<br />
+j1=((j-j2*100*100-j3*10000*100-j4*10000*10000)/100*100)%100/100;j1=if(above(j1*100,j-j2*10000-j3*10000*100-j4*10000*10000),j1-0.01,j1);<br />
+j0=j-j1*100-j2*10000-j3*10000*100-j4*10000*10000;<br />
+<br />
+<br />
+I have a question though: how many digits can a variable hold? This preset goes from 0.01 to 10000000, but if you could use more, a lot more frequencies can be included.<br />
+<br />
+Is it possible to do some kind of int() function, because the way I round the numbers (var*100)%100/100 requires an extra line in the section with j4, j3, j2 and j1, because it rounds. That means that when var=1.67, it rounds to 2, when I want 1. The line j4=if(above(j4*10000*10000,j),j4-0.01,j4); can fix that, but an int()-like function would be faster.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">10th October 2003, 10:16</div></div>
+<br />
+<div class="posttext">i have no idea how that works but it looks great</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">10th October 2003, 11:42</div></div>
+<br />
+<div class="posttext">It looks neat :) Though would indeed be better with more frequencies. I can't help you with that though, my math level is very low. Sorry dude.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">10th October 2003, 12:12</div></div>
+<br />
+<div class="posttext">Ah ha! Now I have an idea that will defeat UnConeD! &gt;:]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">10th October 2003, 12:16</div></div>
+<br />
+<div class="posttext">Yeah? You've seen his tokyo preset? Watch in on acko.net . If you defeat that, you're good :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">10th October 2003, 23:45</div></div>
+<br />
+<div class="posttext">damn, whenever i have good ideas someone else does them first....:|<br />
+<br />
+anyway, nice, but it could be a bit bigger...i mean, you're only really using 5 frequencies*12 memory=60 positions (correct?), and you could nearly do all that in the old avs....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">11th October 2003, 00:09</div></div>
+<br />
+<div class="posttext">maybe skupers is holding back the final (bigger) version for his pack?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">11th October 2003, 01:43</div></div>
+<br />
+<div class="posttext">Did you have to stretch the page? :weird:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">11th October 2003, 10:32</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+Did you have to stretch the page? :weird: <br />
+<br />
+Did doesn't look stretched on my computer...<br />
+<br />
+Anyway, maybe you know how many digits a variable can hold.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">11th October 2003, 14:20</div></div>
+<br />
+<div class="posttext">It's Whitecap in AVS!  Remember Whitecap?  By good ol' Andy O'Meara?  Yup I remember this.  Very cool :up:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

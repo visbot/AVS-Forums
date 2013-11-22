@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Erm, Atero? (Primer), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Erm, Atero? (Primer) AVS" />
+	
+	<title> Erm, Atero? (Primer) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Erm, Atero? (Primer)</li>
+</ol>
+<!-- div class="pda"><a href="t-130634.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=130634">Erm, Atero? (Primer)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">2nd April 2003, 06:43</div></div>
+<br />
+<div class="posttext">As i said i was working through your Primer in order to get some more knowledge on 3d stuff. Well i figured out that something was missing.<br />
+<br />
+Originally written by Atero <br />
+Minimum Blend<br />
+   Uses the least amount of color between the two frames.  I can't<br />
+   remember where this is used, but it's not usable in effect lists.<br />
+ <br />
+<br />
+Its used in UnConeD's APE's (Picture RendererII and Corlor Map). I'd advise you to either leave this out, or to explain those APE's too.<br />
+<br />
+Originally written by Atero <br />
+XOR<br />
+   Don't know anything about what this is, but it's trippy.<br />
+ <br />
+<br />
+To understand XOR generally we need to know that eXclusiveOR means nothing else than a boolean or - but excluding the and.<br />
+<br />
+The programming code woud be: x xor y = (x or y) and not (x and y)<br />
+<br />
+And here is a tabe to make this more obvious:<br />
+<br />
+x|y|result<br />
+-+-+------<br />
+0|0|0<br />
+0|1|1<br />
+1|0|1<br />
+1|1|0] <br />
+<br />
+As we know, the color channels are calculated seperately.<br />
+<br />
+Now we imagine x and y to be the two red-channel values.<br />
+<br />
+First, AVS converts them too boolean values which means dividing by 255 and rounding up or down.<br />
+<br />
+That means a color value of 128-255 is 1, a color value of 0-127 is 0.<br />
+<br />
+Then, AVS does XOR, as explained before.<br />
+Finally we need to get a useable color value as a result which means multiplying the result with 255.<br />
+<br />
+To put it in a nutshell, a value above 127 and a value below 128 will result in a full valued color channel with 255, if the values are both above 127 or below 128 this will result in color channel of 0.<br />
+<br />
+Well, i could also have pm'ed this but if Atero did'nt know about XOR there are probably more around who don't either.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">2nd April 2003, 06:47</div></div>
+<br />
+<div class="posttext">Erhm... You know there is a thread about the primer uptade already at http://forums.winamp.com/showthread.php?s=&amp;threadid=121697 Also you could've just PM atero , why make a new thread about it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">2nd April 2003, 07:46</div></div>
+<br />
+<div class="posttext">Originally posted by Magic.X <br />
+Well, i could also have pm'ed this but if Atero did'nt know about XOR there are probably more around who don't either.  <br />
+<br />
+Ok, seems i to sorta missed the primer update thread.<br />
+<br />
+But anyway, this is not just about updating the Primer, but mainly about XOR Blending (renamed the Topic) and this way the 2-3 months old thread wont be revived.<br />
+<br />
+/Edit<br />
+And this way there may be more newbies profiting from it because they wont have to work themselves through 50 posts first. Anyway i dont think it would'nt kill anyone to have a new thread</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">2nd April 2003, 07:55</div></div>
+<br />
+<div class="posttext">this way the 2-3 months old thread wont be revived.<br />
+<br />
+I think you as a regular already know what old threads are appropriate to be revived and what not, like take example the Tips&amp;Tricks (which eventually was made into a sticky one)<br />
+<br />
+But anyway... actually i have nothing to say anymore :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd April 2003, 12:02</div></div>
+<br />
+<div class="posttext">I don't think that that is how AVS does XOR, because then XOR would only result in a couple of colors being used, not the entire range that it does use.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">2nd April 2003, 12:18</div></div>
+<br />
+<div class="posttext">I just checked that, seems you're right<br />
+<br />
+I found this out by testing it with large text letters in many color constallations and in most cases this rule works. Maybe it processes some color constellations in a diffrent way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd April 2003, 20:52</div></div>
+<br />
+<div class="posttext">I'M WORKING ON IT.  I DON'T NEED ANY HELP FROM ANYONE AT THIS POINT.  MOST OF ALL, GET OFF MY ASS ABOUT IT.  it'll be done when it's done :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd April 2003, 22:58</div></div>
+<br />
+<div class="posttext">The real way that XOR works has been explained by me in another thread...<br />
+<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=110299&amp;highlight=XOR</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">3rd April 2003, 05:29</div></div>
+<br />
+<div class="posttext">Thanx jheriko, i expected it to be a per byte xor and not a per bit xor - this explains why i got partially those results by playing around.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Could I get some help with a DM?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Could I get some help with a DM? AVS Presets" />
+	
+	<title> Could I get some help with a DM? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Could I get some help with a DM?</li>
+</ol>
+<!-- div class="pda"><a href="t-129229.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=129229">Could I get some help with a DM?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st March 2003, 08:25</div></div>
+<br />
+<div class="posttext">I'm wonding why my trench gets shalower the closer it is to the camera. Anyone got any ideas?<br />
+<br />
+Or am I going about this absolutely wrong?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">21st March 2003, 10:43</div></div>
+<br />
+<div class="posttext">uh..um..huh?!@A#$ :( Same problem with me too! so I stopped bothering about it...anyway, nice preset.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">21st March 2003, 16:50</div></div>
+<br />
+<div class="posttext">it does it when you set the xa value to pi divide by something, the divide dosent just slant the textures veiw, it slants the movement on the trench downward asit goes out instead of keeping it in a straight line. Ill take a closer look and see if i can fix it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st March 2003, 20:13</div></div>
+<br />
+<div class="posttext">The problem is that you still think of DM's in SSC terms. At point (x,y), you're defining the texture at THAT point, nowhere else.<br />
+<br />
+So offsetting the intersection x,y,z coordinates simply doesn't work because you can only move the point along the ray it's being traced on.<br />
+<br />
+I suggest you raytrace a half cylinder and a plane for this.<br />
+<br />
+Oh and you should get rid of the jumpy camera rotations and replace them with something smooth.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">21st March 2003, 22:06</div></div>
+<br />
+<div class="posttext">Nice movement.Add ti=10 to onbeat to make it a bit more dynamic.Needs to be smoothen out a bit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">22nd March 2003, 07:35</div></div>
+<br />
+<div class="posttext">I haven't gotten the hang of the whole ray-tracing thing. I'm thinking of the DM as a flat mesh that I can deform. I know, I should read that thread where you described it all to nixa. (link here (http://forums.winamp.com/showthread.php?s=&amp;threadid=115329) for anyone that missed it)<br />
+<br />
+Was just messing with the movement. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">22nd March 2003, 22:40</div></div>
+<br />
+<div class="posttext">I can't change the shape or anything, but I think it would be better if it were faster. I changed the first code in the frame box to a=a+0.3, which makes the camera zoom down the trench instead of just kind of sitting there.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" avs hwnd help, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" avs hwnd help AVS" />
+	
+	<title> avs hwnd help - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">avs hwnd help</li>
+</ol>
+<!-- div class="pda"><a href="t-127962.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=127962">avs hwnd help</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">HexFive</div><div class="date small text-muted">10th March 2003, 19:22</div></div>
+<br />
+<div class="posttext">I'm trying to find out what the name of the AVS window is... The reason I want to know, is I'm using winamp 2.81 as the backend for a fullscreen/remote controlled jukebox.. and while I'm able to hide winamp from showing.. The avs window shows through when I start it, and I wanna find its Hwnd-find it so I can hide it from view...<br />
+<br />
+Another problem I'm having is, I was wondering if its possible to control the avs using messages like those used to control winamp itself, so I can shift through the avs presets using my own controls...<br />
+<br />
+Thanks a bunch for your responses!<br />
+<br />
+-Jared</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">10th March 2003, 20:22</div></div>
+<br />
+<div class="posttext">Use FindWindow() or FindWindowEx() to locate it. You can use Spy++ (if you have MSVC) to get the necessary info about the AVS window and its control panel.<br />
+<br />
+As far as controlling AVS, I think the best way is to send it WM_KEYDOWN/WM_KEYUP messages and fake the controls.<br />
+<br />
+(u,y = prev/next preset, space = random preset, r = toggle autoswitching, ...) Don't know them all by heart.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

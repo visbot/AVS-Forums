@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" help!!, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" help!! AVS" />
+	
+	<title> help!! - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">help!!</li>
+</ol>
+<!-- div class="pda"><a href="t-68417.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=68417">help!!</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">omarello</div><div class="date small text-muted">12th December 2001, 00:11</div></div>
+<br />
+<div class="posttext">ok , i dont want every one to satrt jumping all over me.<br />
+<br />
+i mean i know how to make AVS's, but i need like more advanced tutorials, cause i dont get the numbers and stuff you know like the vars the X Y and T and stuff like that that you have to enter.<br />
+<br />
+anyone know a good website with good tutorials i would be greatfull<br />
+<br />
+thanx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">16th November 2002, 18:35</div></div>
+<br />
+<div class="posttext">First, T is not a set variable in AVS.<br />
+<br />
+b in almost everything is 0 if no beat, 1 on beat.<br />
+<br />
+In superscopes, 3 variables define the preset.  n is the number of points, x is the x position (-1 to 1) and y is y position.  I am not positive what i does, but ususally it is used like this:<br />
+<br />
+x = i*2-1<br />
+y=v<br />
+<br />
+giving a basic movement<br />
+<br />
+in movement and dynamic movement, d is distance from the original point, and r is the difference in angle.  If you use the rectangular coordinates, x and y are the coordinates (-1 to 1)<br />
+<br />
+in ddm, d is distance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">17th November 2002, 08:17</div></div>
+<br />
+<div class="posttext">Oh, I got this one.<br />
+<br />
+*ahem*<br />
+<br />
+<br />
+You've just posted a frequently asked question. The answer can be found in the FAQ (link (http://acko.net/avsfaq.php)) or by searching the forums (click &quot;Search the forums&quot; at the top). <br />
+<br />
+We do this all in our spare time, so we're trying our best to avoid unnecessary posts like yours. If you're a new user, welcome to these forums. Feel free to ask other questions, but please take five minutes of your time to make sure it hasn't been asked before: that way you don't have to wait for someone else to answer it, because the answer is already out there... <br />
+<br />
+The AVS forum regulars.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">chrisc</div><div class="date small text-muted">24th November 2002, 04:55</div></div>
+<br />
+<div class="posttext">while most of the avs presets are fairly simple. the one that seem to dance around and look 3d are beyond simple .for example a basic triangle is a^2+b^2=c^2.but in avs it's much more. Like the others say read ahead.if you can get it and break it down in simple terms you'll be the first. don't stop trying avs can really kick ass. good luck and I'll be looking for your post. <br />
+<br />
+happy thanks giving  , chris</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">24th November 2002, 16:01</div></div>
+<br />
+<div class="posttext">Originally posted by chrisc <br />
+a basic triangle is a^2+b^2=c^2<br />
+<br />
+That is totally wrong, I could write a 10,000 dissertation on why that is wrong and still be able to point out more flaws. Thats why it won't work.<br />
+<br />
+Originally posted by chrisc <br />
+if you can get it and break it down in simple terms you'll be the first<br />
+<br />
+AVS code is a combination of logic an maths and, as a result, all that you need to know in order to write code of any complexity is an understanding of logic and maths. The reason that its hard to explain a lot of the basics of AVS code is because they are actually fundamental basics, things which are preprogrammed into your brain, basic logic. So it actually couldn't be any simpler... it is virtually impossible to make it any simpler without destroying the functionality, you could change the syntax but it would still be the same thing -  a set of instructions which perform basic functions of maths and logic.<br />
+<br />
+If you type a^2+b^2=c^2 into a superscope what do you expect to get? Well I'd expect to get nothing since it doesn't set x or y for a start and because a, b and c haven't been defined. A triangle is a set of three points with lines between them, using some very basic maths and very basic logic you can draw a triangle like this:<br />
+<br />
+<br />
+Init:  n=4;<br />
+<br />
+Per Frame:  q=0;<br />
+<br />
+Per Point: <br />
+q=q+1;<br />
+<br />
+x=if(bor(equal(q,1),equal(q,4)),0.5,x);<br />
+y=if(bor(equal(q,1),equal(q,4)),0.5,y);<br />
+<br />
+x=if(equal(q,2),0.5,x);<br />
+y=if(equal(q,2),-0.5,y);<br />
+<br />
+x=if(equal(q,3),-0.5,x);<br />
+y=if(equal(q,3),-0.5,y);<br />
+<br />
+<br />
+<br />
+Argh!!! Its a mess of code, I don't understand it!!!<br />
+<br />
+So I'll explain it.<br />
+<br />
+x and y are the x and y co-ordinates of the screen.<br />
+<br />
+(normally i would stop there as that should enough explaination for anyone over the age of 10)<br />
+<br />
+lets go through the code slowly:<br />
+<br />
+'init: n=4;' tells the superscope to calculate 4 points <br />
+<br />
+- but a triangle has 3 points why use 4?<br />
+<br />
+Well, when you draw a triangle it goes from point 1 to point 2, then point 2 to point 3, then point 3 to point 1. we tell avs to do this, but since we can only tell it the points to draw the lines between and there is no 'go back to the beginning when you are finished' function we have to define the first point twice, once at the beginning and once at the end.<br />
+<br />
+'per frame: q=0;' this sets a variable 'q' to 0 at the beginning of every frame<br />
+<br />
+- why do this?<br />
+<br />
+because we will need it later.<br />
+<br />
+per point:<br />
+q=q+1;<br />
+<br />
+this increases q by one for every point that we draw. so for the first point q=1, the second q=2...<br />
+<br />
+- why do we need to do this?<br />
+<br />
+so that we know which point we are defining in the code.<br />
+<br />
+<br />
+x=if(bor(equal(q,1),equal(q,4)),0.5,x);<br />
+<br />
+this looks quite imposing but should make sense if you look at it for more than 2 seconds. it says this:<br />
+<br />
+if 'q equals 1' or 'q equals 4' then 'x becomes 0.5' otherwise we leave it as x.<br />
+<br />
+the other if statements do the same sort of thing. remember that q is the number of the point that we are defining so this line of code sets the x co-ordinate of the first and fourth point to be the same thing.<br />
+<br />
+y=if(bor(equal(q,1),equal(q,4)),0.5,y);<br />
+<br />
+this line does the same thing for the y co-ordinate<br />
+<br />
+<br />
+x=if(equal(q,2),0.5,x);<br />
+<br />
+this sets x to 0.5 if q=2... and so on.<br />
+<br />
+<br />
+can't understand it - then look at the expression help for a bit. if you still can't understand how to code it then you have nothing but disrespect and hate from me... it means that you are sub-humanly intelligent or your education has been worthless.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">chrisc</div><div class="date small text-muted">25th November 2002, 05:56</div></div>
+<br />
+<div class="posttext">O.k. I did not  write put this &quot;a^2+b^2+c^2&quot; in the super scope.also &quot;a square plus b square equals c square&quot; is  pythagoras theorem it's totaly right. <br />
+<br />
+<br />
+<br />
+omarello if you can get jheriko as worked as I did maybe he'll explain more. he's better and nicer at helping than others like unconed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">25th November 2002, 07:13</div></div>
+<br />
+<div class="posttext">First little tip: NEVER argue with Jheriko about simple, common, and extremely proveable mathematical theory.<br />
+a^2+b^2=c^2 is NOT your 'basic triangle', it is the formula to find the length of the hypotenuse of a right triangle (a.k.a. the generalized 2D distance formula)<br />
+<br />
+Also, Jheriko's a dirty little bastard that'll seduce your grandmother AND your grandfather - UnConeD's one of the nicest guys you'll ever get to know.  Don't make rash generalizations about people you've hardly had contact with.  The only reason he made that long post is because he, like most of us, doesn't have a life and therefore has nothing else to do than write lengthy posts on why you're stupid.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">omarello</div><div class="date small text-muted">25th November 2002, 07:41</div></div>
+<br />
+<div class="posttext">holy $hi*<br />
+<br />
+i asked this question a year ago, and now i get an answer??? my god, the only reason i came back here is because chrisc sent me a PM other than that i totally forgot about this, was busy doing some WA3 skins and some other stuff...<br />
+<br />
+thanx for the help guys i got to learn some avs, but i am not really into it right now, dont have much time.<br />
+<br />
+newasy hope u dont turn this into a flame war.... as there are som many threads turning into flame wars here these days.<br />
+<br />
+take it easy guys<br />
+<br />
+thanx chrisc for reminding me.....<br />
+<br />
+my god one year?????? hehe who found this post??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2002, 12:12</div></div>
+<br />
+<div class="posttext">Michaelthecat resurrected it obviously, just look at the timestamps :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">25th November 2002, 13:25</div></div>
+<br />
+<div class="posttext">He resurrected a few threads. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">25th November 2002, 16:46</div></div>
+<br />
+<div class="posttext">*cough* *cough* postpumper *cough* ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th November 2002, 18:06</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+Also, Jheriko's a dirty little bastard that'll seduce your grandmother AND your grandfather <br />
+...  <br />
+The only reason he made that long post is because he, like most of us, doesn't have a life and therefore has nothing else to do than write lengthy posts on why you're stupid. <br />
+<br />
+I never realised that you held me in such high esteem Atero. And yes the (not so) subtle undertone to my post was 'If you can't understand simple maths and code then you are a retard', but that was mostly because I was in a particularly foul mood at the time. Reading it all though I think I made good sense.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2002, 18:14</div></div>
+<br />
+<div class="posttext">Jheriko: you missed one important thing though. When you say 'read the code and see what it does', most newbies can't understand what you mean. Programming is something that needs to be learnt, and putting logical thought into code is not a born skill.<br />
+<br />
+When I say:<br />
+<br />
+per frame: j=0;<br />
+for point: j=j+1;<br />
+<br />
+You can see I'm talking about a counter per point.<br />
+<br />
+However, to some people &quot;j=j+1&quot; makes no sense. How can 'j' equal itself plus one? They don't see it as an assignment, but as a mathematical equation. Only when they understand how the code gets executed (assignment after assignment) can they understand why putting 'x^2 + y^2 = 1' will not draw a circle (and definitely not a triangle).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">25th November 2002, 19:14</div></div>
+<br />
+<div class="posttext">And, uh, I was joking.  You're cool.  But I'm still pretty sure you're behind my dog's dissapearance.<br />
+Does that imply you're not ALWAYS in a foul mood? ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th November 2002, 20:06</div></div>
+<br />
+<div class="posttext">Atero... don't talk about your mother like that :p<br />
+<br />
+(I sincerely hope that you got that one - since I got your joke and was joking back)<br />
+<br />
+UnConeD, I see your point... just. But, it doesn't take a genius to look at code, and what it does, to figure out the rest inbetween. I'm not saying that code can just be looked at and instantly understood, you have to go through it all line at a time to understand what it does... thats why I hate reading code written by others, since I have to read the code to understand what the variables are doing. I can remember first looking at code and not having any issues with things like assignment, its like a word which has multiple meanings, you can understand what it means by the context in which it is used.<br />
+<br />
+I guess what I'm trying to say is that anyone can understand code because it is based on simple logical principles (like mathematical axioms). You just need to find those simple principles for yourself.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">VisualAgnosia</div><div class="date small text-muted">3rd December 2002, 12:44</div></div>
+<br />
+<div class="posttext">Yeaaaah Hi Lumburg here,<br />
+<br />
+I was just wondering I'm new and I had a question I was wanting to produce an eleven dimensional Fractal with the colour red in the middle, red becuase it reminds me of apples... yes a red fractal apple eleven apple Avs. I was wondering what the variable &quot;eject&quot; does.. When I try in there's no apple only a CD then I have to put him back in again and then it freeze's up my machine. Mind you I'm using the latest General Electric Washmaster 2000. Its got a great frame rate and spin cycle. If some one out there could show me the way of the universe I'd be very greatfull because I'm new at this whole life thing and and well sigmoid(cos(pi),atan(x)) doesnt help me through those rough times when I need a hug..:cry: ...<br />
+<br />
+It's True tho after reading alot of posts UnconeD is a really cool dude..<br />
+<br />
+V:igor: I:igor: s:igor: A:igor: G</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">VisualAgnosia</div><div class="date small text-muted">3rd December 2002, 19:20</div></div>
+<br />
+<div class="posttext">To VIsAG,<br />
+You stupid idiot !!!<br />
+<br />
+Yeah well if you want some a those apples,<br />
+<br />
+What you gotta do is multiply fish with goats...<br />
+<br />
+fish*goats;<br />
+<br />
+then squareroot a morsel of dried chicken<br />
+<br />
+sqrt(morsel of dried chicken);<br />
+<br />
+divide your head by the sin of ointment<br />
+<br />
+head/sin(ointment);<br />
+<br />
+and apples ahoy !!! :D here is the attached avs file to show you. <br />
+<br />
+From the real VIsAG:igor:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd December 2002, 19:41</div></div>
+<br />
+<div class="posttext">visag, don't fucking spam you idiot<br />
+this thread was over loooong ago<br />
+<br />
+someone lock this thread :hang:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Clashman</div><div class="date small text-muted">17th December 2002, 22:07</div></div>
+<br />
+<div class="posttext">VisAg, you are funny!<br />
+<br />
+You want to see why? Here's why - the variables and other code in his SSC!<br />
+<br />
+Code follows:<br />
+<br />
+Init: n=1000; goats=0;<br />
+<br />
+Per Frame: goats=goats+.01<br />
+<br />
+Per Point: fish=100*(v)/3;	<br />
+head=(cos(fish)-sin(fish))-.25;<br />
+ointment=(sin(fish)+cos(fish))-.25;<br />
+x=cos(head+goats)*sin(ointment/head);<br />
+y=((ointment/2)+.1);<br />
+ <br />
+<br />
+The above SSC is (c) VisualAgnosia. All rights reserved.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">20th December 2002, 22:09</div></div>
+<br />
+<div class="posttext">This response is very delayed, I haven't checked the forums in a while, but for the record, I do not deliberatley resurrect old posts...I search for posts with the least number of replies so I can help without repeating information, and it turned out the last few posts I've inadvertantly replied to old posts (I should take a better look at dates...), but I do not do this just to increase my posts.<br />
+<br />
+BTW, I think that posting helpful information is much better than just saying *cough* *cough* postpumper *cough* which adds nothing, Atero.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

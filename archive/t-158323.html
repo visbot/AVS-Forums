@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Suggestions..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Suggestions... AVS Wishlist" />
+	
+	<title> Suggestions... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">Suggestions...</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-158323.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=158323">Suggestions...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Irrelevant</div><div class="date small text-muted">2nd December 2003, 16:14</div></div>
+<br />
+<div class="posttext">I've read the sticky, and I don't think any of these are there...<br />
+<br />
+<br />
+An option you could set for superscopes (and anything else with access to w &amp; h) to reset when you change the screen size or go to/from fullscreen.  As it stands, I find that I sometimes get gaps or distortion if I resize the window if the visualisation has a dot-SSC.<br />
+<br />
+A setting in effectlists to run them only once, when the preset loads (and perhaps also if you resize the window, see above).<br />
+<br />
+The ability to access w &amp; h in a trans/move. (Also recalculating as above.)<br />
+<br />
+A third 'wrap' option so that anything out of range would be black.<br />
+<br />
+Something which can load to / save from any buffer, according to a formula. (I might be able to write this one myself, when it becomes possible to access the built-in script features in an APE.)<br />
+<br />
+An 'int(foo)' function (I know you can use 'foo | 0', but it'd be neater, y'know?)<br />
+<br />
+A way to *seriously* expand the multiline script boxes, perhaps into a seperate, resizable, notepad-esque window.<br />
+<br />
+<br />
+I think that's all for now.<br />
+<br />
+Jeez, not asking much, am I? :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">fsk</div><div class="date small text-muted">2nd December 2003, 16:42</div></div>
+<br />
+<div class="posttext">I think all but the first and last one are already in:).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">2nd December 2003, 18:33</div></div>
+<br />
+<div class="posttext">w/h in trans/movement is sw/sh.<br />
+<br />
+Scopes should be coded to adjust themselves to w/h onframe rather than oninit... it's a coding bug not to do this, has nothing to do with AVS.<br />
+<br />
+Most of your requests are already in the new AVS. APEs can access the evallib, the help dialog, the buffers and the global vars, plus there's support for SMP (chunked) processing.<br />
+<br />
+First-frame only effect lists can be done through a simple piece of code in the new codable effect lists.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd December 2003, 05:12</div></div>
+<br />
+<div class="posttext">actually...an even better idea would be to have a brand new eval box that runs onsizechange or something....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">3rd December 2003, 06:26</div></div>
+<br />
+<div class="posttext">C'mon, in that case we should add tons of boxes. It's not a problem to reevaluate your width/height dependant variables per frame.<br />
+Plus if you really need an onsizechange, you probably know how to code already.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Irrelevant</div><div class="date small text-muted">3rd December 2003, 18:00</div></div>
+<br />
+<div class="posttext">I know I can do that, I just figured that that would result in an extra free() and malloc() every frame.  Which sounds rather slow.<br />
+<br />
+I suppose if you have codable effect lists you can also use them to load/save from a random  buffer somehow.<br />
+<br />
+<br />
+I suppose these aren't in the wish list because they've already been implemented...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th December 2003, 02:53</div></div>
+<br />
+<div class="posttext">Umm, ucd, how is it that we should add &quot;tons of boxes&quot;?<br />
+<br />
+And actually, I just thought of something: an onsizechange variable, so you could do an if(sizechange,[code],0).  It'd solve the problem, and no extra box clutter....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th December 2003, 08:41</div></div>
+<br />
+<div class="posttext">tadaa:<br />
+<br />
+sizechange=bnot(band(equal(lw,w),equal(lh,h)));<br />
+lw=w;lh=h;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th December 2003, 15:44</div></div>
+<br />
+<div class="posttext">*sigh*<br />
+<br />
+way to keep glossing over my point ucd.  i appreciate it.  am i ever going to get this across to you, or are you going to keep shooting me down for no reason?</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

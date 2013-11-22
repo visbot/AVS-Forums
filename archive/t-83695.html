@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Few questions about AVS... (advanced stuffs), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Few questions about AVS... (advanced stuffs) AVS" />
+	
+	<title> Few questions about AVS... (advanced stuffs) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Few questions about AVS... (advanced stuffs)</li>
+</ol>
+<!-- div class="pda"><a href="t-83695.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=83695">Few questions about AVS... (advanced stuffs)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">5th April 2002, 04:14</div></div>
+<br />
+<div class="posttext">I kinda still have a lot to learn 'bout AVS...<br />
+Here are the load of questions :p<br />
+<br />
+How do you make a whole screen-grid using only 1 SSC?<br />
+<br />
+Another SSC question : How can I make a line SSC, in which somewhere along the SSC, there's a line perpendicular to the first line, but still using the same SSC? (I gonna use this to make a Tetris preset I've planned to make... making a Tetris shapes lens DMs are easy, but using SSC... I can't =( )(I'll also edit line width, so just need the skeleton)<br />
+<br />
+I know it won't help me, but what is the gridsize of Trans/Movement?<br />
+<br />
+How to make a DM Lens that is curved nicely from edge to middle?<br />
+To explain :<br />
+Like the lens in UnConeD's Second Reality, not like in :<br />
+<br />
+d=if(band(band(above(x,-.5),below(x,.5)),band(above(y,-.5),below(y,.5))),d/2,d);<br />
+<br />
+Answers to the question would be very appreciated =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">5th April 2002, 08:01</div></div>
+<br />
+<div class="posttext">I don't think movement has a grid size, I believe it does all the pixels in the render.<br />
+<br />
+As to the rest, no idea.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th April 2002, 14:52</div></div>
+<br />
+<div class="posttext">How do you make a whole screen-grid using only 1 SSC?<br />
+<br />
+The trick here is to throw i out the window... it's inaccurate due to round-off errors. Also remember that you can set n in every frame. So basically we need to make a variable xp (xposition) traverse every value from 0 to w (width), while yp traverses every position from 0 to h[ (height).<br />
+<br />
+Unfortunately, it's best to use w+1 and h+1 for width and height. If you don't, you'll get nasty round-off errors too.<br />
+<br />
+So, in onframe:<br />
+<br />
+ww=w+1; hh+h+1; n=ww*hh; xp=0; yp=0; iw=1/ww; ih=1/hh;<br />
+[i]iw and ih are the inverted (adjusted) width and height, calculated only once every frame to speed the preset up... multiplication is several times faster than division.<br />
+<br />
+In per point:<br />
+<br />
+<br />
+x=xp*iw*2-1; y=yp*ih*2-1;<br />
+<br />
+.....<br />
+<br />
+xp=if(above(xp+1,ww),0,xp+1);<br />
+yp=if(xp,yp,yp+1);<br />
+<br />
+<br />
+First, we transform the variables xp,yp in the range (0..ww, 0..hh) into AVS coordinates (-1..1, -1..1), by dividing by width and height, and multiplying by 2 and subtracting 1.<br />
+<br />
+Then, at the end, we increase xp by one. When it equals the width, we set it back to zero. <br />
+yp is increased only when xp is zero. Note that this doesn't happen the first time around (because xp will equal 1 after the first pixel). So you have a pretty grid that fills the full screen... but it's slow as hell. Speed-up tips include skipping every uneven pixel and using lines to get a 'pixel-doubled' grid.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th April 2002, 16:47</div></div>
+<br />
+<div class="posttext">If you want to make one superscope which consists of multiple disconnected line segments, you'll need to use a render-mode like Additive or Maximum, and simply set the color to black when you don't want a line to be drawn. A good example is my Plankton preset... all the swimming particles are only one SSC, and you can see this by turning off the blendmode change.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">6th April 2002, 21:28</div></div>
+<br />
+<div class="posttext">Umm, I think I need to rephrase my Tetris SSC question a bit, this time in form of a different question...<br />
+<br />
+How do you make a &quot;T&quot; using one SSC?<br />
+An &quot;l&quot; With horizontally laid &quot;T&quot; on top of it using one SSC?<br />
+<br />
+(In other words, the shpae itself... :p )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th April 2002, 22:23</div></div>
+<br />
+<div class="posttext">Probably something like this:<br />
+<br />
+<br />
+1----------&gt;2   -----3&lt;----2  -----3-----<br />
+                                   |<br />
+                                   |<br />
+                                   v<br />
+                                   4<br />
+<br />
+<br />
+Use if's in a 4 point superscope to set the coordinates accordingly each time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">7th April 2002, 18:31</div></div>
+<br />
+<div class="posttext">Hmm, but what Variable?<br />
+I tried using If(equal(n,#) , but doesn't work...<br />
+<br />
+Hmm, possibly I'd have to use 2-3 synchronized SSCs...<br />
+<br />
+So, my (probably :p ) last question :<br />
+<br />
+What is the min/max value of Getosc/Getspec command?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">8th April 2002, 03:01</div></div>
+<br />
+<div class="posttext">i'd do something like:<br />
+<br />
+&quot;u=i*n&quot;<br />
+<br />
+-&gt; that way, u contains a number 0, 1, 2, 3... up to 'n'. Then use that in if statements.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">10th April 2002, 02:34</div></div>
+<br />
+<div class="posttext">Tried that, didn't work... :cry:<br />
+<br />
+BUT...<br />
+<br />
+Try this : (any variable)=n*i-i  :D<br />
+<br />
+That works! (All that problem, and one simple formula...)<br />
+<br />
+I use p for the variable - stands for &quot;point&quot;...<br />
+<br />
+And of course, only the coordinates of the point is the only thing needed to be done, using &quot;i&quot; won't work (remember, when SSC is set on lines, it will automatically draw line from n#1 to n#2 to n#3... but not last n to first n)<br />
+The Tetris shapes are rather easy to make once the formula above come into use...<br />
+<br />
+Hmm, now if only I can make a smooth lens, not a lens with the edge a bit too obvious...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">10th April 2002, 03:48</div></div>
+<br />
+<div class="posttext">For a good lens... first of all, you need a good view on mathematical functions.<br />
+<br />
+Try the following superscope:<br />
+<br />
+u=i*2-1;<br />
+x=u;y=-(u*u);<br />
+<br />
+This will draw a parabola... because the relationship between any variable 'x' and its square 'x*x' is shaped like that. Similary, a linear relationship f(x) = a*x (where a is any real number) is a straight line passing through the origin. Try visualising math functions this way. Fill this in in the superscope: y=-(sin(u)); Now try y=-(sin(u*2)); This has the effect that the graph is 'squished' horizontally, so you see more of it.<br />
+<br />
+What am I getting at? Well... the distortion you want is probably that you're changing a 'd' based on a specific formula. I also suppose that you use something like d=if(below(d, 0.5), ..., ...) to keep the lens small. So what you want now is a function that bulges/enlarges when 'd' is inside your interval, and is nicely linear (i.e. doesn't change d) outside. You also need to make sure that, when d is on the edge of the lens, there is no sudden jump in value.<br />
+<br />
+Here's a good example:<br />
+<br />
+y=-(if(below(abs(u),.5),abs(u)*u*2,u));<br />
+<br />
+If you remove/change the *2, you'll see that the graph is no longer continuous. I also made sure that the function behaves appropriately for negative values, but for 'd' values, which are positive-only, that's not even necessary. Of course, I'm not sure if this will look like a convincing lens, but you should be able to figure out an appropriate formula yourself.<br />
+<br />
+For better plotting of mathematical functions, you need a good math program... but for a quick look, a superscope will do :).</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

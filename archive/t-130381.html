@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Hotkey to readapt beat detection, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Hotkey to readapt beat detection AVS Wishlist" />
+	
+	<title> Hotkey to readapt beat detection - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">Hotkey to readapt beat detection</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-130381.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=130381">Hotkey to readapt beat detection</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">31st March 2003, 12:09</div></div>
+<br />
+<div class="posttext">Hmm... i think it says it all.<br />
+<br />
+I mean with the beat detection not being so good &amp; sometimes detecting 100 000 something beats, it would be nice to have a keyboard shortcut to readapt the beat detection, instead of going all the way to the editor &gt; settings &gt; beat detection &amp; pressing &quot;readapt&quot;. It would just be more convienient with a single/combination button push.<br />
+<br />
+And while were at it... The editor displays the fps , size &amp; the name of the preset in the bottom line, why not also the current bpm? It would help the tuning of presets as well as the readapt hotkey thing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">31st March 2003, 12:56</div></div>
+<br />
+<div class="posttext">And may an edit window to give the beat detector a hint what the bpm is like. Besides, did they fixed the beat detector in avs 2.6?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">1st April 2003, 00:18</div></div>
+<br />
+<div class="posttext">good idea tug :)<br />
+<br />
+and something to double/triple/halve the detected bpm would be nice too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">1st April 2003, 06:11</div></div>
+<br />
+<div class="posttext">Atero you actually can do use double framerate.<br />
+Code:<br />
+<br />
+On Beat:<br />
+counter=framecount/2; framecount=0;<br />
+<br />
+Per Frame:<br />
+framecount=framecount+1; newbeat=bor(b,equal(counter,framecount));<br />
+<br />
+Per Point:<br />
+use newbeat instead of b, or maybe both.<br />
+<br />
+But i agree that direct setting would be nice.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd April 2003, 01:34</div></div>
+<br />
+<div class="posttext">Yeah, I've made a next beat predictor before, so I could make a drum stick hit the drum nearly perfectly on beat with some good techno songs.  It was alright, but it was to simple to post here, IMO, and I think I deleted it, but I could easily make it again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">2nd April 2003, 07:40</div></div>
+<br />
+<div class="posttext">and while the topic about beat detection has started, can AVS when it detects bpm of a song, save the bpm in the directory of the song and when that song is loaded again, load the bpm which is already present in the folder.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">2nd April 2003, 07:55</div></div>
+<br />
+<div class="posttext">Even better: the bpm could be written to the mp3 tag into the comment area. But those thinks would cause bullshit on large mix files. Anyway, AVS should readapt the BPM if it tends to get incorrect automatically</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd April 2003, 12:06</div></div>
+<br />
+<div class="posttext">Yeah, we have had discussion on the beat detection before, and if it saves it to the mp3 file and then improves upon it each time you play the song, that would be the best way to do it.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

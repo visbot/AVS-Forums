@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" AVS Primer - now hiring., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" AVS Primer - now hiring. AVS" />
+	
+	<title> AVS Primer - now hiring. - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">AVS Primer - now hiring.</li>
+</ol>
+<!-- div class="pda"><a href="t-121697.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=121697">AVS Primer - now hiring.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">16th January 2003, 21:44</div></div>
+<br />
+<div class="posttext">As some of you may now, I'm working on an update for AVS Primer.  This time I want everything documented.  However, I don't know exactly how everything works, so I need your help.  This is the list of things I'm still missing.  I've marked important updates with an asterisk.<br />
+<br />
+<br />
+TRANS<br />
+-Brightness<br />
+--What exactly happens with the 50/50 blend bug (not important, but it'd probably be useful)<br />
+<br />
+-Bump<br />
+--Exactly what is blended into what with the render blend modes - &quot;replace&quot; doesn't replace the picture with the bumped image, etc.<br />
+<br />
+*Colorfade<br />
+--An exact description of what those bars actually do<br />
+--What do &quot;On-beat change&quot; and &quot;on-beat randomize&quot; actually do?  (in reality, somehow they screw up the colorfading)<br />
+<br />
+*Grain<br />
+--What does the slidebar do<br />
+--Am I correct in assuming it multiplies each pixel's raw RGB values by a random number from 0..1?<br />
+<br />
+-Interferences<br />
+--Same with Bump (what do the blend modes do?)<br />
+--What the bug with Additive blend is all about<br />
+<br />
+-Mirror<br />
+--Why &quot;smooth transitions&quot; have the strange effect of darkening the image quite a bit<br />
+<br />
+-Mosaic<br />
+--Whether the color of each cell is calculated by a) the center pixel; or b) the average of every pixel covered by the cell (probably a, since b would be rather slow)<br />
+<br />
+-Scatter<br />
+--What's the bug with the top and bottom rows?<br />
+<br />
+*Unique Tone<br />
+--The exact process involved here<br />
+<br />
+*Water bump<br />
+--&quot;What the fork?&quot;<br />
+--Is it just me, or does this seem to gravitate towards +x+y (bottom right)?<br />
+<br />
+<br />
+RENDER<br />
+-Dot fountain<br />
+--What're all the cyan, brown, green, and blue particles at the bottom all aboot?<br />
+<br />
+-Moving Particle<br />
+--How do they move<br />
+<br />
+-Simple<br />
+--What bands are drawn for the spectrum analyzer?<br />
+<br />
+-Text<br />
+--Any way to fix that additive blend bug...<br />
+<br />
+-Superscope<br />
+--The limit on the number of variables<br />
+<br />
+<br />
+MISC<br />
+-Custom BPM<br />
+--What the First Skip slidebar does<br />
+--When the first beat is registered in skip mode<br />
+<br />
+<br />
+OTHER<br />
+-What does the Buffer Blend mode do?<br />
+-TRUE proofs (i.e. you can prove it without making assumptions) of rotation matrices and 3D-2D (and 4D-3D for that matter) translation.<br />
+<br />
+<br />
+<br />
+Thanks in advance, guys! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">16th January 2003, 22:01</div></div>
+<br />
+<div class="posttext">the mosaic colour is almost definately calculated by the center pixel because when you render something with just a thin line like a timescope or superscope or something when you put in a mosaic the colours show up and since there just lines its probably impossible to get more in a line than whats around it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">17th January 2003, 00:07</div></div>
+<br />
+<div class="posttext">Here is goes...<br />
+<br />
+Bump : &quot;Replace&quot; mostly adds in the new bumped texture as masked, and the whole picture is re-included - Which is why additive mode acts like a fast brite. 50/50 seem to just reduce the bumpedness.<br />
+<br />
+Colorfade :<br />
+<br />
+I don't know for sure, but first bar is hue, 2nd is sat, 3rd is lum - I believe they control how fast they increase/decrease, but I also believe it's more like percentage of the original image.<br />
+OnBeat Change is crappy, you can't control how long it lasts.<br />
+Randomize randomizes.<br />
+<br />
+Grain :<br />
+<br />
+It multiplies each pixel's colors by either 0 or 1. If static, the calculation only done once and saved for the rest of the time.<br />
+The slidebar controls the probability of each outcome, I think.<br />
+<br />
+Interferences :<br />
+<br />
+Replace - Replace. I believe the color of each sheet of the screen is controled by the n, then the sheets are added together.<br />
+<br />
+Additive - Just a little bug that makes the area of addition constricted to the top of the screen (Or was it border?)<br />
+<br />
+50/50 - Same as replace, Just with the typical fx-list 50/50 output.<br />
+<br />
+Unique Tone :<br />
+<br />
+For replace, it's max channel. For others, apply the fram from replace.<br />
+<br />
+Water Bump :<br />
+<br />
+Never *really* experimented with it, but I think it's somewhat nice.<br />
+I think it simulates height of water (From waves) when you have some disturbances in it...<br />
+What's next, I do NOT know.<br />
+<br />
+Dot fountain :<br />
+<br />
+Some pattern of colors Nullsoft (Or Justin) thinks nice. You got to admit though, it's a rather nice starting color set.<br />
+<br />
+Moving Particle :<br />
+<br />
+It chooses some center point and revolves around it (With some deformations to it - It's almost never a circle, but ellipse almost all the time). Speed and distance from chosen center gets lower over time. The distance from chosen center and distance from chosen center to true center is determined by the &quot;Distance From Center&quot; bar.<br />
+<br />
+Text :<br />
+<br />
+Same way as to fix the replace problem : Don't use any 0/0/0 color (Or and 0 in that matter) - Use any number bigger than that. 1-5 is transparent, BTW.<br />
+<br />
+On the other hand, this problem disappeared after I installed winamp into my 2nd HD (Don't ask)... Maybe it's that 192 mb memory... Nah...<br />
+<br />
+Superscope :<br />
+<br />
+32 or 64... Total. Subtract the preset variables for custom.<br />
+<br />
+Custom BPM :<br />
+<br />
+First skip? The amount of beats to skip at the beginning. Buggy as hell.<br />
+First beat is registered after you skip n beats (Look at the bar for n). So if you want every 5 beats, set the skip to 4.<br />
+<br />
+---<br />
+<br />
+I think that's all (I know).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">17th January 2003, 01:19</div></div>
+<br />
+<div class="posttext">I'm pretty sure that grain multiplies by decimals too, because using a white object, it will turn some pixels grey and they will eventually fade away.  And moving particle is somewhat music responsive, although I don't know exactly how.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">17th January 2003, 02:28</div></div>
+<br />
+<div class="posttext">Some answers I know off the top of my head:<br />
+<br />
+-Bump --Exactly what is blended into what with the render blend modes - &quot;replace&quot; doesn't replace the picture with the bumped image, etc. <br />
+<br />
+The bump effect's output is defined by two things:<br />
+- original pixel color + if (source pixel != 0) { diffuse light value relative to light position }<br />
+<br />
+The image is treated as a height-map, where brightness = height. The bump effect calculates the normals and calculates the diffuse lighting coefficient at each pixel (actual algor. is very simple).<br />
+<br />
+As indicated above, the original color value is added. This explains the blend-modes:<br />
+<br />
+- blend 50/50:<br />
+<br />
+original pixel * 50% + output pixel * 50%<br />
+= original value * 50% + (original value + diffuse) * 50%)<br />
+= original value + diffuse * 50%<br />
+<br />
+Additive:<br />
+original pixel + output pixel<br />
+= original value + (original value + diffuse)<br />
+= 2*original value + diffuse<br />
+<br />
+This performs a bump, but uses the x2 color for the output result. Note that diffuse is based on the x1 color!<br />
+<br />
+<br />
+Colorfade<br />
+--An exact description of what those bars actually do<br />
+--What do &quot;On-beat change&quot; and &quot;on-beat randomize&quot; actually do? (in reality, somehow they screw up the colorfading) <br />
+Colorfade slider #1 looks like a sort of hue-slider, but is isn't. It seems to define the evolution of the colors to pure channels R,G,B (left) or mixed channels RG,GB,BR (right).<br />
+<br />
+-Mirror<br />
+--Why &quot;smooth transitions&quot; have the strange effect of darkening the image quite a bit <br />
+<br />
+The mirror effect copies one half (horizontal/vertical) of the image to the other half mirrored (once or twice).<br />
+<br />
+The smooth-transitions option performs an alpha-blend between the two mirror states.<br />
+<br />
+When performing an alpha blend, there are two situations for colors between color A and B:<br />
+- A and B are similar colors:<br />
+e.g. (255,128,0) - (255,64,128)<br />
+let's consider the 50% blend value:<br />
+(255,96,64). This brightness of this color is not much lower than A or B.<br />
+- A and B are very different colors:<br />
+e.g. (255,0,0) and (0,0,255). the 50% blend value is (128,0,128), which is much darker dan either A and B due to the logarithmic nature of light-intensity (non-linear perception of brightness).<br />
+<br />
+Because most pixels will be very different (second situation), the part that is being blended will look darker in its 50% phase.<br />
+<br />
+Scatter<br />
+--What's the bug with the top and bottom rows?<br />
+An image is stored from left-to-right, top to bottom. The top and bottom edges are the closest to the beginning and end of the image in memory.<br />
+When you have a pixel (x,y) and request the pixel at offset (x+a,y+b), you have to make sure the resulting pixel is inside the picture (x &gt;= 0, y &gt;=0 ) and ( x &lt; width, y &lt; height ). The scatter effect seems to have a maximal (x,y) distance between the scattered pixel and the original pixel (let's call this distance 'd'). Because of lazyness, the scatter effect ignores the top and bottom 'd' rows.<br />
+<br />
+<br />
+*Unique Tone<br />
+--The exact process involved here <br />
+<br />
+Unique tone transforms a pixel's color into a standard value in the range 0.0...1.0 and multiplies it with the color specified. This is similar to a grayscale filter + multiplication, but the grayscale filter used is 'lazy', and can look unnatural:<br />
+The mapping from (R,G,B) to (G) = max(R,G,B) / 255.<br />
+e.g. color (255,0,0) -&gt; 1.0, color (64,128,64) -&gt; 0.5, color (64,64,64) -&gt; 0.25<br />
+<br />
+=&gt; Unique tone is the same as a colormap with key 'maximal channel', output 'replace' and a single colorpoint (no gradient).<br />
+<br />
+What does the Buffer Blend mode do?<br />
+<br />
+Buffer blend uses the same transformation from RGB to G as Unique tone and uses this value as a transparency/opacity factor for blending each pixel with another:<br />
+<br />
+input 1 (140,150,160), input 2 (255,0,0), buffer pixel (100,200,50)<br />
+<br />
+buffer: max(100,200,50)/255 = 200/255 ~~  0.8<br />
+<br />
+so output = (140,150,160) * (1 - 0.8) + (255,0,0) * 0.8 = (232, 30, 32)<br />
+<br />
+*Water bump<br />
+--&quot;What the fork?&quot;<br />
+--Is it just me, or does this seem to gravitate towards +x+y (bottom right)?<br />
+<br />
+<br />
+Real water-bump effects calculate the normale of the water-suface similar to a bump-map and then calculate a refraction-effect. For lazyness, the waterbump seems to use a diagonal (+x,+y) offset only...<br />
+<br />
+As for rotation matrices, here's the idea for one axis, do this for all three in sequence and you get a rotation matrix:<br />
+<br />
+Rotation of point p(x,y,z) around axis Z. <br />
+<br />
+(1) Co-planarity:  We know the Z coordinate will stay constant by rotation around the Z-axis, because the shortest vector connecting the axis and the point has a zero Z-component = p..z(x,y,0)<br />
+<br />
+(2) We now transform into the plane parallel with the x,y plane: z = p(z) (because the z-coord is not affected by rotation here)<br />
+<br />
+We can express the point (x,y) in polar coordinates as (d,r):<br />
+x = cos(r)*d;<br />
+y = sin(r)*d;<br />
+<br />
+Rotating this point means increasing or decreasing the polar angle 'r'. We know the following formulas are true (proofs to long to type here):<br />
+<br />
+cos(a+b) = cos(a)*cos(b) - sin(a)*sin(b)<br />
+sin(a+b) = sin(a)*cos(b) + cos(a)*sin(b)<br />
+<br />
+So if we rotate a point over angle r', we get:<br />
+x' = cos(r+r')*d;<br />
+y' = sin(r+r')*d;<br />
+<br />
+Using the formulas above, you get exactly the coefficients in the rotation matrix for rotation around the z-axis (remember that matrix-notation is just a handy way of writing linear operations on a set of variables).<br />
+<br />
+The rotated 3D point p'(x',y',z) can now be rotated around the Y-axis (y'=constant) into:<br />
+<br />
+p''(x'',y',z'')<br />
+<br />
+And the x-axis (x''=constant), to give:<br />
+<br />
+p'''(x'',y''',z''').</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">17th January 2003, 03:07</div></div>
+<br />
+<div class="posttext">Unconed, I think you have the source code to AVS.;) You know way too much about what is actually happening.  Very good job of explaining x,y,z rotation.  Atero, when you write the primer make sure you put the conversion of 3-D polar coordinates -&gt; 3-D cartesian coordinates right after this.  This primer is going to be a really useful reference.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">17th January 2003, 16:18</div></div>
+<br />
+<div class="posttext">Originally posted by UnConeD <br />
+<br />
+cos(a+b) = cos(a)*cos(b) - sin(a)*sin(b)<br />
+sin(a+b) = sin(a)*cos(b) + cos(a)*sin(b)<br />
+ <br />
+<br />
+Draw two right angled triangles that share one side which is the hypotenuse of one triangle and not the other. You can prove it quite easily be working out the lengths of the sides and their x and y components. Much easier than proving it by using cos and sin expansions.<br />
+<br />
+If anyone cares I could hash up a diagram in paint or something.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th January 2003, 19:27</div></div>
+<br />
+<div class="posttext">Nic, I was looking for more specifics; I know what everything does, but I want to know how everything works (read: I want to be god, god dammit.)  Thanx anyway, tho.<br />
+<br />
+UnConeD, thank you for the info, you shall inherit the earth, and maybe mars, if you're lucky.<br />
+<br />
+Jheriko, show us your mad mspaint skillz0rz...especially since I can't understand any of that ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">18th January 2003, 22:21</div></div>
+<br />
+<div class="posttext">I want to be god, god dammit.<br />
+That's a bit self-contradicting...<br />
+Unconed should get the earth, mars, and saturn, after all he did make them.:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th January 2003, 17:53</div></div>
+<br />
+<div class="posttext">I skanked it up in psp instead since mspaint is even crappier than i thought and can not save to .jpg<br />
+<br />
+The only thing on the picture that may not be immediately clear (to those who know their trig anyway) is why the second angle i labeled 'a' is equal to a, the reason is because the angle which is opposite a and the right angle of the smallest triangle nearest the top of the second diagram (with the red line and blue line for two of its sides) and the angle which is on the opposite side of its vertex are equal. You can then use the 'sum of triangles angles = 180 deg' rule to deduce that the angle must be a.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th January 2003, 08:20</div></div>
+<br />
+<div class="posttext">that's not only the ugliest-ass picture i've ever seen (&quot;wink&quot;), it's completely vague, in the most vicious sense.  mind explaining any of that, jherry?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">20th January 2003, 13:05</div></div>
+<br />
+<div class="posttext">I feel disappointed in you Atero. Here is your explanation.<br />
+<br />
+sin x = (length of side opposite angle)/(length of hypotenuse)<br />
+cos x = (length of side sharing angle with hypotenuse)/(length of hypotenuse)<br />
+<br />
+i.e. the basic trig rules for a right angled triangle.<br />
+<br />
+If you look at the diagram you will see that all that I have done is used these rules to work out the lengths of all of the lines which you need to find the two lengths which are equal to cos(a+b) and sin(a+b) - the blue and red lines.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">20th January 2003, 19:13</div></div>
+<br />
+<div class="posttext">&quot;Boy, do I feel STUPID!!!&quot;<br />
+<br />
+I have no idea what the process you're taking is...basically you're telling me to look at a diagram used in a proof and try to find out what that proof is, based on the diagram.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">20th January 2003, 19:33</div></div>
+<br />
+<div class="posttext">I don't understand the diagram either jheriko.  It would help some if all of your 90 degree angles were actually 90 degrees.:p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">20th January 2003, 19:47</div></div>
+<br />
+<div class="posttext">Hey, U dont have to be SO DEAM accurate. Man made his point clear and this is all we need, u dont need to see the exact 90 degree angles...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">20th January 2003, 20:45</div></div>
+<br />
+<div class="posttext">I found Jherikos diagram clear but for anyone who didnt here is another proof:<br />
+<br />
+Let t and s be some numbers.<br />
+Draw a circle whith r=1 and the centar in point S(0,0).<br />
+Now on the circle mark these points:<br />
+A=E(0)     A(0,1)<br />
+B=E(t+s)   B(cos(t+s),sin(t+s))<br />
+Its obvios(just look at the picture) that part of the circle between A and B has lenght of t+s. <br />
+<br />
+Now mark points:<br />
+C=E(-s)    C(cos(-s),sin(-s))  =C(cos(s),-sin(s))<br />
+D=E(t)     D(cos(t),sin(t))<br />
+Part of the circle between C and D has also the lenght of t+s.<br />
+Now draw two lines one connecting A and B and one C and D. Since the parts of the circles connecting them are the same lines will also be the same.<br />
+|AB|=|CD|<br />
+<br />
+You can see that(from the pitagoras rule or something, I dont know whats the correct term in english):<br />
+<br />
+|AB|^2=(cos(t+s)-1)^2+(sin(t+s))^2<br />
+=2-2cos(t+s)<br />
+<br />
+and<br />
+<br />
+|CD|^2=(cos(t)-cos(s))^2+(sin(t)+sin(s))^2<br />
+=2-2cos(t)cos(s)+2sin(t)sin(s)<br />
+<br />
+Now becouse |AB|^2=|CD|^2 we get:<br />
+2-2cos(t+s)=2-2cos(t)cos(s)+2sin(t)sin(s)<br />
+And this means that<br />
+cos(t+s)=cos(t)cos(s)-sin(t)sin(s)<br />
+<br />
+You can proof it the similar way for the sine if you want.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st January 2003, 02:35</div></div>
+<br />
+<div class="posttext">once again...that made no sense (to me anyway)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">21st January 2003, 12:39</div></div>
+<br />
+<div class="posttext">Here is a picture. <br />
+You can see that |AB|^2=(cos(t+s)-1)^2+(sin(t+s))^2 and |CD|^2=(cos(t)-cos(s))^2+(sin(t)+sin(s))^2 are true from the definition of sine and cosine. <br />
+sin(t+s) is the distance from point B to the x acces becouse the angle between B and x acces is t+s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st January 2003, 14:18</div></div>
+<br />
+<div class="posttext">Originally posted by anubis2003 <br />
+I don't understand the diagram either jheriko.  It would help some if all of your 90 degree angles were actually 90 degrees.:p  <br />
+<br />
+Actually that wouldn't help at all.<br />
+<br />
+Originally posted by anubis2003 <br />
+&quot;Boy, do I feel STUPID!!!&quot; <br />
+<br />
+I have no idea what the process you're taking is...basically you're telling me to look at a diagram used in a proof and try to find out what that proof is, based on the diagram. <br />
+<br />
+<br />
+The process is called geometric proof. The diagram isn't simply used in the proof it *IS* the proof.<br />
+<br />
+I'll explain the where all of the lengths on the diagram come from and why they need to be determined, this should help you understand why the diagram is a proof. (It would help if you read this with the diagram handy)<br />
+<br />
+To start with you take the two triangles drawn and the only known length is the unit length of the exposed hypotenuse. We will lable the two topmost angles a and b. By using simple trig you can now see that the sides of the triangle with hypotenuse 1 are sin(b) and cos(b) respectively, this makes the hypotenuse of the second triangle cos(b). So the two other sides of the second triangle are going to be sin(a)cos(b) and cos(a)cos(b).<br />
+<br />
+If you now look at the second diagram you will see that a third triangle has been 'overlayed' onto the first two. This triangle shares the hypotenuse of length one and contains the angle a+b, by looking at the diagram and comparing this triangle to the very first one we looked at (if required) you can see that its two sides (the red and blue lines) are going to equal cos(a+b) and sin(a+b).<br />
+<br />
+The length sin(a)cos(b) is shorter than the length sin(a+b) and we can see that the difference between them is equal to the length of the side, parallel to the length sin(a+b), of a fourth triangle which I have also marked on the second diagram. This triangle has an angle of a labeled inside it. This can be verified by using two rules as I explained earlier in this thread. Since we know the hypotenuse length of this triangle is sin b and one of its internal angles is a then the other two sides have lengths sin(a)sin(b) and cos(a)sin(b) respectively. The length we need is the cos(a)sin(b) (because it is the side parallel to the sin(a+b) and sin(a)cos(b)). Looking at the diagram and understanding where all of the lengths come from, you should now be able to clearly see that the line of length sin(a+b) has equivalent length to the sum of the lengths of the two lines with lengths sin(a)cos(b) and cos(a)sin(b), i.e.  sin(a+b)=sin(a)cos(b)+cos(a)sin(b)<br />
+<br />
+You can do a similar thing using the other side of the small triangle, length sin(a)sin(b), and by subtracting it from the length of the side of the second big triangle (with hypotenuse cos(b)), which has length cos(a)cos(b), you can see by the diagram this difference equals cos(a+b).<br />
+<br />
+<br />
+NOTE: They don't teach geometric proofs, or geometry infact, very much in schools which may be why some of you don't understand it. Geometric proofs are often much easier than algebraic proofs for geometry related problems when you know about them. When dealing with trigonometry this is especially true because it is very difficult to represent sin x or cos x algebraically, (it will involve infinite series or powers of e... which are also infinite series), where as it is very easy to define them geometrically as the two sides of a right angled triangle with hypotenuse length 1.<br />
+<br />
+<br />
+Hopefully thats cleared it all up.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">21st January 2003, 21:26</div></div>
+<br />
+<div class="posttext">Jheriko, that second quote isn't mine it's atero's.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">21st January 2003, 22:37</div></div>
+<br />
+<div class="posttext">The process is called geometric proof. The diagram isn't simply used in the proof it *IS* the proof.<br />
+Yeah...except NONE of the proof is clear, in any way, from the image.  We're not mind readers like you, Jheriko. :hang:<br />
+<br />
+... If you now look at the second diagram you will see that a third triangle has been 'overlayed' onto the first two. This triangle shares the hypotenuse of length one and contains the angle a+b, by looking at the diagram and comparing this triangle to the very first one we looked at ...<br />
+What triangle?!<br />
+... you can see that its two sides (the red and blue lines) are going to equal cos(a+b) and sin(a+b).<br />
+No, I can't.  Remember what I said about mind reading?  If I said to you &quot;By comparing the triangles in these squares and the triangles in the other square, it's obvious that a^2=b^2+c^2,&quot; and showed you a proof of the Pythagorean theorem, you wouldn't have a fucking idea what I was talking about.<br />
+Since this is where your proof falls apart, I'm going to leave it for now until you stop expecting me to know what number you're thinking...<br />
+<br />
+NOTE: They don't teach geometric proofs, or geometry infact, very much in schools which may be why some of you don't understand it.<br />
+I know geometric proofs, I've seen them, I've remade them, I've done them.  But geometric proofs don't just consist of a picture thrown out in the middle of nowhere for the readers to puzzle over.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd January 2003, 02:29</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+<br />
+What triangle?!<br />
+ <br />
+<br />
+The one with the coloured sides.<br />
+<br />
+Originally posted by Atero <br />
+No, I can't.  Remember what I said about mind reading?  If I said to you &quot;By comparing the triangles in these squares and the triangles in the other square, it's obvious that a^2=b^2+c^2,&quot; and showed you a proof of the Pythagorean theorem, you wouldn't have a fucking idea what I was talking about.<br />
+ <br />
+<br />
+If you look at the triangle it is a right angled triangle with hypotenuse 1. By the fundamental definitions of sin and cos the two sides must equal cos(a+b) and sin(a+b). As for your pythagoras analogy... it is way of target. I marked the triangle out in multiple colours and even described roughly where it was and what lengths its sides were (which are labelled on the diagram).<br />
+<br />
+<br />
+Originally posted by Atero <br />
+I know geometric proofs, I've seen them, I've remade them, I've done them.  But geometric proofs don't just consist of a picture thrown out in the middle of nowhere for the readers to puzzle over. <br />
+<br />
+Do you understand the geometric proof of (sin x)^2+(cos x)^2=1, because this one is just a tiny step above it in complexity.. it uses the exact same principles.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">VisualAgnosia</div><div class="date small text-muted">22nd January 2003, 04:38</div></div>
+<br />
+<div class="posttext">Hey I got a question I think might be funda-mental. When looking through code i see two lots of the same variable used ie<br />
+<br />
+x=.....<br />
+x=.....<br />
+<br />
+or the simmilar, I was wondering how this actually comes into play? Does it do both or chose one over the other, (especially in SSC's) if it does both please explain technicaly. Unconed you might know this one I've seen it in your code.<br />
+<br />
+Mabey if a sufficent explanation is forthcomming you could use it atero</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">22nd January 2003, 05:28</div></div>
+<br />
+<div class="posttext">either this is the wrong thread, or you're being a total idiot, visag.<br />
+<br />
+now then...no, you weren't clear before, jheriko.  in fact that was one of the most vague proofs i've ever seen.  ten to one you give that to your teacher and he laughs.<br />
+and please explain how the upper-right angle in the smallest (&quot;fourth&quot;, which, in and of itself, is a bad term) triangle is equal to the angle A?<br />
+<br />
+btw, an algebraic proof of sin(x)^2+cos(x)^2=1 is easy enough that you don't need a geometric proof:<br />
+o^2/h^2+a^2/h^2=1<br />
+(o^2+a^2)/h^2=1<br />
+o^2+a^2=h^2 (pythagorean theorem)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">22nd January 2003, 11:07</div></div>
+<br />
+<div class="posttext">Jheriko I just went over yore proof again(and mine) and they bouth show that <br />
+cos(a+b)=cos(a)*cos(b)-sin(a)*sin(b) <br />
+sin(a+b)=sin(a)*cos(b)+cos(a)*sin(b) <br />
+are true only for a+b&lt;pi becouse you cant have a triangle whith a bigger angle.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">22nd January 2003, 14:58</div></div>
+<br />
+<div class="posttext">visag, what preset has a ssc that sets x twice?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd January 2003, 15:09</div></div>
+<br />
+<div class="posttext">Originally posted by Atero <br />
+and please explain how the upper-right angle in the smallest (&quot;fourth&quot;, which, in and of itself, is a bad term) triangle is equal to the angle A?<br />
+<br />
+<br />
+I've attached a new diagram to explain this. All that you need to know are two basic angle rules - that the sum of the internal angles of a triangle is 180 degrees (to get a at the end) and that opposite angles on two intersecting lines are equal (to get the 90-a).<br />
+<br />
+Originally posted by Atero <br />
+btw, an algebraic proof of sin(x)^2+cos(x)^2=1 is easy enough that you don't need a geometric proof:<br />
+o^2/h^2+a^2/h^2=1<br />
+(o^2+a^2)/h^2=1<br />
+o^2+a^2=h^2 (pythagorean theorem) <br />
+<br />
+The geometric proof that I was thinking of basically works by the same principle. Your algebraic proof relies totally on the pythagorean theorem and the geometric definitions of sin and cos. For all intents and purposes it is a geometric proof written in algebraic notation.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">22nd January 2003, 16:27</div></div>
+<br />
+<div class="posttext">UnConeD - WaterCube<br />
+<br />
+first superscope<br />
+Init:<br />
+n=0;md=0;<br />
+<br />
+On Beat:<br />
+x=rand(7);md=if(x,md,rand(4));mv3=if(x,mv3,rand(5)+3);<br />
+<br />
+Per Frame:<br />
+t=t-0.05;n=getspec(0,.1,0)*50;kp=if(n,0,1);n=if(kp,10,n);iw=2/w;ih=2/h;mv2=-.5+getspec(0,.1,0);x=0;y=0;<br />
+<br />
+Per Point:<br />
+pc=bor(equal(md,0),equal(md,3));<br />
+x=if(pc,sin(getosc(i*.5,0,0)*2*3.1415)+if(kp,(rand(3)-1)*.2,0),0);<br />
+y=if(pc,sin(getosc(i*.5+.5,0,0)*2*3.1415)+if(kp,(rand(3)-1)*.2,0),0);<br />
+<br />
+pc=equal(md,1);<br />
+x=if(pc,cos(i*6.28)*mv2,x);<br />
+y=if(pc,sin(i*6.28)*mv2,y);<br />
+<br />
+pc=equal(md,2);<br />
+mv3_=(i*mv3)%(mv3+1)/mv3;m3_=rand(10)*.1;<br />
+x=if(pc,cos(mv3_*6.28)*m3_,x);<br />
+y=if(pc,sin(mv3_*6.28)*m3_,y);<br />
+<br />
+pc=equal(md,3);<br />
+x=if(pc,i*2-1,x);<br />
+y=if(pc,getosc(i,0,0)*.5,y);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd January 2003, 16:43</div></div>
+<br />
+<div class="posttext">A statement like<br />
+<br />
+x = if(something,value,x)<br />
+<br />
+means, if 'something' is true, set x to 'value', otherwise keep its current value. That explains the multiple x's.<br />
+In that watercube scope example, the scope can choose between a couple of different dot patterns which is each defined separately.<br />
+<br />
+However you should know that most of my complicated scopes use the built-in vars (x,y,red,green,blue,...) as temporary variables (due to the limit on the amount of vars allowed), so you'll have to pay attention whether it's an actual 'x' being calculated, or just a temporary variable that'll get overwritten no matter what later on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">22nd January 2003, 16:59</div></div>
+<br />
+<div class="posttext">oh, okay, i see that now - i thought you were talking about a different triangle (once again, you didn't specify explicitly).<br />
+thanx to both of you :)<br />
+<br />
+btw raz, i want your sig :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">23rd January 2003, 03:09</div></div>
+<br />
+<div class="posttext">ahh, i see now, ill have to make some crappy messy superscopes to find out what i can do with it now. :)<br />
+<br />
+heh, the sig text is mine, ALL MINE HAHAHAHAHAAAAAA...  :blah:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">23rd January 2003, 21:52</div></div>
+<br />
+<div class="posttext">Hey I figured out what a sigmoid is!<br />
+<br />
+A sigmoid is a S-shaped part of the colon! Sorry it's not in math terms, I just thought it was interesting :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">23rd January 2003, 22:59</div></div>
+<br />
+<div class="posttext">Seriously... what the hell does that sigmoid function do??? Is it meant to be a summation or something?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">23rd January 2003, 23:46</div></div>
+<br />
+<div class="posttext">It's a function used to create values that are all in the range of -1 to 1, i don't really know how its done, but it's graph looks like an S with points (-infinity,-1),(0,0),(infinity,1).  I haven't had much use for it except for messing with the default DDM stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">24th January 2003, 00:40</div></div>
+<br />
+<div class="posttext">Sigmoid(x,y) is a fast way to calculate 1/(1+exp(-x*y)).<br />
+I have no idea why would anyone want to do that or how can it be used in avs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">27th January 2003, 06:51</div></div>
+<br />
+<div class="posttext">Originally posted by jheriko <br />
+mspaint...can not save to .jpg<br />
+<br />
+Ahem. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">27th January 2003, 12:12</div></div>
+<br />
+<div class="posttext">The sigmoid in AVS maps (0,1) to (-infinity,infinity), such that f(.5) = 0.<br />
+<br />
+Although I would have made a function that maps  0=0, and -1 to -infinity, I'm also a person who created a system of working with undefined values :igor:.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th January 2003, 19:51</div></div>
+<br />
+<div class="posttext">SIGMOID can be used for extra-smooth on-beat transitions.<br />
+<br />
+But how the fuck did it get it's name...?!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">27th January 2003, 21:28</div></div>
+<br />
+<div class="posttext">Here we go:<br />
+[link] (http://users.computerweekly.net/robmorton/projects/neural/sigmoid.htm)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th January 2003, 22:16</div></div>
+<br />
+<div class="posttext">Thanks, Anubis.  I just kept thinking of the sigmoid colon and...it kinda freaked me out :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">29th January 2003, 00:34</div></div>
+<br />
+<div class="posttext">Originally posted by uNDefineD <br />
+Ahem. ;)  <br />
+<br />
+Okay, the shit version of mspaint that comes with win2kas. you would think you would get mspaint advanced with it....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">29th January 2003, 00:44</div></div>
+<br />
+<div class="posttext">Why use mspaint??? Just use Adobe Photoshop, CorelDraw, or Jasc Paint Shop Pro 7.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">29th January 2003, 13:17</div></div>
+<br />
+<div class="posttext">I looked at my math book and found proof for: <br />
+sin(a+b) = sin(a) * cos(b) + cos(a) * sin(b);<br />
+I prought it up to know if i am correct and for just showing U all another way for this proof.<br />
+<br />
+---------------------------------------------------------------------<br />
+ proof that sin(a+b)=sin(a)*cos(b)+cos(a)*sin(b):<br />
+ a &gt; 0 , b &gt; 0, a + b &lt; pi / 2<br />
+ U can easily see that:<br />
+ AEC ~ OCD (if U dont think so then think little :p)<br />
+ sin(a+b) = AB/OA = (AE+EB)/OA = AE/OA + EB/OA<br />
+ as AE = AC * cos(a) and EB = CD = OC * sin(a)<br />
+ then sin(a+b) = (AC * cos(a))/OA + (OC * sin(a))/OA<br />
+ as AC/OA = sin(b) and  OC/OA = sin(a)<br />
+ then we get that<br />
+ sin(a+b) = sin(a)*cos(b)+cos(a)*sin(b)<br />
+---------------------------------------------------------------------<br />
+<br />
+That was too deam simple :rolleyes: , too simple<br />
+Was I correct, comments are welcom :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">29th January 2003, 16:13</div></div>
+<br />
+<div class="posttext">I chouldnt shange the attachment<br />
+heres new one</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th January 2003, 16:48</div></div>
+<br />
+<div class="posttext">Yeah...you're first of all being vague, and if that diagram is correct you're completely wrong from the first step.  AEC is a right angle, OEC is obtuse.  And when you're trying to prove something, never ever ever make assumptions like &quot;that a equals b, thus c must obviously equal d (if you don't think so think a little)&quot;<br />
+<br />
+&lt;edit&gt; Forgot to mention, I already have a working proof for this, so...don't bother :) &lt;/edit&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">29th January 2003, 18:56</div></div>
+<br />
+<div class="posttext">Oh... U miss understood me...<br />
+By the AEC I mean triangle with points A , E and C and by the AEC ~ OCD i ment that the triangle AEC resembles with triangle OCD.<br />
+And to proof that AEC ~ OCD ( AEC/OCD=k ) is simple but it would be too dificult (for me) to write it in english...<br />
+I dunno whats ur thinkin but this proof IS correct! :p<br />
+BTW this proof is most easyest too (well, atleast for me).<br />
+Do u understand me now?<br />
+<br />
+EDIT<br />
+By the AE i mean straight line petween points A and E</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">29th January 2003, 21:16</div></div>
+<br />
+<div class="posttext">You should have at least put the points in the same order(ACE~OCD).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">29th January 2003, 21:43</div></div>
+<br />
+<div class="posttext">Sorry about that... :hang:<br />
+Is this hole proof undrstandeble, correct?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">29th January 2003, 21:55</div></div>
+<br />
+<div class="posttext">I don't really understand it, but I hate proofs and don't really feel like taking the time to understand it. <br />
+Atero, can I see what proof you used?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th January 2003, 22:39</div></div>
+<br />
+<div class="posttext">it's up there...in about ten posts (jheriko's proof)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">30th January 2003, 00:34</div></div>
+<br />
+<div class="posttext">Atero is right, the similarity of OCD and AEC is not immediately obvious, you should really prove that. In the proof which I gave I (tryed) to explain why two of the triangles were similar (have the same angles) because similarity is often quite difficult to 'spot' unless one triangle is contained within the other like this:<br />
+<br />
+<br />
+      /|<br />
+     / |<br />
+    /  |<br />
+   /|  |<br />
+  / |  |<br />
+ / A| B|<br />
+/___|__|<br />
+<br />
+<br />
+The triangle with area A is similar to the triangle with area A+B.<br />
+<br />
+<br />
+I don't really think that this discussion is likely to benefit the AVS primer. What may be beneficial is a list of trig identities. All of the trig identities that I listed in the 'AVS Tips &amp; Tricks' thread (or whatever it was called) can be proved very easily if you define sin x and cos x by their power series rather than geometrically (it can be shown that both definitions are identical). This can be done by 'plugging in' the values.<br />
+e.g.<br />
+<br />
+sin(a+b)=sum((-1^n)(a+b)^(2n+1)/(2n+1)!)<br />
+<br />
+If you do this for both sides of any trig identity you can rearrange (often very easily) to show that they are equal. The only restriction is that you must except the power series as the definitions of sin and cos in order for this method to be a proof. There is nothing wrong with that though, I have a geometry textbook (Elementary Geometry - Oxford Press) in which the power series are used as the definitions of the functions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">30th January 2003, 11:59</div></div>
+<br />
+<div class="posttext">OK...<br />
+I didnt understand this thing myself very well, now I do.<br />
+We must make triangle ACE ovious with OCD!:<br />
+The (a') of ACE must be equal with (a) of OCD, then the angle AEC must be 90 degrees (pi/2 rad) and we know that angle ODC is 90 degrees too, then we get that ACE is ovious wuth OCD and we can proceed with our proof.<br />
+As soon as I get little time I will make better drawing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">30th January 2003, 17:02</div></div>
+<br />
+<div class="posttext">jack, you're missing the point...that problem has been solved (read: MOVE ON)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">30th January 2003, 17:08</div></div>
+<br />
+<div class="posttext">Oh! Well ok, but still here is the better drawing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">VisualAgnosia</div><div class="date small text-muted">1st February 2003, 03:44</div></div>
+<br />
+<div class="posttext">My computa power supply exploded, I'm on my mum's computa now.<br />
+<br />
+I wanted to look up that question I posted, thanks Unconed for the hexplanation.. So you can use the same variable twice with the &quot;if&quot; command and the subject matter in the bracktes determinez what will effect it, correct? The multiple variable thing you mentioned is something that your aware of that write's over exsiting variables later on ???---&gt; that I'm not sure about yet. Sheesh I wish I had my puta working so I could post some hexamples.... The thing is I'm going through code trying to deconstruct it and find how the different variables interact and bang! I came across two the same and It stumped me. not just 2 &quot;x&quot; for instance but other defined variables such as &quot;x1&quot;'s or whateva. I cant check to see if they were &quot;if&quot; commands at the moment tho (damn it). that does make a bit of sence 4 me Unconed thanks.<br />
+<br />
+The thing is that I've seen Avs do some weird shit before like at the end of a line of code if you take off the last bracket it reacts with the actual code differently rather than just ignoring it. I'm not talking about multiple brackets but having and open end on it.<br />
+ie. whatever=da+(da,da,da,da, ... ;  no end bracket. ( the whatever's and the da's are whatever. Dont think about asking silly questions about my ie. It still reacts with the different da's in the line of code from testing it but it does something totaly different when you put the last bracket in too. Bug?<br />
+<br />
+Mabey this has something to do with the overwriting thing you were talking about UnconeD???<br />
+<br />
+Oh yeh !<br />
+Atero?? :weird: <br />
+ <br />
+either this is the wrong thread, or you're being a total idiot, visag.  <br />
+<br />
+What the !! I was asking a ligit question that I thought you might be able to use in your primer as the title of this thread suggests.:confused: (havin' a bad day mabey ??)<br />
+<br />
+oh, okay, i see that now - i thought you were talking about a different triangle (once again, you didn't specify explicitly).  <br />
+<br />
+once again, you didn't specify explicitly who you're talking to, I guess it was us. I thought it might have been odvious that it wasn't a question about trig (wrong thread????);) what triangles have two of the same x variables ... WHAT! I dont know how anyone could go down that train of thought even someone as obscure as me.. hahaha<br />
+<br />
+:)<br />
+<br />
+N E Ways i see it's a bit late but I just had two cents so I thought I'd spend it.<br />
+<br />
+I cant wait to get my puta going again. I left if for a week. Should try not switching your computer on for at least a whole week It's a bit of a culture shock !!Especially when housmates are LANing and you decide to go for a skate instead.. Such an interesting life &gt;&gt;&gt;&lt;&lt;&lt;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st February 2003, 04:21</div></div>
+<br />
+<div class="posttext">Here's a general example of multiple x's(there are other ways to use it, though):<br />
+x=if(&lt;condition1&gt;,x1,x);<br />
+x=if(&lt;condition2&gt;,x2,x);<br />
+...<br />
+x=if(&lt;conditionN&gt;,xN,x);<br />
+<br />
+If you had a counter variable that increments each pixel and is reset to 0 each frame(lets call it q) then you could use:<br />
+x=if(equal(q,1),x1,x);<br />
+x=if(equal(q,2),x2,x);<br />
+...<br />
+x=if(equal(q,N),xN,x);<br />
+This will set x to a specified value for each pixel(i.e. a square can be made using ±.5 for x and y in this way - x1=x4=-.5, x2=x3=.5, y1=y2=-.5, y3=y4=.5).<br />
+<br />
+Originally posted by VisAg:<br />
+I came across two the same and It stumped me. not just 2 &quot;x&quot; for instance but other defined variables such as &quot;x1&quot;'s or whateva.<br />
+<br />
+x1, x2, y1, and y2 are often also used with 3D equations in order to simplify the rotation matrices.<br />
+<br />
+Originally posted by VisAg:<br />
+The thing is that I've seen Avs do some weird shit before like at the end of a line of code if you take off the last bracket it reacts with the actual code differently rather than just ignoring it. I'm not talking about multiple brackets but having and open end on it.<br />
+<br />
+This happens, because sometimes the SSC, or DM will work without needing the entire box of code (i.e. per beat stuff).  Also, I believe stuff before it will still be executed, but I'm not sure.  The preset can continue to do things, but it may not do what is meant if some parts are left out. For example, if you take out a parenthesis in the init box, the SSC may continue running properly, because it may not effect anything per frame or per pixel, which is where all of the magic happens.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">1st February 2003, 07:54</div></div>
+<br />
+<div class="posttext">gah, how come every time i start a thread it goes completely off the track of trying to get a problem solved?  what's worse is anubis always seems to be a part of that...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st February 2003, 18:57</div></div>
+<br />
+<div class="posttext">This stuff is at least useful, and could be used in your Primer(I was talking about 3-D transforms, etc.). And anyways, VisAg asked the question.<br />
+Did I not help VisAg get a problem solved(or at least try)???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd February 2003, 04:01</div></div>
+<br />
+<div class="posttext">here is another example of recycling the same variable:<br />
+<br />
+z=0.5*z;<br />
+alpha=0.5-z;<br />
+z=1/(z+2);<br />
+x=x*z;<br />
+y=y*z;<br />
+red=alpha;<br />
+blue=alpha;<br />
+green=alpha;<br />
+<br />
+This sort of thing gets done a lot (though not necessarily for this purpose). Here I've reused z to optimise the code a bit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 21:41</div></div>
+<br />
+<div class="posttext">Okay, there's still a lot of things I'd like to know.  Here's an updated list:<br />
+<br />
+<br />
+RENDER<br />
+-Dot Fountain<br />
+--What are the cyan, brown, green, and blue particles at the very bottom?  To see these just play some music amped up so it's overdriving really bad.  I'm going to assume that it's low-volume EHF, and am going to put that in AVSP2, but please correct me if I'm wrong.<br />
+<br />
+-Simple<br />
+--What bands are drawn in the spectrum analyzer?  I think it's 1-288, but I'm not sure.<br />
+<br />
+-Text<br />
+--A fix for the additive blend bug, and any way to fix (internally) the text object filling the whole screen, instead of the portion taken up by the actual text (anyone know what I'm talking about?)<br />
+<br />
+-Superscope<br />
+--The limit on the number of variables, or if it's a variable limit (on the variables, that is)...I'd figure it out myself but I've got enough other things to do ATM that I can't be arsed with it....<br />
+<br />
+<br />
+TRANS<br />
+-Brightness<br />
+--What's that bug with 50/50 blend where it doesn't quite work for positive brightness, and is there a way to fix it (other than not using 50/50 blend)?<br />
+<br />
+*Colorfade<br />
+--An exact description of what those bars actually do.<br />
+--What do &quot;on-beat change&quot; and &quot;on-beat randomize&quot; actually do?  When you turn &quot;on-beat change&quot; on it'll screw up the colorfading off of the beat.  I'm asking about &quot;on-beat randomize&quot; because I'm not sure if it works permanently or for a short time...another one of those &quot;I'm too damn lazy&quot; things :p<br />
+<br />
+-Grain<br />
+--Why, when &quot;static grain&quot; is enabled, the slidebar only changes the grain when it's under the 4th hash mark.  To see this, use a white Clear Screen and use grain with static grain enabled - then slide the bar down and watch nothing happen.<br />
+<br />
+-Interferences<br />
+--Why, when you turn &quot;additive blend&quot; on, it only works for the top 12th or so of the screen.  Note I said 12th - it changes with the screen size, and is always an exact number of lines (no partial lines at the bottom).  Very odd indeed.<br />
+<br />
+<br />
+MISC<br />
+-Custom BPM<br />
+--What the First Skip slidebar does<br />
+--When the first beat is registered in skip mode<br />
+<br />
+<br />
+OTHER<br />
+*A true proof of the px=tx/tz::py=ty/tz 2D-3D translation (px=percieved 2D x-coordinate, tx=true 3D x-coordinate, etc.)<br />
+<br />
+<br />
+Thanx in advance, guys.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">3rd February 2003, 22:31</div></div>
+<br />
+<div class="posttext">For the dot fountain I only see green down at the bottom.  Maybe the brown is from the red and other colors mixing???<br />
+For the SSC variable limit, I believe the answer was already posted in this thread.<br />
+Custom BPM - the first skip slidebar specifies how many beats will be skipped when the preset is loaded.  I guess this could be used to give the preset an &quot;intro&quot; before it starts changing on beat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 23:06</div></div>
+<br />
+<div class="posttext">Well, seeing as how it doesn't work on my computer (onbeat clear + custom bpm on skip 1 beat w/first skip set to 30 responds to every other beat, from the preset load), I'm not sure<br />
+<br />
+The dot fountain's default colors are blue to red to green (from top to bottom).  Set it to something like all black and you'll see these mysterious particles at the bottom.<br />
+<br />
+And I haven't seen any answer to the superscope limit question...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">3rd February 2003, 23:21</div></div>
+<br />
+<div class="posttext">For the custom BPM, try saving the preset and then reloading it.  It works on my computer.<br />
+With the Dot Fountain, I wee what you are saying.  That's weird...<br />
+<br />
+Originally posted by Nic01:<br />
+<br />
+Superscope : <br />
+<br />
+32 or 64... Total. Subtract the preset variables for custom.<br />
+<br />
+<br />
+Sorry, I thought someone had posted the exact amount.<br />
+<br />
+Originally posted by UnConed:<br />
+<br />
+Colorfade slider #1 looks like a sort of hue-slider, but is isn't. It seems to define the evolution of the colors to pure channels R,G,B (left) or mixed channels RG,GB,BR (right).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">3rd February 2003, 23:58</div></div>
+<br />
+<div class="posttext">Originally posted by Nic01 <br />
+Text :<br />
+<br />
+Same way as to fix the replace problem : Don't use any 0/0/0 color (Or and 0 in that matter) - Use any number bigger than that. 1-5 is transparent, BTW.<br />
+<br />
+On the other hand, this problem disappeared after I installed winamp into my 2nd HD (Don't ask)... Maybe it's that 192 mb memory... Nah...<br />
+<br />
+ <br />
+<br />
+I was originally gonna quote myself, but realized that it looks a lot more like a rambling =P<br />
+<br />
+Anyways, just set text color AND outline/shadow color (Even in plain format) to anything other than 0 for any of the RGB channels. 6 is the minimum for non-transparency.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th February 2003, 00:28</div></div>
+<br />
+<div class="posttext">Yeah, but that totally defeats the purpose of fixing the bug.  The point is you don't want ANY of the channels filled.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Complex Superscopes, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Complex Superscopes AVS" />
+	
+	<title> Complex Superscopes - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Complex Superscopes</li>
+</ol>
+<!-- div class="pda"><a href="t-68862.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=68862">Complex Superscopes</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Calvin 85</div><div class="date small text-muted">16th December 2001, 07:00</div></div>
+<br />
+<div class="posttext">I was looking through some of the newpics in Winamp, and was amazed by the beauty and complexity of some of the superscopes.<br />
+<br />
+How do people come up with such great functions? Are they all topoplogy majors, or do they just fool around with things 'till something cool pops up?<br />
+<br />
+Also, is it just me, or are the instructions for the superscope a little weak. &quot;i is the position of the scope&quot; Okay, so what does that mean??? :confused:<br />
+<br />
+Can you tell me specificly what the following mean, and how the music effects them:<br />
+<br />
+i:<br />
+v:<br />
+w&amp;h:<br />
+<br />
+Thanks!<br />
+<br />
+|[{Calvin: New Newbie!}]|</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">16th December 2001, 15:36</div></div>
+<br />
+<div class="posttext">i: used to make the points on the scope<br />
+v: what happpens to the scope when music is playing<br />
+w &amp; h: width and height</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">deathazre</div><div class="date small text-muted">17th December 2001, 00:26</div></div>
+<br />
+<div class="posttext">okay, you have a waveform. Let's go out on a limb and say the waveform is y=sin(x)<br />
+at any point i on that waveform, v is sin(i)<br />
+so if you put the waveform on a graph, limits 0,1,1,-1, x would be i and y would be v</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">17th December 2001, 22:50</div></div>
+<br />
+<div class="posttext">uh, i think what your trying to say is<br />
+<br />
+limits one y axis is 1 and -1 and for x its is 1 and -1<br />
+v is used for disignating where the music is being used on the superscope and where its detected<br />
+such as in example<br />
+x=cos(t-i);<br />
+y=sin(t+i)+v;<br />
+would make a curving line that on the y axis would the waveform/spectrum be viewed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">LittleBuddy88</div><div class="date small text-muted">18th December 2001, 20:04</div></div>
+<br />
+<div class="posttext">I'll try to go into a bit deeper explanation here.<br />
+<br />
+Let's take an example, we'll start with the simple:<br />
+<br />
+x=i;<br />
+<br />
+This small example would just create a simple line, no more, no less, no response, no nothing.<br />
+<br />
+x=0; would on the other hand create nothing but a small 1pixel dot at the middle of the horizontal scale in the AVS window.<br />
+<br />
+x=i; what is this then?<br />
+i is a small function that creates a line, on every pixel it has a value on the X scale, starting at 0, going up to 1.<br />
+It only ranges from 0 - 1 in the normal state without any extras.<br />
+x=i-0.5; here we add &quot;-0.5&quot; to the statement, this would cause the i variable to be subtracted by 0.5, thus instead ranging from -0.5 to 0.5 on the horizontal scale.<br />
+<br />
+A normal example is:<br />
+x=i*2-1; here we duplicate i by 2, this changes the range to 0 - 2, but we go -1, and it ranges from -1 to 1 and covers the whole horizontal scale. Get the idea?<br />
+OK, let's move on.<br />
+<br />
+x=i*2-1; (We create the line covering the x- scale)<br />
+y=v*.5; now what? we finally get to the &quot;v&quot; function, v gets input data from the sound, using waveform it ranges from -1 to 1, we'll stick to that.<br />
+the sound makes this move up and down, every point reacting to that specific point on the &quot;sound scale&quot;.<br />
+We use v*.5 because the normal wave is often to big.<br />
+Now you've got a simple line covering the x-scale and reacting to sound.<br />
+W and H are often not that useful, they are always equal to the width and height of your AVS window, and may be used if you want more specific details in &quot;N&quot;.(the number of points on your screen.)<br />
+<br />
+This should answer your question :cool: <br />
+<br />
+<br />
+Linus</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Question about fonts..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Question about fonts... AVS Troubleshooting" />
+	
+	<title> Question about fonts... - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> Question about fonts...</li>
+</ol>
+<!-- div class="pda"><a href="t-126907.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=126907">Question about fonts...</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">CarniceroOO7</div><div class="date small text-muted">2nd March 2003, 04:11</div></div>
+<br />
+<div class="posttext">I'm creating an AVS preset with a custom font text effect. I'm wondering if it is possible to put a font file within the AVS presets folder (similar to how bitmaps are placed there) and still have it work. Because I want to give my preset to friends (and anyone who would want it once I unveil it) but I would rather find a way where people wouldn't have to install a font just to see the text effect correctly.<br />
+<br />
+I can't use a bitmap with the text because I'm making use of the Blend 50/50 filter and need the transparency effect. Some portions of the text are supposed to look like &quot;cut outs&quot; to show the effects underneath 100% while the rest has to be semi-transparent to show the other preset effects underneath at 50%. Or maybe I can use a bitmap, but I'm too dumb to figure it out. I do want to avoid the pixelation that occurs when people run the vis fullscreen, which is why I'm going with a font that has a predetermined size.<br />
+<br />
+If Winamp accepted animated GIFs, my problem would be easily solved. Right now it's just an issue of finding a way to show my text effect without the hassle of people needing to install a font.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd March 2003, 05:11</div></div>
+<br />
+<div class="posttext">several ways to solve your problem.  One(and the best method) is to make a NSIS installer program that will install the custom fonts as well as the presets(search the NSIS forums for more help).  Two is to create a bmp of the text you want to display and use that instead.  Three is to create an avi file using AVSgrabber or the like - if you want animated text.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd March 2003, 07:04</div></div>
+<br />
+<div class="posttext">the installer for tff2.0 (source included) installs fonts for windows 95/98/nt/2k/me without restart and xp with restart (i think, don't quote me on it tho), as well as apes/avs files for winamp 2.x or 3 with a 1337 control system.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">2nd March 2003, 14:13</div></div>
+<br />
+<div class="posttext">the code works fairly well, there is a small bug with the one menu, so i remodeled it slightly for my own needs.  i also included the option of installing avs 2.5.1 with the installer so nobody will have stupid problems with not having the latest version.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd March 2003, 21:40</div></div>
+<br />
+<div class="posttext">umm...you SURE that 2.5.1 isn't wa3-only and 2.5 is wa2-only?  i can't see any other differences in the model itself...you might want to fix that (&lt;edit&gt; IF it's a problem, that is ;) &lt;/edit&gt;)<br />
+<br />
+and i really want to know how you &quot;remodeled&quot; it to fit your needs - it took me about two weeks to work that all out because of the crappy psuedo-logic i had to use.  and what's the bug you're talking about?  i know of one that i haven't gotten around to fixing (i will by tff3.0) that the APE window wont turn off by the parent tree (only by the &quot;for winamp 2.x&quot;, &quot;for winamp 3.x&quot; windows)...is that the one?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">3rd March 2003, 08:48</div></div>
+<br />
+<div class="posttext">So you need the text to be animated? If not you could use UnConeD's APE: Picture Render II which is a much better picture rendering tool for avs and allows bilinear filtering to the picture (no jagged edges or pixelation no matter what resolution)<br />
+<br />
+Get the Picture Render II from this thread (http://forums.winamp.com/showthread.php?s=&amp;threadid=118025) <br />
+<br />
+Otherwise, just make sure your friends install the font before viewing your preset :) But if it's not a free font then comes all the nasty copyright&amp;law stuff you have to worry about...</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

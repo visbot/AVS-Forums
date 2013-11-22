@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Bitwise operations...without bitwise operators, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Bitwise operations...without bitwise operators AVS" />
+	
+	<title> Bitwise operations...without bitwise operators - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Bitwise operations...without bitwise operators</li>
+</ol>
+<!-- div class="pda"><a href="t-136735.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=136735">Bitwise operations...without bitwise operators</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th May 2003, 01:01</div></div>
+<br />
+<div class="posttext">In somewhat of a continuation of this thread (http://forums.winamp.com/showthread.php?threadid=115737&amp;highlight=boolean), I'd like to know if anyone out there knows how to (or could figure out how to) do bitwise operations without the beloved b0rk3n | and &amp; operators.<br />
+<br />
+Don't ask me why I want to use them...it's a secret :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">27th May 2003, 01:23</div></div>
+<br />
+<div class="posttext">you mean this sort of thing<br />
+<br />
+for &amp;<br />
+a=if(condition1,(if(condition2,1,0),0);<br />
+<br />
+for |<br />
+a=if(condition1,1,if(condition2,1,0));<br />
+<br />
+I might have missed the point though</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th May 2003, 01:29</div></div>
+<br />
+<div class="posttext">umm, no.  that generates the right truth table, but try doing that with 64 variables at a time.  not only is it a pain in the ass, it's literally impossible to do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">27th May 2003, 01:34</div></div>
+<br />
+<div class="posttext">ah... it sounds like what you need to do would be very hard without loop structures.<br />
+why cant you just use the real operators, or will that ruin the secret.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">27th May 2003, 02:28</div></div>
+<br />
+<div class="posttext">Because you haven't read the original thread...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">27th May 2003, 03:01</div></div>
+<br />
+<div class="posttext">*cough cough* dumbass *cough*<br />
+<br />
+and dare i mention...... the beloved b0rk3n | and &amp; operators.<br />
+<br />
+:rolleyes:<br />
+<br />
+<br />
+&lt;edit&gt; just now found a way to read single bits out of a variable.  i set up a scope to demonstrate it:<br />
+init: n=16<br />
+beat: bits=pow(2,rand(16))+pow(2,rand(16))+pow(2,rand(16));<br />
+frame: p=0;<br />
+pixel:<br />
+x=i-0.5; y=0;<br />
+red=(bits%pow(2,p)-bits%pow(2,p-1))+0.4; blue=red; green=red;<br />
+p=p+1;<br />
+<br />
+gray bits (points) are off, white ones are on.<br />
+(now, getting exactly 3 bits to turn on every time will be a problem...but then again, it would be with the operators working properly as well :weird: )<br />
+<br />
+the same operation can be used to toggle a bit, or turn it on or off.  the following three lines of code toggle a bit, turn a bit on, and turn a bit off, respectively:<br />
+variable=if(variable%pow(2,bit)-variable%pow(2,bit-1),variable-pow(2,bit),variable+pow(2,bit));<br />
+variable=if(variable%pow(2,bit)-variable%pow(2,bit-1),variable,variable+pow(2,bit));<br />
+variable=if(variable%pow(2,bit)-variable%pow(2,bit-1),variable-pow(2,bit),variable));</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">27th May 2003, 03:07</div></div>
+<br />
+<div class="posttext">tut tut.<br />
+<br />
+im sorry.. i assumed that it was talking about a different thread that i had already read. whooooooops, dont i feel like the right ass.<br />
+also i couldnt work out what b0rk3n (br0k3n) meant....<br />
+<br />
+well. .i have no freeken idea then</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">27th May 2003, 12:09</div></div>
+<br />
+<div class="posttext">Well i already had made up something a bit like that, but long ago.<br />
+<br />
+To tear your var appart, starting with the biggest possible pow of 2.<br />
+If you can substract it, then do and remember this pow of 2 is 1. Then go down to the next pow. If you once can't substract it its 0. This way you should be able to get a virtual long bitstring.<br />
+<br />
+However, this would result again in tons of vars unless you do a routine that uses only one buffer to compare the stuff und write the new bit.<br />
+<br />
+Don't take it as a clear instruction but this way it should be possible through a painfull process.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

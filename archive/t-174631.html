@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" $(playpos)  to run backward, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" $(playpos)  to run backward AVS Wishlist" />
+	
+	<title> $(playpos)  to run backward - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">$(playpos)  to run backward</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-174631.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=174631">$(playpos)  to run backward</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">29th March 2004, 21:52</div></div>
+<br />
+<div class="posttext">I would like to be able to have playlen to show time remaining like in winamp window. I have tried to type $(playneg)  and $(play-) just in case they might work with of corse no luck. With time remaining clock would eliminate need to tie-up space with 2 clocks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">toqer</div><div class="date small text-muted">30th March 2004, 04:12</div></div>
+<br />
+<div class="posttext">http://forums.winamp.com/showthread.php?s=&amp;threadid=174101</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">30th March 2004, 08:06</div></div>
+<br />
+<div class="posttext">here I go being stupid again:confused: :cry: BUT why couldn't a $(playneg) be made to work just the oppisite of a $(playpos) in render text without having to write all them scope thingys you got in your avs's (there is no need to write them for pos)?? and your counter seems to only start at 2 min which don't help on  longer tunes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th March 2004, 11:06</div></div>
+<br />
+<div class="posttext">here's a countdown i made. it's quite simple and should be easy to understand</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">30th March 2004, 19:19</div></div>
+<br />
+<div class="posttext">THANK YOU tOger for your help though TomyLobo's help seemed easier for my simple mind to grasp.And it shows countdown with full time. I attached my first avs with down-counter and to show an idea on what I did with $(title) which I think is pretty cool for dummy like me....:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th March 2004, 20:41</div></div>
+<br />
+<div class="posttext">hmm nice idea these changing colors :)<br />
+but try color modifier instead... i'll make an example... plz w8 :)<br />
+but why Enabled on Beat for 999 Frame? you can disable it as there will be no 999 frames between 2 beats (at least not with the currently available hardware :D)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">30th March 2004, 21:44</div></div>
+<br />
+<div class="posttext">I use on beat cause in my simple mind I think logically that anything having to do with music should be on beat and can't understand why music wouldn't be on beat. And I guess that 999 will put it on as many fames as possible... of corse I could be way off, but that is my logic...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th March 2004, 21:56</div></div>
+<br />
+<div class="posttext">just check &quot;Enabled&quot;<br />
+it's always activated then<br />
+there's no need to enabled it on beat :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">31st March 2004, 00:02</div></div>
+<br />
+<div class="posttext">I did some changes to your preset... see yourself :) It's actually 2 Versions...<br />
+1. a basic version with a Color Modifier and save-some-fps-code for the title text renderer :) it only renders the text if the track changes (actually if the track length changes but that should be enough i think :) ). It also masks the text, meaning it cuts it out and just replaces the parts of the original picture where there is text.<br />
+2. a slightly advanced version... better see yourself and try to change songs :)<br />
+<br />
+btw if you don't know what an effect does, just try it out... best is i think to insert a render/picture into a blank preset and add the effect you want to test after that picture.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">31st March 2004, 02:46</div></div>
+<br />
+<div class="posttext">TomyLobo<br />
+   You were thanked above (though it was indirectly).. but this is directly.I appreciate it when people can take time to help out a dummy like me. I call me a dummy cause as much as I like what you did ... the stuff you have to write in those boxes go very way beyond my comprehension (I have absolutely no knowledge of that stuff). I just push buttons and change a number or - + sign and if it looks good to me on screen ,I save it. I occasionaly come up with a good idea... but usually need to put it out for others to do the work (not that I'm lazy.. just dumb).<br />
+  So THANKS MUCH for the time and help,<br />
+                 Snoozin' Hermit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">D12</div><div class="date small text-muted">8th April 2004, 17:57</div></div>
+<br />
+<div class="posttext">I don't know any thing about $(playpos) to run backward</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">10th April 2004, 04:49</div></div>
+<br />
+<div class="posttext">I think I speak for everybody when i say SHUT THE FUCK UP.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

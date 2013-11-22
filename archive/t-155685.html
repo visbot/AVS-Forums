@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" How??(visualizations), avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" How??(visualizations) AVS Troubleshooting" />
+	
+	<title> How??(visualizations) - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-139.html">AVS Troubleshooting</a></li>
+  <li class="active"> How??(visualizations)</li>
+</ol>
+<!-- div class="pda"><a href="t-155685.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=155685">How??(visualizations)</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">AcidReflex</div><div class="date small text-muted">9th November 2003, 22:40</div></div>
+<br />
+<div class="posttext">How would i make the visualization spin to the right or left using Trans/movement??what would i type in the user defined box?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">AcidReflex</div><div class="date small text-muted">12th November 2003, 22:14</div></div>
+<br />
+<div class="posttext">I take it no one knows?maybe using the dynamic distance modifier?please....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nunzio390</div><div class="date small text-muted">12th November 2003, 23:01</div></div>
+<br />
+<div class="posttext">I'm moving this to the proper AVS Troubleshooting forum, where it really should have been posted in the first place. The &quot;experts&quot; there may be able to help you better than anyone in Winamp3 Tech Support can.<br />
+<br />
+In the meantime...<br />
+<br />
+Read through THIS THREAD (http://forums.winamp.com/showthread.php?s=&amp;threadid=125320) for pointers on AVS usage.  Also refer to the AVS FAQ (http://forums.winamp.com/showthread.php?s=&amp;threadid=145564). Also read the Tips&amp;Tricks in AVS (http://forums.winamp.com/showthread.php?threadid=114681) and the  Tips &amp; Tricks 2 -- Beginners and Intermediate Only (http://forums.winamp.com/showthread.php?threadid=132976) threads for more advice.<br />
+<br />
+[Moving from WA3TS &gt; AVS Troubleshooting]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">13th November 2003, 02:05</div></div>
+<br />
+<div class="posttext">who... who is this nugatory moderator. You are quite mysterious.<br />
+<br />
+Anyways.. acid, you should be able to work this out foryourself just from reading the info that comes in the package. But, to rotate using the trans/movement, you just set the variable r to what every you want. like ( r=r+3.14 ) would set it roughly upside down. Read up about this in the places that nunzio suggested so that you actually learn WHY</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nunzio390</div><div class="date small text-muted">13th November 2003, 02:39</div></div>
+<br />
+<div class="posttext">who... who is this nugatory moderator. You are quite mysterious.Alas... I am really nugatory (http://dictionary.reference.com/search?q=nugatory). I only joined the forums back on 10-22-2002 but I also have about 10 or 12 (http://forums.winamp.com/search.php?s=&amp;amp;action=finduser&amp;amp;userid=90134) posts or so under my belt, so that kinda breaks me out of my &quot;newbie-ish-ness&quot; a bit. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">13th November 2003, 05:03</div></div>
+<br />
+<div class="posttext">:D<br />
+<br />
+nice.. <br />
+i went to your site too. Nice jackhandy quotes.<br />
+<br />
+//edit  <br />
+O_o, your sig changes from post to post... You ARE mysterious.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">13th November 2003, 07:32</div></div>
+<br />
+<div class="posttext">To be used in the Dynamic Movement.<br />
+<br />
+d=d*zoom ( you use it when you want to zoom the image )<br />
+r=r+rotate ( this will rotate the image )<br />
+x=x+xshift ( this will shift the image on the x axis, move it from left to right depending what xshift is )<br />
+y=y+yshift ( this will shift the image on the y axis, move it from up to down depending what yshift is )<br />
+<br />
+examples:<br />
+<br />
+d=d*2 ( will zoom the image twice as far &quot;shrink&quot; it)<br />
+<br />
+r=r+1.57 (this will rotate the image 90 degrees to the left, Pi= 3.141... is 180 degrees 2*pi is 360 degrees pi/2 is 1.57 and 90 degrees, if you use r=r-1.57 it rotates to the right<br />
+<br />
+x=x+1 (will shift the image half a screen to the left -1 will shift it to the right)<br />
+y=y+1 (will shift the image half a screen up -1 will shift it down)<br />
+<br />
+When you use D or/and R you can't use X&amp; Y (unless you use the conversion trick, but that's a bit more complicated) And when you use X or/and Y &quot;Rectangular Coordinates&quot; must be checked in order for them to work.<br />
+<br />
+Now to make the shiftings and rotations dynamic.<br />
+Use t=t+speed (speed is how fast you want it to rotate)<br />
+<br />
+For rotation you only need to use r=r+t and it will rotate the full 360 degrees.<br />
+<br />
+With shifting you need to enable &quot;wrap&quot; if you want to use x=x+t, but if you don't want to use wrap you can use x=x+sin(t)*range (range is how far you want it to shift, if range is 1 it will shift between 1 and -1 (half a screen right &amp; left when with x and half a screen up &amp; down when with y. But in case you want range to be 1 you don't need to multiply it, because multiplying or dividing things with 1 will do absolutly nothing )<br />
+<br />
+Now zooming with D. When you zoom with D you don't add it you multiply it with the sin(t) i.e. d=d*sin(t) will zoom it between -1 (mirrored image) and 1 (normal image) Now if you add 1 to it like this: d=d*(sin(t)+1) it will zoom between (0 (so close it will show you nothing but a clear screen) and 2.<br />
+<br />
+Example settings:<br />
+<br />
+Per Frame:<br />
+t=t+randomspeed<br />
+<br />
+Per Beat<br />
+randomspeed=rand(21)-10)*0.01<br />
+<br />
+Per Pixel<br />
+d=d*(sin(t)*0.5+1.5)<br />
+<br />
+<br />
+Now to break that up.<br />
+t=t+randomspeed<br />
+Pretty clear what this does, it adds random value to the t value every frame<br />
+<br />
+randomspeed = (rand(21)-10)*0.01<br />
+Now the rand() function gives you a random number every beat (as assigned in the per beat box) between 0 and n-1 (n being 21 here so it returns values between 0 and 20) we subtract 10 from it so we get a range of random values from -10 and 10, this is because it can &quot; change direction&quot; now which makes the preset feel a bit more dynamic . Now this we multiply with 0.01 so we get values from -0.1 to 0.1, because adding 1-10 per frame to t would result in a extremely fast moving movement, so we need small values. <br />
+<br />
+d=d*(sin(t)*0.5+1.5)<br />
+Now sin(t)*0.5 returns values between -0.5 and 0.5 we add 1.5 to that in order to get values between 1 &amp; 2, so now we are zooming the image between 1 (normal) and 2.<br />
+<br />
+<br />
+Now you can try the same thing with rotating, keep the per frame &amp; per beat box as they are and remove the d code. Now use r=r+t and you get a randomly rotating image <br />
+After that you can use both of them, the D code and the R code and you get a randomly zooming and rotating thing :) remeber to use ; to end a code line otherwise the next one won't work thus making the whole dm non-working. Now you can dublicate and change the per pixel line and per beat line and change them so the rotating and zooming each move randomly separetly<br />
+<br />
+result:<br />
+<br />
+per frame:<br />
+t=t+randomspeed ;<br />
+t2=t2+randomspeed2<br />
+<br />
+per beat:<br />
+randomspeed=(rand(21)-10)*0.01 ;<br />
+randomspeed2=(rand(21)-10)*0.01<br />
+<br />
+Per Pixel:<br />
+d=d*(sin(t)*0.5+1.5) ;<br />
+r=r+t2<br />
+<br />
+<br />
+And that's it, it shouldn't be now to hard to make the shifting in X&amp;Y :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th November 2003, 16:12</div></div>
+<br />
+<div class="posttext">Tug: good post, but this sort of stuff has already been explained over and over again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">13th November 2003, 19:30</div></div>
+<br />
+<div class="posttext">yeah, but sometimes you just feel like being exxxtrraa nice to 'em. ay tugg :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th November 2003, 06:30</div></div>
+<br />
+<div class="posttext">I know, but i didn't write that originally here, i wrote it on wednesday at devart and it sort of went to waste since the recipent part already new all this, so i just edited it a bit and posted it here :)</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

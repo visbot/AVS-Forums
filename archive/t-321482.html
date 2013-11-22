@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Cockos Happy AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Cockos Happy AVS AVS" />
+	
+	<title> Cockos Happy AVS - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Cockos Happy AVS</li>
+</ol>
+<!-- div class="pda"><a href="t-321482.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=321482">Cockos Happy AVS</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">7th August 2010, 18:18</div></div>
+<br />
+<div class="posttext">Hello everybody,<br />
+<br />
+We've done some modifications to the version of AVS that is on nullsoft.com, and merged back into it our own modified version of EEL (that we use for Jesusonic, REAPER, etc).<br />
+<br />
+The current build is here: http://1014.org/shiz/vis_chavs.dll<br />
+<br />
+We will definitely open source this version soon, but the important differences are:<br />
+<br />
+1) Variables can be longer in length (16 characters)<br />
+<br />
+2) You can use a newer syntax for if(), below(), assign(), etc.<br />
+<br />
+For example, instead of:<br />
+<br />
+<br />
+if (above(x,0),assign(y,3),0);<br />
+or<br />
+if (above(x,0),assign(y,3),assign(y,4));<br />
+or <br />
+if (above(x,0),exec2(assign(y,3),assign(z,2)),assign(y,4));<br />
+<br />
+<br />
+You can do:<br />
+<br />
+<br />
+x &gt; 0 ? y=3;<br />
+or<br />
+x &gt; 0 ? y=3 : y=4;<br />
+or<br />
+x &gt; 0 ? ( y = 3; z = 2; ) : y=4;<br />
+<br />
+<br />
+3) Instead of megabuf(x+y) or gmegabuf(x) you can just use x[y] or gmem[x]. <br />
+<br />
+<br />
+There are other changes -- for more information on the new syntax, see:<br />
+<br />
+http://www.reaper.fm/sdk/js/js.php#js_basic<br />
+<br />
+(most  &quot;advanced functions&quot; are JS only, except loop(), while(), freembuf(), memcpy(), and memset()).<br />
+<br />
+I know AVS may be somewhat stagnant at this point, but hopefully this might help get some life back into it.<br />
+<br />
+If anybody finds this useful let me know...<br />
+<br />
+-Justin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">QOAL</div><div class="date small text-muted">7th August 2010, 20:00</div></div>
+<br />
+<div class="posttext">Justin, you are a legend.<br />
+<br />
+The new syntax looks miles better! (Code will actually be human readable now :))<br />
+<br />
+Thank you for releasing an updated AVS after such a long time.<br />
+There isn't many people left (here at least) now, but who knows who'll turn up now, for a look.<br />
+<br />
+(Looking at the file name, I was thankful to see it wasn't a prank visualisation of some chavs (http://en.wikipedia.org/wiki/Chavs) when I ran it.)<br />
+<br />
+I'll go play with it now.<br />
+<br />
+Cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">8th August 2010, 07:27</div></div>
+<br />
+<div class="posttext">nice... i feel like writing a c program now :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">9th August 2010, 13:57</div></div>
+<br />
+<div class="posttext">Wow, I certainly didn't expect this anymore.<br />
+Thanks a lot!<br />
+I really hope this was what we needed to get more artists active.<br />
+<br />
+Qoal already mentioned that the code will be humanly readable, which is a big plus.<br />
+several people have said that the sourcecode was very hard to read and, because of that, even harder to improve. How's that for this version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">11th August 2010, 09:23</div></div>
+<br />
+<div class="posttext">unexpected behavior:<br />
+The rand() function should only give integers.<br />
+Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br />
+<br />
+Or is this intended?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">12th August 2010, 19:02</div></div>
+<br />
+<div class="posttext">unexpected behavior:<br />
+The rand() function should only give integers.<br />
+Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br />
+<br />
+Or is this intended?<br />
+<br />
+Thanks, will fix this in a new build later today.<br />
+<br />
+-Justin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">15th August 2010, 01:18</div></div>
+<br />
+<div class="posttext">Thank you so much for keeping it alive.  I really love AVS, and it is a true understatement to say I really appreciate all the work that has gone into it's development and the development of the presets.<br />
+<br />
+Unfortunately I'm not very well informed on the technical end of things, but does this help stability on newer operating systems?  XP was really good for AVS, but then Vista and 7 were bad for me.  I'm currently running 64-bit windows 7 ultimate, and I get better stability on Windows 7's &quot;XP Mode&quot; than 7 without it.  Hopefully playing with this new version will be better.<br />
+<br />
+Either way, thank you very much for all the work you've done.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">15th August 2010, 17:02</div></div>
+<br />
+<div class="posttext">In fact, it hasn't crashed on me at all this far (keeping my fingers crossed) on XP pro (32bits)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">15th August 2010, 17:40</div></div>
+<br />
+<div class="posttext">HEY!  I figured it out! (or maybe someone else did first and I didn't read about it)<br />
+<br />
+My problem even with this new version was that AVS refused to stay fullscreen more than a second or two.<br />
+<br />
+My solution is to tell the computer to automatically disable Windows Aero each time I open Winamp.  This works on my version of windows (7 Ultimate x64).  I'm hoping other Aero versions of 7 and Vista have the same ability.<br />
+<br />
+1.) Right click on the shortcut that one uses to open Winamp.<br />
+2.) Click properties.<br />
+3.) Click the compatibility tab.<br />
+4.) Click/check the &quot;Disable desktop composition&quot; checkbox.<br />
+5.) Click the Apply button.<br />
+6.) Click ok.<br />
+<br />
+As a result of this procedure, Aero will automatically become disabled when you open winamp, but will also automatically re-enable itself each time you exit Winamp.  While Winamp runs without Aero, AVS works very well just like on XP, if not better.<br />
+<br />
+Thanks again for releasing &quot;Cockos Happy AVS&quot;!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">InCUbuS-94</div><div class="date small text-muted">24th August 2010, 09:48</div></div>
+<br />
+<div class="posttext">Looks like interesting, i'll check out now ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">24th August 2010, 10:59</div></div>
+<br />
+<div class="posttext">-have you thought about including bigfug freeframe streaming (http://www.vidvox.net/phpBB2/viewtopic.php?t=4354&amp;sid=e7109b4e0f88d9b0751f622d8cf31953) into the official avs build?<br />
+<br />
+-have you thought about reworking the UI of the avs editor? there are several mods available already (visbot (http://visbot.net/tools), micro.d (http://micro-d.deviantart.com/gallery/#/d2ccvfv) and serveral privately kept mods).<br />
+<br />
+all of these mods have one thing in common: they have been created because the official UI is pretty limited and old-fashioned. personally, i prefer a larger window with a big avs window docked into the editor. i also prefer buttons over menus - the latter can act slowly when performing avs live, with buttons you can switch much faster through the settings.<br />
+<br />
+i acknowledge, that my prefered avs editor (from the visbot mod (http://files.whyeye.org/img/myavs20080626-2.png)) has one big disadvantage: it requires a rather huge desktop resolution. but i think this could be solved through a cleverly made, resizable editor window. certain elements of the editor like the treeview on the left and the text fields should resize with the entire window size, which -i think- is not possible when using the resize APE.<br />
+<br />
+though this might never happen, as it's too much work, i think the best thing would be to have the avs editor as an OSD. it makes good sense to run avs in fullscreen, so why not allow editing and navigation (selection of presets etc.) in fullscreen? milkdrop and many other visualization tools offer this already.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">24th August 2010, 23:23</div></div>
+<br />
+<div class="posttext">Where can I get that visbot mod?  I use 1920x1200, so resolution won't be a problem.<br />
+<br />
+The only resolution problem I have is keeping the fps up.  I can go native fullscreen with a reasonably smooth frame rate (20-60 fps) but usually only with pixel doubling checked.  Since my last post, I have had a couple crashes, but I was told it may be because of some old APEs.  Overall, I really like this release.  Making presets is a little easier now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">25th August 2010, 14:23</div></div>
+<br />
+<div class="posttext">http://visbot.net/tools (screenshot (http://files.whyeye.org/img/myavs20080626-2.png))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">26th August 2010, 01:11</div></div>
+<br />
+<div class="posttext">Thanks, I'll give it a try. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">31st August 2010, 04:16</div></div>
+<br />
+<div class="posttext">Thanks for the updated version of avs :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">31st August 2010, 13:58</div></div>
+<br />
+<div class="posttext">i've attached the resource file for avsmod, in case somebody wants to use it when compiling the current sourcecode</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">drlava</div><div class="date small text-muted">7th September 2010, 17:57</div></div>
+<br />
+<div class="posttext">Hi Justin, a friend and I have recently made updates and fixes to the released AVS code, mostly related to the LASER compiler switch.  Maybe we can combine this with your updates for the new source release?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">10th September 2010, 19:29</div></div>
+<br />
+<div class="posttext">whoa! an updated version? really? :) I just came across the forums for old time's sake.. and I find good news! The syntax seems better... maybe those glorious AVSing days will return!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">11th September 2010, 15:40</div></div>
+<br />
+<div class="posttext">It's funny, all these years and really, no one has come up with any program like it, except maybe Milkdrop which I don't feel is as versatile in terms of the different types of visualizations one can make.<br />
+<br />
+Long live AVS!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">micro.D</div><div class="date small text-muted">22nd September 2010, 00:31</div></div>
+<br />
+<div class="posttext">wowow! that syntax is just awesome!<br />
+well yathosho has the point. i'm using avs for vj-ing and the original editor is not the best for using it live. so i've made my version.<br />
+only problem i have with it that it freezes after 2 presets (i mean it loads happily the initial preset then i can load another one and then when i want to load yet another one it freezes). interesting that winamp continues to work but it won't respond when i want to close it (or stop avs).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">11th October 2010, 21:48</div></div>
+<br />
+<div class="posttext">amazingly eeltrans.ape seems to work with both 2.83 (from winamp 5.56) and 2.9 (from here, fetched 2010-10-10)<br />
+<br />
+the new EEL should still be able to interpret eeltrans's output<br />
+I didn't test all of the new EEL features, so some of those might still break, but I'm quite optimistic that they don't :)<br />
+<br />
+some more testing revealed that the new EEL is a bitch and silently ignores errors. should be fixed<br />
+<br />
+eeltrans features that might still be helpful even with the better EEL:<br />
+- C-style #define macros<br />
+- compatibility with older avs versions :) (that is, provided you don't use the new EEL features)<br />
+<br />
+the irony is that eeltrans contains hackery at a much lower level and yet works, while aperesize breaks<br />
+I might look into fixing it later, but I neither promise that I do nor that I'll fix it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">14th October 2010, 17:58</div></div>
+<br />
+<div class="posttext">Sorry Justin, but this is too little very too late. For majority of the people AVS was not about the code, it was the freedom of doing hundreds of different kind of presets with only minor changes to the effects. I personally left AVS because anything original you could accomplish was through very heavy coding.<br />
+<br />
+You want to revive avs? Make it more user friendly, notice that user friendly does not mean &quot;dumbing down&quot;, I never understood fully any of the code I wrote and I did some pretty complicated stuff, that was because I learned from other members of the community, I copied their code, I shaped it, I molded it, I made it fit my preset. That is what AVS was for me, I hope that is what it can be in the future.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">15th October 2010, 03:35</div></div>
+<br />
+<div class="posttext">Perhaps that would make quite a revival.  Really all I ever knew how to do was steal other people's code and trial-and-error it (I guess the in thing to say would be &quot;remix&quot;) until I found something I liked, and I really never submitted any packs or presets because of how shamelessly &quot;ripped&quot; they were.  [I also had a lot of fun adding images to many existing presets too.] If I understood more about it, I might be more willing to create more of my own stuff and possibly contribute.<br />
+<br />
+I wouldn't go as far as too little too late, because every step to making things more human friendly is significant, regardless of how long it takes.  Art (including mediums) can often be an evolution rather than a revolution.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">15th October 2010, 09:18</div></div>
+<br />
+<div class="posttext">you can't even really trial-and-error anymore now, since it simply ignores pieces with errors and goes on with the next, without showing you the error</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">radian</div><div class="date small text-muted">22nd October 2010, 14:04</div></div>
+<br />
+<div class="posttext">The one thing I really want in AVS : change presets by receiving MIDI prg changes instead of (as well as) using hotkeys. <br />
+<br />
+Any chance of seeing something like this (http://createdigitalnoise.com/viewtopic.php?p=9736#9736) added, Cockos?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">27th October 2010, 00:14</div></div>
+<br />
+<div class="posttext">This could be done with an APE. no need for a change in AVS itself<br />
+<br />
+though it would probably be easier with some kind of api to mess with the current preset etc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">8th November 2010, 14:45</div></div>
+<br />
+<div class="posttext">@justin: are you even reading the feedback? would be good to let us know :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">swingdjted</div><div class="date small text-muted">9th November 2010, 05:02</div></div>
+<br />
+<div class="posttext">In the last 5 years, he his account shows 3 posts, two of which are in this thread - I'd say that's giving a lot more attention than normal.  I'm just glad he was willing to release the updated software.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">6th January 2011, 18:28</div></div>
+<br />
+<div class="posttext">i've put together a new version of avsmod, based on chavs. same interface (http://files.whyeye.org/img/myavs20080626-2.png) as previous mods, plus correct version resource for the dll.<br />
+<br />
+get it here (http://visbot.net/files/vis_avsmod-0.5.5.zip)!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">6th January 2011, 20:07</div></div>
+<br />
+<div class="posttext">you should really modify aperesize instead, so it resizes dynamically :)<br />
+that way you also don't have to patch again for each new binary release.<br />
+<br />
+I can explain you the code if you want, too</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">3rd January 2013, 15:52</div></div>
+<br />
+<div class="posttext">Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br />
+<br />
+http://1014.org/shiz/vis_chavs.dll<br />
+<br />
+and the code:<br />
+<br />
+http://1014.org/shiz/code/chavs.zip<br />
+<br />
+(the code now includes the required bits from WDL, too, so no need to git clone anything).<br />
+<br />
+This should fix the rand() bug, and also updates to even newer EEL-compilation, which has some fancy stuff such as basic code optimization.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DrO</div><div class="date small text-muted">3rd January 2013, 16:04</div></div>
+<br />
+<div class="posttext">oh the irony of two v2.91 on the same day.<br />
+<br />
+as i've been looking into fixing things from your 2.9 and just put up this (http://forums.winamp.com/showthread.php?p=2905846#post2905846) 20mins before you (as trying to get something stable in the distribution again).<br />
+<br />
+were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br />
+<br />
+-daz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">justin</div><div class="date small text-muted">3rd January 2013, 18:25</div></div>
+<br />
+<div class="posttext">oh the irony of two v2.91 on the same day.<br />
+<br />
+as i've been looking into fixing things from your 2.9 and just put up this (http://forums.winamp.com/showthread.php?p=2905846#post2905846) 20mins before you (as trying to get something stable in the distribution again).<br />
+<br />
+were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br />
+<br />
+-daz<br />
+<br />
+Hah, bizarre!<br />
+<br />
+I actually intended to do this two days ago, but that ended up getting derailed...<br />
+<br />
+As far as recent changes to code goes, EEL2 hasn't changed recently, so you should be fine there, but avs_eelif.cpp has been updated:<br />
+<br />
+ void AVS_EEL_IF_resetvars(NSEEL_VMCTX ctx)<br />
+ {<br />
+   NSEEL_VM_freeRAM(ctx);<br />
+-  NSEEL_VM_resetvars(ctx);<br />
++  NSEEL_VM_remove_all_nonreg_vars(ctx);<br />
+ }<br />
+<br />
+<br />
+(NSEEL_VM_resetvars() is no longer defined so old chavs.zip shouldn't compile against the newer EEL versions). There are also changes to NSEEL_addfunctionex() lines in that file, but they aren't critical (just some casts removed).<br />
+<br />
+<br />
+---<br />
+<br />
+Also, I forgot to mention, also new in the latest CHAVS is support for functions, see:<br />
+<br />
+http://www.reaper.fm/sdk/js/js.php#js_userfunc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">DrO</div><div class="date small text-muted">3rd January 2013, 18:38</div></div>
+<br />
+<div class="posttext">i know that feeling well, heh.<br />
+<br />
+rightio, will sort out a diff from my 2.91 against things and roll out a test 2.92 in a day or so in order to get us back on an even footing with all of the changes (as 2 x v2.91 isn't going to help with the fragmentation of things as is).<br />
+<br />
+-daz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">29th January 2013, 22:51</div></div>
+<br />
+<div class="posttext">you should really modify aperesize instead, so it resizes dynamically :)<br />
+that way you also don't have to patch again for each new binary release.<br />
+<br />
+I can explain you the code if you want, too<br />
+<br />
+actually, that sounds good. talk on #avs?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th January 2013, 23:33</div></div>
+<br />
+<div class="posttext">that offer is 2 years old, i'm not even sure i have the source anymore or that i understand it any better than you would</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">drivetheory</div><div class="date small text-muted">2nd March 2013, 18:21</div></div>
+<br />
+<div class="posttext">Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br />
+<br />
+http://1014.org/shiz/vis_chavs.dll<br />
+<br />
+and the code:<br />
+<br />
+http://1014.org/shiz/code/chavs.zip<br />
+<br />
+(the code now includes the required bits from WDL, too, so no need to git clone anything).<br />
+<br />
+This should fix the rand() bug, and also updates to even newer EEL-compilation, which has some fancy stuff such as basic code optimization.<br />
+<br />
+<br />
+http://1014.org/shiz/vis_chavs.dll<br />
+vis_chavs.dll<br />
+MD5: b7adf0e8f6c63c8c5160f8190255860e<br />
+<br />
+shows as &quot;Advanced Visualzation Studio v.2.81b [vis_chavs.dll]&quot; inside winamp and is giving me a CTD when ever i try to run it in Winamp 5.63...<br />
+<br />
+vis_chavsmod-2.9_avsmod-0.5.5.dll still works perfectly fine for me but the new one listed above doesn't<br />
+<br />
+anyone else having this problem?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">drivetheory</div><div class="date small text-muted">23rd April 2013, 04:47</div></div>
+<br />
+<div class="posttext">The problem i was having with vis_chavs.dll it seems was caused by the box for &quot;SMP support&quot; (AVS Editor -&gt; Settings -&gt; Display) being checkmarked</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

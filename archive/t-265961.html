@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Write spectrum analyzer values per frame to a file, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Write spectrum analyzer values per frame to a file AVS" />
+	
+	<title> Write spectrum analyzer values per frame to a file - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Write spectrum analyzer values per frame to a file</li>
+</ol>
+<!-- div class="pda"><a href="t-265961.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=265961">Write spectrum analyzer values per frame to a file</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">tlgsoft</div><div class="date small text-muted">16th February 2007, 23:01</div></div>
+<br />
+<div class="posttext">Hi.<br />
+<br />
+I need a plugin that will write into a file the spectrum analyzer values to a file. I want to reproduce the spectrum analyzer of a mp3 in a bar chart.<br />
+<br />
+So, the file should be something like this:<br />
+<br />
+FRAME, VAL1, VAL2, ..., VALx<br />
+1, 34, 56, ...., 75<br />
+2, 12, 43, ...., 9<br />
+3, 4, 183, ...., 23<br />
+<br />
+Is there something available for this?<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">17th February 2007, 12:50</div></div>
+<br />
+<div class="posttext">AVS cant do this without modification (bear in mind that it is a visualisation plugin). However if you did wish to do this in avs you could write an APE very easily, it would consist of about 5 lines of c++.<br />
+<br />
+Why exactly do you want to do this though? If you want a bar chart visualisation this can be done in AVS. Just writing spec values down per frame to a file is unlinkely to be useful for anything else I can think of, you can't analyse the results because you dont know the frame rate (it can be variable)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">tlgsoft</div><div class="date small text-muted">17th February 2007, 17:16</div></div>
+<br />
+<div class="posttext">I just need a plugin to do that or anything that can produce the file. I posted here because I believe that here I can find the right people to help me.<br />
+<br />
+The final result is this: I want to play an mp3 and simulate the &quot;Spectrum analyzer&quot; from Winamp into my own program using a Bar Chart. <br />
+<br />
+I need a file with bar values at a constant time frame. The syncronization with the mp3 must be perfect.<br />
+<br />
+Any ideeas ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">17th February 2007, 19:08</div></div>
+<br />
+<div class="posttext">You cant do this with AVS then, because you would need a fixed frame rate and that isnt something you can guarantee.<br />
+<br />
+If you want the effect you have described just write some code to play back MP3's and take an FFT of the samples you are playing every frame, and format them into a bar chart.<br />
+<br />
+If you need an fft library I would recommend http://www.fftw.org/ I have used it before and its fairly straightforward.<br />
+<br />
+Given that you are going to write your own program I fail to see the connection to winamp. You will require the ability to play a music file (you have apparently chosen MP3 but I would recommend OGG since it is not licenced) it is only a small amount of extra effort to analyse the signal for a spectrum analyser.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">tlgsoft</div><div class="date small text-muted">17th February 2007, 19:50</div></div>
+<br />
+<div class="posttext">Thnx for the help, but I don't know C. I use Delphi. Any other suggestion?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">18th February 2007, 00:17</div></div>
+<br />
+<div class="posttext">There is the powerful software called Ahead Nero and you can get it at.<br />
+http://www.oldversion.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">18th February 2007, 23:00</div></div>
+<br />
+<div class="posttext">If you are using delphi there are probably components which will allow you to play MP3's, and components containing FFT functions for you to use. Try searching for them, one good source is http://www.torry.net/<br />
+<br />
+To be honest this would be easier in c++ given the wide variety of libraries on the web at your disposal. However the component system in Delphi has a fairly large and active community so you shouldn't have too much trouble finding something.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nanakiwurkz</div><div class="date small text-muted">3rd March 2007, 23:10</div></div>
+<br />
+<div class="posttext">I did some research for you and discovered a program called audacity and it has a spectrum analyser that can export to text files.<br />
+<br />
+search here (http://www.freewarefiles.com) <br />
+just search for audacity and you'll find it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">tlgsoft</div><div class="date small text-muted">30th March 2007, 15:45</div></div>
+<br />
+<div class="posttext">Thanks. I'll try it.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

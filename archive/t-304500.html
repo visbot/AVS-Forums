@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Little help for a noob?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Little help for a noob? AVS" />
+	
+	<title> Little help for a noob? - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Little help for a noob?</li>
+</ol>
+<!-- div class="pda"><a href="t-304500.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=304500">Little help for a noob?</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">NuttyMonk</div><div class="date small text-muted">23rd March 2009, 12:15</div></div>
+<br />
+<div class="posttext">Hi all,<br />
+<br />
+i've been readin through some tutorials and am begining to understand AVS a bit now.  I was wanting to run some things by you lot to get your ideas.<br />
+<br />
+I thought i'd start woth something simple.  The idea i want to try out can be seen here...<br />
+<br />
+http://blog.soulwire.co.uk/flash/actionscript-3/actionscript3-dynamic-sound-visualisation/<br />
+<br />
+I modified the AS3 code for this audio visualisation for my website so i know how it works.  The size (or you could call it zoom) factor for the animations depends on the overall volume of the audio which is being played through the Flash clip.  I reckon that i can port all of the code into one Dynamic Movement effect.  I', just trying out the code with one of the included images at the moment.<br />
+<br />
+I need to get the total output volume of the audio and since i can't see one variable which gives me that i decided i would have to loop through all of the values in either GETOSC or GETSPEC (doing that each frame) and total them up.  I could then use that value to modify the zoom value of the animations.<br />
+<br />
+Soulwire has coded his own way of detecting beats which produces a nice effect in his animations.  Since i am not too keen on the AVS built-in beat detection, i might port that through as well, but for now i'm trying to get the basic idea of the AVS preset working.<br />
+<br />
+Can anyone give me some advice on getting the total volume to start me off?  I don't know how many values there are in the GETOSC or GETSPEC variables so i don't know how big to make my loop.  If there is an easier way of doing this or if you have any suggestions for a noob i'd love to hear em.<br />
+<br />
+Cheers<br />
+<br />
+NM</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">23rd March 2009, 13:39</div></div>
+<br />
+<div class="posttext">^his link <br />
+http://blog.soulwire.co.uk/flash/actionscript-3/actionscript3-dynamic-sound-visualisation/<br />
+(because new user's URLs will not show up)<br />
+<br />
+wow that stuff is cool, thanks for the inspiration! i have to try that out one time. it might be able to do exactly what AVS so far never could - vector-like lines with proper anti-aliasing :D<br />
+<br />
+to your questions:<br />
+if i recall correctly getspec() has 512 bands, and i reckon it'll be the same in getosc().<br />
+<br />
+but when i want to get the (rough) volume i use<br />
+vol = getspec(0.5,1,0);<br />
+(1st parameter is band centre (here 0.5), 2nd is band-width (here 1, so it covers all of the bands) and 0 is for centre channel)<br />
+this returns an average of all the bands. however for popular music it is usually best to shift that towards lower frequencies to go with the usual emphasis on the bass range - e.g.:<br />
+vol = getspec(0.3,0.6,0);<br />
+<br />
+hope you are successful, but read my post in other thread as well, getspec seems pretty messed-up to me...<br />
+<br />
+jakob</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">NuttyMonk</div><div class="date small text-muted">23rd March 2009, 14:51</div></div>
+<br />
+<div class="posttext">Yeah, i agree with you on getspec. Really not getting the kind of output from it which i would have expected.<br />
+<br />
+I modified the Cellular Automata thing on Soulwire's website to take in audio values from the getAudioSpectrum class in AS3.  I made up a grid of 512 cells and assigned each of them to a band of the audio spectrum (256 left and 256 right).  When the volume of a band goes over a certain volume it activates that bands cell and then the Cellular Automata thing takes over from there, keeping cells alive, spawning more cells or dying, based on the Cellular Automata interactions which he created.  Looks really nice and works quite well too.<br />
+<br />
+I don't think i'm gonna get very far with AVS porting the audio vis from the Soulwire website, or even an approximation of it.  We need more functionality in AVS for audio information, either from support in Winamp itself or from AVS.  At least thats the way it seems to me but i am a noob.  :-)<br />
+<br />
+NM</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">28th March 2009, 01:44</div></div>
+<br />
+<div class="posttext">did you already make a preset with this? if yes post it here please, so we can see :)<br />
+i've used conways game-of-life just recently as a filter effect in an avs preset - looked rather cool...<br />
+<br />
+the thing is, we need LOTS of things in AVS. since 2005 or so. but AVS was essentially never upgraded in the last few years. so - although it is open source (http://www.nullsoft.com/free/avs/) - there is little hope of anything being implemented/upgraded right now.<br />
+some AVS artists have wandered off to either Processing (http://processing.org/) or VVVV (http://vvvv.org/tiki-index.php). you may want  to have a look at them if you can't succeed in AVS.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

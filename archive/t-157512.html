@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Game of Life, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Game of Life AVS" />
+	
+	<title> Game of Life - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Game of Life</li>
+</ol>
+<!-- div class="pda"><a href="t-157512.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=157512">Game of Life</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 03:43</div></div>
+<br />
+<div class="posttext">I'm not sure if this would be possible, but has anybody ever see the game of life?  Basically ever pixel is considered a cell and each cell is surrounded by 8 other cells.  If there are 2 or 3 cells alive around this cell then it becomes alive.  If there are more cells alive than that cell become over-crowded and dies.  If there are less cell than that cell becomes lonely and dies.  I don't think this would be possible in AVS but it might prove to be an interesting preset.  Then again I dont know how to use the convolution filter very well so maybe someone could exploit that...  Any ideas?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">25th November 2003, 03:49</div></div>
+<br />
+<div class="posttext">I have heard of the Game of Life, the one that has you spinning the little spinner to try and make it through life to retire, but I have also heard something like this before. I think a preset was made that was something like this, I can't remember exactly, but I think atero made one... <br />
+As far as I am guessing that a condition or something is missing, or maybe I am am just misunderstanding something, but how would and &quot;cells&quot; come alive in the first place?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 04:46</div></div>
+<br />
+<div class="posttext">Atero has done several cellular automata, including Life I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 04:49</div></div>
+<br />
+<div class="posttext">Damn well there goes that idea.  Anyone care to provide a link to some of these presets?  <br />
+<br />
+I might as well just ask here too.  Anyone know of any fractal presets?  I would imagine creating a mandelbrot fractal in AVS would be quite the challenge if it's possible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 05:26</div></div>
+<br />
+<div class="posttext">Fractals have been done a *lot*.<br />
+<br />
+Escape-time fractals with constant formula (Julias) can be done through a dynamic movement. Mandelbrots are much harder (but of course possible) and wouldn't be animatable much.<br />
+<br />
+Superscope dot/scanline renderers can do pretty much any fractal slowly.<br />
+<br />
+IFS fractals are easy too, usually a highpoint scope is used.<br />
+<br />
+The hardest are L-system fractals that depend on abstract entities such as lines. We'd need variable sized arrays for that.<br />
+<br />
+I recently used another way of doing a sort of l-system like fractal:<br />
+http://www.acko.net/dump/ifs.avs<br />
+http://www.acko.net/dump/ifs.png<br />
+<br />
+It starts off with a ^ shape and then uses two additive DMs to change it into _|¯| (move and rotate each copy 45°). By repeating it, you get a nice space-filling fractal.<br />
+<br />
+By definition a fractal is any infinitely detailed, self-similar shape, which is very easy to do in AVS with a simple movement and a constant Renderer. It's tricker to recreate some of the more well-known fractals, but not impossible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 05:43</div></div>
+<br />
+<div class="posttext">Heh I just figured out why my IFS fractal wouldn't converge on the dragon IFS (as it was intended to do).<br />
+<br />
+There are two ways of aligning each ^ in the _|¯| shape (due to symmetry).<br />
+<br />
+By flipping the sign of the terms in the x= statement in the DMs, you can explore the other ones.<br />
+<br />
+There's the dragon IFS, a dragon-ish IFS, my original spikey IFS and a spacefiller that converges on a triangle.<br />
+<br />
+Here's the real dragon:<br />
+http://www.acko.net/dump/ifs2.avs</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 08:43</div></div>
+<br />
+<div class="posttext">so fractals are done...<br />
+<br />
+golden mean?<br />
+<br />
+<br />
+dont know how you would make something really graphical with it but I'm sure there's a way.  and it's probably been done!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 09:01</div></div>
+<br />
+<div class="posttext">$PHI<br />
+:rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">25th November 2003, 09:13</div></div>
+<br />
+<div class="posttext">i quote:<br />
+<br />
+if you get an idea in avs, chances are, it has been done before, probably by UnConed,  or it is impossible. <br />
+<br />
+:D<br />
+<br />
+Atero did Conway's Life, as well as several other automatum, with some very clever use of the the convulation filter and color clip.<br />
+<br />
+Fractals have been done by nearly everyone, standard fractal presets have been done be unconed, atero and undefined to mention a few. Many other presets use fractal theory dm's to create more general effects.<br />
+<br />
+Phi and the golden mean has been overdone, jheriko and atero both did presets centered around the golden sprial, and many others have done 3d shapes that make use of the golden mean.<br />
+<br />
+these days, you have to get REALLY creative to find something that hasnt been done 10 times over.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">25th November 2003, 09:21</div></div>
+<br />
+<div class="posttext">The best you can do is to make the old ideas better :)<br />
+On the technical side there seems to be less original ideas left to do, but on the other side of the town where i live there is more room to play with.<br />
+Presets don't have to be the model example of technical excellence, but you can try to make something new in concept or try to make some really good &amp; fresh looking stuff with aesthetics/design.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 09:33</div></div>
+<br />
+<div class="posttext">I found Atero's life preset in my AVS dir ;) (have waaaaay too much presets here) in case you're interested.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">25th November 2003, 10:08</div></div>
+<br />
+<div class="posttext">UCD, could you upload your entire crowded avs folder somewhere, please? I've never really been collecting stuff. Now i feel sorry for that and collecting everything from the forum threads seems to be a shitload of work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th November 2003, 11:09</div></div>
+<br />
+<div class="posttext">Errr not really, it's not that big really :P. For sure not much forum stuff in there.<br />
+<br />
+Search the forums for 'attach*' ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">25th November 2003, 12:28</div></div>
+<br />
+<div class="posttext">Hmmm damn it.<br />
+Anyone in here having a huge almost complete avs collection from the past 2 years?<br />
+I'll provide space for uploading if you don't have any.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">25th November 2003, 12:42</div></div>
+<br />
+<div class="posttext">Originally posted by siddhartha_one <br />
+[B<br />
+if you get an idea in avs, chances are, it has been done before, probably by UnConed[/B]<br />
+<br />
+<br />
+i often find out that tonic did the stuff i've been doing, like 2 years before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">25th November 2003, 15:33</div></div>
+<br />
+<div class="posttext">and i seem to be the most unoriginal AVS'er here :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 20:57</div></div>
+<br />
+<div class="posttext">What about stuff with vector fields showing the flow of functions of x, y, z?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">25th November 2003, 21:25</div></div>
+<br />
+<div class="posttext">actually, no, that hasnt really been done.<br />
+<br />
+I assume you do mean using velocity and constraints using vectors</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">25th November 2003, 21:41</div></div>
+<br />
+<div class="posttext">http://falstad.com/vector3d/<br />
+<br />
+maybe something like that if you change it to show the field vectors.<br />
+<br />
+<br />
+I'm home from college at the moment so I dont have any of my books or anything with me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">26th November 2003, 02:47</div></div>
+<br />
+<div class="posttext">actually i made some new versions using colormap that are much much faster...i've done life, the career mutation, and brian's brain, and i've sorta done star wars....</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

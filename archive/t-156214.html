@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Select color/size by sound level, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Select color/size by sound level AVS Wishlist" />
+	
+	<title> Select color/size by sound level - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-138.html">AVS Wishlist</a></li>
+  <li class="active">Select color/size by sound level</li>
+</ol>
+<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-156214.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=156214">Select color/size by sound level</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">GiGaHeRz</div><div class="date small text-muted">14th November 2003, 18:22</div></div>
+<br />
+<div class="posttext">My wishes:<br />
+<br />
+1. A function to get the Sound Level (a per-frame value) in the scripted objects.<br />
+<br />
+2. An option to make the multicolor objects select the color using the current Sound Level.<br />
+<br />
+3. A multicolor Moving Particle.<br />
+<br />
+4. An option to make some values Proportional to the Sound Level.<br />
+   Examples:<br />
+    4.1: Moving Particle Size.<br />
+    4.2: Sound Level Proportional Blending.<br />
+<br />
+5. An option to make the non-wrapped movements use a fixed color instead of the border pixel color.<br />
+<br />
+5. A dynamic buffer blending option so we can program how each pixel is blended.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">14th November 2003, 21:07</div></div>
+<br />
+<div class="posttext">1.  getosc(1,0,0) and global vars<br />
+<br />
+2.  Try the preset I added.<br />
+<br />
+3.  Nothing a little SSC and DM can't manage.<br />
+<br />
+4.  Once again...  SSC and DM...<br />
+<br />
+5.  Not sure about this one.<br />
+<br />
+6.  Effects List ignoring input and output, load buffer, trans/movement, save buffer.<br />
+<br />
+<br />
+That work?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">14th November 2003, 21:21</div></div>
+<br />
+<div class="posttext">for 6, use a dynamic movement with  &quot;No movement (blend only)&quot; checked. Use the variable alpha (0...1) to define blend factor. Use buffers for source/dest image.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">14th November 2003, 22:26</div></div>
+<br />
+<div class="posttext">Oh, I interpreted that differently than you.  I read that one screwy...   Yeah what unconed said. :up:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">15th November 2003, 06:48</div></div>
+<br />
+<div class="posttext">check out avs primer :down:, or piR's new tutorial, which is...somewhere.<br />
+<br />
+but check out avs primer first :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">GiGaHeRz</div><div class="date small text-muted">16th November 2003, 01:21</div></div>
+<br />
+<div class="posttext">I knew all that could be done except for the UnConeD reply (I never knew what that option was for) but what I say is that It would be great to have all this included in the AVS objects instead of having to program them.<br />
+<br />
+Other problem I have is that I don't know, for example, how does the moving particle works, or how to make a &quot;filled&quot; superscope (without using a lot of points and lines).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">16th November 2003, 02:23</div></div>
+<br />
+<div class="posttext">You cant.. You have make a circle made up of lots and lots of zig zaggin or spiraling lines. The quickest way was something like<br />
+<br />
+---init:<br />
+n=700;<br />
+<br />
+---per frame:<br />
+s=1; af=h/w;<br />
+<br />
+---per point:<br />
+s=-s; i=i*2*p;<br />
+y=sin(i*s)*0.5;<br />
+x=cos(i*s)*0.5*af;<br />
+<br />
+but now, such code is pointless.. You can code steven's &quot;texer 2&quot; APE in exactly the same way as you can with the scope, only it draws pictures instead of dots. And you can resize the image it draws. So, a moving, recoloring, resizing particle would be the easiest thing in the world.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">18th November 2003, 11:06</div></div>
+<br />
+<div class="posttext">:up:</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

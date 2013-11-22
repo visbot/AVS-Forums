@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Timescope Left Right channels, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Timescope Left Right channels AVS" />
+	
+	<title> Timescope Left Right channels - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li class="active">Timescope Left Right channels</li>
+</ol>
+<!-- div class="pda"><a href="t-68920.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=68920">Timescope Left Right channels</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">MyrddinE</div><div class="date small text-muted">16th December 2001, 21:14</div></div>
+<br />
+<div class="posttext">Timescope is buggy. It has gui controls to select whether you want it to take its data from the left, right, or center channels... but no matter what choice you make, it always displays scope data for the center channel.<br />
+<br />
+I made a timescope imitation using the superscope, and that did allow me to choose what channel to graph. As far as I know, this bug only occurs with the timescope. This bug has existed for many versions of winamp now... it is not new. I think nobody ever noticed before.<br />
+<br />
+Myrddin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">17th December 2001, 22:52</div></div>
+<br />
+<div class="posttext">ahh i noticed this too. but one thing that i would like for timescope is a speed adjest and ability to move in the opposite direction of its defualt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">LittleBuddy88</div><div class="date small text-muted">18th December 2001, 20:20</div></div>
+<br />
+<div class="posttext">I'm doing this in theory, but a timescope, that would be...<br />
+<br />
+INIT:<br />
+L=scopespeed;<br />
+<br />
+FRAME:<br />
+t=if(above(t,1),-1,t+L);<br />
+<br />
+PIXEL:<br />
+X=t;<br />
+Y=i*2;<br />
+va=getspec(i,0,0);<br />
+red=va;<br />
+green=va;<br />
+blue=va;<br />
+<br />
+To change what direction it moves, invert the values in &quot;T&quot;, <br />
+t=if(below(t,-1),1,t-L);<br />
+<br />
+Not sure, would this be good enough for you?<br />
+<br />
+<br />
+Linus</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">23rd December 2001, 16:22</div></div>
+<br />
+<div class="posttext">i liked your timescope</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

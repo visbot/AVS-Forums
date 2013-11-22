@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" Torus, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" Torus AVS Presets" />
+	
+	<title> Torus - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">Torus</li>
+</ol>
+<!-- div class="pda"><a href="t-122630.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=122630">Torus</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">24th January 2003, 11:53</div></div>
+<br />
+<div class="posttext">A raytraced torus DM. For now it can only be viewed from the orgin becouse of the level 4 equation.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">24th January 2003, 13:25</div></div>
+<br />
+<div class="posttext">Too bad you can only see it from the origin. You can't really tell it's a taurus.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">24th January 2003, 14:09</div></div>
+<br />
+<div class="posttext">Try to get the camera outside of the torus.  It could be really cool if you did.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">24th January 2003, 20:19</div></div>
+<br />
+<div class="posttext">I decided to try to make the camera move. So I surfed the net and found deferent ways to solve the a4*k^4+a3*k^3+a2*k^2+a1*k+a0 problem and since i only need k calculated to 3-4 digits i figured that newton-raphson method would be the fastest. <br />
+I almoast figured out how it works but need some help. As i understood the newton-raphson method is a recursive function <br />
+x(n+1)=xn+f(xn)/f'(n)<br />
+Can someone tell me how is f' connected to f function?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th January 2003, 20:27</div></div>
+<br />
+<div class="posttext">f' is the derivative of f<br />
+<br />
+for a quartic function:<br />
+<br />
+f(k) = a4*k^4+a3*k^3+a2*k^2+a1*k+a0<br />
+<br />
+f'(k) = 4*a4*k^3+3*a3*k^2+2*a2*k+a1<br />
+<br />
+I tried newton raphson myself once and the accuracy was pretty bad. You also have to know that there can be up to 4 solutions, and there is no way to know which one you'll get if you just pick an initial value at random.<br />
+For me it didn't work out very well, but the problem I had was much more complicated than a simple torus.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">25th January 2003, 13:17</div></div>
+<br />
+<div class="posttext">Well my experiments all ended in vain. It was a hell lot of work just to seperate everything by k and what i got doesnt look a bit like what its supose to, runs 10 fps and sucks in general. Im preety sure now that the problem needs to be aproached by a diferent angle (3D polar coordinates are my best gues for now) and will let you know if I make anything.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">25th January 2003, 13:26</div></div>
+<br />
+<div class="posttext">Oh my god!<br />
+DM is ..... LARGE<br />
+I dunno about you but I like it, moves smoothly.<br />
+but sometimes it goes out of view.<br />
+Ehhh, i dont know how you guys can make soo good stuff...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">25th January 2003, 15:01</div></div>
+<br />
+<div class="posttext">The camera doesn't move too far from the origin. I would help you out, but I don't know that much about 3-D DMs. It's still nice though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">25th January 2003, 15:24</div></div>
+<br />
+<div class="posttext">very nice, im gettin pretty decent at 3d DMs buti still have no fckin clue about raytracing,<br />
+<br />
+btw jack, a pentagram is usually an upside down star :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th January 2003, 21:13</div></div>
+<br />
+<div class="posttext">Btw, using pow() with integer powers is a waste of speed... especially for polynomials.<br />
+<br />
+ak^4 + bk^3 + ck^2 + dk + e<br />
+<br />
+can be written as:<br />
+<br />
+(((a*k + b)*k + c)*k + d)*k + e<br />
+<br />
+Much faster and uses only additions/multiplications. Pow uses logarithms and exponentials I believe (take logarithm, multiply with exponent, calculate exponential).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">25th January 2003, 21:42</div></div>
+<br />
+<div class="posttext">Hkkhmm Raz_001.<br />
+It depends...<br />
+The pentagram of the good guys is like mine is.<br />
+But u can see eavel pentagram down there (I was 2 lazy to make circle oround it).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">25th January 2003, 22:48</div></div>
+<br />
+<div class="posttext">Now that is one seriously broken diseased lookin pentagram lol<br />
+heres a REALLY evil lookin pentagram<br />
+Try makin this in avs :p (withut a picture)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">25th January 2003, 23:04</div></div>
+<br />
+<div class="posttext">Ok after about 12 edits i gave up trying to fix that pieceoshit attatchment<br />
+heres the evil sonofabitch</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">25th January 2003, 23:07</div></div>
+<br />
+<div class="posttext">The attachment worked before, Raz. At least for me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">26th January 2003, 11:27</div></div>
+<br />
+<div class="posttext">Cool  pic. but hey who cares what is REAL pentagram, im not satanist (or whatever)...<br />
+<br />
+btw <br />
+www.angelfire.com/id/robpurvis/pentagram.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">26th January 2003, 21:20</div></div>
+<br />
+<div class="posttext">Yeah, that may be real.. but mines cool lookin', i aint a stanist either, i just like good graphics an stuff</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">27th January 2003, 10:48</div></div>
+<br />
+<div class="posttext">Uhm... so it's a view inside a ring? I like the 1st version more, because the second just works so damn slow and doesn't seem to be any different... Nice work nixa, maybe you should add a 3D starfield into it to make it look like it was a space station or something :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">28th January 2003, 16:23</div></div>
+<br />
+<div class="posttext">Im not there yet but here is an object very similar to the torus. Its composed out of 2 tunnels and a plane. The bigest downsides of this version are ugly adges and high grid size.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">28th January 2003, 17:05</div></div>
+<br />
+<div class="posttext">Just found out a litle bug. To fix it replace 6th lone whith:<br />
+k2=oy/dy-ln;k2=k2*below(sqrt(sqr(-ox+dx*k2)+sqr(-oz+dz*k2)),dr);<br />
+or just add theat -ln part to the code.<br />
+<br />
+And yeah i know the code is highly unoptimised but im too lazy to fix it now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">28th January 2003, 19:47</div></div>
+<br />
+<div class="posttext">I like that it goes outside of the &quot;torus&quot;. Now make the real torus do that and I will pay homage to you:p .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">28th January 2003, 20:56</div></div>
+<br />
+<div class="posttext">and damn that shadowing is cool :D<br />
+though i still don't see why you can't make the camera move outside the original torus...unless it's a &quot;fake&quot; torus (sorta like the fake d=tan(d) sphere)<br />
+this looks pretty damn good, if you could just make it move around a bit more and add some effect's it'd be good enough for me :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th January 2003, 15:30</div></div>
+<br />
+<div class="posttext">The second torus (with newton raphson) definitely is 'fake'... I tried positioning the camera above the torus and looking down, but instead of a ring I got nothing (and yes I was sure I was looking in the right direction, I used increments for the angle up to pi/2).<br />
+<br />
+Torus 3 is much better (but not a torus ;)), but there seems to be a bug too. I think your planes are not positioned correctly or you might've made a typo. When the side passes in front of the camera, it seems to extend a bit, as if the outer cylinder is too wide or too high.<br />
+(this is with the -ln fix btw)<br />
+If you change the viewing angle by multiplying your initial z coordinate, holes appear (if you're raytracing this correctly, this shouldn't be happening)<br />
+dz=1.5*sy+cy*dx;dx=1.5*cy-sy*dx;<br />
+<br />
+Have you considered doing actual gouraud shading? The normals are very easy to calculate for all your points, so this shouldn't be too much of an issue.<br />
+<br />
+If you included shading, this would make an awesome LOTR preset. However if I were you, I would replace the outer cylinder with a cut off sphere. That way it looks more rounded at the outside. Another problem is the ugly edges, but you could avoid them by not texturing the ring and using the shading values as  texture map instead(*). Then you could additively blend a synched regular sphere DM on top of it with the ring's text on it (this DM can be very simple and low-gridsize).<br />
+<br />
+Oh and Atero: a torus is defined by a quartic equation, which is pretty near impossible to solve analytically in AVS. With newton-raphson it's easier, but you have to make sure you're finding the correct point, and not some point behind the camera.<br />
+When the camera is in the torus' center, the equation is reduced to a regular quadric I think.<br />
+Same reason Jheriko's rounded-rectangular tunnel can only be viewed from the center.<br />
+<br />
+<br />
+(*) Here's an unfinished preset which uses this technique. Every sphere has two differently colored lights pointing at it. Basically it draws a gradient from black to a color in one column of pixels, and draws another gradient from black to another color in the column of pixels next to that. The x-coordinate defines the influence of light1 or light2, while the y-coordinate defines the brightness.<br />
+Look at the original texture (the small thing in the center behind the spheres) and how it is mapped to the spheres.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th January 2003, 16:24</div></div>
+<br />
+<div class="posttext">Oh btw, neat that someone's finally experimenting with more complex 3D DM's as well ;).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">29th January 2003, 19:29</div></div>
+<br />
+<div class="posttext">Here is the latest version. I fixed the plane displacement bug, added a ray of light shooting thrue the center and maped the plane circulary.<br />
+As soon as I find some more time ill try to intersect a sphere and an object you get by rotating a hyperbola(its discribed by <br />
+abs((x/a)^2+(y/b)^2-(z/c)^2)=1 but im not sure what is it called) this schould make an almoast perfect(fake) torus.<br />
+<br />
+Unconed that is a really cool preset(the light and how they can go behind each other). Ill look at the coding more carefully later.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">29th January 2003, 20:47</div></div>
+<br />
+<div class="posttext">Well considering a lathed hyperbola is a second degree object (quadric) just like a cylinder and a sphere, you shouldn't have much trouble raytracing it.<br />
+<br />
+Btw I'm not sure if you figured this out yet, but in my description of sphere with tunnel, I said you had to retrace all points for which the distance to the central axis is smaller than the radius, or (sqr(px) + sqr(pz)) &lt; sqr(R) or something like that. However I forgot that you can simply check the y coordinate as well, without the squares :).<br />
+The same goes here of course.<br />
+<br />
+If you make the cut-off point right, you won't need planes at the top or bottom, only the sphere and hyperboloid.<br />
+<br />
+You forgot to adjust the aspect ratio btw... looks squished :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">29th January 2003, 20:56</div></div>
+<br />
+<div class="posttext">nixa, it's kinda hard to tell that the light is shooting through the center of the ring. It looks more like the background just has flashing lines.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">30th January 2003, 23:15</div></div>
+<br />
+<div class="posttext">Damn I hate it when I miss most of a good thread... nice to see that you tryed my suggestion of the Newton-Raphson, but did you try out the secant method... it converges much faster than NR.<br />
+<br />
+<br />
+xn+1=xn-(f(xn)*(xn-xn-1))/(f(xn)-f(xn-1))<br />
+<br />
+The only downside is that you need to start with two approximations. To increase the accuracy you may want to find a few quadratics or linears which approximate the quadric for different ranges of x, then you could find two guesses which are reasonably close to the correct solution. Alternatively you could use one approximation and get the other from a single iteration of NR.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">31st January 2003, 23:50</div></div>
+<br />
+<div class="posttext">For those who were confused by Jheriko's formula:<br />
+X(n+1)=Xn-{f(Xn)*{Xn-X(n-1)}}/{f(Xn)-f(X(n-1))}<br />
+<br />
+btw, if f is secant:<br />
+X(n+1)=Xn-{sec(Xn)*{Xn-X(n-1)}}/{sec(Xn)-sec(X(n-1))}<br />
+<br />
+&lt;edit&gt; oopsie, forked up the formula :rolleyes: it's better now &lt;/edit&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st February 2003, 06:55</div></div>
+<br />
+<div class="posttext">I doubt the secant formula has anything to do with the goniometric 'secant' (i.e. 1/cosine), but more likely refers to how the line connecting f(Xn) and f(Xn-1) slices f (latin: secare = to cut, if my latin's still good).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">1st February 2003, 08:03</div></div>
+<br />
+<div class="posttext">&quot;Betting on the roll of the dice is stupid - whether you're right or wrong you're still stupid&quot; :p<br />
+What IS function f then?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">1st February 2003, 11:44</div></div>
+<br />
+<div class="posttext">Thanx :)<br />
+I think that the fastest way to calculate something using eather of thease two methods would be to find a limes for n-&gt;5 or 6. <br />
+Now when I look at the 2nd version of the torus its clear that i made a mistake somewhere moast probably at seperating the equation by k.<br />
+Btw. I didnt make the hyperboloid yet, im having problems whith maping and blending.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st February 2003, 21:27</div></div>
+<br />
+<div class="posttext">One preset to rule them all :)<br />
+<br />
+The ring is a DM with diffuse lighting (light source moves around), with the ring text blended onto it by a secondary (simpler DM). The text contains ugly edges because I spread it around over the whole screen (higher resolution).<br />
+<br />
+Proof of concept of course, it's not very watchable.<br />
+<br />
+I made the bmp by copy/pasting this image (http://www.tolkienonline.de/exlotrr.htm) and changing it a bit in PSP.<br />
+<br />
+Nixa: hyperboloids are very easy actually... just invert one square in the formula for a circle:<br />
+x^2 + y^2 + z^2 = 1 (circle)<br />
+x^2 - y^2 + z^2 = 1 (hyperboloid w/ circles in the xz plane)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st February 2003, 21:41</div></div>
+<br />
+<div class="posttext">Btw Atero (doubleposting because it's a different subject), the function f is exactly the function you're working with.<br />
+<br />
+Newton-raphson and the secant formula are used to find approximations of X where f(X) = 0. Given an approximation Xn, you get Xn+1, a better approximation.<br />
+<br />
+They both converge pretty quickly. For example if you apply it to the equation x^2 - 2 = 0, it allows you to find an approximation of sqrt(2), because we know f(sqrt(2)) = 0.<br />
+<br />
+Xn+1 = 0.5 * (Xn + 2/Xn)<br />
+<br />
+For example if you start out with 2, you get:<br />
+<br />
+2, 1.5, 1.41666.., 1.414215..<br />
+<br />
+As you can see it can give you quick results with only a couple of iterations. This method was known by the greek to calculate square roots I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st February 2003, 22:02</div></div>
+<br />
+<div class="posttext">I like the ring unconed, except for the ugly edges.  I personally think it should be thicker though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">1st February 2003, 22:09</div></div>
+<br />
+<div class="posttext">wow, amazing, apart from the edges.<br />
+<br />
+the code scares me</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st February 2003, 23:39</div></div>
+<br />
+<div class="posttext">Here's an updated version... light position is now rotation dependent (gives it a nice shimmering effect) and the outer edge is slightly blurred. The inner edge's still ugly though.<br />
+<br />
+I think this would be fun for projections, because with all the tolkien hype going on , people should recognize it ;) (*hint* *hint*).<br />
+<br />
+For fun, set gridsize in DM1 to 128x128 and watch the purty ring :).<br />
+<br />
+(PS: Updated this attachment twice, so redownload if you downloaded it before).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st February 2003, 23:54</div></div>
+<br />
+<div class="posttext">There are some glitchy lines on the outside.:( Besides that it is nice.  Looks much more like a ring now that it is a bit thicker.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd February 2003, 03:40</div></div>
+<br />
+<div class="posttext">Another idea I've had for raytracing bizarre/complex shapes would be to workout the sphere of curvature at the point being raytraced and then use it to approximate the surface at that point... if anyone could be fagged to put that into code then it would probably work quite well.<br />
+<br />
+BTW UCD... both off your lotrs crash my AVS :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd February 2003, 08:11</div></div>
+<br />
+<div class="posttext">Mine too.  Usu. when I'm switching screensizes, and have a very high gridsize on the first DM (the same as the second I expect, though I haven't checked)<br />
+BTW, the text DM causes those glitchy lines as it's of a lower gridsize, but it's only noticeable when you slow it down.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd February 2003, 10:13</div></div>
+<br />
+<div class="posttext">Mine just crashes on load...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">2nd February 2003, 16:20</div></div>
+<br />
+<div class="posttext">Are you using winamp 3? It chrashed winaamp 2 for me, but 3 works fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Nic01</div><div class="date small text-muted">2nd February 2003, 16:33</div></div>
+<br />
+<div class="posttext">Both worked for me on Winamp2... In the first one, for some reason the writings on the ring is out of sync very often... (Usually in the beginning sequence - If it's outta sync, it will be like that all the time)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">2nd February 2003, 16:43</div></div>
+<br />
+<div class="posttext">It worked for me in Winamp2 and 3, but I don't have the picture 2 ape, so the problem could be with it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">2nd February 2003, 17:25</div></div>
+<br />
+<div class="posttext">Works fine for me. Great work(now i see what you ment when talking about 2nd additive blended DM).<br />
+Can someone tell me what is the way to go from 3D cartesian to 3D polars? Im wondering would it be posible to define 3D objects using them. For example torus would be made just by raytracing a plane, going from cartesian to polar coordinares and using that formula Jheriko posted in main avs forum whith v=r1 and u=r2.<br />
+I attached my hyperboloid. I checked everything 3 times and it still looks weerd.<br />
+Btw. for anyone who is intereseted in making 3D DMs you can find some really cool and weerd looking surfaces at mathworld.wolfram.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">2nd February 2003, 19:14</div></div>
+<br />
+<div class="posttext">http://mathworld.wolfram.com/ChmutovSurface.html<br />
+Imagine making something like this in avs :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd February 2003, 20:52</div></div>
+<br />
+<div class="posttext">I posted a conversion fro 3d polars &lt;-&gt; 3d cartesian before... you can find it here:<br />
+<br />
+http://forums.winamp.com/showthread.php?s=&amp;threadid=108370<br />
+<br />
+Hope that you find it useful.<br />
+<br />
+Another thing that I forgot to mention before is about hyperboloids... I've experimented with them as DMs but haven't really had any really decent results (i.e. I think they look ugly). There are two types of hyperboloid, the hyperboloid of one sheet and the hyperboloid of two sheets.<br />
+<br />
+x^2/a^2-y^2/b^2+z^2/c^2=1  &lt;-- one sheet<br />
+x^2/a^2-y^2/b^2-z^2/c^2=1  &lt;-- two sheets<br />
+<br />
+The difference is that one is a connected surface and the other is not.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">2nd February 2003, 21:25</div></div>
+<br />
+<div class="posttext">I think x^2/a^2-y^2/b^2+z^2/c^2=1 is one sheat and x^2/a^2-y^2/b^2+z^2/c^2=-1 two sheats if the hyperboloid is rotated around y=0.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">3rd February 2003, 00:25</div></div>
+<br />
+<div class="posttext">Unconed could you write some explenation on how to light 3D objects. I dont know how to calculate normals(I dont even know what normals are) but would like to have some moving colored lights in another preset im working on(unfinished version is attached).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">3rd February 2003, 02:17</div></div>
+<br />
+<div class="posttext">A normal is a vector that is perpendicular to the surface.<br />
+For example the normal to an inclined plane will be perpendicular to the plane.  Don't know much about lighting though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">3rd February 2003, 03:07</div></div>
+<br />
+<div class="posttext">You need the normals to know how the light will act... after all light is reflected off of an object and you need normals for reflection. Working out normals is often done most easily by finding a tangent plane and cross producting any two linearly independant (i.e. perpendicular) vectors contained in it. There are a multitude of methods though, and what is easiest in maths is not often easiest in AVS.<br />
+<br />
+NOTE: If we denote the cross product by '^' then:<br />
+<br />
+a^b=|a||b|sin(theta) n<br />
+<br />
+Where n is a unit normal vector to a and b (|n|=1) and theta is the angle between a and b. If you just want to find any normal though, the cross product will do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 03:39</div></div>
+<br />
+<div class="posttext">Oh dearie me!  Using the absolute value function...tsk tsk tsk.  And you call yourself a mathematitican.  You ought to be ashamed of yourself.  :hang:<br />
+<br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">3rd February 2003, 05:34</div></div>
+<br />
+<div class="posttext">Actually Atero, in jheriko's formula, a and b are vectors, so |a| and |b| mean the vector's norm (length).<br />
+<br />
+What's wrong with using absolute value anyway?<br />
+<br />
+<br />
+Oh and if you want easy normals, there are a few ways to fake them.<br />
+<br />
+For a sphere, the normal at point (x,y,z) is simply the vector (x,y,z) normalised (length = 1).<br />
+For an ellipsoid this doesn't work anymore, but you can approximate this if you tinker with it:<br />
+for example an ellipsoid with x^2 + y^2 + (z^2)*4 = 0 (sphere that is squished on the z-axis), the normal corresponds roughly with (x,y,2*z).<br />
+<br />
+For example for my lotr preset, I approximated the normal on a hyperbola by flipping the shared components with the sphere<br />
+<br />
+sphere: x^2 + y^2 + z^2 = 1<br />
+hyperb: x^2 + y^2 - z^2 = 1<br />
+sphere normal: (x,y,z)<br />
+hyperb normal: (-x,-y,z)<br />
+(the hyperb's side is on the inside... if you're looking at the outside, you should use (x,y,-z))<br />
+<br />
+The approximated normal should of course point somewhat in the right direction, but this is not that important. What's more important is how the normal changes. The way the normal changes defines the curvature of the surface, and if the approxiated curvature is wrong your surface will look wrong too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 06:51</div></div>
+<br />
+<div class="posttext">Dag nabbit, and here I thought he was (again) being hypocritical :p<br />
+Remember he was bitching at me for using the absolute value function here:<br />
+|x/a|^n+|y/b|^n=1<br />
+so that it would be a closed and continuous curve for any n - fixing more problems then y=|x| even proposes?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">3rd February 2003, 06:52</div></div>
+<br />
+<div class="posttext">By the way, here's a simple curvy shape with normals. The 'hair' on it is an approximated normal at that point.<br />
+<br />
+Basically the blob is a distorted sphere, so if a point on the sphere can be described by its two angles (phi, theta), I calculate the crossproduct between the vectors described by<br />
+<br />
+[(phi+d(phi),theta)-(phi,theta)] X [(phi,theta+d(theta))-(phi,theta)]<br />
+<br />
+Where d(phi) and d(theta) mean some small offset (e.g. .1 radians) along that axis.<br />
+<br />
+This works for any surface that is parametrised in two variables. For a sphere (two angles) or a grid (two cartesian coordinates).<br />
+<br />
+Check the attached scope and picture.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">3rd February 2003, 06:53</div></div>
+<br />
+<div class="posttext">Here's an example scope: shape with normals.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">3rd February 2003, 22:15</div></div>
+<br />
+<div class="posttext">Unconed, that blob with normals is almost good enough to be a pack-worthy preset.  Very nice.  I would say that if you through a nice alien background on it, then you could have a great preset.</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>

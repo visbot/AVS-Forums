@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
+	<meta name="keywords" content=" got bored in the AVS editor, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="description" content=" got bored in the AVS editor AVS Presets" />
+	
+	<title> got bored in the AVS editor - Winamp Forums</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+  <li><a href="f-85.html">AVS</a></li>
+  <li><a href="f-137.html">AVS Presets</a></li>
+  <li class="active">got bored in the AVS editor</li>
+</ol>
+<!-- div class="pda"><a href="t-175563.html?login=1" rel="nofollow">Log in</a></div -->
+<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=175563">got bored in the AVS editor</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username text-primary">Too-DAMN-Much</div><div class="date small text-muted">6th April 2004, 20:15</div></div>
+<br />
+<div class="posttext">three presets i made from modified (heavily) presets i already had</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">6th April 2004, 21:30</div></div>
+<br />
+<div class="posttext">&quot;darkness mouth with explosions&quot; and &quot;don't sue for seizures&quot; are way too flickery<br />
+hmm and all 3 are too slow for avs presets...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Too-DAMN-Much</div><div class="date small text-muted">6th April 2004, 23:35</div></div>
+<br />
+<div class="posttext">not sure about the first one - comes up pretty dark with the band thingy in the middle - dunno, toy with the options in the editor if ya want it different.<br />
+as for the second....   well i thought people'd expect that from the name<br />
+<br />
+<br />
+not sure what you mean about &quot;too slow&quot;, using a decent comp/video-card though if that's what you mean</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">7th April 2004, 01:01</div></div>
+<br />
+<div class="posttext">avs uses CPU/RAM only... i have 11 fps with the 3rd preset on an Athlon XP 1700+ and enough 266MHz RAM. its not a high-end-machine but remember: if you make your .avs so slow that it only runs fluently on high-end machines, then dont expect to get good comments, because it will run slow on most machines, VERY slow on some machines and only run fluently on a few machines.<br />
+<br />
+<br />
+a few tips to optimize that preset (3)<br />
+ - dont activate the &quot;enabled&quot; checkbox AND the &quot;enabled on beat&quot; checkbox think of &quot;enabled&quot; as &quot;always enabled&quot;. unchecking all your &quot;enabled on beat&quot; checkboxes gave an 1 fps increase.<br />
+ - remove the &quot;buffer restore 1&quot; it actually does nothing because you never save to buffer 1. same counts for the &quot;buffer save 8&quot;: you never read out of buffer 8 so you dont need to save to it<br />
+ - i get an fps increase of more than 6 by disabling the first effect list... this seems to be the biggest CPU time sink.<br />
+<br />
+1. Effect list:<br />
+the effect list inside the effect list seems to do nothing but clearing the screen. at least that's what comes out: a black screen :) use the &quot;Clear every frame&quot; checkbox in the outer effect list instead, set its input blending mode to &quot;Ignore&quot; and remove the inner effect list.<br />
+<br />
+2. Trans / Texer:<br />
+A texer on a blank image does absolutely nothing. remove it<br />
+<br />
+3. Render APE / FyrewurX:<br />
+absolutely ok :)<br />
+<br />
+4. Misc / Custom BPM:<br />
+does nothing as there are no beat-reactive components after it. remove it<br />
+<br />
+5. Trans / Dynamic Movement<br />
+this is probably the biggest slowdown in that effect list, because it has a 64x64 gridsize.<br />
+i recommend using a static movement instead. it's way faster and looks nicer (i think). just put the whole code (Init, Frame and Pixel in this order) into the movement and activate &quot;Rectangular Coordinates&quot;<br />
+<br />
+et voila: it doesnt look too different from the original but is 30% faster.<br />
+<br />
+to the name of the 2nd preset: seizure has many meanings better use &quot;bout&quot; or &quot;attack&quot; here. i expected some illegal goods here (something they'd seize at the borders, like neon shrooms containing mind-altering substances ;) )<br />
+anyway, i don't like presets that invert on every frame... and i don't think there are many avs users who like them because they mean two simple things: pain in your eyes and if you watch longer, you get a headache<br />
+<br />
+<br />
+// This shows how to use texer for 3D particles<br />
+// Additive or maximum blend mode should be used<br />
+<br />
+are you sure you didn't forget to credit anyone?<br />
+and you used one of unconeds texer bitmaps... you should really write some credits or you might be called &quot;ripper&quot;...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username text-primary">Too-DAMN-Much</div><div class="date small text-muted">7th April 2004, 03:59</div></div>
+<br />
+<div class="posttext">thanks for the input on that, glad you were able to get a little better fps on that third one, i just don't notice the resources it takes because i recently rebuilt the computer and almost nothing slows it down.<br />
+glad you liked my first three presets, it's simply completely amateur stuff i did mainly because i thought &quot;hey i wanna make the pretty colors!&quot; ;D<br />
+and plus i wanted to try to figure out how to make presets of my own at least a little.<br />
+thanks to unconed for the bitmap i used with the texer (sorry forgot to give credit earlier since i wasn't sure if it was nessecary for the standard one's that came with WA)<br />
+<br />
+as for the other stuff you mentioned, i'm sorry to say it but i just don't feel like screwing around and making the noise i need for editing presets.......<br />
+<br />
+plus i'm not nearly that good at math, looked in the expressions help thing and got lost instantly (yes i'm a dumb whiteboy) :p</div></div><hr />
+<div class="footer">
+	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+</div>
+</div>
+
+</body>
+</html>
