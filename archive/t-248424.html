@@ -3,39 +3,54 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Color mod code snippets, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Color mod code snippets AVS" />
-	
-	<title> Color mod code snippets - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Color mod code snippets - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Color mod code snippets</li>
-</ol>
-<!-- div class="pda"><a href="t-248424.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=248424">Color mod code snippets</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">11th June 2006, 12:24</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Color mod code snippets</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=248424">Color mod code snippets</a></p>
+
+
 <br />
-<div class="posttext">this thread should provide examples of code for the color mod.ape.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">11th June 2006 12:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Color mod code snippets</strong><br />
+		
+		
+
+		this thread should provide examples of code for the color mod.ape.<br />
 <br />
 <br />
-Per channel color reduction <br />
+<b>Per channel color reduction</b> <br />
 init:<br />
 colred=[any value between 1 and 256]<br />
 colgreen=[any value between 1 and 256]<br />
@@ -44,95 +59,165 @@ colblue=[any value between 1 and 256]<br />
 channel:<br />
 red=floor(red*colred)/(colred-1);<br />
 green=floor(green*colgreen)/(colgreen-1);<br />
-blue=floor(blue*colblue)/(colblue-1);</div></div><hr />
+blue=floor(blue*colblue)/(colblue-1);
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">11th June 2006, 23:18</div></div>
-<br />
-<div class="posttext">tip for many simple conversions in the CMF:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Grandchild</div>
+			<div class="date small text-muted">11th June 2006 23:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		tip for many simple conversions in the CMF:<br />
 define red channel, and then assign 'red' to the other two channels.<br />
 <br />
 a multiplier x3 can be just:<br />
-red = red*3;<br />
+<pre><code>red = red*3;<br />
 blue = red;<br />
-green = red;<br />
+green = red;</code></pre><br />
 and it will be the same like<br />
-red = red*3;<br />
+<pre><code>red = red*3;<br />
 blue = blue*3;<br />
-green = green*3;<br />
+green = green*3;</code></pre><br />
 since the r,b and g values are equal each time [256 times that is] the level box is evaluated.<br />
 <br />
-color edge [a greyscale image needed for a 1-bit/b&amp;w color result]:<br />
-red = above(red,.5);<br />
+<b>color edge</b> [a greyscale image needed for a 1-bit/b&amp;w color result]:<br />
+<pre><code>red = above(red,.5);<br />
 blue = red;<br />
-green = red;<br />
+green = red;</code></pre><br />
 <br />
-brighten image without clipping colors [middle tones brightness]:<br />
-red = pow(red,x); // 0&lt;x&lt;1, the smaller the brighter<br />
+<b>brighten image without clipping colors</b> [middle tones brightness]:<br />
+<pre><code>red = pow(red,x); // 0&lt;x&lt;1, the smaller the brighter<br />
 blue = red;<br />
-green = red;</div></div><hr />
+green = red;</code></pre>
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">12th June 2006, 07:33</div></div>
-<br />
-<div class="posttext">Intensify colors by multiplying a channel with 1+value and then subtract that same value.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">12th June 2006 07:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Intensify colors by multiplying a channel with 1+value and then subtract that same value.<br />
 <br />
 ie.<br />
 value=0.5 ;<br />
 red=red*(1+value)-value ;<br />
 <br />
-And so on for the rest of the channels. You can also use it in reverse (make the value a - one to get less intense colors all the way up where everything is just white)</div></div><hr />
+And so on for the rest of the channels. You can also use it in reverse (make the value a - one to get less intense colors all the way up where everything is just white)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">12th June 2006, 13:24</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">12th June 2006 13:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm going to be pedantic and point out some of the correct terminology because people are using the wrong words:<br />
 <br />
-<div class="posttext">I'm going to be pedantic and point out some of the correct terminology because people are using the wrong words:<br />
-<br />
-Brightness is an additive equation<br />
+<b>Brightness</b> is an additive equation<br />
 e.g. red = red + 0.1<br />
      blue = blue + (-0.5)<br />
 <br />
-Contrast is a multiplicative equation<br />
+<b>Contrast</b> is a multiplicative equation<br />
 e.g. red = red * 1.1<br />
      blue = blue * 0.9<br />
 <br />
      <br />
-Gamma is an exponential equation<br />
+<b>Gamma</b> is an exponential equation<br />
 e.g. red = pow(red,3)<br />
      blue = pow(blue,0.9)<br />
 <br />
-Intensity is an energy measurement (energy flux/time) but it doesnt mean very much on computers. The closest actual image processing term is 'luminence' (as in Hue, Saturation and) Tuggs example is a contrast adjustment followed by a brightness reduction</div></div><hr />
+<b>Intensity</b> is an energy measurement (energy flux/time) but it doesnt mean very much on computers. The closest actual image processing term is 'luminence' (as in Hue, Saturation and) Tuggs example is a contrast adjustment followed by a brightness reduction
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">12th June 2006, 13:39</div></div>
-<br />
-<div class="posttext">And it makes the colors more intense.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">12th June 2006 13:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		And it makes the colors more intense.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">12th June 2006, 17:34</div></div>
-<br />
-<div class="posttext">I think it makes them more rubbery</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">12th June 2006 17:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">12th June 2006, 17:49</div></div>
-<br />
-<div class="posttext">gradiation curve<br />
+		I think it makes them more rubbery
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">12th June 2006 17:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<b>gradiation curve</b><br />
 this allows you to increase the contrast in middle tone or dark and bright areas.<br />
 linear curve:<br />
-http://img150.imageshack.us/img150/9653/linear5ai.th.jpg<br />
+<a href="http://img150.imageshack.us/img150/9653/linear5ai.th.jpg" target="_blank">http://img150.imageshack.us/img150/9...near5ai.th.jpg</a><br />
 curve with increased midtone contrast:<br />
-http://img297.imageshack.us/img297/8508/gradiationcurves8bn.th.jpg<br />
+<a href="http://img297.imageshack.us/img297/8508/gradiationcurves8bn.th.jpg" target="_blank">http://img297.imageshack.us/img297/8...rves8bn.th.jpg</a><br />
 init or frame: midcon=[-1,1] //0=&gt;no changes<br />
                       //below 0=&gt; low contrast in midtones<br />
                       //above 0=&gt; high contrast in midtones<br />
 someval=pow(8,-midcon);<br />
 <br />
-channel: red=0.5*pow(abs(2*red-1),someval)*sign(2*red-1)+0.5;</div></div><hr />
+channel: red=0.5*pow(abs(2*red-1),someval)*sign(2*red-1)+0.5;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">12th June 2006, 18:34</div></div>
-<br />
-<div class="posttext">Time independent fadeout effect. The line on frame, &quot;f=pow(.8,30*dt);&quot; sets the speed and curve of the fadeout, tweak the values of .8 between 0..1 and the 30 between 0..+inf to see how to use it...<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">12th June 2006 18:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Time independent fadeout effect. The line on frame, &quot;f=pow(.8,30*dt);&quot; sets the speed and curve of the fadeout, tweak the values of .8 between 0..1 and the 30 between 0..+inf to see how to use it...<br />
 <br />
 init:<br />
 lasttime=gettime(0);<br />
@@ -144,29 +229,60 @@ f=pow(.8,30*dt);<br />
 level:<br />
 red=red*f;<br />
 blue=red;<br />
-green=red;</div></div><hr />
+green=red;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">12th June 2006, 18:57</div></div>
-<br />
-<div class="posttext">here is a example of my midtone contrast color mod</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">12th June 2006 18:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		here is a example of my midtone contrast color mod
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">12th June 2006, 21:20</div></div>
-<br />
-<div class="posttext">custom chrome effect triangle wave like<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">12th June 2006 21:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<b>custom chrome effect triangle wave like</b><br />
 init: nc=[1-256 number of cycles]<br />
 <br />
 level: someval=floor(red*nc);<br />
 red=if(someval%2,1-(red*nc-someval),(red*nc-someval));<br />
 <br />
-custom chrome effect sine wave like<br />
+<b>custom chrome effect sine wave like</b><br />
 init: nc=[1-256 number of cycles]<br />
-channel: red=0.5-0.5*cos(red*$pi*nc);</div></div><hr />
+channel: red=0.5-0.5*cos(red*$pi*nc);
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

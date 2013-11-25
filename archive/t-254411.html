@@ -3,37 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" need some assistance, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" need some assistance AVS Presets" />
-	
-	<title> need some assistance - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" need some assistance AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> need some assistance - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">need some assistance</li>
-</ol>
-<!-- div class="pda"><a href="t-254411.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=254411">need some assistance</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">29th August 2006, 22:40</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">need some assistance</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=254411">need some assistance</a></p>
+
+
 <br />
-<div class="posttext">This preset started out as a tech tryout. <br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">29th August 2006 22:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>need some assistance</strong><br />
+		
+		
+			
+		
+
+		This preset started out as a tech tryout. <br />
 I wanted to have a line that went up, and as soon as y&gt;1 then it would re-enter at the bottom.<br />
 I have that working now.<br />
 <br />
@@ -42,55 +58,118 @@ I went a little further - I changed the line to an arrow and added a background,
 Then, it seemed fun enough to -try to- turn this into a worthy preset.<br />
 <br />
 I have one problem though. (see attached preset)<br />
-What I want is that if an arrow leaves the top (or when it re-appears at the bottom, whatever) that it shifts along the x-axis. <br />
+<b>What I want is that if an arrow leaves the top</b> (or when it re-appears at the bottom, whatever) <b>that it shifts along the x-axis.</b> <br />
 <br />
 Point is however, that I can't shift the entire arrow at once because the rest of the arrow isn't there yet when the tip reaches the top. I have a somewhat working solution that's based on y1&lt;-0.97<br />
 That solution shifts like I want to, but it causes the arrow to 'shake' when it's re-appearing.<br />
 <br />
 I don't know if this post makes enough sense, so if you have any questions: just ask<br />
 <br />
-All ideas and insights are more than welcome..</div></div><hr />
+All ideas and insights are more than welcome..
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">30th August 2006, 18:39</div></div>
-<br />
-<div class="posttext">problem solved..<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">30th August 2006 18:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		problem solved..<br />
 you just needed to generate the new mx value once per passthrough of the arrow.<br />
 <br />
-see the commented code</div></div><hr />
+see the commented code
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">30th August 2006, 23:11</div></div>
-<br />
-<div class="posttext">I had thought about such a solution, but this method doesn't really fix the issue.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">30th August 2006 23:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I had thought about such a solution, but this method doesn't really fix the issue.<br />
 <br />
 I'll show you the bug in your fix:<br />
 Set rx to 0 (bz in init too), and remove the *1.5 at the end of x and y to make it more clear. Close/reopen AVS.<br />
-When the tip of the arrow reaches the top, the remaining part suddenly shifts.</div></div><hr />
+When the tip of the arrow reaches the top, the remaining part suddenly shifts.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">2nd September 2006, 11:58</div></div>
-<br />
-<div class="posttext">i finally fixed the problem by rewriting major parts of the code. if you have question on the code just ask.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">2nd September 2006 11:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		i finally fixed the problem by rewriting major parts of the code. if you have question on the code just ask.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">2nd September 2006, 15:09</div></div>
-<br />
-<div class="posttext">Quite a different approach indeed.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">2nd September 2006 15:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Quite a different approach indeed.<br />
 <br />
 I'll dig into your code and find out what you did..<br />
-Thanks a lot, man</div></div><hr />
+Thanks a lot, man
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">6th September 2006 13:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		This is a classic problem. The easy solution to making something appear at a different x each time it wraps around y is to use 2 of it, when one goes off the top it just let it keeps going until the next arrow goes off the top. This way is lazy, but it works. This boils down to rendering twice and using some if and mod for n/skip<br />
+<br />
+I would open the preset and look... but I'm at work :/
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">6th September 2006, 13:13</div></div>
-<br />
-<div class="posttext">This is a classic problem. The easy solution to making something appear at a different x each time it wraps around y is to use 2 of it, when one goes off the top it just let it keeps going until the next arrow goes off the top. This way is lazy, but it works. This boils down to rendering twice and using some if and mod for n/skip<br />
-<br />
-I would open the preset and look... but I'm at work :/</div></div><hr />
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,81 +3,146 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Making a game with AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Making a game with AVS AVS" />
-	
-	<title> Making a game with AVS - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Making a game with AVS - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Making a game with AVS</li>
-</ol>
-<!-- div class="pda"><a href="t-200168.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=200168">Making a game with AVS</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">25th November 2004, 03:17</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Making a game with AVS</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=200168">Making a game with AVS</a></p>
+
+
 <br />
-<div class="posttext">I was playing this game (http://www.asahi-net.or.jp/~cs8k-cyu/windows/tt_e.html) and was reminded of a few presets. And I got to thinking how cool it would be if you could actually play a game with AVS. Got a few questions first:<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">25th November 2004 03:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Making a game with AVS</strong><br />
+		
+		
+
+		I was playing <a href="http://www.asahi-net.or.jp/~cs8k-cyu/windows/tt_e.html" target="_blank">this game</a> and was reminded of a few presets. And I got to thinking how cool it would be if you could actually play a game with AVS. Got a few questions first:<br />
 <br />
 -How &quot;good&quot; is the keyboard input? Is there too much latency/inaccuracy to make an effective game?<br />
 -Is there a better way to store data between frames than megabuf? I've heard its slow, and if the keyboard input isn't too great, we'd need to get as much speed as possible, plus I'm looking to store a LOT of data. <br />
 <br />
-What I was thinking is, you just piloted a ship down the tube, dodging the walls. The shapes of the walls are dictated by the music, and score is kept based on how fast you're going, with points being deducted for collisions. If anyone would like to help me out on this project, I'd appreciated it.</div></div><hr />
+What I was thinking is, you just piloted a ship down the tube, dodging the walls. The shapes of the walls are dictated by the music, and score is kept based on how fast you're going, with points being deducted for collisions. If anyone would like to help me out on this project, I'd appreciated it.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">25th November 2004, 11:05</div></div>
-<br />
-<div class="posttext">The problem with keyboard input is that a lot of keys are already in use by WA itself, which includes the arrrow-keys.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">25th November 2004 11:05 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The problem with keyboard input is that a lot of keys are already in use by WA itself, which includes the arrrow-keys.<br />
 ASDW cannot be used either as S toggles the shuffle function. Mouse input (x,y coördinates) works great, but the left mouse button throws you out of fullscreen if you want to play in fullscreen. I've had an attempt to create AVScad once, there I used the mouse coördinates combined with unused keys (crtl mainly for drawing a line). You need two hands for it, but it's a good work-around.<br />
 <br />
 megabuf isn't global, gmegabuf is; just as variables reg00, reg01 .. reg99. not sure what's faster though. gmegabuf in itself is faster, but often used with loops and stuff which make it slower again..<br />
 <br />
-//edit: yay! this is my 500th post! I'm a 'major dude' now! (not that I care, but I thought: let's mention it:))</div></div><hr />
+//edit: yay! this is my 500th post! I'm a 'major dude' now! (not that I care, but I thought: let's mention it:))
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">25th November 2004, 15:40</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">25th November 2004 15:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		ooh nice game. too bad one can't disable the music.<br />
 <br />
-<div class="posttext">ooh nice game. too bad one can't disable the music.<br />
-<br />
-edit: ah, i can replace it :D</div></div><hr />
+edit: ah, i can replace it :D
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">25th November 2004, 16:08</div></div>
-<br />
-<div class="posttext">Hm. Maybe you could just use the mouse to steer, and two vertically adjacent keys on the keyboard to accelerate/decelerate. <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">25th November 2004 16:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hm. Maybe you could just use the mouse to steer, and two vertically adjacent keys on the keyboard to accelerate/decelerate. <br />
 <br />
 Anyway, I'd like to collaborate with someone on this project, since it might get a little hairy at times. The whole thing could probably be done with one superscope to render the tube, and a couple others to put objects in, and several render/texts to display score &amp; such. Anyone know the range of values that (g)megabuf can take? or regxx, for that matter. <br />
 <br />
-What's wrong with the music? :(</div></div><hr />
+What's wrong with the music? :(
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">25th November 2004, 16:10</div></div>
-<br />
-<div class="posttext">I'm playing that game, it's mad fun!<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">S-uper_T-oast</div>
+			<div class="date small text-muted">25th November 2004 16:10 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm playing that game, it's mad fun!<br />
 <br />
 You can make games in AVS, but they are greatly limited by the things already mentioned.<br />
 <br />
-/edit-When did I become a major dude? I didn't even notice...</div></div><hr />
+/edit-When did I become a major dude? I didn't even notice...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">25th November 2004, 18:00</div></div>
-<br />
-<div class="posttext">I like a challenge :D That's the whole point behind this 'project'. <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">25th November 2004 18:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I like a challenge :D That's the whole point behind this 'project'. <br />
 <br />
 Also, I've been thinking of how to render the 'tube' as a wireframe. It'd be most efficient if it was all rendered as one continuous line, but directly rendering each gridline results in a lot of overlap. I was thinking of doing something like this:<br />
 <br />
@@ -85,54 +150,115 @@ Also, I've been thinking of how to render the 'tube' as a wireframe. It'd be mos
 <br />
 (I'll be damned if I can remember what the ASCII code for the Overscore is.)<br />
 <br />
-For each 'ring'. The only missing lines would be on the first and last rings. Also, since it's a closed ring, the jumps between rings will be smooth.</div></div><hr />
+For each 'ring'. The only missing lines would be on the first and last rings. Also, since it's a closed ring, the jumps between rings will be smooth.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">25th November 2004, 18:19</div></div>
-<br />
-<div class="posttext">Congrats WoTL!<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">25th November 2004 18:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		[offtopic]<br />
+Congrats WoTL!<br />
 It has been a while since someone &quot;upgraded&quot; around here :D I remember in the begining everyone was posting like mad and everyone was congratulating each other for senior member, major dude, forum king... *sigh* I kinda miss that silly tradition :p<br />
+[/offtopic]<br />
 <br />
 <br />
 <br />
-<br />
-Anyway, Making AVS-games like you said xerol, is very very hairy business indeed. Just the sheer ammount of code for example collision detection is mind boggling (just a reference). I have made one AVS game though, which im quite happy of: Kill Visbot (http://www.deviantart.com/deviation/9704351/). Tho, don't take it as a example of how you should do things, it's very badly coded.<br />
+Anyway, Making AVS-games like you said xerol, is very <b>very hairy</b> business indeed. Just the sheer ammount of code for example collision detection is mind boggling (just a reference). I have made one AVS game though, which im quite happy of: <a href="http://www.deviantart.com/deviation/9704351/" target="_blank">Kill Visbot</a>. Tho, don't take it as a example of how you should do things, it's very badly coded.<br />
 <br />
 But all in all, it's not impossible to make good or even enjoyable games in AVS, but takes a lot of time, effort, skill and you need to squeeze every last drop of fps you can get from it.<br />
 <br />
-Wish you luck :)</div></div><hr />
+Wish you luck :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">26th November 2004, 07:02</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">26th November 2004 07:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The keyboard input 'feature' (where wa uses most of the keys already) is by far the most annoying of all the problems, personally I only ever use the mouse for input.<br />
 <br />
-<div class="posttext">The keyboard input 'feature' (where wa uses most of the keys already) is by far the most annoying of all the problems, personally I only ever use the mouse for input.<br />
-<br />
-The 'hairyness' isn't really a problem if your a competant coder and you make sure you keep your code very tidy. Although I would strongy advise against it unless you have a fair bit of experience coding in AVS. Realistically there are only a dozen or so people I can think of who could pull off something as complicated as that game you linked to.</div></div><hr />
+The 'hairyness' isn't really a problem if your a competant coder and you make sure you keep your code very tidy. Although I would strongy advise against it unless you have a fair bit of experience coding in AVS. Realistically there are only a dozen or so people I can think of who could pull off something as complicated as that game you linked to.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">26th November 2004, 22:29</div></div>
-<br />
-<div class="posttext">this game you linked to is awesome, and addictive ;). But i also have the feeling that making a game like this with avs is very hard. (and never contradict  the experts ;)). But has it to be a such a demanding game? O.K, its very funny &amp; full of speed % looks very nice. But i remember a funny &quot;click and clear&quot; game made by m²k, i found some time ago.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">^..^</div>
+			<div class="date small text-muted">26th November 2004 22:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		this game you linked to is awesome, and addictive ;). But i also have the feeling that making a game like this with avs is <b>very</b> hard. (and never contradict  the experts ;)). But has it to be a such a demanding game? O.K, its very funny &amp; full of speed % looks very nice. But i remember a funny &quot;click and clear&quot; game made by m²k, i found some time ago.<br />
 It was a contribution to a &quot;mouse-controlled-preset&quot; competition here in the forums: some guy offered money for the two best mouse or kb controlled presets (but no one ever saw a buck). I still like to play this game sometimes. <br />
 <br />
-//btw am i allowed to post that particular preset here as an attachment? Or would i have to ask the author for permission? Just wanted to clear off the legal situation before...</div></div><hr />
+//btw am i allowed to post that particular preset here as an attachment? Or would i have to ask the author for permission? Just wanted to clear off the legal situation before...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">26th November 2004, 23:58</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">26th November 2004 23:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well, I wasn't going to make it as complex. It was just going to be a simple race-through-the-tube game, and you have to avoid colliding with the walls. Use the mouse to point the ship, and two keys on the keyboard for accel/decel. The only objects to be rendered are the ship and the tube(there was this one visualisation, it was a roller coaster track(sorry for not remembering who it was), shouldn't be too hard to make something a little more involved).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">S-uper_T-oast</div>
+			<div class="date small text-muted">27th November 2004 01:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Unconed made the roller coaster preset, and it is proabably one of the most complicated presets made. It has taken days for me to to dig through the code just to get a minor understanding of that preset.<br />
 <br />
-<div class="posttext">Well, I wasn't going to make it as complex. It was just going to be a simple race-through-the-tube game, and you have to avoid colliding with the walls. Use the mouse to point the ship, and two keys on the keyboard for accel/decel. The only objects to be rendered are the ship and the tube(there was this one visualisation, it was a roller coaster track(sorry for not remembering who it was), shouldn't be too hard to make something a little more involved).</div></div><hr />
+It would be possible to make this tunnel game you are thinking about though. A superscope tunnel is not very hard to code, but the hard part will be making the ship move and interact with the enviornment. If you do plan to do it, I could help a little bit, but since I'm in school right now my time would be very limited.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">27th November 2004, 01:42</div></div>
-<br />
-<div class="posttext">Unconed made the roller coaster preset, and it is proabably one of the most complicated presets made. It has taken days for me to to dig through the code just to get a minor understanding of that preset.<br />
-<br />
-It would be possible to make this tunnel game you are thinking about though. A superscope tunnel is not very hard to code, but the hard part will be making the ship move and interact with the enviornment. If you do plan to do it, I could help a little bit, but since I'm in school right now my time would be very limited.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">27th November 2004 02:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">27th November 2004, 02:08</div></div>
-<br />
-<div class="posttext">Well, here's how I was thinking of doing it:<br />
+		Well, here's how I was thinking of doing it:<br />
 <br />
 Unfortunately, you really can't look ahead in the music(if you can, slap me) to construct the tunnel ahead of time. So, you'd just make the farthest ring in the tube be the latest music data. <br />
 <br />
@@ -142,48 +268,87 @@ Ok, so we've got 360 rings, the centers of which are along the circle r = oh, le
 <br />
 Ok, let's say we've got our circle at 0 degrees (centered at (0,0,10)). All of the points on this circle lie on the XY plane. Given o1 = angle of the centerpoint, o2 = angle along the ring, and the individual rings having a radius of 1, each point at o1 = 0 would be at:<br />
 <br />
-(cos(o2), 10+sin(o2), 0)<br />
+<pre><code>(cos(o2), 10+sin(o2), 0)</code></pre><br />
 <br />
 Now, we account for the change in position for other points:<br />
 <br />
-(cos(o2), 10*cos(o1) + sin(o2), 10*sin(o1))<br />
+<pre><code>(cos(o2), 10*cos(o1) + sin(o2), 10*sin(o1))</code></pre><br />
 <br />
 Getting closer now. But also remember each ring isn't flat on the XY plane. However, all of the points are going to lie along a radial line. I'm pretty sure this would work:<br />
 <br />
-(cos(o2), 10*cos(o1) + sin(o2)*cos(o1), 10*sin(o1) + cos(o2)*sin(o1))<br />
+<pre><code>(cos(o2), 10*cos(o1) + sin(o2)*cos(o1), 10*sin(o1) + cos(o2)*sin(o1))</code></pre><br />
 <br />
 BRB while I test this out.<br />
 <br />
-EDIT: Ok, works brilliantly. http://www.lggaming.com/user/xerol/torusdemo.zip<br />
+EDIT: Ok, works brilliantly. <a href="http://www.lggaming.com/user/xerol/torusdemo.zip" target="_blank">http://www.lggaming.com/user/xerol/torusdemo.zip</a><br />
 <br />
 I just fudged o2 for now, in reality o1 would always be 'locked' to one of the rings, and o2 would be 30 different steps along each ring.<br />
 <br />
 From here, you add code to put the camera in the torus, and to modify the torus walls to move with the music, then controls from there.<br />
 <br />
-EDIT2: If anyone wants to get on AIM and talk about this, maybe something could happen with this soon. I'm on for the next 3 hours or so under XerolOplan. If you're an antique internet user like myself and still use ICQ, 125672905.</div></div><hr />
+EDIT2: If anyone wants to get on AIM and talk about this, maybe something could happen with this soon. I'm on for the next 3 hours or so under XerolOplan. If you're an antique internet user like myself and still use ICQ, 125672905.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">MaTTFURY</div><div class="date small text-muted">27th November 2004, 04:35</div></div>
-<br />
-<div class="posttext">im became a member, (but u know nobody cares)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">MaTTFURY</div>
+			<div class="date small text-muted">27th November 2004 04:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		im became a member, (but u know nobody cares)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">27th November 2004, 05:31</div></div>
-<br />
-<div class="posttext">Well, instead of a torus, I think it might be better for you to render something like a cylinder instead of a torus. It would be much easier to work with then the torus, and it could probably also be less FPS consuming.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">S-uper_T-oast</div>
+			<div class="date small text-muted">27th November 2004 05:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">27th November 2004, 21:12</div></div>
-<br />
-<div class="posttext">Same thing, the torus is just a cylinder bent so the ends meet. <br />
+		Well, instead of a torus, I think it might be better for you to render something like a cylinder instead of a torus. It would be much easier to work with then the torus, and it could probably also be less FPS consuming.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">27th November 2004 21:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Same thing, the torus is just a cylinder bent so the ends meet. <br />
 <br />
 Anyway, my problem right now is getting it to render in a grid. I've tried to do the square wave-style shape but it didn't work out properly; the only way it CAN work right is if there's an odd number of slices, so I'm trying to get that to work right now.<br />
 <br />
-I'm going to re-upload to the aboveposted link with what i've got now; you can change the camera position by changing the xcam, ycam, and zcam values in the init portion of the superscope; no camera rotation yet, but I'm going to get to it eventually. I'd like to get the tube running properly first.</div></div><hr />
+I'm going to re-upload to the aboveposted link with what i've got now; you can change the camera position by changing the xcam, ycam, and zcam values in the init portion of the superscope; no camera rotation yet, but I'm going to get to it eventually. I'd like to get the tube running properly first.
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

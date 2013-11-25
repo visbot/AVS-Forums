@@ -3,45 +3,70 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" how can i rotate a pic in x- or y- axis?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" how can i rotate a pic in x- or y- axis? AVS" />
-	
-	<title> how can i rotate a pic in x- or y- axis? - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> how can i rotate a pic in x- or y- axis? - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">how can i rotate a pic in x- or y- axis?</li>
-</ol>
-<!-- div class="pda"><a href="t-94111.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=94111">how can i rotate a pic in x- or y- axis?</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">10th July 2002, 23:43</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">how can i rotate a pic in x- or y- axis?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=94111">how can i rotate a pic in x- or y- axis?</a></p>
+
+
 <br />
-<div class="posttext">i want to rotate a pic(render/picture) in the x- or y- axis, how can i do that? <br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">greatWho</div>
+			<div class="date small text-muted">10th July 2002 23:43 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>how can i rotate a pic in x- or y- axis?</strong><br />
+		
+		
+
+		i want to rotate a pic(render/picture) in the x- or y- axis, how can i do that? <br />
 <br />
 thanx for help<br />
 <br />
-GreatWho</div></div><hr />
+GreatWho
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st July 2002, 17:39</div></div>
-<br />
-<div class="posttext">Might be a bit late, but this might help. I use this in a superscope, but you should be able to convert it to a DM. Just initialize z1 at the beginning of each point. x1 and y1 are the coordinates of the point before any rotation. keep track of how far you're rotating in xy and yz.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Jaheckelsafar</div>
+			<div class="date small text-muted">21st July 2002 17:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Might be a bit late, but this might help. I use this in a superscope, but you should be able to convert it to a DM. Just initialize z1 at the beginning of each point. x1 and y1 are the coordinates of the point before any rotation. keep track of how far you're rotating in xy and yz.<br />
 <br />
 -------------------------------<br />
 <br />
@@ -53,12 +78,22 @@ z2=-sin(yz)*y2+cos(yz)*z1;<br />
 <br />
 z=z2+1;<br />
 x=x2/z;<br />
-y=y3/z;</div></div><hr />
+y=y3/z;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">22nd July 2002, 08:19</div></div>
-<br />
-<div class="posttext">Try this DM:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">22nd July 2002 08:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Try this DM:<br />
 <br />
 Frame: t=t+.04<br />
 <br />
@@ -68,15 +103,25 @@ Pixel:x=x/((cos(t)));<br />
 Grid size must be:80x60 or if you want to rottate objects that are half of screen size you can reduce it to 80x16. Rectangulara and billinear must be ON.<br />
 <br />
 <br />
-Tonic</div></div><hr />
+Tonic
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">22nd July 2002, 17:57</div></div>
-<br />
-<div class="posttext">Well, Tonic, that's a good idea, but unfortunately it creates huge distortions in the picture - even when the rotation is very slight.  The best bet for this kind of rotation is a 3D projection.  Just use the regular rotation formula:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">22nd July 2002 17:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well, Tonic, that's a good idea, but unfortunately it creates huge distortions in the picture - even when the rotation is very slight.  The best bet for this kind of rotation is a 3D projection.  Just use the regular rotation formula:<br />
 a2=a1*sin(theta)+b1*cos(theta);<br />
 b2=a1*cos(theta)-b1*sin(theta);<br />
-(where a1 and b1 are the original coordinates along the a and b axes, and theta is the rotation angle in radians) upon the planes perpendicular to the axes rotated.  This means that a rotation around the Z axis would be upon the X/Y plane.  Then, at the end...umm...actually I don't want to mislead you in this matter, so I'll turn it over to UnConeD, since he 'taught' me how to do this (even though I don't do what he said to do - i just try to figure out how to squish the stuff and it goes blah...yeah).<br />
+(where a1 and b1 are the original coordinates along the a and b axes, and theta is the rotation angle in radians) upon the planes <b>perpendicular to the axes rotated</b>.  This means that a rotation around the Z axis would be upon the X/Y plane.  Then, at the end...umm...actually I don't want to mislead you in this matter, so I'll turn it over to UnConeD, since he 'taught' me how to do this (even though I don't do what he said to do - i just try to figure out how to squish the stuff and it goes blah...yeah).<br />
 <br />
 <br />
 <br />
@@ -96,155 +141,329 @@ d=sqrt(x*x+y*y)/sqrt(2);<br />
 x=sin(r)*d*sqrt(2);<br />
 y=-cos(r)*d*sqrt(2);<br />
 <br />
-Glad to...uh...help ;)</div></div><hr />
+Glad to...uh...help ;)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd July 2002, 22:18</div></div>
-<br />
-<div class="posttext">By the way Tonic.. back in the AVS business? :D</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">22nd July 2002 22:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Tonic</strong><br />
+		
+		
 
+		By the way Tonic.. back in the AVS business? :D
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">23rd July 2002, 08:27</div></div>
-<br />
-<div class="posttext">UnConeD. I never stop to be with AVS :). I continue to check almost every day forums and AVS sites. But stop to create AVS. For now I do not plane to create AVS until Justin do not create NEW version of AVS with new effects and improved features for VJing and usability of AVS.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">23rd July 2002 08:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD. I never stop to be with AVS :). I continue to check almost every day forums and AVS sites. But stop to create AVS. For now I do not plane to create AVS until Justin do not create NEW version of AVS with new effects and improved features for VJing and usability of AVS.<br />
 <br />
 Altero: Yes I know that it may create a lot of distortions but not in all cases. Distortions can be avoided if edges of object that you want to rotate are not so close to edges of screen. Also you can tweak grid size to create better result.<br />
-I try example that you write but cannot produce such effect that &quot;greatWho&quot; wants, and Z rotation look so bad :( . I'm not keen with 3D projection, reytracing and etc. that UnConeD use :) so I cannot fix it to be real X,Y or Z rotation. If you or someone could. Pls write such examples.</div></div><hr />
+I try example that you write but cannot produce such effect that &quot;greatWho&quot; wants, and Z rotation look so bad :( . I'm not keen with 3D projection, reytracing and etc. that UnConeD use :) so I cannot fix it to be real X,Y or Z rotation. If you or someone could. Pls write such examples.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">23rd July 2002, 11:59</div></div>
-<br />
-<div class="posttext">Originally posted by Tonic <br />
-For now I do not plane to create AVS until Justin do not create NEW version of AVS with new effects and improved features for VJing and usability of AVS.<br />
-<br />
-<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Rovastar</div>
+			<div class="date small text-muted">23rd July 2002 11:59 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tonic </i><br />
+<b>For now I do not plane to create AVS until Justin do not create NEW version of AVS with new effects and improved features for VJing and usability of AVS.<br />
+</b></blockquote>
 That is a shame Tonic, you do some nice stuff, as that means it will be 2004 until we see a new pack from you.;)<br />
 <br />
-Did you know Justin has never even posted in the AVS forum. I think he has forgotten about it.:)</div></div><hr />
+Did you know Justin has never even posted in the AVS forum. I think he has forgotten about it.:)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">23rd July 2002, 12:34</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">23rd July 2002 12:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Rovastar </i><br />
+<b><br />
 <br />
-<div class="posttext">Originally posted by Rovastar <br />
-<br />
-<br />
-That is a shame Tonic, you do some nice stuff, <br />
-<br />
+That is a shame Tonic, you do some nice stuff, </b></blockquote>
 That is problem. They are just nice :) I think my mission is completed, as I'm one of pioneers of AVS and most of all I work and made most of my AVS to populirize this plugin. <br />
 <br />
 In this days there are many AVS artist that do &quot;some nice stuff&quot;.<br />
 <br />
 And after near half milion DL of my AVS Albums from WINAMP.COM I've got only tons of viruses in my mail boxes every day :)<br />
 <br />
-Tonic</div></div><hr />
+Tonic
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">greatWho</div><div class="date small text-muted">23rd July 2002, 17:58</div></div>
-<br />
-<div class="posttext">Tonic: your solutoin is very easy, it looks fine,because the distortions at the edges i made two SS to cover them ;-) so it's only the picture with rotation;<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">greatWho</div>
+			<div class="date small text-muted">23rd July 2002 17:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>thanx for your solutions</strong><br />
+		
+		
+
+		Tonic: your solutoin is very easy, it looks fine,because the distortions at the edges i made two SS to cover them ;-) so it's only the picture with rotation;<br />
 <br />
 Atero: your solution distorted the whole pic but i used this for any SS and they look very nice<br />
 <br />
 so i show you 2 results... one is with a (bad :( )pic of me its only to show who made the presets ;)<br />
 the other one is a rotating sexy Girl (maybe you would like more than the one with my pic ;) )<br />
 the zip is too large to attach, so take it from here:<br />
-http://217.162.154.91/patrik1.zip<br />
+<a href="http://217.162.154.91/patrik1.zip" target="_blank">http://217.162.154.91/patrik1.zip</a><br />
 <br />
 thanx alot<br />
 <br />
-ps: are the most avs'ers from Europe?? only Atero, who is from Mars...</div></div><hr />
+ps: are the most avs'ers from Europe?? only Atero, who is from Mars...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">24th July 2002, 12:46</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">uNDefineD</div>
+			<div class="date small text-muted">24th July 2002 12:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				as I'm one of pioneers of AVS</blockquote>
+Aren't we modest. :) Keep in mind I say this without having seen your work.<br />
 <br />
-<div class="posttext">as I'm one of pioneers of AVS<br />
+greatWho: I'm from Australia myself.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">24th July 2002 14:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		uNDefineD: If you haven't seen tonic's work, download it now :). <a href="http://tonic.deviantart.com/" target="_blank">http://tonic.deviantart.com/</a> should get you started. It's been a while since he released presets, but he's got some gems in there.<br />
+<br />
+I think what he meant with &quot;I'm one of the pioneers&quot; is that he's been AVSing for a long time, from near the very beginning. Kind of like Lone.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">24th July 2002 15:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by uNDefineD </i><br />
+<b><br />
 <br />
 Aren't we modest. :) Keep in mind I say this without having seen your work.<br />
 <br />
-greatWho: I'm from Australia myself.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th July 2002, 14:02</div></div>
-<br />
-<div class="posttext">uNDefineD: If you haven't seen tonic's work, download it now :). http://tonic.deviantart.com/ should get you started. It's been a while since he released presets, but he's got some gems in there.<br />
-<br />
-I think what he meant with &quot;I'm one of the pioneers&quot; is that he's been AVSing for a long time, from near the very beginning. Kind of like Lone.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">24th July 2002, 15:39</div></div>
-<br />
-<div class="posttext">Originally posted by uNDefineD <br />
+</b></blockquote>
+I'm as modest as I can. But if you want from me to be less modest I can. I may write you little history of my AVS life. I create AVS since v0.20a <a href="http://www.winamp.com/plugins/detail.jhtml?componentId=190" target="_blank"> link for AVS v0.20a</a>  and this was before near 3 years if I remember well I made my first preset in November or December 1999. I release my first AVS pack in <a href="http://www.deskmod.com" target="_blank">www.deskmod.com</a> in January 2000 of course AVS in this days are not as this in this days. In this time there was still no AVS section in WINAMP.COM. So when in August 2000 I made my first AVS Album with 130 presets I submit it in WINDOW and FULLSCREEN section. Then I start to wait to see how WINAMP staff will review my firs Album and for my great surprise they opend new section called &quot;AVS presets&quot; and thay open it with my Album. After that I release 4 more Albums under &quot;Tonic&quot; nick and one under &quot;Gazirana Voda&quot; nick. If you want to see them go to this links.<br />
 <br />
 <br />
-Aren't we modest. :) Keep in mind I say this without having seen your work.<br />
-<br />
-<br />
-<br />
-I'm as modest as I can. But if you want from me to be less modest I can. I may write you little history of my AVS life. I create AVS since v0.20a  link for AVS v0.20a (http://www.winamp.com/plugins/detail.jhtml?componentId=190)  and this was before near 3 years if I remember well I made my first preset in November or December 1999. I release my first AVS pack in www.deskmod.com in January 2000 of course AVS in this days are not as this in this days. In this time there was still no AVS section in WINAMP.COM. So when in August 2000 I made my first AVS Album with 130 presets I submit it in WINDOW and FULLSCREEN section. Then I start to wait to see how WINAMP staff will review my firs Album and for my great surprise they opend new section called &quot;AVS presets&quot; and thay open it with my Album. After that I release 4 more Albums under &quot;Tonic&quot; nick and one under &quot;Gazirana Voda&quot; nick. If you want to see them go to this links.<br />
-<br />
-<br />
-Tonic 1st 08.2000 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=26120)<br />
-Gazirana Voda 04.2001 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$ZUUIFF24AUBKE5YAAAARCZA?componentId=52809)<br />
-Tonic 2nd 05.2001 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=60021)<br />
-Tonic 3rd 07.2001 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=70755) <br />
-Tonic 4th 01.2002 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=90720)<br />
-Tonic 5th 01.2002 (http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=91290)<br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=26120" target="_blank">Tonic 1st 08.2000</a><br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$ZUUIFF24AUBKE5YAAAARCZA?componentId=52809" target="_blank">Gazirana Voda 04.2001</a><br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=60021" target="_blank">Tonic 2nd 05.2001</a><br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=70755" target="_blank">Tonic 3rd 07.2001</a> <br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=90720" target="_blank">Tonic 4th 01.2002</a><br />
+<a href="http://www.winamp.com/plugins/detail.jhtml;$sessionid$5BJYKS3AHXJGPTN241HRCZY?componentId=91290" target="_blank">Tonic 5th 01.2002</a><br />
 <br />
 Average DL for ALL of them are 100'000 (less 32'000 most 171'000).<br />
 I'm still modest :)<br />
 <br />
-PS: UnconeD is right I'm in AVS from very close to Lone beginning</div></div><hr />
+PS: UnconeD is right I'm in AVS from very close to Lone beginning
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">24th July 2002, 15:50</div></div>
-<br />
-<div class="posttext">Originally posted by greatWho <br />
-Tonic: your solutoin is very easy, it looks fine,because the distortions at the edges i made two SS to cover them ;-) so it's only the picture with rotation;<br />
-<br />
-<br />
-<br />
-I think you do not fix correctly problem with distortions. And speed is very slow. I attached two examples you may use them to produce better result. In this AVS  I fix problems with Distortions that Altero mentions with using Movement for reducing size of rotating object with .9 of screen size. And jumping rotation forward in the moment before distortions so there is no position where distortions can apear:)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">24th July 2002 15:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Re: thanx for your solutions</strong><br />
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">24th July 2002, 15:56</div></div>
+		
+	<blockquote>
+			
+				<i>Originally posted by greatWho </i><br />
+<b>Tonic: your solutoin is very easy, it looks fine,because the distortions at the edges i made two SS to cover them ;-) so it's only the picture with rotation;<br />
 <br />
-<div class="posttext">I forgot attachment  or it do not work for me. So once again I try to attach one ZIP file with two presets :)</div></div><hr />
+</b></blockquote>
+I think you do not fix correctly problem with distortions. And speed is very slow. I attached two examples you may use them to produce better result. In this AVS  I fix problems with Distortions that Altero mentions with using Movement for reducing size of rotating object with .9 of screen size. And jumping rotation forward in the moment before distortions so there is no position where distortions can apear:)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">24th July 2002, 18:34</div></div>
-<br />
-<div class="posttext">Originally posted by Tonic <br />
-<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">24th July 2002 15:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		I forgot attachment  or it do not work for me. So once again I try to attach one ZIP file with two presets :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Rovastar</div>
+			<div class="date small text-muted">24th July 2002 18:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tonic </i><br />
+<b><br />
 <br />
 Average DL for ALL of them are 100'000 (less 32'000 most 171'000).<br />
 I'm still modest :)<br />
-<br />
-<br />
+</b></blockquote>
 Easy with the showing off stuff.:)<br />
 <br />
-I mean WildTangent have had many MILLIONS plug-in downloads doesn't mean they are any good.:)</div></div><hr />
+I mean WildTangent have had many MILLIONS plug-in downloads doesn't mean they are any good.:)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">24th July 2002, 18:54</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">24th July 2002 18:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		As I said I'm modest ... :) Yes DL do not mean nothing. But sometimes they helps. In all case in this days people do not DL AVS albums like they do thàt before. Where is problem ...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">24th July 2002 22:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Wildtangent</strong><br />
+		
+		
+
+		Hehe it just shows how easy it is to get 90% of all the male population to download programs full of spyware as long as they get to see wobbling boobs.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Rovastar</div>
+			<div class="date small text-muted">24th July 2002 23:10 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Tip for your next pack mate: <br />
 <br />
-<div class="posttext">As I said I'm modest ... :) Yes DL do not mean nothing. But sometimes they helps. In all case in this days people do not DL AVS albums like they do thàt before. Where is problem ...</div></div><hr />
+Ms Happy instead of Mister Happy. :);)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th July 2002, 22:29</div></div>
-<br />
-<div class="posttext">Hehe it just shows how easy it is to get 90% of all the male population to download programs full of spyware as long as they get to see wobbling boobs.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">horse-fly</div>
+			<div class="date small text-muted">29th July 2002 01:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Tonic is a pioneer!!!!</strong><br />
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Rovastar</div><div class="date small text-muted">24th July 2002, 23:10</div></div>
-<br />
-<div class="posttext">Tip for your next pack mate: <br />
-<br />
-Ms Happy instead of Mister Happy. :);)</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">29th July 2002, 01:28</div></div>
-<br />
-<div class="posttext">as an avs artist myself, i admire works from tonic.  The download rate does mean much... Wildtangent has to sponsor ads for downloads, and there was once this one guy (indyrod ... lol) who got a crap load of downloads just because he had friends in high places.  <br />
+		as an avs artist myself, i admire works from tonic.  The download rate does mean much... Wildtangent has to sponsor ads for downloads, and there was once this one guy (indyrod ... lol) who got a crap load of downloads just because he had friends in high places.  <br />
 <br />
 if you look at tonic's work and the other work that came out at the same time, you'll see a vast difference between the two.  Tonic has a very conceptual (did i spell that right?) look, while others look like crap.  <br />
 <br />
@@ -252,27 +471,70 @@ Tonic has create AVSociety, which brought together some of the best avs artists 
 <br />
 One can only hope to achieve the amount and quality that tonic has brought here.<br />
 <br />
-NOW ON THE TOPIC OF ROTATION:  to make a rotation, just use r &amp; d, but in regular movement with NO clear each frame, use a=x;b=y;x=x+b*0.05;y=y-a*0.05.  that is the closest to a rotation thing i can think of.</div></div><hr />
+NOW ON THE TOPIC OF ROTATION:  to make a rotation, just use r &amp; d, but in regular movement with NO clear each frame, use a=x;b=y;x=x+b*0.05;y=y-a*0.05.  that is the closest to a rotation thing i can think of.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">horse-fly</div>
+			<div class="date small text-muted">29th July 2002 01:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>oops...</strong><br />
+		
+		
+
+		i thought you meant r=r+0.05 rotation... lol
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">30th July 2002 07:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Horsefly: That rotation works for a z-axis rotation, and greatWho is looking for an x- or y-axis rotation (into the z-dimension).  For zero distortion, you'd probably want to go with the 2-plane projection (I don't know why it didn't work for you, there must have been a typo).<br />
+I've attached the DM I'm talking about.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">horse-fly</div>
+			<div class="date small text-muted">30th July 2002 19:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah... i know... i goofed.  I downloaded tonic's example, and that was when i figured that i screwed up... like unconed's April Fools forum (AVS 2.6)  That C*NT That stupid CU*T... geez the idiotic *UNT!!!!
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">29th July 2002, 01:34</div></div>
-<br />
-<div class="posttext">i thought you meant r=r+0.05 rotation... lol</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">30th July 2002, 07:20</div></div>
-<br />
-<div class="posttext">Horsefly: That rotation works for a z-axis rotation, and greatWho is looking for an x- or y-axis rotation (into the z-dimension).  For zero distortion, you'd probably want to go with the 2-plane projection (I don't know why it didn't work for you, there must have been a typo).<br />
-I've attached the DM I'm talking about.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">30th July 2002, 19:06</div></div>
-<br />
-<div class="posttext">yeah... i know... i goofed.  I downloaded tonic's example, and that was when i figured that i screwed up... like unconed's April Fools forum (AVS 2.6)  That C*NT That stupid CU*T... geez the idiotic *UNT!!!!</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

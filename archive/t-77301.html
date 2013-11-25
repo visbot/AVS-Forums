@@ -3,75 +3,139 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" help needed, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" help needed AVS" />
-	
-	<title> help needed - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> help needed - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">help needed</li>
-</ol>
-<!-- div class="pda"><a href="t-77301.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=77301">help needed</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">seren4chen</div><div class="date small text-muted">24th February 2002, 23:11</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">help needed</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=77301">help needed</a></p>
+
+
 <br />
-<div class="posttext">hi all,<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">seren4chen</div>
+			<div class="date small text-muted">24th February 2002 23:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>help needed</strong><br />
+		
+		
+
+		hi all,<br />
 <br />
 i am a newbie, and i need some help here. i want to feed the detected beat from avs to an external program as a trigger signal. how should i do that ? does somebody know this ? or does somebody know how to get winamp's variable spectrumData without having to write a vis plug-in ? by the way, i'm using delphi.<br />
 <br />
-thanks before.</div></div><hr />
+thanks before.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th February 2002, 00:09</div></div>
-<br />
-<div class="posttext">You have to write a visualisation plug-in to grab spectrumData. No way around that. You'll need to write your own beat-detection code in that case.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th February 2002 00:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You have to write a visualisation plug-in to grab spectrumData. No way around that. You'll need to write your own beat-detection code in that case.<br />
 <br />
 If you want to use AVS's beat detection, you could write an APE, but you'd need to modify all your presets to include it.<br />
 <br />
-I believe there is a Delphi Vis plugin SDK, but APE's only have a C++ SDK.</div></div><hr />
+I believe there is a Delphi Vis plugin SDK, but APE's only have a C++ SDK.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">T-CUT</div><div class="date small text-muted">25th February 2002, 09:53</div></div>
-<br />
-<div class="posttext">I wrote a plugin toghether with a friend, you call a function and this function should send the spec tó your programm(need the pointer, of the spec array)<br />
-i never tried it out. but if you want it send me a mail</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">T-CUT</div>
+			<div class="date small text-muted">25th February 2002 09:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I wrote a plugin toghether with a friend, you call a function and this function should send the spec tó your programm(need the pointer, of the spec array)<br />
+i never tried it out. but if you want it send me a mail
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">26th February 2002, 04:28</div></div>
-<br />
-<div class="posttext">You can grab spectrum data in AVS, but I don't think you can send it out without making a new plugin</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">26th February 2002 04:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Magic.X</div><div class="date small text-muted">26th February 2002, 11:22</div></div>
-<br />
-<div class="posttext">Hey Seren4chen!<br />
+		You can grab spectrum data in AVS, but I don't think you can send it out without making a new plugin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Magic.X</div>
+			<div class="date small text-muted">26th February 2002 11:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hey Seren4chen!<br />
 <br />
 I'm also one of the Delphi Users (we're rare but we're ther) :D<br />
 As i experienced it, it's realy hard to write some good vis plugs starting up without any knowledge. Maybe you should try to use your Soundcard's MixRecord function. Record the sound and get the signal into your prog directly. But maybe that's even more difficult, i never tried such things out... <br />
-By the Way, doyou have any Drag&amp;Drop experiences? I've almost completed a hotkey tool  (click here for info) (http://forums.winamp.com/showthread.php?s=&amp;threadid=76893) but i'm still struggling with adding drag&amp;drop. :confused: <br />
+By the Way, doyou have any Drag&amp;Drop experiences? I've almost completed a hotkey tool  <a href="http://forums.winamp.com/showthread.php?s=&amp;threadid=76893" target="_blank">(click here for info)</a> but i'm still struggling with adding drag&amp;drop. :confused: <br />
 <br />
-Hope you'll succeed</div></div><hr />
+Hope you'll succeed
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

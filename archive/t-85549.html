@@ -3,37 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" SS for those VJ's out there., avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" SS for those VJ's out there. AVS Presets" />
-	
-	<title> SS for those VJ's out there. - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" SS for those VJ's out there. AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> SS for those VJ's out there. - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">SS for those VJ's out there.</li>
-</ol>
-<!-- div class="pda"><a href="t-85549.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=85549">SS for those VJ's out there.</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">22nd April 2002, 08:53</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">SS for those VJ's out there.</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=85549">SS for those VJ's out there.</a></p>
+
+
 <br />
-<div class="posttext">This will enable you to mix 4 waveforms into one SS, with interpolation between presets, added Hue Saturation Brightness colour option, and onBeat Rotation/Scaling offsets.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">22nd April 2002 08:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>SS for those VJ's out there.</strong><br />
+		
+		
+
+		This will enable you to mix 4 waveforms into one SS, with interpolation between presets, added Hue Saturation Brightness colour option, and onBeat Rotation/Scaling offsets.<br />
 <br />
 Init: cb=1;cb2=1;bb=1;bb2=1;ti=20;ts=50;pi=acos(-1);rs=.01;zt=.01;zs=.5<br />
 <br />
@@ -70,35 +84,84 @@ x1,y1,x2,y2,x3,y3,x4,y4 - Set these in pairs per waveform.<br />
 <br />
 Hope this makes some things easier for a few of you :D<br />
 <br />
-Newbie Tip. Using clear every frame on the main option, and an effect list with an adjustable blend input(Set nearly all to the right), and clear every frame enabled on the EL, will work as a fadeout.</div></div><hr />
+Newbie Tip. Using clear every frame on the main option, and an effect list with an adjustable blend input(Set nearly all to the right), and clear every frame enabled on the EL, will work as a fadeout.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd April 2002, 10:22</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">22nd April 2002 10:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I didn't quite get your newbie tip... if both main and the effect list have 'clear every frame' checked, then the result of the blend will of course always be black, right?<br />
 <br />
-<div class="posttext">I didn't quite get your newbie tip... if both main and the effect list have 'clear every frame' checked, then the result of the blend will of course always be black, right?<br />
+In any case, an adjustable blend combined with 'clear every frame' should definately be slower than a regular trans / fadeout... T/F blends to a constant colour for each pixel, while adjustable blend has totally different inputs for each pixel. Not to mention the minor overhead you'd get from setting the buffer to zero ('clear every frame').
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">26th April 2002 09:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oops, I meant that the preset was NOT being cleared every frame, and BTW it's a divisional fade to black, rather than the normal fadeout.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">26th April 2002 10:37 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ah ok... actually I didn't think the difference between linear fadeout and a decaying fadeout would be noticable. Is it? And I wonder if it justifies the extra slowdown :).<br />
 <br />
-In any case, an adjustable blend combined with 'clear every frame' should definately be slower than a regular trans / fadeout... T/F blends to a constant colour for each pixel, while adjustable blend has totally different inputs for each pixel. Not to mention the minor overhead you'd get from setting the buffer to zero ('clear every frame').</div></div><hr />
+By the way, you seem to know your way around AVS's code... have you been AVSing for a long time and/or have you released presets?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">26th April 2002 11:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I haven't 'released' any presets, but I do muck around a fair bit experimenting with this and that.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">26th April 2002, 09:11</div></div>
-<br />
-<div class="posttext">Oops, I meant that the preset was NOT being cleared every frame, and BTW it's a divisional fade to black, rather than the normal fadeout.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th April 2002, 10:37</div></div>
-<br />
-<div class="posttext">Ah ok... actually I didn't think the difference between linear fadeout and a decaying fadeout would be noticable. Is it? And I wonder if it justifies the extra slowdown :).<br />
-<br />
-By the way, you seem to know your way around AVS's code... have you been AVSing for a long time and/or have you released presets?</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">26th April 2002, 11:34</div></div>
-<br />
-<div class="posttext">I haven't 'released' any presets, but I do muck around a fair bit experimenting with this and that.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

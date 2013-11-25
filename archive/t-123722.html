@@ -3,36 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Superscope help, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Superscope help AVS" />
-	
-	<title> Superscope help - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Superscope help - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Superscope help</li>
-</ol>
-<!-- div class="pda"><a href="t-123722.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=123722">Superscope help</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">3rd February 2003, 02:15</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Superscope help</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=123722">Superscope help</a></p>
+
+
 <br />
-<div class="posttext">Ok, This is strictly for those who know superscopes, mathematics, and preferably english.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">3rd February 2003 02:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Superscope help</strong><br />
+		
+		
+
+		Ok, This is strictly for those who know superscopes, mathematics, and preferably english.<br />
 <br />
 Ive started working on a mirror Superscope. Ie, you duplicate a 3d scope, chuck in some code, and viola! you have a reflection of your scope from a horizontal plane.<br />
 <br />
@@ -55,45 +70,95 @@ That code makes a reflective projection of the scope specified in y1,x1 and z1 a
 <br />
 MY PROBLEM IS: It doesnt look like a mirror, it just looks like another scope lover down, the same way that a perfectly clean mirror resembles a real life extension of a room. I need to think of a way of rotating the mirror, and therfore distorting the reflection to convince the viewer.<br />
 <br />
-Any suggestions, ideas, ... Unconed perhaps.!??</div></div><hr />
+Any suggestions, ideas, ... Unconed perhaps.!??
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd February 2003, 03:33</div></div>
-<br />
-<div class="posttext">First off, don't use the el-vis method for 3D.  I've got a psuedo-explanation of 3D in AVS Primer, it doesn't work in the real world (the proof, that is), but for all intents and purposes, it'll suffice (I'm gonna update it soon).<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">3rd February 2003 03:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		First off, don't use the el-vis method for 3D.  I've got a psuedo-explanation of 3D in AVS Primer, it doesn't work in the real world (the proof, that is), but for all intents and purposes, it'll suffice (I'm gonna update it soon).<br />
 An object mirrored along the X-plane works like this:<br />
 frame: a=0;<br />
 pixel:<br />
 a=1-a;<br />
 x=if(a,...,-x);<br />
 y=if(a,...,y);<br />
-You can apply this to 3D quite easily.  Do note that this only works if &quot;lines&quot; is off.</div></div><hr />
+You can apply this to 3D quite easily.  Do note that this only works if &quot;lines&quot; is off.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">4th February 2003, 01:31</div></div>
-<br />
-<div class="posttext">Cheers atero, but if im not mistaken, your 1-a method will just create an inversion of the original. That is, it is still 3d, but just reversed on the x plane.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">4th February 2003 01:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Cheers atero, but if im not mistaken, your 1-a method will just create an inversion of the original. That is, it is still 3d, but just reversed on the x plane.<br />
 <br />
 What im trying to get is a 3d object that is transposed on to a 2d surface in front of the camera. Just like mirrors in real life.<br />
 <br />
 <br />
 <br />
-btw, by actual code does not use elvis's method, im just explaining it that way so all can understand without me posting the whole lot.</div></div><hr />
+btw, by actual code does not use elvis's method, im just explaining it that way so all can understand without me posting the whole lot.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">4th February 2003, 02:08</div></div>
-<br />
-<div class="posttext">It sounds like you are just trying to project a 3-D object onto a 2-D SSC.  Look at Atero's primer.  There are several presets that somewhat explain this projection.  Also, search the forums for this.  Shouldn't be too hard to find what you need.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">4th February 2003 02:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		It sounds like you are just trying to project a 3-D object onto a 2-D SSC.  Look at Atero's primer.  There are several presets that somewhat explain this projection.  Also, search the forums for this.  Shouldn't be too hard to find what you need.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">4th February 2003, 02:17</div></div>
-<br />
-<div class="posttext">sigh.. ok</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">4th February 2003 02:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">4th February 2003, 06:08</div></div>
-<br />
-<div class="posttext">loook, thank you all.. but i dont think ive explained it very well..<br />
+		sigh.. ok
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">4th February 2003 06:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		loook, thank you all.. but i dont think ive explained it very well..<br />
 its not just projections.., its more like projections twice over.<br />
 <br />
 you draw the 3d image, project it onto the 2d surface, move that 2d surface into the 3d world and then project it back to the 2d x by y superscope engine.<br />
@@ -104,61 +169,137 @@ x5=(z4-(((y4-y5)*z4)/(-y5+(y4-y5))))*(x4/z4); <br />
 <br />
 This makes the mirrored image, on an actual 2d surface (The plane at y=2)! Ive already done that much.. What i need is a way to rotate my projection, and distort the mirrored image as it would be in real life.. IT IS A REALATIVLY NEW IDEA.. (For superscopes anyway) its not going to be in the forums.. The forums will have ideas like rotating the flat surface, or rotatingg a surface with DM. But none of these ideas will actually affect the shape of the reflection like in real life.<br />
 <br />
-Any understand me now?? im not very good at explaining this shit.</div></div><hr />
+Any understand me now?? im not very good at explaining this shit.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">4th February 2003, 11:21</div></div>
-<br />
-<div class="posttext">What i sugest is that you make two same 3D scopes and sinchonise them using getosc. Than project one of yore scopes once and one off them two times(2nd time on a plane you want).<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">nixa</div>
+			<div class="date small text-muted">4th February 2003 11:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		What i sugest is that you make two same 3D scopes and sinchonise them using getosc. Than project one of yore scopes once and one off them two times(2nd time on a plane you want).<br />
 In the attachment you can see 3 scopes: a 3D cube, a square, and a mirrored cube projectet on the plane defined by this square.<br />
 <br />
-And this should be moved to troubleshooting forum.</div></div><hr />
+And this should be moved to troubleshooting forum.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th February 2003, 12:28</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">4th February 2003 12:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I don't really understand what you mean either. Do you mean non-flat mirrors and such? Or do you mean drawing what you see when you look straight at the mirror and then using that as a texture on a 3D DM?<br />
 <br />
-<div class="posttext">I don't really understand what you mean either. Do you mean non-flat mirrors and such? Or do you mean drawing what you see when you look straight at the mirror and then using that as a texture on a 3D DM?<br />
-<br />
-In the second case, you need to mirror your camera's position and rotation and use that virtual viewpoint as your perspective.</div></div><hr />
+In the second case, you need to mirror your camera's position and rotation and use that virtual viewpoint as your perspective.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">4th February 2003, 12:30</div></div>
-<br />
-<div class="posttext">The key to doing that right is to make sure you do the rotations and translations in the right order.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">4th February 2003 12:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		The key to doing that right is to make sure you do the rotations and translations in the right order.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th February 2003, 12:50</div></div>
-<br />
-<div class="posttext">It's not so much doing it in the right order, but knowing why you're using a certain order.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">4th February 2003 12:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		It's not so much doing it in the right order, but knowing why you're using a certain order.<br />
 <br />
 Attached is the idea behind the virtual camera thing. Using vector math you can mirror the camera's position and viewing direction.<br />
 <br />
 <br />
-PS: nixa: this doesn't belong in the troubleshooting forum... troubleshooting is for technical problems in getting AVS to run, not discussions about making avs presets.</div></div><hr />
+PS: nixa: this doesn't belong in the troubleshooting forum... troubleshooting is for technical problems in getting AVS to run, not discussions about making avs presets.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">4th February 2003, 18:29</div></div>
-<br />
-<div class="posttext">You want to reflect something though a general plane? (ax+by+cz+d=0)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">4th February 2003 18:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You want to reflect something though a general plane? (ax+by+cz+d=0)<br />
 <br />
 Is that what you want to do? If so then the easiest way to do this is to rotate and translate your 'world' so that the plane is z=0 then just change the signs the resulting z co-ordinates and reverse the rotation and translation. It will take a maximum of two rotations and one translation to align the plane with z=0 since the rotations and translation should be done to remove the x component, then the y component then the constant value. Do some matrix multiplication by a general plane to figure this out... I can't be bothered to expand that many brackets right now.<br />
 <br />
 <br />
 The main thing that I don't understand is this:<br />
 <br />
-It doesnt look like a mirror, it just looks like another scope lover down, the same way that a perfectly clean mirror resembles a real life extension of a room. I need to think of a way of rotating the mirror, and therfore distorting the reflection to convince the viewer. <br />
-<br />
-Rotate a real world mirror and the image will *NOT* distort, it will move to show a different viewpoint.</div></div><hr />
 
+	<blockquote>
+			
+				It doesnt look like a mirror, it just looks like another scope lover down, the same way that a perfectly clean mirror resembles a real life extension of a room. I need to think of a way of rotating the mirror, and therfore distorting the reflection to convince the viewer.</blockquote>
+Rotate a real world mirror and the image will *NOT* distort, it will move to show a different viewpoint.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">4th February 2003, 21:56</div></div>
-<br />
-<div class="posttext">If, by distort, you mean have a trapezoidal effect when the camera is looking at the mirror through a low angle, then yes it will distort.  Any other distortion would be caused by a non-flat mirror.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">4th February 2003 21:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">5th February 2003, 01:01</div></div>
-<br />
-<div class="posttext">ok, your all with me now.. sweet...<br />
+		If, by distort, you mean have a trapezoidal effect when the camera is looking at the mirror through a low angle, then yes it will distort.  Any other distortion would be caused by a non-flat mirror.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">5th February 2003 01:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		ok, your all with me now.. sweet...<br />
 Unconed is right on the money when he was talking about using a 3d scope as a texture for a 3d surface..<br />
 BUT, mirror images and reflections dont act like textures when the surface they are on is rotated, skewed or bent. A texture will distort as the surface is rotated, but a reflection will maintain the shape (from the pov of the camera) but reflect a different part of the original..<br />
 <br />
@@ -170,20 +311,42 @@ Cheers jheriko, i think thats where i got everyone (incl myself) confused..i mea
 <br />
 But you see the problem, i just need ways to convince the person that is an actual reflection, and not just another 3d scope directly below the original one. Im thinking about stealing unconed's idea from the sourceII<br />
 <br />
-btw, how do i attatch, and how do i use the code box so i can draw cheezy diagrams</div></div><hr />
+btw, how do i attatch, and how do i use the code box so i can draw cheezy diagrams
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">5th February 2003, 01:31</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">5th February 2003 01:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		To attach files: Click the &quot;Post a Reply&quot; button :down: .<br />
+Then, type whatever in the &quot;your reply:&quot; box.  Then, below the &quot;your reply:&quot; box are some checkboxes and a place where it says &quot;Attach file:&quot;.  To the right of &quot;Attach file:&quot; is a empty text box and a button that says &quot;Browse...&quot;.  Click the &quot;Browse...&quot; button and locate the file you want to attach by navigating the folders in the window that should appear after clicking the &quot;Browse...&quot; button.  This file must be one of the valid file extensions which are listed below the &quot;Browse...&quot; button.  &quot;Valid file extensions: gif jpg png txt zip bmp jpeg wsz wal m maki nsi nsh&quot;.  You can download winamp from <a href="http://www.winamp.com" target="_blank">www.winamp.com</a> and add your avs files(or whatever) to a zip file, which can then be uploaded on the website.<br />
 <br />
-<div class="posttext">To attach files: Click the &quot;Post a Reply&quot; button :down: .<br />
-Then, type whatever in the &quot;your reply:&quot; box.  Then, below the &quot;your reply:&quot; box are some checkboxes and a place where it says &quot;Attach file:&quot;.  To the right of &quot;Attach file:&quot; is a empty text box and a button that says &quot;Browse...&quot;.  Click the &quot;Browse...&quot; button and locate the file you want to attach by navigating the folders in the window that should appear after clicking the &quot;Browse...&quot; button.  This file must be one of the valid file extensions which are listed below the &quot;Browse...&quot; button.  &quot;Valid file extensions: gif jpg png txt zip bmp jpeg wsz wal m maki nsi nsh&quot;.  You can download winamp from www.winamp.com and add your avs files(or whatever) to a zip file, which can then be uploaded on the website.<br />
-<br />
-It isn't that difficult to figure out and I am sure it is addressed somewhere in these forums.  If you can't follow my instructions, then go away.:hang:</div></div><hr />
+It isn't that difficult to figure out and I am sure it is addressed somewhere in these forums.  If you can't follow my instructions, then go away.:hang:
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">5th February 2003, 01:45</div></div>
-<br />
-<div class="posttext">nixa.. man.. geeez <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">5th February 2003 01:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		nixa.. man.. geeez <br />
 i only just looked at you preset posted above..<br />
 you showed me up hardcore and made it look so eeeezy<br />
 <br />
@@ -196,29 +359,61 @@ If there are people on this thread that still cant understand what im shiting on
 <br />
 Attatched is my first attempt, before nixa came along and made me look so wanky... full of bugs, errors and code imperfections..<br />
 i used a very cheezy ways of blackening part of the reflection as it passes over the grid..<br />
-i havnot yet worked out rotation etc.. sigh..</div></div><hr />
+i havnot yet worked out rotation etc.. sigh..
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">5th February 2003, 01:53</div></div>
-<br />
-<div class="posttext">That's nice.  The grid can be done easier than using 15 SSC's.  Yeah, it does look like you haven't added the &quot;distortion&quot;.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">5th February 2003 01:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		That's nice.  The grid can be done easier than using 15 SSC's.  Yeah, it does look like you haven't added the &quot;distortion&quot;.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">5th February 2003, 02:01</div></div>
-<br />
-<div class="posttext">hehe.. that grid is an heirloom..<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">5th February 2003 02:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hehe.. that grid is an heirloom..<br />
 its the first think i made in 3d.. and now i use it whenever i start a new project..<br />
 hehe.. im glad you comented..<br />
 <br />
 <br />
 -----------------<br />
 i made this is edit for anubis<br />
------------------</div></div><hr />
+-----------------
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">AVS Axer</div><div class="date small text-muted">5th February 2003, 06:18</div></div>
-<br />
-<div class="posttext">Ooops.. alright nixa.. <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">AVS Axer</div>
+			<div class="date small text-muted">5th February 2003 06:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ooops.. alright nixa.. <br />
 i re read your scope code.. and.. <br />
 well.. its not a mirror.. its just a texture sortof thing..<br />
 ie.. if the cubes arnt rotating, the reflection will only show the side that the camera see.. <br />
@@ -228,11 +423,20 @@ Geez, now im talking about imaginary camera's, i didnt even use them with my met
 <br />
 here.. i whiped up a cheezy diagram in paint. i think my working out it right.. feel free to correct or ammend.<br />
 <br />
-unconeds diagram above uses the imaginaryt cam thingo</div></div><hr />
+unconeds diagram above uses the imaginaryt cam thingo
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,38 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Render Picture II, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Render Picture II AVS" />
-	
-	<title> Render Picture II - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Render Picture II - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Render Picture II</li>
-</ol>
-<!-- div class="pda"><a href="t-110299.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=110299">Render Picture II</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">17th October 2002, 23:56</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Render Picture II</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=110299">Render Picture II</a></p>
+
+
 <br />
-<div class="posttext">As you might know, I'm working on a &quot;Render &gt; Picture&quot; replacement that expands the flawed original.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">17th October 2002 23:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Render Picture II</strong><br />
+		
+		
+
+		As you might know, I'm working on a &quot;Render &gt; Picture&quot; replacement that expands the flawed original.<br />
 <br />
-http://acko.net/dump/renderpicture2.png<br />
+<a href="http://acko.net/dump/renderpicture2.png" target="_blank">http://acko.net/dump/renderpicture2.png</a><br />
 <br />
 This is what it looks like at the moment. Firstly, it's faster than the original for most pictures (except tiny ones), because it calculates the enlarged image only once rather than every frame. This also means it does bilinear filtering at no cost at all (only the pre-processing takes a bit longer, but that happens only once). I also implemented all the standard blend modes (replace, 50/50, additive, maximum, sub1, sub2, multiply, xor, adjustable).<br />
 <br />
@@ -45,94 +60,218 @@ You could easily duplicate this effect by using two instances of the picture ren
 <br />
 Next is aspect ratio correctness. Implement it?<br />
 <br />
-Finally any other suggestions? I don't want to turn it into one mega component though, because you can do quite a lot with AVS already. This APE is of course mainly aimed at experienced AVSers, so I'd like as little fluff as possible: only really useful stuff.</div></div><hr />
+Finally any other suggestions? I don't want to turn it into one mega component though, because you can do quite a lot with AVS already. This APE is of course mainly aimed at experienced AVSers, so I'd like as little fluff as possible: only really useful stuff.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Karnov</div><div class="date small text-muted">18th October 2002, 04:15</div></div>
-<br />
-<div class="posttext">Next is aspect ratio correctness. Implement it? <br />
-<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Karnov</div>
+			<div class="date small text-muted">18th October 2002 04:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				Next is aspect ratio correctness. Implement it?</blockquote>
 definetly<br />
 <br />
 (if that is what i think it is: a way to strech pictures so they fit better)<br />
 <br />
 <br />
-oh yeah, i hope you get .jpg support, you would be the coolest .ape (programmer) around :p</div></div><hr />
+oh yeah, i hope you get .jpg support, you would be the coolest .ape (programmer) around :p
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">18th October 2002, 06:36</div></div>
-<br />
-<div class="posttext">Could it be possible to define the position of the picture? (like in text)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">18th October 2002 06:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Could it be possible to define the position of the picture? (like in text)<br />
 <br />
 Yes you can do it with movements, but if it's faster to implent it directly to the ape it would be better.<br />
 <br />
 I was also wondering about defining the picture size also. Possible? fast?<br />
 <br />
-Or am i just talking crazy :igor:</div></div><hr />
+Or am i just talking crazy :igor:
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">18th October 2002, 07:57</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">18th October 2002 07:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, have an option for size based on both percent and absolute pixels.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">18th October 2002 11:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hm, does this work with transparent PNGs aswell?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th October 2002 12:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		If I manage to read PNGs, making an additional blend mode &quot;Alpha channel&quot; shouldn't be a problem.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">18th October 2002 13:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Alpha channel sounds infinitely useful. I don't suppose youd be able to make a 'draw alhpa channel only' option? Then you could make 'quake 3 shader' style effects for textures. :)<br />
 <br />
-<div class="posttext">Yeah, have an option for size based on both percent and absolute pixels.</div></div><hr />
+Either that or have multiple blend modes for the alpha channel... but I think that would be the more awkward way to do it.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">18th October 2002, 11:46</div></div>
-<br />
-<div class="posttext">hm, does this work with transparent PNGs aswell?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tonic</div>
+			<div class="date small text-muted">18th October 2002 15:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		If you could add possibilities for &quot;On &quot;N&quot; beats change picture&quot; will be cool. User may chouse folder with pictures and program will load pictures in name order or randomly from this folder on every &quot;N&quot; beats. Or may be instead of loading from one folder user may create playlist with pictures (from different folders) than program will load files from this playlist again in playlist order or randomly.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th October 2002, 12:15</div></div>
-<br />
-<div class="posttext">If I manage to read PNGs, making an additional blend mode &quot;Alpha channel&quot; shouldn't be a problem.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th October 2002 15:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th October 2002, 13:17</div></div>
-<br />
-<div class="posttext">Alpha channel sounds infinitely useful. I don't suppose youd be able to make a 'draw alhpa channel only' option? Then you could make 'quake 3 shader' style effects for textures. :)<br />
-<br />
-Either that or have multiple blend modes for the alpha channel... but I think that would be the more awkward way to do it.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Tonic</div><div class="date small text-muted">18th October 2002, 15:24</div></div>
-<br />
-<div class="posttext">If you could add possibilities for &quot;On &quot;N&quot; beats change picture&quot; will be cool. User may chouse folder with pictures and program will load pictures in name order or randomly from this folder on every &quot;N&quot; beats. Or may be instead of loading from one folder user may create playlist with pictures (from different folders) than program will load files from this playlist again in playlist order or randomly.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th October 2002, 15:48</div></div>
-<br />
-<div class="posttext">If you want to use multiple pictures, wouldn't the improved AVI player be better?<br />
+		If you want to use multiple pictures, wouldn't the improved AVI player be better?<br />
 <br />
 As I said, I don't want to make a mega APE, just fix the flawed Render / Picture.<br />
 <br />
-&quot;alpha channel sounds infinitely useful. I don't suppose youd be able to make a 'draw alhpa channel only' option? Then you could make 'quake 3 shader' style effects for textures.&quot;<br />
+
+	<blockquote>
+			
+				&quot;alpha channel sounds infinitely useful. I don't suppose youd be able to make a 'draw alhpa channel only' option? Then you could make 'quake 3 shader' style effects for textures.&quot;</blockquote>
+I'm not sure what you mean. If you want to draw the alpha channel, why not just use that as the image?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">18th October 2002 16:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I was just thinking about saving on pictures. Where as you would need two pictures for a texture and an alpha channel you could save on the number of pictures needed by using the same one for both. You might want to use the alpha channel from the picture on something else as well as the picture, say if you wanted to add blend some scopes over a picture (for whatever reason) and you wanted a circular black hole in the middle, you could recycle the alpha channel from the picture to multiply with the scopes to get the hole in the middle of them to match exactly with the hole in the middle of the texture so that when you add them together you don't end up with scopes in the hole.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th October 2002 16:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just do a subtractive blend of a picture of the alpha channel on the scopes? By the way, additive blending doesn't need an alpha channel :).<br />
 <br />
-I'm not sure what you mean. If you want to draw the alpha channel, why not just use that as the image?</div></div><hr />
+I'm only going to do replace-alpha blending. Most other modes don't need it (you can modify the picture itself), and I fail to see the point of an alphablended XOR for example :). Besides, you could use a regular AVS buffer blend for that anyway (see what I mean with keeping it simple? :)).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th October 2002, 16:03</div></div>
-<br />
-<div class="posttext">I was just thinking about saving on pictures. Where as you would need two pictures for a texture and an alpha channel you could save on the number of pictures needed by using the same one for both. You might want to use the alpha channel from the picture on something else as well as the picture, say if you wanted to add blend some scopes over a picture (for whatever reason) and you wanted a circular black hole in the middle, you could recycle the alpha channel from the picture to multiply with the scopes to get the hole in the middle of them to match exactly with the hole in the middle of the texture so that when you add them together you don't end up with scopes in the hole.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">18th October 2002 16:51 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th October 2002, 16:38</div></div>
-<br />
-<div class="posttext">Just do a subtractive blend of a picture of the alpha channel on the scopes? By the way, additive blending doesn't need an alpha channel :).<br />
-<br />
-I'm only going to do replace-alpha blending. Most other modes don't need it (you can modify the picture itself), and I fail to see the point of an alphablended XOR for example :). Besides, you could use a regular AVS buffer blend for that anyway (see what I mean with keeping it simple? :)).</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th October 2002, 16:51</div></div>
-<br />
-<div class="posttext">Like I said... I was just thinking about saving on the number of pictures used. You'd only need 1 picture rather than 2, it keeps the pack size down. Its not mega important, I just thought that it would be nice.<br />
+		Like I said... I was just thinking about saving on the number of pictures used. You'd only need 1 picture rather than 2, it keeps the pack size down. Its not mega important, I just thought that it would be nice.<br />
 <br />
 This Render/Picture II sounds really good anyway, and really fast.(framerate = god)<br />
 <br />
-:)</div></div><hr />
+:)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">18th October 2002, 20:14</div></div>
-<br />
-<div class="posttext">For the blending, I think this would be the fucking shit:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">18th October 2002 20:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		For the blending, I think this would be the fucking shit:<br />
 <br />
 Normal blend: blend options (adjustable slidebar and %)<br />
 X On-beat blend: blend options (adjustable slidebar and %)<br />
@@ -145,12 +284,22 @@ X is a checkbox, and (...) is an option that's only useable when using adjustabl
 <br />
 The aspect ratio correction NEEDS to be there.  Have it just be correct, instead of making it correct on either the x- or y-axis.  Also have it correct ******ds OR inwards.  (in other words, if the picture is taller but thinner than the window, have it either expand to the width, or shrink to the height.)<br />
 <br />
-Was that too many suggestions? :p</div></div><hr />
+Was that too many suggestions? :p
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th October 2002, 20:29</div></div>
-<br />
-<div class="posttext">Buffer blend is not possible because APEs can't access the internal AVS buffers. You'll have to use an effect list.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th October 2002 20:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Buffer blend is not possible because APEs can't access the internal AVS buffers. You'll have to use an effect list.<br />
 <br />
 I just implemented minimum blend, because it's just switching around two lines from the maximum code :).<br />
 <br />
@@ -158,62 +307,146 @@ Why would you need a percentage box? I doubt you'll notice the difference betwee
 <br />
 Does anyone *every* use those alternating pixel/line patterns? :) Think of stuff you're going to use, not stuff that just sounds cool :P.<br />
 <br />
-Have it just be correct, instead of making it correct on either the x- or y-axis. Also have it correct ******ds OR inwards.<br />
-<br />
-By the way, that first sentence doesn't make sense. You can't 'just correct it'. Unless that 'also' in the second sentence wasn't supposed to be there.</div></div><hr />
 
+	<blockquote>
+			
+				Have it just be correct, instead of making it correct on either the x- or y-axis. Also have it correct ******ds OR inwards.</blockquote>
+By the way, that first sentence doesn't make sense. You can't 'just correct it'. Unless that 'also' in the second sentence wasn't supposed to be there.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">nixa</div><div class="date small text-muted">19th October 2002, 21:52</div></div>
-<br />
-<div class="posttext">Cool we are going to have a new Unconed ape. :)<br />
-What is minimum blend and how does it work?</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">nixa</div>
+			<div class="date small text-muted">19th October 2002 21:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th October 2002, 23:49</div></div>
-<br />
-<div class="posttext">Minimum blend blends the two pixels as little as possible.<br />
+		Cool we are going to have a new Unconed ape. :)<br />
+What is minimum blend and how does it work?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">19th October 2002 23:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Minimum blend blends the two pixels as little as possible.<br />
 <br />
 <br />
 I meant that instead of correcting on the x-axis OR the y-axis, which can result in either shrinking or zooming the picture, do one or the other in all cases.  So if correct inwards is turned on, you would shrink either the x-axis or the y-axis to fit the window, and vice versa for correct ******ds.  Do I make sense now?<br />
 <br />
-BTW, I have uses for both a manual percentage text-box and an alternate every other pixel.  They're hard to explain, though.  And come to think of it...they don't really apply to render / picture.  Never mind ;)</div></div><hr />
+BTW, I have uses for both a manual percentage text-box and an alternate every other pixel.  They're hard to explain, though.  And come to think of it...they don't really apply to render / picture.  Never mind ;)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th October 2002, 03:18</div></div>
-<br />
-<div class="posttext">Minimum blend simply compares the channels of the two pixels and always takes the lowest value, just like maximum blend takes the highest value from the two.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">20th October 2002 03:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Minimum blend simply compares the channels of the two pixels and always takes the lowest value, just like maximum blend takes the highest value from the two.<br />
 <br />
 E.g. blend (128, 0, 200) with (0, 50, 100):<br />
 <br />
 minimum: (0, 0, 100)<br />
-maximum: (128, 50, 200)</div></div><hr />
+maximum: (128, 50, 200)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">21st October 2002, 09:45</div></div>
-<br />
-<div class="posttext">Does anyone *every* use those alternating pixel/line patterns?  Think of stuff you're going to use, not stuff that just sounds cool :P.  <br />
-<br />
-If someone want's to use that they can just DRAW it in the picture :p</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">21st October 2002 09:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		
+	<blockquote>
+			
+				Does anyone *every* use those alternating pixel/line patterns?  Think of stuff you're going to use, not stuff that just sounds cool :P.</blockquote>
+If someone want's to use that they can just DRAW it in the picture :p
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">21st October 2002, 11:48</div></div>
-<br />
-<div class="posttext">steven, what does the xor blend actually do</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Montana</div>
+			<div class="date small text-muted">21st October 2002 11:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st October 2002, 12:06</div></div>
-<br />
-<div class="posttext">It performs a bit-per-bit binary XOR... just like the regular AVS XOR mode.</div></div><hr />
+		steven, what does the xor blend actually do
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Montana</div><div class="date small text-muted">21st October 2002, 12:30</div></div>
-<br />
-<div class="posttext">umhh, the thing is that i meant was that i did't understand what the xor blend avs does actually (how does it work)?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">21st October 2002 12:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		It performs a bit-per-bit binary XOR... just like the regular AVS XOR mode.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st October 2002, 14:13</div></div>
-<br />
-<div class="posttext">The binary XOR does an exclusive or on the bits by returning 1 if the bits are different and 0 if they are the same.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Montana</div>
+			<div class="date small text-muted">21st October 2002 12:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		umhh, the thing is that i meant was that i did't understand what the xor blend avs does actually (how does it work)?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">21st October 2002 14:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The binary XOR does an exclusive or on the bits by returning 1 if the bits are different and 0 if they are the same.<br />
 <br />
 eg.<br />
 <br />
@@ -230,7 +463,7 @@ a=00FF4008<br />
 b=00408000<br />
 <br />
 (ignoring the front zeroes)<br />
-<br />
+<pre><code><br />
    F    F    4    0    0    8<br />
 a=1111 1111 0100 0000 0000 1000<br />
 <br />
@@ -239,7 +472,7 @@ b=0100 0000 1000 0000 0000 0000<br />
 <br />
           11=B 15=F 12=C 0=0  0=0  8=8<br />
 a xor b = 1011 1111 1100 0000 0000 1000 <br />
-<br />
+</code></pre><br />
 <br />
 so the result is 00BFC008<br />
 <br />
@@ -250,12 +483,22 @@ blue = 08 = 0*16+8 = 8<br />
 <br />
 :D<br />
 <br />
-EDIT: Oh... and the reason for the two leading zeroes is to make it fit into 32 bits. I know that in a targa file you can use those extra bits to store the grayscale alpha channel information, its probably the same with other formats with alpha channels.</div></div><hr />
+EDIT: Oh... and the reason for the two leading zeroes is to make it fit into 32 bits. I know that in a targa file you can use those extra bits to store the grayscale alpha channel information, its probably the same with other formats with alpha channels.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st October 2002, 15:35</div></div>
-<br />
-<div class="posttext">The reason AVS uses 32-bit as well is for processor reasons. The Pentium memory bus is 32-bits wide and has to fetch data from 32-bit aligned addresses.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">21st October 2002 15:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The reason AVS uses 32-bit as well is for processor reasons. The Pentium memory bus is 32-bits wide and has to fetch data from 32-bit aligned addresses.<br />
 <br />
 Suppose AVS used 24-bit instead, it would sometimes have to fetch 64-bit to get one whole pixel:<br />
 <br />
@@ -268,34 +511,80 @@ R1 G1 B1 00 | R2 G2 B2 00 | R3 G3 B3 00 | R4 G4 B4 00<br />
 <br />
 So by padding with zeroes, you get an increase in memory size, but a large speed-up as well.<br />
 <br />
-And yes, usually 32-bit color means RGBA (with an alpha/transparency channel) instead of RGB0.</div></div><hr />
+And yes, usually 32-bit color means RGBA (with an alpha/transparency channel) instead of RGB0.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st October 2002, 15:42</div></div>
-<br />
-<div class="posttext">Meh.. the x86 architechture is crap. All of its problems spawn from intels foolish desire to make every single processor fully backwardly compatible, I mean who wants to run software written for the 4004 on a Pentium 4? Thats just insanity.<br />
-<br />
-Personally I think that they should start a new architecture from scratch and make their processors be compatible with both for a few years, then phase x86 out. Or they could slowly introduce the new one... anyway, it shouldn't be too hard a thing to organise and maybe they would learn a lesson, like 'do things properly in the first place'.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">21st October 2002 15:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		[offtopic]<br />
+<br />
+Meh.. the x86 architechture is crap. All of its problems spawn from intels foolish desire to make every single processor fully backwardly compatible, I mean who wants to run software written for the 4004 on a Pentium 4? Thats just insanity.<br />
+<br />
+Personally I think that they should start a new architecture from scratch and make their processors be compatible with both for a few years, then phase x86 out. Or they could slowly introduce the new one... anyway, it shouldn't be too hard a thing to organise and maybe they would learn a lesson, like 'do things properly in the first place'.<br />
+<br />
+[/offtopic]
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st October 2002, 18:30</div></div>
-<br />
-<div class="posttext">Isn't that what IA-64 is supposed to be?</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">21st October 2002 18:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">21st October 2002, 18:55</div></div>
-<br />
-<div class="posttext">I'll have to ask about that, most of what I know about the architecture comes from the intel (propaganda filled) manual and pak-9 (who is doing a degree in software engineering). But as far as I am aware the IA-64 is going to retain all backward compatability, its one of the things that intel is most proud of (god knows why) so it will still have all of the flaws of x86. <br />
-<br />
-Apparently one of the biggest flaws is the program counter which uses two registers because it needs 20-bits, so it uses 2 16-bit registers where a single 20-bit or 32-bit register would do fine, and also make everything run much faster.</div></div><hr />
+		Isn't that what IA-64 is supposed to be?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd October 2002, 18:50</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">21st October 2002 18:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'll have to ask about that, most of what I know about the architecture comes from the intel (propaganda filled) manual and pak-9 (who is doing a degree in software engineering). But as far as I am aware the IA-64 is going to retain all backward compatability, its one of the things that intel is most proud of (god knows why) so it will still have all of the flaws of x86. <br />
 <br />
-<div class="posttext">Heres an email I got from P9 on how flawed x86 is.<br />
+Apparently one of the biggest flaws is the program counter which uses two registers because it needs 20-bits, so it uses 2 16-bit registers where a single 20-bit or 32-bit register would do fine, and also make everything run much faster.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">22nd October 2002 18:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Heres an email I got from P9 on how flawed x86 is.<br />
 <br />
-<br />
-yea I don't have time right now to list the shit things about x86 but I assure you there are many. Oh, okay you twisted my arm, here's a couple:<br />
+
+	<blockquote>
+			
+				yea I don't have time right now to list the shit things about x86 but I assure you there are many. Oh, okay you twisted my arm, here's a couple:<br />
 <br />
 When intel made their processors (8086) they made 16 bit registers, and you could access the top and bottom part of the registers as 8 bit. So the register AX could also be accesed as AL and AH (A low/A high). But when they added all the crap on to pentium processors to make them 32 bit, they just slapped another 16 bits to make the registers bigger (so AX for exaple became EAX). BUT, they didn't make it so that you could access the registers top 16 bits independantly, only the lower. This meant it was backwardly compatible with older software that stil accessed ax,bx etc... But why the hell didn't they make it so that you could access the top 16 bits? it just ripps off a load of capability for no reason.<br />
 <br />
@@ -304,37 +593,88 @@ register fuck up too.... Rather than make 1 24 bit (I think 24 bit is<br />
 enough) register that was the instruction pointer, they made a code<br />
 segment register that points to the beggining of the code in memory, then ANOTHER register (the instruction pointer) that points to the point above the code segment register where the next instruction is.WHY intel? WHY? what a big fat waste of a register.<br />
 <br />
-P9</div></div><hr />
+P9</blockquote>
 
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd October 2002, 18:58</div></div>
-<br />
-<div class="posttext">If you think regular x86 is incomplete, check out MMX. It's as if they took a list of all possible instructions, and then picked only a few implementations.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">22nd October 2002 18:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		If you think regular x86 is incomplete, check out MMX. It's as if they took a list of all possible instructions, and then picked only a few implementations.<br />
 <br />
 For example, you can't shift 8 packed bytes, only 4 packed words or 2 packed dwords. Or, comparisons only work on signed integers, not unsigned. So you have to flip the sign bit before and after doing a comparison of unsigned ints.<br />
 Division is also missing.<br />
 <br />
-All in all, quite annoying :P.</div></div><hr />
+All in all, quite annoying :P.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd October 2002, 19:00</div></div>
-<br />
-<div class="posttext">I thought that they tidied that up with SSE and SSE2. I know that they included a lot of other packed types, like double and single precision floats.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">22nd October 2002 19:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I thought that they tidied that up with SSE and SSE2. I know that they included a lot of other packed types, like double and single precision floats.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd October 2002, 23:26</div></div>
-<br />
-<div class="posttext">Yeah but SSE is far less common than MMX. Plus, it seems MSVC++6.0 doesn't understand SSE instructions... so I can't use them at the moment anyway.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">22nd October 2002 23:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">goebish</div><div class="date small text-muted">5th November 2002, 01:00</div></div>
-<br />
-<div class="posttext">:D nothing yet availlable?:D</div></div><hr />
+		Yeah but SSE is far less common than MMX. Plus, it seems MSVC++6.0 doesn't understand SSE instructions... so I can't use them at the moment anyway.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">5th November 2002, 01:59</div></div>
-<br />
-<div class="posttext">Well I do have a working .bmp renderer with bilinear filtering and all the AVS output modes (which is already better than render/picture 1), but I haven't fixed PNG support yet. LibPNG is still crashing sometimes.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">goebish</div>
+			<div class="date small text-muted">5th November 2002 01:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:D nothing yet availlable?:D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">5th November 2002 01:59 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well I do have a working .bmp renderer with bilinear filtering and all the AVS output modes (which is already better than render/picture 1), but I haven't fixed PNG support yet. LibPNG is still crashing sometimes.<br />
 <br />
 However, there is a different problem I didn't see: libpng and zlib (the two required for png support) combine to about 180KB. If I were to add JPG support, it would mean even more size.<br />
 <br />
@@ -342,63 +682,166 @@ Since people would have to distribute the APE along with their packs, it would p
 <br />
 I'll see if I can't crunch it down some more by cramming everything into the APE, but it's still a major bummer.<br />
 <br />
-Anyway I decided to put down R/P2 for now and pick up an older project of mine: an open-source compiler for AVS code ;), for use in APEs.</div></div><hr />
+Anyway I decided to put down R/P2 for now and pick up an older project of mine: an open-source compiler for AVS code ;), for use in APEs.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">5th November 2002, 19:00</div></div>
-<br />
-<div class="posttext">I'm pretty sure that you could make the APE do the file loading and stuff. As long as you know the file format or have some source it shouldn't be too difficult. I think that there are a few .jpg tutorials around and definately tons of targa ones.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">5th November 2002 19:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm pretty sure that you could make the APE do the file loading and stuff. As long as you know the file format or have some source it shouldn't be too difficult. I think that there are a few .jpg tutorials around and definately tons of targa ones.<br />
 <br />
 I'd recommend looking through places like flipcode.<br />
 <br />
-(I'd look for you but I'm so damn lazy :p)</div></div><hr />
+(I'd look for you but I'm so damn lazy :p)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">goebish</div><div class="date small text-muted">5th November 2002, 20:41</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">goebish</div>
+			<div class="date small text-muted">5th November 2002 20:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		have a look at: <a href="http://www.programmersheaven.com" target="_blank">http://www.programmersheaven.com</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">6th November 2002 08:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sad to hear that you have problems, since this is the first ape i actually would want to use, it would be very handy in my Bitmapped pack which im planning to do somewhere in the future... Well i think it will probably be ready by the time i start to make that pack :p<br />
 <br />
-<div class="posttext">have a look at: http://www.programmersheaven.com</div></div><hr />
+But what if i start to make presets with the old picture render and then use the ape when it is done, would it cause any complications etc.?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">6th November 2002 18:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hmm, nsis uses bzip2 compression and will use even more effective 7zip compression in future. it's still gonna be a big file i guess, but well, that's what it takes sometimes.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">3rd March 2003 14:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i'm not quite sure, who seriously took a look at the source-code. but who ever is on it, how about support for <a href="http://www.w3.org/TR/SVG/" target="_blank">SVG</a> files?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">legohead</div>
+			<div class="date small text-muted">4th March 2003 04:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		.gif support would be highly useful (moreso than .jpg which shouldn't make much difference than a .bmp). That way I can render transparent/masked pics which would be damn nice.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">4th March 2003 04:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		PNG would be the ultimate.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">blaz</div>
+			<div class="date small text-muted">18th April 2004 21:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thank you UnConeD, you are a good.<br />
+this is something that I needed the most.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">6th November 2002, 08:17</div></div>
-<br />
-<div class="posttext">Sad to hear that you have problems, since this is the first ape i actually would want to use, it would be very handy in my Bitmapped pack which im planning to do somewhere in the future... Well i think it will probably be ready by the time i start to make that pack :p<br />
-<br />
-But what if i start to make presets with the old picture render and then use the ape when it is done, would it cause any complications etc.?</div></div><hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">6th November 2002, 18:39</div></div>
-<br />
-<div class="posttext">hmm, nsis uses bzip2 compression and will use even more effective 7zip compression in future. it's still gonna be a big file i guess, but well, that's what it takes sometimes.</div></div><hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th April 2004 02:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Don't resurrect ancient threads with meaningless posts.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">3rd March 2003, 14:29</div></div>
-<br />
-<div class="posttext">i'm not quite sure, who seriously took a look at the source-code. but who ever is on it, how about support for SVG (http://www.w3.org/TR/SVG/) files?</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">legohead</div><div class="date small text-muted">4th March 2003, 04:29</div></div>
-<br />
-<div class="posttext">.gif support would be highly useful (moreso than .jpg which shouldn't make much difference than a .bmp). That way I can render transparent/masked pics which would be damn nice.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">4th March 2003, 04:56</div></div>
-<br />
-<div class="posttext">PNG would be the ultimate.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">blaz</div><div class="date small text-muted">18th April 2004, 21:35</div></div>
-<br />
-<div class="posttext">thank you UnConeD, you are a good.<br />
-this is something that I needed the most.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th April 2004, 02:45</div></div>
-<br />
-<div class="posttext">Don't resurrect ancient threads with meaningless posts.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

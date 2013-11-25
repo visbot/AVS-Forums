@@ -3,36 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Adding 'x' millisecond delay between beat and Visualisation reaction, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Adding 'x' millisecond delay between beat and Visualisation reaction AVS" />
-	
-	<title> Adding 'x' millisecond delay between beat and Visualisation reaction - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Adding 'x' millisecond delay between beat and Visualisation reaction - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Adding 'x' millisecond delay between beat and Visualisation reaction</li>
-</ol>
-<!-- div class="pda"><a href="t-256376.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=256376">Adding 'x' millisecond delay between beat and Visualisation reaction</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">28th September 2006, 04:38</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Adding 'x' millisecond delay between beat and Visualisation reaction</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=256376">Adding 'x' millisecond delay between beat and Visualisation reaction</a></p>
+
+
 <br />
-<div class="posttext">Hello fellow AVS user, <br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">28th September 2006 04:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Adding 'x' millisecond delay between beat and Visualisation reaction</strong><br />
+		
+		
+
+		Hello fellow AVS user, <br />
 <br />
 I know that the AVS source has been released for a while now, and I was wondering if there is ANY way to ADD an 'x' millisecond delay/lag to the display of the visualization?<br />
 <br />
@@ -43,52 +58,102 @@ Please dont suggest using Line-In and another Winamp/Vis Combo as I cant use tha
 I would prefer to have a small input box, where I can set the number of milliseconds for the vis to lag by, or if thats difficult to do, Im happy to hardcode it as a constant and recompile source each time if thats easier for someone to explain 'how to' for me.<br />
 <br />
 Thanks for your time, :)<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th September 2006, 11:18</div></div>
-<br />
-<div class="posttext">Making the change algorithmically is easy, you simply have to cache the oscilloscope/spectrum data and use an n ms old version for the vis plugin. You could do this at the 'entry point' for the library where winamp passes the plugin the data pointers.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th September 2006 11:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Making the change algorithmically is easy, you simply have to cache the oscilloscope/spectrum data and use an n ms old version for the vis plugin. You could do this at the 'entry point' for the library where winamp passes the plugin the data pointers.<br />
 <br />
 The actual implementation isn't hard but requires you to know some API calls and understand C++ in general. You can look these things up for yourself because explaining them all here would be fruitless. Part of being a programmer is looking up libraries and functions and working out what to do with them yourself.<br />
 <br />
 <br />
-If I were you though I would try to work out why my audio has a delay of 100ms...</div></div><hr />
+If I were you though I would try to work out why my audio has a delay of 100ms...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">28th September 2006, 11:41</div></div>
-<br />
-<div class="posttext">Thanks Jheriko.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">28th September 2006 11:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks Jheriko.<br />
 <br />
 I know why my audio has a delay - its passing through some VERY tough VST plugins to shape the sound. So I'm not worried about that aspect, infact I WANT it. :)<br />
 <br />
 Regarding using old data... is there any way to make the renderer render 'x' milliseconds late? or is that a harder thing than what you have described?<br />
 <br />
-I do know a little about programming, but I dont have time to learn how to do this right now (although its probably not too complex, its still beyond my knowledge)... If someone was able to do it instead, Id be very grateful. Its not that I dont want to learn, but Ive got to get this project ready so soon :(.</div></div><hr />
+I do know a little about programming, but I dont have time to learn how to do this right now (although its probably not too complex, its still beyond my knowledge)... If someone was able to do it instead, Id be very grateful. Its not that I dont want to learn, but Ive got to get this project ready so soon :(.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">30th September 2006, 03:07</div></div>
-<br />
-<div class="posttext">Anyone???<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">30th September 2006 03:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Anyone???<br />
 <br />
 I have DL'ed the AVS source and the Winamp SDK and I have Visual Studio... any hints on how to actually do this?<br />
 <br />
 Thanks<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">2nd October 2006, 03:22</div></div>
-<br />
-<div class="posttext">which API calls should I look at specifically?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">2nd October 2006 03:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		which API calls should I look at specifically?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th October 2006, 13:41</div></div>
-<br />
-<div class="posttext">Try QueryPerformanceCounter and QueryPerformanceFrequency. Everything else you need is in the core c++ spec.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">18th October 2006 13:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Try QueryPerformanceCounter and QueryPerformanceFrequency. Everything else you need is in the core c++ spec.<br />
 <br />
 Since you sound like you are struggling to think of an algorithm as well:<br />
 <br />
-Create a 'buffer' array to hold the old visdata and the value of the performance counter that needs to be reached when Nms will have passed. this buffer will need to be initialised with Nms of fake data<br />
+Create a 'buffer' array to hold the old visdata and the value of the performance counter that needs to be reached when <b>N</b>ms will have passed. this buffer will need to be initialised with <b>N</b>ms of fake data<br />
 <br />
 Store the frequency of the performance counter in some variable, this lets you convert the ugly LARGE_INTEGER into a number of seconds, and hence also milliseconds. This is a constant and doesnt need to be updated<br />
 <br />
@@ -96,7 +161,7 @@ Then in this order per frame:<br />
 <br />
 1.) queryperformancecounter and store the value in some var<br />
 <br />
-1.) store the visdata into the buffer with the necessary number. the number is the stored result above + N*0.001*queryperformancefrequency (which we stored already) which is a minimum value for the return value of queryperformancecounter to return after Nms<br />
+1.) store the visdata into the buffer with the necessary number. the number is the stored result above + <b>N</b>*0.001*queryperformancefrequency (which we stored already) which is a minimum value for the return value of queryperformancecounter to return after <b>N</b>ms<br />
 <br />
 2.) check through the stored numbers to see which of them exceeds the current value from queryperformancecounter<br />
 then replace this frames visdata with the visdata from the corresponding buffer entry<br />
@@ -113,12 +178,22 @@ Hope this helps.<br />
 <br />
 <br />
 <br />
-EDIT: I would do it for you but I am at work and its not convenient to build or test here. Maybe when I get home I will come back here and take a look. It does look like it should be a trivial fix.</div></div><hr />
+EDIT: I would do it for you but I am at work and its not convenient to build or test here. Maybe when I get home I will come back here and take a look. It does look like it should be a trivial fix.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">18th October 2006, 14:45</div></div>
-<br />
-<div class="posttext">Thanks Jheriko...<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">18th October 2006 14:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks Jheriko...<br />
 <br />
 I read ur post and I'm getting a little (a lot) lost in the programming terms. I understand the principle, but I havent done programming since Pascal back in highschool :P. I tried to look for any hints in the Milkdrop forum (as I wanted to make a similar thing for MilkDrop), but I quickly realised that this is over my head. :(<br />
 <br />
@@ -130,148 +205,347 @@ Winamp VIS = Delayer<br />
 Delayer[loads 'Actual Vis']<br />
 <br />
 Cheers<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th October 2006, 16:25</div></div>
-<br />
-<div class="posttext">I was really tired when I got home yesterday... I will maybe try to sort something out over the weekend. The plugin idea sounds good, but I'm not exactly sure if it will be that quick to implement... I would need to make some reasonably useful UI for that.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">19th October 2006 16:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I was really tired when I got home yesterday... I will maybe try to sort something out over the weekend. The plugin idea sounds good, but I'm not exactly sure if it will be that quick to implement... I would need to make some reasonably useful UI for that.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">19th October 2006, 16:44</div></div>
-<br />
-<div class="posttext">No problem dude. The assistance is greatly appreciated! :)<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">19th October 2006 16:44 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		No problem dude. The assistance is greatly appreciated! :)<br />
 <br />
 The UI could just have a box for millisecond delay, and a List box to select which VIS plugin (as per the Winamp Vis directory setting).<br />
 <br />
-Could leave the &quot;settings&quot; part up to the main Vis window in winamp. So they do their setting up by selecting the Actual vis they want, then clicking Configure.... then switch over to the delayer plugin and select that vis within Delayer and off they go.</div></div><hr />
+Could leave the &quot;settings&quot; part up to the main Vis window in winamp. So they do their setting up by selecting the Actual vis they want, then clicking Configure.... then switch over to the delayer plugin and select that vis within Delayer and off they go.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">23rd October 2006, 16:17</div></div>
-<br />
-<div class="posttext">I will get around to this!<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">23rd October 2006 16:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I will get around to this!<br />
 <br />
 Like most of the Windows API UI coding is counter-intuitive and involves functions and constants with long, poorly descriptive names that are difficult to remember. Every time I need to make a list box or combo box I have to go and look it up again, because even with resources they managed to f*ck it up somehow. :P<br />
 <br />
-You raise a good point about configuration screens and such though. It would be pretty awkward to handle nicely since the 'configure' button would need to behave specially when clicked. The simple solution would be to make the 'configure' for the delayer display some choice of which vis plugin to use before turning over to the actual plugin's configuration screen/routine.</div></div><hr />
+You raise a good point about configuration screens and such though. It would be pretty awkward to handle nicely since the 'configure' button would need to behave specially when clicked. The simple solution would be to make the 'configure' for the delayer display some choice of which vis plugin to use before turning over to the actual plugin's configuration screen/routine.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">23rd October 2006, 16:33</div></div>
-<br />
-<div class="posttext">Every now and then I think about trying to program this myself...and each time I open the SDK I end up 'dazed and confused'. I dont feel so bad though, as, if you are saying that its a pain in the *ss to do.. then I really had no chance of doing it. :P<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">23rd October 2006 16:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Every now and then I think about trying to program this myself...and each time I open the SDK I end up 'dazed and confused'. I dont feel so bad though, as, if you are saying that its a pain in the *ss to do.. then I really had no chance of doing it. :P<br />
 <br />
 Can't wait to see what you come up with.<br />
 <br />
 Cheers<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">7th November 2006, 08:13</div></div>
-<br />
-<div class="posttext">Jheriko,<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">7th November 2006 08:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Jheriko,<br />
 <br />
 Just wondering if you've had any more time to look at this?<br />
 <br />
 Cheers Mate,<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">7th November 2006, 09:50</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">7th November 2006 09:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, in honesty I had forgot. I had devastating computer problems last weekend that sort of distracted me. I'm busy tonight but hopefully I will make a prototype later this week.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">17th November 2006 01:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Howd the prototype go mate?<br />
+Hope you managed to get all your computer stuff fixed.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">17th November 2006 10:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm criminally lazy and have still done nothing :p<br />
 <br />
-<div class="posttext">Yeah, in honesty I had forgot. I had devastating computer problems last weekend that sort of distracted me. I'm busy tonight but hopefully I will make a prototype later this week.</div></div><hr />
+Keep doing other things instead... I'll get around to it though. Sorry for being so unreliable. :p
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">17th November 2006, 01:09</div></div>
-<br />
-<div class="posttext">Howd the prototype go mate?<br />
-Hope you managed to get all your computer stuff fixed.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">27th November 2006 09:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">17th November 2006, 10:31</div></div>
-<br />
-<div class="posttext">I'm criminally lazy and have still done nothing :p<br />
-<br />
-Keep doing other things instead... I'll get around to it though. Sorry for being so unreliable. :p</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">27th November 2006, 09:19</div></div>
-<br />
-<div class="posttext">I hear ya!<br />
+		I hear ya!<br />
 <br />
 I'm lazy too.. unless its something for my benefit... then Im super efficient :p lol.<br />
 <br />
 Gimme a buzz when you get around to it.<br />
 <br />
-Cheers</div></div><hr />
+Cheers
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">18th December 2006, 12:51</div></div>
-<br />
-<div class="posttext">Hey Jheriko,<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">18th December 2006 12:51 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hey Jheriko,<br />
 <br />
 Just giving you a nudge to let you know Im still around.<br />
 I know its getting to the busy part of December so I wont be holding my breath for anything till next year.<br />
 <br />
 Have a good Xmas/New Year<br />
-Ice</div></div><hr />
+Ice
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">18th December 2006, 13:15</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">18th December 2006 13:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I hate to be the one to break it to you Icey, but J is never going to get around to doing this. <br />
 <br />
-<div class="posttext">I hate to be the one to break it to you Icey, but J is never going to get around to doing this. <br />
+This whole thread is a complex web of lies and broken promises.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">18th December 2006 15:47 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Not really, my computer is still wrecked. I need to replace the failing hard drive still... True, I could have worked on this last week maybe or the week before and it probably wouldn't have taken much effort, but at the moment I don't even have a (good) installation of Visual Studio to work with.. that and it is hard to motivate myself to do something that I don't actually want myself...<br />
 <br />
-This whole thread is a complex web of lies and broken promises.</div></div><hr />
+I do have a nasty habit of saying I will do something then not doing it though. I really need to stop. So I WILL make this plugin.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">18th December 2006, 15:47</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">18th December 2006 18:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<font size="1">lies and broken promises</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">DrO</div>
+			<div class="date small text-muted">18th December 2006 20:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by jheriko </i><br />
+<b>I do have a nasty habit of saying I will do something then not doing it though. I really need to stop. So I WILL make this plugin. </b></blockquote>
+are you sure you're not me? ;)<br />
 <br />
-<div class="posttext">Not really, my computer is still wrecked. I need to replace the failing hard drive still... True, I could have worked on this last week maybe or the week before and it probably wouldn't have taken much effort, but at the moment I don't even have a (good) installation of Visual Studio to work with.. that and it is hard to motivate myself to do something that I don't actually want myself...<br />
-<br />
-I do have a nasty habit of saying I will do something then not doing it though. I really need to stop. So I WILL make this plugin.</div></div><hr />
+-daz
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">18th December 2006, 18:38</div></div>
-<br />
-<div class="posttext">lies and broken promises</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">20th December 2006 11:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		
+	<blockquote>
+			
+				<i>Originally posted by jheriko </i><br />
+<b>So I WILL make this plugin. </b></blockquote>
+Heh, in any event, sounds good to me! :)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">DrO</div><div class="date small text-muted">18th December 2006, 20:03</div></div>
-<br />
-<div class="posttext">Originally posted by jheriko <br />
-I do have a nasty habit of saying I will do something then not doing it though. I really need to stop. So I WILL make this plugin. are you sure you're not me? ;)<br />
-<br />
--daz</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">7th January 2007 04:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">20th December 2006, 11:19</div></div>
-<br />
-<div class="posttext">Originally posted by jheriko <br />
-So I WILL make this plugin.  <br />
-<br />
-Heh, in any event, sounds good to me! :)</div></div><hr />
+		Hows the plugin coming mate?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">7th January 2007, 04:24</div></div>
-<br />
-<div class="posttext">Hows the plugin coming mate?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ASD5A</div>
+			<div class="date small text-muted">7th January 2007 18:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		
+	<blockquote>
+			
+				<i>Originally posted by PAK-9 </i><br />
+<b><font size="1">lies and broken promises</font> </b></blockquote>
 
-<div class="post"><div class="posttop"><div class="username text-primary">ASD5A</div><div class="date small text-muted">7th January 2007, 18:56</div></div>
-<br />
-<div class="posttext">Originally posted by PAK-9 <br />
-lies and broken promises</div></div><hr />
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Iceman_jkh</div><div class="date small text-muted">7th April 2007, 06:38</div></div>
-<br />
-<div class="posttext">Guess you guys were right! :(<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Iceman_jkh</div>
+			<div class="date small text-muted">7th April 2007 06:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Guess you guys were right! :(<br />
 <br />
 Anyone else interested in reviving a plugin which can do this?<br />
-Ta</div></div><hr />
+Ta
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

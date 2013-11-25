@@ -3,45 +3,60 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Source code AVS 2.81d, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Source code AVS 2.81d AVS" />
-	
-	<title> Source code AVS 2.81d - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Source code AVS 2.81d - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Source code AVS 2.81d</li>
-</ol>
-<!-- div class="pda"><a href="t-310134.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=310134">Source code AVS 2.81d</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">nopcoder</div><div class="date small text-muted">16th August 2009, 04:04</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Source code AVS 2.81d</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=310134">Source code AVS 2.81d</a></p>
+
+
 <br />
-<div class="posttext">Hello AVS fans!<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">nopcoder</div>
+			<div class="date small text-muted">16th August 2009 04:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>AVS Crashes when compilied in Visual C++ 2008</strong><br />
+		
+		
+
+		Hello AVS fans!<br />
 <br />
 I'm really impressed by AVS and I plan to port it to OpenGL for in-game visualizations in an up coming music game. I also plan to release the port so anyone interested can make run in OS X (iTunes) or Linux. But right now I can't get the regular build to work in winamp...<br />
 <br />
-When I first tried building AVS 2.81d I got some errors which probably are due to compiler differences between VC++ 6.0 and 2008. I quickly fixed them (you can get my fix for 2.81d here (http://snowhard.jovianvoid.com/chrome/site/avs_2.81d_vs2008.zip)) and linked it to DX SDK (March 2009). But when I now start winamp 5.56 with my dll - visualization is just black and winamp crashes shortly after start.<br />
+When I first tried building AVS 2.81d I got some errors which probably are due to compiler differences between VC++ 6.0 and 2008. I quickly fixed them (<a href="http://snowhard.jovianvoid.com/chrome/site/avs_2.81d_vs2008.zip" target="_blank">you can get my fix for 2.81d here</a>) and linked it to DX SDK (March 2009). But when I now start winamp 5.56 with my dll - visualization is just black and winamp crashes shortly after start.<br />
 <br />
 If I try using your compiled dll then it works great. I tried every build configuration (debug, release, nommx) except laser release which I can't get to link successfully:<br />
-<br />
+<pre><code><br />
 1&gt;Linking...<br />
-1 Creating library .\vis_avs___Win32_Laser_Release/vis_avs_laser.lib and object<br />
+1&gt;   Creating library .\vis_avs___Win32_Laser_Release/vis_avs_laser.lib and object<br />
 	.\vis_avs___Win32_Laser_Release/vis_avs_laser.exp<br />
 1&gt;rlib.obj : error LNK2001: unresolved external symbol &quot;int g_line_blend_mode&quot; (?g_line_blend_mode@@3HA)<br />
 1&gt;r_sscope.obj : error LNK2001: unresolved external symbol &quot;int g_line_blend_mode&quot; (?g_line_blend_mode@@3HA)<br />
@@ -58,10 +73,10 @@ If I try using your compiled dll then it works great. I tried every build config
 	&quot;public: virtual int __thiscall CLASER_Transform::render(char (* const)[2][576],int,int *,int *,int,int)&quot;<br />
 	(?render@CLASER_Transform@@UAEHQAY11CEA@DHPAH1HH@Z)<br />
 1&gt;.\vis_avs___Win32_Laser_Release\vis_avs.dll : fatal error LNK1120: 6 unresolved externals<br />
-<br />
+</code></pre><br />
 <br />
 I'm thinking of installing VC++ 6.0 (assuming thats the compiler you used). In-case your wandering: these are the errors I first got when converting the project to 2008:<br />
-<br />
+<pre><code><br />
 error C2383: 'C_RLibrary::rf' : default-arguments are not allowed on this symbol. @ rlib.h line 39<br />
 error C2383: 'C_RLibrary::rf' : default-arguments are not allowed on this symbol. @ rlib.h line 39<br />
 error C2383: 'C_RLibrary::rf' : default-arguments are not allowed on this symbol. @ rlib.h line 39<br />
@@ -80,30 +95,59 @@ error C2668: 'abs' : ambiguous call to overloaded function. @ bpm.cpp line 397<b
 error C2668: 'abs' : ambiguous call to overloaded function. @ bpm.cpp line 517<br />
 error C2383: 'C_RLibrary::rf' : default-arguments are not allowed on this symbol. @ rlib.h line 39<br />
 error C2383: 'C_RLibrary::rf' : default-arguments are not allowed on this symbol. @ rlib.h line 39<br />
-<br />
+</code></pre><br />
 Do you recognize this issue or any of the problems above? Is there a newer version with VC++ 2008?<br />
 <br />
-Thank you so much for your time.</div></div><hr />
+Thank you so much for your time.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th August 2009, 13:48</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">16th August 2009 13:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		(Please don't hijack threads but start a new one instead - Please do)<br />
 <br />
-<div class="posttext">(Please don't hijack threads but start a new one instead - Please do)<br />
-<br />
-Personally, I'm not a programmer, so I really can't help you with this one.</div></div><hr />
+Personally, I'm not a programmer, so I really can't help you with this one.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">DrO</div><div class="date small text-muted">16th August 2009, 20:31</div></div>
-<br />
-<div class="posttext">&lt;split from sticky thread&gt;<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">DrO</div>
+			<div class="date small text-muted">16th August 2009 20:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		&lt;split from sticky thread&gt;<br />
 <br />
 the laser project has never built properly from what i remember. as for the blank screen, etc then that's the same issue as is seen with the 2.82 relase of the plugin due to the compiler change (from vc6-&gt;vs2003 in that case).<br />
 <br />
--daz</div></div><hr />
+-daz
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

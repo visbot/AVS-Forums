@@ -3,36 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" graphics filter ape if anyone's interested..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" graphics filter ape if anyone's interested... AVS" />
-	
-	<title> graphics filter ape if anyone's interested... - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> graphics filter ape if anyone's interested... - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">graphics filter ape if anyone's interested...</li>
-</ol>
-<!-- div class="pda"><a href="t-104834.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=104834">graphics filter ape if anyone's interested...</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">12th September 2002, 05:52</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">graphics filter ape if anyone's interested...</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=104834">graphics filter ape if anyone's interested...</a></p>
+
+
 <br />
-<div class="posttext">if you're fluent with any graphics program you'll probably have played around with the &quot;custom filter&quot;/&quot;user defined effect&quot;<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">12th September 2002 05:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>graphics filter ape if anyone's interested...</strong><br />
+		
+		
+			
+		
+
+		if you're fluent with any graphics program you'll probably have played around with the &quot;custom filter&quot;/&quot;user defined effect&quot;<br />
 <br />
 this ape implements one of them. this means it can do anything from blur to sharpen to water ripples to cellular automota like stuff<br />
 <br />
@@ -54,17 +71,39 @@ for each pixel the plugin takes the weighted (by the matrix) average of the 25 p
 0 1 2 1 0<br />
 0 0 1 0 0<br />
 <br />
-with bias 0 and scaling factor 19 would function as a blur.</div></div><hr />
+with bias 0 and scaling factor 19 would function as a blur.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">12th September 2002, 06:43</div></div>
-<br />
-<div class="posttext">Sweet...but somehow it seems like it could be a lot faster.  I wouldn't think something that simple would be that slow...but maybe it's just me.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">12th September 2002 06:43 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Sweet...but somehow it seems like it could be a lot faster.  I wouldn't think something that simple would be that slow...but maybe it's just me.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">geozop</div><div class="date small text-muted">12th September 2002, 11:12</div></div>
-<br />
-<div class="posttext">Is the trans re-doing the math for each pixel on every frame? Even when the variables have not been changed? I'm not sure how functional programming an ape is, but is there a way to implement something that keeps it from recalculating everything every frame?<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">geozop</div>
+			<div class="date small text-muted">12th September 2002 11:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Perhaps</strong><br />
+		
+		
+
+		Is the trans re-doing the math for each pixel on every frame? Even when the variables have not been changed? I'm not sure how functional programming an ape is, but is there a way to implement something that keeps it from recalculating everything every frame?<br />
  Like, the Movement trans... it only re-evaluates the function only after a second after the equation has been changed, rather than every frame... Perhaps, a button to &quot;tell&quot; your ape to use updated numbers?<br />
 <br />
  This is all assuming that my theory is correct, anyway.<br />
@@ -73,12 +112,22 @@ with bias 0 and scaling factor 19 would function as a blur.</div></div><hr />
 <br />
 [edit]: Did you know you can put negative numbers in the fields? spiffy.<br />
 <br />
-[edit2]: when the scale variable is negative, it does not remember the number when selecting the effect (in the sidebar), after selecting another trans or render</div></div><hr />
+[edit2]: when the scale variable is negative, it does not remember the number when selecting the effect (in the sidebar), after selecting another trans or render
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">12th September 2002, 13:16</div></div>
-<br />
-<div class="posttext">it doesn't re-get all the data from the boxes every frame, it only &quot;gets&quot; that data when you edit a box.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">12th September 2002 13:16 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		it doesn't re-get all the data from the boxes every frame, it only &quot;gets&quot; that data when you edit a box.<br />
 <br />
 i'm going to produce a single channel one which should be much much faster i reckon, i'm currently working on it...<br />
 <br />
@@ -86,35 +135,81 @@ i'll post both that and an updated version of the original without the negative 
 <br />
 thanks for the bug spotting and comments<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">12th September 2002, 14:02</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">12th September 2002 14:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		here's the custom filter with the negative scaling bug removed.<br />
 <br />
-<div class="posttext">here's the custom filter with the negative scaling bug removed.<br />
-<br />
-no speed ups as yet.</div></div><hr />
+no speed ups as yet.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th September 2002, 15:44</div></div>
-<br />
-<div class="posttext">Does it use MMX? I wrote a new APE yesterday using an optimized MMX routine and the speedup is incredible..</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">12th September 2002 15:44 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Does it use MMX? I wrote a new APE yesterday using an optimized MMX routine and the speedup is incredible..
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">12th September 2002, 20:07</div></div>
-<br />
-<div class="posttext">no it doesn't use mmx. i'm not that experienced a programmer tbh, i don't think i know how to access mmx routines...<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">12th September 2002 20:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>much improved version</strong><br />
+		
+		
+			
+		
+
+		no it doesn't use mmx. i'm not that experienced a programmer tbh, i don't think i know how to access mmx routines...<br />
 <br />
 anyway i have now produced a version which gives about 50% better frame rates by only working on a single channel. it's attatched to this e-mail, along with some examples of its use and a very slightly improved version of the multichannel original.<br />
 <br />
 tom<br />
 <br />
-p.s. any speed up advice would be appreciated, if you want to mail me my address is: cfp@DELETEALLTHESECAPSmyrealbox.com</div></div><hr />
+p.s. any speed up advice would be appreciated, if you want to mail me my address is: <a href="mailto:cfp@DELETEALLTHESECAPSmyrealbox.com">cfp@DELETEALLTHESECAPSmyrealbox.com</a>
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">12th September 2002, 21:49</div></div>
-<br />
-<div class="posttext">MMX is a godsend for 32-bit RGBA operations. For example, in order to add 2 pixels together, 2 pixels at a time (2x2 adds), you simply do:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">12th September 2002 21:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		MMX is a godsend for 32-bit RGBA operations. For example, in order to add 2 pixels together, 2 pixels at a time (2x2 adds), you simply do:<br />
 <br />
 movq mm0, source;<br />
 movq mm1, destination;<br />
@@ -127,21 +222,41 @@ R1G1B100 R2G2B200<br />
 +<br />
 R3G3B300 R4G4B400<br />
 <br />
-It requires you to be fluent in regular x86 assembly already though.</div></div><hr />
+It requires you to be fluent in regular x86 assembly already though.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">13th September 2002, 00:06</div></div>
-<br />
-<div class="posttext">that mmx code sounds interesting but i'm not sure how useful it would be for this because you are scaling the values of pixels way out of unsigned char range and adding lots of so scaled values together.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">13th September 2002 00:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that mmx code sounds interesting but i'm not sure how useful it would be for this because you are scaling the values of pixels way out of unsigned char range and adding lots of so scaled values together.<br />
 <br />
 still i'd be interested to find out more, are there any web guides to mmx programming you could point me to?? admittedly i've not programmed in asm since my amstrad cpc 464 back in the day but i'm sure i could pick it up again.<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th September 2002, 01:27</div></div>
-<br />
-<div class="posttext">There are a few resources, but I don't have any urls. You can locate a lot of interesting things through Google though, that's what I did.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">13th September 2002 01:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There are a few resources, but I don't have any urls. You can locate a lot of interesting things through Google though, that's what I did.<br />
 <br />
 Actually what you're describing is no problem at all for MMX. You can multiply 4 unsigned char's with saturation... so no clipping or maximum checks are needed. I'm sure you'll find alpha-blending code immediately, which can be adapted for your purpose.<br />
 <br />
@@ -149,46 +264,99 @@ The only thing I see that can slow your APE down is the fact that you usually do
 Or you could make special predefined 'shapes' of the matrix... 5x5, 3x3, 1x3, 3x1, 1x5, etc. which each have an optimized loop. That way you don't have unnecessary jumps and still give the user the flexibility needed for most effects.<br />
 In any case, I made an APE like yours a while (the official name is a Convolution Matrix if I'm not mistaken): I spent quite a while optimizing a routine for a 3x3 matrix in regular x86 assembly (no mmx) and it was still quite slow.<br />
 <br />
-If you need help with MMX just ask, but I'm not a pro either, I just learnt it yesterday. I've had quite some regular x86 assembly experience though, and MMX is really just a multi-byte/word version of most basic arithmetic such as adding and shifting (which makes it perfect for RGBA 32-bit pixels).</div></div><hr />
+If you need help with MMX just ask, but I'm not a pro either, I just learnt it yesterday. I've had quite some regular x86 assembly experience though, and MMX is really just a multi-byte/word version of most basic arithmetic such as adding and shifting (which makes it perfect for RGBA 32-bit pixels).<br />
 
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">13th September 2002, 17:10</div></div>
-<br />
-<div class="posttext">Damn, reading about all of your ape adventures really irritates me that I lost MSVS.net the other day during a reformat :( I had only just downloaded the SDK as well...<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">13th September 2002 17:10 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Damn, reading about all of your ape adventures really irritates me that I lost MSVS.net the other day during a reformat :( I had only just downloaded the SDK as well...<br />
 <br />
 I'm gonna have to find a freeware C compiler and get in on the fun...<br />
 <br />
 EDIT: quick question:<br />
 <br />
-you don't need to make the whole ape in asm do you?</div></div><hr />
+you don't need to make the whole ape in asm do you?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th September 2002, 19:30</div></div>
-<br />
-<div class="posttext">Nah, you just include the assembly in __asm { } blocks. Like, if <br />
-color is a BGR0 windows COLORREF, and you want to convert it into an RGB0 AVS color, you could do:<br />
-color = ((color &amp; 0xFF) &lt;&lt; 16) | (color &amp; 0xFF00) | ((color &amp; 0xFF0000) &gt;&gt; 16);<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">13th September 2002 19:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nah, you just include the assembly in __asm { } blocks. Like, if <br />
+<i>color</i> is a BGR0 windows COLORREF, and you want to convert it into an RGB0 AVS color, you could do:<br />
+<pre><code>color = ((color &amp; 0xFF) &lt;&lt; 16) | (color &amp; 0xFF00) | ((color &amp; 0xFF0000) &gt;&gt; 16);</code></pre><br />
 But that's all quite complicated. Using assembly, we turn it into:<br />
-mov eax, color<br />
+<pre><code>mov eax, color<br />
 bswap eax<br />
 shr eax, 8<br />
-mov color, eax<br />
-That's only 2 instructions! The C code had 3 ANDs, 2 bitshifts and 2 ORs.</div></div><hr />
+mov color, eax</code></pre><br />
+That's only 2 instructions! The C code had 3 ANDs, 2 bitshifts and 2 ORs.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">14th September 2002, 03:39</div></div>
-<br />
-<div class="posttext">cool. I need to look into that then, I'm fluent in C but my asm is a bit lacking, I had a few ideas for things that I'd like to implement so I'm gonna have to get a compiler again, then maybe I'll make something. :)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">14th September 2002 03:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		cool. I need to look into that then, I'm fluent in C but my asm is a bit lacking, I had a few ideas for things that I'd like to implement so I'm gonna have to get a compiler again, then maybe I'll make something. :)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">14th September 2002, 19:49</div></div>
-<br />
-<div class="posttext">I really want to learn APE programming...but NONE of the SDK's I've found work.  Not that I can't figure them out, they simply do not WORK.  It's kind of annoying, especially since I can't learn to do things like, say, graphics...If anyone's willing to teach me (that has some idea what they're doing), I'd really appreciate it.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">14th September 2002 19:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">18th September 2002, 22:40</div></div>
-<br />
-<div class="posttext">just posting to let you know that i've not abandoned this project.<br />
+		I really want to learn APE programming...but NONE of the SDK's I've found work.  Not that I can't figure them out, they simply do not WORK.  It's kind of annoying, especially since I can't learn to do things like, say, graphics...If anyone's willing to teach me (that has some idea what they're doing), I'd really appreciate it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">18th September 2002 22:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>a fast version of these filters are on their way</strong><br />
+		
+		
+
+		just posting to let you know that i've not abandoned this project.<br />
 <br />
 i've spent the last couple of days frantically coding in every spair hour and i now have a fast, working (multi-channel) version of my filter.<br />
 <br />
@@ -198,75 +366,156 @@ i've not done detailed speed tests yet but its speed does seem at least comparab
 <br />
 many thanks to unconed for his advice of using mmx and dynamic generating the render function (e.g. it just doesn't exist untill runtime). programming in asm opcodes is perhaps the most tedious programming i've ever done, but i'm pretty darn chuffed with the results.<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th September 2002, 00:21</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th September 2002 00:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sounds awesome :). Are you doing the opcodes by hand? If so, do you have a nice reference of all the opcodes in binary form?<br />
 <br />
-<div class="posttext">Sounds awesome :). Are you doing the opcodes by hand? If so, do you have a nice reference of all the opcodes in binary form?<br />
-<br />
-Another idea is to use the disassembler in MSVC... just compile, set a breakpoint in front of the code and you'll be able to copy/paste the opcodes from the disassembler.</div></div><hr />
+Another idea is to use the disassembler in MSVC... just compile, set a breakpoint in front of the code and you'll be able to copy/paste the opcodes from the disassembler.<br />
 
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">19th September 2002, 04:09</div></div>
-<br />
-<div class="posttext">i've been doing a bit of both. i've got my pdf copy of the &quot;IA-32 Intel® Architecture Software Developer’s Manual Volume 2: Instruction Set Reference&quot; (from the intel website) always open + a second vc project where i can easily insert code to get the opcodes by using the generate asm with opcodes and source compile option.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">19th September 2002 04:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i've been doing a bit of both. i've got my pdf copy of the &quot;IA-32 Intel® Architecture Software Developer’s Manual Volume 2: Instruction Set Reference&quot; (from the intel website) always open + a second vc project where i can easily insert code to get the opcodes by using the generate asm with opcodes and source compile option.<br />
 <br />
 if both me and the rest of the world had pentium 4's then my job would be 100 times easier cos sse2 fixes the botch job that is mmx. eg. mmx has no division, mmx can only have 4 words making up a register instead of 4 dwords in sse2... which means less code for me to write...<br />
 <br />
 ahh if only, i can dream (^_^)<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th September 2002, 04:20</div></div>
-<br />
-<div class="posttext">Hmm no division is a pain, but couldn't you use a fixed point hack instead?<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th September 2002 04:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmm no division is a pain, but couldn't you use a fixed point hack instead?<br />
 <br />
 Suppose you need to divide by 6. That's the same as multiplying by 0.166... As an approximation, you can multiply by 43 (0.166.. * 256) and then divide by 256 (shift right by 8 bits).<br />
 <br />
 I'm not sure if the loss of accuracy will matter a lot, but you can try ;). Fixed point of course means that you lose the dynamic range on the scalar values...<br />
 <br />
 I know AVS's built-in components take short-cuts too: the blur causes banding artifacts in areas with little color difference, which I can only attribute to rounding errors.<br />
-And the APE SDK comes with a 50/50 blend function that discards the lower bits: ((a &gt;&gt; 1) &amp; 0x7F7F7F) + ((b &gt;&gt; 1) &amp; 0x7F7F7F). This causes white + white to blend to a tone darker.</div></div><hr />
+And the APE SDK comes with a 50/50 blend function that discards the lower bits: ((a &gt;&gt; 1) &amp; 0x7F7F7F) + ((b &gt;&gt; 1) &amp; 0x7F7F7F). This causes white + white to blend to a tone darker.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">19th September 2002, 04:46</div></div>
-<br />
-<div class="posttext">how did you handle people without mmx in your ape's unconed??<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">19th September 2002 04:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		how did you handle people without mmx in your ape's unconed??<br />
 i'm tempted just to leave it doing nothing or just doing the very first, very slow algorithm i had, for people without mmx, because it seems like most people who are able to run winamp 3 would at least have a pentium 2 or a k6-2. do you think this is reasonable?? it would mean seriously more work for me if it wasn't...<br />
 <br />
 also do you think that it is safe to put a max of 256 on the sums of the positive elements in the matrix and a min of -256 on the sums of the negative elements? again this would save me a heck of lot of work... (you should probably bear in mind that the matrix is now 7x7)<br />
 <br />
 thanks for any advice<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">19th September 2002, 09:33</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">19th September 2002 09:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		how about posting the source-code instead of discussing endlessly? if you really want to contribute, i think it's the best. it could still be you coordinating about what's in and what's not?<br />
 <br />
-<div class="posttext">how about posting the source-code instead of discussing endlessly? if you really want to contribute, i think it's the best. it could still be you coordinating about what's in and what's not?<br />
-<br />
-..or are you expecting the big bucks here :p</div></div><hr />
+..or are you expecting the big bucks here :p
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">19th September 2002, 09:53</div></div>
-<br />
-<div class="posttext">ugh... asm code, theres bound to be hundreds of lines.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">19th September 2002 09:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		ugh... asm code, theres bound to be hundreds of lines.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th September 2002, 14:13</div></div>
-<br />
-<div class="posttext">Jheriko: it depends on the application. And considering we're using inline asm inside C++, only the tough spots are hand-optimized. I've only got about 30 lines of asm code in my latest (complicated) APE.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th September 2002 14:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Jheriko: it depends on the application. And considering we're using inline asm inside C++, only the tough spots are hand-optimized. I've only got about 30 lines of asm code in my latest (complicated) APE.<br />
 <br />
 As far as people without MMX, I ignored them ;). We do occasionally get requests in here of people who want the non-MMX version of AVS, but I believe it is an older version, so most presets made today wouldn't work on it either.<br />
 <br />
-And considering the fastest processor without MMX was around 200Mhz, I doubt these people are getting an enjoyable experience anyhow.</div></div><hr />
+And considering the fastest processor without MMX was around 200Mhz, I doubt these people are getting an enjoyable experience anyhow.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">19th September 2002, 14:41</div></div>
-<br />
-<div class="posttext">i'm not sure if the source would be that useful cos it's now nearly 1000 lines at least half of which is just lines like:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">19th September 2002 14:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i'm not sure if the source would be that useful cos it's now nearly 1000 lines at least half of which is just lines like:<br />
 <br />
 ((LPBYTE)draw)[codelength] = 0x0F;	// movq mm0, mm7<br />
 codelength++;<br />
@@ -283,36 +532,68 @@ codelength++;<br />
 <br />
 which does not make fun reading...<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th September 2002, 15:18</div></div>
-<br />
-<div class="posttext">Couldn't you at least use a macro? :)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th September 2002 15:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Couldn't you at least use a macro? :)<br />
 <br />
 Like:<br />
 <br />
-<br />
+<font face="courier new"><br />
 #define emitcode(a) { ((LPBYTE)draw)[codelength] = a; codelength++; }<br />
 #define emitcode(a,b) { ((LPBYTE)draw)[codelength] = a; codelength++; ((LPBYTE)draw)[codelength] = b; codelength++; }<br />
 #define emitcode(a,b,c) { ((LPBYTE)draw)[codelength] = a; codelength++; ((LPBYTE)draw)[codelength] = b; codelength++; ((LPBYTE)draw)[codelength] = c; codelength++; }<br />
-<br />
+</font><br />
 <br />
 etc.<br />
 <br />
-Not sure if macros allow overloading, but you could use emitcode1, emitcode2, ...</div></div><hr />
+Not sure if macros allow overloading, but you could use emitcode1, emitcode2, ...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">19th September 2002, 16:32</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">19th September 2002 16:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		you know i never thought of that... neat programming never was my strong point<br />
 <br />
-<div class="posttext">you know i never thought of that... neat programming never was my strong point<br />
-<br />
-(^_^)</div></div><hr />
+(^_^)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">20th September 2002, 04:54</div></div>
-<br />
-<div class="posttext">i'm getting close to finishing now. attatched is a version which is complete apart from load/save routines and one remaining bug:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">20th September 2002 04:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		i'm getting close to finishing now. attatched is a version which is complete apart from load/save routines and one remaining bug:<br />
 that you can't have more than one copy of it running at the same time.<br />
 <br />
 avs does start a new instance of the class doesn't it unconed?<br />
@@ -320,33 +601,73 @@ if not where should you store variables which persist between render frames?<br 
 <br />
 any help would be appreciated<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">20th September 2002, 05:26</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">20th September 2002 05:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		YES!! a new toy... (i'd been playing with the first one)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">20th September 2002 14:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Normally you shouldn't have any problems if you store everything in the class. Make sure you're not using global or static variables.<br />
 <br />
-<div class="posttext">YES!! a new toy... (i'd been playing with the first one)</div></div><hr />
+Where and how does it crash? Using a debugger you should be able to easily locate that...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th September 2002, 14:31</div></div>
-<br />
-<div class="posttext">Normally you shouldn't have any problems if you store everything in the class. Make sure you're not using global or static variables.<br />
-<br />
-Where and how does it crash? Using a debugger you should be able to easily locate that...</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">20th September 2002 16:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">20th September 2002, 16:56</div></div>
-<br />
-<div class="posttext">the error is in the call to virtual protect used to give the generated function execute rights.<br />
+		the error is in the call to virtual protect used to give the generated function execute rights.<br />
 <br />
 there are no static or global variables apart from the pointer to the main class which was set as static in the tutorial so i guess should be.<br />
 <br />
-tis strange...</div></div><hr />
+tis strange...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th September 2002, 17:11</div></div>
-<br />
-<div class="posttext">I tried making an AVS compiler a while ago, but I didn't get far due to lack of time. The part that did work, worked fine without VirtualProtect... I must say I don't know much about protecting memory and such. I used something like:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">20th September 2002 17:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I tried making an AVS compiler a while ago, but I didn't get far due to lack of time. The part that did work, worked fine without VirtualProtect... I must say I don't know much about protecting memory and such. I used something like:<br />
 <br />
 typedef void CompiledCode(void);<br />
 <br />
@@ -360,12 +681,22 @@ CompiledCode *code = (CompiledCode *)(void *)function;<br />
 code();<br />
 <br />
 <br />
-This works fine for me in an APE (you can test it easily because of the break point).</div></div><hr />
+This works fine for me in an APE (you can test it easily because of the break point).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">cfp</div><div class="date small text-muted">20th September 2002, 17:49</div></div>
-<br />
-<div class="posttext">god you're right you know... the amount of hastle virtual protect has given me and i didn't even need it... (^_^)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">cfp</div>
+			<div class="date small text-muted">20th September 2002 17:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		god you're right you know... the amount of hastle virtual protect has given me and i didn't even need it... (^_^)<br />
 <br />
 thanks loads.<br />
 <br />
@@ -375,11 +706,20 @@ expect a final release with save and load functionality, examples and documentat
 <br />
 i'll put it in a new thread for ease of future reference.<br />
 <br />
-tom</div></div><hr />
+tom
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

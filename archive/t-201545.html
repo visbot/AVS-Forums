@@ -3,90 +3,175 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Scroll $(title), avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Scroll $(title) AVS Troubleshooting" />
-	
-	<title> Scroll $(title) - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Scroll $(title) AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Scroll $(title) - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
-
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Scroll $(title)</li>
-</ol>
-<!-- div class="pda"><a href="t-201545.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=201545">Scroll $(title)</a></p>
-<hr />
-
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">8th December 2004, 19:16</div></div>
-<br />
-<div class="posttext">In render/text when you use $(title) is there a way to use a movement or dm to make it scroll across page ?? If there is...How and is there a way to make it work only on the text and not rest of the avs ?<br />
-   Thanks</div></div><hr />
+	<div class="container">
+	<!-- Put navigation bar here -->
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">8th December 2004, 19:26</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Scroll $(title)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=201545">Scroll $(title)</a></p>
+
+
 <br />
-<div class="posttext">use a dynamic movement.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">8th December 2004 19:16 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Scroll $(title)</strong><br />
+		
+		
+
+		In render/text when you use $(title) is there a way to use a movement or dm to make it scroll across page ?? If there is...How and is there a way to make it work only on the text and not rest of the avs ?<br />
+   Thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hboy</div>
+			<div class="date small text-muted">8th December 2004 19:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		use a dynamic movement.<br />
 <br />
-<br />
+<pre><code><br />
 per frame:<br />
 t=t+0.05;<br />
 <br />
 per pixel:<br />
 x=x+t;<br />
-<br />
+</code></pre><br />
 <br />
 enable wrap also.<br />
 <br />
-place this DM after the Text render and put them into an Effect list.</div></div><hr />
+place this DM after the Text render and put them into an Effect list.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">8th December 2004, 21:00</div></div>
-<br />
-<div class="posttext">thanks, I got it to scroll (had to check Rectangular coordinates with the wrap)... but whole preset scrolls to ( @ different speed than title ?? ) how do I get just title to scroll without preset scrollin to ?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">8th December 2004 21:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		thanks, I got it to scroll (had to check Rectangular coordinates with the wrap)... but whole preset scrolls to ( @ different speed than title ?? ) how do I get just title to scroll without preset scrollin to ?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">8th December 2004, 21:12</div></div>
-<br />
-<div class="posttext">here is sample of avs scrollin' with title</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">8th December 2004 21:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">9th December 2004, 08:07</div></div>
-<br />
-<div class="posttext">it you want it to scroll to one side of the page ant then back to the other use:<br />
+		here is sample of avs scrollin' with title
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">9th December 2004 08:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		it you want it to scroll to one side of the page ant then back to the other use:<br />
 <br />
 Frame:<br />
 t=t+0.05<br />
 <br />
 Pixel:<br />
-x=x+cos(t)</div></div><hr />
+x=x+cos(t)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hboy</div>
+			<div class="date small text-muted">9th December 2004 08:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		the provided sample does not work because the effect list in which the texts+DM are, has 50/50 input blend and replace outpu. set it to ignore input and maximum blend output, and check the clear every frame for the effect list. that works :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">9th December 2004 15:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks Much.... :up:  greatly appreciated :D  got done what I needed
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">9th December 2004, 08:25</div></div>
-<br />
-<div class="posttext">the provided sample does not work because the effect list in which the texts+DM are, has 50/50 input blend and replace outpu. set it to ignore input and maximum blend output, and check the clear every frame for the effect list. that works :)</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">9th December 2004, 15:17</div></div>
-<br />
-<div class="posttext">Thanks Much.... :up:  greatly appreciated :D  got done what I needed</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,77 +3,139 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Compile problems with AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Compile problems with AVS AVS Troubleshooting" />
-	
-	<title> Compile problems with AVS - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Compile problems with AVS AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Compile problems with AVS - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Compile problems with AVS</li>
-</ol>
-<!-- div class="pda"><a href="t-276824.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=276824">Compile problems with AVS</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">henke37</div><div class="date small text-muted">2nd September 2007, 12:09</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Compile problems with AVS</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=276824">Compile problems with AVS</a></p>
+
+
 <br />
-<div class="posttext">I am trying to compile AVS myself, but I can not seem to fix a compile error in the build.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">henke37</div>
+			<div class="date small text-muted">2nd September 2007 12:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Compile problems with AVS</strong><br />
+		
+		
+
+		I am trying to compile AVS myself, but I can not seem to fix a compile error in the build.<br />
 <br />
 pastebin.ca/678001<br />
 <br />
-I need to get these errors resolved so that I can continue with my project to integrate AVS in StepMania.</div></div><hr />
+I need to get these errors resolved so that I can continue with my project to integrate AVS in StepMania.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">henke37</div><div class="date small text-muted">9th September 2007, 10:39</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">henke37</div>
+			<div class="date small text-muted">9th September 2007 10:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I suppose that I should say that I fixed the compile errors. Now I got these nice runtime errors.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">9th September 2007 10:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		why not post how you solved it, might be useful for others aswell (in future?)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">DrO</div>
+			<div class="date small text-muted">9th September 2007 13:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		building it in debug mode (as you're building) is most likely the cause of those issues since the project is only properly setup to be built under vc6 in release mode<br />
 <br />
-<div class="posttext">I suppose that I should say that I fixed the compile errors. Now I got these nice runtime errors.</div></div><hr />
+-daz
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">henke37</div>
+			<div class="date small text-muted">11th September 2007 07:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually, you are wrong there, it compiles just fine in debug mode. It sure lacks error handling in a lot of places, especially with GlobalAlloc failing(I need to work on that).<br />
+<br />
+The fixes was reasonably easy:<ul><li>Rename the strcomp family of functions as the compiler wants them</li>
+<li>add a few explit casts to make the function calls non ambiguous.</li>
+<li>add a few missed datatypes in some declarations (static to static int for examlpe)</li>
+<li>Fix the function pointers that has optional declared parameters, that is a feature not in the c++ standard. Note, this means adjusting both where the pointer is declared and where those optional parameters would be automatically inserted. Missing the later step caused a great deal of trouble for me.</li>
+<li>Fix the declaration of the function pointers in that lextab structure, they are missing the parameter list in the declaration.</li>
+<li>Fix some misc unused parameter/unused local var warnings if you compile with the highest warning level.</li>
+<li>Add emms instructions where the compiler thinks they are needed.</li>
+</ul>
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">9th September 2007, 10:42</div></div>
-<br />
-<div class="posttext">why not post how you solved it, might be useful for others aswell (in future?)</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">DrO</div><div class="date small text-muted">9th September 2007, 13:42</div></div>
-<br />
-<div class="posttext">building it in debug mode (as you're building) is most likely the cause of those issues since the project is only properly setup to be built under vc6 in release mode<br />
-<br />
--daz</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">henke37</div><div class="date small text-muted">11th September 2007, 07:18</div></div>
-<br />
-<div class="posttext">Actually, you are wrong there, it compiles just fine in debug mode. It sure lacks error handling in a lot of places, especially with GlobalAlloc failing(I need to work on that).<br />
-<br />
-The fixes was reasonably easy:<br />
-<br />
- Rename the strcomp family of functions as the compiler wants them<br />
- add a few explit casts to make the function calls non ambiguous.<br />
- add a few missed datatypes in some declarations (static to static int for examlpe)<br />
- Fix the function pointers that has optional declared parameters, that is a feature not in the c++ standard. Note, this means adjusting both where the pointer is declared and where those optional parameters would be automatically inserted. Missing the later step caused a great deal of trouble for me.<br />
- Fix the declaration of the function pointers in that lextab structure, they are missing the parameter list in the declaration.<br />
- Fix some misc unused parameter/unused local var warnings if you compile with the highest warning level.<br />
- Add emms instructions where the compiler thinks they are needed.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

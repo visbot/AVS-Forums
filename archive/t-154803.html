@@ -3,37 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Electromagnetic Demo (for AVS2.70), avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Electromagnetic Demo (for AVS2.70) AVS Presets" />
-	
-	<title> Electromagnetic Demo (for AVS2.70) - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Electromagnetic Demo (for AVS2.70) AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Electromagnetic Demo (for AVS2.70) - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">Electromagnetic Demo (for AVS2.70)</li>
-</ol>
-<!-- div class="pda"><a href="t-154803.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=154803">Electromagnetic Demo (for AVS2.70)</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">1st November 2003, 18:19</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Electromagnetic Demo (for AVS2.70)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=154803">Electromagnetic Demo (for AVS2.70)</a></p>
+
+
 <br />
-<div class="posttext">This demo uses global vars to simulate the movement of a charged particle in promixity to two other particles: a postively charged one and negatively charged one.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">skupers</div>
+			<div class="date small text-muted">1st November 2003 18:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Electromagnetic Demo (for AVS2.70)</strong><br />
+		
+		
+			
+		
+
+		This demo uses global vars to simulate the movement of a charged particle in promixity to two other particles: a postively charged one and negatively charged one.<br />
 <br />
 In this preset, the positive one is red and the negative one is green. Using vector addition the white particle is moved around. I also made three scopes which draw the different components of the vector.<br />
 <br />
@@ -41,53 +57,142 @@ Everything in the preset is customizable in the first 'control scope': the movem
 <br />
 You'll also need Texer II.<br />
 <br />
-The next challenge will be to make this work in 3d.</div></div><hr />
+The next challenge will be to make this work in 3d.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">1st November 2003, 18:41</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">NemoOrange</div>
+			<div class="date small text-muted">1st November 2003 18:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Neat stuff, but why does the white particle sometimes just automatically shift to another location?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">NemoOrange</div>
+			<div class="date small text-muted">1st November 2003 18:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		oh, I guess once it reaches the green particle, it resets.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">skupers</div>
+			<div class="date small text-muted">1st November 2003 22:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yes, because otherwise the next frame c1a and c2a will be divided by 0 and then the scope goes crazy.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">horse-fly</div>
+			<div class="date small text-muted">2nd November 2003 11:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i don't understand what exactly i am looking at... what is the white dot doing in accordance to red and green?<br />
 <br />
-<div class="posttext">Neat stuff, but why does the white particle sometimes just automatically shift to another location?</div></div><hr />
+edit: oh... ok i get it
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Deamon</div>
+			<div class="date small text-muted">2nd November 2003 12:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice coding job.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">gaekwad2</div>
+			<div class="date small text-muted">2nd November 2003 20:05 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Couldn't you make it so that when the white particle hits the green one it gets a negative charge and thus gets attracted to the red particle, then you wouldn't have to reset it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Deamon</div>
+			<div class="date small text-muted">2nd November 2003 21:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		or that is explodes :) I like explosions.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">horse-fly</div>
+			<div class="date small text-muted">2nd November 2003 21:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hooray for explosions that don't makes sense
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">NemoOrange</div><div class="date small text-muted">1st November 2003, 18:42</div></div>
-<br />
-<div class="posttext">oh, I guess once it reaches the green particle, it resets.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">skupers</div><div class="date small text-muted">1st November 2003, 22:03</div></div>
-<br />
-<div class="posttext">Yes, because otherwise the next frame c1a and c2a will be divided by 0 and then the scope goes crazy.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">2nd November 2003, 11:12</div></div>
-<br />
-<div class="posttext">i don't understand what exactly i am looking at... what is the white dot doing in accordance to red and green?<br />
-<br />
-edit: oh... ok i get it</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">2nd November 2003, 12:34</div></div>
-<br />
-<div class="posttext">Nice coding job.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">gaekwad2</div><div class="date small text-muted">2nd November 2003, 20:05</div></div>
-<br />
-<div class="posttext">Couldn't you make it so that when the white particle hits the green one it gets a negative charge and thus gets attracted to the red particle, then you wouldn't have to reset it.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">2nd November 2003, 21:30</div></div>
-<br />
-<div class="posttext">or that is explodes :) I like explosions.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">horse-fly</div><div class="date small text-muted">2nd November 2003, 21:58</div></div>
-<br />
-<div class="posttext">hooray for explosions that don't makes sense</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,36 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" need help on my great avs, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" need help on my great avs AVS" />
-	
-	<title> need help on my great avs - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> need help on my great avs - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">need help on my great avs</li>
-</ol>
-<!-- div class="pda"><a href="t-248327.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=248327">need help on my great avs</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">X-Mat</div><div class="date small text-muted">10th June 2006, 01:35</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">need help on my great avs</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=248327">need help on my great avs</a></p>
+
+
 <br />
-<div class="posttext">I just made this great (2d) avs. Its so nice as one of my first avs but there's 3 big problems about it.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">X-Mat</div>
+			<div class="date small text-muted">10th June 2006 01:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>need help on my great avs</strong><br />
+		
+		
+			
+		
+
+		I just made this great (2d) avs. Its so nice as one of my first avs but there's 3 big problems about it.<br />
 <br />
 first, it is very slow, and its the worst avs in pixel doubling mode, so dont even try it in full screen.<br />
 <br />
@@ -44,63 +61,158 @@ There was a time when i beggan this avs, it was about 1 year ago, and at this ti
 <br />
 Anyway, give me your comments, it will be appreciated.<br />
 <br />
-oh sorry I should have put this thread in avs presets,I just didn't think of it.</div></div><hr />
+oh sorry I should have put this thread in avs presets,I just didn't think of it.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">10th June 2006, 03:26</div></div>
-<br />
-<div class="posttext">It took me 10 sec to fix it after I opened the preset.<br />
-Init<br />
-t=5;mm=0.1;oo=0;time=0 <br />
-<br />
-Frame<br />
-t=t*0.8+tt*0.2;m=m+mm;o=o*0.8+oo*0.2;<br />
-l=if(above(time,4),1,0)<br />
-<br />
-Beat<br />
-tt=if(l,(rand(7)+1),tt);mm=-0.8+rand(160)/100;oo=-2+rand(40)/10;<br />
-time=time+1;time=time-5*above(time,5)<br />
-<br />
-Pixel<br />
-y=(r*t+m)/$PI;x=d*1.2-cos($PI+o)<br />
-<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">fastingaciu</div>
+			<div class="date small text-muted">10th June 2006 03:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It took me 10 sec to fix it after I opened the preset.<br />
+
+	<pre><code>Init
+<br />t</span><span style="color: #007700">=</span><span style="color: #0000BB">5</span><span style="color: #007700">;</span><span style="color: #0000BB">mm</span><span style="color: #007700">=</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">oo</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;</span><span style="color: #0000BB">time</span><span style="color: #007700">=</span><span style="color: #0000BB">0
+<br /></span>
+</span>
+</code><!-- php buffer end -->
+		
+		</code>
+		<hr />
+	
+
+	PHP Code:
+	
+		<hr />
+		<code style="white-space:nowrap">
+		
+			<!-- php buffer start --><code><span style="color: #000000">
+<span style="color: #0000BB">Frame
+<br />t</span><span style="color: #007700">=</span><span style="color: #0000BB">t</span><span style="color: #007700">*</span><span style="color: #0000BB">0.8</span><span style="color: #007700">+</span><span style="color: #0000BB">tt</span><span style="color: #007700">*</span><span style="color: #0000BB">0.2</span><span style="color: #007700">;</span><span style="color: #0000BB">m</span><span style="color: #007700">=</span><span style="color: #0000BB">m</span><span style="color: #007700">+</span><span style="color: #0000BB">mm</span><span style="color: #007700">;</span><span style="color: #0000BB">o</span><span style="color: #007700">=</span><span style="color: #0000BB">o</span><span style="color: #007700">*</span><span style="color: #0000BB">0.8</span><span style="color: #007700">+</span><span style="color: #0000BB">oo</span><span style="color: #007700">*</span><span style="color: #0000BB">0.2</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">l</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">time</span><span style="color: #007700">,</span><span style="color: #0000BB">4</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">)
+</code></pre>
+	
+
+	<pre><code>Beat
+<br />tt</span><span style="color: #007700">=if(</span><span style="color: #0000BB">l</span><span style="color: #007700">,(</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">7</span><span style="color: #007700">)+</span><span style="color: #0000BB">1</span><span style="color: #007700">),</span><span style="color: #0000BB">tt</span><span style="color: #007700">);</span><span style="color: #0000BB">mm</span><span style="color: #007700">=-</span><span style="color: #0000BB">0.8</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">160</span><span style="color: #007700">)/</span><span style="color: #0000BB">100</span><span style="color: #007700">;</span><span style="color: #0000BB">oo</span><span style="color: #007700">=-</span><span style="color: #0000BB">2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">40</span><span style="color: #007700">)/</span><span style="color: #0000BB">10</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">time</span><span style="color: #007700">=</span><span style="color: #0000BB">time</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">time</span><span style="color: #007700">=</span><span style="color: #0000BB">time</span><span style="color: #007700">-</span><span style="color: #0000BB">5</span><span style="color: #007700">*</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">time</span><span style="color: #007700">,</span><span style="color: #0000BB">5</span><span style="color: #007700">)
+</code></pre>
+	
+
+	<pre><code>Pixel
+<br />y</span><span style="color: #007700">=(</span><span style="color: #0000BB">r</span><span style="color: #007700">*</span><span style="color: #0000BB">t</span><span style="color: #007700">+</span><span style="color: #0000BB">m</span><span style="color: #007700">)/</span><span style="color: #0000BB">$PI</span><span style="color: #007700">;</span><span style="color: #0000BB">x</span><span style="color: #007700">=</span><span style="color: #0000BB">d</span><span style="color: #007700">*</span><span style="color: #0000BB">1.2</span><span style="color: #007700">-</span><span style="color: #0000BB">cos</span><span style="color: #007700">(</span><span style="color: #0000BB">$PI</span><span style="color: #007700">+</span><span style="color: #0000BB">o</span><span style="color: #007700">)
+</code></pre>
+	
 Your problem was in the pixel area and to be more exact: R*T. I really don't know how to explain it but I just know that if you use it with x, y or d variable you will get that line.<br />
 <br />
-In the zip file there is a version where I just fixed the DM and in the other I deleted some stuff.You can change it however you like for the colours but don't use so much useless things, just remember that if you want your preset to change the colour on beat the best way to do it is: &quot;channel shift&quot;.</div></div><hr />
+In the zip file there is a version where I just fixed the DM and in the other I deleted some stuff.You can change it however you like for the colours but don't use so much useless things, just remember that if you want your preset to change the colour on beat the best way to do it is: &quot;channel shift&quot;.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">X-Mat</div><div class="date small text-muted">10th June 2006, 03:27</div></div>
-<br />
-<div class="posttext">Also, if you want to see more of my work, and soem of my codings, caus flower explosion was really low on coding, here's a little &quot;pack&quot; of some drawing style presets.Most of them represents 2d games caus I like making games.I did an interactive version of pong, but winamp just crashed when i was finished and :( i did forgot to save... and i was too lazy to do it all again. Remember that those presets weren't created to look great for the eyes, and they do not.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">X-Mat</div>
+			<div class="date small text-muted">10th June 2006 03:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		Also, if you want to see more of my work, and soem of my codings, caus flower explosion was really low on coding, here's a little &quot;pack&quot; of some drawing style presets.Most of them represents 2d games caus I like making games.I did an interactive version of pong, but winamp just crashed when i was finished and :( i did forgot to save... and i was too lazy to do it all again. Remember that those presets weren't created to look great for the eyes, and they do not.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">X-Mat</div><div class="date small text-muted">10th June 2006, 03:33</div></div>
-<br />
-<div class="posttext">thanks fastin, i know my codes and how i use the effects look noob caus well im a noob. Maybe I'll work on that but<br />
-doing presets is not like my &quot;passion&quot;. I do that because i like coding and programming and i dont have any other great programs to create codings and great stuff. And hum I dont see any zip file you posted.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">X-Mat</div>
+			<div class="date small text-muted">10th June 2006 03:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">JaVS_v2.5</div><div class="date small text-muted">10th June 2006, 03:55</div></div>
-<br />
-<div class="posttext">Welcome, newbie!<br />
+		thanks fastin, i know my codes and how i use the effects look noob caus well im a noob. Maybe I'll work on that but<br />
+doing presets is not like my &quot;passion&quot;. I do that because i like coding and programming and i dont have any other great programs to create codings and great stuff. And hum I dont see any zip file you posted.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">JaVS_v2.5</div>
+			<div class="date small text-muted">10th June 2006 03:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Welcome, newbie!<br />
 your works are pretty good.<br />
 <br />
-:):up:</div></div><hr />
+:):up:
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">fastingaciu</div><div class="date small text-muted">10th June 2006, 04:00</div></div>
-<br />
-<div class="posttext">Ohh my bad.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">fastingaciu</div>
+			<div class="date small text-muted">10th June 2006 04:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		Ohh my bad.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">X-Mat</div><div class="date small text-muted">10th June 2006, 04:36</div></div>
-<br />
-<div class="posttext">hey fastin, the changes you did to the codes just doesn't work caus you can't delete the &quot;r&quot; variable, thats what makes the &quot;kaleodosquope&quot;(dam how do we write this word).Now there's just a big circle.And the &quot;t&quot; changes the number of sides it has. the problem is that it looks like each number of sides need a special grid size, ex. 5 sides need grid 19*19, and I want to know if there's a way to set the grid size in coding.Also I dont put channel shift caus there's only 3 colors.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">X-Mat</div>
+			<div class="date small text-muted">10th June 2006 04:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">DummyDDD</div><div class="date small text-muted">10th June 2006, 14:21</div></div>
-<br />
-<div class="posttext">You have made a pretty nice preset, and I really like the movement in it, although I think it's just slightly too bright.<br />
+		hey fastin, the changes you did to the codes just doesn't work caus you can't delete the &quot;r&quot; variable, thats what makes the &quot;kaleodosquope&quot;(dam how do we write this word).Now there's just a big circle.And the &quot;t&quot; changes the number of sides it has. the problem is that it looks like each number of sides need a special grid size, ex. 5 sides need grid 19*19, and I want to know if there's a way to set the grid size in coding.Also I dont put channel shift caus there's only 3 colors.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">DummyDDD</div>
+			<div class="date small text-muted">10th June 2006 14:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		You have made a pretty nice preset, and I really like the movement in it, although I think it's just slightly too bright.<br />
 <br />
  You can improve the speed by not using replace/replace effect lists. Maybe it makes your preset easier to understand from the avs editor, but it actually doesn't do anything, so you should take out all the components from those effect lists, and delete the ELs.<br />
  Also you can decrease the gridsize of the first dm, disable it's bilinear filtering (and inserting a slow fadeout to compensate), remove the brigtness and the first and the third unique color, without any real loss of quality.<br />
@@ -111,29 +223,70 @@ your works are pretty good.<br />
  About the line on the left: It is caused by the fact that the dm tries to smoothen a transition from y = (0*t+m)/pi to y = (2pi*t+m)/pi, which will never look any good (unless you use movement instead, but that wouldn't be dynamic). To fix it you can remove the y code with: y=(asin(sin(r))*t+m)/$pi;<br />
 you should however note that this will give a mirror effect, which you may not like.<br />
 <br />
- I've attached a zip containing 2 files, both with the mentioned optimizations, and one with the fix for the line.</div></div><hr />
+ I've attached a zip containing 2 files, both with the mentioned optimizations, and one with the fix for the line.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">X-Mat</div><div class="date small text-muted">10th June 2006, 19:58</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">X-Mat</div>
+			<div class="date small text-muted">10th June 2006 19:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ok I got 2 new versions now. It seems that the line is not removable with &quot;r*t&quot; so I made a version that stays at 7 sides, so there's no line (in editor format). you can change the sides but you will need to change the grid size too. the 2nd version is with dummy's mirror version of the dynamove, and so i can put the &quot;t&quot; variable.<br />
+As for the low speed, it just dosen't work to delete all effects, it looks bad, and the speed is not so low caus you dont need to put the preset very big, its still nice in editor size. Finally, I found how to adjust the preset for normal song and its so simple that I feel really stupid, its all in the adjustable blend.Adjust it to your songs and its perfect, well almost. If someone find out a way to delete that line without changing the effect, please say it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">JFASI</div>
+			<div class="date small text-muted">10th June 2006 22:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Huzzah! This is maybe the third good newbie I have seen in about a year and a half.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Doggy Dog</div>
+			<div class="date small text-muted">11th June 2006 01:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nothing too special, but it's better than the regular noob bull.<br />
 <br />
-<div class="posttext">Ok I got 2 new versions now. It seems that the line is not removable with &quot;r*t&quot; so I made a version that stays at 7 sides, so there's no line (in editor format). you can change the sides but you will need to change the grid size too. the 2nd version is with dummy's mirror version of the dynamove, and so i can put the &quot;t&quot; variable.<br />
-As for the low speed, it just dosen't work to delete all effects, it looks bad, and the speed is not so low caus you dont need to put the preset very big, its still nice in editor size. Finally, I found how to adjust the preset for normal song and its so simple that I feel really stupid, its all in the adjustable blend.Adjust it to your songs and its perfect, well almost. If someone find out a way to delete that line without changing the effect, please say it.</div></div><hr />
+Btw. Try the 3rd version with XOR selected in the Effect List containing the Blurs and the Color Clips. I like it best that way.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">JFASI</div><div class="date small text-muted">10th June 2006, 22:45</div></div>
-<br />
-<div class="posttext">Huzzah! This is maybe the third good newbie I have seen in about a year and a half.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Doggy Dog</div><div class="date small text-muted">11th June 2006, 01:01</div></div>
-<br />
-<div class="posttext">Nothing too special, but it's better than the regular noob bull.<br />
-<br />
-Btw. Try the 3rd version with XOR selected in the Effect List containing the Blurs and the Color Clips. I like it best that way.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

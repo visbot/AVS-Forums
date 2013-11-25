@@ -3,73 +3,149 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Dynamic Shift..., avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Dynamic Shift... AVS" />
-	
-	<title> Dynamic Shift... - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Dynamic Shift... - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Dynamic Shift...</li>
-</ol>
-<!-- div class="pda"><a href="t-107453.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=107453">Dynamic Shift...</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">28th September 2002, 19:08</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Dynamic Shift...</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=107453">Dynamic Shift...</a></p>
+
+
 <br />
-<div class="posttext">I need some help with my dynamic shift code.. I'm TOTALLY new to scripting in AVS, so please excuse me for the ever-so-simple code... as you can see in my preset, on a beat, it randomly makes the &quot;fire&quot; go to the left or right, like a breeze is coming by. Well, it actually works pretty good, but if it chooses to go to the right or left too much, the visual is bad, and is hard for it to choose the right number to go back the other way.i want it to be able that when it is at a certain point, to go the other way, by forcing it to use the positive or negative numbers, to go the other way until it reaches another point, then it goes all regular again. This might not make much sence now, but just dl it and see for yourself. Might take a bit, but it does happen... Any Help?</div></div><hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">WHCode RED</div>
+			<div class="date small text-muted">28th September 2002 19:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Dynamic Shift...</strong><br />
+		
+		
+			
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">28th September 2002, 19:32</div></div>
-<br />
-<div class="posttext">Because you're incrementing ex every beat, you can get a situation where ex=ex+2 every beat, or ex=ex-2 every beat.  Instead, use ex=rand(n)-n/2 (which gives you numbers from n-n/2=n/2 to 0-n/2=-n/2.  And x=2.1 is pointless since you redefine it later.</div></div><hr />
+		I need some help with my dynamic shift code.. I'm <b>TOTALLY</b> new to scripting in AVS, so please excuse me for the ever-so-simple code... as you can see in my preset, on a beat, it randomly makes the &quot;fire&quot; go to the left or right, like a breeze is coming by. Well, it actually works pretty good, but if it chooses to go to the right or left too much, the visual is bad, and is hard for it to choose the right number to go back the other way.i want it to be able that when it is at a certain point, to go the other way, by forcing it to use the positive or negative numbers, to go the other way until it reaches another point, then it goes all regular again. This might not make much sence now, but just dl it and see for yourself. Might take a bit, but it does happen... Any Help?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">WHCode RED</div><div class="date small text-muted">28th September 2002, 19:46</div></div>
-<br />
-<div class="posttext">Wow, thanks! <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">28th September 2002 19:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Because you're incrementing ex every beat, you can get a situation where ex=ex+2 every beat, or ex=ex-2 every beat.  Instead, use ex=rand(n)-n/2 (which gives you numbers from n-n/2=n/2 to 0-n/2=-n/2.  And x=2.1 is pointless since you redefine it later.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">WHCode RED</div>
+			<div class="date small text-muted">28th September 2002 19:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow, thanks! <br />
 <br />
 I always thought i was missing something simple... :p<br />
 <br />
-Edit: yeah, 2.1 is kinda pointless, but when there is no beat, doesnt it give it a breeze, as if there was a beat?? ... ... ... ... ... ... Dang, I hate thinking.. &lt;buzzing coming from head&gt;</div></div><hr />
+Edit: yeah, 2.1 is kinda pointless, but when there is no beat, doesnt it give it a breeze, as if there was a beat?? ... ... ... ... ... ... Dang, I hate thinking.. &lt;buzzing coming from head&gt;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th September 2002, 20:32</div></div>
-<br />
-<div class="posttext">Welcome to the world of AVS and the Winamp AVS forums!<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th September 2002 20:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Welcome to the world of AVS and the Winamp AVS forums!<br />
 <br />
 Its always nice to see new faces around here.<br />
 <br />
-(edit: I know I'm a 'new kid on the block' right now)</div></div><hr />
+(edit: I know I'm a 'new kid on the block' right now)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">29th September 2002 00:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Because ex doesn't ever change when there's no beat.  When you say x=..., x is wiped out and replaced with ....  So you're wiping out that 2.1 and replacing it with ex.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Jaheckelsafar</div>
+			<div class="date small text-muted">29th September 2002 06:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		If you wanna do something only on the beat, you gotta do in the beat section. You could make it gust on a beat, then have it gradually go back to the original breeze.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">29th September 2002, 00:13</div></div>
-<br />
-<div class="posttext">Because ex doesn't ever change when there's no beat.  When you say x=..., x is wiped out and replaced with ....  So you're wiping out that 2.1 and replacing it with ex.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">29th September 2002, 06:50</div></div>
-<br />
-<div class="posttext">If you wanna do something only on the beat, you gotta do in the beat section. You could make it gust on a beat, then have it gradually go back to the original breeze.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

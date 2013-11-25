@@ -3,81 +3,167 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" superscope preset tweaking, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" superscope preset tweaking AVS" />
-	
-	<title> superscope preset tweaking - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> superscope preset tweaking - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">superscope preset tweaking</li>
-</ol>
-<!-- div class="pda"><a href="t-57688.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=57688">superscope preset tweaking</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mharang</div><div class="date small text-muted">21st August 2001, 00:26</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">superscope preset tweaking</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=57688">superscope preset tweaking</a></p>
+
+
 <br />
-<div class="posttext">Hey, anyone out there know a thing or two about the Superscope? I have a question. I am making an AVS preset that has two superscopes - both are Vibrating Worms. I wanted to know what values to change (and what to change them to) so that they will oppose each other while they move around. I keep fiddling with the initial t var, but it doesn't seem to be working. Any suggestions?</div></div><hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mharang</div>
+			<div class="date small text-muted">21st August 2001 00:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>superscope preset tweaking</strong><br />
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">22nd August 2001, 14:23</div></div>
-<br />
-<div class="posttext">im guessing something like t=t-.02</div></div><hr />
+		Hey, anyone out there know a thing or two about the Superscope? I have a question. I am making an AVS preset that has two superscopes - both are Vibrating Worms. I wanted to know what values to change (and what to change them to) so that they will oppose each other while they move around. I keep fiddling with the initial t var, but it doesn't seem to be working. Any suggestions?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mharang</div><div class="date small text-muted">22nd August 2001, 17:21</div></div>
-<br />
-<div class="posttext">Thanks scarface. Actually I found another neat trick that works even better: change the Per Point formulas to the following for the second 'scope:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Scarface2k1</div>
+			<div class="date small text-muted">22nd August 2001 14:23 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		im guessing something like t=t<b>-</b>.02
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mharang</div>
+			<div class="date small text-muted">22nd August 2001 17:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>thanks</strong><br />
+		
+		
+
+		Thanks scarface. Actually I found another neat trick that works even better: change the Per Point formulas to the following for the second 'scope:<br />
 <br />
 x=cos(2*i+t+3.14159)*0.9*(v*0.5+0.5);<br />
 y=sin(i*2+t+3.14159)*0.9*(v*0.5+0.5);<br />
 <br />
 I just added pi radians (3.1415 radians or 180 degrees) to the existing settings. Looks like I solved my own problem! Thanks anyway.<br />
 <br />
-Matt</div></div><hr />
+Matt
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">LittleBuddy88</div><div class="date small text-muted">22nd August 2001, 18:56</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">LittleBuddy88</div>
+			<div class="date small text-muted">22nd August 2001 18:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually, it's even faster to use T=3.14159 in the Init row.<br />
 <br />
-<div class="posttext">Actually, it's even faster to use T=3.14159 in the Init row.<br />
 <br />
-<br />
-Linus</div></div><hr />
+Linus
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Scarface2k1</div>
+			<div class="date small text-muted">22nd August 2001 20:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		NO! you need the t varible to change if you dont the super scope will stay in the same spot.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">ParaNoya</div>
+			<div class="date small text-muted">22nd August 2001 23:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There is even a way to make this happen by using just one scope, it's very easy. hehe.<br />
+Think about it I'll give you a hint you should use a dot scope with lines this isn't possible. Ah just another hint check out one of the scopes in my shallow silence preset in my latest preset pack at winamp.com here's the link: <a href="http://www.winamp.com/components/detail.jhtml?componentId=73012" target="_blank">http://www.winamp.com/components/det...ponentId=73012</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Scarface2k1</div>
+			<div class="date small text-muted">23rd August 2001 15:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">22nd August 2001, 20:54</div></div>
-<br />
-<div class="posttext">NO! you need the t varible to change if you dont the super scope will stay in the same spot.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">ParaNoya</div><div class="date small text-muted">22nd August 2001, 23:27</div></div>
-<br />
-<div class="posttext">There is even a way to make this happen by using just one scope, it's very easy. hehe.<br />
-Think about it I'll give you a hint you should use a dot scope with lines this isn't possible. Ah just another hint check out one of the scopes in my shallow silence preset in my latest preset pack at winamp.com here's the link: http://www.winamp.com/components/detail.jhtml?componentId=73012</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Scarface2k1</div><div class="date small text-muted">23rd August 2001, 15:25</div></div>
-<br />
-<div class="posttext">wow.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

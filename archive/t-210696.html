@@ -3,50 +3,74 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Questions about 3D., avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Questions about 3D. AVS Troubleshooting" />
-	
-	<title> Questions about 3D. - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Questions about 3D. AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Questions about 3D. - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Questions about 3D.</li>
-</ol>
-<!-- div class="pda"><a href="t-210696.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=210696">Questions about 3D.</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mIcrO_brAIn</div><div class="date small text-muted">17th March 2005, 18:53</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Questions about 3D.</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=210696">Questions about 3D.</a></p>
+
+
 <br />
-<div class="posttext">Ok, so far I don't seem to be doing too bad about making a scope that jumps around, changes shape, etc. The problem however, is I have no idea how to make the scope itself 3D. I can throw in PAK_9's rotation matrix (which I don't really understand so if anyone would car to explain) but when it's rotating the image, at one point or another it will turn into a line because there's only two dimensions. How (or where) do I go about learning the 3D coding?<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mIcrO_brAIn</div>
+			<div class="date small text-muted">17th March 2005 18:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Questions about 3D.</strong><br />
+		
+		
+
+		Ok, so far I don't seem to be doing too bad about making a scope that jumps around, changes shape, etc. The problem however, is I have no idea how to make the scope itself 3D. I can throw in PAK_9's rotation matrix (which I don't really understand so if anyone would car to explain) but when it's rotating the image, at one point or another it will turn into a line because there's only two dimensions. How (or where) do I go about learning the 3D coding?<br />
 <br />
 I've managed to mess around and make a few things happen. Mostly that comes from just putting in random equations and divisions and seeing what pops out.<br />
 <br />
-Sorry for the noob question but I've been playing with this thing on my own for months now and can't figure it out.</div></div><hr />
+Sorry for the noob question but I've been playing with this thing on my own for months now and can't figure it out.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">17th March 2005, 22:56</div></div>
-<br />
-<div class="posttext">Didn't you say that you used paks helpful programming guide? As far as i remember it explains pretty good what this rotation code does.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">^..^</div>
+			<div class="date small text-muted">17th March 2005 22:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Didn't you say that you used paks helpful programming guide? As far as i remember it explains pretty good what this rotation code does.<br />
 <br />
 However i try to explain it a bit:<br />
 Actually that code you mentioned isn't a matrix, but it's the code that you get when you work out 3 roation matrices. But let's go back a step. At first you calculate an object in 3 dimensions. Then that code rotates it around the x axis, then around y, then around z. If you are familiar with math a bit the code is not more than this:<br />
-<br />
+<pre><code><font size="3"><br />
 / x1 \   / 1      0       0    \<br />
 | y1 | * | 0    cos(***945;) -sin(***945;) |<br />
 \ z1 /   \ 0    sin(***945;)  cos(***945;) / <br />
@@ -62,20 +86,32 @@ or better:<br />
 x2 = x1<br />
 y2 = cos(***945;)*y1 - sin(***945;)*z1<br />
 z2 = sin(***945;)*y1 + cos(***945;)*z1<br />
-<br />
+</font></code></pre><br />
 <br />
 do you recognize it? This is done for the three rotations (x-,y-,z-axis).<br />
 <br />
 Afterwards you have to go back to 2D in order to render that object. Here you use the fact, that objects in further distance appear smaller. So you use the z-dimension as a size-parameter:<br />
-x = x4 / (1+z4*0.5)<br />
-y = y4 / (1+z4*0.5)<br />
+<pre><code><font size="3">x = x4 / (1+z4*0.5)<br />
+y = y4 / (1+z4*0.5)</font></code></pre><br />
 <br />
-Hope the mystery of 3D in AVS has been cleared up a bit more! If anything is unclear just ask again.</div></div><hr />
+Hope the mystery of 3D in AVS has been cleared up a bit more! If anything is unclear just ask again.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mIcrO_brAIn</div><div class="date small text-muted">17th March 2005, 23:28</div></div>
-<br />
-<div class="posttext">Ok, the rotation made a little bit of sense before, and a lot now.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mIcrO_brAIn</div>
+			<div class="date small text-muted">17th March 2005 23:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ok, the rotation made a little bit of sense before, and a lot now.<br />
 <br />
 But I'm still having an issue with making a scope itself 3D. I can rotate it in 3D, but the scope looks like a rotating plate.<br />
 <br />
@@ -83,29 +119,69 @@ I'd like to learn how to make the actual scope itself 3D, then if necessary make
 <br />
 I'll attach an example of one of my rotating plates.<br />
 <br />
-While PAK_9 does a good job of explaining the rotation I didn't see (or maybe was just ignorant and didn't understand) a 3D scope.</div></div><hr />
+While PAK_9 does a good job of explaining the rotation I didn't see (or maybe was just ignorant and didn't understand) a 3D scope.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">17th March 2005, 23:36</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">^..^</div>
+			<div class="date small text-muted">17th March 2005 23:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		well, your problem is quite simple: you didn't specify anything for your 3rd dimension. So you don't have a 3D but a 2D object. It's an 2D-slice that is rotated!<br />
 <br />
-<div class="posttext">well, your problem is quite simple: you didn't specify anything for your 3rd dimension. So you don't have a 3D but a 2D object. It's an 2D-slice that is rotated!<br />
-<br />
-In the beginning specify something for x1, y1 AND(!) z1</div></div><hr />
+In the beginning specify something for x1, y1 AND(!) z1
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mIcrO_brAIn</div><div class="date small text-muted">18th March 2005, 00:38</div></div>
-<br />
-<div class="posttext">I figured that much. I suppose learning what does what is a matter of math and some trial and error then huh?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mIcrO_brAIn</div>
+			<div class="date small text-muted">18th March 2005 00:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I figured that much. I suppose learning what does what is a matter of math and some trial and error then huh?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">18th March 2005, 00:47</div></div>
-<br />
-<div class="posttext">yes and no. actually math isn't everything. You musn't forget to keep an eye on the appearance of the preset. But you're right: most stuff concerning coding has to do with math, so it was very helpful to be familiar with mathematics. You don't have to be good in here, but if you are it's a benfit for sure!</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">^..^</div>
+			<div class="date small text-muted">18th March 2005 00:47 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">mIcrO_brAIn</div><div class="date small text-muted">18th March 2005, 04:18</div></div>
-<br />
-<div class="posttext">Ok, so I've come up with a few half-ass scopes that I wanna play with. Right now I'm messin around with the dynamic movement but I can't get the effect I want.<br />
+		yes and no. actually math isn't everything. You musn't forget to keep an eye on the appearance of the preset. But you're right: most stuff concerning coding has to do with math, so it was very helpful to be familiar with mathematics. You don't <i>have</i> to be good in here, but if you are it's a benfit for sure!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mIcrO_brAIn</div>
+			<div class="date small text-muted">18th March 2005 04:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ok, so I've come up with a few half-ass scopes that I wanna play with. Right now I'm messin around with the dynamic movement but I can't get the effect I want.<br />
 <br />
 I'd like to have more of a camera angle that moves back and forth from one direction to another. But when I put in the lines of code that I think should work, the screen just goes blank on me. So, obviously, it doesn't work.<br />
 <br />
@@ -115,9 +191,9 @@ rotx=rotx+.01;<br />
 roty=roty+.01;<br />
 rotz=rotz+00;<br />
 <br />
-rotx=if(above(rotx,.40),rotxb,rotx) <br />
-rotxb=rotx-.01;<br />
-rotxb=if(below(rotxb,-0.40),rotx,rotxb);<br />
+<b>rotx=if(above(rotx,.40),rotxb,rotx)</b> <br />
+<b>rotxb=rotx-.01;</b><br />
+<b>rotxb=if(below(rotxb,-0.40),rotx,rotxb);</b><br />
 <br />
 crotx=cos(rotx);<br />
 srotx=sin(rotx);<br />
@@ -149,15 +225,25 @@ y=y1*t-oy;<br />
 <br />
 alpha=z1;<br />
 <br />
-Yeah yeah, it's all taken from PAK_9. I'm just trying to take what he did, tweak with it and see how it works, then come up with something original.</div></div><hr />
+Yeah yeah, it's all taken from PAK_9. I'm just trying to take what he did, tweak with it and see how it works, then come up with something original.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">^..^</div><div class="date small text-muted">18th March 2005, 10:50</div></div>
-<br />
-<div class="posttext">that's just what i use to do either ;)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">^..^</div>
+			<div class="date small text-muted">18th March 2005 10:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that's just what i use to do either ;)<br />
 <br />
 well, perhaps you could post the complete stuff you used like:<br />
-<br />
+<pre><code><br />
 init:<br />
 blablabla<br />
 <br />
@@ -169,38 +255,80 @@ bla... bla<br />
 <br />
 pixel:<br />
 bla etc.<br />
-<br />
+</code></pre><br />
 that would make it easier to reproduce the dm here. However, the easiest way to keep the variable in between max and min limits is via a pre-factor on sines/cosines. var1=sin(var2) always stays between -1 and 1, so var1=0.4*sin(var2) will always give a value between -0.4 and 0.4.<br />
 Your idea could perhaps work but is a bit complicated. On first sight the problem you have is here: rotxb=rotx-.01<br />
-If you do so, rotxb gives you rotx reduced by -0.01. But since you don't change rotx in any way, you will get the same value all the time. Spontaneously i don't know how to fix it, cause i would simply use a sin + a sizing factor like i said above. :)</div></div><hr />
+If you do so, rotxb gives you rotx reduced by -0.01. But since you don't change rotx in any way, you will get the same value all the time. Spontaneously i don't know how to fix it, cause i would simply use a sin + a sizing factor like i said above. :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">18th March 2005, 16:41</div></div>
-<br />
-<div class="posttext">I dont know, you water it down and water it down, but people still cant fit it into their tiny brains.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">18th March 2005 16:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I dont know, you water it down and water it down, but people still cant fit it into their tiny brains.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Jaak</div><div class="date small text-muted">18th March 2005, 19:43</div></div>
-<br />
-<div class="posttext">Originally posted by mIcrO_brAIn <br />
-<br />
-Yeah yeah, it's all taken from PAK_9. I'm just trying to take what he did, tweak with it and see how it works, then come up with something original.  <br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Jaak</div>
+			<div class="date small text-muted">18th March 2005 19:43 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by mIcrO_brAIn </i><br />
+<b><br />
+Yeah yeah, it's all taken from PAK_9. I'm just trying to take what he did, tweak with it and see how it works, then come up with something original. </b></blockquote>
 google and search forums for raytracing<br />
 <br />
 [edit]<br />
 cos it has been taught and tutorialized many times, no reason to do it again.<br />
-But before you start diggin' for raytracing make clear how camera and 3D rotation works :p</div></div><hr />
+But before you start diggin' for raytracing make clear how camera and 3D rotation works :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th March 2005 03:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		want to make it easy on yourself? start with 3d superscopes and get to grips with 3d space and projection. you will then find it easier to learn raytracing since vectors and rays won't be so abstract, you might even come to the conclusion of how to do it for yourself. raytracing anything in avs requires  a pretty good knowledge of 3d geometry if you want to do anything not a(two) plane(s). even people like PAK-9 and UnConeD dodge using raytraced DMs and use elaborate hacks instead (see UCD - Mission to Mars/Retrosquares, PAK-9 - Tubular/Containment Breach for some good examples), because its easier and sometimes faster when you want to create a complicated terrain/shape.<br />
+<br />
+Seriosuly though... start with superscope and get really used to it. make all sorts of parametric 'sphere thingies' and point to point wireframe models. thats how i started.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th March 2005, 03:35</div></div>
-<br />
-<div class="posttext">want to make it easy on yourself? start with 3d superscopes and get to grips with 3d space and projection. you will then find it easier to learn raytracing since vectors and rays won't be so abstract, you might even come to the conclusion of how to do it for yourself. raytracing anything in avs requires  a pretty good knowledge of 3d geometry if you want to do anything not a(two) plane(s). even people like PAK-9 and UnConeD dodge using raytraced DMs and use elaborate hacks instead (see UCD - Mission to Mars/Retrosquares, PAK-9 - Tubular/Containment Breach for some good examples), because its easier and sometimes faster when you want to create a complicated terrain/shape.<br />
-<br />
-Seriosuly though... start with superscope and get really used to it. make all sorts of parametric 'sphere thingies' and point to point wireframe models. thats how i started.</div></div><hr />
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

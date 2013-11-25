@@ -3,37 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" raytraced sine-cosine landscape using whittaker/newton-raphson, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" raytraced sine-cosine landscape using whittaker/newton-raphson AVS Presets" />
-	
-	<title> raytraced sine-cosine landscape using whittaker/newton-raphson - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" raytraced sine-cosine landscape using whittaker/newton-raphson AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> raytraced sine-cosine landscape using whittaker/newton-raphson - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">raytraced sine-cosine landscape using whittaker/newton-raphson</li>
-</ol>
-<!-- div class="pda"><a href="t-167321.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=167321">raytraced sine-cosine landscape using whittaker/newton-raphson</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">your-dentist</div><div class="date small text-muted">30th January 2004, 08:53</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">raytraced sine-cosine landscape using whittaker/newton-raphson</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=167321">raytraced sine-cosine landscape using whittaker/newton-raphson</a></p>
+
+
 <br />
-<div class="posttext">Dude!<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">your-dentist</div>
+			<div class="date small text-muted">30th January 2004 08:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>raytraced sine-cosine landscape using whittaker/newton-raphson</strong><br />
+		
+		
+
+		Dude!<br />
 One week ago I was still, enviously, looking at all those real-3d DMs and didn't even know what all those dx, oz and k stuff meant. Today I'm presenting my first 100% self made DM with raytracing.<br />
 It might be nothing special to all you elite math-aces out there, but to me it's special because it's the first sine-cosine landscape I've ever seen in a DM, and it's mine(sorry, but I feel so smart)! I've still got some questions about it, but I will start with the code.<br />
 I've seen the formula somewhere at school and didn't what it is, so I &quot;took&quot; it home.<br />
@@ -125,12 +139,22 @@ I've been thinking about refraction stuff, but I've had nothing to use it on, no
 I'm sure I can figure out, with trying around a bit, how to do this (I know the basics). But I really have no idea of how to calculate the normal vectors of a point on that landscape (maybe I have, but I'm not sure about it, plus it's pretty late now so I don't have time to think about it), so can someone tell me how to do this?<br />
 <br />
 Well, that's it. Now it's your turn, tell me how you like the DM, or answer my questions, or do both.<br />
-Thank 'n see y'all.</div></div><hr />
+Thank 'n see y'all.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th January 2004, 12:30</div></div>
-<br />
-<div class="posttext">Not bad at all... <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">30th January 2004 12:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Not bad at all... <br />
 <br />
 For the normal/gradient, just use (-***8706;z/***8706;x, -***8706;z/***8706;y, 1). (***8706; = partial derivative)<br />
 <br />
@@ -138,48 +162,88 @@ Oh and my flag preset was in fact a &quot;sine/cosine landscape&quot; really. So
 <br />
 Equations with sine are usually tricky to solve: a ray that is not to steep will have multiple intersections anyway (some rays even infinite), so you're better off doing it numerically.<br />
 <br />
-By the way, maybe you should try starting by raytracing the plane that touches the tops of the bumps: this is a good starting value for 'k' and could speed up the code and allow for higher gridsize (and less uglyness in the distance).</div></div><hr />
+By the way, maybe you should try starting by raytracing the plane that touches the tops of the bumps: this is a good starting value for 'k' and could speed up the code and allow for higher gridsize (and less uglyness in the distance).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">your-dentist</div><div class="date small text-muted">30th January 2004, 13:33</div></div>
-<br />
-<div class="posttext">UnConeD:&quot;Oh and my flag preset was in fact a &quot;sine/cosine landscape&quot; really. So you're not first, sorry&quot;<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">your-dentist</div>
+			<div class="date small text-muted">30th January 2004 13:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD:&quot;Oh and my flag preset was in fact a &quot;sine/cosine landscape&quot; really. So you're not first, sorry&quot;<br />
 Me:&quot;Damned!&quot;<br />
 UnConeD:&quot;By the way, maybe you should try starting by raytracing the plane that touches the tops of the bumps&quot;<br />
 Me:&quot;I will try that, but my understanding of raytracing is still a bit :down: so could you please explain to me why this makes it faster.&quot;<br />
 Well, thanks for your help.<br />
 btw: I've now seen all your packs, (:mad: &lt;- want's to be you) and the final whack was just inhuman. I bet it wont take long until someone will make games using AVS. I've read about a wolfenstein preset, you've made. Can I download it somewhere?<br />
-'Nuf questions, I hope the final whack wasn't your last pack. Cya.</div></div><hr />
+'Nuf questions, I hope the final whack wasn't your last pack. Cya.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">30th January 2004, 18:40</div></div>
-<br />
-<div class="posttext">Why a plane would speed it up: for plain whittaker raytracing, you usually start with k=0 or some other small value.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">30th January 2004 18:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Why a plane would speed it up: for plain whittaker raytracing, you usually start with k=0 or some other small value.<br />
 If you start by raytracing the plane which touches the tops of the bumps, you will already be close to the intersection point, and you will probably need less iterations.<br />
 Raytracing a plane is quite fast (well compared to sines/cosine anyway).<br />
 <br />
 Depending on which side your camera is on, you'll need to raytrace z=1 or z=-1:<br />
-<br />
+<pre><code><br />
     z = 1<br />
 &lt;=&gt; k*dz+oz = 1<br />
 &lt;=&gt; k = (1-oz)/dz<br />
-<br />
+</code></pre><br />
 <br />
 Once you have that, you probably need less whittaker iterations. By the way, you never reset your 'k' so in fact you're iterating progressively from gridpoint to gridpoint (which might be better or worse, depending on the camera angle).<br />
 <br />
-You can get the wolfenstein preset here (http://www.deviantart.com/deviation/1198842/), but it's just Elevation with different texturing (Elevation was derived from WolfenAVStein).</div></div><hr />
+You can get the wolfenstein preset <a href="http://www.deviantart.com/deviation/1198842/" target="_blank">here</a>, but it's just Elevation with different texturing (Elevation was derived from WolfenAVStein).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">30th January 2004, 20:53</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">fragmer</div>
+			<div class="date small text-muted">30th January 2004 20:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		and don't forget about alpha optimiz.:<br />
 <br />
-<div class="posttext">and don't forget about alpha optimiz.:<br />
-<br />
-alpha=min(1,max(0,dov*2-sqrt(ix*ix+iy*iy+iz*iz)));</div></div><hr />
+alpha=min(1,max(0,dov*2-sqrt(ix*ix+iy*iy+iz*iz)));
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UIUC85</div><div class="date small text-muted">31st January 2004, 00:43</div></div>
-<br />
-<div class="posttext">Uhh where did your Whittaker constant go by the way?<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UIUC85</div>
+			<div class="date small text-muted">31st January 2004 00:43 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Uhh where did your Whittaker constant go by the way?<br />
 <br />
 pixel:<br />
 --------------------------------------------------------------------------------------------------<br />
@@ -198,11 +262,20 @@ alpha=dov*2-sqrt(ix*ix+iy*iy+iz*iz); alpha=if(below(alpha,0),0,if(above(alpha,1)
 <br />
 If you add that constant you'll notice the texture on the edges doesn't distort nearly as much because it makes the approximation more exact.  And yeah go with the initial plane approximation like UnConeD said.  You might be interested in looking at my Adapt preset.  The post should still be in this forum down on the list.  That uses whittaker iteration as well.  Thats another direction to take this idea.<br />
 <br />
-Oh and it kinda sounds like you haven't dealt with functions of more than one variable before...  I'm all for refraction but you might come across one problem if you try and complicate the equation.  If you make the equation too complicated it's gonna be a pain to get the partial derivatives (or just REALLY LONG).  Just a friendly word of warning.  I ran into that problem anyways...</div></div><hr />
+Oh and it kinda sounds like you haven't dealt with functions of more than one variable before...  I'm all for refraction but you might come across one problem if you try and complicate the equation.  If you make the equation too complicated it's gonna be a pain to get the partial derivatives (or just REALLY LONG).  Just a friendly word of warning.  I ran into that problem anyways...
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

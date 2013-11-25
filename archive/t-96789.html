@@ -3,73 +3,144 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Fast Square Renderer, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Fast Square Renderer AVS" />
-	
-	<title> Fast Square Renderer - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Fast Square Renderer - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Fast Square Renderer</li>
-</ol>
-<!-- div class="pda"><a href="t-96789.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=96789">Fast Square Renderer</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">KeatonMill</div><div class="date small text-muted">4th August 2002, 18:37</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Fast Square Renderer</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=96789">Fast Square Renderer</a></p>
+
+
 <br />
-<div class="posttext">Hey guys. I've been playing around with stuff for my upcoming AVS pack, and I've got a question.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">KeatonMill</div>
+			<div class="date small text-muted">4th August 2002 18:37 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Fast Square Renderer</strong><br />
+		
+		
+			
+		
+
+		Hey guys. I've been playing around with stuff for my upcoming AVS pack, and I've got a question.<br />
 <br />
 For a preset of mine, I've got a rotating square that changes colors. Currently, I do this with a SS that draws lots of line, but it takes a (relatively) long time to do that. Attached are two presets, one of them contains the entire preset, and the other just the square.<br />
-The question is, is there any better way to do that? I thought there was a way, by making a movement that just says  d=0;  and a 1x1 DM that zooms and rotates, but it doesn't work.<br />
+The question is, is there any better way to do that? I thought there was a way, by making a movement that just says <pre><code> d=0; </code></pre> and a 1x1 DM that zooms and rotates, but it doesn't work.<br />
 <br />
 Any ideas?<br />
 Thanks,<br />
-~Keaton</div></div><hr />
+~Keaton
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th August 2002, 18:56</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">4th August 2002 18:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The problem with a DM is that, when wrap is turned off, it stretches the edges so that the image always fits inside the window. I suggest you add a superscope that draws a black square around the edges, and then use a DM. If your gridsize is high enough and the black edges are not too thin, then you won't see any stretching.<br />
 <br />
-<div class="posttext">The problem with a DM is that, when wrap is turned off, it stretches the edges so that the image always fits inside the window. I suggest you add a superscope that draws a black square around the edges, and then use a DM. If your gridsize is high enough and the black edges are not too thin, then you won't see any stretching.<br />
-<br />
-Or you can leave wrap on and use alpha blending, but I think the previous technique is faster.</div></div><hr />
+Or you can leave wrap on and use alpha blending, but I think the previous technique is faster.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd August 2002, 00:28</div></div>
-<br />
-<div class="posttext">i've looked at your superscope, it is about a million times more complex than it needs to be. attached is a completely solid square preset (no holes at all) that rotates and changes color at much higher fps than either of your attempts (it peaks out on my system at about 60-70 at 320x200). it uses really simple code so you should just be able to look at it to understand it hopefully. if not all it does is draw a load of parallel lines in the shape of a square then multiplies the result by the 2d rotation matrix. the color change code i put in was just so that is wasn't plain white.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">22nd August 2002 00:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		i've looked at your superscope, it is about a million times more complex than it needs to be. attached is a completely solid square preset (no holes at all) that rotates and changes color at much higher fps than either of your attempts (it peaks out on my system at about 60-70 at 320x200). it uses really simple code so you should just be able to look at it to understand it hopefully. if not all it does is draw a load of parallel lines in the shape of a square then multiplies the result by the 2d rotation matrix. the color change code i put in was just so that is wasn't plain white.<br />
 <br />
 if this isn't what your trying to do then sorry for wasting your time.<br />
-if it is then i hope that it is helpful</div></div><hr />
+if it is then i hope that it is helpful
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">KeatonMill</div><div class="date small text-muted">22nd August 2002, 01:44</div></div>
-<br />
-<div class="posttext">I made some improvements to that one as well. It turned out one of my biggest problems was the way I determined how many points to use. Instead of using more points to draw a bigger square, I did the opposite! Whoops! Well, anyway, the effect is done and now you'll just hafta wait until my pack comes out to see it...</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">KeatonMill</div>
+			<div class="date small text-muted">22nd August 2002 01:44 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I made some improvements to that one as well. It turned out one of my biggest problems was the way I determined how many points to use. Instead of using more points to draw a bigger square, I did the opposite! Whoops! Well, anyway, the effect is done and now you'll just hafta wait until my pack comes out to see it...
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">22nd August 2002, 10:45</div></div>
-<br />
-<div class="posttext">yeah i did make it a bit quick you could have taken the sin and cos out of point and into frame for a bit more speed... anyways nice to know you figured it out</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">22nd August 2002 10:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">3rd September 2002, 11:22</div></div>
-<br />
-<div class="posttext">This one uses the excactly the number of points needed for the current resolution. Remember:<br />
+		yeah i did make it a bit quick you could have taken the sin and cos out of point and into frame for a bit more speed... anyways nice to know you figured it out
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">EL-VIS2</div>
+			<div class="date small text-muted">3rd September 2002 11:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>FFSQ (f****** fast square)</strong><br />
+		
+		
+
+		This one uses the excactly the number of points needed for the current resolution. Remember:<br />
 one pixel on x in SSC-coords is 2/w<br />
 one pixel on y in SSC-coords os 2/h<br />
 <br />
@@ -92,21 +163,58 @@ Remove this if you rotate the thing but now you don't get a real square. if you 
 <br />
 frame:<br />
 maxlines=max(w,h);step=2/maxlines;n=maxlines*size;<br />
-yp=-size/2;xp=-size/2;p=0;</div></div><hr />
+yp=-size/2;xp=-size/2;p=0;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">EL-VIS2</div>
+			<div class="date small text-muted">3rd September 2002 12:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>EXAMPLE</strong><br />
+		
+		
+			
+		
+
+		Here's an example of the above used with my 3D-SSC-Setup!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">EL-VIS2</div>
+			<div class="date small text-muted">5th September 2002 10:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>COLORING THE THING</strong><br />
+		
+		
+			
+		
+
+		Worked a little more on the 3D-Setup using z3 and getosc and beat to color the square and doing music-reaction...
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">3rd September 2002, 12:13</div></div>
-<br />
-<div class="posttext">Here's an example of the above used with my 3D-SSC-Setup!</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">EL-VIS2</div><div class="date small text-muted">5th September 2002, 10:32</div></div>
-<br />
-<div class="posttext">Worked a little more on the 3D-Setup using z3 and getosc and beat to color the square and doing music-reaction...</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

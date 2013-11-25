@@ -3,137 +3,285 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" resize AVS editor window, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" resize AVS editor window AVS" />
-	
-	<title> resize AVS editor window - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> resize AVS editor window - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">resize AVS editor window</li>
-</ol>
-<!-- div class="pda"><a href="t-181617.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=181617">resize AVS editor window</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">29th May 2004, 21:02</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">resize AVS editor window</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=181617">resize AVS editor window</a></p>
+
+
 <br />
-<div class="posttext">after writing quite a while on this i (finally) managed to make the AVS editor window kind of resizable :)<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">29th May 2004 21:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>resize AVS editor window</strong><br />
+		
+		
+			
+		
+
+		after writing quite a while on this i (finally) managed to make the AVS editor window kind of resizable :)<br />
 <br />
 to use it, copy the attached APE into your AVS folder and run Winamp/AVS.<br />
 to actually resize the editor window you have to add the component &quot;Misc / Enable Resize&quot; to any preset and enter a new width and height for the window.<br />
 note that you only have to add the enable resize component to configure the window size. you don't have to keep it inside. The width and size values are not kept in a preset, but in a seperate file called &quot;APEresize.ini&quot;.<br />
 if you ever mess up your editor window size, simply delete that file.<br />
 btw i am in no way responsible for any crashs, lost presets or whatever. you use this at your own risk. i didnt test it extensively but as of now, it works for me, so i'm posting it :)<br />
-<br />
+[edit]<br />
 the default window size is 573x197 you shouldn't shrink it below that value because some dialog elements (like the SSC textboxes) might become unavailable if you do so.<br />
-<br />
-PS: i might be posting newer versions here, so scroll down to the last post before downloading.</div></div><hr />
+[/edit]<br />
+PS: i might be posting newer versions here, so scroll down to the last post before downloading.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">29th May 2004, 22:50</div></div>
-<br />
-<div class="posttext">Good job TomyLobo!<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">piR</div>
+			<div class="date small text-muted">29th May 2004 22:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Good job TomyLobo!<br />
 It works very well with the original vis_avs.dll ! :)<br />
 <br />
 But I try with a modified version (ressources were translated) and it does nothing at all (fields stay empty) except a crash when stopping AVS. :(<br />
 I suppose you just read/alter these data at a given memory address ...<br />
 <br />
-BTW, it could be useful to have the alert boxes in front of the other windows (on the top) ... ;)</div></div><hr />
+BTW, it could be useful to have the alert boxes in front of the other windows (on the top) ... ;)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">29th May 2004, 22:58</div></div>
-<br />
-<div class="posttext">the ape just relies on the correct title bar of the editor window and the correct order of the controls<br />
-hmm alert boxes? i thought i took them all out... except the write error and the could not find avs editor error</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">29th May 2004 22:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		the ape just relies on the correct title bar of the editor window and the correct order of the controls<br />
+hmm alert boxes? i thought i took them all out... except the write error and the could not find avs editor error
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">30th May 2004, 00:21</div></div>
-<br />
-<div class="posttext">default window size is 573x197 you shouldn't shrink it below that value<br />
-<br />
-With my 800x600 screen resolution... im off :p</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">30th May 2004 00:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th May 2004, 00:32</div></div>
-<br />
-<div class="posttext">800x600? o_O<br />
+		
+	<blockquote>
+			
+				default window size is 573x197 you shouldn't shrink it below that value</blockquote>
+With my 800x600 screen resolution... im off :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">30th May 2004 00:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		800x600? o_O<br />
 ok then this one's not (yet) for you :)<br />
 <br />
 Here's a new version that supports resizing the dialog of Misc/Comment<br />
 <br />
-Happy commenting ;) more components to come, Misc/Comment was just the easiest one</div></div><hr />
+Happy commenting ;) more components to come, Misc/Comment was just the easiest one
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">30th May 2004, 00:49</div></div>
-<br />
-<div class="posttext">Nice... destroy all the ASCII art or text shaping people have done. Not sure am i quite happy about that part :p</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">30th May 2004 00:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Nice... destroy all the ASCII art or text shaping people have done. Not sure am i quite happy about that part :p
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th May 2004, 00:52</div></div>
-<br />
-<div class="posttext">nope<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">30th May 2004 00:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		nope<br />
 it doesnt destroy anything<br />
-the widths of the dialogs stay the same</div></div><hr />
+the widths of the dialogs stay the same
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th May 2004, 01:43</div></div>
-<br />
-<div class="posttext">resizing of the SuperScope Point part is now also supported!<br />
-<br />
-fixed a bug that caused the AVS Editor to always appear when AVS is started.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">30th May 2004 01:43 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>SuperScope supported!</strong><br />
+		
+		
+			
+		
 
+		resizing of the SuperScope Point part is now also supported!<br />
+[edit]<br />
+fixed a bug that caused the AVS Editor to always appear when AVS is started.<br />
+[/edit]
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">30th May 2004, 10:04</div></div>
-<br />
-<div class="posttext">Originally posted by TomyLobo <br />
-the ape just relies on the correct title bar of the editor window ... <br />
-<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">piR</div>
+			<div class="date small text-muted">30th May 2004 10:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by TomyLobo </i><br />
+<b>the ape just relies on the correct title bar of the editor window ... </b></blockquote>
 Hummm ... Does this means it will never work with a translated version ?<br />
-:cry:</div></div><hr />
+:cry:
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">30th May 2004, 11:52</div></div>
-<br />
-<div class="posttext">Just dont change the the title bar. leave it as &quot;Winamp AVS Editor&quot; and there will be no problems :)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">30th May 2004 11:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just dont change the the title bar. leave it as &quot;Winamp AVS Editor&quot; and there will be no problems :)<br />
 also, dont translate component names or they will not be recognized either and will not be properly resized<br />
 the rest doesnt matter. the resizer is just relying on these 2 captions:<br />
  - editor main window and<br />
  - the frame around the dialogs of the components<br />
 <br />
-btw... @APE authors: please return 0 or false in WM_INITDIALOG so that the dialog is not focused when you try to walk through a preset by pressing the arrow keys... this is quite annoying :)</div></div><hr />
+btw... @APE authors: please return 0 or false in WM_INITDIALOG so that the dialog is not focused when you try to walk through a preset by pressing the arrow keys... this is quite annoying :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">piR</div><div class="date small text-muted">30th May 2004, 21:06</div></div>
-<br />
-<div class="posttext">In other words, if I don't translate anything, it would be OK ... ;)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">piR</div>
+			<div class="date small text-muted">30th May 2004 21:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		In other words, if I don't translate anything, it would be OK ... ;)<br />
 <br />
 More seriously, when I edit the ressource, each dialog seems to be identified by a number (101 for the main window, 122 for movement, 129 for comments, and so on).<br />
-Is it possible to use these ids instead of the title or other names ?</div></div><hr />
+Is it possible to use these ids instead of the title or other names ?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">31st May 2004, 01:36</div></div>
-<br />
-<div class="posttext">hmm i'll look into those resources myself as soon as i find my reshack.exe ;)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">31st May 2004 01:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		hmm i'll look into those resources myself as soon as i find my reshack.exe ;)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">1st June 2004, 01:27</div></div>
-<br />
-<div class="posttext">new version out with a nice new feature:<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">1st June 2004 01:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		new version out with a nice new feature:<br />
 mouse resizing :)<br />
 note that there is an issue with it. if you set the window width between 743 and 778 (including 743 and 778) something goes wrong. i'm working on that bug already :) if it happens to you, either close AVS, delete the APEresize.ini and reopen AVS or add a &quot;Misc / Enable Resize&quot; to a preset and change the width (left box) to something lower than 743 or greater than 778.<br />
 <br />
@@ -142,40 +290,97 @@ also, i added control resizing support for the following components:<br />
  - Trans / Movement<br />
  - Effect list<br />
 more coming as soon as i fix that mouse bug :)<br />
-i think i fixed that mouse bug. if it still exists for you, please tell me some width/height values so i can check that</div></div><hr />
+[edit]i think i fixed that mouse bug. if it still exists for you, please tell me some width/height values so i can check that<br />
+[/edit]
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">1st June 2004, 01:58</div></div>
-<br />
-<div class="posttext">forgot the attachment (again ^^)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">1st June 2004 01:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		forgot the attachment (again ^^)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">fragmer</div><div class="date small text-muted">2nd June 2004, 02:55</div></div>
-<br />
-<div class="posttext">you're genius! :eek::cool::D<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">fragmer</div>
+			<div class="date small text-muted">2nd June 2004 02:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>:)</strong><br />
+		
+		
+
+		you're genius! :eek::cool::D<br />
 I noticed it's impossible to resize editor from effectlists, until you resize window from smething else.<br />
-also - can you do something about the tree &lt;|&gt; dialog separator? ;)</div></div><hr />
+also - can you do something about the tree &lt;|&gt; dialog separator? ;)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">2nd June 2004, 18:26</div></div>
-<br />
-<div class="posttext">you mean changing the width of the dialogs?<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">2nd June 2004 18:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		you mean changing the width of the dialogs?<br />
 look at tugs post and my comment on it ;)<br />
-I noticed it's impossible to resize editor from effectlists, until you resize window from smething else.<br />
+
+	<blockquote>
+			
+				I noticed it's impossible to resize editor from effectlists, until you resize window from smething else.</blockquote>
 i can resize the window while viewing an effect list at most times<br />
 there is, however, an annoying bug that sometimes causes the cursor to jump into the center of the dialog, barring any resize.<br />
-An easier workaround for this than the one described above is to temporarily switch to another element (I get the best results in &quot;Main&quot;) and change the size there. if this doesnt work, you can still close AVS, delete APEresize.ini and reopen it.</div></div><hr />
+An easier workaround for this than the one described above is to temporarily switch to another element (I get the best results in &quot;Main&quot;) and change the size there. if this doesnt work, you can still close AVS, delete APEresize.ini and reopen it.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">3rd June 2004, 18:29</div></div>
-<br />
-<div class="posttext">new version is out...<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">3rd June 2004 18:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		new version is out...<br />
 i put it on my devart account:<br />
-http://www.deviantart.com/deviation/7800156/</div></div><hr />
+<a href="http://www.deviantart.com/deviation/7800156/" target="_blank">http://www.deviantart.com/deviation/7800156/</a>
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

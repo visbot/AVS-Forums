@@ -3,65 +3,118 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" raytracing: inside and outside sphere, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" raytracing: inside and outside sphere AVS Troubleshooting" />
-	
-	<title> raytracing: inside and outside sphere - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" raytracing: inside and outside sphere AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> raytracing: inside and outside sphere - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> raytracing: inside and outside sphere</li>
-</ol>
-<!-- div class="pda"><a href="t-167038.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=167038">raytracing: inside and outside sphere</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">your-dentist</div><div class="date small text-muted">28th January 2004, 12:36</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">raytracing: inside and outside sphere</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=167038">raytracing: inside and outside sphere</a></p>
+
+
 <br />
-<div class="posttext">it took me only two days to understand the basics of raytracing and to make my first planes and tunnels DMs, just with the help of the easy to understand explantions by UnConeD. Due to my bad math skill I can make more complex objects. So I simply copied the &quot;k&quot; for a sphere from one of UnConeD's tuts.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">your-dentist</div>
+			<div class="date small text-muted">28th January 2004 12:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>raytracing: inside and outside sphere</strong><br />
+		
+		
+
+		it took me only two days to understand the basics of raytracing and to make my first planes and tunnels DMs, just with the help of the easy to understand explantions by UnConeD. Due to my bad math skill I can make more complex objects. So I simply copied the &quot;k&quot; for a sphere from one of UnConeD's tuts.<br />
 What I don't understand is how to move the camera out of the shere.<br />
 when the cam coords are something like oz=1 it's inside and distorts the sphere. in discoball the z-coord is oz=sin(t)+1.9 or something.<br />
-who can explain me how to the camera outside of and object in general? (also for cylinders)</div></div><hr />
+who can explain me how to the camera outside of and object in general? (also for cylinders)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">28th January 2004, 15:17</div></div>
-<br />
-<div class="posttext">The problem is that you need to pick the closest intersection point to the camera: for a sphere, there are usually two. If your camera only stays outside or inside, you can always use the same formula, otherwise you need to calculate both and compare them.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">28th January 2004 15:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The problem is that you need to pick the closest intersection point to the camera: for a sphere, there are usually two. If your camera only stays outside or inside, you can always use the same formula, otherwise you need to calculate both and compare them.<br />
 <br />
 Copying k codes is pretty dumb though: the equation for a sphere around the origin is: x^2 + y^2 + z^2 = radius^2<br />
-If you've read my little raytracing intro, this should be enough to get you started and derive the k formula yourself.</div></div><hr />
+If you've read my little raytracing intro, this should be enough to get you started and derive the k formula yourself.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">your-dentist</div><div class="date small text-muted">30th January 2004, 08:48</div></div>
-<br />
-<div class="posttext">thx.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">your-dentist</div>
+			<div class="date small text-muted">30th January 2004 08:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thx.<br />
 got it now, my own in and out sphere.<br />
 it was just one sign in the &quot;k&quot; formula.<br />
-I still need lots of &quot;training&quot;.</div></div><hr />
+I still need lots of &quot;training&quot;.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">patipano</div>
+			<div class="date small text-muted">3rd February 2012 18:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hey! What preset (or AVS Pack) of UnConed that explain about ray tracing and not very hard to understand?
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">patipano</div><div class="date small text-muted">3rd February 2012, 18:03</div></div>
-<br />
-<div class="posttext">Hey! What preset (or AVS Pack) of UnConed that explain about ray tracing and not very hard to understand?</div></div><hr />
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

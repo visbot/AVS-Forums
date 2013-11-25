@@ -3,37 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" My 1st AVS pack, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" My 1st AVS pack AVS Presets" />
-	
-	<title> My 1st AVS pack - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" My 1st AVS pack AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> My 1st AVS pack - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">My 1st AVS pack</li>
-</ol>
-<!-- div class="pda"><a href="t-128699.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=128699">My 1st AVS pack</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">copiae</div><div class="date small text-muted">17th March 2003, 01:23</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">My 1st AVS pack</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=128699">My 1st AVS pack</a></p>
+
+
 <br />
-<div class="posttext">Hi folks, this is my first AVS pack...<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">copiae</div>
+			<div class="date small text-muted">17th March 2003 01:23 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>My 1st AVS pack</strong><br />
+		
+		
+			
+		
+
+		Hi folks, this is my first AVS pack...<br />
 <br />
 Any feedback would be greatly appreciated. Ive included a total of 13 presets, although, one or two of them are remixes of each other =)<br />
 <br />
@@ -42,34 +58,54 @@ Any feedback would be greatly appreciated. Ive included a total of 13 presets, a
 <br />
 Anyway, any feedback at all would be great. Esp. if someone out there could show me how to adjust dynamic movement to rotate and zoom/unzoom with respect to a fixed location. <br />
 <br />
-Thanks =)</div></div><hr />
+Thanks =)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">17th March 2003, 03:17</div></div>
-<br />
-<div class="posttext">Atom - Not bad, but try making something that is completely your stuff.  To make it zoom in and out you could add a variable(lets call it dz) to your superscopes.  Now because this variable has to be in synch with all the scopes your best bet will be to use getosc()(Atero will tell you not to use straight up getosc(), but I don't think it makes a big difference). Here's an example:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">17th March 2003 03:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<b>Atom</b> - Not bad, but try making something that is completely your stuff.  To make it zoom in and out you could add a variable(lets call it dz) to your superscopes.  Now because this variable has to be in synch with all the scopes your best bet will be to use getosc()(Atero will tell you not to use straight up getosc(), but I don't think it makes a big difference). Here's an example:<br />
 BEAT: ddz=getosc(.2,.2,0);  (find a new value for z)<br />
 FRAME: dz=.9*dz+.1*ddz; (slowly &quot;morph&quot; dz into ddz)<br />
 PIXEL:iz=if(above(z3,0.1),1/(z3+dz),0); (just change this line.  this is what causes the zooming)<br />
 Mainly, just try to understand it on your own.<br />
-Hyperbole - Take out the r = r*r/log(r); movement and make it something else.  That isn't a very aesthetic movement.<br />
-Retro - Not too great looking or complex, but I do like that you used SSC's, which are much more customizable than Render/Simple's.  Colors and shapes don't mix well and the movement isn't anything spectacular<br />
-Star - Not bad, but gets kinda boring.  Try replacing the Roto Blitter with a nice direction changing morphing/sliding DM.<br />
-Oni - Don't really like the sharp lines and it could use something more than solid areas(like a nice texture or background), but it is unique. Oh, and don't use the tentacles ape like that.  Use a nice SSC or such.<br />
-ITV - Nothing spectacular.  You showcased that movement already in Hyperbole.  Use something else here.<br />
-Colorbound - n00bish movement.  Come up with something a little more unique.<br />
-Coil - Nothing spectacular.  Just a lot of SSC's with a water and blur thrown on top.<br />
-Planescaping mk iii - Don't like the movement.  You've used this SSC before.<br />
-Seperation anxiety version 2 - It's nice, but try to make your own SSC for it.<br />
-Omnivision - Seen similar before.  Not terrible, but not terribly exciting either.<br />
-Ant Metropolis - Kinda chaotic, and I'm tired of the bump/mosaic presets, but it's alright.<br />
-Strobe - Would be good if it didn't hurt my eyes.:p  Decent strobe effect, but I've seen better.<br />
-Overall: 2.8.  Not bad, but work on your technical stuff and aesthetics.  These are definitely good for a first pack, but aren't top notch.  Do some remixes and new presets and post them.  I will gladly help you with any questions you have(as long as you search the forums first:p ).</div></div><hr />
+<b>Hyperbole</b> - Take out the r = r*r/log(r); movement and make it something else.  That isn't a very aesthetic movement.<br />
+<b>Retro</b> - Not too great looking or complex, but I do like that you used SSC's, which are much more customizable than Render/Simple's.  Colors and shapes don't mix well and the movement isn't anything spectacular<br />
+<b>Star</b> - Not bad, but gets kinda boring.  Try replacing the Roto Blitter with a nice direction changing morphing/sliding DM.<br />
+<b>Oni</b> - Don't really like the sharp lines and it could use something more than solid areas(like a nice texture or background), but it is unique. Oh, and don't use the tentacles ape like that.  Use a nice SSC or such.<br />
+<b>ITV</b> - Nothing spectacular.  You showcased that movement already in Hyperbole.  Use something else here.<br />
+<b>Colorbound</b> - n00bish movement.  Come up with something a little more unique.<br />
+<b>Coil</b> - Nothing spectacular.  Just a lot of SSC's with a water and blur thrown on top.<br />
+<b>Planescaping mk iii</b> - Don't like the movement.  You've used this SSC before.<br />
+<b>Seperation anxiety version 2</b> - It's nice, but try to make your own SSC for it.<br />
+<b>Omnivision</b> - Seen similar before.  Not terrible, but not terribly exciting either.<br />
+<b>Ant Metropolis</b> - Kinda chaotic, and I'm tired of the bump/mosaic presets, but it's alright.<br />
+<b>Strobe</b> - Would be good if it didn't hurt my eyes.:p  Decent strobe effect, but I've seen better.<br />
+<font color="red">Overall: 2.8</font>.  Not bad, but work on your technical stuff and aesthetics.  These are definitely good for a first pack, but aren't top notch.  Do some remixes and new presets and post them.  I will gladly help you with any questions you have(as long as you search the forums first:p ).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">hungryskull</div><div class="date small text-muted">17th March 2003, 23:31</div></div>
-<br />
-<div class="posttext">Here is my review of your presets.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hungryskull</div>
+			<div class="date small text-muted">17th March 2003 23:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Here is my review of your presets.<br />
 <br />
 Ant metropolis - Nice but I have seen better. The colors are fairly repetitive.<br />
 <br />
@@ -95,12 +131,22 @@ Star - Blurry so it is hard to see.<br />
 <br />
 Strobe - Flashes too much. Doesn't look very good and that looks like the default DDM.<br />
 <br />
-Sorry if this review is too harsh in some parts but some of these presets need work.</div></div><hr />
+Sorry if this review is too harsh in some parts but some of these presets need work.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">17th March 2003, 23:54</div></div>
-<br />
-<div class="posttext">first thing i'd like to say is don't use the el-vis 3d engine.  learn it, and write one yourself (it'll end up like every other 3d &quot;engine&quot; out there, but the point is you know how it works).<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">17th March 2003 23:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		first thing i'd like to say is <b>don't use the el-vis 3d engine</b>.  learn it, and write one yourself (it'll end up like every other 3d &quot;engine&quot; out there, but the point is you know how it works).<br />
 <br />
 atom: kind of nice...see above :)<br />
 hydrobole: too grainy and chaotic and static...<br />
@@ -116,28 +162,68 @@ omnivision: gets repetitive, but the basic idea is good<br />
 ant metropolis: like a tonic preset...except it doesn't suck.  might want to use a utone or something at the end so it doesn't look so gray.  also, you don't need an effect list for this...it's just set to replace/replace...<br />
 strobe: niiice :D<br />
 <br />
-overall: nice ideas, esp. for a first try.  keep working.  :)</div></div><hr />
+overall: nice ideas, esp. for a first try.  keep working.  :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Pixelcraft</div><div class="date small text-muted">18th March 2003, 03:28</div></div>
-<br />
-<div class="posttext">Atero, what is the El-vis 3d Engine?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Pixelcraft</div>
+			<div class="date small text-muted">18th March 2003 03:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Atero, what is the El-vis 3d Engine?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">19th March 2003, 05:57</div></div>
-<br />
-<div class="posttext">well, a 3d ssc base written by elvis. its a lot slow I will say. but it has some advantages which would be useful for those new to complex math stuff..because all the rotations (rx,ry and rz) are in degrees.<br />
-but they are then converted into radians. this makes it slow. then the point part can also be altered.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">shreyas_potnis</div>
+			<div class="date small text-muted">19th March 2003 05:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th March 2003, 22:42</div></div>
-<br />
-<div class="posttext">did i mention that engine is very hard to tweak?  make the code yourself so you know what does what and why.  then make extremely neat scopes that have extremely cool camera movements and rejoice at the fruits of your labor.</div></div><hr />
+		well, a 3d ssc base written by elvis. its a lot slow I will say. but it has some advantages which would be useful for those new to complex math stuff..because all the rotations (rx,ry and rz) are in degrees.<br />
+but they are then converted into radians. this makes it slow. then the point part can also be altered.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">copiae</div><div class="date small text-muted">20th March 2003, 11:20</div></div>
-<br />
-<div class="posttext">Thank you very much for your feedback guys. <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">19th March 2003 22:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		did i mention that engine is very hard to tweak?  make the code yourself so you know what does what and why.  then make extremely neat scopes that have extremely cool camera movements and rejoice at the fruits of your labor.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">copiae</div>
+			<div class="date small text-muted">20th March 2003 11:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thank you very much for your feedback guys. <br />
 <br />
 anubis: maybe im a bit thick but i didnt understand how to implement that zooming function at all. i guess i have to do some more research and experimentation :)<br />
 <br />
@@ -149,31 +235,74 @@ Anyway, im hard at work making remixes of my existing presets... i was just wond
 <br />
 Once again, thank you anubis2003, Atero and hungryskull for giving me indepth reviews and hints. I hope to repost my remixes for your perusal sometime soon =)<br />
 <br />
-[EDIT]: oh yah, i almost forgot ^^. Is there any way to &quot;freeze&quot; the animation for a set time/beat period? (when i say freeze, i mean like the effect thats seen when you right click on some avs'es)</div></div><hr />
+[EDIT]: oh yah, i almost forgot ^^. Is there any way to &quot;freeze&quot; the animation for a set time/beat period? (when i say freeze, i mean like the effect thats seen when you right click on some avs'es)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">20th March 2003, 12:01</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">20th March 2003 12:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You can put them in on beat effect lists so that they only refresh on beat.  And if you don't want it to be on beat, then you can use a custom BPM.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mikm</div>
+			<div class="date small text-muted">29th March 2003 23:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		not too bad...basically what everybody else said sums up my opinions.<br />
 <br />
-<div class="posttext">You can put them in on beat effect lists so that they only refresh on beat.  And if you don't want it to be on beat, then you can use a custom BPM.</div></div><hr />
+[edit] be sure to include UnConeD's full copyright<br />
+/contact info when using his work [/edit]
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">29th March 2003, 23:25</div></div>
-<br />
-<div class="posttext">not too bad...basically what everybody else said sums up my opinions.<br />
-<br />
- be sure to include UnConeD's full copyright<br />
-/contact info when using his work</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Raz</div>
+			<div class="date small text-muted">30th March 2003 00:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Please don'trevive 9 day dead threads michael. It confused me when i downloaded them again and wondered where i'd seen them before. Stop doing this, it wouldn't be so bad if you had a valuable contribution, please keep away from doing this in future.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 00:18</div></div>
-<br />
-<div class="posttext">Please don'trevive 9 day dead threads michael. It confused me when i downloaded them again and wondered where i'd seen them before. Stop doing this, it wouldn't be so bad if you had a valuable contribution, please keep away from doing this in future.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mikm</div>
+			<div class="date small text-muted">30th March 2003 00:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">30th March 2003, 00:30</div></div>
-<br />
-<div class="posttext">I think the phrase you're looking for is: <br />
-<br />
+		
+	<blockquote>
+			
+				I think the phrase you're looking for is: <br />
+<pre><code><br />
 <br />
 <br />
                   /´¯/) <br />
@@ -186,7 +315,7 @@ Once again, thank you anubis2003, Atero and hungryskull for giving me indepth re
        ''   \           _.·´ <br />
          \              ( <br />
            \             \<br />
-<br />
+</code></pre><br />
 o0o<br />
 <br />
 --<br />
@@ -223,41 +352,88 @@ Atero you need to go out and find yourself another 300 pound 14 year old and sha
 <br />
 <br />
 <br />
---<br />
-<br />
-<br />
-wow...you SURE add a lot of valuable contributions Raz!</div></div><hr />
+--</blockquote>
+wow...you SURE add a lot of valuable contributions Raz!
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 00:32</div></div>
-<br />
-<div class="posttext">Please don't try to make a flame war of this thread.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">30th March 2003 00:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Please don't try to make a flame war of this thread.<br />
 <br />
 You shouldn't have revived an old thread.<br />
-plus, that post you just made was even worse of a contribution to these forums that Raz's posts, IMO.  Just try to keep these forums a friendly place for people to find out more about AVS</div></div><hr />
+[edit]plus, that post you just made was even worse of a contribution to these forums that Raz's posts, IMO.  Just try to keep these forums a friendly place for people to find out more about AVS[/edit]
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">30th March 2003, 00:37</div></div>
-<br />
-<div class="posttext">The default pageview is of threads 30 days and younger.  I set mine to 10 days and younger to avoid this problem, but I see that I have to set it even lower.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mikm</div>
+			<div class="date small text-muted">30th March 2003 00:37 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		The default pageview is of threads 30 days and younger.  I set mine to 10 days and younger to avoid this problem, but I see that I have to set it even lower.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">30th March 2003, 00:38</div></div>
-<br />
-<div class="posttext">Or just look at the date of the last post.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">30th March 2003 00:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Raz</div><div class="date small text-muted">30th March 2003, 02:22</div></div>
-<br />
-<div class="posttext">&quot;*sigh* *shakes head* <br />
+		Or just look at the date of the last post.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Raz</div>
+			<div class="date small text-muted">30th March 2003 02:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		&quot;*sigh* *shakes head* <br />
 : ahem................. *coughs*...... *wolf howls in the distance*&quot;<br />
 those two posts were to alert whoever had not posted their presets after advertising them that they weren't there. People will only go back to their thread if there are replies. Any replies.<br />
 <br />
-A few pointless posts i admit, some of them are slightly funny though (well they seemed to be when i typed them... never mind) but we're talking about something completely different here. I sometimes don't make a valued contribution. You on the other hand continually ressurect threads. I was simply pointing out that you shouldn't of done unless you had something important to add (which you obviously didn't) because it's irritating and pointless. You didn't have to bring up irrelevant information to try and put me down when all i'm doing is trying to stop dead threads being ressurected.</div></div><hr />
+A few pointless posts i admit, some of them are slightly funny though (well they seemed to be when i typed them... never mind) but we're talking about something completely different here. I sometimes don't make a valued contribution. You on the other hand continually ressurect threads. I was simply pointing out that you shouldn't of done unless you had something important to add (which you obviously didn't) because it's irritating and pointless. You didn't have to bring up irrelevant information to try and put me down when all i'm doing is trying to stop dead threads being ressurected.
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,37 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Logarithmic spec?, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Logarithmic spec? AVS Troubleshooting" />
-	
-	<title> Logarithmic spec? - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Logarithmic spec? AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Logarithmic spec? - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Logarithmic spec?</li>
-</ol>
-<!-- div class="pda"><a href="t-190259.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=190259">Logarithmic spec?</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">romulusnr</div><div class="date small text-muted">16th August 2004, 20:34</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Logarithmic spec?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=190259">Logarithmic spec?</a></p>
+
+
 <br />
-<div class="posttext">Someone must have figured this out, but I can't find any tips on it.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">romulusnr</div>
+			<div class="date small text-muted">16th August 2004 20:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Logarithmic spec?</strong><br />
+		
+		
+
+		Someone must have figured this out, but I can't find any tips on it.<br />
 <br />
 How can I base my vis on a logarithmic spectrum?<br />
 <br />
@@ -41,12 +55,22 @@ Right now I do (basically) getspec(i,1/n,0) to get the values of points across t
 <br />
 Is there any function/equation I can apply to 'i' to achieve a logarithmic spec scale? (I suppose to do it right, I'd also want to alter the second argument to getspec(), to truly get the space between logarithmic points...)<br />
 <br />
-TIA.</div></div><hr />
+TIA.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">17th August 2004, 06:00</div></div>
-<br />
-<div class="posttext">I can think of a couple of things you might mean, your either talking about:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">17th August 2004 06:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can think of a couple of things you might mean, your either talking about<b></b>:<br />
 <br />
 * having a scope where x=2*i-1 and y= some spectrum value, but the y value is increased logarithmically along x.<br />
 <br />
@@ -54,12 +78,22 @@ TIA.</div></div><hr />
 <br />
 I doubt your talking about the first one because it would just be planting scope values onto a logarithmic curve and so wouldnt look very interesting.<br />
 <br />
-The second one would be an interesting scope although you would need to tweak the equation a lot to keep your sampling range between 0 and 1, you'd probably be better off doing a hack than a true logarithm in the interests of speed, or you could precache logarithms into the megabuffer.</div></div><hr />
+The second one would be an interesting scope although you would need to tweak the equation a lot to keep your sampling range between 0 and 1, you'd probably be better off doing a hack than a true logarithm in the interests of speed, or you could precache logarithms into the megabuffer.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">vanderphunck</div><div class="date small text-muted">17th August 2004, 10:19</div></div>
-<br />
-<div class="posttext">I think i know what you mean. I've been thinking about it aswell. Rather than getting the power in a specific frequency band then getting it in a &quot;noteband&quot;. <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">vanderphunck</div>
+			<div class="date small text-muted">17th August 2004 10:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think i know what you mean. I've been thinking about it aswell. Rather than getting the power in a specific frequency band then getting it in a &quot;noteband&quot;. <br />
 <br />
 I think the SSC below is doing it:<br />
 <br />
@@ -70,12 +104,22 @@ f=.5/exp(1); //this sets the center frequency your scope will look at... (it can
 x=2*i-1;<br />
 note=i; //maybe you'd like to scale it...<br />
 notefreq=exp(note)*f; <br />
-y=getspec(notefreq,notefreq*.01,0);</div></div><hr />
+y=getspec(notefreq,notefreq*.01,0);
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">17th August 2004, 11:38</div></div>
-<br />
-<div class="posttext">I've been thinking about it (and drawing graphs on litte bits of paper here at work)<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">17th August 2004 11:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I've been thinking about it (and drawing graphs on litte bits of paper here at work)<br />
 <br />
 usually you would use a linear scale, so the position along the x of your ssc is the position in the scope you want to display, i.e.<br />
 <br />
@@ -93,17 +137,27 @@ thats a base 2 logarithm, the division by 2 is necessary this time to keep it be
 <br />
 y=getspec(pow(base,x)/base,0.1,0);<br />
 <br />
-There you go, an unneccessarily long-winded reply :igor:</div></div><hr />
+There you go, an unneccessarily long-winded reply :igor:
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">17th August 2004, 13:04</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">17th August 2004 13:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Uhm... excuse to sound stupid but isn't there a log() function in avs?<br />
 <br />
-<div class="posttext">Uhm... excuse to sound stupid but isn't there a log() function in avs?<br />
-<br />
-per frame<br />
+<u>per frame</u><br />
 n=w<br />
 <br />
-per pixel<br />
+<u>per pixel</u><br />
 x=i*2-1 ;<br />
 brng=0.5 ;<br />
 y=-getspec(log(x+2)*brng,0,0)+0.5 ;<br />
@@ -116,36 +170,81 @@ You can use whatever you want there.<br />
 <br />
 getspec(voodocode1,voodoocode2,voodoocode3)<br />
 <br />
-Should work as long as the code itself ain't b0rked :)</div></div><hr />
+Should work as long as the code itself ain't b0rked :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">17th August 2004, 15:30</div></div>
-<br />
-<div class="posttext">Uhm... excuse to sound stupid but isn't there a log() function in avs?<br />
-Well....yea....but thats far too easy. :hang:</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">17th August 2004 15:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		
+	<blockquote>
+			
+				 	Uhm... excuse to sound stupid but isn't there a log() function in avs?</blockquote>
+Well....yea....but thats far too easy. :hang:
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">romulusnr</div><div class="date small text-muted">17th August 2004, 20:09</div></div>
-<br />
-<div class="posttext">Thanks for the ideas... I ended up doing (basically) getspec(pow(i,10),0,0) to get more or less what I was looking for.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">romulusnr</div>
+			<div class="date small text-muted">17th August 2004 20:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Thanks for the ideas... I ended up doing (basically) getspec(<b>pow</b>(i,10),0,0) to get more or less what I was looking for.<br />
 <br />
 For the curious, the point of this was to create a spectral analysis timescope that would allow me to do the same thing as this:<br />
 <br />
-http://www.visualizationsoftware.com/gram/example15.html<br />
+<a href="http://www.visualizationsoftware.com/gram/example15.html" target="_blank">http://www.visualizationsoftware.com...example15.html</a><br />
 <br />
 Attached is a screenshot of the best I've gotten so far, with vis I used.<br />
 <br />
-I suppose I could better (i.e. less blocky) results if I used a WAV as source instead of an MP3...? or maybe this just reflects  the granular limitation of the spectrum input to the vis system...</div></div><hr />
+I suppose I could better (i.e. less blocky) results if I used a WAV as source instead of an MP3...? or maybe this just reflects  the granular limitation of the spectrum input to the vis system...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th August 2004, 05:20</div></div>
-<br />
-<div class="posttext">Aphex twin ;). The spectrum input is indeed limited because it's calculated directly off the MP3 data, rather than done as an FFT afterwards.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th August 2004 05:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Aphex twin ;). The spectrum input is indeed limited because it's calculated directly off the MP3 data, rather than done as an FFT afterwards.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">vanderphunck</div><div class="date small text-muted">18th August 2004, 09:10</div></div>
-<br />
-<div class="posttext">Cool! <br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">vanderphunck</div>
+			<div class="date small text-muted">18th August 2004 09:10 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Cool! <br />
 <br />
 But, I think you should make the bandwidth proportional to the center frequency. Here's what i mean:<br />
 <br />
@@ -165,20 +264,39 @@ y=(yp+.5)*2/h-1;<br />
 yp=yp+1;<br />
 <br />
 <br />
-A sidenote: I think the reason for the blocky picture is because it is made using a windowed fourier transform (with a very narrow window). The best way to extract the picture would probably be using a continous wavelet transform (I would never try that in AVS). You could probably make it look alot nicer by applying time-smoothing for low frequencies.</div></div><hr />
+A sidenote: I think the reason for the blocky picture is because it is made using a windowed fourier transform (with a very narrow window). The best way to extract the picture would probably be using a continous wavelet transform (I would never try that in AVS). You could probably make it look alot nicer by applying time-smoothing for low frequencies.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">romulusnr</div><div class="date small text-muted">18th August 2004, 18:36</div></div>
-<br />
-<div class="posttext">Yeah, I ended up doing about the same thing (specpos/10):<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">romulusnr</div>
+			<div class="date small text-muted">18th August 2004 18:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, I ended up doing about the same thing (specpos/10):<br />
 <br />
 int=getspec(pow(specspace*i+botspec,exponent),pow(specspace*i+botspec,exponent)*.1,0);<br />
 <br />
-though not perhaps as elegantly...</div></div><hr />
+though not perhaps as elegantly...
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

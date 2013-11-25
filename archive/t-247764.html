@@ -3,147 +3,247 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" major code help plz, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" major code help plz AVS" />
-	
-	<title> major code help plz - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> major code help plz - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">major code help plz</li>
-</ol>
-<!-- div class="pda"><a href="t-247764.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=247764">major code help plz</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">3rd June 2006, 17:47</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">major code help plz</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=247764">major code help plz</a></p>
+
+
 <br />
-<div class="posttext">okay. so i have this preset that i'm making. an extension of wireframe which is essentially a texer that moves around the window but only along one axis (x, -x, y, -y) at a time.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">3rd June 2006 17:47 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>major code help plz</strong><br />
+		
+		
+
+		okay. so i have this preset that i'm making. an extension of wireframe which is essentially a texer that moves around the window but only along one axis (x, -x, y, -y) at a time.<br />
 one night i decided to add a little mouse input, that when your mouse is over the avs screen the texer will follow your mouse around, again only moving along one axis at a time. sounded easy to me at the time, but it's been almost a week now and i'm starting to loose it. i almsot have it but this one little bit is stopping me. i'll paste what i have here and see if anyone can help me out.<br />
-<br />
-init <br />
+<font size="1"><br />
+<b>init</b> <br />
 <br />
 dc=0; n=1; xs=0.03; ys=0.04; xl=0.9; yl=0.9; x1=-0.03; y1=0; x2=0; y2=0<br />
 <br />
-frame<br />
-(original movement code)<br />
+<b>frame</b><br />
+<i>(original movement code)</i><font color="blue"><br />
 x1=x1+if(equal(dc,0),xs,if(equal(dc,1),-xs,x1a));<br />
 x1a=if(above(x1,xl),assign(dc,1),if(below(x1,-xl),assign(dc,0),0));<br />
 y1=y1+if(equal(dc,2),ys,if(equal(dc,3),-ys,0));<br />
 y1a=if(above(y1,yl),assign(dc,3),if(below(y1,-yl),assign(dc,2),0));<br />
-nb=if(below(getspec(0,0,0.5),0.1),assign(dc,4),0);<br />
-(resets x1 and y1 if the particle escapes the screen - bug fix)]<br />
+nb=if(below(getspec(0,0,0.5),0.1),assign(dc,4),0);</font><br />
+<i>(resets x1 and y1 if the particle escapes the screen - bug fix)</i>]<font color="red"><br />
 xr=if(above(abs(x1),1),assign(x1,0),0);<br />
-yr=if(above(abs(x1),1),assign(y1,0),0);<br />
-(checks if mouse is on screen)<br />
+yr=if(above(abs(x1),1),assign(y1,0),0);</font><br />
+<i>(checks if mouse is on screen)</i><font color="green"><br />
 mx=getkbmouse(1); my=getkbmouse(2);<br />
 osx=if(below(abs(mx),1),1,0);<br />
 osy=if(below(abs(my),1),1,0);<br />
-os=band(osx,osy);<br />
-(finds the distance between the mouse and the particle and rounds to a whole number)<br />
+os=band(osx,osy);</font><br />
+<i>(finds the distance between the mouse and the particle and rounds to a whole number)</i><font color="blue"><br />
 difx=(mx-x2)*10|1;<br />
-dify=(my-y2)*10|1;<br />
-(pretty much speaks for itself)<br />
+dify=(my-y2)*10|1;</font><br />
+<i>(pretty much speaks for itself)</i><font color="red"><br />
 xay=if(above(difx,dify),1,0);<br />
-yax=if(above(dify,difx),1,0);<br />
-(new movement code in place of x1/y1)<br />
+yax=if(above(dify,difx),1,0);</font><br />
+<i>(new movement code in place of x1/y1)</i><font color="green"><br />
 x2=x2+if(___,if(above(difx,0),xs,if(below(difx,0),if(difx,-xs,0),0)),0);<br />
-y2=y2+if(___,if(above(dify,0),ys,if(below(dify,0),if(dify,-ys,0),0)),0);<br />
+y2=y2+if(___,if(above(dify,0),ys,if(below(dify,0),if(dify,-ys,0),0)),0);</font><br />
 <br />
-<br />
-beat<br />
+<b><br />
+beat</b><br />
 <br />
 dc=rand(5)-1;<br />
-<br />
-point<br />
+<b><br />
+point</b><br />
 <br />
 x=if(os,x2,x1);<br />
 y=if(os,y2,y1);<br />
-(switches between x1/y1 and x2/y2 when mouse is on screen)<br />
-<br />
+<i>(switches between x1/y1 and x2/y2 when mouse is on screen)</i><br />
+</font><br />
 <br />
 at the moment this works.. kinda. when the mouse is on screen the particle follows the mouse, but doesn't move along one axis at a time. what i need is something to put in place of the ___ in x2/y2 (xay and yax kinda work). something that determines if difx is bigger or smaller than dify (i think i've got this with xay/yax) and then causes the largest value to enable its corresponding x2/y2 movement. for example if difx was greater than dify, ___ would turn on, and stay on until the x2 movement causes difx to equal 0 (moves the particle along the x-axis until it's in line with the mouse), then switch and turn on the y2 movement and shift the particle along the y axis until dify equaled 0 (the particle aligns itself with the mouse in the y axis and in this case would end up right under the cursor).<br />
 but this also needs to work the other way if dify is greater than difx. so really i need 2 things, one for x and one for y, but both with the ability to override the other if it is greater than it, until it reaches 0 and then lets the other take over. if that makes any sense.<br />
 <br />
-any help would be very much appreciated.</div></div><hr />
+any help would be very much appreciated.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">3rd June 2006, 17:52</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">3rd June 2006 17:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		-&gt; and here's the preset if anyone wants to see it kinda working
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">StevenRoy</div>
+			<div class="date small text-muted">3rd June 2006 23:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Re: major code help plz</strong><br />
+		
+		
+
+		Using &quot;|1&quot; to round to a whole number looks really strange to me. Why not use floor(n+.5) instead? In fact, why do you even need to round this to a whole number anyway? I would probably prefer an approach similar to the following:<br />
 <br />
-<div class="posttext">-&gt; and here's the preset if anyone wants to see it kinda working</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">3rd June 2006, 23:49</div></div>
-<br />
-<div class="posttext">Using &quot;|1&quot; to round to a whole number looks really strange to me. Why not use floor(n+.5) instead? In fact, why do you even need to round this to a whole number anyway? I would probably prefer an approach similar to the following:<br />
-<br />
-(finds the ABSOLUTE distance between the mouse and the particle and DOESN'T round to a whole number)<br />
+<font size="1"><i>(finds the ABSOLUTE distance between the mouse and the particle and DOESN'T round to a whole number)</i><font color="blue"><br />
 difx=abs(mx-x2);<br />
-dify=abs(my-y2);<br />
-(make xay true if difx is above dify AND difx is above a certain threshold)<br />
+dify=abs(my-y2);</font><br />
+<i>(make xay true if difx is above dify AND difx is above a certain threshold)</i><font color="red"><br />
 xay=if(above(difx,dify), above(difx,.05) ,0);<br />
-yax=if(above(dify,difx), above(dify,.05) ,0);<br />
-(new movement code in place of x1/y1)<br />
+yax=if(above(dify,difx), above(dify,.05) ,0);</font><br />
+<i>(new movement code in place of x1/y1)</i><font color="green"><br />
 x2=x2+if(xay,if(above(mx,x2),xs,-xs),0);<br />
-y2=y2+if(yax,if(above(my,y2),ys,-ys),0);<br />
+y2=y2+if(yax,if(above(my,y2),ys,-ys),0);</font></font><br />
 <br />
 Now, this should make x2 and y2 home in on the cursor, although probably not in the manner you want. Once the object is diagonally aligned with the mouse, it'll rapidly alternate between horizontal and vertical movement, and that'll be ugly. It's possible to fix that, but it'll be a much more &quot;involved&quot; modification. I'll need a few minutes to experiment with it.<br />
 <br />
 By the way, where you have:<br />
-osx=if(below(abs(mx),1),1,0);<br />
-osy=if(below(abs(my),1),1,0);<br />
+<font size="1"><font color="green">osx=if(below(abs(mx),1),1,0);<br />
+osy=if(below(abs(my),1),1,0);</font></font><br />
 Surrounding below() with an if(x,1,0) is completely redundant, since the below() function will return a 1 or a 0 in the first place. You'll get the exact same result with this version:<br />
-osx=below(abs(mx),1);<br />
-osy=below(abs(my),1);</div></div><hr />
+<font size="1"><font color="green">osx=below(abs(mx),1);<br />
+osy=below(abs(my),1);</font></font>
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">4th June 2006, 10:12</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">4th June 2006 10:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thanks for that last bit.. but difx and dify have to be rounded because they never actually reach 0 (only on very very rare occasions), so x2 and y2 keep switching from positive to negative movement once it gets within 0.03 and 0.04 - the shifting speed assigned in init. rounding makes sure they reach 0 so x2 and y2 work properly.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">4th June 2006 17:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<a href="http://dump.jheriko.kicks-ass.net/nudgey.avs" target="_blank">http://dump.jheriko.kicks-ass.net/nudgey.avs</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">StevenRoy</div>
+			<div class="date small text-muted">6th June 2006 08:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That's why I added the &quot;above(difx,.05)&quot; and &quot;above(dify,.05)&quot; to the red statements shown above. They account for that.<br />
 <br />
-<div class="posttext">thanks for that last bit.. but difx and dify have to be rounded because they never actually reach 0 (only on very very rare occasions), so x2 and y2 keep switching from positive to negative movement once it gets within 0.03 and 0.04 - the shifting speed assigned in init. rounding makes sure they reach 0 so x2 and y2 work properly.</div></div><hr />
+Not that it matters anyway. I like jheriko's approach to this better.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">4th June 2006, 17:14</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">6th June 2006 10:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		i got it.. well as close as i can. lemme know what you think (keeping in mind i already know how completely stupid this preset is)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">6th June 2006 11:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Didn't we fix this together on #avs?<br />
 <br />
-<div class="posttext">http://dump.jheriko.kicks-ass.net/nudgey.avs</div></div><hr />
+<a href="http://dump.jheriko.kicks-ass.net/nudgey_13.avs" target="_blank">http://dump.jheriko.kicks-ass.net/nudgey_13.avs</a><br />
+<br />
+What is still wrong with it?
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">6th June 2006, 08:31</div></div>
-<br />
-<div class="posttext">That's why I added the &quot;above(difx,.05)&quot; and &quot;above(dify,.05)&quot; to the red statements shown above. They account for that.<br />
-<br />
-Not that it matters anyway. I like jheriko's approach to this better.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">6th June 2006, 10:19</div></div>
-<br />
-<div class="posttext">i got it.. well as close as i can. lemme know what you think (keeping in mind i already know how completely stupid this preset is)</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">6th June 2006, 11:42</div></div>
-<br />
-<div class="posttext">Didn't we fix this together on #avs?<br />
-<br />
-http://dump.jheriko.kicks-ass.net/nudgey_13.avs<br />
-<br />
-What is still wrong with it?</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

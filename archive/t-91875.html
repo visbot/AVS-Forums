@@ -3,37 +3,52 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" WTF is wrong with this SCC, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" WTF is wrong with this SCC AVS Troubleshooting" />
-	
-	<title> WTF is wrong with this SCC - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" WTF is wrong with this SCC AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> WTF is wrong with this SCC - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> WTF is wrong with this SCC</li>
-</ol>
-<!-- div class="pda"><a href="t-91875.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91875">WTF is wrong with this SCC</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">djcoolman</div><div class="date small text-muted">21st June 2002, 08:00</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">WTF is wrong with this SCC</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91875">WTF is wrong with this SCC</a></p>
+
+
 <br />
-<div class="posttext">init:<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">djcoolman</div>
+			<div class="date small text-muted">21st June 2002 08:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>WTF is wrong with this SCC</strong><br />
+		
+		
+
+		<pre><code><br />
+init:<br />
 n=500;rnd=5;<br />
 on beat:<br />
 c=bnot(c);rnd=rand(6);rnd=if(equal(rnd,0),2,rnd);rnd=if(equal(rnd,1),2,rnd);<br />
@@ -41,43 +56,115 @@ per frame:<br />
 t=t-0.05;t1=t1+0.05;n=sqrt(h*h+w*w)<br />
 per point:<br />
 y=(getspec(y,1,cos(if(c,t,t1)))+cos(if(c,t,t1)))+v*rnd)/((if(c,t,t1)))+cos(i-t);<br />
-x=(getspec(x,1,cos(if(c,t,t1)))+(cos(if(c,t,t1)))+v*rnd)/((if(c,t,t1)))+sin(v));</div></div><hr />
+x=(getspec(x,1,cos(if(c,t,t1)))+(cos(if(c,t,t1)))+v*rnd)/((if(c,t,t1)))+sin(v));<br />
+</code></pre>
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">21st June 2002, 09:12</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">uNDefineD</div>
+			<div class="date small text-muted">21st June 2002 09:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think you've got one or two too many )s in there.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">21st June 2002 16:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Little trick</strong><br />
+		
+		
+
+		A good way to check if the error is a syntax error (e.g. a missing bracket) or a logical error (wrong formula/calculation), is just to add &quot;x=i*2-1;y=0&quot; to the end. If you made a syntax error, this will have no effect, but if you made a logical error, then the code will still get executed and draw a horizontal line.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Jaheckelsafar</div>
+			<div class="date small text-muted">21st June 2002 19:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think uNDefineD had it right.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">geozop</div>
+			<div class="date small text-muted">25th June 2002 01:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		for the y=, you're missing a ( just in front of the second cos function
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th June 2002 08:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Bracket errors are nasty because they can be very hard to spot. To quickly see if you made one, just go over each statement and keep an internal counter. When you see a '(', add one, when you see a ')', remove one. If you end up positive, you'got one '(' too many or not enough ')'. For negatives, it's the other way around of course.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">uNDefineD</div>
+			<div class="date small text-muted">25th June 2002 10:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UC: Damn, I thought I had made that up. LOL<br />
 <br />
-<div class="posttext">I think you've got one or two too many )s in there.</div></div><hr />
+EDIT: I just picked up an extra ) at the end of the x line.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">21st June 2002, 16:41</div></div>
-<br />
-<div class="posttext">A good way to check if the error is a syntax error (e.g. a missing bracket) or a logical error (wrong formula/calculation), is just to add &quot;x=i*2-1;y=0&quot; to the end. If you made a syntax error, this will have no effect, but if you made a logical error, then the code will still get executed and draw a horizontal line.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Jaheckelsafar</div><div class="date small text-muted">21st June 2002, 19:01</div></div>
-<br />
-<div class="posttext">I think uNDefineD had it right.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">geozop</div><div class="date small text-muted">25th June 2002, 01:42</div></div>
-<br />
-<div class="posttext">for the y=, you're missing a ( just in front of the second cos function</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th June 2002, 08:32</div></div>
-<br />
-<div class="posttext">Bracket errors are nasty because they can be very hard to spot. To quickly see if you made one, just go over each statement and keep an internal counter. When you see a '(', add one, when you see a ')', remove one. If you end up positive, you'got one '(' too many or not enough ')'. For negatives, it's the other way around of course.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">uNDefineD</div><div class="date small text-muted">25th June 2002, 10:04</div></div>
-<br />
-<div class="posttext">UC: Damn, I thought I had made that up. LOL<br />
-<br />
-EDIT: I just picked up an extra ) at the end of the x line.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

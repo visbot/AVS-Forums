@@ -3,37 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Stupid question, need an answer, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Stupid question, need an answer AVS Troubleshooting" />
-	
-	<title> Stupid question, need an answer - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Stupid question, need an answer AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Stupid question, need an answer - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Stupid question, need an answer</li>
-</ol>
-<!-- div class="pda"><a href="t-202156.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=202156">Stupid question, need an answer</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Nolita</div><div class="date small text-muted">15th December 2004, 18:01</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Stupid question, need an answer</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=202156">Stupid question, need an answer</a></p>
+
+
 <br />
-<div class="posttext">Hi,<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Nolita</div>
+			<div class="date small text-muted">15th December 2004 18:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Stupid question, need an answer</strong><br />
+		
+		
+
+		Hi,<br />
 <br />
   I have a stupid question, and could use an answer(I probably should just search untill I find a preset containing what I want to do, but that seems really lazy(just copy their stuff).<br />
 <br />
@@ -45,20 +59,40 @@ If I want to have particles, or shapes rain down(one way only and out of sight),
 <br />
 I have to re-reference some tutorials, but here's what I mean.<br />
 <br />
-   Since the AVS world stops at -1 and 1, could I just make the movement stop at -2, or 2?  Will that make it invisible? Or will AVS think I'm just a moron and compensate by having it stop at -1 or 1?</div></div><hr />
+   Since the AVS world stops at -1 and 1, could I just make the movement stop at -2, or 2?  Will that make it invisible? Or will AVS think I'm just a moron and compensate by having it stop at -1 or 1?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">15th December 2004, 21:06</div></div>
-<br />
-<div class="posttext">making it to go below -1 or above 1 is really unneccessary because everything below or above those is out of the window/screen.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hboy</div>
+			<div class="date small text-muted">15th December 2004 21:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		making it to go below -1 or above 1 is really unneccessary because everything below or above those is out of the window/screen.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th December 2004, 09:19</div></div>
-<br />
-<div class="posttext">but to answer your question: yes it will be invisible and if x=2, then it will be 2, not 1 (unless you use wrap)<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">16th December 2004 09:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		but to answer your question: yes it will be invisible and if x=2, then it will be 2, not 1 (unless you use wrap)<br />
 <br />
 try it with this example:<br />
-<br />
+<pre><code><br />
 SSC<br />
  INIT:<br />
   n=1;<br />
@@ -67,34 +101,75 @@ SSC<br />
   reg01=sin(t)*2 // &lt;- goes from -2 to 2<br />
 <br />
 Text<br />
- $(reg01:2.2)</div></div><hr />
+ $(reg01:2.2)<br />
+</code></pre>
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">16th December 2004, 10:01</div></div>
-<br />
-<div class="posttext">yeah, i could have understood your question nolita but was too tired sorry :) wotl did it though, nice job on that. by the way, there is no wrap in a superscope, just in texer2, so be careful with that ;)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hboy</div>
+			<div class="date small text-muted">16th December 2004 10:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		yeah, i could have understood your question nolita but was too tired sorry :) wotl did it though, nice job on that. by the way, there is no wrap in a superscope, just in texer2, so be careful with that ;)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">16th December 2004, 12:12</div></div>
-<br />
-<div class="posttext">yea, sorry about that, I was talking in general.<br />
-Another (minor) thing is that n can be better set to 0, just one of my automatisms to start a scope with :D</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">16th December 2004 12:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">PAK-9</div><div class="date small text-muted">16th December 2004, 17:02</div></div>
-<br />
-<div class="posttext">you can just make your own wrap for superscopes etc..<br />
+		yea, sorry about that, I was talking in general.<br />
+Another (minor) thing is that n can be better set to 0, just one of my automatisms to start a scope with :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PAK-9</div>
+			<div class="date small text-muted">16th December 2004 17:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		you can just make your own wrap for superscopes etc..<br />
 <br />
 x1=whatever;<br />
 x=if(above(abs(x1),1),<br />
   abs(x1)-abs(x1)%2-1,x1);<br />
 <br />
-I just totally pulled that out my arse, theres no way it will work. But its still possible to do.</div></div><hr />
+I just totally pulled that out my arse, theres no way it will work. But its still possible to do.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Nolita</div><div class="date small text-muted">16th December 2004, 17:25</div></div>
-<br />
-<div class="posttext">Thankyou.  <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Nolita</div>
+			<div class="date small text-muted">16th December 2004 17:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thankyou.  <br />
 <br />
   I'm working on some bitmaps in Painter.  I'm making these drops of what could be water, and also bubbles.  I'm making them expressly for use in texer2.  I'm doing this because I have two concepts for visualizations.  One involves dripping water, and the other involves a sort of fantasy marine scene with bubbles, well, bubbling up.<br />
 <br />
@@ -106,66 +181,135 @@ I had read some posts which told people not to use anything higher or lower than
 <br />
 BTW, I read that multiplication is more efficient than division, and I think I also read that addition is more efficient than multiplication.  It has something to do with the way computers work and how it takes longer to divide than multiply(hey it takes longer for me to divide than multiply, at least when I'm doing the math in my brain and not with a calculator, so since a computer's basically a synthetic brain, that makes perfect sense to me).<br />
 <br />
-What I didn't have clarified is decimals, i.e. fractions.  Since decimals are in my mind a kind of division, like how .75 = 75% of a whole = 3/4 of a whole, it seems like it's division to me.  So my new question is, are decimals, though necessary for detailed scopes and more than likely other things as well, well, are they less efficient than whole numbers?</div></div><hr />
+What I didn't have clarified is decimals, i.e. fractions.  Since decimals are in my mind a kind of division, like how .75 = 75% of a whole = 3/4 of a whole, it seems like it's division to me.  So my new question is, are decimals, though necessary for detailed scopes and more than likely other things as well, well, are they less efficient than whole numbers?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">19th December 2004, 14:18</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">19th December 2004 14:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		AVS treats all number as reals, so using integers has no effect on speed whatsoever.<br />
 <br />
-<div class="posttext">AVS treats all number as reals, so using integers has no effect on speed whatsoever.<br />
-<br />
-PS: Usually when one asks a question, you expect an answer. Please think of a more descriptive subject next time.</div></div><hr />
+PS: Usually when one asks a question, you expect an answer. Please think of a more descriptive subject next time.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Nolita</div><div class="date small text-muted">20th December 2004, 05:32</div></div>
-<br />
-<div class="posttext">I'm sorry:(<br />
-<br />
-I wasn't asking about intergers in that last post however.  I was asking about decimals.  So did you type intergers meaning decimals?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Nolita</div>
+			<div class="date small text-muted">20th December 2004 05:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">20th December 2004, 13:10</div></div>
+		I'm sorry:(<br />
 <br />
-<div class="posttext">either way, AVS sees no difference.<br />
+I wasn't asking about intergers in that last post however.  I was asking about decimals.  So did you type intergers meaning decimals?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">20th December 2004 13:10 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		either way, AVS sees no difference.<br />
 <br />
 .75=<br />
 3/4=<br />
 0.75=<br />
 0.75000000000000000000000000000 etc<br />
 <br />
-it's just that 3/4 is slower than .75 because of the division it has to perform. the others are equal in every single way</div></div><hr />
+it's just that 3/4 is slower than .75 because of the division it has to perform. the others are equal in every single way
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">20th December 2004, 15:07</div></div>
-<br />
-<div class="posttext">reals are what you call decimals.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">20th December 2004 15:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		reals are what you call decimals.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">hboy</div><div class="date small text-muted">20th December 2004, 15:34</div></div>
-<br />
-<div class="posttext">17 in decimal means the numbers after each other mean this:<br />
-<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">hboy</div>
+			<div class="date small text-muted">20th December 2004 15:34 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		17 in decimal means the numbers after each other mean this:<br />
+<pre><code><br />
 10^1*7+10^0*1<br />
-<br />
+</code></pre><br />
 <br />
 The next things mean just the same value:<br />
 <br />
-<br />
+<pre><code><br />
 10001 in binary (2) ( 2^4*1+2^3*0+2^2*0+2^1*0+2^0*1 )<br />
 21 in the octagonal (8) ( 8^1*2+8^0*1 )<br />
 17 in decimal (10) ( 10^1*7+10^0*1 )<br />
 11 in hexadecimal (16) ( 16^1*1+16^0*1 )<br />
+</code></pre><br />
 <br />
-<br />
-These are all existing and used number systems, AVS uses the decimal system only.</div></div><hr />
+These are all existing and used number systems, AVS uses the decimal system only.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Nolita</div>
+			<div class="date small text-muted">21st December 2004 04:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks. Still clanging around, trying to get the hang of placing points.  The info you gave really helps, because I'm just trying to make sure I don't write a code that translates to pure gibberish(my posts yeah pure gibberish, but I don't want that for my code).
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Nolita</div><div class="date small text-muted">21st December 2004, 04:03</div></div>
-<br />
-<div class="posttext">Thanks. Still clanging around, trying to get the hang of placing points.  The info you gave really helps, because I'm just trying to make sure I don't write a code that translates to pure gibberish(my posts yeah pure gibberish, but I don't want that for my code).</div></div><hr />
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

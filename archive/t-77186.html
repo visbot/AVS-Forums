@@ -3,70 +3,105 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Multiple settings superscope, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Multiple settings superscope AVS" />
-	
-	<title> Multiple settings superscope - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Multiple settings superscope - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Multiple settings superscope</li>
-</ol>
-<!-- div class="pda"><a href="t-77186.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=77186">Multiple settings superscope</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">24th February 2002, 01:31</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Multiple settings superscope</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=77186">Multiple settings superscope</a></p>
+
+
 <br />
-<div class="posttext">I'm trying to make a superscope that changes between a number of different settings (i.e., ring, anchored scope, cross, flying vu, etc.).  But I can't figure out the timing.  Any help...?</div></div><hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">24th February 2002 01:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Multiple settings superscope</strong><br />
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">24th February 2002, 23:55</div></div>
-<br />
-<div class="posttext">Suppose you have four different 'shapes'. Let 'sh' be a number from 0 to 3 that defines which shape you're drawing. You can either increase it every beat (sh=(sh+1)%4) or set it randomly (sh=rand(4)), or whatever.<br />
+		I'm trying to make a superscope that changes between a number of different settings (i.e., ring, anchored scope, cross, flying vu, etc.).  But I can't figure out the timing.  Any help...?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">24th February 2002 23:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Suppose you have four different 'shapes'. Let 'sh' be a number from 0 to 3 that defines which shape you're drawing. You can either increase it every beat (sh=(sh+1)%4) or set it randomly (sh=rand(4)), or whatever.<br />
 <br />
 Calculate your shapes like this:<br />
-<br />
-csh=sh;<br />
-x=if(csh,0,xcode for 1st shape);<br />
-y=if(csh,0,ycode for 1st shape);<br />
-csh=csh-1;<br />
-x=if(csh,x,xcode for 2nd shape);<br />
-y=if(csh,y,ycode for 2nd shape);<br />
-csh=csh-1;<br />
-x=if(csh,x,xcode for 3rd shape);<br />
-y=if(csh,y,ycode for 3rd shape);<br />
-csh=csh-1;<br />
-x=if(csh,x,xcode for 4th shape);<br />
-y=if(csh,y,ycode for 4th shape);<br />
-<br />
-<br />
+
+	<pre><code>csh</span><span style="color: #007700">=</span><span style="color: #0000BB">sh</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">1stshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">1stshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">2ndshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">2ndshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">3rdshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">3rdshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">4thshape</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">4thshape</span><span style="color: #007700">);
+</code></pre>
+	
 What happens is this...<br />
 First, csh is set to the current shape number. We do this because we're going to work with the shape number, but we don't want to change the original value.<br />
 Then we check if csh is zero. We do this by using the variable as the condition: this has the effect that anything non-zero is 'true', and zero is 'false'.<br />
 So, if 'sh = 0', then the 1st shape-code gets executed (the condition is false). In any other case (sh = 1, 2 or 3), the condition will be true and x,y will be zero. Then, we decrease the shape number (in csh). Now, when we evaluate 'csh', it will be zero only when the 2nd shape is selected. In the other cases, csh will either be -1, 1 or 2.<br />
 We decrease again, and it'll only be true when the 3rd shape is selected, and so on.<br />
 <br />
-A simpler approach is to calculate x1,y1,x2,y2,... and assign x,y depending on 'sh', but that way, you calculate 4 shapes regardless of which is selected. In my approach, you'll always calculate exactly one shape, which is fastest.</div></div><hr />
+A simpler approach is to calculate x1,y1,x2,y2,... and assign x,y depending on 'sh', but that way, you calculate 4 shapes regardless of which is selected. In my approach, you'll always calculate exactly one shape, which is fastest.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">25th February 2002, 07:20</div></div>
-<br />
-<div class="posttext">I knew how to calculate the shapes, I just needed to find out how to time it correctly.  What I'm trying to get is something that will morph between the shapes, like in your &quot;Reflect on it,&quot; just with 5 shapes (more or less) instead of 2.  I've figured out how to fade between two, it's fairly simple (i'll use a circle and a cross here):<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">25th February 2002 07:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I knew how to calculate the shapes, I just needed to find out how to time it correctly.  What I'm trying to get is something that will morph between the shapes, like in your &quot;Reflect on it,&quot; just with 5 shapes (more or less) instead of 2.  I've figured out how to fade between two, it's fairly simple (i'll use a circle and a cross here):<br />
 <br />
 init:<br />
 <br />
@@ -104,55 +139,95 @@ y1=sy1*ts1+sy2*ts2+sy3*ts3;<br />
 z1=sz1*ts1+sz2*ts2;<br />
 continue...<br />
 <br />
-which makes at (&quot;alarm timer&quot;) hit zero every thousanth frame, which increments s, which sets off the shape timers.  This really should work, but apparently it doesn't...</div></div><hr />
+which makes at (&quot;alarm timer&quot;) hit zero every thousanth frame, which increments s, which sets off the shape timers.  This really should work, but apparently it doesn't...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th February 2002, 07:54</div></div>
-<br />
-<div class="posttext">It really depends on what you want to do. If you want to morph between the 5 shapes independantly, you'll need 'n' weights in the range of 0-1 that add up to 1 (for the most desirable effect). You'll need to find a function that passes through most of the n-space containing all possible values.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th February 2002 07:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It really depends on what you want to do. If you want to morph between the 5 shapes independantly, you'll need 'n' weights in the range of 0-1 that add up to 1 (for the most desirable effect). You'll need to find a function that passes through most of the n-space containing all possible values.<br />
 <br />
 If you just want to go from A to B, then from B to C, etc., you can use the code I wrote below for jumping from one shape into another. Simply use &quot;from A to B&quot; as shape one, &quot;from B to C&quot; as shape two, etc.<br />
 <br />
 Something like this (I use PHP style code for hilighting):<br />
-<br />
-init {<br />
-  ip = 0;<br />
-  sh = 0;<br />
-}<br />
-<br />
-frame {<br />
-  ip = ip+0.01; next=equal(ip,1);<br />
-  sh = if(next, (sh+1)%4, sh);<br />
-  ip = if(next,0,ip);<br />
-}<br />
-<br />
-<br />
-This will have a value 'ip' that just goes from 0 to 1 and returns to 0 afterwards, and a value 'sh' that will increase every time 'ip' is wrapped around. So if your first shape uses 'ip' to interpolate between x1 and x2, and the second shape uses 'ip' to interpolate between x2 and x3, you'll get a nice morph from x1 to x3, passing through x2.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">LittleBuddy88</div><div class="date small text-muted">25th February 2002, 21:21</div></div>
+	<pre><code>init</span><span style="color: #007700">{
+<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">sh</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br />}
 <br />
-<div class="posttext">Atero, I think I've done a similar morphing sequence once, reacting on beat, but otherwise equal to what you did.<br />
+<br /></span><span style="color: #0000BB">frame</span><span style="color: #007700">{
+<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=</span><span style="color: #0000BB">ip</span><span style="color: #007700">+</span><span style="color: #0000BB">0.01</span><span style="color: #007700">;</span><span style="color: #0000BB">next</span><span style="color: #007700">=</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">ip</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">sh</span><span style="color: #007700">=if(</span><span style="color: #0000BB">next</span><span style="color: #007700">,(</span><span style="color: #0000BB">sh</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">)%</span><span style="color: #0000BB">4</span><span style="color: #007700">,</span><span style="color: #0000BB">sh</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=if(</span><span style="color: #0000BB">next</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">ip</span><span style="color: #007700">);
+<br />}
+</code></pre>
+	
+This will have a value 'ip' that just goes from 0 to 1 and returns to 0 afterwards, and a value 'sh' that will increase every time 'ip' is wrapped around. So if your first shape uses 'ip' to interpolate between x1 and x2, and the second shape uses 'ip' to interpolate between x2 and x3, you'll get a nice morph from x1 to x3, passing through x2.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">LittleBuddy88</div>
+			<div class="date small text-muted">25th February 2002 21:21 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Atero, I think I've done a similar morphing sequence once, reacting on beat, but otherwise equal to what you did.<br />
 And I can see but one problem with your code, I don't know if more exists, I just looked through it quickly, but simple, I think AVS sets ANY non-zero value to TRUE, this means that all of your scopes are executed, except one...<br />
 Not sure if that's the case though :/<br />
 1 more thing, I'm not 100% sure if the % operator works with float values...<br />
 <br />
 <br />
-Linus</div></div><hr />
+Linus
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">BlurPak2k1</div><div class="date small text-muted">26th February 2002, 01:54</div></div>
-<br />
-<div class="posttext">okay i got the first one (random number change (and i even used it :D))<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">BlurPak2k1</div>
+			<div class="date small text-muted">26th February 2002 01:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		okay i got the first one (random number change (and i even used it :D))<br />
 but the other two....<br />
 <br />
 <br />
-             ...well you, eh, lost me :D</div></div><hr />
+             ...well you, eh, lost me :D
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">26th February 2002, 02:54</div></div>
-<br />
-<div class="posttext">I think I've finally figured it out!  I used this exact code for a color changing circle, cross, and anchored scope:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">26th February 2002 02:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think I've finally figured it out!  I used this exact code for a color changing circle, cross, and anchored scope:<br />
 <br />
 init:<br />
 n=579; tpi=acos(-1)*2; ixyt=rand(100)/1000-0.05; ixzt=rand(100)/1000-0.05; iyzt=rand(100)/1000-0.05; sr=rand(100)/200; sg=rand(100)/200; sb=rand(100)/200;<br />
@@ -201,24 +276,44 @@ NS=number of shapes used<br />
 AXIS=the axis (x and y, and z if you're using a 3D scope)<br />
 SHAPE=the shape number you're coding<br />
 <br />
-If anyone still finds this vague, just ask...</div></div><hr />
+If anyone still finds this vague, just ask...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">BlurPak2k1</div><div class="date small text-muted">27th February 2002, 18:24</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">BlurPak2k1</div>
+			<div class="date small text-muted">27th February 2002 18:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i cant really tell where your circle is in your code there but...<br />
 <br />
-<div class="posttext">i cant really tell where your circle is in your code there but...<br />
-<br />
-<br />
-int: <br />
+<pre><code><br />
+<font color="blue">int:</font> <br />
  x=sin(t+i)+v;<br />
  y=cos(t+i);<br />
  red=cos(tan(t)+x);<br />
  green=sin(tan(-t)+y);<br />
- blue=cos(tan(x-y));</div></div><hr />
+ blue=cos(tan(x-y));<br />
+</code></pre>
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,40 +3,55 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Black dots on white background ?, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Black dots on white background ? AVS Wishlist" />
-	
-	<title> Black dots on white background ? - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Black dots on white background ? AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Black dots on white background ? - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-138.html">AVS Wishlist</a></li>
-  <li class="active">Black dots on white background ?</li>
-</ol>
-<!-- div class="pda"><a href="http://forums.winamp.com/archive/index.php/t-204009.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=204009">Black dots on white background ?</a></p>
-<hr />
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">6th January 2005, 01:14</div></div>
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">Black dots on white background ?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=204009">Black dots on white background ?</a></p>
+
+
 <br />
-<div class="posttext">Hi!<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">6th January 2005 01:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Black dots on white background ?</strong><br />
+		
+		
+
+		Hi!<br />
 <br />
 I'm currently in need of an AVS Preset that looks somehow like these   3 images I've posted here:<br />
 <br />
-look here (http://www.romanklein.com/avs.html)<br />
+<a href="http://www.romanklein.com/avs.html" target="_blank">look here</a><br />
 <br />
 It should simply be a matrix of black dots growing or shrinking according to the music and changing area around a kind of center.<br />
 <br />
@@ -48,50 +63,124 @@ If there's none I'd be very thankful if someone would like to build it :)... I g
 <br />
 thanks alot for any advice,<br />
 <br />
-roman</div></div><hr />
+roman
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">6th January 2005, 04:38</div></div>
-<br />
-<div class="posttext">I'm Working on it now......<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">6th January 2005 04:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm Working on it now......<br />
 If you want to try it yourself. Change the colour code in this to something by deleting the whole thing, and adding something like. red= getspec(d,0,0);green=red;blue=red;<br />
 sizex=w/iw*red*0.1;sizey=h/ih*red*0.1;<br />
-It doesn't look that good, but it's a start....</div></div><hr />
+It doesn't look that good, but it's a start....
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th January 2005, 04:57</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">6th January 2005 04:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Like this? It's basically AVS within AVS though. Has a trans/movement, render/superscope plus a per pixel renderer.<br />
 <br />
-<div class="posttext">Like this? It's basically AVS within AVS though. Has a trans/movement, render/superscope plus a per pixel renderer.<br />
-<br />
-I've marked them with *!* in a comment.</div></div><hr />
+I've marked them with *!* in a comment.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">6th January 2005, 05:05</div></div>
-<br />
-<div class="posttext">Whoops, I should add my attachment</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">6th January 2005 05:05 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		Whoops, I should add my attachment
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">6th January 2005, 05:08</div></div>
-<br />
-<div class="posttext">Unconed... That is great! Don't worry about mine sun</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">6th January 2005 05:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">6th January 2005, 09:28</div></div>
-<br />
-<div class="posttext">hey wow thanks!<br />
+		Unconed... That is great! Don't worry about mine sun
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">6th January 2005 09:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hey wow thanks!<br />
 I haven't expected an answer that fast!<br />
-I'm in hurry right now, but I'm gonna check them later today...</div></div><hr />
+I'm in hurry right now, but I'm gonna check them later today...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">6th January 2005, 10:19</div></div>
-<br />
-<div class="posttext">There's a glitch unconed... If you enlarge the screen/go fullscreen, and shrink it again, the dots go fullsize and don't change.<br />
-But It's great for how little time it took to make *most likely 20min?*</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">6th January 2005 10:19 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		There's a glitch unconed... If you enlarge the screen/go fullscreen, and shrink it again, the dots go fullsize and don't change.<br />
+But It's great for how little time it took to make *most likely 20min?*
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">6th January 2005, 21:27</div></div>
-<br />
-<div class="posttext">Yeah there's a bug with the buffer flipping. Replace the &quot;buffer flip&quot; line and the line after it in the texer 2 per frame with:<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">6th January 2005 21:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah there's a bug with the buffer flipping. Replace the &quot;buffer flip&quot; line and the line after it in the texer 2 per frame with:<br />
 <br />
 /* buffer flip */<br />
 ip=1-ip;bf1=n*ip;bf2=n*(1-ip);reg05=bf2;<br />
@@ -100,24 +189,54 @@ Also, for more blackness, change the scale line to:<br />
 <br />
 scale=if(mode,1,min(1.6,max(0,4*sqrt(scale))));<br />
 <br />
-Took me about an hour, though most of that was tweaking the visuals.</div></div><hr />
+Took me about an hour, though most of that was tweaking the visuals.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">7th January 2005, 02:41</div></div>
-<br />
-<div class="posttext">Also looks cool if you change the movement line to<br />
-x=atan(x);y=atan(y)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">7th January 2005 02:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Also looks cool if you change the movement line to<br />
+x=atan(x);y=atan(y)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">7th January 2005, 02:48</div></div>
-<br />
-<div class="posttext">or it looks cool with<br />
-dx=sin(x)*0.99;dy=sin(y)*0.99;</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">7th January 2005 02:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">7th January 2005, 17:24</div></div>
-<br />
-<div class="posttext">thank you both very much!<br />
+		or it looks cool with<br />
+dx=sin(x)*0.99;dy=sin(y)*0.99;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">7th January 2005 17:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thank you both very much!<br />
 <br />
 The dotthing-visual really comes close to what I'm looking for...I especially love the waving borders when the sound is at low volume. That's perfect! I've written you a mail about it, unconed... I hope you don't mind!<br />
 <br />
@@ -133,17 +252,41 @@ But I've tried some changes by myself and it didn't work out...<br />
 <br />
 thanks,<br />
 <br />
-roman</div></div><hr />
+roman
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">7th January 2005, 20:26</div></div>
-<br />
-<div class="posttext">I just made some changes to unconeds code. I hope this iswhat you mean.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">7th January 2005 20:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		I just made some changes to unconeds code. I hope this iswhat you mean.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">7th January 2005, 23:22</div></div>
-<br />
-<div class="posttext">thanks alot pj! It's getting closer :)<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">7th January 2005 23:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		thanks alot pj! It's getting closer :)<br />
 <br />
 Is it possible to let the little white dots disappear, which remain inbetween the black spaces?<br />
 A little smoother fadeout of the dots and some more black area would be great too...<br />
@@ -157,56 +300,141 @@ It looks nice while it keeps small... but as the sound gets loud it gets to blow
 It would be quite interesting to combine that kind of dot- and blackspace-behavior with a basic movement like seen in Unconeds &quot;Rainbow Ball&quot; of the finalwhack-set. If something like that is possible.<br />
 <br />
 I'll keep on trying.<br />
-And I'm still thankful fory an kind of help.</div></div><hr />
+And I'm still thankful fory an kind of help.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">8th January 2005, 03:50</div></div>
-<br />
-<div class="posttext">How bowt this one</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">8th January 2005 03:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		How bowt this one
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">10th January 2005, 12:27</div></div>
-<br />
-<div class="posttext">hm, all i get is white screens, unregarding what version i download.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">10th January 2005 12:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">10th January 2005, 22:14</div></div>
-<br />
-<div class="posttext">Try to apply the fix I mentioned earlier.</div></div><hr />
+		hm, all i get is white screens, unregarding what version i download.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">13th January 2005, 10:08</div></div>
-<br />
-<div class="posttext">wish it helped :(</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">10th January 2005 22:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Try to apply the fix I mentioned earlier.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">15th January 2005, 14:40</div></div>
-<br />
-<div class="posttext">hey pj!<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">13th January 2005 10:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wish it helped :(
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">15th January 2005 14:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hey pj!<br />
 thanks for your last try... it looks nice, but it's not what I need ;)<br />
 It really should be only black and white. No grey.<br />
 <br />
 The UWS-V1 I've posted above really comes close, only the white holes in the middle and the fact that there's still something black when there's no sound make it useless.<br />
 <br />
-If somebody could fix that I'd be really thankful... I tried, but I didn't get any further than this version...</div></div><hr />
+If somebody could fix that I'd be really thankful... I tried, but I didn't get any further than this version...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">PJ-Avser</div><div class="date small text-muted">16th January 2005, 04:51</div></div>
-<br />
-<div class="posttext">How about this... If you don't like the shifting ( I know it's not in the picture ) delete the last line of code.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">PJ-Avser</div>
+			<div class="date small text-muted">16th January 2005 04:51 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		How about this... If you don't like the shifting ( I know it's not in the picture ) delete the last line of code.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">underwatersun</div><div class="date small text-muted">17th January 2005, 11:03</div></div>
-<br />
-<div class="posttext">hm... sorry but this one is a little to chaotic even if I delete the shifting. But thanks alot for your enduring help.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">underwatersun</div>
+			<div class="date small text-muted">17th January 2005 11:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		hm... sorry but this one is a little to chaotic even if I delete the shifting. But thanks alot for your enduring help.<br />
 <br />
 I've optimized my version so that the white holes aren't a real problem any more... <br />
 <br />
-So everything looks the way I want when there is sound, only when there's none there shouldn't be anything black left and I really cant't get this managed... there's always still the basic motion...</div></div><hr />
+So everything looks the way I want when there is sound, only when there's none there shouldn't be anything black left and I really cant't get this managed... there's always still the basic motion...
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

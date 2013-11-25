@@ -3,79 +3,174 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" AVS Setting to Detect Bass Drums better?, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" AVS Setting to Detect Bass Drums better? AVS" />
-	
-	<title> AVS Setting to Detect Bass Drums better? - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> AVS Setting to Detect Bass Drums better? - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">AVS Setting to Detect Bass Drums better?</li>
-</ol>
-<!-- div class="pda"><a href="t-231040.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=231040">AVS Setting to Detect Bass Drums better?</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">woodman650</div><div class="date small text-muted">15th November 2005, 04:20</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">AVS Setting to Detect Bass Drums better?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=231040">AVS Setting to Detect Bass Drums better?</a></p>
+
+
 <br />
-<div class="posttext">Hey all,<br />
-I now it's kind of a random topic but I'm quite curious. I'm just starting to play around with my own custom AVS creations and I listen to a lot of metal and rock. I just don't know what to mess around with the get a good trigger for detecting the bass drum parts in songs... any ideas/suggestions? it would be greatly appreciated, thanks</div></div><hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">woodman650</div>
+			<div class="date small text-muted">15th November 2005 04:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>AVS Setting to Detect Bass Drums better?</strong><br />
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">eheiney</div><div class="date small text-muted">15th November 2005, 05:08</div></div>
+		Hey all,<br />
+I now it's kind of a random topic but I'm quite curious. I'm just starting to play around with my own custom AVS creations and I listen to a lot of metal and rock. I just don't know what to mess around with the get a good trigger for detecting the bass drum parts in songs... any ideas/suggestions? it would be greatly appreciated, thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">eheiney</div>
+			<div class="date small text-muted">15th November 2005 05:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Simply enough, you can't. The beat detection in AVS is really quite shoddy. In addition, there's no real way to tell when the bass drum is kicked, unless you can calculate the exact frequency of it and translate that into the getspec() function. Of course, this would only apply to one particular song, or even one particular note, as the speed of the kick can alter the frequency of the drum.<br />
 <br />
-<div class="posttext">Simply enough, you can't. The beat detection in AVS is really quite shoddy. In addition, there's no real way to tell when the bass drum is kicked, unless you can calculate the exact frequency of it and translate that into the getspec() function. Of course, this would only apply to one particular song, or even one particular note, as the speed of the kick can alter the frequency of the drum.<br />
-<br />
-There are ways around this, advanced beat detection is being written all the time in presets, but your best is to settle for a sort of average. If you're looking for some examples, check out Pak-9's latest pack. El-Vis' FTL presets, found in  Hypnotized, feature some excellent experimental beat detection as well.</div></div><hr />
+There are ways around this, advanced beat detection is being written all the time in presets, but your best is to settle for a sort of average. If you're looking for some examples, check out Pak-9's latest pack. El-Vis' FTL presets, found in  Hypnotized, feature some excellent experimental beat detection as well.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">15th November 2005, 06:16</div></div>
-<br />
-<div class="posttext">AVS has two different built-in beat detection methods. I've found that &quot;Advanced&quot; tends to work better for most pieces than &quot;Standard&quot; (which sucks). Check the AVS settings, and if you're using the &quot;Standard&quot; method, try the &quot;Advanced&quot; one. It might be better.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">StevenRoy</div>
+			<div class="date small text-muted">15th November 2005 06:16 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		AVS has two different built-in beat detection methods. I've found that &quot;Advanced&quot; tends to work better for most pieces than &quot;Standard&quot; (which sucks). Check the AVS settings, and if you're using the &quot;Standard&quot; method, try the &quot;Advanced&quot; one. It might be better.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">woodman650</div><div class="date small text-muted">15th November 2005, 06:18</div></div>
-<br />
-<div class="posttext">is there a tutorial out there that would help me create my own AVS using images that animation to beats? (so like a little drawing that jumps up everytime a certain beat is detected) =D thanks!</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">woodman650</div>
+			<div class="date small text-muted">15th November 2005 06:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Mr_Nudge</div><div class="date small text-muted">15th November 2005, 07:08</div></div>
-<br />
-<div class="posttext">the texer 2 render does just that.. you just have to know how to code it properly..</div></div><hr />
+		is there a tutorial out there that would help me create my own AVS using images that animation to beats? (so like a little drawing that jumps up everytime a certain beat is detected) =D thanks!
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">woodman650</div><div class="date small text-muted">15th November 2005, 17:55</div></div>
-<br />
-<div class="posttext">the best AVS example I've found so far for beat detection is &quot;Justin - New poop (for WA5)&quot;. I just don't know how to translate the dynamic movement into say, a light effect.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Mr_Nudge</div>
+			<div class="date small text-muted">15th November 2005 07:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		the texer 2 render does just that.. you just have to know how to code it properly..
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">StevenRoy</div><div class="date small text-muted">15th November 2005, 19:26</div></div>
-<br />
-<div class="posttext">Hah. I remember that one. It's an amazing effect it creates, using just the raw waveform data in a movement. The illusion of a beat detection is just created by the waveform of the typical beat, though; there's no actual detection taking place there.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">woodman650</div>
+			<div class="date small text-muted">15th November 2005 17:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">woodman650</div><div class="date small text-muted">15th November 2005, 23:24</div></div>
-<br />
-<div class="posttext">sounds simple... how do I convert that into a spawn for some kind of action? :) thanks</div></div><hr />
+		the best AVS example I've found so far for beat detection is &quot;Justin - New poop (for WA5)&quot;. I just don't know how to translate the dynamic movement into say, a light effect.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">NuttyMonk</div><div class="date small text-muted">23rd March 2009, 12:45</div></div>
-<br />
-<div class="posttext">An idea i've used previously (in Propellerheds Reason, when making my own VST plugins, and when doing beat detection in Flash) is quite simple and usually quite effective, although it does rely on a bass drum being present in the song.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">StevenRoy</div>
+			<div class="date small text-muted">15th November 2005 19:26 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hah. I remember that one. It's an amazing effect it creates, using just the raw waveform data in a movement. The illusion of a beat detection is just created by the waveform of the typical beat, though; there's no actual detection taking place there.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">woodman650</div>
+			<div class="date small text-muted">15th November 2005 23:24 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		sounds simple... how do I convert that into a spawn for some kind of action? :) thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">NuttyMonk</div>
+			<div class="date small text-muted">23rd March 2009 12:45 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		An idea i've used previously (in Propellerheds Reason, when making my own VST plugins, and when doing beat detection in Flash) is quite simple and usually quite effective, although it does rely on a bass drum being present in the song.<br />
 <br />
 If you can get values from some sort of spectrum of the audio (e.g. GETSPEC) then you take all of the values from around 60Hz up to 150Hz and total them up.  This is a decent working range for the bass drum in almost all types of music.  Once you have the total, you compare that total to the total of the previous frame.  If the total value for the bass drum range in the current frame is significantly higher than in the previous frame (say more than 2 or 4 times as loud, although tweeking of this value is a good idea) then you use this as a beat detection with an IF statement or something similar.<br />
 <br />
@@ -83,21 +178,40 @@ I've used this method to replace recorded drums in Reason with sampled drums, to
 <br />
 It all really depends on what kind of info you can get from something like the GETSPEC function/variable in AVS.  If you can pull the exact Hz values from GETSPEC then it should work ok but i don't know enough about AVS yet and don't know how to pull the right values out of GETSPEC for the 60-150 Hz range.  Someone with more knowledge than me should be able to help.<br />
 <br />
-NM</div></div><hr />
+NM
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Grandchild</div><div class="date small text-muted">23rd March 2009, 13:01</div></div>
-<br />
-<div class="posttext">actually, the spectrum in avs (realized with getspec) seems *very* messed up. i'm not sure if avs gets the spec from winamp or if it's calculated within avs.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Grandchild</div>
+			<div class="date small text-muted">23rd March 2009 13:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		actually, the spectrum in avs (realized with getspec) seems *very* messed up. i'm not sure if avs gets the spec from winamp or if it's calculated within avs.<br />
 however, when i sent a sine tone to AVS the spectrum was lighting up in places over the whole gamut o_0 where it actually should only be one hard spike.<br />
 <br />
 even if it was correct you would have to do some testing for the range, since internally it ranges from 0 to 1. so no frequencies involved.<br />
 <br />
-(and in general, please don't revive 4 year old threads!)</div></div><hr />
+(and in general, please don't revive 4 year old threads!)
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

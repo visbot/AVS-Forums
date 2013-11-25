@@ -3,38 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" General Cubic Solution, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" General Cubic Solution AVS" />
-	
-	<title> General Cubic Solution - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> General Cubic Solution - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">General Cubic Solution</li>
-</ol>
-<!-- div class="pda"><a href="t-143417.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=143417">General Cubic Solution</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">24th July 2003, 14:04</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">General Cubic Solution</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=143417">General Cubic Solution</a></p>
+
+
 <br />
-<div class="posttext">This is one for all the techies out there, a general cubic solution in avs code. I've tested it out by raytracing a folium of descartes in xy stretched out along the z axis. The result was (surprisingly) the correct shape with a reflection of itself (due to the cubic term this happens for the same reason as with a plane) the 'singular line' in the shape created a *really* ugly edge though so if you plan to make cubic DMs I would suggest avoiding shapes with singular points or lines. Here is the code from my DM that deals with solving the cubic (cx^3+dx^2+ex+f=0):<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">24th July 2003 14:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>General Cubic Solution</strong><br />
+		
+		
+
+		This is one for all the techies out there, a general cubic solution in avs code. I've tested it out by raytracing a folium of descartes in xy stretched out along the z axis. The result was (surprisingly) the correct shape with a reflection of itself (due to the cubic term this happens for the same reason as with a plane) the 'singular line' in the shape created a *really* ugly edge though so if you plan to make cubic DMs I would suggest avoiding shapes with singular points or lines. Here is the code from my DM that deals with solving the cubic (cx^3+dx^2+ex+f=0):<br />
 <br />
-<br />
+<pre><code><br />
 (init: i27=1/27;i3=1/3;twopi=acos(-1)*2;)<br />
 <br />
 a=(3*c*e-sqr(d))/(3*sqr(c));<br />
@@ -68,38 +83,58 @@ t2=if(below(t2,0),10000,t2);<br />
 t3=if(below(t3,0),10000,t3);<br />
 t=min(min(t1,t2),t3);<br />
 <br />
-<br />
+</code></pre><br />
 <br />
 I haven't really optimised the code that much so that its 'easier' to see whats going on and so that I can go over a couple of useful things. Like the a and b variables - if you have a cubic x^3+px+q=0 then a and b in the code can be set a=p,b=q rather than setting c=1,d=0,e=p,f=q. The reason for this is that the first stage of solving a cubic is reducing it to this form. <br />
 <br />
 Unlike when solving a quadratic we can't just ignore complex results from the square roots and cube roots in the intermediary stages since they may end up forming a purely real root at the end. As a result this code also contains a method for finding a cube root of a complex number.<br />
 <br />
-<br />
+<pre><code><br />
 prn=pow(pk,1/3)*cos(p0*n*twopi/3);<br />
 pin=pow(pk,1/3)*sin(p0*n*twopi/3);<br />
-<br />
+</code></pre><br />
 <br />
 If you replace 3 with another number and increment n from 1 to that number then you can find any root (4th root, 5th root etc..) of any complex number, not just that but you get a different root for each value of n which means that you can calculate all of the roots and not just one (real root) like sqrt(x) or pow(x,1/n) does.<br />
 <br />
 Don't expect a quartic solution anytime soon, in algebraic notation its about 4 times bigger than a cubic.. in code that may translate to even more. No torii or helices just yet. :(<br />
 <br />
 <br />
-Hopefully someone other than me will find this code useful, or at least interesting.</div></div><hr />
+Hopefully someone other than me will find this code useful, or at least interesting.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zana</div><div class="date small text-muted">25th July 2003, 18:47</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zana</div>
+			<div class="date small text-muted">25th July 2003 18:47 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		*shwoop* <br />
 <br />
-<div class="posttext">*shwoop* <br />
-<br />
-that's way over my head....</div></div><hr />
+that's way over my head....
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th July 2003, 18:55</div></div>
-<br />
-<div class="posttext">Wow ;). Very nice... unfortunately the more interesting shapes that I can think of are all described by a quartic, but it's good to have such code handy.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th July 2003 18:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow ;). Very nice... unfortunately the more interesting shapes that I can think of are all described by a quartic, but it's good to have such code handy.<br />
 <br />
 Anyway I went on an optimization spree:<br />
-<br />
+<pre><code><br />
 x=sqr(c);y=sqr(d);<br />
 a=(c*e-.333333*y)/x;<br />
 b=((.0740740*y-.333333*c*e)*d+x*f)/(x*c);<br />
@@ -125,7 +160,7 @@ t3=if(above(abs(pi3+qi3),0.0001),10000,pr3+qr3);<br />
 t1=if(below(t1,0),10000,t1);<br />
 t2=if(below(t2,0),10000,t2);<br />
 t3=if(below(t3,0),10000,t3);<br />
-t=min(min(t1,t2),t3);<br />
+t=min(min(t1,t2),t3);</code></pre><br />
 <br />
 Non-obvious stuff:<br />
 - Got rid of two sqrt's (merged them into pow())<br />
@@ -138,17 +173,37 @@ I didn't optimize p0*2, p0*3 (and same for q0) because sometimes simple statemen
 Oh and of course for the people who hadn't realized, the cubic solver stops before the t1 part, and the solutions are (pr1+qr1, pi1+qi1), (pr2+qr2, pi2+qi2), (pr3+qr3, pi3+qi3). The first t1,t2,t3-statements are discarding the imaginaries, while the second series is discarding the negative reals (for raytracing).<br />
 <br />
 <br />
-Oh and Jheriko, do you have a mathematical description of this method? Certain parts puzzle me... like why you multiply p0,q0 by twopi, if they're already in radians (due to atan2).</div></div><hr />
+Oh and Jheriko, do you have a mathematical description of this method? Certain parts puzzle me... like why you multiply p0,q0 by twopi, if they're already in radians (due to atan2).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">25th July 2003, 19:15</div></div>
-<br />
-<div class="posttext">Can someone who understands this tell me what it would be useful in doing?  Is it just to make complex-shaped 3D DMs???</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">25th July 2003 19:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Can someone who understands this tell me what it would be useful in doing?  Is it just to make complex-shaped 3D DMs???
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th July 2003, 19:46</div></div>
-<br />
-<div class="posttext">anubis2003, it solves a cubic equation, i.e. an equation of the form &quot;cx^3+dx^2+ex+f=0&quot; where x is unknown and c,d,e,f are given constants.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th July 2003 19:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		anubis2003, it solves a cubic equation, i.e. an equation of the form &quot;cx^3+dx^2+ex+f=0&quot; where x is unknown and c,d,e,f are given constants.<br />
 <br />
 For a linear equation ax+b=0, the result is x=-b/a. For a quadratic equation ax^2+bx+c, if you set D=b^2-4*a*c the solutions are x=(-b ± sqrt(D))/2a<br />
 <br />
@@ -156,24 +211,57 @@ It is possible to write out a general solution to a quartic (4th degree) equatio
 <br />
 I believe it has been proven (well something along these lines, Jheriko can elaborate) that there is impossible to find a general solution for any equation with degree 5 or higher, but (numerical) methods exist to solve them.<br />
 <br />
-Cubic equations will be rare for the stuff used in AVS, but if you ever run into one, you can now solve it using this code ;).</div></div><hr />
+Cubic equations will be rare for the stuff used in AVS, but if you ever run into one, you can now solve it using this code ;).
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">25th July 2003, 19:58</div></div>
-<br />
-<div class="posttext">Yeah, I knew what the Cubic solution was, but what I meant by my question is what would be the use in AVS?  Just to make some more complex DMs?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">25th July 2003 19:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Yeah, I knew what the Cubic solution was, but what I meant by my question is what would be the use in AVS?  Just to make some more complex DMs?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">25th July 2003, 21:50</div></div>
-<br />
-<div class="posttext">Originally posted by UnConeD <br />
-- Replaced below(tmp,0) by bnot(above(tmp,0)). This is a minor accuracy loss, but it shouldn't matter that much really.<br />
-wtf?  that's one extra function call in order to lose accuracy...what the hell is the point?</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">25th July 2003 21:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">25th July 2003, 22:07</div></div>
-<br />
-<div class="posttext">I'll go through the entire solution step by step here:<br />
+		
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+<b>- Replaced below(tmp,0) by bnot(above(tmp,0)). This is a minor accuracy loss, but it shouldn't matter that much really.</b></blockquote>
+wtf?  that's one extra function call in order to lose accuracy...what the hell is the point?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">25th July 2003 22:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'll go through the entire solution step by step here:<br />
 <br />
 the first two lines a=blah,b=blah are reducing the cubic cy^3+dy^2+ey+f to x^3+ax+b by substituting y=x-d/3c.. something which i just realised i forgot to undo at the end of the solution :P so my code is wrong! but this is a small error and is easily fixed by adding d/3c to the solution. if you wish to use the cubic code this will be important! it also explains why i couldn't move the camera in my test... which i had originally put down to the presence of an extruded singularity.<br />
 <br />
@@ -200,26 +288,46 @@ now, you're still wondering where sin cos and 2pi come into it all, well the pro
 <br />
 it is impossible to solve polynomials of degree higher than 4 so qunitics are out of the question, however i can't really elaborate much on why because the maths behind it is *VERY* advanced, in fact the guy who first proved this invented a whole branch of mathematics in doing so and some of his work is *still* not understood by the worlds leading mathematicians more than 100 years after his death.<br />
 <br />
-edit: i mean general polynomials higher than degree 4 cant be solved in terms of radicals (+,-,*,/ and ^) since some higher degree polynomials can be solved analytically. there is a solution to the general quintic (degree 5) that I know of but it involves what is called a 'hypergeometric' function and would be of no use to avs since like sin and cosine are the sum of infinite series hypergeometrics are products of such series.</div></div><hr />
+edit: i mean general polynomials higher than degree 4 cant be solved in terms of radicals (+,-,*,/ and ^) since some higher degree polynomials can be solved analytically. there is a solution to the general quintic (degree 5) that I know of but it involves what is called a 'hypergeometric' function and would be of no use to avs since like sin and cosine are the sum of infinite series hypergeometrics are products of such series.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">25th July 2003, 23:03</div></div>
-<br />
-<div class="posttext">Atero: if you had bothered to read the code, rather than shouting bloody murder because you spotted what you thought was an error and you are always right, you would've seen that I did not put in bnot() at all. I replaced below(tmp,0) by above(tmp,0) (which is calculated once) and switched the places of the true/false clauses in an if statement. I wrote bnot() to make it clear why there was a loss in accuracy.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">25th July 2003 23:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Atero: if you had bothered to read the code, rather than shouting bloody murder because you spotted what you thought was an error and you are always right, you would've seen that I did not put in bnot() at all. I replaced below(tmp,0) by above(tmp,0) (which is calculated once) and switched the places of the true/false clauses in an if statement. I wrote bnot() to make it clear why there was a loss in accuracy.<br />
 Plus, it doesn't really matter if stuff is a function call... to AVS, a*b is no more or less a function call than atan2(a,b).<br />
 <br />
 Jheriko: I know about the whole handyness of writing complex numbers in polar form. The n-roots of a number are the corner points of an n-gon.<br />
 <br />
-Your typography is a bit messed up (see this Penny Arcade comic (http://www.penny-arcade.com/view.php3?date=2002-10-11&amp;res=l)), but the correct expression is I believe:<br />
+Your typography is a bit messed up (see <a href="http://www.penny-arcade.com/view.php3?date=2002-10-11&amp;res=l" target="_blank">this Penny Arcade comic</a>), but the correct expression is I believe:<br />
 <br />
 k^x=|k|^x*(cos(arg(k)*x)+isin(arg(k)*x))<br />
 <br />
-So if atan2 already returns the angle in radians (on a scale of 2***x3c0; ) why multiply by 2***x3c0; again?</div></div><hr />
+So if atan2 already returns the angle in radians (on a scale of 2&amp;#x3c0; ) why multiply by 2&amp;#x3c0; again?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th July 2003, 04:13</div></div>
-<br />
-<div class="posttext">Yeah... I neglected the *x's in de Moivre.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">26th July 2003 04:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah... I neglected the *x's in de Moivre.<br />
 <br />
 Those '*' should really be '+' and the '/3' should apply to both the pi multiples and the argument... damn another mistake... I really should have tested this code more thoroughly than I did.. :/ I apologize for unleashing this buggy confusing mess upon you. I'm going to have to check this code over very thoroughly now. Maybe I can't move the camera because my code is just a pile of cack. :(<br />
 <br />
@@ -229,12 +337,22 @@ I've tested the code against my calculator's in built cubic solver, the way in w
 <br />
 I will fix this! The only good thing so far is that the code isn't completely wrong since it does draw my cubic correctly (well it looks that way) from 0,0,z. I'll post back here when its fixed. I need to sleep now.<br />
 <br />
-Typography better?</div></div><hr />
+Typography better?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th July 2003, 04:33</div></div>
-<br />
-<div class="posttext">If you construct your own cubic with known solutions (x-a)(x-b)(x-c) and solve it again, you can easily verify using an equal() or below(abs(x-a),epsilon).<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">26th July 2003 04:33 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		If you construct your own cubic with known solutions (x-a)(x-b)(x-c) and solve it again, you can easily verify using an equal() or below(abs(x-a),epsilon).<br />
 Or you could use the AVS variable displayer...<br />
 <br />
 I believe the cube roots of p,q should be calculated like this:<br />
@@ -246,12 +364,24 @@ p = d*(cos(r)+i*sin(r))<br />
 p' = d*(cos(r*2)+i*sin(r*2))<br />
 p'' = d*(cos(r*3)+i*sin(r*3))<br />
 <br />
-No ***x3c0; anywhere...</div></div><hr />
+No &amp;#x3c0; anywhere...
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th July 2003, 16:38</div></div>
-<br />
-<div class="posttext">You need pi to calculate the second and third cube roots. Consider your method above, do the three roots describe a regular polygon centred on the origin? You need to use 2pi to rotate around a fraction of a circle in radians... there is no other way that I can think of.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">26th July 2003 16:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		You need pi to calculate the second and third cube roots. Consider your method above, do the three roots describe a regular polygon centred on the origin? You need to use 2pi to rotate around a fraction of a circle in radians... there is no other way that I can think of.<br />
 <br />
 I am still having real trouble identifying whats wrong with the solver code, I've attached my test preset which tests the calculated roots of <br />
 <br />
@@ -259,108 +389,276 @@ x^3-2x+1=0<br />
 <br />
 They should be -1.618, .618 and 1 the code gets the 1 but not the other two.<br />
 <br />
-The cube root code is where the three roots 'split' but this code uses the correct method according to equivalent code on my calculator. :/</div></div><hr />
+The cube root code is where the three roots 'split' but this code uses the correct method according to equivalent code on my calculator. :/
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">26th July 2003, 17:01</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">26th July 2003 17:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Here is an 'AVS proof' that my cube root method works fine.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">26th July 2003 19:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah indeed, mine didn't form a regular n-gon. My fault for doing 5AM math stuff ;).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">27th July 2003 11:53 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Why is it when digging in my square garden I end up with cubic roots :igor:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">27th July 2003 20:28 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Because digging adds a third dimension (up/down) to your square garden so that you can now define sections of cubes. :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th July 2003 15:37 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I have derived the quartic solution so once I can get this cubic working I can proceed to a quartic solver... I've started a fresh cubic solver from scratch using a different method. For those of you interested in the solution to the general quartic the equation that I have derived when all the substitutions are removed covers a little more than a single side of A4 paper, and that with writing square roots and divisions on single lines to save on the space (e.g. x= sqrt(x/2)) i was hoping to fit it one side for my ease of use. Porting it to code will be a mammoth task. <br />
 <br />
-<div class="posttext">Here is an 'AVS proof' that my cube root method works fine.</div></div><hr />
+I have just right now thought of somethings that could optimise the solution of any polynomial including quadratics which is that the product of the roots for a polynomial ax^n+bx^n-1...nx+k = k/a, also the sum of the roots is equal to -n/a, this means that you can calculate the last root by subtracting the others from -n/a.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">26th July 2003, 19:15</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th July 2003 20:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		damn.. too late for edit :( <br />
 <br />
-<div class="posttext">Yeah indeed, mine didn't form a regular n-gon. My fault for doing 5AM math stuff ;).</div></div><hr />
+n/a should read b/a.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">27th July 2003, 11:53</div></div>
-<br />
-<div class="posttext">Why is it when digging in my square garden I end up with cubic roots :igor:</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">28th July 2003 21:56 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		I have coded in to avs another method for solving the cubic, it doesn't work either which is infuriating. I've attached two presets, one using the new method and one using the old, they both 'look' correct on the xy origin, moving the camera along z causes no problems but moving it in x or y creates a bizarre effect. Now that I've coded it twice and check my method through by calculator and mathematica I'm convinced that there must be something else wrong with the preset other than the cubic solver part, but I can't see any flaws myself. I hate to say it but I'm going to give up on this.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">27th July 2003, 20:28</div></div>
-<br />
-<div class="posttext">Because digging adds a third dimension (up/down) to your square garden so that you can now define sections of cubes. :P</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">1st August 2003 02:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th July 2003, 15:37</div></div>
-<br />
-<div class="posttext">I have derived the quartic solution so once I can get this cubic working I can proceed to a quartic solver... I've started a fresh cubic solver from scratch using a different method. For those of you interested in the solution to the general quartic the equation that I have derived when all the substitutions are removed covers a little more than a single side of A4 paper, and that with writing square roots and divisions on single lines to save on the space (e.g. x= sqrt(x/2)) i was hoping to fit it one side for my ease of use. Porting it to code will be a mammoth task. <br />
-<br />
-I have just right now thought of somethings that could optimise the solution of any polynomial including quadratics which is that the product of the roots for a polynomial ax^n+bx^n-1...nx+k = k/a, also the sum of the roots is equal to -n/a, this means that you can calculate the last root by subtracting the others from -n/a.</div></div><hr />
+		Now if someone figures out the quartic solver and gets it working, then we would be able to have DM torus's, right?  And with those, couldn't we make DM tunnels that have nice smooth turns?  Just intersect two cylinders with a torus, and you got a curved tunnel.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th July 2003, 20:57</div></div>
-<br />
-<div class="posttext">damn.. too late for edit :( <br />
-<br />
-n/a should read b/a.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">1st August 2003 02:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">28th July 2003, 21:56</div></div>
-<br />
-<div class="posttext">I have coded in to avs another method for solving the cubic, it doesn't work either which is infuriating. I've attached two presets, one using the new method and one using the old, they both 'look' correct on the xy origin, moving the camera along z causes no problems but moving it in x or y creates a bizarre effect. Now that I've coded it twice and check my method through by calculator and mathematica I'm convinced that there must be something else wrong with the preset other than the cubic solver part, but I can't see any flaws myself. I hate to say it but I'm going to give up on this.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st August 2003, 02:14</div></div>
-<br />
-<div class="posttext">Now if someone figures out the quartic solver and gets it working, then we would be able to have DM torus's, right?  And with those, couldn't we make DM tunnels that have nice smooth turns?  Just intersect two cylinders with a torus, and you got a curved tunnel.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st August 2003, 02:57</div></div>
-<br />
-<div class="posttext">I'm busy with a different approach... numerical solving.<br />
+		I'm busy with a different approach... numerical solving.<br />
 <br />
 I've tried Newton-Raphson, but it sucks for the limited amount of iterations that you can do in AVS. I've also tried Halley Rational/Irrational iteration, which converge really great if you have a good initial guess, but are bad for certain cases where f'(x) and/or f''(x) are near zero. Sometimes they also converge to the wrong root. I thought of using Muller-iteration too, but it would flip on quartics with only two roots (unless you're interested in complex roots).<br />
 <br />
-Going to try Bairstow's method now.</div></div><hr />
+Going to try Bairstow's method now.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st August 2003, 03:18</div></div>
-<br />
-<div class="posttext">Never heard of any of that.:p   Hope it works though - I would love to see some sweet DMs.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">1st August 2003 03:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Never heard of any of that.:p   Hope it works though - I would love to see some sweet DMs.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">1st August 2003, 13:15</div></div>
-<br />
-<div class="posttext">My theory on the complete failure of my cubic solver is that like when raytracing planes 'negative images' (possibly two of them?) are created, due to the sign preserving properties of x^3, and due to the fact that cubics are not planar these image(s) intersect the actual surface which could result in the sort of messy nastyness that is seen when the camera moves from the origin. If that is the case then a quartic (like a quadratic) should not create such images and so a straight analytical solution should work. If anyone can be bothered to convert this behemoth into code here is a mathematica generated solution for x^4+ax^2+bx+c=0, the reduced quartic obtained from dy^4+ey^3+fy^2+gy+h=0 when the substitution y=x-(e/4d) is made. Each x-&gt; (blah) is a seperate root.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">1st August 2003 13:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">1st August 2003, 13:18</div></div>
-<br />
-<div class="posttext">forget something?</div></div><hr />
+		My theory on the complete failure of my cubic solver is that like when raytracing planes 'negative images' (possibly two of them?) are created, due to the sign preserving properties of x^3, and due to the fact that cubics are not planar these image(s) intersect the actual surface which could result in the sort of messy nastyness that is seen when the camera moves from the origin. If that is the case then a quartic (like a quadratic) should not create such images and so a straight analytical solution should work. If anyone can be bothered to convert this behemoth into code here is a mathematica generated solution for x^4+ax^2+bx+c=0, the reduced quartic obtained from dy^4+ey^3+fy^2+gy+h=0 when the substitution y=x-(e/4d) is made. Each x-&gt; (blah) is a seperate root.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">1st August 2003, 13:36</div></div>
-<br />
-<div class="posttext">Damn it! It didn't post my attachment or tell me that it was too big. :(<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">1st August 2003 13:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		forget something?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">1st August 2003 13:36 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Damn it! It didn't post my attachment or tell me that it was too big. :(<br />
 Not my fault! I sat there and watched it take its time uploading my attachment only to have it not get posted. Grrr....<br />
 <br />
 <br />
 I'll just have to post it in two parts.<br />
 <br />
-Interestingly 2 color bitmap produced a smaller filesize than jpg by about 20kb and png by abut 120kb.</div></div><hr />
+Interestingly 2 color bitmap produced a smaller filesize than jpg by about 20kb and png by abut 120kb.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">1st August 2003, 13:40</div></div>
-<br />
-<div class="posttext">...</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">1st August 2003 13:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
+		...
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st August 2003, 13:54</div></div>
-<br />
-<div class="posttext">What about a 2-bit png though? :)<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">1st August 2003 13:54 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		What about a 2-bit png though? :)<br />
 <br />
 I don't really think the 'negative image' has anything to do with the cubicness. Remember that this is only caused because we solve for a ray that extends in both directions, not just in the looking direction.<br />
 So a cubic should still only result in 3 solutions, some of which might be negative/complex and should be discarded.<br />
 <br />
-For a quadratic it worked exactly the same as with a plane: solve and discard the negatives/complexes, so there's no reason it should be different from a cubic/quartic.</div></div><hr />
+For a quadratic it worked exactly the same as with a plane: solve and discard the negatives/complexes, so there's no reason it should be different from a cubic/quartic.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">1st August 2003, 15:39</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">1st August 2003 15:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can't seem to get Bairstow's method to do anything remotely useful in AVS. It's guaranteed to give a correct result eventually, but when that happens is very dubious, and seems only to occur after about 20-30 iterations. In C++ code that's nothing, but in AVS you can only get away with 10 max, and less in a high-detail DM.<br />
 <br />
-<div class="posttext">I can't seem to get Bairstow's method to do anything remotely useful in AVS. It's guaranteed to give a correct result eventually, but when that happens is very dubious, and seems only to occur after about 20-30 iterations. In C++ code that's nothing, but in AVS you can only get away with 10 max, and less in a high-detail DM.<br />
-<br />
-If anyone's interested, here's my code. It starts with a quartic a4*x^4 + a3*x^3 + a2*x^2 + a1*x + a0 = 0, and factors it into (x^2 - r*x - s)*(k4*x^2 + k3*x + k2) = 0. You can then solve these two quadratics the regular way.<br />
+If anyone's interested, here's my code. It starts with a quartic <i>a4*x^4 + a3*x^3 + a2*x^2 + a1*x + a0 = 0</i>, and factors it into <i>(x^2 - r*x - s)*(k4*x^2 + k3*x + k2) = 0</i>. You can then solve these two quadratics the regular way.<br />
 <br />
 Remember that this is a numerical approximation, not an exact result! The iteration loop is marked as such, and can be repeated to increase the accuracy. You'll need at least 5-6 to get a somewhat acceptable result, but you'll probably need (a lot) more.<br />
 <br />
@@ -368,7 +666,7 @@ I'm now experimenting with a hybrid Bairstow/Halley approach, which uses a low-i
 <br />
 The main problem is that most numerical methods deal with getting a really accurate result. In AVS, you only need a somewhat accurate result, but calculated really fast. No such methods exist, at least none that guarantee a somewhat accurate result everywhere.<br />
 <br />
-<br />
+<pre><code><br />
 £ Setup Quartic a4*x^4 + a3*x^3 + a2*x^2 + a1*x + a0 = 0;<br />
 a4=1;a3=2;a2=3;a1=4;a0=5;<br />
 £ Initial guess for r,s (tweak until it's right for your problem);<br />
@@ -388,50 +686,111 @@ disc=sqr(k3)-4*k2*a4;x=above(disc,0);y=.5/a4;disc=sqrt(disc);<br />
 k2=if(x,(-k3-disc)*y,5000);k3=if(x,(-k3+disc)*y,5000);<br />
 <br />
 £ The solutions are now in k0,k1,k2,k3;<br />
-<br />
+</code></pre><br />
 <br />
 And here's the code for Halley iteration of a quartic root. Given an approximation k, it calculates a better approximation:<br />
 <br />
-<br />
+<pre><code><br />
 £ Halley Iteration;<br />
 fk0=(((a4*k+a3)*k+a2)*k+a1)*k+a0;<br />
 fk1=((4*a4*k+3*a3)*k+2*a2)*k+a1;<br />
 fk2=(12*a4*k+6*a3)*k+2*a2;<br />
 k=k-((fk0*fk1)/(sqr(fk1)-fk0*fk2*.5));<br />
+</code></pre><br />
 <br />
-<br />
-fk0 is the value at k, fk1/fk2 are the first/second derivatives at k. You can use this technique for any function really, but if the second derivative is too complicated, you're better off with Newton-Raphson because it only uses the first derivative (though Newton-Raphson only converges with order 2, while Halley has order 3).</div></div><hr />
+fk0 is the value at k, fk1/fk2 are the first/second derivatives at k. You can use this technique for any function really, but if the second derivative is too complicated, you're better off with Newton-Raphson because it only uses the first derivative (though Newton-Raphson only converges with order 2, while Halley has order 3).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">2nd August 2003 03:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Tell me if this idea is right:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jheriko</div>
+			<div class="date small text-muted">2nd August 2003 13:20 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Not sure what the diagram is supposed to represent but you do usually want the smallest positve root, sometimes the largest positve root is useful too though (like for making a transparent cylinder).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">27th August 2003 00:17 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		stuff is great for those with 'nuff education to know that 2+2=4 but I only went to grammer school and all i know is 1+1=2
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">S-uper_T-oast</div>
+			<div class="date small text-muted">28th August 2003 03:30 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Stupid ass n00b.<br />
+1st: <font color="red"><b>DON'T REVIVE OLD THREADS!</b></font><br />
+2nd: I am assuming your first language is english so use it correctly, this isn't some loser AIM chatroom were you are in a rush to type everything out.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">snoozin_hermit</div>
+			<div class="date small text-muted">2nd September 2003 04:51 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		nwr
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">2nd August 2003, 03:04</div></div>
-<br />
-<div class="posttext">Tell me if this idea is right:</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">jheriko</div><div class="date small text-muted">2nd August 2003, 13:20</div></div>
-<br />
-<div class="posttext">Not sure what the diagram is supposed to represent but you do usually want the smallest positve root, sometimes the largest positve root is useful too though (like for making a transparent cylinder).</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">27th August 2003, 00:17</div></div>
-<br />
-<div class="posttext">stuff is great for those with 'nuff education to know that 2+2=4 but I only went to grammer school and all i know is 1+1=2</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">28th August 2003, 03:30</div></div>
-<br />
-<div class="posttext">Stupid ass n00b.<br />
-1st: DON'T REVIVE OLD THREADS!<br />
-2nd: I am assuming your first language is english so use it correctly, this isn't some loser AIM chatroom were you are in a rush to type everything out.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">snoozin_hermit</div><div class="date small text-muted">2nd September 2003, 04:51</div></div>
-<br />
-<div class="posttext">nwr</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

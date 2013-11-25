@@ -3,87 +3,155 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Flock SSC, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Flock SSC AVS Presets" />
-	
-	<title> Flock SSC - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Flock SSC AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Flock SSC - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
-
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-137.html">AVS Presets</a></li>
-  <li class="active">Flock SSC</li>
-</ol>
-<!-- div class="pda"><a href="t-137495.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=137495">Flock SSC</a></p>
-<hr />
-
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd June 2003, 09:55</div></div>
-<br />
-<div class="posttext">Teehee...took me all day but I finally got this (mostly) perfect.  Except it seems to like to hug the edges for some reason, and I can't figure out why.  Any ideas?  NO i'm not going to go into detail of the code because it's 12:42 am and i'm tired as FUCK...you'll have to figure it out on your own.  And I don't have a zip util on this comp :tear, tear: so you'll have to paste ALL FOUR SECTIONS OF CODE BY YOURSELF (omfg)<br />
-<br />
-init:<br />
-n=6; pit=acos(-1)/3; mx1=mx1+rand(100)/2000-0.025; my1=my1+rand(100)/2000-0.025; mh1=mh1+rand(100)/500-0.1; mx2=mx2+rand(100)/2000-0.025; my2=my2+rand(100)/2000-0.025; mh2=mh2+rand(100)/500-0.1; mx3=mx3+rand(100)/2000-0.025; my3=my3+rand(100)/2000-0.025; mh3=mh3+rand(100)/500-0.1; mx4=mx4+rand(100)/2000-0.025; my4=my4+rand(100)/2000-0.025; mh4=mh4+rand(100)/500-0.1; mx5=mx5+rand(100)/2000-0.025; my5=my5+rand(100)/2000-0.025; mh5=mh5+rand(100)/500-0.1; mx6=mx6+rand(100)/2000-0.025; my6=my6+rand(100)/2000-0.025; mh6=mh6+rand(100)/500-0.1;<br />
-<br />
-beat:<br />
-mx1=mx1+rand(100)/2000-0.025; my1=my1+rand(100)/2000-0.025; mh1=mh1+rand(100)/500-0.1; mx2=mx2+rand(100)/2000-0.025; my2=my2+rand(100)/2000-0.025; mh2=mh2+rand(100)/500-0.1; mx3=mx3+rand(100)/2000-0.025; my3=my3+rand(100)/2000-0.025; mh3=mh3+rand(100)/500-0.1; mx4=mx4+rand(100)/2000-0.025; my4=my4+rand(100)/2000-0.025; mh4=mh4+rand(100)/500-0.1; mx5=mx5+rand(100)/2000-0.025; my5=my5+rand(100)/2000-0.025; mh5=mh5+rand(100)/500-0.1; mx6=mx6+rand(100)/2000-0.025; my6=my6+rand(100)/2000-0.025; mh6=mh6+rand(100)/500-0.1;<br />
-<br />
-frame:<br />
-xp1=xp1+mx1; yp1=yp1+my1; hp1=hp1+mh1; xp2=xp2+mx2; yp2=yp2+my2; hp2=hp2+mh2; xp3=xp3+mx3; yp3=yp3+my3; hp3=hp3+mh3; xp4=xp4+mx4; yp4=yp4+my4; hp4=hp4+mh4; xp5=xp5+mx5; yp5=yp5+my5; hp5=hp5+mh5; xp6=xp6+mx6; yp6=yp6+my6; hp6=hp6+mh6; mx1=if(above(abs(xp1),1),-mx1,mx1); xp1=min(abs(xp1),1)*sign(xp1); my1=if(above(abs(xp1),1),-my1,my1); yp1=min(abs(yp1),1)*sign(yp1); mx1=mx1*0.98+(xp2+xp3+xp4+xp5+xp6-xp1*5)*0.005; my1=my1*0.98+(yp2+yp3+yp4+yp5+yp6-yp1*5)*0.005; mh1=mh1*0.98+(hp2+hp3+hp4+hp5+hp6-hp1*5)*0.005;  mx2=if(above(abs(xp2),1),-mx2,mx2); xp2=min(abs(xp2),1)*sign(xp2); my2=if(above(abs(xp2),1),-my2,my2); yp2=min(abs(yp2),1)*sign(yp2); mx2=mx2*0.98+(xp1+xp3+xp4+xp5+xp6-xp2*5)*0.005; my2=my2*0.98+(yp1+yp3+yp4+yp5+yp6-yp2*5)*0.005; mh2=mh2*0.98+(hp1+hp3+hp4+hp5+hp6-hp2*5)*0.005;  mx3=if(above(abs(xp3),1),-mx3,mx3); xp3=min(abs(xp3),1)*sign(xp3); my3=if(above(abs(xp3),1),-my3,my3); yp3=min(abs(yp3),1)*sign(yp3); mx3=mx3*0.98+(xp1+xp2+xp4+xp5+xp6-xp3*5)*0.005; my3=my3*0.98+(yp1+yp2+yp4+yp5+yp6-yp3*5)*0.005; mh3=mh3*0.98+(hp1+hp2+hp4+hp5+hp6-hp3*5)*0.005;  mx4=if(above(abs(xp4),1),-mx4,mx4); xp4=min(abs(xp4),1)*sign(xp4); my4=if(above(abs(xp4),1),-my4,my4); yp4=min(abs(yp4),1)*sign(yp4); mx4=mx4*0.98+(xp1+xp2+xp3+xp5+xp6-xp4*5)*0.005; my4=my4*0.98+(yp1+yp2+yp3+yp5+yp6-yp4*5)*0.005; mh4=mh4*0.98+(hp1+hp2+hp3+hp5+hp6-hp4*5)*0.005;  mx5=if(above(abs(xp5),1),-mx5,mx5); xp5=min(abs(xp5),1)*sign(xp5); my5=if(above(abs(xp5),1),-my5,my5); yp2=min(abs(yp5),1)*sign(yp5); mx5=mx5*0.98+(xp1+xp2+xp3+xp4+xp6-xp5*5)*0.005; my5=my5*0.98+(yp1+yp2+yp3+yp4+yp6-yp5*5)*0.005; mh5=mh5*0.98+(hp1+hp2+hp3+hp4+hp6-hp5*5)*0.005;  mx6=if(above(abs(xp6),1),-mx6,mx6); xp6=min(abs(xp6),1)*sign(xp6); my6=if(above(abs(xp6),1),-my6,my6); yp6=min(abs(yp6),1)*sign(yp6); mx6=mx6*0.98+(xp1+xp2+xp3+xp4+xp5-xp6*5)*0.005; my6=my6*0.98+(yp1+yp2+yp3+yp4+yp5-yp6*5)*0.005; mh6=mh6*0.98+(hp1+hp2+hp3+hp4+hp5-hp6*5)*0.005; p=0;<br />
-<br />
-pixel:<br />
-p=p+1;<br />
-x=xp1*equal(p,1)+xp2*equal(p,2)+xp3*equal(p,3)+xp4*equal(p,4)+xp5*equal(p,5)+xp6*equal(p,6);<br />
-y=yp1*equal(p,1)+yp2*equal(p,2)+yp3*equal(p,3)+yp4*equal(p,4)+yp5*equal(p,5)+yp6*equal(p,6);<br />
-col=hp1*equal(p,1)+hp2*equal(p,2)+hp3*equal(p,3)+hp4*equal(p,4)+hp5*equal(p,5)+hp6*equal(p,6);<br />
-red=abs(sin(col)); green=abs(sin(col+pit)); blue=abs(sin(col-pit));<br />
-<br />
-&lt;edit&gt; DEAR LORD THAT'S A WIDE PAGE!!! :igor:</div></div><hr />
+	<div class="container">
+	<!-- Put navigation bar here -->
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">2nd June 2003, 10:11</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Flock SSC</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=137495">Flock SSC</a></p>
+
+
 <br />
-<div class="posttext">wow, its so hard getting to this comment box +)..<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">2nd June 2003 09:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Flock SSC</strong><br />
+		
+		
+
+		Teehee...took me all day but I finally got this (mostly) perfect.  Except it seems to like to hug the edges for some reason, and I can't figure out why.  Any ideas?  NO i'm not going to go into detail of the code because it's 12:42 am and i'm tired as FUCK...you'll have to figure it out on your own.  And I don't have a zip util on this comp :tear, tear: so you'll have to paste ALL FOUR SECTIONS OF CODE BY YOURSELF (omfg)<br />
+<br />
+
+	<pre><code>init</span><span style="color: #007700">:
+<br /></span><span style="color: #0000BB">n</span><span style="color: #007700">=</span><span style="color: #0000BB">6</span><span style="color: #007700">;</span><span style="color: #0000BB">pit</span><span style="color: #007700">=</span><span style="color: #0000BB">acos</span><span style="color: #007700">(-</span><span style="color: #0000BB">1</span><span style="color: #007700">)/</span><span style="color: #0000BB">3</span><span style="color: #007700">;</span><span style="color: #0000BB">mx1</span><span style="color: #007700">=</span><span style="color: #0000BB">mx1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my1</span><span style="color: #007700">=</span><span style="color: #0000BB">my1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh1</span><span style="color: #007700">=</span><span style="color: #0000BB">mh1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx2</span><span style="color: #007700">=</span><span style="color: #0000BB">mx2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my2</span><span style="color: #007700">=</span><span style="color: #0000BB">my2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh2</span><span style="color: #007700">=</span><span style="color: #0000BB">mh2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx3</span><span style="color: #007700">=</span><span style="color: #0000BB">mx3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my3</span><span style="color: #007700">=</span><span style="color: #0000BB">my3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh3</span><span style="color: #007700">=</span><span style="color: #0000BB">mh3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx4</span><span style="color: #007700">=</span><span style="color: #0000BB">mx4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my4</span><span style="color: #007700">=</span><span style="color: #0000BB">my4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh4</span><span style="color: #007700">=</span><span style="color: #0000BB">mh4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx5</span><span style="color: #007700">=</span><span style="color: #0000BB">mx5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my5</span><span style="color: #007700">=</span><span style="color: #0000BB">my5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh5</span><span style="color: #007700">=</span><span style="color: #0000BB">mh5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx6</span><span style="color: #007700">=</span><span style="color: #0000BB">mx6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my6</span><span style="color: #007700">=</span><span style="color: #0000BB">my6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh6</span><span style="color: #007700">=</span><span style="color: #0000BB">mh6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;
+<br />
+<br /></span><span style="color: #0000BB">beat</span><span style="color: #007700">:
+<br /></span><span style="color: #0000BB">mx1</span><span style="color: #007700">=</span><span style="color: #0000BB">mx1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my1</span><span style="color: #007700">=</span><span style="color: #0000BB">my1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh1</span><span style="color: #007700">=</span><span style="color: #0000BB">mh1</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx2</span><span style="color: #007700">=</span><span style="color: #0000BB">mx2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my2</span><span style="color: #007700">=</span><span style="color: #0000BB">my2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh2</span><span style="color: #007700">=</span><span style="color: #0000BB">mh2</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx3</span><span style="color: #007700">=</span><span style="color: #0000BB">mx3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my3</span><span style="color: #007700">=</span><span style="color: #0000BB">my3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh3</span><span style="color: #007700">=</span><span style="color: #0000BB">mh3</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx4</span><span style="color: #007700">=</span><span style="color: #0000BB">mx4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my4</span><span style="color: #007700">=</span><span style="color: #0000BB">my4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh4</span><span style="color: #007700">=</span><span style="color: #0000BB">mh4</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx5</span><span style="color: #007700">=</span><span style="color: #0000BB">mx5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my5</span><span style="color: #007700">=</span><span style="color: #0000BB">my5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh5</span><span style="color: #007700">=</span><span style="color: #0000BB">mh5</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;</span><span style="color: #0000BB">mx6</span><span style="color: #007700">=</span><span style="color: #0000BB">mx6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">my6</span><span style="color: #007700">=</span><span style="color: #0000BB">my6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">2000</span><span style="color: #007700">-</span><span style="color: #0000BB">0.025</span><span style="color: #007700">;</span><span style="color: #0000BB">mh6</span><span style="color: #007700">=</span><span style="color: #0000BB">mh6</span><span style="color: #007700">+</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">)/</span><span style="color: #0000BB">500</span><span style="color: #007700">-</span><span style="color: #0000BB">0.1</span><span style="color: #007700">;
+<br />
+<br /></span><span style="color: #0000BB">frame</span><span style="color: #007700">:
+<br /></span><span style="color: #0000BB">xp1</span><span style="color: #007700">=</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">mx1</span><span style="color: #007700">;</span><span style="color: #0000BB">yp1</span><span style="color: #007700">=</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">my1</span><span style="color: #007700">;</span><span style="color: #0000BB">hp1</span><span style="color: #007700">=</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">mh1</span><span style="color: #007700">;</span><span style="color: #0000BB">xp2</span><span style="color: #007700">=</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">mx2</span><span style="color: #007700">;</span><span style="color: #0000BB">yp2</span><span style="color: #007700">=</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">my2</span><span style="color: #007700">;</span><span style="color: #0000BB">hp2</span><span style="color: #007700">=</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">mh2</span><span style="color: #007700">;</span><span style="color: #0000BB">xp3</span><span style="color: #007700">=</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">mx3</span><span style="color: #007700">;</span><span style="color: #0000BB">yp3</span><span style="color: #007700">=</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">my3</span><span style="color: #007700">;</span><span style="color: #0000BB">hp3</span><span style="color: #007700">=</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">mh3</span><span style="color: #007700">;</span><span style="color: #0000BB">xp4</span><span style="color: #007700">=</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">mx4</span><span style="color: #007700">;</span><span style="color: #0000BB">yp4</span><span style="color: #007700">=</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">my4</span><span style="color: #007700">;</span><span style="color: #0000BB">hp4</span><span style="color: #007700">=</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">mh4</span><span style="color: #007700">;</span><span style="color: #0000BB">xp5</span><span style="color: #007700">=</span><span style="color: #0000BB">xp5</span><span style="color: #007700">+</span><span style="color: #0000BB">mx5</span><span style="color: #007700">;</span><span style="color: #0000BB">yp5</span><span style="color: #007700">=</span><span style="color: #0000BB">yp5</span><span style="color: #007700">+</span><span style="color: #0000BB">my5</span><span style="color: #007700">;</span><span style="color: #0000BB">hp5</span><span style="color: #007700">=</span><span style="color: #0000BB">hp5</span><span style="color: #007700">+</span><span style="color: #0000BB">mh5</span><span style="color: #007700">;</span><span style="color: #0000BB">xp6</span><span style="color: #007700">=</span><span style="color: #0000BB">xp6</span><span style="color: #007700">+</span><span style="color: #0000BB">mx6</span><span style="color: #007700">;</span><span style="color: #0000BB">yp6</span><span style="color: #007700">=</span><span style="color: #0000BB">yp6</span><span style="color: #007700">+</span><span style="color: #0000BB">my6</span><span style="color: #007700">;</span><span style="color: #0000BB">hp6</span><span style="color: #007700">=</span><span style="color: #0000BB">hp6</span><span style="color: #007700">+</span><span style="color: #0000BB">mh6</span><span style="color: #007700">;</span><span style="color: #0000BB">mx1</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx1</span><span style="color: #007700">,</span><span style="color: #0000BB">mx1</span><span style="color: #007700">);</span><span style="color: #0000BB">xp1</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">);</span><span style="color: #0000BB">my1</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my1</span><span style="color: #007700">,</span><span style="color: #0000BB">my1</span><span style="color: #007700">);</span><span style="color: #0000BB">yp1</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">);</span><span style="color: #0000BB">mx1</span><span style="color: #007700">=</span><span style="color: #0000BB">mx1</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">-</span><span style="color: #0000BB">xp1</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my1</span><span style="color: #007700">=</span><span style="color: #0000BB">my1</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">-</span><span style="color: #0000BB">yp1</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh1</span><span style="color: #007700">=</span><span style="color: #0000BB">mh1</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">-</span><span style="color: #0000BB">hp1</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mx2</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp2</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx2</span><span style="color: #007700">,</span><span style="color: #0000BB">mx2</span><span style="color: #007700">);</span><span style="color: #0000BB">xp2</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp2</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp2</span><span style="color: #007700">);</span><span style="color: #0000BB">my2</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp2</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my2</span><span style="color: #007700">,</span><span style="color: #0000BB">my2</span><span style="color: #007700">);</span><span style="color: #0000BB">yp2</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp2</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp2</span><span style="color: #007700">);</span><span style="color: #0000BB">mx2</span><span style="color: #007700">=</span><span style="color: #0000BB">mx2</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">-</span><span style="color: #0000BB">xp2</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my2</span><span style="color: #007700">=</span><span style="color: #0000BB">my2</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">-</span><span style="color: #0000BB">yp2</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh2</span><span style="color: #007700">=</span><span style="color: #0000BB">mh2</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">-</span><span style="color: #0000BB">hp2</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mx3</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp3</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx3</span><span style="color: #007700">,</span><span style="color: #0000BB">mx3</span><span style="color: #007700">);</span><span style="color: #0000BB">xp3</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp3</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp3</span><span style="color: #007700">);</span><span style="color: #0000BB">my3</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp3</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my3</span><span style="color: #007700">,</span><span style="color: #0000BB">my3</span><span style="color: #007700">);</span><span style="color: #0000BB">yp3</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp3</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp3</span><span style="color: #007700">);</span><span style="color: #0000BB">mx3</span><span style="color: #007700">=</span><span style="color: #0000BB">mx3</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">-</span><span style="color: #0000BB">xp3</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my3</span><span style="color: #007700">=</span><span style="color: #0000BB">my3</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">-</span><span style="color: #0000BB">yp3</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh3</span><span style="color: #007700">=</span><span style="color: #0000BB">mh3</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">-</span><span style="color: #0000BB">hp3</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mx4</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp4</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx4</span><span style="color: #007700">,</span><span style="color: #0000BB">mx4</span><span style="color: #007700">);</span><span style="color: #0000BB">xp4</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp4</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp4</span><span style="color: #007700">);</span><span style="color: #0000BB">my4</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp4</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my4</span><span style="color: #007700">,</span><span style="color: #0000BB">my4</span><span style="color: #007700">);</span><span style="color: #0000BB">yp4</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp4</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp4</span><span style="color: #007700">);</span><span style="color: #0000BB">mx4</span><span style="color: #007700">=</span><span style="color: #0000BB">mx4</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">-</span><span style="color: #0000BB">xp4</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my4</span><span style="color: #007700">=</span><span style="color: #0000BB">my4</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">-</span><span style="color: #0000BB">yp4</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh4</span><span style="color: #007700">=</span><span style="color: #0000BB">mh4</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">-</span><span style="color: #0000BB">hp4</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mx5</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp5</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx5</span><span style="color: #007700">,</span><span style="color: #0000BB">mx5</span><span style="color: #007700">);</span><span style="color: #0000BB">xp5</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp5</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp5</span><span style="color: #007700">);</span><span style="color: #0000BB">my5</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp5</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my5</span><span style="color: #007700">,</span><span style="color: #0000BB">my5</span><span style="color: #007700">);</span><span style="color: #0000BB">yp2</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp5</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp5</span><span style="color: #007700">);</span><span style="color: #0000BB">mx5</span><span style="color: #007700">=</span><span style="color: #0000BB">mx5</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">-</span><span style="color: #0000BB">xp5</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my5</span><span style="color: #007700">=</span><span style="color: #0000BB">my5</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">-</span><span style="color: #0000BB">yp5</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh5</span><span style="color: #007700">=</span><span style="color: #0000BB">mh5</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">-</span><span style="color: #0000BB">hp5</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mx6</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp6</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">mx6</span><span style="color: #007700">,</span><span style="color: #0000BB">mx6</span><span style="color: #007700">);</span><span style="color: #0000BB">xp6</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp6</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">xp6</span><span style="color: #007700">);</span><span style="color: #0000BB">my6</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">xp6</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">),-</span><span style="color: #0000BB">my6</span><span style="color: #007700">,</span><span style="color: #0000BB">my6</span><span style="color: #007700">);</span><span style="color: #0000BB">yp6</span><span style="color: #007700">=</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">yp6</span><span style="color: #007700">),</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">sign</span><span style="color: #007700">(</span><span style="color: #0000BB">yp6</span><span style="color: #007700">);</span><span style="color: #0000BB">mx6</span><span style="color: #007700">=</span><span style="color: #0000BB">mx6</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">xp1</span><span style="color: #007700">+</span><span style="color: #0000BB">xp2</span><span style="color: #007700">+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">-</span><span style="color: #0000BB">xp6</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">my6</span><span style="color: #007700">=</span><span style="color: #0000BB">my6</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">yp1</span><span style="color: #007700">+</span><span style="color: #0000BB">yp2</span><span style="color: #007700">+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">-</span><span style="color: #0000BB">yp6</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">mh6</span><span style="color: #007700">=</span><span style="color: #0000BB">mh6</span><span style="color: #007700">*</span><span style="color: #0000BB">0.98</span><span style="color: #007700">+(</span><span style="color: #0000BB">hp1</span><span style="color: #007700">+</span><span style="color: #0000BB">hp2</span><span style="color: #007700">+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">-</span><span style="color: #0000BB">hp6</span><span style="color: #007700">*</span><span style="color: #0000BB">5</span><span style="color: #007700">)*</span><span style="color: #0000BB">0.005</span><span style="color: #007700">;</span><span style="color: #0000BB">p</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br />
+<br /></span><span style="color: #0000BB">pixel</span><span style="color: #007700">:
+<br /></span><span style="color: #0000BB">p</span><span style="color: #007700">=</span><span style="color: #0000BB">p</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=</span><span style="color: #0000BB">xp1</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">)+</span><span style="color: #0000BB">xp2</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">)+</span><span style="color: #0000BB">xp3</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">)+</span><span style="color: #0000BB">xp4</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">4</span><span style="color: #007700">)+</span><span style="color: #0000BB">xp5</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">5</span><span style="color: #007700">)+</span><span style="color: #0000BB">xp6</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">6</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">yp1</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">)+</span><span style="color: #0000BB">yp2</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">)+</span><span style="color: #0000BB">yp3</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">)+</span><span style="color: #0000BB">yp4</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">4</span><span style="color: #007700">)+</span><span style="color: #0000BB">yp5</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">5</span><span style="color: #007700">)+</span><span style="color: #0000BB">yp6</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">6</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">col</span><span style="color: #007700">=</span><span style="color: #0000BB">hp1</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">)+</span><span style="color: #0000BB">hp2</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">)+</span><span style="color: #0000BB">hp3</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">)+</span><span style="color: #0000BB">hp4</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">4</span><span style="color: #007700">)+</span><span style="color: #0000BB">hp5</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">5</span><span style="color: #007700">)+</span><span style="color: #0000BB">hp6</span><span style="color: #007700">*</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">p</span><span style="color: #007700">,</span><span style="color: #0000BB">6</span><span style="color: #007700">);
+<br /></span><span style="color: #0000BB">red</span><span style="color: #007700">=</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">col</span><span style="color: #007700">));</span><span style="color: #0000BB">green</span><span style="color: #007700">=</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">col</span><span style="color: #007700">+</span><span style="color: #0000BB">pit</span><span style="color: #007700">));</span><span style="color: #0000BB">blue</span><span style="color: #007700">=</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">col</span><span style="color: #007700">-</span><span style="color: #0000BB">pit</span><span style="color: #007700">));
+</code></pre>
+	
+&lt;edit&gt; DEAR LORD THAT'S A WIDE PAGE!!! :igor:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">sidd</div>
+			<div class="date small text-muted">2nd June 2003 10:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow, its so hard getting to this comment box +)..<br />
 <br />
 nice work atero.. <br />
 pretty crazy shit.<br />
 <br />
-btw, finding the 'post' button is even harder</div></div><hr />
+btw, finding the 'post' button is even harder
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">2nd June 2003, 13:22</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">2nd June 2003 13:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You do know that you can't bitch anyone anymore about &quot;attaching the file&quot; after this? (and the other screw up with angel wings)<br />
 <br />
-<div class="posttext">You do know that you can't bitch anyone anymore about &quot;attaching the file&quot; after this? (and the other screw up with angel wings)<br />
-<br />
-I don't understand what the hell that is suppose to be, so i'll just say: &quot;pretty fucking bizarre!&quot;</div></div><hr />
+I don't understand what the hell that is suppose to be, so i'll just say: &quot;pretty fucking bizarre!&quot;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">2nd June 2003, 15:06</div></div>
-<br />
-<div class="posttext">I understand what it is, but that line length :igor:</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">2nd June 2003 15:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		I understand what it is, but that line length :igor:
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">2nd June 2003, 17:32</div></div>
-<br />
-<div class="posttext">Atero, try ***91;font=courier***93;***91;/font***93; for big chunks like that please :P.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">2nd June 2003 17:32 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">2nd June 2003, 20:09</div></div>
-<br />
-<div class="posttext">Tuggummi: Fuck off - I didn't have a zip utility on the comp I was on and I've searched many times for a good one and I've never found one.<br />
+		Atero, try &amp;#91;font=courier&amp;#93;&amp;#91;/font&amp;#93; for big chunks like that please :P.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">2nd June 2003 20:09 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Tuggummi: Fuck off - I didn't have a zip utility on the comp I was on and I've searched many times for a good one and I've never found one.<br />
 <br />
 UnConeD: Fuck off.  If you don't do PHP it's damned impossible to copy/paste everything because HTML doesn't do word wrapping and so you get a shit ton of carriage returns (duh...)<br />
 <br />
@@ -97,114 +165,269 @@ Finally got this fuckoff over to my good comp...if a mod wants to fuck off that 
 <br />
 :igor:<br />
 <br />
-fuckoffs</div></div><hr />
+fuckoffs
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">3rd June 2003, 09:50</div></div>
-<br />
-<div class="posttext">atero is making friends as always.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">sidd</div>
+			<div class="date small text-muted">3rd June 2003 09:50 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		atero is making friends as always.<br />
 <br />
 pooor poor shreyas :'(<br />
 <br />
-:(:(:(:(</div></div><hr />
+:(:(:(:(
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">3rd June 2003, 19:47</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">3rd June 2003 19:47 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:igor: :confused: :eek: ;) :D :) :weird:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">zamuz</div>
+			<div class="date small text-muted">3rd June 2003 22:38 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		really nice :) i like the colors and the smooth look it has.<br />
 <br />
-<div class="posttext">:igor: :confused: :eek: ;) :D :) :weird:</div></div><hr />
+this is kinda stupid, but i'll say it anyway: i was trying to do something with that texer pic (kinda bored), and i applied it to the standard starfield and it looked really cool, i think... maybe it'd look even cooler with a better starfield (you know with 3d rotation and stuff), just an idea.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">zamuz</div><div class="date small text-muted">3rd June 2003, 22:38</div></div>
-<br />
-<div class="posttext">really nice :) i like the colors and the smooth look it has.<br />
-<br />
-this is kinda stupid, but i'll say it anyway: i was trying to do something with that texer pic (kinda bored), and i applied it to the standard starfield and it looked really cool, i think... maybe it'd look even cooler with a better starfield (you know with 3d rotation and stuff), just an idea.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">4th June 2003 00:48 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th June 2003, 00:48</div></div>
-<br />
-<div class="posttext">Err Atero, your code had spaces in it. Any browser will wordwrap text (well, unless it's nested inside an element that is wide already, like this table) that is NOT contained inside a ***60;pre***62;***60;/pre***62; tag, so you wouldn't have had any problems. IE is even less strict and will word wrap at various other non-space symbols too. Other than having no color coding, which is a minor loss IMO, there wouldn't be a difference except that this thread would not be as wide as your ego. And instead of trying to fix the problem, you just edit your post and add a &quot;woo, wide thread!&quot;. That's inviting.<br />
+		Err Atero, your code had spaces in it. Any browser will wordwrap text (well, unless it's nested inside an element that is wide already, like this table) that is NOT contained inside a &amp;#60;pre&amp;#62;&amp;#60;/pre&amp;#62; tag, so you wouldn't have had any problems. IE is even less strict and will word wrap at various other non-space symbols too. Other than having no color coding, which is a minor loss IMO, there wouldn't be a difference except that this thread would not be as wide as your ego. And instead of trying to fix the problem, you just edit your post and add a &quot;woo, wide thread!&quot;. That's inviting.<br />
 <br />
 And why the heck are you bitching at Sid and Tug? They both commented on your scope, which means they went to the trouble of copy/pasting it into a preset, yet you get mad because they made a minor note about the thread width, i.e. bad posting netiquette.<br />
 <br />
 Just because you're a regular doesn't mean the rules don't apply to you.<br />
 <br />
-&quot;Pot to kettle, pot to kettle. You are black. Repeat. You are black. Over.&quot;</div></div><hr />
+&quot;Pot to kettle, pot to kettle. You are black. Repeat. You are black. Over.&quot;
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">4th June 2003, 02:37</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">4th June 2003 02:37 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Atero, if you didn't feel like getting the zip utility, then couldn't you have just uploaded it somewhere else(i.e. DeviantArt) and just posted the link???
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">sidd</div>
+			<div class="date small text-muted">4th June 2003 03:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				there wouldn't be a difference except that this thread would not be as wide as your ego</blockquote>
+ I laugh my ass of.<br />
 <br />
-<div class="posttext">Atero, if you didn't feel like getting the zip utility, then couldn't you have just uploaded it somewhere else(i.e. DeviantArt) and just posted the link???</div></div><hr />
+Sorry all, but i actually told atero to post it here after he tried to post it in an irc chat. (though i didnt realise he wouldnt be zipping it.)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">4th June 2003, 03:35</div></div>
-<br />
-<div class="posttext">there wouldn't be a difference except that this thread would not be as wide as your ego I laugh my ass of.<br />
-<br />
-Sorry all, but i actually told atero to post it here after he tried to post it in an irc chat. (though i didnt realise he wouldnt be zipping it.)</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">4th June 2003 07:03 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		Now the preset makes a lot more sense! Because i didn't know that i had to multiply the scope and use texer and a texer bitmap i didn't have to make it look like it should... :rolleyes:<br />
+<br />
+I actually like it now, i like it a lot :)
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">4th June 2003, 07:03</div></div>
-<br />
-<div class="posttext">Now the preset makes a lot more sense! Because i didn't know that i had to multiply the scope and use texer and a texer bitmap i didn't have to make it look like it should... :rolleyes:<br />
-<br />
-I actually like it now, i like it a lot :)</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">4th June 2003 07:39 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th June 2003, 07:39</div></div>
-<br />
-<div class="posttext">Originally posted by anubis2003 <br />
-Atero, if you didn't feel like getting the zip utility, then couldn't you have just uploaded it somewhere else(i.e. DeviantArt) and just posted the link???<br />
-<br />
+		
+	<blockquote>
+			
+				<i>Originally posted by anubis2003 </i><br />
+<b>Atero, if you didn't feel like getting the zip utility, then couldn't you have just uploaded it somewhere else(i.e. DeviantArt) and just posted the link???</b></blockquote>
 man...i feel like a complete dumbass now &gt;_&lt;<br />
 <br />
 unconed: umm...OH YEAH... ;) but phpbb word wraps automatically with &lt;br&gt; tags, if i remember correctly from my hypercube post...<br />
 <br />
-and for the love of god, someone delete the original [php] stuff :p</div></div><hr />
+and for the love of god, someone delete the original [php] stuff :p
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Zevensoft</div><div class="date small text-muted">4th June 2003, 08:06</div></div>
-<br />
-<div class="posttext">If a thread is really wide, why not use carraige returns in your<br />
-long ass replies :P?</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Zevensoft</div>
+			<div class="date small text-muted">4th June 2003 08:06 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		If a thread is really wide, why not use carraige returns in your<br />
+long ass replies :P?
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">4th June 2003, 09:52</div></div>
-<br />
-<div class="posttext">This is very kind of you, Atero...:mad:</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">shreyas_potnis</div>
+			<div class="date small text-muted">4th June 2003 09:52 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th June 2003, 16:41</div></div>
-<br />
-<div class="posttext">i was just joking, c'mon...<br />
+		This is very kind of you, Atero...:mad:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">4th June 2003 16:41 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i was just joking, c'mon...<br />
 <br />
 and if i added carriage returns you couldn't copy/paste it, which was my original intent...<br />
 <br />
-rova, gonzo, rocker, someone delete/lock this thread.  all i wanted was opinions on this scope and i never got any</div></div><hr />
+rova, gonzo, rocker, someone delete/lock this thread.  all i wanted was opinions on this scope and i never got any
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">4th June 2003, 20:57</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">4th June 2003 20:57 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually, you DID get opinions. Perhaps not the ones you wanted to hear, but several people said something about your flocking scope.<br />
 <br />
-<div class="posttext">Actually, you DID get opinions. Perhaps not the ones you wanted to hear, but several people said something about your flocking scope.<br />
-<br />
-I won't, because you were such an ass about it.</div></div><hr />
+I won't, because you were such an ass about it.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">4th June 2003, 21:11</div></div>
-<br />
-<div class="posttext">great to hear that, steven.  go fuck a tree.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">4th June 2003 21:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		great to hear that, steven.  go fuck a tree.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">5th June 2003, 09:49</div></div>
-<br />
-<div class="posttext">Just paste the entire thing in the quick reply text box without the carriage returns. If you paste the entire frame part in the ssc, there's no problem.<br />
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">shreyas_potnis</div>
+			<div class="date small text-muted">5th June 2003 09:49 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just paste the entire thing in the quick reply text box without the carriage returns. If you paste the entire frame part in the ssc, there's no problem.<br />
 I have to search for the submit button now!<br />
 I too was joking, Atero :)<br />
-edit: how can you fuck a tree :weird: ;)</div></div><hr />
+edit: how can you fuck a tree :weird: ;)
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

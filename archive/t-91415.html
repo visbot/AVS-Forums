@@ -3,36 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Convert var to integer superscope, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Convert var to integer superscope AVS" />
-	
-	<title> Convert var to integer superscope - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Convert var to integer superscope - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Convert var to integer superscope</li>
-</ol>
-<!-- div class="pda"><a href="t-91415.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91415">Convert var to integer superscope</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">jildert</div><div class="date small text-muted">17th June 2002, 19:12</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Convert var to integer superscope</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=91415">Convert var to integer superscope</a></p>
+
+
 <br />
-<div class="posttext">I can't convert a var to an int <br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">jildert</div>
+			<div class="date small text-muted">17th June 2002 19:12 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Convert var to integer superscope</strong><br />
+		
+		
+
+		I can't convert a var to an int <br />
 can someone give my an example of the source I don't understand de exp. help.<br />
 <br />
 1.1 -&gt; 1<br />
@@ -40,30 +55,59 @@ can someone give my an example of the source I don't understand de exp. help.<br
 2.4 -&gt; 2<br />
 2.345345 -&gt; 2<br />
 <br />
-Thanks</div></div><hr />
+Thanks
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">18th June 2002, 11:55</div></div>
-<br />
-<div class="posttext">I've never gotten the bitwise and/or functions to work properly (theoretically &quot;var|0&quot; should do what you want), but you can use the modulus operator instead.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">18th June 2002 11:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I've never gotten the bitwise and/or functions to work properly (theoretically &quot;var|0&quot; should do what you want), but you can use the modulus operator instead.<br />
 <br />
 Use x%(x+1) if it's a positive value only, or sign(x)*(abs(x)%(abs(x)+1)); if it can be both negative and positive.<br />
 <br />
-Not very fast though.</div></div><hr />
+Not very fast though.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">19th June 2002, 04:40</div></div>
-<br />
-<div class="posttext">And I'm wondering, why would you WANT to truncate into integers?  I've used a truncation for a blocky effect, but where would you need an integer that wasn't custom, if every built in variable goes from 0 to 1 (or at least that's their useful range), except for n, and that converts to integer automatically.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">19th June 2002 04:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		And I'm wondering, why would you WANT to truncate into integers?  I've used a truncation for a blocky effect, but where would you need an integer that wasn't custom, if every built in variable goes from 0 to 1 (or at least that's their useful range), except for n, and that converts to integer automatically.<br />
 <br />
 My commands are (for positive, negative, and both, respectively):<br />
 ((x*steps)%steps)/steps<br />
 -((-x*steps)%steps)/steps<br />
-(abs(x*steps)%steps)/steps*sign(x)</div></div><hr />
+(abs(x*steps)%steps)/steps*sign(x)
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

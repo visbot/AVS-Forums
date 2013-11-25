@@ -3,44 +3,68 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Flip image, avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" Flip image AVS Troubleshooting" />
-	
-	<title> Flip image - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Flip image AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Flip image - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> Flip image</li>
-</ol>
-<!-- div class="pda"><a href="t-139959.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=139959">Flip image</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">macaroon</div><div class="date small text-muted">24th June 2003, 12:42</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Flip image</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=139959">Flip image</a></p>
+
+
 <br />
-<div class="posttext">Is it possible to flip the entire avs image horizontally after a random amount of time? If so how can this be done?- And, no, mirror isn't what I am after. <br />
-<br />
-Thank you.</div></div><hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">macaroon</div>
+			<div class="date small text-muted">24th June 2003 12:42 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Flip image</strong><br />
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">24th June 2003, 13:44</div></div>
+		Is it possible to flip the entire avs image horizontally after a random amount of time? If so how can this be done?- And, no, mirror isn't what I am after. <br />
 <br />
-<div class="posttext">In movement:<br />
+Thank you.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">24th June 2003 13:44 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		In movement:<br />
 <br />
 x=-x (to flip it horizontally)<br />
 <br />
@@ -52,14 +76,14 @@ With a dynamic movement:<br />
 <br />
 For a flip at every N beat you can do...<br />
 <br />
-Init<br />
+<u>Init</u><br />
 flip=1 ; beatlimit=10<br />
 <br />
-Beat<br />
+<u>Beat</u><br />
 counter= if( above(counter,beatlimit), 0 , counter+1 ) ;<br />
 flip= if( equal(counter,0), -flip , flip ) ;<br />
 <br />
-frame<br />
+<u>frame</u><br />
 x=x*flip (for horizontal flip)<br />
 <br />
 or<br />
@@ -68,61 +92,150 @@ y=y*flip (for vertical flip)<br />
 <br />
 <br />
 <br />
-That simple :)</div></div><hr />
+That simple :)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">shreyas_potnis</div><div class="date small text-muted">24th June 2003, 16:31</div></div>
-<br />
-<div class="posttext">god why couldnt I reply first :p</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">shreyas_potnis</div>
+			<div class="date small text-muted">24th June 2003 16:31 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		god why couldnt I reply first :p
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">anubis2003</div><div class="date small text-muted">24th June 2003, 17:22</div></div>
-<br />
-<div class="posttext">And if, instead of after a certain number of beats you want it to go after a certain amount of time(for whatever reason) then instead of increasing the counter and setting the flip variable in the ON BEAT section, you could set it in the ON FRAME section, so that you could specify the number of frames instead of the number of beats.</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">anubis2003</div>
+			<div class="date small text-muted">24th June 2003 17:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">macaroon</div><div class="date small text-muted">24th June 2003, 18:13</div></div>
-<br />
-<div class="posttext">Thanks for the info!<br />
+		And if, instead of after a certain number of beats you want it to go after a certain amount of time(for whatever reason) then instead of increasing the counter and setting the flip variable in the ON BEAT section, you could set it in the ON FRAME section, so that you could specify the number of frames instead of the number of beats.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">macaroon</div>
+			<div class="date small text-muted">24th June 2003 18:13 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks for the info!<br />
 I managed to get the &quot;static&quot; flipping working, but not the dynamic<br />
 <br />
-http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif<br />
+<a href="http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif" target="_blank">http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif</a><br />
 <br />
-(see piccy) What am I doing wrong/left out/forgotton etc? I've never messed around with variables and the like in the AVS....Until now.</div></div><hr />
+(see piccy) What am I doing wrong/left out/forgotton etc? I've never messed around with variables and the like in the AVS....Until now.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">mikm</div><div class="date small text-muted">24th June 2003, 18:29</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">mikm</div>
+			<div class="date small text-muted">24th June 2003 18:29 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		x=x*flip goes in pixel, not frame.<br />
 <br />
-<div class="posttext">x=x*flip goes in pixel, not frame.<br />
+x,y,d,r are never calculated in frame
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">[Ishan]</div>
+			<div class="date small text-muted">25th June 2003 06:40 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		X and Y are claculated in Per Frame only in Dynamic Shift
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">macaroon</div>
+			<div class="date small text-muted">25th June 2003 09:35 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		HUZZZZAH!<br />
 <br />
-x,y,d,r are never calculated in frame</div></div><hr />
+Many thanks once again. All is working luverly juberly now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">sidd</div>
+			<div class="date small text-muted">25th June 2003 16:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hehe, you speak funny :D...<br />
+nice sig also...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Deamon</div>
+			<div class="date small text-muted">29th June 2003 12:27 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		lol even I know the answer on that :)
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">[Ishan]</div><div class="date small text-muted">25th June 2003, 06:40</div></div>
-<br />
-<div class="posttext">X and Y are claculated in Per Frame only in Dynamic Shift</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">macaroon</div><div class="date small text-muted">25th June 2003, 09:35</div></div>
-<br />
-<div class="posttext">HUZZZZAH!<br />
-<br />
-Many thanks once again. All is working luverly juberly now.</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">sidd</div><div class="date small text-muted">25th June 2003, 16:18</div></div>
-<br />
-<div class="posttext">hehe, you speak funny :D...<br />
-nice sig also...</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">Deamon</div><div class="date small text-muted">29th June 2003, 12:27</div></div>
-<br />
-<div class="posttext">lol even I know the answer on that :)</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

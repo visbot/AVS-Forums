@@ -3,39 +3,54 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" do NOT overwrite APEs, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" do NOT overwrite APEs AVS" />
-	
-	<title> do NOT overwrite APEs - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> do NOT overwrite APEs - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">do NOT overwrite APEs</li>
-</ol>
-<!-- div class="pda"><a href="t-138627.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=138627">do NOT overwrite APEs</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">11th June 2003, 11:02</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">do NOT overwrite APEs</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=138627">do NOT overwrite APEs</a></p>
+
+
 <br />
-<div class="posttext">i recently figured somebody overwrote my colormap.ape with and older version. please add a check to your script.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">11th June 2003 11:02 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>nsis: avoid overwriting</strong><br />
+		
+		
+
+		i recently figured somebody overwrote my colormap.ape with and older version. please add a check to your script.<br />
 <br />
 example with multiplier ape:<br />
-Section &quot;Multiplier&quot;<br />
+<b>Section &quot;Multiplier&quot;<br />
 SetOutPath &quot;$INSTDIR\Plugins\avs\&quot;<br />
 SectionIn 1<br />
 IfFileExists &quot;$INSTDIR\Plugins\avs\multiplier.ape&quot; ExistMessage CopyAPE<br />
@@ -44,48 +59,97 @@ MessageBox  MB_YESNO|MB_ICONEXCLAMATION &quot;Setup detected the Multiplier APE 
 CopyAPE:<br />
 File &quot;multiplier.ape&quot;<br />
 End:<br />
-SectionEnd<br />
+SectionEnd</b><br />
 <br />
-if you dont want the ExistMessage, just change the GOTO of IfFileExists to End. additionally you check for the version of the installed ape. read this (http://nsis.sourceforge.net/archive/viewpage.php?pageid=5)  for details.</div></div><hr />
+if you dont want the ExistMessage, just change the GOTO of IfFileExists to End. additionally you check for the version of the installed ape. read <a href="http://nsis.sourceforge.net/archive/viewpage.php?pageid=5" target="_blank">this</a>  for details.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Yathosho</div><div class="date small text-muted">11th June 2003, 11:08</div></div>
-<br />
-<div class="posttext">just insert something like this to the script above to check for the version. i did this a while ago, i'm sure it'd be more clever to use StrCmp on &quot;0&quot; instead of &quot;1.1&quot;.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Yathosho</div>
+			<div class="date small text-muted">11th June 2003 11:08 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		just <i>insert</i> something like this to the script above to check for the version. i did this a while ago, i'm sure it'd be more clever to use StrCmp on &quot;0&quot; instead of &quot;1.1&quot;.<br />
 <br />
 ..<br />
-IfFileExists &quot;$INSTDIR\$1\colormap.ape&quot; VersionCheck CopyAPE<br />
+<b>IfFileExists &quot;$INSTDIR\$1\colormap.ape&quot; VersionCheck CopyAPE<br />
 VersionCheck:<br />
 GetDllVersion &quot;$INSTDIR\$1\colormap.ape&quot; $R4 $R9<br />
 IntOp $R7 $R4 / 0x00010000<br />
 IntOp $R8 $R4 &amp; 0x0000FFFF<br />
 StrCpy $0 &quot;$R7.$R8&quot;<br />
 StrCmp $0 &quot;1.1&quot; ExistMessage<br />
-MessageBox MB_YESNO|MB_ICONEXCLAMATION &quot;Setup detected an old Color Map APE in your Plugins directory.$\n$\nDo you want to update?&quot; IDNO End<br />
+MessageBox MB_YESNO|MB_ICONEXCLAMATION &quot;Setup detected an old Color Map APE in your Plugins directory.$\n$\nDo you want to update?&quot; IDNO End</b><br />
 ..<br />
 <br />
 you might want to change the variables ($0, $R4 etc.) to fit your script!<br />
 <br />
-ps: i intentionally did not use the edit button :D</div></div><hr />
+ps: i intentionally did not use the <font color="red">edit</font> button :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Phaze1987</div>
+			<div class="date small text-muted">11th June 2003 11:18 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		ah, your a big dude now eh ? ... :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">11th June 2003 11:44 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There is a reason why i put them on a separate section :weird: Do i really need to add this script also? It's friggin huge for one file...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">11th June 2003 13:15 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yathosho: you can use GetDllVersionLocal (or whatever it's called) to check the version of colormap on *your* PC as well. So that way you never have to update your script if you use a newer APE.
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">Phaze1987</div><div class="date small text-muted">11th June 2003, 11:18</div></div>
-<br />
-<div class="posttext">ah, your a big dude now eh ? ... :D</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">11th June 2003, 11:44</div></div>
-<br />
-<div class="posttext">There is a reason why i put them on a separate section :weird: Do i really need to add this script also? It's friggin huge for one file...</div></div><hr />
-
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">11th June 2003, 13:15</div></div>
-<br />
-<div class="posttext">Yathosho: you can use GetDllVersionLocal (or whatever it's called) to check the version of colormap on *your* PC as well. So that way you never have to update your script if you use a newer APE.</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

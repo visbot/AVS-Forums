@@ -3,56 +3,90 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" &quot;LookAt&quot; function for 3d camera., avs, advanced visualization studio, wvs, winamp visualization studio" />
-	<meta name="description" content=" &quot;LookAt&quot; function for 3d camera. AVS Troubleshooting" />
-	
-	<title> &quot;LookAt&quot; function for 3d camera. - Winamp Forums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" &quot;LookAt&quot; function for 3d camera. AVS" />
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> &quot;LookAt&quot; function for 3d camera. - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li><a href="f-139.html">AVS Troubleshooting</a></li>
-  <li class="active"> &quot;LookAt&quot; function for 3d camera.</li>
-</ol>
-<!-- div class="pda"><a href="t-186394.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=186394">&quot;LookAt&quot; function for 3d camera.</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">13th July 2004, 04:01</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">&quot;LookAt&quot; function for 3d camera.</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=186394">&quot;LookAt&quot; function for 3d camera.</a></p>
+
+
 <br />
-<div class="posttext">I'm working on a 3d flower-type thingy for the AVS right now, and I'm about to implement camera movement and rotation(right now it's just static). Well, first off, you can find it here:<br />
-http://www.lggaming.com/user/xerol/avs/xerol_3dspectrumflower2.zip<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">13th July 2004 04:01 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>&quot;LookAt&quot; function for 3d camera.</strong><br />
+		
+		
+
+		I'm working on a 3d flower-type thingy for the AVS right now, and I'm about to implement camera movement and rotation(right now it's just static). Well, first off, you can find it here:<br />
+<a href="http://www.lggaming.com/user/xerol/avs/xerol_3dspectrumflower2.zip" target="_blank">http://www.lggaming.com/user/xerol/a...rumflower2.zip</a><br />
 Now, I know how to point the camera and all, but I'm having trouble figuring out how to get those rotation angles so that the camera is always looking at a certain point(or any point, actually).<br />
 <br />
-The other thing I'm having trouble with, and this is more of a brain-freeze issue than anything else, but I'm trying to figure out a good way to make the camera move. Once I've got the LookAt function in place, I don't know what I'm going to do with my camera. I could always just have it rotate around the flower, but that'd just be boring. Any suggestions on what I could do with my camera?</div></div><hr />
+The other thing I'm having trouble with, and this is more of a brain-freeze issue than anything else, but I'm trying to figure out a good way to make the camera move. Once I've got the LookAt function in place, I don't know what I'm going to do with my camera. I could always just have it rotate around the flower, but that'd just be boring. Any suggestions on what I could do with my camera?
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">dirkdeftly</div><div class="date small text-muted">13th July 2004, 08:46</div></div>
-<br />
-<div class="posttext">extremely good start at the concept of coding, but frankly you need to get a better handle on the aesthetic aspects.  first of all, the slow incrementation of the number of &quot;petals&quot; is a bad idea - soon enough you'll end with something that is really messy and not very nice to look at.  the color scheme isn't my cup of tea either...and speaking of colors, in a scope like this, you should fade things out according to depth and use a max render mode.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">dirkdeftly</div>
+			<div class="date small text-muted">13th July 2004 08:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		extremely good start at the concept of coding, but frankly you need to get a better handle on the aesthetic aspects.  first of all, the slow incrementation of the number of &quot;petals&quot; is a bad idea - soon enough you'll end with something that is really messy and not very nice to look at.  the color scheme isn't my cup of tea either...and speaking of colors, in a scope like this, you should fade things out according to depth and use a max render mode.<br />
 i'd usually say for beginners that a camera motion for this type of scope is out of their reach, but i'm not sure that's true for you...are you familiar with rotation matrices?<br />
 x'=x*cos(theta)+y*sin(theta)<br />
 y'=x*sin(theta)-y*cos(theta)<br />
 this will provide you with a simple way of pointing the camera at the origin from any point on the unit sphere, and then you can deal with translation/scaling.  algorithms for pointing the camera at a certain point with yaw/pitch/roll are more complicated than most choose to deal with (certainly not i), but if you want to get involved with that on your own you can...<br />
-good stuff though, just keep a mind for the aesthetic side of things</div></div><hr />
+good stuff though, just keep a mind for the aesthetic side of things
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">13th July 2004, 15:46</div></div>
-<br />
-<div class="posttext">It's really a lot easier if you switch your model around. Right now you just rotate the superscope around its center point, like it was dangling in a fixed position in front of the camera.<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">13th July 2004 15:46 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It's really a lot easier if you switch your model around. Right now you just rotate the superscope around its center point, like it was dangling in a fixed position in front of the camera.<br />
 <br />
 For synching 3D scopes and DMs, I use a model where the scopes are in a fixed position, and the camera moves through them. The trick is for the scope to translate before rotating, and to apply the rotations in reverse order.<br />
 <br />
@@ -62,14 +96,26 @@ When looking at a point, one of the rotation angles (most likely z, depends on h
 <br />
 The preset is really not my cup of tea: it's just a basic spectrum on a shape. Also, your usage of replace blend mode makes the back appear over the front. You can switch to additive or maximum, or you can try one of many tricks to make it look correct.<br />
 <br />
-Oh and you need to fix the aspect ratio by multiplying y by w/h at the end (easiest method). Otherwise your scope looks squished in rectangular windows.</div></div><hr />
+Oh and you need to fix the aspect ratio by multiplying y by w/h at the end (easiest method). Otherwise your scope looks squished in rectangular windows.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Xerol</div><div class="date small text-muted">14th July 2004, 04:23</div></div>
-<br />
-<div class="posttext">It's really a lot easier if you switch your model around. Right now you just rotate the superscope around its center point, like it was dangling in a fixed position in front of the camera.<br />
-<br />
-That's because I am just dangling the model in front of the camera. It has its own rotation about it's origin, if you were looking from top-down it would be rotating clockwise. I do have a very firm grasp on how to do 3d camera, I did make one of the first mostly-functional 3d engines in QBasic. (http://www.lggaming.com/user/xerol/bridge5f.jpg &lt;--entirely rendered in QB. What I actually did with that was render to a bitmap file, so that's how I was able to get the high resolution, but all of the real work was done in the program.) <br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Xerol</div>
+			<div class="date small text-muted">14th July 2004 04:23 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				It's really a lot easier if you switch your model around. Right now you just rotate the superscope around its center point, like it was dangling in a fixed position in front of the camera.</blockquote>
+That's because I <b>am</b> just dangling the model in front of the camera. It has its own rotation about it's origin, if you were looking from top-down it would be rotating clockwise. I do have a very firm grasp on how to do 3d camera, I did make one of the first mostly-functional 3d engines in QBasic. (<a href="http://www.lggaming.com/user/xerol/bridge5f.jpg" target="_blank">http://www.lggaming.com/user/xerol/bridge5f.jpg</a> &lt;--entirely rendered in QB. What I actually did with that was render to a bitmap file, so that's how I was able to get the high resolution, but all of the real work was done in the program.) <br />
 <br />
 Anyway, in the comments section I stuck in there, it shows how the camera's going to be implemented, and basically what this does is rotate the points about the camera, which is essentially moving/rotating the model. <br />
 <br />
@@ -77,23 +123,32 @@ I don't know much about render modes, but I see what you mean. When I was doing 
 <br />
 Are there any effects that can give an anti-aliasing feel? I tried using blur(too much), a zero-movement roto blitter(too slow), and an expressionless Trans/Movement with Blend on(too slow/too much). <br />
 <br />
-I did some changes to it today, used a trans/movement on it and turned it into a 'fireflower' of sorts. Here's the new version: http://www.lggaming.com/user/xerol/avs/xerol-3dblazingflower.zip<br />
+I did some changes to it today, used a trans/movement on it and turned it into a 'fireflower' of sorts. Here's the new version: <a href="http://www.lggaming.com/user/xerol/avs/xerol-3dblazingflower.zip" target="_blank">http://www.lggaming.com/user/xerol/a...zingflower.zip</a><br />
 <br />
 The lightsources now move around in this, with the Blue and Green always being opposite each other(they give a drab grey appearance when they appear next to each other) and circling the origin, while the red one just moves up and down the z-axis. The Movement and Fadeout combine to make it look like it's giving off blue smoke, and the speed varies greatly depending on how 'active' the music is, due to a few changes in the superscope. I also changed it to all dots. <br />
 <br />
 For some reason, though, the blue and green lightsources aren't acting like they should. Here's the equations:<br />
 <br />
-cgx=cos(t3)*colr;<br />
+<pre><code>cgx=cos(t3)*colr;<br />
 cgy=sin(t3)*colr;<br />
 <br />
 cbx=cos(t3+$PI)*colr;<br />
-cby=sin(t3+$PI)*colr;<br />
+cby=sin(t3+$PI)*colr;</code></pre><br />
 <br />
-colr is the radius of the blue and green lightsources; t3 is a number increasing by .004 on each Frame. cgx, cgy are X and Y coordinates of green lightsource, cbx &amp; cby are for the blue. However, there only seems to be one of the two lightsources active at a time(set rb to 0 in the Init box of the superscope and disable the movement &amp; fadeout, and you'll see what I mean). Depsite the fact that i'm keeping them Pi radians apart, it seems like they're just right next to each other and switching intensities(although i know that can't be true, since bb and gb are staying at 5 the whole time). I might've just made a mistake here, but I can't find it.</div></div><hr />
+colr is the radius of the blue and green lightsources; t3 is a number increasing by .004 on each Frame. cgx, cgy are X and Y coordinates of green lightsource, cbx &amp; cby are for the blue. However, there only seems to be one of the two lightsources active at a time(set rb to 0 in the Init box of the superscope and disable the movement &amp; fadeout, and you'll see what I mean). Depsite the fact that i'm keeping them Pi radians apart, it seems like they're just right next to each other and switching intensities(although i know that can't be true, since bb and gb are staying at 5 the whole time). I might've just made a mistake here, but I can't find it.
+		</p>
+</div>
+
+	<hr />
+
+
+
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>

@@ -3,36 +3,53 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Bootstrap core CSS -->
-	<meta name="keywords" content=" Buttons in AVS, avs, advanced visualization studio, wvs, winamp visualization studio" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content=" Buttons in AVS AVS" />
-	
-	<title> Buttons in AVS - Winamp Forums</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+	<title> Buttons in AVS - AVS Forums</title>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-<div class="container">
-<ol class="breadcrumb">
-  <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-  <li><a href="f-85.html">AVS</a></li>
-  <li class="active">Buttons in AVS</li>
-</ol>
-<!-- div class="pda"><a href="t-177525.html?login=1" rel="nofollow">Log in</a></div -->
-<p class="lead text-muted">Archive: <a title="Try the Wayback Machine" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=177525">Buttons in AVS</a></p>
-<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">21st April 2004, 20:04</div></div>
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Buttons in AVS</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/http://forums.winamp.com/showthread.php?t=177525">Buttons in AVS</a></p>
+
+
 <br />
-<div class="posttext">It's questionable if this belongs in the presets subforum or in the AVS forum, but I didn't start this thread only about the preset, but more about the functionality.<br />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">21st April 2004 20:04 GMT</div>
+		</p>
+		<p class="post-content">
+		
+			<strong>Buttons in AVS</strong><br />
+		
+		
+			
+		
+
+		It's questionable if this belongs in the presets subforum or in the AVS forum, but I didn't start this thread only about the preset, but more about the functionality.<br />
 <br />
 A lot of people have already worked this out, but here's my way of doing this:<br />
 <br />
@@ -40,7 +57,7 @@ You don't want the button to flip per frame when you hold the mouse button for m
 <br />
 This pulse normally would only trigger the button for 1 frame. You want it to switch per pulse. Here's how I solved it all (button is reg02). <br />
 <br />
-<br />
+<pre><code><br />
 xm=getkbmouse(1);<br />
 ym=getkbmouse(2);<br />
 rm=getkbmouse(3);<br />
@@ -51,61 +68,123 @@ var=if(equal(mc,0),mcpulse,1);<br />
 mcnew=var;<br />
 mcswitch=if(mcpulse,bnot(mcswitch),mcswitch);<br />
 reg02=mcswitch;<br />
-<br />
+</code></pre><br />
 <br />
 Example preset is attached (will most likely be in my new pack). <br />
-The button appears when you move the mouse over the left and bottom of the preset ( xpos &lt; -0.9 or ypos &lt; 0.9 ) Click it and the preset changes. Also explained in the comment.</div></div><hr />
+The button appears when you move the mouse over the left and bottom of the preset ( xpos &lt; -0.9 or ypos &lt; 0.9 ) Click it and the preset changes. Also explained in the comment.
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">22nd April 2004, 01:00</div></div>
-<br />
-<div class="posttext">Your method is waaaaaay too complicated (not to mention such a thing has been posted before).<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">22nd April 2004 01:00 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Your method is waaaaaay too complicated (not to mention such a thing has been posted before).<br />
 <br />
 Pulse:<br />
 <br />
 old=new;new=getkbmouse(3);pulse=band(new,bnot(old));<br />
 <br />
 Then just check the x/y coordinates and and with pulse:<br />
-if(band(pulse,...), /* do mouse click */ ,0);</div></div><hr />
+if(band(pulse,...), /* do mouse click */ ,0);
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">S-uper_T-oast</div><div class="date small text-muted">22nd April 2004, 03:25</div></div>
-<br />
-<div class="posttext">UnConeD got it. <br />
-I am kicking aorund an idea like that for a prest library GUI type fux0red thing, it would be nice if it worked.</div></div><hr />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">S-uper_T-oast</div>
+			<div class="date small text-muted">22nd April 2004 03:25 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
+		UnConeD got it. <br />
+I am kicking aorund an idea like that for a prest library GUI type fux0red thing, it would be nice if it worked.
+		</p>
+</div>
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">22nd April 2004, 07:58</div></div>
-<br />
-<div class="posttext">Yup, i've used UnConeD's method for a while now and im very pleased by it :)</div></div><hr />
+	<hr />
 
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">22nd April 2004 07:58 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">22nd April 2004, 10:55</div></div>
-<br />
-<div class="posttext">%@#$!!! just when I think I've worked someting out... :mad: <br />
+		Yup, i've used UnConeD's method for a while now and im very pleased by it :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">22nd April 2004 10:55 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		%@#$!!! just when I think I've worked someting out... :mad: <br />
 <br />
 Nevermind...<br />
 <br />
 By the way, why is band() faster than &amp; ? Aren't funtions slower than operators in this case (pulse) ? :confused:<br />
 <br />
-<br />
-Am I the only one who likes the altered preset or am I the only one? None of my friends seem to like it... :cry:</div></div><hr />
+[edit]<br />
+Am I the only one who likes the altered preset or am I the only one? None of my friends seem to like it... :cry:<br />
+[/edit]
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Tuggummi</div><div class="date small text-muted">22nd April 2004, 11:07</div></div>
-<br />
-<div class="posttext">Hmm, doesn't &amp; do something else? The explanation on the help is hard to understand for me tho :confused:<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Tuggummi</div>
+			<div class="date small text-muted">22nd April 2004 11:07 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmm, doesn't &amp; do something else? The explanation on the help is hard to understand for me tho :confused:<br />
 <br />
 But band would be * too in occasions, band(1,1)=1 and 1*1=1 Just as long as they are numbers and the values are 1 precisely.<br />
 Don't know what is the fastest way though :p<br />
 <br />
-<br />
-The altered preset is nicer with low fps, but with high fps it tends to flicker too much.</div></div><hr />
+[edit]<br />
+The altered preset is nicer with low fps, but with high fps it tends to flicker too much.<br />
+[/edit]
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">TomyLobo</div><div class="date small text-muted">22nd April 2004, 14:14</div></div>
-<br />
-<div class="posttext">band() is boolean AND<br />
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">TomyLobo</div>
+			<div class="date small text-muted">22nd April 2004 14:14 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		band() is boolean AND<br />
 &amp; is bitwise AND<br />
 <br />
 the C representation of band(x, y) should be something like<br />
@@ -116,30 +195,69 @@ x &amp; y is probably<br />
 <br />
 band() is 2 floating point comparisons and a boolean OR,<br />
 whereas &amp; is 3 type conversions and a bitwise AND<br />
-guess which one is faster ;)</div></div><hr />
+guess which one is faster ;)
+		</p>
+</div>
 
+	<hr />
 
-<div class="post"><div class="posttop"><div class="username text-primary">Warrior of the Light</div><div class="date small text-muted">23rd April 2004, 13:51</div></div>
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">Warrior of the Light</div>
+			<div class="date small text-muted">23rd April 2004 13:51 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I know what they do :hang: i was talking about my case, but this makes it more clear... thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">DynamicMovement</div>
+			<div class="date small text-muted">23rd April 2004 17:11 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD's method has benefits &amp; disadvantages:<br />
 <br />
-<div class="posttext">I know what they do :hang: i was talking about my case, but this makes it more clear... thanks</div></div><hr />
+For writing DM it has functionality, but, when I want to code other parts I have same problems.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<div class="username text-primary">UnConeD</div>
+			<div class="date small text-muted">23rd April 2004 18:22 GMT</div>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Comparing functions with operators in AVS makes no sense: the scripting language is way too high level to be able to decide what goes on on the assembly level.<br />
+<br />
+Get the WA5 SDK and look in the nseel dir, nseel-cfunc.c. Then come back and discuss speed issues :rolleyes: .
+		</p>
+</div>
+
+	<hr />
 
 
-<div class="post"><div class="posttop"><div class="username text-primary">DynamicMovement</div><div class="date small text-muted">23rd April 2004, 17:11</div></div>
-<br />
-<div class="posttext">UnConeD's method has benefits &amp; disadvantages:<br />
-<br />
-For writing DM it has functionality, but, when I want to code other parts I have same problems.</div></div><hr />
 
-
-<div class="post"><div class="posttop"><div class="username text-primary">UnConeD</div><div class="date small text-muted">23rd April 2004, 18:22</div></div>
-<br />
-<div class="posttext">Comparing functions with operators in AVS makes no sense: the scripting language is way too high level to be able to decide what goes on on the assembly level.<br />
-<br />
-Get the WA5 SDK and look in the nseel dir, nseel-cfunc.c. Then come back and discuss speed issues :rolleyes: .</div></div><hr />
 <div class="footer">
-	<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
 </div>
-</div>
+
+<!-- Put JavaScript here -->
 
 </body>
 </html>
