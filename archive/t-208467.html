@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=208467">calculation-speed comparison</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
-      <p class="post-time small text-muted">21st February 2005 22:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">21st February 2005 22:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>calculation-speed comparison</strong><br />
       Just now we discussed whether a calculation of sines in init and storing them in megabuf or calculating them directly in point would be faster. So i tried to make a preset to compare both kinds. Unfortunately i don't get it to work. It'd be kind if someone could check where in the code i made the mistake.<br />
@@ -40,8 +41,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">22nd February 2005 01:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">22nd February 2005 01:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Note that such a comparison is not good, as you need to compare them in a realistic environment: i.e. inside a complicated preset.<br />
       <br />
@@ -59,8 +61,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
-      <p class="post-time small text-muted">22nd February 2005 10:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">22nd February 2005 10:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanks!<br />
       What a simple problem... But as i said i'm not yet 100% familiar with this kind of code. Bout the circle: i chose the simplest shape that uses a sin, to just get the code to work, then i wanted to "complicate" it.<br />
@@ -72,8 +75,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">23rd February 2005 21:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">23rd February 2005 21:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">coned is right, the code page will get swapped out of cache after a certain size so a propper test needs a lot of code. I'm trying to think of a robust but simple idea for a test preset, if only AVS had nop's it would be a lot easier, perhaps a load of useless assignments to a LOT of different variables to really fill up the stack/heap and push the memory usage out of just cache, and it would also make sufficiently large code pages.<br />
       <br />
@@ -82,8 +86,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
-      <p class="post-time small text-muted">23rd February 2005 21:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">23rd February 2005 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">well, at first i wanted to get the code in init to work. After that the code should become more "demanding"...<br />
       However i don't have good idea for that. I would ask you for help, but as i know you're quite busy at the moment. So i'll postpone this idea for the time being. Besides, i don't have that much free time either...<br />
@@ -93,16 +98,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">23rd February 2005 21:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">23rd February 2005 21:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">nop is an asm mnemonic that stands for no operation. If AVS had them you could just paste a few thousand nops which would make the code pages really big (assuming evallib didnt optimise them out). But it doesnt, so you cant.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
-      <p class="post-time small text-muted">23rd February 2005 21:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">23rd February 2005 21:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">thanks!<br />
       besides, are you really reeeaally curious about knowing wich code-type is faster? cause i did this as an exercise at first, but somehow i lost that "initial ambition"... ;)</p>
@@ -110,16 +117,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">24th February 2005 17:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">24th February 2005 17:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I'm not really that curious because I'm 95% sure a sine will be slower. I would be borderline gobsmacked if a megabuf retrieval turned out to be slower.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
-      <p class="post-time small text-muted">24th February 2005 17:29 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">24th February 2005 17:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">but unconed's explanation also seems logical to me...<br />
       Perhaps i'll work further on a useful test-preset, if i get a idea what to use as "benchmark code"..</p>

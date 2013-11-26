@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=76177">slow/fast Beats</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">16th February 2002 19:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 19:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>slow/fast Beats</strong><br />
       is it possible to detect, if a song has a slow or fast beat? so i can depending upon that determine that maybe a scope is blue or red.<br />
@@ -40,8 +41,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">cmountford</span><br />
-      <p class="post-time small text-muted">16th February 2002 23:26 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">cmountford</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 23:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>yes, there is</strong><br />
       Yes, Winamp has a built-in beat detector.<br />
@@ -59,16 +61,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">16th February 2002 23:49 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 23:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">that i know, but what i meant is, how i can say in the SS that if the song has a slow beat, the color is more blue and if the beat is fast, the color is red, as example</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">cmountford</span><br />
-      <p class="post-time small text-muted">17th February 2002 00:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">cmountford</span><br /></p>
+
+      <p class="post-time small text-muted">17th February 2002 00:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>oh</strong><br />
       I'd say probably tinker around in On Beat to something like this:<br />
@@ -84,16 +88,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">flatmatt</span><br />
-      <p class="post-time small text-muted">17th February 2002 19:36 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">flatmatt</span><br /></p>
+
+      <p class="post-time small text-muted">17th February 2002 19:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">No, onbeat only gives a one or zero, not a speed.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">17th February 2002 20:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">17th February 2002 20:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i tested yesterday and found out, that it does not function, so i posted a request for a timecounter in the wishlist (look down), maybe something like this already exist, i don't know<br />
       <br />
@@ -108,38 +114,30 @@
       <br />
       <br /></p>
       <pre>
-<code>init</code><span style="color: #007700">:
-<br /></span><span style="color: #0000BB">beat</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;</span><span style="color: #0000BB">time</span><span style="color: #007700">=</span><span style="color: #0000BB">0
+<code>init<span style="color: #007700">:
+<br /></span>beat=0;time=<span style="color: #0000BB">0
 <br />onBeat</span><span style="color: #007700">:
-<br /></span><span style="color: #0000BB">beat</span><span style="color: #007700">=</span><span style="color: #0000BB">beat</span><span style="color: #007700">+</span><span style="color: #0000BB">1
+<br /></span>beat=beat+<span style="color: #0000BB">1
 <br /></span>
 
-<!-- php buffer end -->
-                
-                
-                
-</pre>
-      <hr />
-      <pre>
-        
-counts the beat <br /><br />per Poin: <br /><br />
-        PHP Code:
-        
-                
-</pre>
-      <hr />
-      <pre>
-                <code style="white-space:nowrap">
-                
-                        <!-- php buffer start --></code><span style="color: #000000">
-<span style="color: #0000BB">bpm</span><span style="color: #007700">=</span><span style="color: #0000BB">beat</span><span style="color: #007700">*</span><span style="color: #0000BB">60</span><span style="color: #007700">/</span><span style="color: #0000BB">time</span><span style="color: #007700">;
-</span></span>
-</pre>calculates the bpm<br />
+</code>
+</pre>counts the beat<br />
+      <br />
+      per Poin:<br />
       <br />
       <pre>
-<code>beat</code><span style="color: #007700">=if(</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">time</span><span style="color: #007700">,</span><span style="color: #0000BB">30</span><span style="color: #007700">),</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">beat</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">time</span><span style="color: #007700">=if(</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">time</span><span style="color: #007700">,</span><span style="color: #0000BB">30</span><span style="color: #007700">),</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">time</span><span style="color: #007700">)
+<code><span style="color: #000000">
+bpm=beat*60/time<span style="color: #007700">;
+</span></span>
+</code>
+</pre>calculates the bpm<br />
+      <br />
+      beat
+      <pre>
+<code>=if(equal(time,30),0,beat<span style="color: #007700">);
+<br /></span>time=if(equal(time,30),0,time<span style="color: #007700">)
 </span>
+</code>
 </pre>restes beat and time synchonously every 30 seconds, it also may reset all 15 seconds.. its only a question how exactly the bpm should be.<br />
       <br />
       pleas make possible<br />
@@ -153,8 +151,9 @@ counts the beat <br /><br />per Poin: <br /><br />
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">19th February 2002 00:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">19th February 2002 00:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">As far as I know, there's no way to get an actual time-readout. You can only get a relative time value, but its speed will depend on a user's computer. Given the fact that most people watch AVS at the resolution that offers them about 20-25fps, you can of course work out something that works most of the time.<br />
       <br />
@@ -163,8 +162,9 @@ counts the beat <br /><br />per Poin: <br /><br />
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">22nd February 2002 19:13 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">22nd February 2002 19:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>relative solution</strong><br />
       i think i found any relative solution to detect the speed of the sound... how said, it's relative... i think it also detects if music is activ.. looks fine, i think<br />
@@ -175,8 +175,9 @@ counts the beat <br /><br />per Poin: <br /><br />
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">22nd February 2002 19:45 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">22nd February 2002 19:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">watch out the changing dominance @Lenny Kravitz_Black Velveten ... if you have ... else, watch to other songs<br />
       <br />

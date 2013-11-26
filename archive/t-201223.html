@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=201223">problem with ssc</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">viskey</span><br />
-      <p class="post-time small text-muted">5th December 2004 18:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">viskey</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2004 18:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>problem with ssc</strong><br />
       i tried to make a nice 3d ssc with the megabuf-thing. that works so far. but when the scope gets larger (you'll see what i mean when you download the attached file) it sometimes gets behind the camera. then those ugly lines appear. i have tried different things to get rid of them but none of them worked. i hope someone can help.</p>
@@ -37,24 +38,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">hboy</span><br />
-      <p class="post-time small text-muted">5th December 2004 21:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">hboy</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2004 21:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">some veeeeery familiar code here :p. i had also an idea to do a version like this, but I liked my original version more. actually i get no lines you described, but I see no line skipping in the last scope, so maybe that is your problem.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">viskey</span><br />
-      <p class="post-time small text-muted">5th December 2004 22:35 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">viskey</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2004 22:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">yes i tried the method you used in your new pack :D (i try different things for more than a week now so i look in every preset in wich a ssc moves behind the camera ;) ). i have seen now that i used it wrong :P . now i modyfied it so it should work now but it doesn't. so i have to go on trying different things .... or anyone can help me :D</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <p class="post-time small text-muted">6th December 2004 01:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 01:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">You are right in useing skip, the hard part is figuring out at what point you need to skip. You have to remeber you need to skip both positive and negative z values. (abs value)<br />
       I don't remeber were the cutoff is, but it's something like that.</p>
@@ -62,8 +66,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
-      <p class="post-time small text-muted">6th December 2004 02:25 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 02:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">nice scope idea :)<br />
       about the skip... use a threshold that is a bit above 0.<br />
@@ -78,32 +83,36 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">6th December 2004 10:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 10:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">one of the problems is that a line can span 'from' behind the camera or 'to' behind the camera, you need to account for both cases. The skip if z is above a certain number method will still work, but only if your lines are pretty short. To be sure you can say skip if z&gt;longest length a line will be</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
-      <p class="post-time small text-muted">6th December 2004 15:25 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 15:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">that's exactly what my piece of code takes care of, pak ;)</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">6th December 2004 17:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 17:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I get bored quickly, I usually only read the first couple of posts before I blurt out a reply</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">viskey</span><br />
-      <p class="post-time small text-muted">6th December 2004 19:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">viskey</span><br /></p>
+
+      <p class="post-time small text-muted">6th December 2004 19:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">thanks for all the replies. havn't tried it yet but i will do that later. :D</p>
     </div>

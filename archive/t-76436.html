@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=76436">Rendering text in APE</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
-      <p class="post-time small text-muted">18th February 2002 15:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">vapor</span><br /></p>
+
+      <p class="post-time small text-muted">18th February 2002 15:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Rendering text in APE</strong><br />
       Hi all,<br />
@@ -41,8 +42,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">19th February 2002 00:44 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">19th February 2002 00:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The AVS framebuffer uses the 32-bit color format RGB0 (or maybe BGR0, not sure). It's best to get rid of GDI DeviceContext for drawing because they'll always be slower: implement your own line-drawing algorithms and you'll be waaay faster. If you *really* need GDI, create 32-bit a DIB using CreateDIBSection as your bitmap. You'll receive a direct-pointer to the DIB-data when you create it, which you can use to copy the bitmap's contents in RGB0 straight into the AVS framebuffer.<br />
       For optimal speed, you'll need to use MMX operations in your code for operations such as blending or adding. They're very suited to RGB0 images. You can always use them, as the width of an AVS window is always a multiple of 4.</p>
@@ -50,8 +52,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
-      <p class="post-time small text-muted">19th February 2002 14:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">vapor</span><br /></p>
+
+      <p class="post-time small text-muted">19th February 2002 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>cool...</strong><br />
       Cool, that was easy! Thanks, UnConeD, you're a sweetheart!<br />
@@ -61,8 +64,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">19th February 2002 20:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">19th February 2002 20:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I haven't tried MMX myself yet, but I've read about it on the web. Can't do it now, because my old VC++ doesn't know MMX assembly instructions.<br />
       <br />

@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=102766">Bicubic Béziér Patch</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">31st August 2002 03:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 03:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Bicubic Béziér Patch</strong><br />
       (follow up of the bezier-talk in the 'Lamé curve' thread).<br />
@@ -41,8 +42,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">31st August 2002 05:49 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 05:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">nice... is that just a set of big bicubics or is it generating multiple bicubics for each set of three (or six) control points? i cant sift through your code its too, well, solid.<br />
       <br />
@@ -59,8 +61,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">31st August 2002 11:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 11:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Umm...yeah....:confused:<br />
       <br />
@@ -71,8 +74,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">31st August 2002 15:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 15:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">It's a 4x4 point patch, where every intersection of the patch along one of its axes results in a cubic bezier curve. That's where bi-cubic comes from (cubic in 2D).<br /></p>
       <pre>
@@ -95,8 +99,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">31st August 2002 17:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 17:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">right, now i understand what nurbs mean :P and yeah i forgot you need it 4 control points for a cubic (not 3) so i really should have been able to figure out that it was a 4x4 patch... and on that biquadratic thing, i got that out of one of my algebra books... think it was one on set theory in the back it has a list of terms and in brackets after quartic it has 'or biquadratic'... books can often be wrong tho'. but still, if you are generating a large number of points on a cubic everyframe horner's method should speed it up a bit... wouldn't it be cooler to make a nurbs surface in avs tho? no that you've done this cubic patch making a nurbs surface shouldn't be to difficult right?<br />
       <br />
@@ -107,16 +112,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">31st August 2002 19:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 19:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Wasn't nurbs "non-uniform rational b-spline"? B-splines aren't béziérs as far as I know, but they're cubic as well.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">31st August 2002 20:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">31st August 2002 20:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">b-spline means bicubic spline and unless you want to solve a cubic for every control point (exceedingly slow due to large amount of sqrts and couple of cbrts) i'd guess it would use the bezier spline method.. hang-on i have a big fat opengl book lying around somewhere with a huge section on curves...<br />
       <br />
@@ -127,8 +134,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">11th December 2006 13:56 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2006 13:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I'm sure I will get ripped for bumping such an old post... but I must correct my mistakes!!!<br />
       <br />
@@ -147,40 +155,45 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <p class="post-time small text-muted">11th December 2006 19:14 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2006 19:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I AM GLAD YOU ARE NOT BORED AT YOUR WORK</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <p class="post-time small text-muted">11th December 2006 19:38 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2006 19:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">O.o</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
-      <p class="post-time small text-muted">12th December 2006 05:25 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2006 05:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I thought this was a new thread..oh well :igor:</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <p class="post-time small text-muted">12th December 2006 07:23 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2006 07:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">you know, if you're bored anyway, you could of course put WA on an USB drive and <b>continue with J10</b></p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">12th December 2006 10:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2006 10:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Actually. I was reading something else and I came across a definition of B-splines. Having a stupidly good memory and being bitter about making mistakes because a book misinforms me... I felt duty bound to correct this thread.<br />
       <br />
@@ -189,8 +202,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">hornet777</span><br />
-      <p class="post-time small text-muted">13th December 2006 08:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">hornet777</span><br /></p>
+
+      <p class="post-time small text-muted">13th December 2006 08:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Running across something while looking for something else is one of my favourite way of learning. It accentuates the "light-bulb" affect :)<br />
       <br />
@@ -199,8 +213,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">WildJack77</span><br />
-      <p class="post-time small text-muted">25th December 2006 08:16 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">WildJack77</span><br /></p>
+
+      <p class="post-time small text-muted">25th December 2006 08:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Old thread?</p>
     </div>

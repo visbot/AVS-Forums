@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140322">new method of doing 3d rotation</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
-      <p class="post-time small text-muted">27th June 2003 18:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 18:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>new method of doing 3d rotation</strong><br />
       As far as I know this hasn't been discovered before. I found a new way to do 3d rotation that runs a little faster than the usual method. I attatched two SSCs, one that uses old method and one that uses new method, and both are the same otherwise i think. n=10000. The new one runs 5 fps faster on my comp than the old one. This should work for DMs as well. This is how it works:<br />
@@ -43,16 +44,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">27th June 2003 18:12 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 18:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">afaik that's just a slightly compiled version of the normal rotation matrices w/calculations done in per frame - but i don't like it for two reasons: it's hard to read/understand by eyeballing it, and it's much harder to tweak than regular rotation matrices. good job with it tho, never thought of trying to compile rotation matrices :igor:</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
-      <p class="post-time small text-muted">27th June 2003 18:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">yeah, that's exactly what it is.<br />
       <br />
@@ -67,8 +70,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
-      <p class="post-time small text-muted">27th June 2003 18:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 18:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Just a slight optimisation<br />
       <br /></p>
@@ -79,8 +83,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
-      <p class="post-time small text-muted">27th June 2003 18:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 18:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yes, I thought of that, but isn't it too many variables for too little improvement? 6 variables used and just 23 sin() or cos() operations less per frame. But waaaiiit a minute...<br />
       <br /></p>
@@ -95,16 +100,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
-      <p class="post-time small text-muted">27th June 2003 19:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 19:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Very interesting technique, especially after Raz's tweaks.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <p class="post-time small text-muted">27th June 2003 19:27 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 19:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Too bad we don't have the AVS source code. Then we could just replace the sin and cos functions with matrices that, although less accurate, would be much quicker. It wouldn't be difficult either. Just something like this:<br />
       <br />
@@ -122,8 +129,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
-      <p class="post-time small text-muted">27th June 2003 19:44 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2003 19:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">lol... take a look at <a href="http://mathworld.wolfram.com/EulerParameters.html" target="_blank">this</a>... I do all that work programming the new method, and now I find that there's another, newer method that is slightly more optimized :p<br />
       <br />
@@ -140,8 +148,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <p class="post-time small text-muted">28th June 2003 00:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 00:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">sin and cos both take a lot of processing power to compute. I'm not sure exactly how much that optimization would work, but I know it does help a good bit as I've seen it done in many open-source video games.</p>
     </div>

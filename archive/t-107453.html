@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=107453">Dynamic Shift...</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br />
-      <p class="post-time small text-muted">28th September 2002 19:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br /></p>
+
+      <p class="post-time small text-muted">28th September 2002 19:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Dynamic Shift...</strong><br />
       I need some help with my dynamic shift code.. I'm <b>TOTALLY</b> new to scripting in AVS, so please excuse me for the ever-so-simple code... as you can see in my preset, on a beat, it randomly makes the "fire" go to the left or right, like a breeze is coming by. Well, it actually works pretty good, but if it chooses to go to the right or left too much, the visual is bad, and is hard for it to choose the right number to go back the other way.i want it to be able that when it is at a certain point, to go the other way, by forcing it to use the positive or negative numbers, to go the other way until it reaches another point, then it goes all regular again. This might not make much sence now, but just dl it and see for yourself. Might take a bit, but it does happen... Any Help?</p>
@@ -37,16 +38,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">28th September 2002 19:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">28th September 2002 19:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Because you're incrementing ex every beat, you can get a situation where ex=ex+2 every beat, or ex=ex-2 every beat. Instead, use ex=rand(n)-n/2 (which gives you numbers from n-n/2=n/2 to 0-n/2=-n/2. And x=2.1 is pointless since you redefine it later.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br />
-      <p class="post-time small text-muted">28th September 2002 19:46 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br /></p>
+
+      <p class="post-time small text-muted">28th September 2002 19:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Wow, thanks!<br />
       <br />
@@ -57,8 +60,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <p class="post-time small text-muted">28th September 2002 20:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">28th September 2002 20:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Welcome to the world of AVS and the Winamp AVS forums!<br />
       <br />
@@ -69,16 +73,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">29th September 2002 00:13 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">29th September 2002 00:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Because ex doesn't ever change when there's no beat. When you say x=..., x is wiped out and replaced with .... So you're wiping out that 2.1 and replacing it with ex.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <p class="post-time small text-muted">29th September 2002 06:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">29th September 2002 06:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">If you wanna do something only on the beat, you gotta do in the beat section. You could make it gust on a beat, then have it gradually go back to the original breeze.</p>
     </div>

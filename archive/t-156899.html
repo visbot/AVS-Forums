@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=156899">Brightness by Resolution?</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
-      <p class="post-time small text-muted">20th November 2003 12:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 12:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Brightness by Resolution?</strong><br />
       Just wondering, i have this background flow &amp; pattern that uses additive blending scope and very small values for color (24 for each channel). The problem is that it looks correct &amp; "full" in my screen size and some small fullscreen sizes (320x240), but higher resolutions tend to be a bit emptier looking, now this can be fixed if i change the brightness of the scope a bit larger.<br />
@@ -41,8 +42,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <p class="post-time small text-muted">20th November 2003 12:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">well, ive never done it to control brightness, but ive used similar ideas before. Just multiplying everything by w*h*0.001 or somthing.<br />
       <br />
@@ -57,8 +59,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
-      <p class="post-time small text-muted">20th November 2003 15:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 15:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yeah, that's basicly what i mean. Im just wondering will it work on every setting...<br />
       <br />
@@ -74,24 +77,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">21st November 2003 01:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The brightness is affected by the area, so you need to multiply w and h, not sum them.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
-      <p class="post-time small text-muted">21st November 2003 01:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Try min(h,w)? The reason for this is to keep the aspect correct, so that if you change the aspect you dont get problems.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">21st November 2003 01:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Then it'd be sqr(min(h,w))..</p>
     </div>

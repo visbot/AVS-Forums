@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=75656">is it possible to control SS by any determined pitch?</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">13th February 2002 17:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">13th February 2002 17:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>is it possible to control SS by any determined pitch?</strong><br />
       i want to say that SS is changing maybe the direction by any Beat in a determined pitch, by any other pitch it should change the size and and and...<br />
@@ -41,8 +42,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Montana</span><br />
-      <p class="post-time small text-muted">13th February 2002 17:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Montana</span><br /></p>
+
+      <p class="post-time small text-muted">13th February 2002 17:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">do you mean like the bass does "x=x+sin(a+.001)"<br />
       and the midrange does "y=abs(x)"<br />
@@ -51,8 +53,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">13th February 2002 18:28 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">13th February 2002 18:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">what is a?<br />
       and how should i use this to see what it does? can you show me a example how it works?<br />
@@ -67,8 +70,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Montana</span><br />
-      <p class="post-time small text-muted">13th February 2002 18:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Montana</span><br /></p>
+
+      <p class="post-time small text-muted">13th February 2002 18:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">first of all, a is a variable<br />
       and that i wrote was just a example<br />
@@ -79,24 +83,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">geozop</span><br />
-      <p class="post-time small text-muted">14th February 2002 00:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">geozop</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 00:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I assume you have a SS that is moving around by some means, and that you want it to change it's direction of movement every low-pitch beat; and, that you want it to change size every high-pitch beat, correct?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">14th February 2002 03:35 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 03:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">You can use getspec() to grab sound data. You can grab individual spectrum points as well as averaged areas (using the width parameter) to get a general 'bass' or 'treble'.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">14th February 2002 11:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 11:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Geozop, your assume is the right kind.<br />
       UnConeD, i didn't really know, how to use the getspec the right way, to become the SS i want.. i will make an example...<br />
@@ -104,9 +111,9 @@
       i make a simple SS<br />
       <br /></p>
       <pre>
-<code>init</code><span style="color: #007700">:</span><span style="color: #0000BB">n</span><span style="color: #007700">=</span><span style="color: #0000BB">400
-<br />frame</span><span style="color: #007700">:</span><span style="color: #0000BB">t</span><span style="color: #007700">=</span><span style="color: #0000BB">t</span><span style="color: #007700">-</span><span style="color: #0000BB">0.05
-<br />point</span><span style="color: #007700">:</span><span style="color: #0000BB">x</span><span style="color: #007700">=</span><span style="color: #0000BB">cos</span><span style="color: #007700">(</span><span style="color: #0000BB">t</span><span style="color: #007700">);</span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">t</span><span style="color: #007700">)
+<code>init</code>:n=<span style="color: #0000BB">400
+<br />frame</span>:t=t-<span style="color: #0000BB">0.05
+<br />point</span>:x=cos(t);y=sin(t<span style="color: #007700">)
 </span>
 </pre>that will draw a circle<br />
       <br />
@@ -120,8 +127,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">T-CUT</span><br />
-      <p class="post-time small text-muted">14th February 2002 16:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">T-CUT</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 16:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">init:<br />
       n=400<br />
@@ -144,16 +152,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">14th February 2002 16:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 16:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Because a division is an expensive operation, it's best to save a var "af=w/h" in OnFrame and use y=y*af instead of y=y/af (multiply is faster).</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">14th February 2002 17:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 17:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>thanx for help</strong><br />
       thanx to T-Cut and UnConeD, that was very helpfull, so i can use it. is it also possible that the ring walks between the outer and the inner rig?<br />
@@ -163,8 +173,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Montana</span><br />
-      <p class="post-time small text-muted">14th February 2002 18:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Montana</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 18:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i did a remix of the preset<br />
       <br />

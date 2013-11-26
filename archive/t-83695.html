@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=83695">Few questions about AVS... (advanced stuffs)</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">5th April 2002 04:14 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">5th April 2002 04:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Few questions about AVS... (advanced stuffs)</strong><br />
       I kinda still have a lot to learn 'bout AVS...<br />
@@ -52,8 +53,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <p class="post-time small text-muted">5th April 2002 08:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">5th April 2002 08:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I don't think movement has a grid size, I believe it does all the pixels in the render.<br />
       <br />
@@ -62,8 +64,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">5th April 2002 14:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th April 2002 14:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>One at a time :)</strong><br /></p>
 
@@ -76,17 +79,17 @@
       So, in onframe:<br />
       <br />
       <pre>
-<code>ww</code><span style="color: #007700">=</span><span style="color: #0000BB">w</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">hh</span><span style="color: #007700">+</span><span style="color: #0000BB">h</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">n</span><span style="color: #007700">=</span><span style="color: #0000BB">ww</span><span style="color: #007700">*</span><span style="color: #0000BB">hh</span><span style="color: #007700">;</span><span style="color: #0000BB">xp</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;</span><span style="color: #0000BB">yp</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;</span><span style="color: #0000BB">iw</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">/</span><span style="color: #0000BB">ww</span><span style="color: #007700">;</span><span style="color: #0000BB">ih</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">/</span><span style="color: #0000BB">hh</span><span style="color: #007700">;
+<code>ww</code>=w+1;hh+h+1;n=ww*hh;xp=0;yp=0;iw=1/ww;ih=1/hh<span style="color: #007700">;
 </span>
 </pre><i>iw</i> and <i>ih</i> are the inverted (adjusted) width and height, calculated only once every frame to speed the preset up... multiplication is several times faster than division.<br />
       <br />
       In per point:<br />
       <br />
       <pre>
-<code>x</code><span style="color: #007700">=</span><span style="color: #0000BB">xp</span><span style="color: #007700">*</span><span style="color: #0000BB">iw</span><span style="color: #007700">*</span><span style="color: #0000BB">2</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">yp</span><span style="color: #007700">*</span><span style="color: #0000BB">ih</span><span style="color: #007700">*</span><span style="color: #0000BB">2</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
+<code>x</code>=xp*iw*2-1;y=yp*ih*2-1<span style="color: #007700">;
 <br /><br />.....
-<br /><br /></span><span style="color: #0000BB">xp</span><span style="color: #007700">=if(</span><span style="color: #0000BB">above</span><span style="color: #007700">(</span><span style="color: #0000BB">xp</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">ww</span><span style="color: #007700">),</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">xp</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">yp</span><span style="color: #007700">=if(</span><span style="color: #0000BB">xp</span><span style="color: #007700">,</span><span style="color: #0000BB">yp</span><span style="color: #007700">,</span><span style="color: #0000BB">yp</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">);
+<br /><br /></span>xp=if(above(xp+1,ww),0,xp+1<span style="color: #007700">);
+<br /></span>yp=if(xp,yp,yp+1<span style="color: #007700">);
 </span>
 </pre>First, we transform the variables xp,yp in the range (0..ww, 0..hh) into AVS coordinates (-1..1, -1..1), by dividing by width and height, and multiplying by 2 and subtracting 1.<br />
       <br />
@@ -96,16 +99,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">5th April 2002 16:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th April 2002 16:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">If you want to make one superscope which consists of multiple disconnected line segments, you'll need to use a render-mode like Additive or Maximum, and simply set the color to black when you don't want a line to be drawn. A good example is my Plankton preset... all the swimming particles are only one SSC, and you can see this by turning off the blendmode change.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">6th April 2002 21:28 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">6th April 2002 21:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Umm, I think I need to rephrase my Tetris SSC question a bit, this time in form of a different question...<br />
       <br />
@@ -117,8 +122,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">6th April 2002 22:23 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">6th April 2002 22:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Probably something like this:<br />
       <br /></p>
@@ -131,8 +137,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">7th April 2002 18:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">7th April 2002 18:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Hmm, but what Variable?<br />
       I tried using If(equal(n,#) , but doesn't work...<br />
@@ -146,8 +153,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">8th April 2002 03:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">8th April 2002 03:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i'd do something like:<br />
       <br />
@@ -158,8 +166,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">10th April 2002 02:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">10th April 2002 02:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Tried that, didn't work... :cry:<br />
       <br />
@@ -179,8 +188,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">10th April 2002 03:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th April 2002 03:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">For a good lens... first of all, you need a good view on mathematical functions.<br />
       <br />

@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=153840">Integers?</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">24th October 2003 18:27 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2003 18:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Integers?</strong><br />
       Is there a way to convert numbers to integers in AVS? I was thinking about making a preset using contour maps of multivariable functions and since the mod command converts to integer before I want it to I was just gonna create my own mod but I cant figure out a way to convert a number to an integer. Is it it possible to return just the integer value of a number??</p>
@@ -37,16 +38,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">24th October 2003 18:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2003 18:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I use var|0.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">24th October 2003 19:29 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2003 19:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Does that only work on the new version of AVS because it doesn't seem to work on the older one I'm running. I always get zero for the return on that.<br />
       <br />
@@ -59,8 +62,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">24th October 2003 21:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2003 21:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Binary operators were broken up till AVS2.7, they simply rounded the second argument to int. Using 0|var should work on both versions.<br />
       <br />
@@ -69,16 +73,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">25th October 2003 08:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 08:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ok here's the idea. I wanna use multivariable functions to create contour maps for presets. So the idea is to set an increment value that defines the spacing between each level. So it would take value%inc to get the remainder. If the remainder is small than the bias value it would consider that value part of a curve and color it white. If the value was above the bias value it would remain black. I can get it to work great when I program it but I can't seem to get it to work in AVS. I think I'm just going to multiply the value of the function and increment by 100, take the mod, then both back down again.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">25th October 2003 14:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 14:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I still don't quite get what you want to do. What do you mean with a contour map? Scopes? Colormap tricks?<br />
       You seem to explain everything except the essential :weird:.</p>
@@ -86,16 +92,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">25th October 2003 18:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 18:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Contour map? Level curves? That's what it's called. Have you ever seen a topographic map where it has lines that signify different heights? Just google it or something...</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">25th October 2003 20:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 20:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Eh?<br />
       <br />
@@ -104,16 +112,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">25th October 2003 20:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 20:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Exactly what Nic asked. I understand what a contourmap is, but you didn't specify how you want to do it in AVS.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">25th October 2003 21:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 21:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">f(x,y)%inc to get the remainder of the value of the function divided by the value that defines the difference between each level. Then I setup a bias value. If the remainder is lower than the bias value then it is on the curve.<br />
       <br />
@@ -122,8 +132,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">25th October 2003 22:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 22:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Argh, so HOW are you drawing it? Your method would require a per-pixel evaluating gridscope and that'd be much too slow I think.<br />
       <br />
@@ -138,16 +149,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">25th October 2003 23:49 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2003 23:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I had worked with the DM to do do the same sort of deal, but at the moment I was just playing around with the movement fuction. I've never really played around with the convolution filter so quite frankly I have no idea what any of those numbers mean. I am quite impressed with your preset though. Mind explaining how the convultion filter works?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">26th October 2003 01:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2003 01:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">...<br />
       <br />
@@ -160,16 +173,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <p class="post-time small text-muted">26th October 2003 01:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2003 01:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ok how about just explaining exactly what the numbers mean mathematically? What does the filter due?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">26th October 2003 10:25 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2003 10:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The 7x7 grid is called the convolution-kernel and represents weights assigned to a pixel and its surrounding pixels.<br />
       <br />
@@ -194,24 +209,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <p class="post-time small text-muted">26th October 2003 21:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2003 21:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanks for explaing that UnConeD!</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">27th October 2003 23:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2003 23:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">so...can someone explain to me how x|0 rounds x to the nearest integer? afaik the "old" b0rk3d bitwise operators just chopped off the mantissa....</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">28th October 2003 00:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2003 00:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero:<br /></p>
 
@@ -222,24 +240,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">28th October 2003 02:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2003 02:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">that still doesn't explain how x|0 rounds x to the nearest integer...</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">fsk</span><br />
-      <p class="post-time small text-muted">28th October 2003 12:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">fsk</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2003 12:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yup Id wanna know also:). What the hell does | do anyway?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">28th October 2003 12:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2003 12:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">From the help:<br />
       <br />
@@ -252,8 +273,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br />
-      <p class="post-time small text-muted">28th October 2003 21:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2003 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">AVS 2.7: floor(value) and ceil(value) work. You might want to use that.<br />
       <br />
@@ -262,16 +284,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">29th October 2003 03:12 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">29th October 2003 03:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">arg. forgot those had to cast to int first. but doesn't...that...truncate? to round don't you have to add .5 and cast to int?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">29th October 2003 19:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">29th October 2003 19:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">That's something you can answer for yourself in 1 minute.</p>
     </div>

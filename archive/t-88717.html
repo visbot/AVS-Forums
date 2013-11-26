@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=88717">Ideas for AVS</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br />
-      <p class="post-time small text-muted">24th May 2002 14:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br /></p>
+
+      <p class="post-time small text-muted">24th May 2002 14:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Ideas for AVS</strong><br />
       Trans&gt;OnBeat Clampdown:<br />
@@ -51,16 +52,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <p class="post-time small text-muted">24th May 2002 17:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">24th May 2002 17:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">You can do the clampdown thing with an effect list, a buffer save, and a custom BPM. I used somthing similar to make tracers in a preset.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br />
-      <p class="post-time small text-muted">24th May 2002 17:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br /></p>
+
+      <p class="post-time small text-muted">24th May 2002 17:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I didn't know that...but it would still be useful to have it for those who don't know what do to with the effect list, the custom BPM, and the buffer save things.<br />
       <br />
@@ -69,8 +72,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">3dino</span><br />
-      <p class="post-time small text-muted">2nd June 2002 20:00 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">3dino</span><br /></p>
+
+      <p class="post-time small text-muted">2nd June 2002 20:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">hmm.. I am looking for a BPM function to set the Frequency region for the beat!<br />
       This function will moving the Render effects like dots etc. in variable frequencies (high hats etc).<br />
@@ -80,8 +84,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">13th June 2002 22:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th June 2002 22:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">You can do pretty much what you want with a superscope. Using getspec() you can grab a part of the spectrum (e.g only high hats). Using getosc(), you can grab a part of the oscilloscope.<br />
       <br />
@@ -89,11 +94,11 @@
       <br />
       So a superscope:<br /></p>
       <pre>
-<code>x</code><span style="color: #007700">=</span><span style="color: #0000BB">i</span><span style="color: #007700">*</span><span style="color: #0000BB">2</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">getosc</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">,</span><span style="color: #0000BB">.1</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">);
+<code>x</code>=i*2-1;y=getosc(i,.1,0<span style="color: #007700">);
 </span>
 </pre>Will be a low-pass (bass) filtered oscilloscope.<br />
       <pre>
-<code>x</code><span style="color: #007700">=</span><span style="color: #0000BB">i</span><span style="color: #007700">*</span><span style="color: #0000BB">2</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">getspec</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">*</span><span style="color: #0000BB">.5</span><span style="color: #007700">+</span><span style="color: #0000BB">.5</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">);
+<code>x</code>=i*2-1;y=getspec(i*.5+.5,0,0<span style="color: #007700">);
 </span>
 </pre>Will show the upper-half of the spectrum.<br />
       <br />
@@ -103,16 +108,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <p class="post-time small text-muted">14th June 2002 20:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">14th June 2002 20:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">About flare... I know what you meant (I played Tyrian... Demo version)... But it would pretty much be just another version of Firewurx...</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br />
-      <p class="post-time small text-muted">14th June 2002 21:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clashman</span><br /></p>
+
+      <p class="post-time small text-muted">14th June 2002 21:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Not exactly, though: like the Flare from Tyrian, it would be multiple explosions at the same time, and it would look like the Flares from Tyrian.</p>
     </div>

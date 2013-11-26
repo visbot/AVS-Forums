@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106721">3D camera positioning</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
-      <p class="post-time small text-muted">23rd September 2002 23:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
+
+      <p class="post-time small text-muted">23rd September 2002 23:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>3D camera positioning</strong><br />
       Hey there guys. I've got a problem. I've been working on various asundry 3D superscopes, and I've run into a small problem. I haven't figured out raytracing yet, and I don't know if that's part of the problem or not.<br />
@@ -39,8 +40,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
-      <p class="post-time small text-muted">24th September 2002 06:26 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">24th September 2002 06:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Here's the order of transforms you need to do:<br />
       <br />
@@ -54,8 +56,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">24th September 2002 20:10 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">24th September 2002 20:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Except that 3D scopes don't use raytracing. If you just rotate the object the camera will automatically point to the origin. You can translate the object before rotation, and the camera will look at the origin, but the object will rotate around it. If you translate the object AFTER the rotation, however, the camera will be looking at the point negative to the translation, and the object will be rotating upon the origin (assuming it is centered at the origin and not translated before rotation). So if your pre-rotation translation is &lt;0,0,0&gt; and your pre-projection rotation is &lt;1,0,0&gt;, the camera will be looking at the point &lt;-1,0,0&gt; and the object will still be rotating upon &lt;0,0,0&gt; (again, assuming it is centered at the origin).</p>
     </div>

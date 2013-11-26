@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=116739">sign(var) function</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
-      <p class="post-time small text-muted">5th December 2002 16:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>sign(var) function</strong><br />
       Is there any way to define sign(var) function using only mathematical expressions like +, -, *, /, ^ ?<br />
@@ -38,8 +39,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">5th December 2002 17:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 17:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I don't really see why a definition using +-*/^ would be better than another definition.<br />
       <br />
@@ -61,15 +63,16 @@
       <br />
       If you want to know how AVS 'calculates' it, it probably just checks the sign bit of the floating point number, like this (for a 32-bit float):<br /></p>
       <pre>
-<span style="color: #007700">return((*(</span><span style="color: #0000BB">int</span><span style="color: #007700">*)(</span><span style="color: #0000BB">float</span><span style="color: #007700">*)&amp;</span><span style="color: #0000BB">number</span><span style="color: #007700">)&amp;</span><span style="color: #0000BB">0x80000000</span><span style="color: #007700">)?</span><span style="color: #0000BB">1.0f</span><span style="color: #007700">:-</span><span style="color: #0000BB">1.0f</span><span style="color: #007700">;
+return((*(int*)(float*)&amp;number)&amp;0x80000000)?1.0f:-1.0f<span style="color: #007700">;
 </span>
 </pre>Doing an actual division would take ages. Note that this would have 0 return + or -, because there are two internal representations of 0 in an IEEE float: +0.0 and -0.0.
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
-      <p class="post-time small text-muted">5th December 2002 18:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 18:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanx :)<br />
       I need to solve a recursive function for fps reasons - its faster to calculate F(n)=phi^n/sqrt(5)and round it up than to count 1500th Fibonaccy number. Only this function uses if(),below(),max() and stuff like that so I needed sign to define them.<br />
@@ -78,8 +81,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">5th December 2002 20:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 20:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I understand how you might need it, but:<br />
       <br />

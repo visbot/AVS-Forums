@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=118139">Dwah! Crazy random flashing</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">16th December 2002 22:40 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">16th December 2002 22:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Dwah! Crazy random flashing</strong><br />
       Ok, I'm sure one of you intelligent folks on here can answer this one. I assume this is because of the DM, but... this one preset of mine is plagued by crazy flashing colours. When the music isn't really going (if you know what I mean), all it does is make the screen flash bright colours. If I get my zip utility up and running, I'll post it; or, if it'll help, I'll post my code.<br />
@@ -39,16 +40,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">16th December 2002 23:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">16th December 2002 23:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">It's your DM :)</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">16th December 2002 23:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">16th December 2002 23:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanks for the help... :p<br />
       <br />
@@ -69,8 +72,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">17th December 2002 02:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">17th December 2002 02:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Other than the fact that you're going about this COMPLETELY the wrong way...<br />
       r=r*pi*e is going to be really ugly, since pi*e isn't an integer. The rand(var) function ONLY supports integers, so rand(pi*e*100) is pointless and slow. Now the reason it's flashing is because you're multiplying d by a random number from 0 to 314. The only place where it *wouldn't* start flashing is if that number was from 1 to maybe 15, or about 10% of the time. When you multiply d by a number, you're moving the picture 'back' by that number minus one; 0 will move it all the way forward (so you don't see anything except the middle pixel), 1 does nothing, 2 moves it back 1 (makes it half-size), et cetera.</p>
@@ -78,8 +82,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">17th December 2002 20:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">17th December 2002 20:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">So you're saying that d and r can only be integers? That would explain a lot... :rolleyes:<br />
       Ok, I fixed the code up so there's no irrational numbers in the random statement, and made it so that d and r are integers. I also fixed it so that d will never be 0 (which I assume was causing some of the problems I was having). Thanks very much for the help.<br />
@@ -101,8 +106,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">17th December 2002 22:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">17th December 2002 22:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">No, I'm saying that if you multiply r by a floating point value then the image is going to be repeated in a circle only partially; for that kind of movement you want to repeat the image n times where n is integral (so you don't get ugly clashing edges).<br />
       The modulo function (%) only supports counting numbers (positive integers greater than one).<br />
@@ -112,16 +118,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">24th December 2002 01:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">24th December 2002 01:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yeah, well... coding randomly is what I do, okay? I don't quite *know* how to properly code, but I'm gonna keep on doing it, because it's fun. :p That's my style, so to speak, and I can't change it. And hey, just because you don't understand my lack of proper method, doesn't mean that I don't think about what I code before I do it. I'm not a math and/or programming guru like you guys, nor do I have the patience to sit here for hours on end and teach myself how to use AVS "properly". I just play around, try new things, and see what happens without really knowing why. I know, right about now you're thinking that I'm not a true AVS artist and I don't belong on here, but I honestly don't care what you think. I'm doing this because I enjoy it, and because my presets look neat. I don't make technically proficient presets, or ones that make you go "holy shit, look at that math"; I make flashy, shiny, trippy, cool-looking presets. And I'll just leave it at that. One of these days, I'll finish my pack, and I'll submit it to the website, and you and all the other "true" AVS artists can tear it apart then. Until then, I'll stop bothering you with moronic questions. :)</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <p class="post-time small text-muted">24th December 2002 07:02 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">24th December 2002 07:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Looks to me like it's this part.<br /></p>
 
@@ -132,8 +140,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
-      <p class="post-time small text-muted">24th December 2002 07:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">24th December 2002 07:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
@@ -145,8 +154,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">26th December 2002 00:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">26th December 2002 00:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yeah, I was playing around with it a bit and fixed that up. I just realized that a number divided by its square root IS its square root... damn, I'm stupid. :p For now, I changed it to read ppie=pow(bpie,(2/3)), and it works much better now... although the shapes it produces are a tad different, it doesn't flash anymore. I'm still tweaking it to find something even more interesting.<br />
       <br />
@@ -155,16 +165,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">26th December 2002 07:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">26th December 2002 07:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">That's still going to give you a floating point; which is still going to give you an uneven movement. Use an integer n for r=r*n</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br />
-      <p class="post-time small text-muted">1st January 2003 06:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">1st January 2003 06:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ack... okay, after much drunken messing around, I came up with a way to get an interesting random integer for n in r=r*n:<br />
       <br />
@@ -181,8 +193,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">1st January 2003 07:25 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">1st January 2003 07:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Since the rand(var) function only returns integers in the first place, you don't need to do that. Just use mr=rand(8)+1.</p>
     </div>

@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=316672">avs window handle</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br />
-      <p class="post-time small text-muted">30th January 2010 19:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br /></p>
+
+      <p class="post-time small text-muted">30th January 2010 19:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>avs window handle</strong><br />
       so i've created a nice vvvv patch what can mix together 2 instances of avs with a fast and informative gui etc etc. the thing is that using 2 streams by the freeframe version extremely slows down the machine (output fps won't get higher than 30 fps and 15-20 fps is the average) so i switched from the freeframe plugin to the screenshot node (what takes a screenshot of a window of the given handle) the problem is that all avs windows has the same handles so i can capture just one at the same time. now comes the noob question: is there a way to change the handle of avs's window? and if i have to dig into the source code which part of it have to be changed?</p>
@@ -37,16 +38,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
-      <p class="post-time small text-muted">30th January 2010 19:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">30th January 2010 19:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">as DrO pointed out before, the problem is getting avs compiled again. otherwise i'd start by searching the source-code for the handle?</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br />
-      <p class="post-time small text-muted">30th January 2010 23:45 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br /></p>
+
+      <p class="post-time small text-muted">30th January 2010 23:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">yep i know the compiling part would be painful. i asked it on the vvvv forums too they say the handles would be different just vvvv cannot return separate handles on windows with the same title. so i found a little utility what tells the exact handle of a window or its parts and i set it in vvvv manually. so it's working now.:D</p>
     </div>

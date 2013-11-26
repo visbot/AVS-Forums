@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=77186">Multiple settings superscope</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">24th February 2002 01:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">24th February 2002 01:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Multiple settings superscope</strong><br />
       I'm trying to make a superscope that changes between a number of different settings (i.e., ring, anchored scope, cross, flying vu, etc.). But I can't figure out the timing. Any help...?</p>
@@ -37,25 +38,26 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">24th February 2002 23:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th February 2002 23:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Suppose you have four different 'shapes'. Let 'sh' be a number from 0 to 3 that defines which shape you're drawing. You can either increase it every beat (sh=(sh+1)%4) or set it randomly (sh=rand(4)), or whatever.<br />
       <br />
       Calculate your shapes like this:<br /></p>
       <pre>
-<code>csh</code><span style="color: #007700">=</span><span style="color: #0000BB">sh</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">1stshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">1stshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">2ndshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">2ndshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">3rdshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">3rdshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">csh</span><span style="color: #007700">=</span><span style="color: #0000BB">csh</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">x</span><span style="color: #007700">,</span><span style="color: #0000BB">xcode</span><span style="color: #007700">for</span><span style="color: #0000BB">4thshape</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=if(</span><span style="color: #0000BB">csh</span><span style="color: #007700">,</span><span style="color: #0000BB">y</span><span style="color: #007700">,</span><span style="color: #0000BB">ycode</span><span style="color: #007700">for</span><span style="color: #0000BB">4thshape</span><span style="color: #007700">);
+<code>csh</code>=sh<span style="color: #007700">;
+<br /></span>x=if(csh,0,xcodefor1stshape<span style="color: #007700">);
+<br /></span>y=if(csh,0,ycodefor1stshape<span style="color: #007700">);
+<br /></span>csh=csh-1<span style="color: #007700">;
+<br /></span>x=if(csh,x,xcodefor2ndshape<span style="color: #007700">);
+<br /></span>y=if(csh,y,ycodefor2ndshape<span style="color: #007700">);
+<br /></span>csh=csh-1<span style="color: #007700">;
+<br /></span>x=if(csh,x,xcodefor3rdshape<span style="color: #007700">);
+<br /></span>y=if(csh,y,ycodefor3rdshape<span style="color: #007700">);
+<br /></span>csh=csh-1<span style="color: #007700">;
+<br /></span>x=if(csh,x,xcodefor4thshape<span style="color: #007700">);
+<br /></span>y=if(csh,y,ycodefor4thshape<span style="color: #007700">);
 </span>
 </pre>What happens is this...<br />
       First, csh is set to the current shape number. We do this because we're going to work with the shape number, but we don't want to change the original value.<br />
@@ -68,8 +70,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">25th February 2002 07:20 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th February 2002 07:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I knew how to calculate the shapes, I just needed to find out how to time it correctly. What I'm trying to get is something that will morph between the shapes, like in your "Reflect on it," just with 5 shapes (more or less) instead of 2. I've figured out how to fade between two, it's fairly simple (i'll use a circle and a cross here):<br />
       <br />
@@ -114,8 +117,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">25th February 2002 07:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">25th February 2002 07:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">It really depends on what you want to do. If you want to morph between the 5 shapes independantly, you'll need 'n' weights in the range of 0-1 that add up to 1 (for the most desirable effect). You'll need to find a function that passes through most of the n-space containing all possible values.<br />
       <br />
@@ -124,13 +128,13 @@
       Something like this (I use PHP style code for hilighting):<br /></p>
       <pre>
 <code>init</code><span style="color: #007700">{
-<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">sh</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br /></span>ip=0<span style="color: #007700">;
+<br /></span>sh=0<span style="color: #007700">;
 <br />}
-<br /><br /></span><span style="color: #0000BB">frame</span><span style="color: #007700">{
-<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=</span><span style="color: #0000BB">ip</span><span style="color: #007700">+</span><span style="color: #0000BB">0.01</span><span style="color: #007700">;</span><span style="color: #0000BB">next</span><span style="color: #007700">=</span><span style="color: #0000BB">equal</span><span style="color: #007700">(</span><span style="color: #0000BB">ip</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">sh</span><span style="color: #007700">=if(</span><span style="color: #0000BB">next</span><span style="color: #007700">,(</span><span style="color: #0000BB">sh</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">)%</span><span style="color: #0000BB">4</span><span style="color: #007700">,</span><span style="color: #0000BB">sh</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">ip</span><span style="color: #007700">=if(</span><span style="color: #0000BB">next</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">ip</span><span style="color: #007700">);
+<br /><br /></span>frame<span style="color: #007700">{
+<br /></span>ip=ip+0.01;next=equal(ip,1<span style="color: #007700">);
+<br /></span>sh=if(next,(sh+1)%4,sh<span style="color: #007700">);
+<br /></span>ip=if(next,0,ip<span style="color: #007700">);
 <br />}
 </span>
 </pre>This will have a value 'ip' that just goes from 0 to 1 and returns to 0 afterwards, and a value 'sh' that will increase every time 'ip' is wrapped around. So if your first shape uses 'ip' to interpolate between x1 and x2, and the second shape uses 'ip' to interpolate between x2 and x3, you'll get a nice morph from x1 to x3, passing through x2.
@@ -138,8 +142,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">LittleBuddy88</span><br />
-      <p class="post-time small text-muted">25th February 2002 21:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">LittleBuddy88</span><br /></p>
+
+      <p class="post-time small text-muted">25th February 2002 21:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero, I think I've done a similar morphing sequence once, reacting on beat, but otherwise equal to what you did.<br />
       And I can see but one problem with your code, I don't know if more exists, I just looked through it quickly, but simple, I think AVS sets ANY non-zero value to TRUE, this means that all of your scopes are executed, except one...<br />
@@ -152,8 +157,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <p class="post-time small text-muted">26th February 2002 01:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br /></p>
+
+      <p class="post-time small text-muted">26th February 2002 01:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">okay i got the first one (random number change (and i even used it :D))<br />
       but the other two....<br />
@@ -164,8 +170,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <p class="post-time small text-muted">26th February 2002 02:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">26th February 2002 02:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I think I've finally figured it out! I used this exact code for a color changing circle, cross, and anchored scope:<br />
       <br />
@@ -221,8 +228,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <p class="post-time small text-muted">27th February 2002 18:24 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br /></p>
+
+      <p class="post-time small text-muted">27th February 2002 18:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i cant really tell where your circle is in your code there but...<br />
       <br /></p>

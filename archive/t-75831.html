@@ -28,8 +28,9 @@
     <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=75831">how to create a oscilloscope star with SS</a></p><br />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">14th February 2002 21:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">14th February 2002 21:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>how to create a oscilloscope star with SS</strong><br />
       how can i create a oscilloscope star with Superscope?<br />
@@ -43,32 +44,35 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">15th February 2002 17:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">15th February 2002 17:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Since I like to teach instead of tell, I am going to explain it. Create a new Superscope, go to load example and click on "Alternating Diagonal Slope". Now, lets change the numbers around. First of all erase the On Beat box, this will make the scope not bounce back and forth. In the per point box there is a X and a Y. These are the coordinates. x=2*(i-0.5-v*sc)*t; y=2*(i-0.5+v*sc); change it so it reads, x=.5*(i-1-v*sc)*t; y=.5*(i-1+v*sc); Now its starts at the midpoint and goes half the distance, so make some more scopes and change some numbers. Maybe Unconed can give us an example using one scope, but right now I have a headache so I am not going to figure it out yet.:D</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">15th February 2002 18:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">15th February 2002 18:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Here is one thats crappy, I wouldn't even call it an osciloscope star. But it's a place to start for beginners.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">15th February 2002 20:40 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">15th February 2002 20:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I developed your suggestion further... view the result... its made with only one SS... the trick is that:<br /></p>
       <pre>
-<code>perFrame</code><span style="color: #007700">:</span><span style="color: #0000BB">dx</span><span style="color: #007700">=</span><span style="color: #0000BB">dx</span><span style="color: #007700">*(-</span><span style="color: #0000BB">1</span><span style="color: #007700">)
-<br /></span><span style="color: #0000BB">perPoint</span><span style="color: #007700">:</span><span style="color: #0000BB">di</span><span style="color: #007700">=</span><span style="color: #0000BB">di</span><span style="color: #007700">*(-</span><span style="color: #0000BB">1</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">sc</span><span style="color: #007700">=</span><span style="color: #0000BB">0.9</span><span style="color: #007700">*</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">i</span><span style="color: #007700">*</span><span style="color: #0000BB">3.14159</span><span style="color: #007700">);
-<br /></span><span style="color: #0000BB">x</span><span style="color: #007700">=</span><span style="color: #0000BB">di</span><span style="color: #007700">*</span><span style="color: #0000BB">dx</span><span style="color: #007700">*</span><span style="color: #0000BB">.6</span><span style="color: #007700">*(</span><span style="color: #0000BB">i</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">-</span><span style="color: #0000BB">v</span><span style="color: #007700">*</span><span style="color: #0000BB">sc</span><span style="color: #007700">)*</span><span style="color: #0000BB">t</span><span style="color: #007700">*</span><span style="color: #0000BB">si</span><span style="color: #007700">;
-<br /></span><span style="color: #0000BB">y</span><span style="color: #007700">=</span><span style="color: #0000BB">di</span><span style="color: #007700">*</span><span style="color: #0000BB">.5</span><span style="color: #007700">*(</span><span style="color: #0000BB">i</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">+</span><span style="color: #0000BB">v</span><span style="color: #007700">*</span><span style="color: #0000BB">sc</span><span style="color: #007700">)*</span><span style="color: #0000BB">t</span><span style="color: #007700">*</span><span style="color: #0000BB">si</span><span style="color: #007700">;
+<code>perFrame</code>:dx=dx*(-1<span style="color: #007700">)
+<br /></span>perPoint:di=di*(-1<span style="color: #007700">);
+<br /></span>sc=0.9*sin(i*3.14159<span style="color: #007700">);
+<br /></span>x=di*dx*.6*(i-1-v*sc)*t*si<span style="color: #007700">;
+<br /></span>y=di*.5*(i-1+v*sc)*t*si<span style="color: #007700">;
 </span>
 </pre><br />
       dx=dx*(-1) will mirror the scope in x<br />
@@ -81,24 +85,27 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">15th February 2002 23:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">15th February 2002 23:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Nice scope I never seen anything like it. I get your idea for the mirroring.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">15th February 2002 23:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">15th February 2002 23:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">GreatWho- Check this bad boy out, just do your mirroring and you'll have yourself a star.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">16th February 2002 01:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 01:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">what do you think about the mirroring of your second Scope?<br />
       i also made a onBeat-Speedchange</p>
@@ -106,48 +113,54 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">16th February 2002 01:27 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 01:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">uuups.. i forgotten to attach the file... it will be time to go to bed after ;-)</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">16th February 2002 04:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 04:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">My friend you are a genious. I think you should definately post this, somewhere. Everyone should experience force of superscopes at it's greatest. Cudos to you my friend.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">16th February 2002 11:09 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 11:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">thanx, I feel honoured. there are already 4 Packs published on Winamp.com, i tooked the links in my signatur</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">16th February 2002 21:24 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 21:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Here's a good superscope replacement for the oscilloscope star. Change the vars in Init to change the star's attributes.</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">StudioMusic</span><br />
-      <p class="post-time small text-muted">16th February 2002 22:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">StudioMusic</span><br /></p>
+
+      <p class="post-time small text-muted">16th February 2002 22:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Strange, how did you 3 end up posting avs presets in the Milkdrop bug report forum? Studio Music</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
-      <p class="post-time small text-muted">17th February 2002 19:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+
+      <p class="post-time small text-muted">17th February 2002 19:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Hi all,<br />
       <br />
@@ -166,16 +179,18 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">StudioMusic</span><br />
-      <p class="post-time small text-muted">17th February 2002 22:19 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">StudioMusic</span><br /></p>
+
+      <p class="post-time small text-muted">17th February 2002 22:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Rovastar all I can say is that I hope you get everything sorted out smoothly without any major headaches or problems. You do not deserve it. SM</p>
     </div>
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
-      <p class="post-time small text-muted">19th February 2002 18:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br /></p>
+
+      <p class="post-time small text-muted">19th February 2002 18:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ha Ha, Unconed you did it again, that is a Os. star alright, they look identical.<br />
       <br />
@@ -184,8 +199,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">21st February 2002 18:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">21st February 2002 18:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>Great Job</strong><br />
       UnConeD<br />
@@ -197,8 +213,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
-      <p class="post-time small text-muted">21st February 2002 21:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+
+      <p class="post-time small text-muted">21st February 2002 21:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">:) No problem with mistakes. Only a problem with mistakes that are not corrected.<br />
       <br />
@@ -207,8 +224,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <p class="post-time small text-muted">21st February 2002 23:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st February 2002 23:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Um well first I made one arm of the osc star, which is just a curve that ranges from (0,r) to (1,r) (polar coords) and has variation in r depending on the sound (the first preset here modified y in function of sound, instead of r).<br />
       Then, to create multiple arms, I just increase the 'r' with 2*pi/arms radians every time one arm is finished. I also changed the color to black for each ending-point to make sure the arms are not connected.<br />
@@ -217,8 +235,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">22nd February 2002 18:37 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">22nd February 2002 18:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">and now... there's the reason, i wanted to have a osciloscope Star in SS...to change its color how and when i want...here is one "how" on the timeing i will work on<br />
       <br />
@@ -229,8 +248,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <p class="post-time small text-muted">27th February 2002 21:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br /></p>
+
+      <p class="post-time small text-muted">27th February 2002 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">on unconed superscope, try adding:<br />
       perframe: t1=t1-.05;<br />
@@ -241,8 +261,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <p class="post-time small text-muted">27th February 2002 22:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">greatWho</span><br /></p>
+
+      <p class="post-time small text-muted">27th February 2002 22:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><strong>nice tip</strong><br />
       thanx for this tip, but try this one:<br />
@@ -253,8 +274,9 @@
     <hr />
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <p class="post-time small text-muted">1st March 2002 01:36 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
+      <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br /></p>
+
+      <p class="post-time small text-muted">1st March 2002 01:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">theres an awful lote of math in that superscope though, kinda slow :(<br />
       <br />
