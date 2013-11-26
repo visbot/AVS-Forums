@@ -1,512 +1,287 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" &lt;heck this out AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="&lt;heck this out " />
 
-	<title> &lt;heck this out - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>&lt;heck this out - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">&lt;heck this out</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=122698">&lt;heck this out</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">25th January 2003 00:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>&lt;heck this out</strong><br />
-		
-		
-			
-		
-
-		Been messing with some line and sort of 3d i think SSs, anyway right now its just a target that follows a ship through space butim gonna do something else with it, not sure what yet.<br />
-<br />
-The target is pretty good cause it kinda follows the movements of the ship, i put the getosc functions similar so it follows near the same rotation and movement paths, used the superscope coloring from elvis's spacechase, ill put my own in when im done, i just think it looks good with it now.<br />
-<br />
-All the usual feedback crap welcome blah blah.... :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">25th January 2003 00:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Did you make the spaceship? The target needs to move in the x direction too. Also put a fake tactical display next to the target(altitude, tilt, whatever).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">25th January 2003 01:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i might make like a whole load of stupid effects that looks like its looking outa the cockpit of some sort of spacecraft, mayb. <br />
-<br />
-Oh yeah, yea i made it. I think it started out as something else, cant remember what but its changed completely since then, nothin of the original one in there. <br />
-<br />
-the target needs work i suppose but all it is is a target, wont really be that significant when its done if i do that whole idea ahh well, wont take long, might as well.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">25th January 2003 03:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Wow, I like the spaceship, but it is a little hard to see any detail on it.  Take a look at unconed's target in Mission to Mars from Whacko VI. Try creating a hybrid of yours and this one.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">25th January 2003 07:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I like it the way it is now. (Well, the reticle should move laterally aswell)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">25th January 2003 12:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		a) Correct the aspect ratio of your scopes to prevent them from looking squashed (set af=w/h and multiply y with it, or vice-versa with x).<br />
-b) Make the ship's movement less bouncy and nutty. Right now it moves around like a carnival ride... instead of using a simple sin() or cos() formula, make something more complicated. For example:<br />
-The targeting cross seeks out the ship. Once the distance between the cross and the ship's (projected) position is below a certain threshold, the ship will attempt to move away. Also, when the distance is really small, you could add shooting laserbeams.<br />
-c) If you're going to use getosc() for random input, don't just use 0, 1, 2 for values. Unless you're listening to some unusual music, the stereo separation is pretty small. The difference between getosc(0,0,2) and getosc(0,0,1) will be minimal. Instead, vary the position you're sampling (first parameter) to some random value. You do realise the first parameter can be ANY value between 0 and 1 right?<br />
-I think this is the reason why the crosshair doesn't move much horizontally.<br />
-d) Your code is very hard to read. Variables can have loooooooong names. For your own sake (you'll thank me when you have to read your own code later), it's best to use descriptive names. Put ship position in shipx, shipy, shipz (or shx,shy,shz). Use pi for pi, twopi or tpi for pi*2, etc. Plus, there will also be less change of accidentally using a premade variable (like w,h,b,v,i) if you use longer varnames.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">25th January 2003 15:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok Thanks UnConeD, good tips, ill try and sort it out
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">25th January 2003 18:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well, unless you're listening to some very unusual music - or ANYTHING by the Beatles ;)<br />
-(for those who don't know: the beatles always had all the instruments and fx violently seperated between the l/r channels :) )
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">25th January 2003 19:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		well i was mostly listening to muse and korn while i was making it...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">25th January 2003 21:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Ok got sick of breaking the same superscopes over and over again, lol<br />
-<br />
-Decided to make something similar to the intro to the first Whacko. Done completely differently and the oval type thing moves differently and Raz001 is written in it and its floating through space but thats where i got the idea.<br />
-<br />
-edit: just noticed a coding error, nothing major but ive changed the attatchment.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">25th January 2003 22:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Looks a lot like psychotic mental patient...<br />
-Good, except for the black holes in the back(because of alpha blending I believe). Instead of using that 3D-DM to make the 2-D oval. Just try using something two dimensional - It will be much faster, and you won't have to worry about alpha blending.  Also, do something with the text and/or add something to the background.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 01:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Ok fixed it and added something to the background, oh and the circle is is just a movement that makes a circle out of whatever before it.<br />
-The first DM is the one youve already seen from phsycoticmentalpatient and the second one just shifts around the already made ovaly type thingy.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th January 2003 03:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Got rid of the holes - good. The 'Z' isn't complete(the diagonal is only half as long as it should be). I would still change the oval texture to something a bit faster. I'm only getting 13FPS at 320x200 windowed.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 03:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Its not the superscope ive checked its the movements after it thatr makin it distorted, ill fix it
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 04:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		sorted, was just a bit in the circle movement that distorts a certain amount in the centre of the circle.<br />
-<br />
-It dont need a high fps, its just an intro
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th January 2003 15:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		All presets need as high FPS as they can get. Here, I made many optimizations(changed n in one SSC from 800 to 1) and replaced your 3-D DM with a more simple movement. You get the same basic result and it is 6FPS faster.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 21:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Decent improvements, i didnt want to just use a phsycotic beaming ******d but id forgotten about that 3D DM, ive already written a much much smaller movement that does exactly the same thing as the last one but i hate those lines that appear above everything so im going to mod all the scopes that spell RAZ001 and make them smaller so i dont have to zoom out on the screen, repost when im done.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 22:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Ok done, the movewment ruined it so i just used the phsycotic beam.... halved the size of the scopes that make the name, also the two red scopes at the top and bottom just need 300 points and they look solid on all sizes, also just made a cheap &quot;craploadoflinesgoingacrossthescreen&quot; scope instead of the spiral, FPS increased, looks thesame/better. Oh yeah ill stop doing this whole, post one thing then post again half an hour later with the attatchment thing.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th January 2003 22:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice, finally is a little faster. You could optimize it a bit more by carrying out the divisions in the SSCs(i.e. changing y=(--0.15)/2; to y=.075; , etc.) and taking out the color clip/blur/color clip and placing a circle superscope after the first effectlist. Much better now and it still has the same effect.<br />
-[Edit]<br />
-One more thing: When you post new versions of the same presets add numbers at the end so it doesn't try to replace the old ones. This way I can tell what has changed.<br />
-[/Edit]
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th January 2003 22:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok willdo from now on, i tried making a circle at first but the change of size in the circle movement and a superscope when you resize the window is different, well the last time i checked anyway.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th January 2003 23:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It should work fine. Make sure you multiply x by h/w or y by w/h.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">27th January 2003 01:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah i did, its still different
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">27th January 2003 02:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think the reason is because the circle uses x and y, but the DM uses r and d. Try converting the DM to something using x and y.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">27th January 2003 02:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Nope not that either, heres what i got, it looks right in the editor window size but screws up if you go any other size.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">27th January 2003 03:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Don't change the movement in the effect list. Change the DM. The other movement works fine.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">27th January 2003 03:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Theres only one DM in there and it still screws up the size even if i get rid of it. I cant be arsed with it for now, ill leave it with the color clips for now and fix it some other time, im gonna go work on the target spaceship thing preset for a while
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">28th January 2003 08:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice preset.The SSC writing is what i like the most and thanks to your coding i managed to understand superscopes...Now i wrote Phaze with 20 superscopes and im pretty &quot;satisfied&quot;.Btw at the DM you should really make it more beat friendly,it doesnt react smoothly at beats :) Hope you dont mind about taking criticism from a newbie in this domain:p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">28th January 2003 16:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I can take all criticism as long as its constructive, plus im not entirely satisfied with it yet, im going to improve it when im done with presets for a pack and right now i only have 8.5 not including this intro (the .5 standing for the in pursuit thing im working on). That way i can make an intro thats equal to my skills when im done, an intro gives the first impression on a pack and i want it to be good.<br />
-<br />
-Btw glad i could help, simple when you look at it now aint it lol. :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">&lt;heck this out</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=122698">&lt;heck this out</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">25th January 2003 00:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>&lt;heck this out</strong><br />
+      Been messing with some line and sort of 3d i think SSs, anyway right now its just a target that follows a ship through space butim gonna do something else with it, not sure what yet.<br />
+      <br />
+      The target is pretty good cause it kinda follows the movements of the ship, i put the getosc functions similar so it follows near the same rotation and movement paths, used the superscope coloring from elvis's spacechase, ill put my own in when im done, i just think it looks good with it now.<br />
+      <br />
+      All the usual feedback crap welcome blah blah.... :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">25th January 2003 00:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Did you make the spaceship? The target needs to move in the x direction too. Also put a fake tactical display next to the target(altitude, tilt, whatever).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">25th January 2003 01:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i might make like a whole load of stupid effects that looks like its looking outa the cockpit of some sort of spacecraft, mayb.<br />
+      <br />
+      Oh yeah, yea i made it. I think it started out as something else, cant remember what but its changed completely since then, nothin of the original one in there.<br />
+      <br />
+      the target needs work i suppose but all it is is a target, wont really be that significant when its done if i do that whole idea ahh well, wont take long, might as well.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">25th January 2003 03:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Wow, I like the spaceship, but it is a little hard to see any detail on it. Take a look at unconed's target in Mission to Mars from Whacko VI. Try creating a hybrid of yours and this one.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">25th January 2003 07:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I like it the way it is now. (Well, the reticle should move laterally aswell)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">25th January 2003 12:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">a) Correct the aspect ratio of your scopes to prevent them from looking squashed (set af=w/h and multiply y with it, or vice-versa with x).<br />
+      b) Make the ship's movement less bouncy and nutty. Right now it moves around like a carnival ride... instead of using a simple sin() or cos() formula, make something more complicated. For example:<br />
+      The targeting cross seeks out the ship. Once the distance between the cross and the ship's (projected) position is below a certain threshold, the ship will attempt to move away. Also, when the distance is really small, you could add shooting laserbeams.<br />
+      c) If you're going to use getosc() for random input, don't just use 0, 1, 2 for values. Unless you're listening to some unusual music, the stereo separation is pretty small. The difference between getosc(0,0,2) and getosc(0,0,1) will be minimal. Instead, vary the position you're sampling (first parameter) to some random value. You do realise the first parameter can be ANY value between 0 and 1 right?<br />
+      I think this is the reason why the crosshair doesn't move much horizontally.<br />
+      d) Your code is very hard to read. Variables can have loooooooong names. For your own sake (you'll thank me when you have to read your own code later), it's best to use descriptive names. Put ship position in shipx, shipy, shipz (or shx,shy,shz). Use pi for pi, twopi or tpi for pi*2, etc. Plus, there will also be less change of accidentally using a premade variable (like w,h,b,v,i) if you use longer varnames.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">25th January 2003 15:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok Thanks UnConeD, good tips, ill try and sort it out</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">25th January 2003 18:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Well, unless you're listening to some very unusual music - or ANYTHING by the Beatles ;)<br />
+      (for those who don't know: the beatles always had all the instruments and fx violently seperated between the l/r channels :) )</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">25th January 2003 19:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">well i was mostly listening to muse and korn while i was making it...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">25th January 2003 21:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok got sick of breaking the same superscopes over and over again, lol<br />
+      <br />
+      Decided to make something similar to the intro to the first Whacko. Done completely differently and the oval type thing moves differently and Raz001 is written in it and its floating through space but thats where i got the idea.<br />
+      <br />
+      edit: just noticed a coding error, nothing major but ive changed the attatchment.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">25th January 2003 22:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Looks a lot like psychotic mental patient...<br />
+      Good, except for the black holes in the back(because of alpha blending I believe). Instead of using that 3D-DM to make the 2-D oval. Just try using something two dimensional - It will be much faster, and you won't have to worry about alpha blending. Also, do something with the text and/or add something to the background.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 01:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok fixed it and added something to the background, oh and the circle is is just a movement that makes a circle out of whatever before it.<br />
+      The first DM is the one youve already seen from phsycoticmentalpatient and the second one just shifts around the already made ovaly type thingy.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th January 2003 03:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Got rid of the holes - good. The 'Z' isn't complete(the diagonal is only half as long as it should be). I would still change the oval texture to something a bit faster. I'm only getting 13FPS at 320x200 windowed.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 03:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Its not the superscope ive checked its the movements after it thatr makin it distorted, ill fix it</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 04:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">sorted, was just a bit in the circle movement that distorts a certain amount in the centre of the circle.<br />
+      <br />
+      It dont need a high fps, its just an intro</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th January 2003 15:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">All presets need as high FPS as they can get. Here, I made many optimizations(changed n in one SSC from 800 to 1) and replaced your 3-D DM with a more simple movement. You get the same basic result and it is 6FPS faster.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 21:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Decent improvements, i didnt want to just use a phsycotic beaming ******d but id forgotten about that 3D DM, ive already written a much much smaller movement that does exactly the same thing as the last one but i hate those lines that appear above everything so im going to mod all the scopes that spell RAZ001 and make them smaller so i dont have to zoom out on the screen, repost when im done.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 22:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok done, the movewment ruined it so i just used the phsycotic beam.... halved the size of the scopes that make the name, also the two red scopes at the top and bottom just need 300 points and they look solid on all sizes, also just made a cheap "craploadoflinesgoingacrossthescreen" scope instead of the spiral, FPS increased, looks thesame/better. Oh yeah ill stop doing this whole, post one thing then post again half an hour later with the attatchment thing.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th January 2003 22:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nice, finally is a little faster. You could optimize it a bit more by carrying out the divisions in the SSCs(i.e. changing y=(--0.15)/2; to y=.075; , etc.) and taking out the color clip/blur/color clip and placing a circle superscope after the first effectlist. Much better now and it still has the same effect.<br />
+      [Edit]<br />
+      One more thing: When you post new versions of the same presets add numbers at the end so it doesn't try to replace the old ones. This way I can tell what has changed.<br />
+      [/Edit]</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th January 2003 22:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok willdo from now on, i tried making a circle at first but the change of size in the circle movement and a superscope when you resize the window is different, well the last time i checked anyway.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th January 2003 23:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">It should work fine. Make sure you multiply x by h/w or y by w/h.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">27th January 2003 01:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yeah i did, its still different</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">27th January 2003 02:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I think the reason is because the circle uses x and y, but the DM uses r and d. Try converting the DM to something using x and y.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">27th January 2003 02:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nope not that either, heres what i got, it looks right in the editor window size but screws up if you go any other size.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">27th January 2003 03:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Don't change the movement in the effect list. Change the DM. The other movement works fine.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">27th January 2003 03:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Theres only one DM in there and it still screws up the size even if i get rid of it. I cant be arsed with it for now, ill leave it with the color clips for now and fix it some other time, im gonna go work on the target spaceship thing preset for a while</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">28th January 2003 08:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nice preset.The SSC writing is what i like the most and thanks to your coding i managed to understand superscopes...Now i wrote Phaze with 20 superscopes and im pretty "satisfied".Btw at the DM you should really make it more beat friendly,it doesnt react smoothly at beats :) Hope you dont mind about taking criticism from a newbie in this domain:p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">28th January 2003 16:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I can take all criticism as long as its constructive, plus im not entirely satisfied with it yet, im going to improve it when im done with presets for a pack and right now i only have 8.5 not including this intro (the .5 standing for the in pursuit thing im working on). That way i can make an intro thats equal to my skills when im done, an intro gives the first impression on a pack and i want it to be good.<br />
+      <br />
+      Btw glad i could help, simple when you look at it now aint it lol. :)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

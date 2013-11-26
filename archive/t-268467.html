@@ -1,171 +1,128 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" WinAMP Forums Collection 4 and Vista Issue AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WinAMP Forums Collection 4 and Vista Issue " />
 
-	<title> WinAMP Forums Collection 4 and Vista Issue - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>WinAMP Forums Collection 4 and Vista Issue - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">WinAMP Forums Collection 4 and Vista Issue</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=268467">WinAMP Forums Collection 4 and Vista Issue</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">VorTechS</span><br />
+      <span class="post-time small text-muted">27th March 2007 11:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">WinAMP Forums Collection 4 and Vista Issue</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=268467">WinAMP Forums Collection 4 and Vista Issue</a></p>
+      <p class="post-content"><strong>WinAMP Forums Collection 4 and Vista Issue</strong><br />
+      Hi,<br />
+      <br />
+      I'm working with a development component called BassVis which hooks into WinAMP AVS packs, and have run into a problem under Vista x86 with the 'WinAMP Forums Collection 4' AVS pack.<br />
+      <br />
+      The BassVis developer seems to think that the problem lies within the AVS pack itself, and not with the hooks provided.<br />
+      <br />
+      The problem is this:<br />
+      <br />
+      Right click on AVS and select:<br />
+      <br />
+      WinAmp Forums Compilation 4 -&gt;<br />
+      WFC4 - 05 - Original - JaVS - Candy Box<br />
+      <br />
+      then right click on AVS again and select:<br />
+      <br />
+      WinAmp Forums Compilation 4 -&gt;<br />
+      WFC4 - 06 - Original - JFASI - Black Squares On White Background<br />
+      <br />
+      This generates an unfriendly error:<br />
+      <br />
+      Faulting application PhatHack Media Manager.exe, version 0.0.0.1, time stamp 0x46039519, faulting module ntdll.dll, version 6.0.6000.16386, time stamp 0x4549bdc9, exception code 0xc0000005, fault offset 0x00062086, process id 0xb3c, application start time 0x01c76deddeb94373.<br />
+      <br />
+      The same process under XP is fine.<br />
+      I can't verify if this is an issue under WinAMP itself.<br />
+      <br />
+      Anyone know if this is a known issue with Vista/certain AVS packs?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
+      <span class="post-time small text-muted">27th March 2007 18:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Hey VorTechS,<br />
+      <br />
+      Welcome to the winamp forums!<br />
+      <br />
+      An AVS preset cannot directly cause an error. All the .avs file contains is settings and evallib code.<br />
+      <br />
+      AVS itself however is quite buggy and tends to crash at random times (always has, though for me it hardly crashes anymore with version 2.81d).<br />
+      <br />
+      I suggest you try to find out how AVS presets are built. Open the editor and look how it's made.. or try to make a small preset yourself, so you can see exactly what does what. there are tutorials in the main AVS forum<br />
+      <br />
+      PhatHack Media Manager.exe is not a part of AVS (I've never heard of it). Perhaps that's what you're having problems with? Try running AVS without running that exe at the same time.<br />
+      <br />
+      Does this eror occur <i>every time</i> you do this (under vista)?<br />
+      <br />
+      I don't have Vista, so I can't tell you more about vista specific stuff.<br />
+      <br />
+      Good luck</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">VorTechS</span><br />
-			<span class="date small text-muted">27th March 2007 11:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>WinAMP Forums Collection 4 and Vista Issue</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">VorTechS</span><br />
+      <span class="post-time small text-muted">27th March 2007 19:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hi,<br />
-<br />
-I'm working with a development component called BassVis which hooks into WinAMP AVS packs, and have run into a problem under Vista x86 with the 'WinAMP Forums Collection 4' AVS pack.<br />
-<br />
-The BassVis developer seems to think that the problem lies within the AVS pack itself, and not with the hooks provided.<br />
-<br />
-The problem is this:<br />
-<br />
-Right click on AVS and select:<br />
-<br />
-WinAmp Forums Compilation 4 -&gt; <br />
-WFC4 - 05 - Original - JaVS - Candy Box<br />
-<br />
-then right click on AVS again and select:<br />
-<br />
-WinAmp Forums Compilation 4 -&gt; <br />
-WFC4 - 06 - Original - JFASI - Black Squares On White Background<br />
-<br />
-This generates an unfriendly error:<br />
-<br />
-Faulting application PhatHack Media Manager.exe, version 0.0.0.1, time stamp 0x46039519, faulting module ntdll.dll, version 6.0.6000.16386, time stamp 0x4549bdc9, exception code 0xc0000005, fault offset 0x00062086, process id 0xb3c, application start time 0x01c76deddeb94373.<br />
-<br />
-The same process under XP is fine.<br />
-I can't verify if this is an issue under WinAMP itself.<br />
-<br />
-Anyone know if this is a known issue with Vista/certain AVS packs?
-		</p>
-</div>
+      <p class="post-content">Hey warrior! Thanks for the reply and the welcome!<br />
+      <br />
+      PhatHack Media Manager is my own application, and it uses a library called BassVis to hook into the WinAMP Visualizations - which by all accounts is not uncommon. [Programs such as Media Portal do the same thing].<br />
+      <br />
+      Bassvis itself is using AVS_VIS.DLL from WinAMP to render the Visualizations and [aparently] this is where the error occurs. By the looks, the AVS DLL version is 2.7.9.2.<br />
+      <br />
+      The issue is consistently replicatable, perhaps there is a newer DLL I should be trying! :)<br />
+      <br />
+      Essentially I just need to prove/disprove the source of the problem so that I can make sure my application is solid.<br />
+      <br />
+      [It's not a competitor to WinAMP, just a specialist management/playback tool]<br />
+      <br />
+      Thanks for your time!</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
+      <span class="post-time small text-muted">27th March 2007 22:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">27th March 2007 18:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">That version is ancient, to say the least.<br />
+      <br />
+      Winamp 5.33 comes with a new version of AVS. (2.81d) <a href="http://web.archive.org/web/*/www.winamp.com/player/full.php" target="_blank">download</a> it and copy vis_avs.dll from ..\plugins\avs\ to your own dir.<br />
+      <br />
+      But keep in mind that AVS is buggy by nature - so as long as your program is based on it, it won't be solid.<br />
+      <br />
+      By the way, the source for AVS is <a href="http://www.nullsoft.com/free/avs/" target="_blank">available</a>.<br />
+      (that source may be for 2.81b. If that's so, search the AVS forum for <u>DrO</u>'s version)</p>
+    </div>
+    <hr />
 
-		Hey VorTechS,<br />
-<br />
-Welcome to the winamp forums!<br />
-<br />
-An AVS preset cannot directly cause an error. All the .avs file contains is settings and evallib code.<br />
-<br />
-AVS itself however is quite buggy and tends to crash at random times (always has, though for me it hardly crashes anymore with version 2.81d).<br />
-<br />
-I suggest you try to find out how AVS presets are built. Open the editor and look how it's made.. or try to make a small preset yourself, so you can see exactly what does what. there are tutorials in the main AVS forum<br />
-<br />
-PhatHack Media Manager.exe is not a part of AVS (I've never heard of it). Perhaps that's what you're having problems with? Try running AVS without running that exe at the same time.<br />
-<br />
-Does this eror occur <i>every time</i> you do this (under vista)?<br />
-<br />
-I don't have Vista, so I can't tell you more about vista specific stuff.<br />
-<br />
-Good luck
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">VorTechS</span><br />
-			<span class="date small text-muted">27th March 2007 19:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hey warrior!  Thanks for the reply and the welcome!<br />
-<br />
-PhatHack Media Manager is my own application, and it uses a library called BassVis to hook into the WinAMP Visualizations - which by all accounts is not uncommon.  [Programs such as Media Portal do the same thing].<br />
-<br />
-Bassvis itself is using AVS_VIS.DLL from WinAMP to render the Visualizations and [aparently] this is where the error occurs.  By the looks, the AVS DLL version is 2.7.9.2.<br />
-<br />
-The issue is consistently replicatable, perhaps there is a newer DLL I should be trying! :)<br />
-<br />
-Essentially I just need to prove/disprove the source of the problem so that I can make sure my application is solid.<br />
-<br />
-[It's not a competitor to WinAMP, just a specialist management/playback tool]<br />
-<br />
-Thanks for your time!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">27th March 2007 22:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		That version is ancient, to say the least.<br />
-<br />
-Winamp 5.33 comes with a new version of AVS. (2.81d) <a href="http://web.archive.org/web/*/www.winamp.com/player/full.php" target="_blank">download</a> it and copy vis_avs.dll from ..\plugins\avs\ to your own dir.<br />
-<br />
-But keep in mind that AVS is buggy by nature - so as long as your program is based on it, it won't be solid.<br />
-<br />
-By the way, the source for AVS is <a href="http://www.nullsoft.com/free/avs/" target="_blank">available</a>.<br />
-(that source may be for 2.81b. If that's so, search the AVS forum for <u>DrO</u>'s version)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

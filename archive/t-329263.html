@@ -1,143 +1,98 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Downgraded - the good, the bad, the ugly AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Downgraded - the good, the bad, the ugly " />
 
-	<title> Downgraded - the good, the bad, the ugly - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Downgraded - the good, the bad, the ugly - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Downgraded - the good, the bad, the ugly</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=329263">Downgraded - the good, the bad, the ugly</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br />
+      <span class="post-time small text-muted">3rd April 2011 14:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Downgraded - the good, the bad, the ugly</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=329263">Downgraded - the good, the bad, the ugly</a></p>
+      <p class="post-content"><strong>Downgraded - the good, the bad, the ugly</strong><br />
+      I just downloaded the new Winamp and saw that they downgraded AVS to v2.81da - cool!<br />
+      Usually I'm all for new version but at least now all my presets are going to look fine for most people out there.<br />
+      <br />
+      Unfortunately the new Winamp version doesn't seem to want to render any codeable components at all - SuperScope, Dynamic Movement, Triangle, Color Modifier, you name it - don't have any effect on the image. Movement is an exception, the standard examples work, however if you edit the code or write your own it stops to work.<br />
+      Even Convolution Filter doesn't work.<br />
+      <br />
+      Note that it really seems to be the new Winamp version since I tried other plugin versions as well. And it does still work in other players like XMPlay and (I suppose, haven't tested) Foobar2000.<br />
+      <br />
+      Specs: Win7 Pro, Aero is on, Winamp 5.61, no other plugins except a few other AVS versions.<br />
+      <br />
+      Will update this as I find out more...<br />
+      <br />
+      PS:<br />
+      I am kinda sad that you Winamp devs have such a hard time with AVS compatibility :( I fear you might be dropping support at some stage with all this hassle.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br />
+      <span class="post-time small text-muted">3rd April 2011 21:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">no one can get it to compile correctly (i've personally wasted far too much time as tweaking something fixes one preset and breaks everything else), as 2.81d was basically the last that was anywhere near close and tbh there's a lack of interest in working on the plug-in anymore (especially with the v2.9 branch that appeared) but what can you do when most of the issues are in the ape's where the source is lost so it's not possible to fix / update compatibility for them. ideally would be to have whatever changes were made in v2.9 (which seems to work ok with newer compilers instead of having to use MSVC6 as the last working AVS builds were made in) but that doesn't seem to be coming *shrugs*<br />
+      <br />
+      personally, i'd prefer AVS was split off into its own installer and provided either as an option in the installer as is and is then remotely downloaded as appropriate or just left as a main site download only.<br />
+      <br />
+      and probably the differences you're seeing are due to different permissions / settings in the loaded Winamp process compared to other players. which just backs up my own view on what to do with AVS.<br />
+      <br />
+      -daz</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Grandchild</span><br />
-			<span class="date small text-muted">3rd April 2011 14:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Downgraded - the good, the bad, the ugly</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br />
+      <span class="post-time small text-muted">3rd April 2011 23:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I just downloaded the new Winamp and saw that they downgraded AVS to v2.81da - cool!<br />
-Usually I'm all for new version but at least now all my presets are going to look fine for most people out there.<br />
-<br />
-Unfortunately the new Winamp version doesn't seem to want to render any codeable components at all - SuperScope, Dynamic Movement, Triangle, Color Modifier, you name it - don't have any effect on the image. Movement is an exception, the standard examples work, however if you edit the code or write your own it stops to work.<br />
-Even Convolution Filter doesn't work.<br />
-<br />
-Note that it really seems to be the new Winamp version since I tried other plugin versions as well. And it does still work in other players like XMPlay and (I suppose, haven't tested) Foobar2000.<br />
-<br />
-Specs: Win7 Pro, Aero is on, Winamp 5.61, no other plugins except a few other AVS versions.<br />
-<br />
-Will update this as I find out more...<br />
-<br />
-PS:<br />
-I am kinda sad that you Winamp devs have such a hard time with AVS compatibility :( I fear you might be dropping support at some stage with all this hassle.
-		</p>
-</div>
+      <p class="post-content">Yeah I think I can understand your frustration and your lack of interest by now.<br />
+      <br />
+      Might be permissions I don't know.<br />
+      I have my ways to get around the issue, so no real problem for me.<br />
+      <br />
+      Oh well... We'll see what the future holds for the distribution of AVS.<br />
+      For my part I like the idea of kids downloading it along with Winamp and perhaps sometime finding out the cool stuff you can do and the homework time you can waste with it.<br />
+      <br />
+      Would an independently coded new AVS version have any chance to be included in an official Winamp release like now, provided that the source is available to you and you could modify it to fit your needs in terms of Winamp compatibility?<br />
+      ¬_¬</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">3rd April 2011 23:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DrO</span><br />
-			<span class="date small text-muted">3rd April 2011 21:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">have you tried setting up a plugin directory in the user-space (%APPDATA%), would be good to know if that solves it. but then again i remember having <a href="http://web.archive.org/web/*/forums.winamp.com/showpost.php?p=2753546&amp;postcount=2" target="_blank">different problems</a> with 5.6 myself and my plugins are all running in user-space.<br />
+      <br />
+      slight off-topic: i've posted a couple of <a href="http://avs.visbot.net/" target="_blank">older versions</a> of avs (though these will not solve your problems with 5.6)</p>
+    </div>
+    <hr />
 
-		no one can get it to compile correctly (i've personally wasted far too much time as tweaking something fixes one preset and breaks everything else), as 2.81d was basically the last that was anywhere near close and tbh there's a lack of interest in working on the plug-in anymore (especially with the v2.9 branch that appeared) but what can you do when most of the issues are in the ape's where the source is lost so it's not possible to fix / update compatibility for them. ideally would be to have whatever changes were made in v2.9 (which seems to work ok with newer compilers instead of having to use MSVC6 as the last working AVS builds were made in) but that doesn't seem to be coming *shrugs*<br />
-<br />
-personally, i'd prefer AVS was split off into its own installer and provided either as an option in the installer as is and is then remotely downloaded as appropriate or just left as a main site download only.<br />
-<br />
-and probably the differences you're seeing are due to different permissions / settings in the loaded Winamp process compared to other players. which just backs up my own view on what to do with AVS.<br />
-<br />
--daz
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Grandchild</span><br />
-			<span class="date small text-muted">3rd April 2011 23:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah I think I can understand your frustration and your lack of interest by now.<br />
-<br />
-Might be permissions I don't know.<br />
-I have my ways to get around the issue, so no real problem for me.<br />
-<br />
-Oh well... We'll see what the future holds for the distribution of AVS.<br />
-For my part I like the idea of kids downloading it along with Winamp and perhaps sometime finding out the cool stuff you can do and the homework time you can waste with it.<br />
-<br />
-Would an independently coded new AVS version have any chance to be included in an official Winamp release like now, provided that the source is available to you and you could modify it to fit your needs in terms of Winamp compatibility?<br />
-¬_¬
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">3rd April 2011 23:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		have you tried setting up a plugin directory in the user-space (%APPDATA%), would be good to know if that solves it. but then again i remember having <a href="http://web.archive.org/web/*/forums.winamp.com/showpost.php?p=2753546&amp;postcount=2" target="_blank">different problems</a> with 5.6 myself and my plugins are all running in user-space.<br />
-<br />
-slight off-topic: i've posted a couple of <a href="http://avs.visbot.net/" target="_blank">older versions</a> of avs (though these will not solve your problems with 5.6)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

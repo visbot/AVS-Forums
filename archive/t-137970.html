@@ -1,164 +1,114 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Morphing ssc's AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Morphing ssc's " />
 
-	<title> Morphing ssc's - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Morphing ssc's - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">Morphing ssc's</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=137970">Morphing ssc's</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">5th June 2003 16:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Morphing ssc's</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=137970">Morphing ssc's</a></p>
+      <p class="post-content"><strong>Morphing ssc's</strong><br />
+      I have been wondering, is there any standars way of morphing an ssc beetween any 2 specefic shapes? I tried to look into some of jherico's presets, but couldnt figure out.<br />
+      Any help would be appreciated.<br />
+      Thanks.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">5th June 2003 22:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">yes...it is very easy<br />
+      <br />
+      x1a=...(insert code here);<br />
+      y1a=...;<br />
+      z1a=...;<br />
+      x2b=...;<br />
+      y2b=...;<br />
+      z2b...;<br />
+      <br />
+      x1=x1a*p+(1-p)*x1b;<br />
+      y1=y1a*p+(1-p)*y1b;<br />
+      z1=z1a*b+(1-p)*z1b;<br />
+      <br />
+      p is a value from 0 to 1.<br />
+      <br />
+      <br />
+      btw...this was in the tips and tricks thread. you should have searched the forums. also there is instructions on how to do it with three variables.<br />
+      <br />
+      of course, you can also get cool effects if you use seperate variables for p for x, y, and z (i.e. use px, py, pz) this way, you will have much more variation in the SSC.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">5th June 2003 16:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Morphing ssc's</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">6th June 2003 00:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I have been wondering, is there any standars way of morphing an ssc beetween any 2 specefic shapes? I tried to look into some of jherico's presets, but couldnt figure out.<br />
-Any help would be appreciated.<br />
-Thanks.
-		</p>
-</div>
+      <p class="post-content">this really wasnt in the tips and tricks thread.. to search for it you would of had to know that it uses linear filtering method to achieve its ends.. [the x=b*pt+c*(1-pt) part]<br />
+      <br />
+      But yeah, its reasonably easy as long as you understand how it works.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">6th June 2003 00:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">5th June 2003 22:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">dude, that was not cool...i wrote an explanation on this for about ten minutes this morning and my comp decided it wasn't going to post it. :mad:<br />
+      <br />
+      i'm going to go shoot myself now u_u</p>
+    </div>
+    <hr />
 
-		yes...it is very easy<br />
-<br />
-x1a=...(insert code here);<br />
-y1a=...;<br />
-z1a=...;<br />
-x2b=...;<br />
-y2b=...;<br />
-z2b...;<br />
-<br />
-x1=x1a*p+(1-p)*x1b;<br />
-y1=y1a*p+(1-p)*y1b;<br />
-z1=z1a*b+(1-p)*z1b;<br />
-<br />
-p is a value from 0 to 1.<br />
-<br />
-<br />
-btw...this was in the tips and tricks thread.  you should have searched the forums.  also there is instructions on how to do it with three variables.<br />
-<br />
-of course, you can also get cool effects if you use seperate variables for p for x, y, and z (i.e. use px, py, pz) this way, you will have much more variation in the SSC.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">6th June 2003 03:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">The general rule is:<br />
+      <br />
+      To morph between n shapes, pick weights w<font size="1">1</font>, w<font size="1">2</font>, ..., w<font size="1">n</font>. So that<br />
+      <br />
+      <font size="1">n</font><br />
+      <font size="3">***931;</font> w<font size="1">i</font> = 1 (and usually 0 &lt; w<font size="1">i</font> &lt; 1)<br />
+      <font size="1">i=1</font><br />
+      <br />
+      For coordinates x<font size="1">i</font>, y<font size="1">i</font>, z<font size="1">i</font>, you calculate:<br />
+      <br />
+      &amp;#160;&amp;#160; <font size="1">n</font><br />
+      x=<font size="3">***931;</font> w<font size="1">i</font>* x<font size="1">i</font><br />
+      &amp;#160;&amp;#160; <font size="1">i=1</font><br />
+      <br />
+      To generate these with uniform spread is not very easy though, and it's probably more useful to keep n=2 and morph from shape to shape rather than mixing all of them together.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">6th June 2003 00:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		this really wasnt in the tips and tricks thread.. to search for it you would of had to know that it uses linear filtering method to achieve its ends.. [the x=b*pt+c*(1-pt) part]<br />
-<br />
-But yeah, its reasonably easy as long as you understand how it works.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">6th June 2003 00:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		dude, that was not cool...i wrote an explanation on this for about ten minutes this morning and my comp decided it wasn't going to post it. :mad:<br />
-<br />
-i'm going to go shoot myself now u_u
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">6th June 2003 03:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The general rule is:<br />
-<br />
-To morph between n shapes, pick weights w<font size="1">1</font>, w<font size="1">2</font>, ..., w<font size="1">n</font>. So that<br />
-<br />
-<font size="1">n</font><br />
-<font size="3">***931;</font> w<font size="1">i</font> = 1   (and usually 0 &lt; w<font size="1">i</font> &lt; 1)<br />
-<font size="1">i=1</font><br />
-<br />
-For coordinates x<font size="1">i</font>, y<font size="1">i</font>, z<font size="1">i</font>, you calculate:<br />
-<br />
-&amp;#160;&amp;#160; <font size="1">n</font><br />
-x=<font size="3">***931;</font> w<font size="1">i</font>* x<font size="1">i</font><br />
-&amp;#160;&amp;#160; <font size="1">i=1</font><br />
-<br />
-To generate these with uniform spread is not very easy though, and it's probably more useful to keep n=2 and morph from shape to shape rather than mixing all of them together.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

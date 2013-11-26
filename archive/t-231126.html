@@ -1,157 +1,107 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Avs / Render / Text / $(title) format AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Avs / Render / Text / $(title) format " />
 
-	<title> Avs / Render / Text / $(title) format - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Avs / Render / Text / $(title) format - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Avs / Render / Text / $(title) format</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=231126">Avs / Render / Text / $(title) format</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">deligeorgis</span><br />
+      <span class="post-time small text-muted">16th November 2005 02:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Avs / Render / Text / $(title) format</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=231126">Avs / Render / Text / $(title) format</a></p>
+      <p class="post-content"><strong>Avs / Render / Text / $(title) format</strong><br />
+      Where can I find a full description of using text formats like $(title), $(playlen) etc. in avs?<br />
+      <br />
+      My files are in folders like this:<br />
+      C:\Music\Artist\Album (Year)\Title (Tracknumber).wav<br />
+      Most of them are in WAV format recorded from LPs or tapes, so there is no tag available. Also they are too many to be able to tag them all.<br />
+      <br />
+      Playlist displays them as:<br />
+      001 Artist - Album (2001) - Title (01) - 4:59<br />
+      <br />
+      What I need is to be able to show in AVS window only one, or some of what playlist's title displays.<br />
+      For example:<br />
+      "Artist - Album"<br />
+      "Artist - Title" but not the tracknumber 01 in the "( )".<br />
+      <br />
+      Is there a way to "tell" the text renderer to "search" the full title and display only what is in front of the 1st "-" or between the 3rd and 4th "-", or hide whatever between "( )", or something like that.<br />
+      <br />
+      Any help sould be appreciated.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">16th November 2005 14:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">I understand your problem, but i don't think that this is possible, cause the only command you have in render/text is the $(title:n) command. And all you can adjust here is how many characters of the title you want to be shown.<br />
+      <br />
+      Actually i'm not even sure if you could display the titles like you want in winamp's playlist (using the titles menu in Winamp Preferences). But anyway, for AVS i'm sure that this won't be possible. Sorry. :hang:<br />
+      <br />
+      Though, if someone knows any better he shall correct me! ;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">deligeorgis</span><br />
-			<span class="date small text-muted">16th November 2005 02:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Avs / Render / Text / $(title) format</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">16th November 2005 14:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Where can I find a full description of using text formats like $(title), $(playlen) etc. in avs?<br />
-<br />
-My files are in folders like this:<br />
-C:\Music\Artist\Album (Year)\Title (Tracknumber).wav<br />
-Most of them are in WAV format recorded from LPs or tapes, so there is no tag available. Also they are too many to be able to tag them all.<br />
-<br />
-Playlist displays them as:<br />
-001 Artist - Album (2001) - Title (01) - 4:59<br />
-<br />
-What I need is to be able to show in AVS window only one, or some of what playlist's title displays.<br />
-For example:<br />
-&quot;Artist - Album&quot;<br />
-&quot;Artist - Title&quot; but not the tracknumber 01 in the &quot;( )&quot;.<br />
-<br />
-Is there a way to &quot;tell&quot; the text renderer to &quot;search&quot; the full title and display only what is in front of the 1st &quot;-&quot; or between the 3rd and 4th &quot;-&quot;, or hide whatever between &quot;( )&quot;, or something like that.<br />
-<br />
-Any help sould be appreciated.
-		</p>
-</div>
+      <p class="post-content">converting the waves to a lossless format could be a solution (without losing soundquality), as long as it supports tags.<br />
+      <br />
+      have a look at <a href="http://flac.sourceforge.net/" target="_blank">flac</a> for instance.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">deligeorgis</span><br />
+      <span class="post-time small text-muted">18th November 2005 01:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">16th November 2005 14:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Thanks for reply.<br />
+      Maybe the use of $(reg..) has something to do with it? (The title format?)<br />
+      Where can I find a guide about it? It's all greek to me, even though I'm... from Greece!<br />
+      <br />
+      Answer to ^..^ 's "Actually i'm not even sure if you could display the titles like you want in winamp's playlist":<br />
+      -Preferences&gt;Media library&gt;Watch folders&gt;Metadata reading settings&gt;Configure&gt;Simple(Detects Artist\Album\Title)<br />
+      -Preferences&gt;Titles&gt;Advanced title display format&gt;%artist% - %album% - %title%</p>
+    </div>
+    <hr />
 
-		I understand your problem, but i don't think that this is possible, cause the only command you have in render/text is the $(title:n) command. And all you can adjust here is how many characters of the title you want to be shown.<br />
-<br />
-Actually i'm not even sure if you could display the titles like you want in winamp's playlist (using the titles menu in Winamp Preferences). But anyway, for AVS i'm sure that this won't be possible. Sorry. :hang:<br />
-<br />
-Though, if someone knows any better he shall correct me! ;)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">18th November 2005 11:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Ah, so for the playlists it is possible! Good to know! :)<br />
+      <br />
+      But unfortunately <i>reg</i> won't help you displaying the title in AVS. Actually reg is an so called "global varaible" in AVS. I suppose you've already seen that many AVS-presets use a lot of code and many different effects to display those neat visualizations. Normally the code in one effect (let's say in one superscope) does not have any influence on another effect (let's say another superscope). But what if you want to sync both scopes, so that they move or rotate the same randomized way (just to give one example)? That's when global variables come in handy. You calculate their values once and from that on you can use them in all effects of your preset. This way you're able to sync all kinds of different effects. Now what the $(regXX) command in the render/text does is just displaying the value of one of the 99 global variables (where XX means a number between 00 and 99), that's all.<br />
+      Ok, i hope you could follow my explanaition and that you now understand why reg won't help you with this problem... :(</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">16th November 2005 14:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		converting the waves to a lossless format could be a solution (without losing soundquality), as long as it supports tags.<br />
-<br />
-have a look at <a href="http://flac.sourceforge.net/" target="_blank">flac</a> for instance.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">deligeorgis</span><br />
-			<span class="date small text-muted">18th November 2005 01:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for reply.<br />
-Maybe the use of $(reg..) has something to do with it? (The title format?)<br />
-Where can I find a guide about it? It's all greek to me, even though I'm... from Greece!<br />
-<br />
-Answer to ^..^ 's &quot;Actually i'm not even sure if you could display the titles like you want in winamp's playlist&quot;:<br />
--Preferences&gt;Media library&gt;Watch folders&gt;Metadata reading settings&gt;Configure&gt;Simple(Detects Artist\Album\Title)<br />
--Preferences&gt;Titles&gt;Advanced title display format&gt;%artist% - %album% - %title%
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">18th November 2005 11:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ah, so for the playlists it is possible! Good to know! :)<br />
-<br />
-But unfortunately <i>reg</i> won't help you displaying the title in AVS. Actually reg is an so called &quot;global varaible&quot; in AVS. I suppose you've already seen that many AVS-presets use a lot of code and many different effects to display those neat visualizations. Normally the code in one effect (let's say in one superscope) does not have any influence on another effect (let's say another superscope). But what if you want to sync both scopes, so that they move or rotate the same randomized way (just to give one example)? That's when global variables come in handy. You calculate their values once and from that on you can use them in all effects of your preset. This way you're able to sync all kinds of different effects. Now what the $(regXX) command in the render/text does is just displaying the value of one of the 99 global variables (where XX means a number between 00 and 99), that's all.<br />
-Ok, i hope you could follow my explanaition and that you now understand why reg won't help you with this problem... :(
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

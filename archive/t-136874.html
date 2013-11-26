@@ -1,478 +1,304 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Number question AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Number question " />
 
-	<title> Number question - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Number question - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Number question</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=136874">Number question</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 06:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Number question</strong><br />
-		
-		
-
-		Ok, i really dont wanna get flamed for this thread.. so if you feel like you are getting pissed off, please press the 'back' button now.<br />
-<br />
-I need to return the digits within a number alone..<br />
-for example, from a random number number. 12345. i want to return the 3rd place from the right. (3). Or from the the number 54.123, it should return the number 1. <br />
-<br />
-The code needs to work for number of <b>any</b> reasonable leangth<br />
-And needs to return a specifiable digit from the left or right (whichever you find more practical)<br />
-<br />
-any suggestions would be great.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">28th May 2003 07:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		*Cough* Thats really hard to do man. You know this could be done in any programming language but not in AVS itself because there's simply no way of determining the length of a stringconverted var.<br />
-<br />
-Sorry, i don't have the slightest idea.<br />
-<br />
-But if you'd tell waht you need it for there's maybe another solution.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">28th May 2003 07:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		You're lucky, I needed such thing when trying to do a point-frame relation (in my words, not yours) using only a few variables.<br />
-n1=n/pow(10,a)%10 where a is the place from right minus one.<br />
-Any faster solutions?<br />
-<br />
-(attached is the preset I worked on using this system. definitely not done, don't steal!)<br />
-(progression is the old system, devised by skupers, 1.1 is the new version, still needs a lot of betterment)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 07:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thats similar to what i had when i got stuck.<br />
-Ill check it for what i need when i get home.<br />
-<br />
-<br />
-Ill show you what it is when your done.. youll cream your pants.<br />
-<br />
-<br />
-[edit][b]I just downloaded  winamp on this computer just to check out your idea.. Man, that is insane! i cant quite work out how it works, nor do i know how i can apply it to what i need..though.<br />
-From what i can see, this will only work for multiples of 10. Which is about as far as i got aswell.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">28th May 2003 07:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		n1=0.12345/pow(10,-5)%10<br />
-n1=0.12345/0.00001%10<br />
-n1=12345%10<br />
-n1=5<br />
-<br />
-It works for nonintegerA.<br />
-Why would you need nonintegerB?<br />
-<br />
-Oh, and AVS is limited to 2^32 (4294967296) and 2^-32, and for every step right of the decimal point, the limit left of dec point lowers.<br />
-<br />
-What are you using this for?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 07:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		sorry, i keep editing my posts and deleting stuff. And then i come back and find that somone has just replied to the bit i deleted.<br />
-<br />
-You just gave me an idea nic, im gonna go hame and try it out.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">28th May 2003 07:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nic, i got that far too, but as i said first, how would you determine the length of a random floating point number to count it from the right (or the left) not starting at the middle piont?<br />
-<br />
-You could only count down the decimals or up the real ones.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 08:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yeah.. i guess that is the problem..<br />
-Here is the way i was doing it before<br />
-<br />
-1&gt; change float by multiplying be 10^number<br />
-2&gt; kill remainder by subtracting number%1<br />
-3&gt; subtract all the numbers to the left of the one you want, each multiplied by 10^(their respective position).<br />
-<br />
-here is another, easier way to do it that i have just discovered courtesy of nic.<br />
-<br />
-1&gt; change float so that <i>the first remainder</i> is the number you want. get that remainder using %, assign to 'rm'.<br />
-2&gt; then use rm as base to find the first decimal: rm-rm%(10^leangth of number-1)<br />
-<br />
-as you can see, we are still quite stuck.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">28th May 2003 08:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		length=if(above(number/100,0),3,length);<br />
-length=if(above(number/1000,0),4,length);<br />
-length=if(above(number/10000,0),5,length);<br />
-<br />
-ugly and slow and finite, but should work.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 08:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i dont think use finite code.. but ill try something like that.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th May 2003 09:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here's what I use for displaying numbers:<br />
-(val*pow(10,-digit)-.499999999999)%10<br />
-<br />
-for 'digit', use:<br />
-<pre><code>number: 0 0 3 . 1 4 1 5... <br />
-digits: 2 1 0  -1-2-3-4</code></pre><br />
-<br />
-The .49.. is necessary because otherwise quantities ending in 0 will get rounded off incorrectly. E.g. try displaying &quot;10&quot;, which would come out as &quot;00&quot; if you'd use 0.5.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th May 2003 09:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Like this.... (had it lying around)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 09:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		UCD<br />
-YOU SLUT!!!<br />
-you stole my idea.<br />
-<br />
-oh well, mine is better. not far off now. :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">28th May 2003 10:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Whatever you try, UCD has done it before or is telling you it aint possible. Somehow its just depressing :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 10:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well, as i said, mine is far better and far more advanced. (bragitty brag brag brag)<br />
-<br />
-Its finished now!!!<br />
-Thanks to all who posted on this thread!<br />
-Now go here and see the finished deal!<br />
-<br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=136889" target="_blank">The Variable Tracker Thread</a>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">28th May 2003 14:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i just realised how amazing that progressions thing of yours is nic!<br />
-how would one go about increasing the number of points to hold/remember the previouse state for. <br />
-<br />
-(eg, at the moment it only last for eight frames, because there is only 8 points. But if you add more points, it stops working)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">28th May 2003 16:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I know that.<br />
-<br />
-I can add more storage vars to increase either the length or the detail tenfold (hopefully), and even then it still won't use more vars than skupers' way.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">29th May 2003 00:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		poohbar, otherwise it could be very useful for things like tentacles and stuff..<br />
-<br />
-Here is what i would use that code for if you could make it better, and if you would let me steal it :D :D<br />
-<br />
-these dont react to beat or specdata at all, because their path needs to remain completely predicatble at all times, so they look kindof dull. Nice effect though.<br />
-<br />
-They work upon a static path, the further along i each point is, the lesser the point on that path is used. Each scope is slightly randomised so that they look like tails. And the path is completely different for different tadpoles.<br />
-<br />
-I havnt used these in a preset yet because i dont know how to make them reactive. :( any ideas?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">29th May 2003 06:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Holy, that's goddamned nice.<br />
-Steal no, borrow yes, give credit must.<br />
-I'll see what I can do with it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">29th May 2003 07:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		at the moment i cant use your code anyway.. i need the variables to hold for around 70-80 points (the maximum leanth of any of my scopes).<br />
-<br />
-btw, unconed's 'anemone' preset from Whacko V sets off in a similar direction, although hes used multiple scopes for each tentacle (cheater).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">29th May 2003 20:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Method for storing variable data using Taylor-series approximation (only works well for data that is continuous up to the n'th derivative, n=4 in this case):<br />
-<br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=133435&amp;highlight=tentacles" target="_blank">http://forums.winamp.com/showthread....ight=tentacles</a>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">30th May 2003 03:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thank you :), give you full credit if i use yes?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Number question</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=136874">Number question</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 06:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Number question</strong><br />
+      Ok, i really dont wanna get flamed for this thread.. so if you feel like you are getting pissed off, please press the 'back' button now.<br />
+      <br />
+      I need to return the digits within a number alone..<br />
+      for example, from a random number number. 12345. i want to return the 3rd place from the right. (3). Or from the the number 54.123, it should return the number 1.<br />
+      <br />
+      The code needs to work for number of <b>any</b> reasonable leangth<br />
+      And needs to return a specifiable digit from the left or right (whichever you find more practical)<br />
+      <br />
+      any suggestions would be great.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">*Cough* Thats really hard to do man. You know this could be done in any programming language but not in AVS itself because there's simply no way of determining the length of a stringconverted var.<br />
+      <br />
+      Sorry, i don't have the slightest idea.<br />
+      <br />
+      But if you'd tell waht you need it for there's maybe another solution.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">You're lucky, I needed such thing when trying to do a point-frame relation (in my words, not yours) using only a few variables.<br />
+      n1=n/pow(10,a)%10 where a is the place from right minus one.<br />
+      Any faster solutions?<br />
+      <br />
+      (attached is the preset I worked on using this system. definitely not done, don't steal!)<br />
+      (progression is the old system, devised by skupers, 1.1 is the new version, still needs a lot of betterment)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">thats similar to what i had when i got stuck.<br />
+      Ill check it for what i need when i get home.<br />
+      <br />
+      <br />
+      Ill show you what it is when your done.. youll cream your pants.<br />
+      <br />
+      <br />
+      [edit][b]I just downloaded winamp on this computer just to check out your idea.. Man, that is insane! i cant quite work out how it works, nor do i know how i can apply it to what i need..though.<br />
+      From what i can see, this will only work for multiples of 10. Which is about as far as i got aswell.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">n1=0.12345/pow(10,-5)%10<br />
+      n1=0.12345/0.00001%10<br />
+      n1=12345%10<br />
+      n1=5<br />
+      <br />
+      It works for nonintegerA.<br />
+      Why would you need nonintegerB?<br />
+      <br />
+      Oh, and AVS is limited to 2^32 (4294967296) and 2^-32, and for every step right of the decimal point, the limit left of dec point lowers.<br />
+      <br />
+      What are you using this for?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">sorry, i keep editing my posts and deleting stuff. And then i come back and find that somone has just replied to the bit i deleted.<br />
+      <br />
+      You just gave me an idea nic, im gonna go hame and try it out.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
+      <span class="post-time small text-muted">28th May 2003 07:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nic, i got that far too, but as i said first, how would you determine the length of a random floating point number to count it from the right (or the left) not starting at the middle piont?<br />
+      <br />
+      You could only count down the decimals or up the real ones.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 08:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">yeah.. i guess that is the problem..<br />
+      Here is the way i was doing it before<br />
+      <br />
+      1&gt; change float by multiplying be 10^number<br />
+      2&gt; kill remainder by subtracting number%1<br />
+      3&gt; subtract all the numbers to the left of the one you want, each multiplied by 10^(their respective position).<br />
+      <br />
+      here is another, easier way to do it that i have just discovered courtesy of nic.<br />
+      <br />
+      1&gt; change float so that <i>the first remainder</i> is the number you want. get that remainder using %, assign to 'rm'.<br />
+      2&gt; then use rm as base to find the first decimal: rm-rm%(10^leangth of number-1)<br />
+      <br />
+      as you can see, we are still quite stuck.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">28th May 2003 08:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">length=if(above(number/100,0),3,length);<br />
+      length=if(above(number/1000,0),4,length);<br />
+      length=if(above(number/10000,0),5,length);<br />
+      <br />
+      ugly and slow and finite, but should work.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 08:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i dont think use finite code.. but ill try something like that.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">28th May 2003 09:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Here's what I use for displaying numbers:<br />
+      (val*pow(10,-digit)-.499999999999)%10<br />
+      <br />
+      for 'digit', use:<br /></p>
+      <pre>
+<code>number: 0 0 3 . 1 4 1 5... <br />digits: 2 1 0  -1-2-3-4</code>
+</pre><br />
+      <br />
+      The .49.. is necessary because otherwise quantities ending in 0 will get rounded off incorrectly. E.g. try displaying "10", which would come out as "00" if you'd use 0.5.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">28th May 2003 09:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Like this.... (had it lying around)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 09:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">UCD<br />
+      YOU SLUT!!!<br />
+      you stole my idea.<br />
+      <br />
+      oh well, mine is better. not far off now. :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
+      <span class="post-time small text-muted">28th May 2003 10:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Whatever you try, UCD has done it before or is telling you it aint possible. Somehow its just depressing :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 10:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Well, as i said, mine is far better and far more advanced. (bragitty brag brag brag)<br />
+      <br />
+      Its finished now!!!<br />
+      Thanks to all who posted on this thread!<br />
+      Now go here and see the finished deal!<br />
+      <br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=136889" target="_blank">The Variable Tracker Thread</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">28th May 2003 14:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i just realised how amazing that progressions thing of yours is nic!<br />
+      how would one go about increasing the number of points to hold/remember the previouse state for.<br />
+      <br />
+      (eg, at the moment it only last for eight frames, because there is only 8 points. But if you add more points, it stops working)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">28th May 2003 16:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I know that.<br />
+      <br />
+      I can add more storage vars to increase either the length or the detail tenfold (hopefully), and even then it still won't use more vars than skupers' way.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">29th May 2003 00:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">poohbar, otherwise it could be very useful for things like tentacles and stuff..<br />
+      <br />
+      Here is what i would use that code for if you could make it better, and if you would let me steal it :D :D<br />
+      <br />
+      these dont react to beat or specdata at all, because their path needs to remain completely predicatble at all times, so they look kindof dull. Nice effect though.<br />
+      <br />
+      They work upon a static path, the further along i each point is, the lesser the point on that path is used. Each scope is slightly randomised so that they look like tails. And the path is completely different for different tadpoles.<br />
+      <br />
+      I havnt used these in a preset yet because i dont know how to make them reactive. :( any ideas?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">29th May 2003 06:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Holy, that's goddamned nice.<br />
+      Steal no, borrow yes, give credit must.<br />
+      I'll see what I can do with it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">29th May 2003 07:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">at the moment i cant use your code anyway.. i need the variables to hold for around 70-80 points (the maximum leanth of any of my scopes).<br />
+      <br />
+      btw, unconed's 'anemone' preset from Whacko V sets off in a similar direction, although hes used multiple scopes for each tentacle (cheater).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">29th May 2003 20:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Method for storing variable data using Taylor-series approximation (only works well for data that is continuous up to the n'th derivative, n=4 in this case):<br />
+      <br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=133435&amp;highlight=tentacles" target="_blank">http://forums.winamp.com/showthread....ight=tentacles</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">30th May 2003 03:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">thank you :), give you full credit if i use yes?</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,196 +1,145 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" atan2??? AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="atan2??? " />
 
-	<title> atan2??? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>atan2??? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">atan2???</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=71940">atan2???</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">14th January 2002 20:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">atan2???</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=71940">atan2???</a></p>
+      <p class="post-content"><strong>atan2???</strong><br />
+      Although I only really do the MilkDrop presets I suppose this is the best place to ask this, as it was copied from AVS.<br />
+      <br />
+      What does the atan2 (and exp) function do??<br />
+      <br />
+      I know it is not documented but hopefully someone out there can explain - hopefully so I can understand;)?<br />
+      <br />
+      Thanks in advance,<br />
+      <br />
+      Rovastar</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">14th January 2002 20:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content"><strong>Explanation</strong><br />
+      exp(a) is the same as pow(e, a), where e is euler's constant (2.7182..., the base of natural logarithms).<br />
+      <br />
+      atan2(y,x) calculates the arctangent of (y/x), except that it checks the quadrants the point (x,y) is in and wether or not x equals zero. Atan2 is very handy to from rectangular to polar coordinates:<br />
+      <br />
+      r = atan2(y,x)<br />
+      d = sqrt(sqr(x)+sqr(y)) -&gt; pythagoras' formula<br />
+      <br />
+      This is the normal way it's done, however because AVS puts "0 rotation" on the vertical axis at the top (instead of on the horizontal axis on the right, as is usually done), you'll have to switch around y and x in atan2 and add a minus sign. Can't tell you out of the top of my head which it is.<br />
+      <br />
+      I'm not sure who 'discovered' these two functions first, but I had been using atan2() without knowing it wasn't documented: it's a standard function in the C math library and I used it by habit. By nosing around inside vis_avs.dll I found exp(). It could be me, could be someone else :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">14th January 2002 20:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>atan2???</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">14th January 2002 21:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Although I only really do the MilkDrop presets I suppose this is the best place to ask this, as it was copied from AVS.<br />
-<br />
-What does the atan2 (and exp) function do??<br />
-<br />
-I know it is not documented but hopefully someone out there can explain - hopefully so I can understand;)?<br />
-<br />
-Thanks in advance,<br />
-<br />
-Rovastar
-		</p>
-</div>
+      <p class="post-content">Thanks UnConeD for the speedy reply that explains a lot.<br />
+      <br />
+      As I am speaking mainly from a MilkDrop point of view and all the function code was copied from AVS. UnConeD as you are pretty clued up on this stuff is this all the commands that are available for AVS. Or are there more - I suppose some might not be in AVS.<br />
+      Or where is the 'current' list of functions in AVS.<br />
+      <br />
+      The following operators are available:<br />
+      = : assign<br />
+      +,-,/,* : plus, minus, divide, multiply<br />
+      | : convert to integer, and do bitwise or<br />
+      &amp; : convert to integer, and do bitwise and<br />
+      % : convert to integer, and get remainder<br />
+      The following functions are available:<br />
+      abs(var) : returns the absolute value of 'var'<br />
+      sin(var) : returns the sine of the angle var (expressed in radians)<br />
+      cos(var) : returns the cosine of the angle var<br />
+      tan(var) : returns the tangent of the angle var<br />
+      asin(var) : returns the arcsine of var<br />
+      acos(var) : returns the arccosine of var<br />
+      atan(var) : returns the arctangent of var<br />
+      sqr(var) : returns the square of var<br />
+      sqrt(var) : returns the square root of var<br />
+      pow(var,var2) : returns var to the power of var2<br />
+      log(var) : returns the log base e of var<br />
+      log10(var) : returns the log base 10 of var<br />
+      sign(var) : returns the sign of var or 0<br />
+      min(var,var2) : returns the smalest value<br />
+      max(var,var2) : returns the greatest value<br />
+      sigmoid(var,var2) : returns sigmoid function value of x=var (var2=constraint)<br />
+      rand(var) : returns a random value between 0 and var<br />
+      bor(var,var2) : boolean or, returns 1 if var or var2 is != 0<br />
+      bnot(var) : boolean not, returns 1 if var == 0 or 0 if var != 0<br />
+      if(cond,vartrue,varfalse) : if condition is nonzero, returns valtrue, otherwise returns valfalse<br />
+      equal(var,var2) : returns 1 if var = var2, else 0<br />
+      above(var,var2) : returns 1 if var &gt; var2, else 0<br />
+      below(var,var2) : returns 1 if var &lt; var2, else 0<br />
+      <br />
+      Grrh the formating.<br />
+      <br />
+      Thanks again in advance.<br />
+      <br />
+      Cheers,<br />
+      <br />
+      Rovastar</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">solamon</span><br />
+      <span class="post-time small text-muted">14th January 2002 21:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th January 2002 20:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Explanation</strong><br />
-		
-		
+      <p class="post-content">If you don't mind my inquiring UnConeD, just how do you understand how AVS works so damn well? It's obivious you are a programmer, but what do you have in your head that so few others in the community seem to have?</p>
+    </div>
+    <hr />
 
-		exp(a) is the same as pow(e, a), where e is euler's constant (2.7182..., the base of natural logarithms).<br />
-<br />
-atan2(y,x) calculates the arctangent of (y/x), except that it checks the quadrants the point (x,y) is in and wether or not x equals zero. Atan2 is very handy to from rectangular to polar coordinates:<br />
-<br />
-r = atan2(y,x)<br />
-d = sqrt(sqr(x)+sqr(y)) -&gt; pythagoras' formula<br />
-<br />
-This is the normal way it's done, however because AVS puts &quot;0 rotation&quot; on the vertical axis at the top (instead of on the horizontal axis on the right, as is usually done), you'll have to switch around y and x in atan2 and add a minus sign. Can't tell you out of the top of my head which it is.<br />
-<br />
-I'm not sure who 'discovered' these two functions first, but I had been using atan2() without knowing it wasn't documented: it's a standard function in the C math library and I used it by habit. By nosing around inside vis_avs.dll I found exp(). It could be me, could be someone else :)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">15th January 2002 14:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Vis plug-in experience, curiosity and a lot of mathclasses in high-school? I don't know :)<br />
+      <br />
+      A year or two ago I made my own visualisation plug-in (for myself, it was never released) which was basically the same as the earlier versions of WVis: some built-in effects that you could toggle.<br />
+      It wasn't fast or anything, but it did teach me how to do certains things (like a Trans / Movement or blurring) myself and generally taught me a lot about graphics-coding.<br />
+      <br />
+      As far as the undocumented functions are concerned, here's the short of it: aside from exp() and atan2() I'm pretty sure there are no undocumented functions. If you want proof, open up vis_avs.dll in a hexeditor, search for the name of a function (atan2, sin, tan, etc.) and you should find the internal list of function names soon. It would be *very* weird if not all the function names were stored near each other. This is the list:<br />
+      <br />
+      getspec.getosc..above...below...equal...if..bnot....bor.band....rand....sign....sigmoid.max.min.abs.log10...log.exp.pow.sqrt....sqr.atan2...atan....acos....asin....tan.cos.sin<br />
+      <br />
+      (the dots are non-alphanumeric characters and I'm too lazy to properly format it :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">14th January 2002 21:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks UnConeD for the speedy reply that explains a lot.<br />
-<br />
-As I am speaking mainly from a MilkDrop point of view and all the function code was copied from AVS. UnConeD as you are pretty clued up on this stuff is this all the commands that are available for AVS. Or are there more - I suppose some might not be in AVS.<br />
-Or where is the 'current' list of functions in AVS.<br />
-<br />
-The following operators are available:        <br />
-                = : assign        <br />
-                +,-,/,* : plus, minus, divide, multiply        <br />
-                | : convert to integer, and do bitwise or        <br />
-                &amp; : convert to integer, and do bitwise and        <br />
-                % : convert to integer, and get remainder        <br />
-            The following functions are available:        <br />
-                abs(var)   :  returns the absolute value of 'var'        <br />
-                sin(var)   :  returns the sine of the angle var (expressed in radians)        <br />
-                cos(var)   :  returns the cosine of the angle var        <br />
-                tan(var)   :  returns the tangent of the angle var        <br />
-                asin(var)  :  returns the arcsine of var        <br />
-                acos(var)  :  returns the arccosine of var        <br />
-                atan(var)  :  returns the arctangent of var        <br />
-                sqr(var)   :  returns the square of var        <br />
-                sqrt(var)  :  returns the square root of var        <br />
-                pow(var,var2) : returns var to the power of var2        <br />
-                log(var)      : returns the log base e of var        <br />
-                log10(var)    : returns the log base 10 of var        <br />
-                sign(var)     : returns the sign of var or 0        <br />
-                min(var,var2) : returns the smalest value        <br />
-                max(var,var2) : returns the greatest value        <br />
-                sigmoid(var,var2) : returns sigmoid function value of x=var (var2=constraint)        <br />
-                rand(var)     : returns a random value between 0 and var        <br />
-                bor(var,var2) : boolean or, returns 1 if var or var2 is != 0        <br />
-                bnot(var)  : boolean not, returns 1 if var == 0 or 0 if var != 0        <br />
-                if(cond,vartrue,varfalse) : if condition is nonzero, returns valtrue, otherwise returns valfalse        <br />
-                equal(var,var2) : returns 1 if var = var2, else 0        <br />
-                above(var,var2) : returns 1 if var &gt; var2, else 0        <br />
-                below(var,var2) : returns 1 if var &lt; var2, else 0            <br />
-<br />
-Grrh the formating.<br />
-<br />
-Thanks again in advance.<br />
-<br />
-Cheers,<br />
-<br />
-Rovastar
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">solamon</span><br />
-			<span class="date small text-muted">14th January 2002 21:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you don't mind my inquiring UnConeD, just how do you understand how AVS works so damn well? It's obivious you are a programmer, but what do you have in your head that so few others in the community seem to have?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">15th January 2002 14:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Vis plug-in experience, curiosity and a lot of mathclasses in high-school? I don't know :)<br />
-<br />
-A year or two ago I made my own visualisation plug-in (for myself, it was never released) which was basically the same as the earlier versions of WVis: some built-in effects that you could toggle.<br />
-It wasn't fast or anything, but it did teach me how to do certains things (like a Trans / Movement or blurring) myself and generally taught me a lot about graphics-coding.<br />
-<br />
-As far as the undocumented functions are concerned, here's the short of it: aside from exp() and atan2() I'm pretty sure there are no undocumented functions. If you want proof, open up vis_avs.dll in a hexeditor, search for the name of a function (atan2, sin, tan, etc.) and you should find the internal list of function names soon. It would be *very* weird if not all the function names were stored near each other. This is the list:<br />
-<br />
-getspec.getosc..above...below...equal...if..bnot....bor.band....rand....sign....sigmoid.max.min.abs.log10...log.exp.pow.sqrt....sqr.atan2...atan....acos....asin....tan.cos.sin<br />
-<br />
-(the dots are non-alphanumeric characters and I'm too lazy to properly format it :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

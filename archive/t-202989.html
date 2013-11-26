@@ -1,453 +1,298 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Stupid noob Q. AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stupid noob Q. " />
 
-	<title> Stupid noob Q. - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Stupid noob Q. - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Stupid noob Q.</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=202989">Stupid noob Q.</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mIcrO_brAIn</span><br />
-			<span class="date small text-muted">24th December 2004 23:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Stupid noob Q.</strong><br />
-		
-		
-
-		Ok, I think I've got this right but if someone would verify/explain this to me it would be appreciated.<br />
-<br />
-It's in the use of the % operator in AVS. The explanation in &quot;expression help&quot; doesn't make a whole lot of sense.<br />
-<br />
-If I were to use 5%2 then I would get the remainder, which would be .5 right?<br />
-<br />
-And reading the AVS programming guide, in the first explanation about 3d scopes, the code point=(point+1)%4 is used. How does the % operator affect this code?<br />
-<br />
-It's probably a dumb question but I just didn't seem to be able to figure this one out.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">24th December 2004 23:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The modulus operator <b><font size="3">%</font></b> actually gives you the remainder of the division 5/2. But it wouldn't be 0.5; its 1!<br />
-The remainder of that divison means: what is left over in order to avoid decimals?<br />
-<br />
-5/2 = 2 + <b>1</b>/5<br />
-<br />
-Mostly this operator is used, to generate a variable that repeatedly counts to a specific value and afterwards starts with 0 again:<br />
-<br />
-point=(point+1)%4    <font size="1">(only convenient when set in &quot;<i>pixel</i>&quot;)</font><br />
-<br />
-means that the variable <b>point</b> increases by one and jumps back to 0 after reaching 3:<br />
-<br />
-0 1 2 3 0 1 2 3 0 1...<br />
-<br />
-For example: 4 can be divided by 4 without a remainder. 5 is by 1 greater than 4; 6 is 2 greater than 4; 7 -&gt; 3, but 8 can be divided by 4 without a rest again, and so on.<br />
-<br />
-Clear?? If not, just ask again!<br />
-<br />
-<br />
-P.S: merry christmas
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mIcrO_brAIn</span><br />
-			<span class="date small text-muted">25th December 2004 02:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Might it be the same thing as saying:<br />
-point=point+1;<br />
-point=if(equal(point,4),0,point);<br />
-So that when point hit 4 it would revert back to 0.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">WalkerP</span><br />
-			<span class="date small text-muted">25th December 2004 04:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yes! Exactly right!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">25th December 2004 11:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by mIcrO_brAIn </i><br />
-<b>Might it be the same thing as saying:<br />
-point=point+1;<br />
-point=if(equal(point,4),0,point);<br />
-So that when point hit 4 it would revert back to 0. </b></blockquote>
-This would be the same, but<br />
-<br />
-point=(point+1)%4<br />
-<br />
-is much faster cause its only one equation. (Probably its a imperceptible difference, but if you've got a big bunch of code it'll be worth)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">26th December 2004 00:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		it also has many other uses, because unlike the if equal combination, you can perform it on any number at any time, it doesnt have to be a count.<br />
-<br />
-for example, anyNumber%2 will tell you if the number is odd, because if it is, the remainder will be 1.<br />
-<br />
-the downside is, the % operator only works on integers, not decimals, so decimal precision is lost when you use it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">MaTTFURY</span><br />
-			<span class="date small text-muted">26th December 2004 07:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		what f*cking genius coded the compabilities of the processor :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">26th December 2004 11:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		all intel coprocessors since the 8087 and all intel processors since the 80486DX (not SX) have an instruction called FPREM<br />
-this instruction does a floating point remainder. (80387 and above additionally have FPREM1, which is should be used instead)<br />
-so much about the &quot;compabilities&quot; of processors ;)<br />
-<br />
-back to the topic:<br />
-if you want a point counter go from <i>0</i> to <i>n-1</i>, write <b>p=0;</b> into frame and <b>p=p+1;</b> at the end of the <i>point</i> block.<br />
-if n is 7, for example, p will go this way:<br />
-0 1 2 3 4 5 6<br />
-in the next frame, p is reset to 0 and the whole thing will start from the beginning.<br />
-the advantage over just writing <b>p=(p+1)%n;</b> at the end of the point block is that the other method is much faster , because <i>%</i> is a division, which is generally not that fast ;)<br />
-<br />
-that's why you normally write <b>a=b*.5</b> instead of <b>a=b/2;</b>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">26th December 2004 12:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by TomyLobo </i><br />
-<b>back to the topic:<br />
-if you want a point counter go from <i>0</i> to <i>n-1</i>, write <b>p=0;</b> into frame and <b>p=p+1;</b> at the end of the <i>point</i> block.<br />
-if n is 7, for example, p will go this way:<br />
-0 1 2 3 4 5 6<br />
-in the next frame, p is reset to 0 and the whole thing will start from the beginning...</b></blockquote>
-unfortunately I <i>dont</i> want a variable to go from 0 to n-1, I want a variable to go from 0 to n-1 then 0. However as people have pointed out it is a little poorly explained and arguably inefficient. A better line would be:<br />
-<br />
-frame:<br />
-point=0;<br />
-point:<br />
-...<br />
-point=if(equal(point,3),0,point+1);<br />
-<br />
-And I shall modify the guide accordingly, thank you.<br />
-<br />
------ techy bit ------<br />
-<br />
-On an additional and rather anal point I believe its marginally more efficient to have:<br />
-<br />
-frame:<br />
-point=3<br />
-point:<br />
-..<br />
-point=if(bnot(point),3,point-1);<br />
-<br />
-It draws the square backwards but of course that doesnt matter, its a lot more ugly to understand tho. Also, since I think if's are more expensive than multiplications it may be more efficient to have:<br />
-<br />
-frame:<br />
-point=3<br />
-point:<br />
-..<br />
-point=point-1+bnot(point)*3;<br />
-<br />
-but its pretty gosh darn ugly.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">26th December 2004 22:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		you got the point pak! :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">6th January 2005 02:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i thought * is slower than if by a lot... otherwise why have if?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">6th January 2005 13:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		um....i'm very tech here but actually what Jheriko said above i always thought the same thing. I was told by someone....er...i think Shreyas told me that * is slower than if.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">6th January 2005 13:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		/agrees that if() is faster than *<br />
-(if() doesn't caclulate, but compares only)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">6th January 2005 15:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by jheriko </i><br />
-<b>i thought * is slower than if by a lot... otherwise why have if? </b></blockquote>
-To do conditional processing :weird:<br />
-<br />
-To be honest I dont really know which is more expensive I just assumed it was 'if'. But now that I think about it its really just a jump-if-not-zero in asm... and since it short circuits you are removing some of the computation. Okay I'm sold, it probably is cheaper... but someone should really check the evallib and prove it. I'd do it myself but... well I can't really be arsed.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PJ-Avser</span><br />
-			<span class="date small text-muted">7th January 2005 01:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I've tried it out on a ridculusly numpointeds scc, and * is faster, BUT THE DIFFENECE IS SO TINY, IT DOES'NT REALLY MATTER
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">7th January 2005 19:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		pwnt
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">8th January 2005 00:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		wow, all that expenditure for nothing... what a waste!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">8th January 2005 02:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It depends on the use though. If() will be faster for some things and * will be faster for others.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PJ-Avser</span><br />
-			<span class="date small text-muted">8th January 2005 05:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Each time it did the if it gained 0.00000001 fps over times.<br />
-On my PC
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">8th January 2005 09:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		you'd think avs would optimise if(a,b,0) to a*b if if was slower than a * :P
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Stupid noob Q.</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=202989">Stupid noob Q.</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mIcrO_brAIn</span><br />
+      <span class="post-time small text-muted">24th December 2004 23:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Stupid noob Q.</strong><br />
+      Ok, I think I've got this right but if someone would verify/explain this to me it would be appreciated.<br />
+      <br />
+      It's in the use of the % operator in AVS. The explanation in "expression help" doesn't make a whole lot of sense.<br />
+      <br />
+      If I were to use 5%2 then I would get the remainder, which would be .5 right?<br />
+      <br />
+      And reading the AVS programming guide, in the first explanation about 3d scopes, the code point=(point+1)%4 is used. How does the % operator affect this code?<br />
+      <br />
+      It's probably a dumb question but I just didn't seem to be able to figure this one out.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">24th December 2004 23:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The modulus operator <b><font size="3">%</font></b> actually gives you the remainder of the division 5/2. But it wouldn't be 0.5; its 1!<br />
+      The remainder of that divison means: what is left over in order to avoid decimals?<br />
+      <br />
+      5/2 = 2 + <b>1</b>/5<br />
+      <br />
+      Mostly this operator is used, to generate a variable that repeatedly counts to a specific value and afterwards starts with 0 again:<br />
+      <br />
+      point=(point+1)%4 <font size="1">(only convenient when set in "<i>pixel</i>")</font><br />
+      <br />
+      means that the variable <b>point</b> increases by one and jumps back to 0 after reaching 3:<br />
+      <br />
+      0 1 2 3 0 1 2 3 0 1...<br />
+      <br />
+      For example: 4 can be divided by 4 without a remainder. 5 is by 1 greater than 4; 6 is 2 greater than 4; 7 -&gt; 3, but 8 can be divided by 4 without a rest again, and so on.<br />
+      <br />
+      Clear?? If not, just ask again!<br />
+      <br />
+      <br />
+      P.S: merry christmas</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mIcrO_brAIn</span><br />
+      <span class="post-time small text-muted">25th December 2004 02:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Might it be the same thing as saying:<br />
+      point=point+1;<br />
+      point=if(equal(point,4),0,point);<br />
+      So that when point hit 4 it would revert back to 0.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">WalkerP</span><br />
+      <span class="post-time small text-muted">25th December 2004 04:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yes! Exactly right!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">25th December 2004 11:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by mIcrO_brAIn</i><br />
+        <b>Might it be the same thing as saying:<br />
+        point=point+1;<br />
+        point=if(equal(point,4),0,point);<br />
+        So that when point hit 4 it would revert back to 0.</b>
+      </blockquote>This would be the same, but<br />
+      <br />
+      point=(point+1)%4<br />
+      <br />
+      is much faster cause its only one equation. (Probably its a imperceptible difference, but if you've got a big bunch of code it'll be worth)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">26th December 2004 00:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">it also has many other uses, because unlike the if equal combination, you can perform it on any number at any time, it doesnt have to be a count.<br />
+      <br />
+      for example, anyNumber%2 will tell you if the number is odd, because if it is, the remainder will be 1.<br />
+      <br />
+      the downside is, the % operator only works on integers, not decimals, so decimal precision is lost when you use it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br />
+      <span class="post-time small text-muted">26th December 2004 07:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">what f*cking genius coded the compabilities of the processor :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
+      <span class="post-time small text-muted">26th December 2004 11:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">all intel coprocessors since the 8087 and all intel processors since the 80486DX (not SX) have an instruction called FPREM<br />
+      this instruction does a floating point remainder. (80387 and above additionally have FPREM1, which is should be used instead)<br />
+      so much about the "compabilities" of processors ;)<br />
+      <br />
+      back to the topic:<br />
+      if you want a point counter go from <i>0</i> to <i>n-1</i>, write <b>p=0;</b> into frame and <b>p=p+1;</b> at the end of the <i>point</i> block.<br />
+      if n is 7, for example, p will go this way:<br />
+      0 1 2 3 4 5 6<br />
+      in the next frame, p is reset to 0 and the whole thing will start from the beginning.<br />
+      the advantage over just writing <b>p=(p+1)%n;</b> at the end of the point block is that the other method is much faster , because <i>%</i> is a division, which is generally not that fast ;)<br />
+      <br />
+      that's why you normally write <b>a=b*.5</b> instead of <b>a=b/2;</b></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">26th December 2004 12:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by TomyLobo</i><br />
+        <b>back to the topic:<br />
+        if you want a point counter go from <i>0</i> to <i>n-1</i>, write</b> p=0; into frame and <b>p=p+1;</b> at the end of the <i>point</i> block.<br />
+        if n is 7, for example, p will go this way:<br />
+        0 1 2 3 4 5 6<br />
+        in the next frame, p is reset to 0 and the whole thing will start from the beginning...
+      </blockquote>unfortunately I <i>dont</i> want a variable to go from 0 to n-1, I want a variable to go from 0 to n-1 then 0. However as people have pointed out it is a little poorly explained and arguably inefficient. A better line would be:<br />
+      <br />
+      frame:<br />
+      point=0;<br />
+      point:<br />
+      ...<br />
+      point=if(equal(point,3),0,point+1);<br />
+      <br />
+      And I shall modify the guide accordingly, thank you.<br />
+      <br />
+      ----- techy bit ------<br />
+      <br />
+      On an additional and rather anal point I believe its marginally more efficient to have:<br />
+      <br />
+      frame:<br />
+      point=3<br />
+      point:<br />
+      ..<br />
+      point=if(bnot(point),3,point-1);<br />
+      <br />
+      It draws the square backwards but of course that doesnt matter, its a lot more ugly to understand tho. Also, since I think if's are more expensive than multiplications it may be more efficient to have:<br />
+      <br />
+      frame:<br />
+      point=3<br />
+      point:<br />
+      ..<br />
+      point=point-1+bnot(point)*3;<br />
+      <br />
+      but its pretty gosh darn ugly.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">26th December 2004 22:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">you got the point pak! :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">6th January 2005 02:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i thought * is slower than if by a lot... otherwise why have if?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
+      <span class="post-time small text-muted">6th January 2005 13:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">um....i'm very tech here but actually what Jheriko said above i always thought the same thing. I was told by someone....er...i think Shreyas told me that * is slower than if.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
+      <span class="post-time small text-muted">6th January 2005 13:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">/agrees that if() is faster than *<br />
+      (if() doesn't caclulate, but compares only)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">6th January 2005 15:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by jheriko</i><br />
+        <b>i thought * is slower than if by a lot... otherwise why have if?</b>
+      </blockquote>To do conditional processing :weird:<br />
+      <br />
+      To be honest I dont really know which is more expensive I just assumed it was 'if'. But now that I think about it its really just a jump-if-not-zero in asm... and since it short circuits you are removing some of the computation. Okay I'm sold, it probably is cheaper... but someone should really check the evallib and prove it. I'd do it myself but... well I can't really be arsed.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PJ-Avser</span><br />
+      <span class="post-time small text-muted">7th January 2005 01:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I've tried it out on a ridculusly numpointeds scc, and * is faster, BUT THE DIFFENECE IS SO TINY, IT DOES'NT REALLY MATTER</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">7th January 2005 19:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">pwnt</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br />
+      <span class="post-time small text-muted">8th January 2005 00:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">wow, all that expenditure for nothing... what a waste!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
+      <span class="post-time small text-muted">8th January 2005 02:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">It depends on the use though. If() will be faster for some things and * will be faster for others.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PJ-Avser</span><br />
+      <span class="post-time small text-muted">8th January 2005 05:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Each time it did the if it gained 0.00000001 fps over times.<br />
+      On my PC</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">8th January 2005 09:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">you'd think avs would optimise if(a,b,0) to a*b if if was slower than a * :P</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

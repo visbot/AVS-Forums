@@ -1,628 +1,394 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" avs preset ----- to slow AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="avs preset ----- to slow " />
 
-	<title> avs preset ----- to slow - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>avs preset ----- to slow - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">avs preset ----- to slow</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=236264">avs preset ----- to slow</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fastingaciu</span><br />
-			<span class="date small text-muted">24th January 2006 03:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>avs preset ----- to slow</strong><br />
-		
-		
-			
-		
-
-		Do you have any ideea how could i make this preset use less fps?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">StevenRoy</span><br />
-			<span class="date small text-muted">24th January 2006 06:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Where do I begin?<br />
-<br />
-The very first Effect List has &quot;Clear Every Frame&quot; turned on, and then begins with an additive Buffer Restore. Under most circumstances, that would be a waste, since you can set the Buffer Restore mode to &quot;Replace&quot; instead, then you won't need the &quot;Clear Every Frame&quot; since it won't have any effect.<br />
-<br />
-All that is moot, though, because of something even more stupid: You never save a &quot;Buffer 2&quot; to be restored there. So forget all that and just delete your Buffer Restore. Later, you do the same thing with &quot;Buffer 1&quot;. You're not saving anything anywhere, so using a &quot;Restore&quot; is just stupid.<br />
-<br />
-Setting an &quot;Output blending&quot; mode in an Effect List to &quot;Buffer&quot; does <b>not</b> save the output of that list to a buffer. Instead, it uses that buffer as an &quot;Alpha map&quot; to blend the output with the current image. If you don't save anything to these buffers, therefore, there is no output from these Effect Lists.<br />
-<br />
-Removing these useless Effect Lists (and their contents) doubled my FPS and halved the size of the preset.<br />
-<br />
-In the one remaining Dynamic Movement, you have code that reads: &quot;r=t+tb/t+r+d/t-d/t;&quot; ...Why are you adding d/t and then subtracting it again? &quot;r=t+tb/t+r;&quot; is much simpler.<br />
-<br />
-Of course, there are ways to further optimize this preset, but I think I got the main biggies.<br />
-<br />
-The result is attached:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">usgroup1_winamp</span><br />
-			<span class="date small text-muted">25th January 2006 13:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I added some color, here is the result :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">usgroup1_winamp</span><br />
-			<span class="date small text-muted">25th January 2006 13:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		lol forgot the attachment
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">25th January 2006 14:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Really nice, but the fps has drop a bit.. ;) &amp; that's the problemo.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fastingaciu</span><br />
-			<span class="date small text-muted">25th January 2006 20:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks to all of you,it's really nice,i like it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Kar-mAVS</span><br />
-			<span class="date small text-muted">28th January 2006 14:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>mabye a little late but</strong><br />
-		
-		
-			
-		
-
-		I got the FPS up higher (removing effects that did next to nothing, tweaking other effects) and added some new colour maps.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">28th January 2006 15:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		By removing effects that didn't workout is a trully improvements. The FPS increased! New colour maps and effects are awesome. <b>&quot;Too Slow&quot;</b> had been improves and updates to the next level of pleasure.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fastingaciu</span><br />
-			<span class="date small text-muted">29th January 2006 03:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		tnx about that i get it now but i am still confused about a thing though: what dose the function &quot;reg&quot; dose?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">29th January 2006 11:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<font face="courier">By using 'reg' functionality, you are allows to load and save variables by generating a block of code which sets them, when loaded this block of code is executed. The code is easily readable and can be hand edited, you may declare variables and such, but they won't be maintaned after load or passed on into the main code.<br />
-<br />
-You also can create a master code using the 'reg' functionality. It can be set in numerical ranges (reg00 ---&gt; reg99).</font>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Grandchild</span><br />
-			<span class="date small text-muted">29th January 2006 18:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:confused: errr... JaVS? what did you just say? It's a 'little' confusing.<br />
-Any way the 2nd paragraph says it quite right, although a bit complicated.<br />
-<br />
-Nuff said:<br />
-reg's are normal variables. The difference is, that they can be used anywhwere in any codeable component. They are indexed [as stated above] from 00 to 99. So you would define reg's just like any other variable:<br />
-<br />
-reg01 = sin(blabla*20)*.5+.5;<br />
-<br />
-Loading is just as simple as other variables:<br />
-<br />
-x = reg01+reg35*reg36;<br />
-<br />
-where the first line could be in one SSC in the beginning, and the other line in your final blow-away-Dynamov!<br />
-<br />
-You'd usually use reg's to calculate things you want to use several times throughout you preset for speed reasons. Also it's good for synchronizing things, like e.g. 3D SSCs.<br />
-<br />
-GC
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">StevenRoy</span><br />
-			<span class="date small text-muted">30th January 2006 00:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Let me see if I can make it even more clear...<br />
-<br />
-The reg## variables, such as reg00 and reg99, work like regular variables, except they're shared globally. You can set a reg## variable anywhere, and then access that value anywhere else, even in a different preset!<br />
-<br />
-They're mostly used for synchronization.<br />
-<br />
-It is also possible to insert reg## variables into the text displayed by the Render / Text component.<br />
-<br />
-Another feature of reg## variables is that you can monitor their values with the AVS editor's &quot;Debug Window&quot;. This can come in useful if you ever have to debug your AVS code.<br />
-<br />
-There. I hope that was helpful.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">30th January 2006 00:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah, my explanation just made everyone confused and I just realise bout that right after I read it twice :(<br />
-<br />
-@Grandchild &amp; StevenRoy: Good explanations :up:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fastingaciu</span><br />
-			<span class="date small text-muted">30th January 2006 01:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think i get it.All of you were clear(in a way or another).Tnx and oh by the way, stevenroy i downlaoded some of ur music: very very nice
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">30th January 2006 02:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		fastingaciu. start reading the help and the rest of the forums.<br />
-<br />
-stop wasting peoples time, the questions you ask are neither hard to answer, nor different or interesting.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hornet777</span><br />
-			<span class="date small text-muted">31st January 2006 03:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i'd say its high time for several peeps to get some social skills on this forum
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">31st January 2006 04:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hmm, social skills are necessarily needs on this forum :weird: and people who is new to this need to learn deeper of it. :blah:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">1st February 2006 05:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Me? Social skills. Bah. I think everyone who frequents this forum could probably do with some better social skills, half of you are barely able to communicate properly in the first place... :p<br />
-<br />
-I will be hard on anyone who comes along posting stupid questions because they deserve it. Every stupid question asked and answered leaves a stupid guy with some knowledge he didnt earn or deserve, which gives them less incentive to learn... which makes the global problem worse.<br />
-<br />
-If anything fastingaciu needs to learn social skills, his attitude of 'i expect help' is pretty unaccetpable socially.<br />
-its just a lot less nerve racking or embarassing when you ask stupid questions online than to a real person in person... so no lesson is ever learned by humilation or embarassment.<br />
-<br />
-people who only ever ask for help and learn nothing for themselves are annoying. they are MORE annoying in the real world. personally if I was a moderator here (thank god i am not) i would ban people like this after the third or fourth stupid question... they need to learn their lessons somehow.<br />
-<br />
-people like this never contribute... they just waste our time...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hornet777</span><br />
-			<span class="date small text-muted">1st February 2006 07:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		what does it say that a generality was taken personally?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">1st February 2006 08:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by hornet777 </i><br />
-<b>what does it say that a generality was taken personally? </b></blockquote>
-that you make vague statements which are easily misinterpreted? (like the above, and previous post)<br />
-<br />
-or MAYBE, just MAYBE i have a bad attitude... maybe
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Grandchild</span><br />
-			<span class="date small text-muted">1st February 2006 16:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nah, I don't think you have Jheriko.<br />
-It's just the combination of people asking FAQs and of people that like teaching [like StevenRoy and myself] and feeling superior teaching stuff.<br />
-I am weak...<br />
-:p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">StevenRoy</span><br />
-			<span class="date small text-muted">2nd February 2006 08:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		&quot;Give a man a fish and you feed him for a day.<br />
-Get a man to fish and you feed him for a while.<br />
-Slap him with a fish and you make an enemy for a lifetime.&quot;<br />
-<br />
-I'm not sure I remembered that quote quite right. ;) :D<br />
-<br />
-Anyway, it's only natural for there to be people out there who don't know how to find the information they want. Yes, it would be nice if everyone with questions knew how to use the search function effectively, and the search function led them to all the answers they wanted. Unfortunately, not everyone is that smart... at first. And not all the possible questions have been asked.<br />
-<br />
-If we get the less-smart people pointed in the right direction, however; if we answer their questions, and also show them how to find the answers we have given others in the past (the <a href="http://web.archive.org/web/*/forums.winamp.com/search.php" target="_blank">infamous search function</a> probably could stand to be more visible, by the way); once they start learning, and start figuring things out, who's to say what astounding things they could possibly come up with in the future?<br />
-<br />
-&quot;Teach a man to fish and he may someday catch a whale!&quot;<br />
-<br />
-(That's a fun quote to butcher.)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hornet777</span><br />
-			<span class="date small text-muted">2nd February 2006 09:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		lol, Grandchild<br />
-no weakness in honesty!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">7th February 2006 05:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by StevenRoy </i><br />
-<b>&quot;Give a man a fish and you feed him for a day.<br />
-Get a man to fish and you feed him for a while.&quot;</b></blockquote>
-I love these quotes. Mainly because there are hundred like it, and they seem so fundamentally correct on the face of it. I hate trying to explain why these things are wrong (I am sure I will offend someone with what I say :P), but I will give it a crack anyway:<br />
-<br />
-----<br />
-<br />
-Every man who can learn how to fish for himself is more survivable than those who can't. Whats more is that fishing can be 're-invented' logically in very few steps.<br />
-<br />
-People who are taught to fish then survive better because they have been taught to fish by others. Not because they have the intelligence to work out how to be fishing in the first place.<br />
-<br />
-The advantage offered by extra intelligence is lost, and the offspring of the men who are able to learn fishing for themselves, have no clear advantage over those who lack this ability. Since more intelligence generally costs more energy, these people instead have a disadvantage as they need to eat more then those without this ability.<br />
-<br />
-So in at least one area of competition the evolutionary pressure on humans is no longer causing a net average increase of intelligence in later generatons.<br />
-<br />
----<br />
-<br />
-For all your desires to explain stuff to this guy, did anyone tell him that HE can figure out what makes a preset slow or fast by trial and error? No? And yet you went on to explain concepts which are more complex...<br />
-<br />
-You must learn to crawl, before you learn to walk. The same should apply when teaching people..., or as a more topical question:<br />
-<br />
-How do you explain the evaluation of a logical set of instructions without first explaining the logic they employ?<br />
-<br />
-&quot;Teach a man to fish, and he will fish and feed himself as long as he was taught adequately, and as long as conditions don't invalidate the fishing method. <br />
-<br />
-Teach a man to learn for himself then he will teach himself and others, possibly how to fish, but more importantly how to learn to solve any problems.&quot;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">StevenRoy</span><br />
-			<span class="date small text-muted">7th February 2006 06:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I suppose the question now is: By helping him with his immediate problem, and explaining some of the things he needed explained, am I also encouraging him to delve deeper into the mysteries of AVS? If he understands some of the more advanced concepts I've explained here, will he be more inclined to experiment with the more basic features, and thus learn more on his own?<br />
-<br />
-Let's judge how much he's actually learning once he asks his next question.<br />
-<br />
-Besides, we're forgetting the most important thing: I got fastingaciu to listen to my music! :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">7th February 2006 11:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by StevenRoy </i><br />
-<b>...Anyway, it's only natural for there to be people out there who don't know how to find the information they want... </b></blockquote>
- Yea I mean its not like right at the top of the forum there is a topic called <b>Announcement: How to find the answer (READ ME FIRST)</b> or anything. And its not like just underneath it there is a thread called <b>A list of AVS Tutorials</b> or anything. And its not like just underneath <b>that</b> there is a thread called <b>AVS Frequently Asked Questions</b> or anything.<br />
-<br />
-We really should make it clearer.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">7th February 2006 12:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If we could made the announcement and the other informations, FAQ, etc. automatically pop out when a new people (noob of course) who is opening the AVS forum section. Nah, sure it's not going to work too! The point is, they are so lazy to read all the important stuffs.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">7th February 2006 18:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I have no problems with people helping people. I just think its better to nudge and poke them towards figuring it out for themselves when its something simple... otherwise they tend to come back with more simple questions they could answer themselves.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fastingaciu</span><br />
-			<span class="date small text-muted">7th February 2006 20:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		From what i just read here i got that i'm a noob and i should be hanged and thank god i'm not the only one.You guys heleped so much u dont even realise, i'm working on a pack and it isnat going so well. I think i'am gooana try and reread some avs tutorials mabey now i'l get more then last time.I only started like 6 months ago and now i can understand some codes(not very comlicated) but i cant do my own and thats what i'm trying.So i'm sorry if i ofended someone by makeing this thread.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">8th February 2006 07:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nah nobody offended me, I am just sick of seeing noobs spoon fed, because it doesnt help anyone in my experience, especially the noob.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">avs preset ----- to slow</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=236264">avs preset ----- to slow</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
+      <span class="post-time small text-muted">24th January 2006 03:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>avs preset ----- to slow</strong><br />
+      Do you have any ideea how could i make this preset use less fps?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br />
+      <span class="post-time small text-muted">24th January 2006 06:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Where do I begin?<br />
+      <br />
+      The very first Effect List has "Clear Every Frame" turned on, and then begins with an additive Buffer Restore. Under most circumstances, that would be a waste, since you can set the Buffer Restore mode to "Replace" instead, then you won't need the "Clear Every Frame" since it won't have any effect.<br />
+      <br />
+      All that is moot, though, because of something even more stupid: You never save a "Buffer 2" to be restored there. So forget all that and just delete your Buffer Restore. Later, you do the same thing with "Buffer 1". You're not saving anything anywhere, so using a "Restore" is just stupid.<br />
+      <br />
+      Setting an "Output blending" mode in an Effect List to "Buffer" does <b>not</b> save the output of that list to a buffer. Instead, it uses that buffer as an "Alpha map" to blend the output with the current image. If you don't save anything to these buffers, therefore, there is no output from these Effect Lists.<br />
+      <br />
+      Removing these useless Effect Lists (and their contents) doubled my FPS and halved the size of the preset.<br />
+      <br />
+      In the one remaining Dynamic Movement, you have code that reads: "r=t+tb/t+r+d/t-d/t;" ...Why are you adding d/t and then subtracting it again? "r=t+tb/t+r;" is much simpler.<br />
+      <br />
+      Of course, there are ways to further optimize this preset, but I think I got the main biggies.<br />
+      <br />
+      The result is attached:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">usgroup1_winamp</span><br />
+      <span class="post-time small text-muted">25th January 2006 13:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I added some color, here is the result :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">usgroup1_winamp</span><br />
+      <span class="post-time small text-muted">25th January 2006 13:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">lol forgot the attachment</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">25th January 2006 14:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Really nice, but the fps has drop a bit.. ;) &amp; that's the problemo.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
+      <span class="post-time small text-muted">25th January 2006 20:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks to all of you,it's really nice,i like it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Kar-mAVS</span><br />
+      <span class="post-time small text-muted">28th January 2006 14:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>mabye a little late but</strong><br />
+      I got the FPS up higher (removing effects that did next to nothing, tweaking other effects) and added some new colour maps.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">28th January 2006 15:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">By removing effects that didn't workout is a trully improvements. The FPS increased! New colour maps and effects are awesome. <b>"Too Slow"</b> had been improves and updates to the next level of pleasure.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
+      <span class="post-time small text-muted">29th January 2006 03:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">tnx about that i get it now but i am still confused about a thing though: what dose the function "reg" dose?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">29th January 2006 11:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><font face="courier">By using 'reg' functionality, you are allows to load and save variables by generating a block of code which sets them, when loaded this block of code is executed. The code is easily readable and can be hand edited, you may declare variables and such, but they won't be maintaned after load or passed on into the main code.<br />
+      <br />
+      You also can create a master code using the 'reg' functionality. It can be set in numerical ranges (reg00 ---&gt; reg99).</font></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br />
+      <span class="post-time small text-muted">29th January 2006 18:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">:confused: errr... JaVS? what did you just say? It's a 'little' confusing.<br />
+      Any way the 2nd paragraph says it quite right, although a bit complicated.<br />
+      <br />
+      Nuff said:<br />
+      reg's are normal variables. The difference is, that they can be used anywhwere in any codeable component. They are indexed [as stated above] from 00 to 99. So you would define reg's just like any other variable:<br />
+      <br />
+      reg01 = sin(blabla*20)*.5+.5;<br />
+      <br />
+      Loading is just as simple as other variables:<br />
+      <br />
+      x = reg01+reg35*reg36;<br />
+      <br />
+      where the first line could be in one SSC in the beginning, and the other line in your final blow-away-Dynamov!<br />
+      <br />
+      You'd usually use reg's to calculate things you want to use several times throughout you preset for speed reasons. Also it's good for synchronizing things, like e.g. 3D SSCs.<br />
+      <br />
+      GC</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br />
+      <span class="post-time small text-muted">30th January 2006 00:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Let me see if I can make it even more clear...<br />
+      <br />
+      The reg## variables, such as reg00 and reg99, work like regular variables, except they're shared globally. You can set a reg## variable anywhere, and then access that value anywhere else, even in a different preset!<br />
+      <br />
+      They're mostly used for synchronization.<br />
+      <br />
+      It is also possible to insert reg## variables into the text displayed by the Render / Text component.<br />
+      <br />
+      Another feature of reg## variables is that you can monitor their values with the AVS editor's "Debug Window". This can come in useful if you ever have to debug your AVS code.<br />
+      <br />
+      There. I hope that was helpful.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">30th January 2006 00:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yeah, my explanation just made everyone confused and I just realise bout that right after I read it twice :(<br />
+      <br />
+      @Grandchild &amp; StevenRoy: Good explanations :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
+      <span class="post-time small text-muted">30th January 2006 01:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I think i get it.All of you were clear(in a way or another).Tnx and oh by the way, stevenroy i downlaoded some of ur music: very very nice</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">30th January 2006 02:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">fastingaciu. start reading the help and the rest of the forums.<br />
+      <br />
+      stop wasting peoples time, the questions you ask are neither hard to answer, nor different or interesting.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hornet777</span><br />
+      <span class="post-time small text-muted">31st January 2006 03:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i'd say its high time for several peeps to get some social skills on this forum</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">31st January 2006 04:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Hmm, social skills are necessarily needs on this forum :weird: and people who is new to this need to learn deeper of it. :blah:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">1st February 2006 05:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Me? Social skills. Bah. I think everyone who frequents this forum could probably do with some better social skills, half of you are barely able to communicate properly in the first place... :p<br />
+      <br />
+      I will be hard on anyone who comes along posting stupid questions because they deserve it. Every stupid question asked and answered leaves a stupid guy with some knowledge he didnt earn or deserve, which gives them less incentive to learn... which makes the global problem worse.<br />
+      <br />
+      If anything fastingaciu needs to learn social skills, his attitude of 'i expect help' is pretty unaccetpable socially.<br />
+      its just a lot less nerve racking or embarassing when you ask stupid questions online than to a real person in person... so no lesson is ever learned by humilation or embarassment.<br />
+      <br />
+      people who only ever ask for help and learn nothing for themselves are annoying. they are MORE annoying in the real world. personally if I was a moderator here (thank god i am not) i would ban people like this after the third or fourth stupid question... they need to learn their lessons somehow.<br />
+      <br />
+      people like this never contribute... they just waste our time...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hornet777</span><br />
+      <span class="post-time small text-muted">1st February 2006 07:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">what does it say that a generality was taken personally?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">1st February 2006 08:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by hornet777</i><br />
+        <b>what does it say that a generality was taken personally?</b>
+      </blockquote>that you make vague statements which are easily misinterpreted? (like the above, and previous post)<br />
+      <br />
+      or MAYBE, just MAYBE i have a bad attitude... maybe
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br />
+      <span class="post-time small text-muted">1st February 2006 16:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nah, I don't think you have Jheriko.<br />
+      It's just the combination of people asking FAQs and of people that like teaching [like StevenRoy and myself] and feeling superior teaching stuff.<br />
+      I am weak...<br />
+      :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br />
+      <span class="post-time small text-muted">2nd February 2006 08:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">"Give a man a fish and you feed him for a day.<br />
+      Get a man to fish and you feed him for a while.<br />
+      Slap him with a fish and you make an enemy for a lifetime."<br />
+      <br />
+      I'm not sure I remembered that quote quite right. ;) :D<br />
+      <br />
+      Anyway, it's only natural for there to be people out there who don't know how to find the information they want. Yes, it would be nice if everyone with questions knew how to use the search function effectively, and the search function led them to all the answers they wanted. Unfortunately, not everyone is that smart... at first. And not all the possible questions have been asked.<br />
+      <br />
+      If we get the less-smart people pointed in the right direction, however; if we answer their questions, and also show them how to find the answers we have given others in the past (the <a href="http://web.archive.org/web/*/forums.winamp.com/search.php" target="_blank">infamous search function</a> probably could stand to be more visible, by the way); once they start learning, and start figuring things out, who's to say what astounding things they could possibly come up with in the future?<br />
+      <br />
+      "Teach a man to fish and he may someday catch a whale!"<br />
+      <br />
+      (That's a fun quote to butcher.)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hornet777</span><br />
+      <span class="post-time small text-muted">2nd February 2006 09:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">lol, Grandchild<br />
+      no weakness in honesty!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">7th February 2006 05:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by StevenRoy</i><br />
+        <b>"Give a man a fish and you feed him for a day.<br />
+        Get a man to fish and you feed him for a while."</b>
+      </blockquote>I love these quotes. Mainly because there are hundred like it, and they seem so fundamentally correct on the face of it. I hate trying to explain why these things are wrong (I am sure I will offend someone with what I say :P), but I will give it a crack anyway:<br />
+      <br />
+      ----<br />
+      <br />
+      Every man who can learn how to fish for himself is more survivable than those who can't. Whats more is that fishing can be 're-invented' logically in very few steps.<br />
+      <br />
+      People who are taught to fish then survive better because they have been taught to fish by others. Not because they have the intelligence to work out how to be fishing in the first place.<br />
+      <br />
+      The advantage offered by extra intelligence is lost, and the offspring of the men who are able to learn fishing for themselves, have no clear advantage over those who lack this ability. Since more intelligence generally costs more energy, these people instead have a disadvantage as they need to eat more then those without this ability.<br />
+      <br />
+      So in at least one area of competition the evolutionary pressure on humans is no longer causing a net average increase of intelligence in later generatons.<br />
+      <br />
+      ---<br />
+      <br />
+      For all your desires to explain stuff to this guy, did anyone tell him that HE can figure out what makes a preset slow or fast by trial and error? No? And yet you went on to explain concepts which are more complex...<br />
+      <br />
+      You must learn to crawl, before you learn to walk. The same should apply when teaching people..., or as a more topical question:<br />
+      <br />
+      How do you explain the evaluation of a logical set of instructions without first explaining the logic they employ?<br />
+      <br />
+      "Teach a man to fish, and he will fish and feed himself as long as he was taught adequately, and as long as conditions don't invalidate the fishing method.<br />
+      <br />
+      Teach a man to learn for himself then he will teach himself and others, possibly how to fish, but more importantly how to learn to solve any problems."
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br />
+      <span class="post-time small text-muted">7th February 2006 06:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I suppose the question now is: By helping him with his immediate problem, and explaining some of the things he needed explained, am I also encouraging him to delve deeper into the mysteries of AVS? If he understands some of the more advanced concepts I've explained here, will he be more inclined to experiment with the more basic features, and thus learn more on his own?<br />
+      <br />
+      Let's judge how much he's actually learning once he asks his next question.<br />
+      <br />
+      Besides, we're forgetting the most important thing: I got fastingaciu to listen to my music! :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">7th February 2006 11:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by StevenRoy</i><br />
+        <b>...Anyway, it's only natural for there to be people out there who don't know how to find the information they want...</b>
+      </blockquote>Yea I mean its not like right at the top of the forum there is a topic called <b>Announcement: How to find the answer (READ ME FIRST)</b> or anything. And its not like just underneath it there is a thread called <b>A list of AVS Tutorials</b> or anything. And its not like just underneath <b>that</b> there is a thread called <b>AVS Frequently Asked Questions</b> or anything.<br />
+      <br />
+      We really should make it clearer.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">7th February 2006 12:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">If we could made the announcement and the other informations, FAQ, etc. automatically pop out when a new people (noob of course) who is opening the AVS forum section. Nah, sure it's not going to work too! The point is, they are so lazy to read all the important stuffs.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">7th February 2006 18:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I have no problems with people helping people. I just think its better to nudge and poke them towards figuring it out for themselves when its something simple... otherwise they tend to come back with more simple questions they could answer themselves.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
+      <span class="post-time small text-muted">7th February 2006 20:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">From what i just read here i got that i'm a noob and i should be hanged and thank god i'm not the only one.You guys heleped so much u dont even realise, i'm working on a pack and it isnat going so well. I think i'am gooana try and reread some avs tutorials mabey now i'l get more then last time.I only started like 6 months ago and now i can understand some codes(not very comlicated) but i cant do my own and thats what i'm trying.So i'm sorry if i ofended someone by makeing this thread.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">8th February 2006 07:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Nah nobody offended me, I am just sick of seeing noobs spoon fed, because it doesnt help anyone in my experience, especially the noob.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

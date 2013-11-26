@@ -1,185 +1,128 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Frame-rate independent decays AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frame-rate independent decays " />
 
-	<title> Frame-rate independent decays - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Frame-rate independent decays - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Frame-rate independent decays</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=158391">Frame-rate independent decays</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">3rd December 2003 06:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Frame-rate independent decays</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=158391">Frame-rate independent decays</a></p>
+      <p class="post-content"><strong>Frame-rate independent decays</strong><br />
+      Just a tip that's useful for making framerate independent decays plus the derivation for the interested ones.<br />
+      <br />
+      Most people know the standard decay formula for making a var move exponentially towards a different value:<br />
+      <br />
+      var=var*.9 + target*.1;<br />
+      <br />
+      Let's write it as:<br />
+      <br />
+      var=target + (var - target)*.9;<br />
+      (exactly the same, verify this if it isn't obvious)<br />
+      <br />
+      Now consider two successive frames:<br />
+      <br />
+      var=target + (var - target)*.9;<br />
+      var=target + (var - target)*.9;<br />
+      <br />
+      If we replace 'var' in the right-hand first expression by the second expression, we get:<br />
+      <br />
+      var=target + (<i>target + (var - target)*.9</i> - target)*.9;<br />
+      <br />
+      which simplifies to:<br />
+      <br />
+      var = target + (var - target)*.81<br />
+      <br />
+      The relation between one round and two rounds is easy to see. The decay factor 0.9 has been squared to 0.9*0.9 = 0.81.<br />
+      <br />
+      Now suppose a preset is perfect at 30fps with a decay factor of 0.9. We want it to be frame-rate independent. This means that at 15fps, it should do two successive decays, which for a factor of 0.9 means 0.81 as we have seen above. So dividing the framerate by two results in taking the decay factor to a the 2nd power.<br />
+      <br />
+      Now what about any other framerate? We can conclude that the ratio of the reference framerate versus the current framerate becomes the exponent of the decay coefficient.<br />
+      <br />
+      If you don't understand this, work out the above scheme for 3 rounds, and you'll get 0.9*0.9*0.9 = (0.9)^3 = 0.729.<br />
+      You can also derive 'half' a round by splitting one round into two identical ones with a new decay constant, and solving the resulting equation (note, do not confuse the assignment operator with the equation = sign). You would end up with a decay factor of sqrt(0.9), or approx 0.949.<br />
+      <br />
+      Now all we need is to get the current framerate... gettime(0) returns time in seconds, though with millisecond accuracy. The difference between two successive gettime(0) values is the time it took to render a frame (seconds per frame), so the inverse of that value is the framerate (frames per second).<br />
+      <br />
+      This is all summarized in the following code:<br />
+      <br />
+      time = gettime(0);<br />
+      decay = pow(0.9, 30 * (time - lasttime));<br />
+      var=target + (var - target)*decay;<br />
+      lasttime = time;<br />
+      <br />
+      Hope this was useful ;).</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">3rd December 2003 10:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">That was interesting. I've already used linear decay change in the single player pong, but that doesn't work well. I'll update that preset and other presets as well.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">3rd December 2003 06:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Frame-rate independent decays</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br />
+      <span class="post-time small text-muted">3rd December 2003 10:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Just a tip that's useful for making framerate independent decays plus the derivation for the interested ones.<br />
-<br />
-Most people know the standard decay formula for making a var move exponentially towards a different value:<br />
-<br />
-var=var*.9 + target*.1;<br />
-<br />
-Let's write it as:<br />
-<br />
-var=target + (var - target)*.9;<br />
-(exactly the same, verify this if it isn't obvious)<br />
-<br />
-Now consider two successive frames:<br />
-<br />
-var=target + (var - target)*.9;<br />
-var=target + (var - target)*.9;<br />
-<br />
-If we replace 'var' in the right-hand first expression by the second expression, we get:<br />
-<br />
-var=target + (<i>target + (var - target)*.9</i> - target)*.9;<br />
-<br />
-which simplifies to:<br />
-<br />
-var = target + (var - target)*.81<br />
-<br />
-The relation between one round and two rounds is easy to see. The decay factor 0.9 has been squared to 0.9*0.9 = 0.81.<br />
-<br />
-Now suppose a preset is perfect at 30fps with a decay factor of 0.9. We want it to be frame-rate independent. This means that at 15fps, it should do two successive decays, which for a factor of 0.9 means 0.81 as we have seen above. So dividing the framerate by two results in taking the decay factor to a the 2nd power.<br />
-<br />
-Now what about any other framerate? We can conclude that the ratio of the reference framerate versus the current framerate becomes the exponent of the decay coefficient.<br />
-<br />
-If you don't understand this, work out the above scheme for 3 rounds, and you'll get 0.9*0.9*0.9 = (0.9)^3 = 0.729.<br />
-You can also derive 'half' a round by splitting one round into two identical ones with a new decay constant, and solving the resulting equation (note, do not confuse the assignment operator with the equation = sign). You would end up with a decay factor of sqrt(0.9), or approx 0.949.<br />
-<br />
-Now all we need is to get the current framerate... gettime(0) returns time in seconds, though with millisecond accuracy. The difference between two successive gettime(0) values is the time it took to render a frame (seconds per frame), so the inverse of that value is the framerate (frames per second).<br />
-<br />
-This is all summarized in the following code:<br />
-<br />
-time = gettime(0);<br />
-decay = pow(0.9, 30 * (time - lasttime));<br />
-var=target + (var - target)*decay;<br />
-lasttime = time;<br />
-<br />
-Hope this was useful ;).
-		</p>
-</div>
+      <p class="post-content">:eek: . Wow, now that's what I call simple and effective. Good job :D</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fsk</span><br />
+      <span class="post-time small text-muted">3rd December 2003 13:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">3rd December 2003 10:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">wery nice thx</p>
+    </div>
+    <hr />
 
-		That was interesting. I've already used linear decay change in the single player pong, but that doesn't work well. I'll update that preset and other presets as well.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
+      <span class="post-time small text-muted">7th December 2003 12:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Of course, the question is how to implement it. ;)<br />
+      <br />
+      OT: I just noticed the big red search text is gone. Guess someone realised it was fighting a losing battle.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">3rd December 2003 10:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">7th December 2003 14:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		:eek: . Wow, now that's what I call simple and effective. Good job :D
-		</p>
-</div>
+      <p class="post-content">(the red text only appears when posting a new topic)</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fsk</span><br />
-			<span class="date small text-muted">3rd December 2003 13:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		wery nice thx
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">7th December 2003 12:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Of course, the question is how to implement it. ;)<br />
-<br />
-OT: I just noticed the big red search text is gone. Guess someone realised it was fighting a losing battle.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">7th December 2003 14:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		(the red text only appears when posting a new topic)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

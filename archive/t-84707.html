@@ -1,235 +1,157 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Superscope AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Superscope " />
 
-	<title> Superscope - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Superscope - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Superscope</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=84707">Superscope</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jehan60188</span><br />
+      <span class="post-time small text-muted">14th April 2002 04:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Superscope</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=84707">Superscope</a></p>
+      <p class="post-content"><strong>Superscope</strong><br />
+      in the visualization called "living in a box" there's a superscope that has peaks which are flat<br />
+      does anyone know how to do that? cuase it's really neat but i cant figure out the code, i've tried to break it down for almost 2 weeks now, but i cant figure out everything, would sumone please explain what the different values mean?<br />
+      <br />
+      Thanks,<br />
+      Jehan<br />
+      <br />
+      <br />
+      here's an isolated superscope from the setting:<br />
+      <br />
+      INIT: l=0;k=0;m=20;n=1000;mx=0;my=0;mz=0;dst=2;rx=0;ry=0;rz=0;rdx=0;rdy=0;rdz=1;p=3.14159265;p2=2.0*p;p3=180/p<br />
+      <br />
+      ONBEAT: ;rdz=if(equal(rdz,1),2,1);<br />
+      <br />
+      PERFRAME: =0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
+      <br />
+      PERPOINT: ;k=if(equal(k,m),0,k+1);<br />
+      v1=if(equal(k,0),(v),v1);<br />
+      y1=v1;<br />
+      x1=2*i-1;z1=1;<br />
+      y2=y1*xc-z1*xs;z2=y1*xs+z1*xc;x2=z2*ys+x1*yc;z3=z2*yc-x1*ys;x3=x2*zc-y2*zs;y3=y2*zc+x2*zs;x4=mx+x3;y4=my+y3;z4=mz+z3;x=x4/(1+z4/dst);y=y4/(1+z4/dst)</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
+      <span class="post-time small text-muted">18th April 2002 23:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content"></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jehan60188</span><br />
-			<span class="date small text-muted">14th April 2002 04:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Superscope</strong><br />
-		
-		
+      <blockquote>
+        PERFRAME: =0;k=0;rx=rx+rdx
+      </blockquote>missing variable?
+    </div>
+    <hr />
 
-		in the visualization called &quot;living in a box&quot; there's a superscope that has peaks which are flat<br />
-does anyone know how to do that? cuase it's really neat but i cant figure out the code, i've tried to break it down for almost 2 weeks now, but i cant figure out everything, would sumone please explain what the different values mean?<br />
-<br />
-Thanks,<br />
-Jehan<br />
-<br />
-<br />
-here's an isolated superscope from the setting:<br />
-<br />
-INIT: l=0;k=0;m=20;n=1000;mx=0;my=0;mz=0;dst=2;rx=0;ry=0;rz=0;rdx=0;rdy=0;rdz=1;p=3.14159265;p2=2.0*p;p3=180/p<br />
-<br />
-ONBEAT:  ;rdz=if(equal(rdz,1),2,1);<br />
-<br />
-PERFRAME: =0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
-<br />
-PERPOINT: ;k=if(equal(k,m),0,k+1);<br />
-v1=if(equal(k,0),(v),v1);<br />
-y1=v1;<br />
-x1=2*i-1;z1=1;<br />
-y2=y1*xc-z1*xs;z2=y1*xs+z1*xc;x2=z2*ys+x1*yc;z3=z2*yc-x1*ys;x3=x2*zc-y2*zs;y3=y2*zc+x2*zs;x4=mx+x3;y4=my+y3;z4=mz+z3;x=x4/(1+z4/dst);y=y4/(1+z4/dst)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jehan60188</span><br />
+      <span class="post-time small text-muted">19th April 2002 00:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">sorry, here's the whole PERFRAME thread, the missing variable is "l"<br />
+      <br />
+      <br />
+      <br />
+      l=0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">18th April 2002 23:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">19th April 2002 01:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		
-	<blockquote>
-			
-				PERFRAME: =0;k=0;rx=rx+rdx</blockquote>
-missing variable?
-		</p>
-</div>
+      <p class="post-content">It's actually easy, you simply take the same value for a series of points, instead of always a different one, like this:<br />
+      <br />
+      k=if(equal(k,m),0,k+1);<br />
+      v1=if(equal(k,0),(v),v1);<br />
+      y1=v1;<br />
+      <br />
+      This means k will go from 0 to 'm' and back. When k equals 0, a new 'v' is assigned to 'v1'. This is actually the same as k=(k+1)%m; (using the modulus operator, which means 'remainder after division of a by b').<br />
+      <br />
+      An easier approach is to use getosc and getspec... they allow you to use any value you want.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jehan60188</span><br />
+      <span class="post-time small text-muted">19th April 2002 21:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jehan60188</span><br />
-			<span class="date small text-muted">19th April 2002 00:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">cool, thanks</p>
+    </div>
+    <hr />
 
-		sorry, here's the whole PERFRAME thread, the missing variable is &quot;l&quot;<br />
-<br />
-<br />
-<br />
-l=0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">NoSage</span><br />
+      <span class="post-time small text-muted">24th April 2002 02:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Huh?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th April 2002 01:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jehan60188</span><br />
+      <span class="post-time small text-muted">24th April 2002 02:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		It's actually easy, you simply take the same value for a series of points, instead of always a different one, like this:<br />
-<br />
-k=if(equal(k,m),0,k+1); <br />
-v1=if(equal(k,0),(v),v1); <br />
-y1=v1;<br />
-<br />
-This means k will go from 0 to 'm' and back. When k equals 0, a new 'v' is assigned to 'v1'. This is actually the same as k=(k+1)%m; (using the modulus operator, which means 'remainder after division of a by b').<br />
-<br />
-An easier approach is to use getosc and getspec... they allow you to use any value you want.
-		</p>
-</div>
+      <p class="post-content">OK, here's what's going on<br />
+      <br />
+      <br />
+      nosage:<br />
+      <br />
+      here's the whole PERFRAME thread, the missing variable is "l"<br />
+      <br />
+      <br />
+      <br />
+      l=0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
+      <br />
+      <br />
+      AND<br />
+      unconed:<br />
+      thanks for your help</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">24th April 2002 12:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jehan60188</span><br />
-			<span class="date small text-muted">19th April 2002 21:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">By the way, try putting up a more descriptive topic the next time. This makes it easier for others when they are searching the forums (a thread titled 'Superscope' could cover anything about the SSC).</p>
+    </div>
+    <hr />
 
-		cool, thanks
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jehan60188</span><br />
+      <span class="post-time small text-muted">24th April 2002 18:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">ok, sorry</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">24th April 2002 02:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Huh?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jehan60188</span><br />
-			<span class="date small text-muted">24th April 2002 02:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		OK, here's what's going on<br />
-<br />
-<br />
-nosage:<br />
-<br />
- here's the whole PERFRAME thread, the missing variable is &quot;l&quot; <br />
-<br />
-<br />
-<br />
-l=0;k=0;rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
-<br />
-<br />
-AND<br />
-unconed:<br />
-thanks for your help
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">24th April 2002 12:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		By the way, try putting up a more descriptive topic the next time. This makes it easier for others when they are searching the forums (a thread titled 'Superscope' could cover anything about the SSC).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jehan60188</span><br />
-			<span class="date small text-muted">24th April 2002 18:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		ok, sorry
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

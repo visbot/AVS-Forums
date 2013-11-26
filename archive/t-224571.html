@@ -1,156 +1,99 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" avs not reacting!! AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="avs not reacting!! " />
 
-	<title> avs not reacting!! - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>avs not reacting!! - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">avs not reacting!!</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=224571">avs not reacting!!</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">escalectric78</span><br />
+      <span class="post-time small text-muted">25th August 2005 01:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">avs not reacting!!</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=224571">avs not reacting!!</a></p>
+      <p class="post-content"><strong>avs not reacting!!</strong><br />
+      Hello this is a strange thing i listen my music<br />
+      but the visualisation window plays the avs presets<br />
+      but they arent activated so they doesnt react to the sound<br />
+      at all, some of them stays very quiet or all blank at all<br />
+      someone can tell me how can i make the avs "activated"<br />
+      please!!!!!!!!!!!:(</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">escalectric78</span><br />
+      <span class="post-time small text-muted">26th August 2005 22:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">:cry:</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">escalectric78</span><br />
-			<span class="date small text-muted">25th August 2005 01:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>avs not reacting!!</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br />
+      <span class="post-time small text-muted">27th August 2005 07:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hello this is a strange thing i listen my music<br />
-but the  visualisation window plays the avs presets <br />
-but they arent activated so they doesnt react to the sound <br />
-at all, some of them stays very quiet or all blank at all<br />
-someone can tell me how can i make the avs &quot;activated&quot; <br />
-please!!!!!!!!!!!:(
-		</p>
-</div>
+      <p class="post-content">This is more likely to be a WinAmp problem than an AVS problem. There's an easy way to tell: Look at WinAmp's spectrum analyzer and/or beat indicator (assuming either of them are visible in your current skin). If that's not moving, then something else is wrong.<br />
+      <br />
+      Does this affect only some file types, or all of them?<br />
+      <br />
+      Some of the recent versions of WinAmp have a bug that causes some tracker formats (S3M, MOD, IT files, et cetera) to not generate visualization data. Digital sound files, such as WAV, MP3 and OGG files, aren't affected by this. You can tell the difference in WinAmp's spectrum analyzer; if you have different file types, it'll work for some files and not for others. (I had this problem with WinAmp 5.094, but I was able to find a link to a fixed version of in_wm.dll elsewhere on the WinAmp message board.)<br />
+      <br />
+      You might also have a similar problem with MIDI files. Because of the way they're synthesized, there usually isn't a good way to get vis data from those. WinAmp can cheat, however, by recording the music from your sound card as it's being played by the same sound card. Nifty trick, but you'll need to configure it (in the MIDI input plugin's options) for it to work.<br />
+      <br />
+      Of course, it's possible that something completely different might be wrong. I'm just making guesses here. (I don't even work here.)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mfreem</span><br />
+      <span class="post-time small text-muted">11th September 2005 17:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">escalectric78</span><br />
-			<span class="date small text-muted">26th August 2005 22:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I'm having the same problem myself. The spectrum analyzer is showing properly, but the AVS is just usually blank, all one color and won't react to music. Occasionally it will work but if I close Winamp it won't work the next time I open it.</p>
+    </div>
+    <hr />
 
-		:cry:
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mfreem</span><br />
+      <span class="post-time small text-muted">20th September 2005 07:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Nevermind. I think I've figured it out. I changed my Data Execution Prevention (DEP) settings to allow winamp and it seems to have solved it.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">StevenRoy</span><br />
-			<span class="date small text-muted">27th August 2005 07:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nordstar</span><br />
+      <span class="post-time small text-muted">9th October 2005 12:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		This is more likely to be a WinAmp problem than an AVS problem. There's an easy way to tell: Look at WinAmp's spectrum analyzer and/or beat indicator (assuming either of them are visible in your current skin). If that's not moving, then something else is wrong.<br />
-<br />
-Does this affect only some file types, or all of them?<br />
-<br />
-Some of the recent versions of WinAmp have a bug that causes some tracker formats (S3M, MOD, IT files, et cetera) to not generate visualization data. Digital sound files, such as WAV, MP3 and OGG files, aren't affected by this. You can tell the difference in WinAmp's spectrum analyzer; if you have different file types, it'll work for some files and not for others. (I had this problem with WinAmp 5.094, but I was able to find a link to a fixed version of in_wm.dll elsewhere on the WinAmp message board.)<br />
-<br />
-You might also have a similar problem with MIDI files. Because of the way they're synthesized, there usually isn't a good way to get vis data from those. WinAmp can cheat, however, by recording the music from your sound card as it's being played by the same sound card. Nifty trick, but you'll need to configure it (in the MIDI input plugin's options) for it to work.<br />
-<br />
-Of course, it's possible that something completely different might be wrong. I'm just making guesses here. (I don't even work here.)
-		</p>
-</div>
+      <p class="post-content">My visualisations were always blank and adding Winamp to the DEP exception list solved the problem.<br />
+      <br />
+      In fact, turning DEP off seems to solve a wide range of problems. So far I've attributed freezes, random crashes and general weirdness to DEP, so it pays to check the DEP settings for almost any problem.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mfreem</span><br />
-			<span class="date small text-muted">11th September 2005 17:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm having the same problem myself. The spectrum analyzer is showing properly, but the AVS is just usually blank, all one color and won't react to music. Occasionally it will work but if I close Winamp it won't work the next time I open it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mfreem</span><br />
-			<span class="date small text-muted">20th September 2005 07:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nevermind. I think I've figured it out. I changed my Data Execution Prevention (DEP) settings to allow winamp and it seems to have solved it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nordstar</span><br />
-			<span class="date small text-muted">9th October 2005 12:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		My visualisations were always blank and adding Winamp to the DEP exception list solved the problem.<br />
-<br />
-In fact, turning DEP off seems to solve a wide range of problems. So far I've attributed freezes, random crashes and general weirdness to DEP, so it pays to check the DEP settings for almost any problem.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

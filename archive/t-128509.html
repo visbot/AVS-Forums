@@ -1,185 +1,114 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" synchin dm's and ssc's AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="synchin dm's and ssc's " />
 
-	<title> synchin dm's and ssc's - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>synchin dm's and ssc's - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">synchin dm's and ssc's</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128509">synchin dm's and ssc's</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">15th March 2003 11:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">synchin dm's and ssc's</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128509">synchin dm's and ssc's</a></p>
+      <p class="post-content"><strong>synchin dm's and ssc's</strong><br />
+      how dou you sync dm's and ssc's? like in many of UnconeD's presets (circuit city). i tried hard but couldnt get it. the ssc seems to move rotate in some other direction. then i tore down unconed's preset and found that is rotation around x axis is 1 in the dm, then it is -1 in the ssc. this worked for one axis, but when more than one axis had rotatio non-zero, then it doesnt seem to work.<br />
+      can someone explain?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">15th March 2003 14:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">this was already asked and answered. search the forums.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">15th March 2003 11:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>synchin dm's and ssc's</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">15th March 2003 15:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		how dou you sync dm's and ssc's? like in many of UnconeD's presets (circuit city). i tried hard but couldnt get it. the ssc seems to move rotate in some other direction. then i tore down unconed's preset and found that is rotation around x axis is 1 in the dm, then it is -1 in the ssc. this worked for one axis, but when more than one axis had rotatio non-zero, then it doesnt seem to work.<br />
-can someone explain?
-		</p>
-</div>
+      <p class="post-content">You need to make sure both the DM and SSC work in the same camera space. Most superscopes still use the approach of putting an object at (x,y,z) rotated around rx,ry,rz and keep the camera at (0,0,0) looking at the z axis.<br />
+      <br />
+      A 3D DM however works completely different: the objects are at a fixed position in the world, and the camera moves and rotates around them.<br />
+      <br />
+      So if you want to synchronize a DM with a SSC you need to make them use the same model. Otherwise the rotations will mean totally different things in the scope and the DM.<br />
+      It's easiest to alter scopes to match DM behaviour.<br />
+      <br />
+      Basically if you're good at visualising 3D objects and rotations it should be obvious what you need to do. First you calculate your object regularly, then you add its position to its coordinates (if necessary). Then you need to use the reverse order of rotations in the scope, and use the opposite angles (which basically means flipping the sign on the sines, not the cosines, because cos(a) = cos(-a) ).<br />
+      <br />
+      If you don't understand why this is necessary, you don't really understand what you're doing with a 3D DM and scope... try visualising what happens when a DM is calculated and a scope is rendered. Remember that rotations always happen around the world axes, which is why the (z,x,y) order of rotations for a DM is the best approach (it's the best equivalent of how a human body looks around).</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">15th March 2003 17:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">15th March 2003 14:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">frankly speaking I understood some part of this ( well I understood the copcept anyway ) . I havent tried this but...i think I will get this right</p>
+    </div>
+    <hr />
 
-		this was already asked and answered.  search the forums.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">15th March 2003 17:26 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">If you are talking about basic synching, search the forums. There are three basic ways:<br />
+      Using getosc and getspec<br />
+      Using counter variables<br />
+      Creating a pseudo random number generator.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">15th March 2003 15:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">16th March 2003 11:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		You need to make sure both the DM and SSC work in the same camera space. Most superscopes still use the approach of putting an object at (x,y,z) rotated around rx,ry,rz and keep the camera at (0,0,0) looking at the z axis.<br />
-<br />
-A 3D DM however works completely different: the objects are at a fixed position in the world, and the camera moves and rotates around them.<br />
-<br />
-So if you want to synchronize a DM with a SSC you need to make them use the same model. Otherwise the rotations will mean totally different things in the scope and the DM.<br />
-It's easiest to alter scopes to match DM behaviour.<br />
-<br />
-Basically if you're good at visualising 3D objects and rotations it should be obvious what you need to do. First you calculate your object regularly, then you add its position to its coordinates (if necessary). Then you need to use the reverse order of rotations in the scope, and use the opposite angles (which basically means flipping the sign on the sines, not the cosines, because cos(a) = cos(-a) ).<br />
-<br />
-If you don't understand why this is necessary, you don't really understand what you're doing with a 3D DM and scope... try visualising what happens when a DM is calculated and a scope is rendered. Remember that rotations always happen around the world axes, which is why the (z,x,y) order of rotations for a DM is the best approach (it's the best equivalent of how a human body looks around).
-		</p>
-</div>
+      <p class="post-content">oh, no thats just basic stuff.. :)<br />
+      ok, i sort of got that right. when the ssc has postion as (0,0,0) and sin(rx,ry and rz) is negative, it works. but as soon as I change its position, the preset looks ugly</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">16th March 2003 14:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">15th March 2003 17:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Ok that's two people who have suggested a forum search because they think it's about regular synching. Please READ the question asked.</p>
+    </div>
+    <hr />
 
-		frankly speaking I understood some part of this ( well I understood the copcept anyway ) . I havent tried this but...i think I will get this right
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">16th March 2003 14:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">There was a thread by jheriko about more advnced synching a coupe of months ago in the main forum I think,</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">15th March 2003 17:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you are talking about basic synching, search the forums.  There are three basic ways:<br />
-Using getosc and getspec<br />
-Using counter variables<br />
-Creating a pseudo random number generator.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">16th March 2003 11:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		oh, no thats just basic stuff.. :)<br />
-ok, i sort of got that right. when the ssc has postion as (0,0,0) and sin(rx,ry and rz) is negative, it works. but as soon as I change its position, the preset looks ugly
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">16th March 2003 14:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok that's two people who have suggested a forum search because they think it's about regular synching. Please READ the question asked.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">16th March 2003 14:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		There was a thread by jheriko about more advnced synching a coupe of months ago in the main forum I think,
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

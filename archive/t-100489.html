@@ -1,284 +1,202 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" AVS Speedups AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVS Speedups " />
 
-	<title> AVS Speedups - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>AVS Speedups - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">AVS Speedups</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100489">AVS Speedups</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
+      <span class="post-time small text-muted">19th August 2002 17:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">AVS Speedups</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100489">AVS Speedups</a></p>
+      <p class="post-content"><strong>AVS Speedups</strong><br />
+      Hey AVS GMs, I was wondering what common codes speedups can be used to increase framerates? I know a couple, such as doing as many calculations as possible in the per-frame section, and not dividing by a constant (multiply by inverse instead), but I'm sure that there are more out there.<br />
+      <br />
+      For example, which is faster?<br />
+      <br />
+      a=if(above(abs(a),1),a-2*sign(a),a);<br />
+      <br />
+      or<br />
+      <br />
+      a=if(above(a,1),a-2,a);<br />
+      a=if(below(a,-1),a+2,a);</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">19th August 2002 18:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Instead of just caching constants, isolate constant expressions and store those:<br />
+      <br />
+      instead of<br /></p>
+      <pre>
+<code>frame:<br />angle=angle+0.01;<br /><br />point:<br />foo=sin(angle)*bar;</code>
+</pre><br />
+      use:<br />
+      <pre>
+<code>frame:<br />angle=angle+0.01;<br />sa=sin(angle);<br />point:<br />foo=sa*bar;</code>
+</pre>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">KeatonMill</span><br />
-			<span class="date small text-muted">19th August 2002 17:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>AVS Speedups</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">19th August 2002 20:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hey AVS GMs, I was wondering what common codes speedups can be used to increase framerates? I know a couple, such as doing as many calculations as possible in the per-frame section, and not dividing by a constant (multiply by inverse instead), but I'm sure that there are more out there.<br />
-<br />
-For example, which is faster?<br />
-<br />
-a=if(above(abs(a),1),a-2*sign(a),a);<br />
-<br />
-or<br />
-<br />
-a=if(above(a,1),a-2,a);<br />
-a=if(below(a,-1),a+2,a);
-		</p>
-</div>
+      <p class="post-content">I do not know if this is relevant as AVS has big problems with the assigning of lots of variables but as in any normal programming practice assign a variable instead of doing more calaculations.<br />
+      <br />
+      Take steve's latest pack number 5 and look at Anemone.<br />
+      In the SSC part per_pixel part<br />
+      <br />
+      u=i*n%(n+1)-1;x1=pow(i,.8);<br />
+      x3=if(equal(u,1),px1,if(equal(u,2),px2,if(equal(u,3),px3,if(equal(u,4),px4,px))))*x1;<br />
+      y2=if(equal(u,1),py1,if(equal(u,2),py2,if(equal(u,3),py3,if(equal(u,4),py4,py))))*x1;<br />
+      x1=if(equal(u,1),pz1,if(equal(u,2),pz2,if(equal(u,3),pz3,if(equal(u,4),pz4,pz))))*x1+1.3;<br />
+      x1=if(below(x1,0.1),0,1/x1);<br />
+      <br />
+      Now if you have enough variables then I would change thsi to the following.<br />
+      <br />
+      u=i*n%(n+1)-1;<br />
+      x1=pow(i,.8);<br />
+      ue1 = equal(u,1);<br />
+      ue2= equal(u,2);<br />
+      ue3 = equal(u,3);<br />
+      ue4 = equal(u,4);<br />
+      x3=if(ue1,px1,if(ue2,px2,if(ue3,px3,if(ue4,px4,px))))*x1;<br />
+      y2=if(ue1,py1,if(ue2,py2,if(ue3,py3,if(ue4,py4,py))))*x1;<br />
+      x1=if(ue1,pz1,if(ue2,pz2,if(ue3,pz3,if(ue4,pz4,pz))))*x1+1.3;<br />
+      x1=if(below(x1,0.1),0,1/x1);<br />
+      <br />
+      This is not the greatest example as it only uses a simple compare but of it was equal(u%4,1) or something it would probably save a lot of time.<br />
+      <br />
+      It would probably save a little time though with all the extra work stuff in the per_pixel the CPU has to do.<br />
+      <br />
+      Hope it helps.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">19th August 2002 21:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th August 2002 18:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Also "if" 's are normally bad news too. Use min and max instead a lot quicker.<br />
+      <br />
+      Another of UnConeD's lines...Speeder 3d<br />
+      <br />
+      alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
+      <br />
+      I think can be improved.<br />
+      <br />
+      The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
+      <br />
+      and I think you can do something with the other part too. Need to think about it a bit more.<br />
+      <br />
+      But these are just examples.</p>
+    </div>
+    <hr />
 
-		Instead of just caching constants, isolate constant expressions and store those:<br />
-<br />
-instead of<br />
-<pre><code>frame:<br />
-angle=angle+0.01;<br />
-<br />
-point:<br />
-foo=sin(angle)*bar;</code></pre><br />
-use:<br />
-<pre><code>frame:<br />
-angle=angle+0.01;<br />
-sa=sin(angle);<br />
-point:<br />
-foo=sa*bar;</code></pre>
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">19th August 2002 22:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">There's also one way that Atero use (And work).<br />
+      Here's an example line :<br />
+      <br />
+      (This uses point-by-point assignment)<br />
+      <br />
+      x1=(if(equal(p,1)+equal(p,4)+equal(p,5)+equal(p,6)+equal(p,9)+equal(p,10)+equal(p,15)+equal(p,16),1,0)-0.5);<br />
+      <br />
+      Instead of using nested ifs, all the points that have the same positions (When one point need to have more than 2 lines connected to it, like in a cube) are all listed as condition, connected using +, and then the location is given.<br />
+      <br />
+      (Note : I didn't tell Atero that I post this.. Hopefully he didn't mind :) )</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">19th August 2002 20:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
+      <span class="post-time small text-muted">19th August 2002 22:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I do not know if this is relevant as AVS has big problems with the assigning of lots of variables but as in any normal programming practice assign a variable instead of doing more calaculations.<br />
-<br />
-Take steve's latest pack number 5 and look at Anemone.<br />
-In the SSC part per_pixel part<br />
-<br />
-u=i*n%(n+1)-1;x1=pow(i,.8);<br />
-x3=if(equal(u,1),px1,if(equal(u,2),px2,if(equal(u,3),px3,if(equal(u,4),px4,px))))*x1;<br />
-y2=if(equal(u,1),py1,if(equal(u,2),py2,if(equal(u,3),py3,if(equal(u,4),py4,py))))*x1;<br />
-x1=if(equal(u,1),pz1,if(equal(u,2),pz2,if(equal(u,3),pz3,if(equal(u,4),pz4,pz))))*x1+1.3;<br />
-x1=if(below(x1,0.1),0,1/x1);<br />
-<br />
-Now if you have enough variables then I would change thsi to the following.<br />
-<br />
-u=i*n%(n+1)-1;<br />
-x1=pow(i,.8);<br />
-ue1 = equal(u,1);<br />
-ue2= equal(u,2);<br />
-ue3 = equal(u,3);<br />
-ue4 = equal(u,4);<br />
-x3=if(ue1,px1,if(ue2,px2,if(ue3,px3,if(ue4,px4,px))))*x1;<br />
-y2=if(ue1,py1,if(ue2,py2,if(ue3,py3,if(ue4,py4,py))))*x1;<br />
-x1=if(ue1,pz1,if(ue2,pz2,if(ue3,pz3,if(ue4,pz4,pz))))*x1+1.3;<br />
-x1=if(below(x1,0.1),0,1/x1);<br />
-<br />
-This is not the greatest example as it only uses a simple compare but of it was equal(u%4,1) or something it would probably save a lot of time.<br />
-<br />
-It would probably save a little time though with all the extra work stuff in the per_pixel the CPU has to do.<br />
-<br />
-Hope it helps.
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by Rovastar</i><br />
+        <b><br />
+        alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
+        <br />
+        I think can be improved.<br />
+        <br />
+        The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
+        <br />
+        and I think you can do something with the other part too. Need to think about it a bit more.</b>
+      </blockquote>I think the easiest way (with mins and maxes, anyway) is<br />
+      <pre>
+<code><br />alpha=min(max(alpha,0),1);<br /></code>
+</pre><br />
+      <br />
+      Also, in that version, since alpha is only referenced once, you could actually put the expression that determines alpha in there. So, for Speeder3K it would be<br />
+      <br />
+      <pre>
+<code><br />alpha=min(max(1.2-d*.25,0),1);<br /></code>
+</pre>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">19th August 2002 21:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">19th August 2002 22:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Also &quot;if&quot; 's are normally bad news too. Use min and max instead a lot quicker.<br />
-<br />
-Another of UnConeD's lines...Speeder 3d<br />
-<br />
-alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
-<br />
-I think can be improved.<br />
-<br />
-The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
-<br />
-and I think you can do something with the other part too. Need to think about it a bit more.<br />
-<br />
-But these are just examples.
-		</p>
-</div>
+      <p class="post-content">Dang I guess I totally missed that glaring inefficiency... when you're busy trying to get the whole thing to work, details aren't exactly the first priority ;).</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">23rd August 2002 04:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">19th August 2002 22:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">There's a discussion of AVS speedups in &lt;plug style="shameless"&gt; AVS Primer (available on DeviantART, DeskMod, and Winamp.com) &lt;/plug&gt;</p>
+    </div>
+    <hr />
 
-		There's also one way that Atero use (And work).<br />
-Here's an example line :<br />
-<br />
-(This uses point-by-point assignment)<br />
-<br />
-x1=(if(equal(p,1)+equal(p,4)+equal(p,5)+equal(p,6)+equal(p,9)+equal(p,10)+equal(p,15)+equal(p,16),1,0)-0.5);<br />
-<br />
-Instead of using nested ifs, all the points that have the same positions (When one point need to have more than 2 lines connected to it, like in a cube) are all listed as condition, connected using +, and then the location is given.<br />
-<br />
-(Note : I didn't tell Atero that I post this.. Hopefully he didn't mind :) )
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">23rd August 2002 08:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">An interesting thing to note is that when using IF statements, boolean logic can be turned into algabra:<br />
+      <br />
+      A AND B = A * B<br />
+      A OR B = A + B<br />
+      (A AND B) OR (C AND D) = A * B + C * D<br />
+      (A OR B) AND (C OR D) = (A + B) * (C + D)<br />
+      A XOR B = (A + B) - (A * B)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">KeatonMill</span><br />
-			<span class="date small text-muted">19th August 2002 22:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Rovastar </i><br />
-<b><br />
-alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
-<br />
-I think can be improved.<br />
-<br />
-The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
-<br />
-and I think you can do something with the other part too. Need to think about it a bit more. </b></blockquote>
-I think the easiest way (with mins and maxes, anyway) is <br />
-<pre><code><br />
-alpha=min(max(alpha,0),1);<br />
-</code></pre><br />
-<br />
-Also, in that version, since alpha is only referenced once, you could actually put the expression that determines alpha in there. So, for Speeder3K it would be<br />
-<br />
-<pre><code><br />
-alpha=min(max(1.2-d*.25,0),1);<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th August 2002 22:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Dang I guess I totally missed that glaring inefficiency... when you're busy trying to get the whole thing to work, details aren't exactly the first priority ;).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">23rd August 2002 04:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		There's a discussion of AVS speedups in &lt;plug style=&quot;shameless&quot;&gt; AVS Primer (available on DeviantART, DeskMod, and Winamp.com) &lt;/plug&gt;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">23rd August 2002 08:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		An interesting thing to note is that when using IF statements, boolean logic can be turned into algabra:<br />
-<br />
-A AND B = A * B<br />
-A OR B = A + B<br />
-(A AND B) OR (C AND D) = A * B + C * D<br />
-(A OR B) AND (C OR D) = (A + B) * (C + D)<br />
-A XOR B = (A + B) - (A * B)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,509 +1,313 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Electric Cube AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Electric Cube " />
 
-	<title> Electric Cube - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Electric Cube - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">Electric Cube</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=129351">Electric Cube</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">22nd March 2003 14:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Electric Cube</strong><br />
-		
-		
-			
-		
-
-		I took my old idea with the wireframe cubes and the spheres in the middle of them with the electricity running between them and turned it into a big cube, i scrapped the tacky space background too. I think it turned out quite nice but i think it might need that whole depth colour thing. Ive used max blends but i think it needs it because things sometimes look out of place, only slightly and for a second but its still a problem, thing is, im crap at making scope colours, any help with this and the usual stuff much appreciated :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Shock Value</span><br />
-			<span class="date small text-muted">22nd March 2003 15:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I like it, but I think it might look better with perspective. The colors look nice actually, but you might want to make the electricity look more vivid somehow. As far as depth coloring, you'll have to work that out youtself because I have no experience in that area. And finally, you don't need two movements to accomplish the BG. Just use the x=0 one and modify the superscope so that you get the gradient that you're looking for. IE: for that dark on top and bottom coloring, use:<br />
-<br />
-x=0;<br />
-y=i*2-1;<br />
-red=sin(i*3.14)*.5+0.25;<br />
-green=sin(i*3.14)*.5+0.25;<br />
-blue=sin(i*3.14)*.5+0.25;<br />
-<br />
-... or something like that, and remove the second movement. Other than that, this looks like a great base for what could be a great preset.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Pixelcraft</span><br />
-			<span class="date small text-muted">22nd March 2003 15:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Wow, that's neat....<br />
-<br />
-The color scheme you used is good, I don't think you should change that, but thought it looked better without that gray background, because sometimes the &quot;electric&quot; scopes that connect the cubes kind of disappeared in the background.  This made it hard to see the 3D positioning sometimes.  But that's just my opinion....<br />
-<br />
-Good Job<br />
-<br />
-:up:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">22nd March 2003 20:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		raz...how many times must we tell you to use depth and maxblend?  a lot of the time things that are in the &quot;back&quot; appear in front of stuff that's in the &quot;front&quot; because of the way you're drawing it.<br />
-otherwise it's pretty nice, make it move tho
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">22nd March 2003 20:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally Posted By The AVS person formerly known as Raz</i><br />
-<b>need that whole depth colour thing. <u>Ive used max blends</u> but i think it needs it because things sometimes look out of place, only slightly and for a second but its still a problem, thing is, im crap at making scope colours, any help with this and the usual stuff much appreciated </b></blockquote>
-edit: sorry didnt notice those irritating floating orb type things, they're in 50/50 blend because at maxblend they near enough dissapear.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">22nd March 2003 22:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		its electricity with more cubes.Nice anyway but it needs some optimisation :) Damn you`re full of ideas raz ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">22nd March 2003 22:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		your color coding should be the same for <u>each scope</u> or else that happens
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">23rd March 2003 18:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Ive got some sort of depth colouring down but its not much use. I dont know how to make it change with rotation. It stays the same with each scope even if it rotates to the front or anywhere. Plus i still cant find a way to use maxblend with them without them near enough disappearing. Any help would be much appreciated :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">24th March 2003 06:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Pretty neat-o, very nice response. But atero is right about the colorcoding, i checked only v2 and it looks weird.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">24th March 2003 09:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		try:<br />
-col=.7-z3 ( when z3 is the last z of the matrix)<br />
-then multiply red, green and blue bul col (in per point of course)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th March 2003 00:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Damn this was hard to fix. I got sick of trying to figure out the equivalent of z3 on my crappy 3d rotation so i decided to rewrite my entire rotation method in a different perspective. The z axis is now much bigger and makes the preset look a <u>lot</u> cooler. I have a z3 now and a depth colour coding, i think it really kicks ass the way it disappears into the background at the back and now the max blend works with everything. I need to fix the getosc functions though, it takes a little while to start up :)<br />
-<br />
-edit: changed speeds and attatchment. Much better now :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th March 2003 00:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Move the fog back a bit and use depth for the connecting pieces so that you can't see them when they are behind the spheres.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">26th March 2003 08:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Raz_001 </i><br />
-<b>Damn this was hard to fix. I got sick of trying to figure out the equivalent of z3 on my crappy 3d rotation so i decided to rewrite my entire rotation method in a different perspective. The z axis is now much bigger and makes the preset look a <u>lot</u> cooler. I have a z3 now and a depth colour coding, i think it really kicks ass the way it disappears into the background at the back and now the max blend works with everything. I need to fix the getosc functions though, it takes a little while to start up :)<br />
-<br />
-edit: changed speeds and attatchment. Much better now :) </b></blockquote>
-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">26th March 2003 08:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Raz_001 </i><br />
-<b>I got sick of trying to figure out the equivalent of z3</b></blockquote>
-I dont think thats difficult. it should be the last z of the matrix
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th March 2003 08:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I dont care, it still looks better now, thanks for downloading it shreyas... 1 download... by anubis. If you're going to comment the least you can do is download the preset.<br />
-<br />
-I'm glad you all liked it :/
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">26th March 2003 09:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i hadent downloaded the second one :p.<br />
-just the first one.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th March 2003 16:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yeah well, the second version is majorly different and uses all the x, y and z2's and 3's and looks greatly better. Dont comment unless you've downloaded. ANubis, i havent got the slightest clue how to get rid of the very very slight unnoticable white on the spheres without removing the maxblend. Otherwise i like the fog that far, i think it looks good. Are you really going to condemn entirely the hours i put in because of preference?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">26th March 2003 19:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		v3 looks pretty good, but you don't need 300 points to make a cube. 16 will do. :p<br />
-<br />
-I changed the cube thing and reduced the points in the electricity to 30 each, and it doubled the framerate and still looked pretty much the same.<br />
-<br />
-And yes, the fade is pretty nice. :)<br />
-<br />
-Since you're point points by point assignment (for the cubes at least), you could optimize a little more by creating things in their place instead of at (0,0,0) and translating them.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th March 2003 20:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I did that in a different preset before i'd done this and i couldn't be bothered doing it again. I will do it though thanks for reminding me. I seem to remember setting the cubes to that because i thought the colours would be smoother but you're right it doesn't make much difference at all also i forgot to change the n value for the electricity. Thanks for the optimisation tips :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">26th March 2003 20:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Raz_001</i><br />
-<b>ANubis, i havent got the slightest clue how to get rid of the very very slight unnoticable white on the spheres without removing the maxblend. Otherwise i like the fog that far, i think it looks good. Are you really going to condemn entirely the hours i put in because of preference?</b></blockquote>
-No, but I will ask you to change it since I don't like it.  You don't have to listen to me - it's just a suggestion.  It is much harder to tell what it is and doesn't show enough of the cube IMO.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">26th March 2003 21:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i've sped it up some more now and you can quite easily tell its a cube, even more-so now, not to mention the name of the preset. Thanks for the suggestion but i doubt theres a way to fix it without removing the maxblends and thus, ruining the effect. Apart from optimisation and maybe moving it just a little back. It's finished.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">moltarx</span><br />
-			<span class="date small text-muted">27th March 2003 16:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		excellent work, i think this is a great preset :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">27th March 2003 17:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The code is incredibly unoptimized... calculate common subparts only once, replace division by a constant with multiplication, etc.<br />
-<br />
-For example:<br />
-<br />
-x=(x3/(1+(5+z3)/d))/3;<br />
-y=(y3/(1+(5+z3)/d))/3;<br />
-<br />
-can be changed to (d is always 3 in your scopes):<br />
-<br />
-x=(x3/(1+(5+z3)/3))/3;<br />
-&lt;=&gt;<br />
-x=(x3/((8+z3)/3))/3;<br />
-&lt;=&gt;<br />
-x=x3/(3*((8+z3)/3));<br />
-&lt;=&gt;<br />
-x=x3/(8+z3);<br />
-<br />
-In other words, you just change the last assignment of z3 to add +8, and then you can do:<br />
-<br />
-&lt;=&gt;<br />
-x=x3/z3; y=y3/z3<br />
-<br />
-Oh but what's this? Two divisions by the same variable. Sloooooow! Instead:<br />
-<br />
-iz=1/z3;<br />
-x=x3*iz;y=y3*iz;<br />
-<br />
-I see the x=(x3/(1+(5+z3)/d))/3 code pretty much everywhere... who invented this monster?? The same person who keeps forgetting to fix aspect ratio?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">27th March 2003 18:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks man, i'd already changed the d's when i started optimising but i didn't realise about the rest of it. Thanks a lot :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">28th March 2003 05:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		and the aspect ratio?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">Electric Cube</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=129351">Electric Cube</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">22nd March 2003 14:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Electric Cube</strong><br />
+      I took my old idea with the wireframe cubes and the spheres in the middle of them with the electricity running between them and turned it into a big cube, i scrapped the tacky space background too. I think it turned out quite nice but i think it might need that whole depth colour thing. Ive used max blends but i think it needs it because things sometimes look out of place, only slightly and for a second but its still a problem, thing is, im crap at making scope colours, any help with this and the usual stuff much appreciated :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br />
+      <span class="post-time small text-muted">22nd March 2003 15:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I like it, but I think it might look better with perspective. The colors look nice actually, but you might want to make the electricity look more vivid somehow. As far as depth coloring, you'll have to work that out youtself because I have no experience in that area. And finally, you don't need two movements to accomplish the BG. Just use the x=0 one and modify the superscope so that you get the gradient that you're looking for. IE: for that dark on top and bottom coloring, use:<br />
+      <br />
+      x=0;<br />
+      y=i*2-1;<br />
+      red=sin(i*3.14)*.5+0.25;<br />
+      green=sin(i*3.14)*.5+0.25;<br />
+      blue=sin(i*3.14)*.5+0.25;<br />
+      <br />
+      ... or something like that, and remove the second movement. Other than that, this looks like a great base for what could be a great preset.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Pixelcraft</span><br />
+      <span class="post-time small text-muted">22nd March 2003 15:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Wow, that's neat....<br />
+      <br />
+      The color scheme you used is good, I don't think you should change that, but thought it looked better without that gray background, because sometimes the "electric" scopes that connect the cubes kind of disappeared in the background. This made it hard to see the 3D positioning sometimes. But that's just my opinion....<br />
+      <br />
+      Good Job<br />
+      <br />
+      :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">22nd March 2003 20:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">raz...how many times must we tell you to use depth and maxblend? a lot of the time things that are in the "back" appear in front of stuff that's in the "front" because of the way you're drawing it.<br />
+      otherwise it's pretty nice, make it move tho</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">22nd March 2003 20:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally Posted By The AVS person formerly known as Raz</i><br />
+        <b>need that whole depth colour thing. <u>Ive used max blends</u> but i think it needs it because things sometimes look out of place, only slightly and for a second but its still a problem, thing is, im crap at making scope colours, any help with this and the usual stuff much appreciated</b>
+      </blockquote>edit: sorry didnt notice those irritating floating orb type things, they're in 50/50 blend because at maxblend they near enough dissapear.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">22nd March 2003 22:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">its electricity with more cubes.Nice anyway but it needs some optimisation :) Damn you`re full of ideas raz ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">22nd March 2003 22:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">your color coding should be the same for <u>each scope</u> or else that happens</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">23rd March 2003 18:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ive got some sort of depth colouring down but its not much use. I dont know how to make it change with rotation. It stays the same with each scope even if it rotates to the front or anywhere. Plus i still cant find a way to use maxblend with them without them near enough disappearing. Any help would be much appreciated :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">24th March 2003 06:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Pretty neat-o, very nice response. But atero is right about the colorcoding, i checked only v2 and it looks weird.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">24th March 2003 09:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">try:<br />
+      col=.7-z3 ( when z3 is the last z of the matrix)<br />
+      then multiply red, green and blue bul col (in per point of course)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th March 2003 00:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Damn this was hard to fix. I got sick of trying to figure out the equivalent of z3 on my crappy 3d rotation so i decided to rewrite my entire rotation method in a different perspective. The z axis is now much bigger and makes the preset look a <u>lot</u> cooler. I have a z3 now and a depth colour coding, i think it really kicks ass the way it disappears into the background at the back and now the max blend works with everything. I need to fix the getosc functions though, it takes a little while to start up :)<br />
+      <br />
+      edit: changed speeds and attatchment. Much better now :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th March 2003 00:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Move the fog back a bit and use depth for the connecting pieces so that you can't see them when they are behind the spheres.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">26th March 2003 08:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Raz_001</i><br />
+        <b>Damn this was hard to fix. I got sick of trying to figure out the equivalent of z3 on my crappy 3d rotation so i decided to rewrite my entire rotation method in a different perspective. The z axis is now much bigger and makes the preset look a <u>lot</u> cooler. I have a z3 now and a depth colour coding, i think it really kicks ass the way it disappears into the background at the back and now the max blend works with everything. I need to fix the getosc functions though, it takes a little while to start up :)<br />
+        <br />
+        edit: changed speeds and attatchment. Much better now :)</b>
+      </blockquote>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">26th March 2003 08:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Raz_001</i><br />
+        <b>I got sick of trying to figure out the equivalent of z3</b>
+      </blockquote>I dont think thats difficult. it should be the last z of the matrix
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th March 2003 08:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I dont care, it still looks better now, thanks for downloading it shreyas... 1 download... by anubis. If you're going to comment the least you can do is download the preset.<br />
+      <br />
+      I'm glad you all liked it :/</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">26th March 2003 09:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i hadent downloaded the second one :p.<br />
+      just the first one.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th March 2003 16:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">yeah well, the second version is majorly different and uses all the x, y and z2's and 3's and looks greatly better. Dont comment unless you've downloaded. ANubis, i havent got the slightest clue how to get rid of the very very slight unnoticable white on the spheres without removing the maxblend. Otherwise i like the fog that far, i think it looks good. Are you really going to condemn entirely the hours i put in because of preference?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">26th March 2003 19:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">v3 looks pretty good, but you don't need 300 points to make a cube. 16 will do. :p<br />
+      <br />
+      I changed the cube thing and reduced the points in the electricity to 30 each, and it doubled the framerate and still looked pretty much the same.<br />
+      <br />
+      And yes, the fade is pretty nice. :)<br />
+      <br />
+      Since you're point points by point assignment (for the cubes at least), you could optimize a little more by creating things in their place instead of at (0,0,0) and translating them.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th March 2003 20:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I did that in a different preset before i'd done this and i couldn't be bothered doing it again. I will do it though thanks for reminding me. I seem to remember setting the cubes to that because i thought the colours would be smoother but you're right it doesn't make much difference at all also i forgot to change the n value for the electricity. Thanks for the optimisation tips :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">26th March 2003 20:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Raz_001</i><br />
+        <b>ANubis, i havent got the slightest clue how to get rid of the very very slight unnoticable white on the spheres without removing the maxblend. Otherwise i like the fog that far, i think it looks good. Are you really going to condemn entirely the hours i put in because of preference?</b>
+      </blockquote>No, but I will ask you to change it since I don't like it. You don't have to listen to me - it's just a suggestion. It is much harder to tell what it is and doesn't show enough of the cube IMO.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">26th March 2003 21:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i've sped it up some more now and you can quite easily tell its a cube, even more-so now, not to mention the name of the preset. Thanks for the suggestion but i doubt theres a way to fix it without removing the maxblends and thus, ruining the effect. Apart from optimisation and maybe moving it just a little back. It's finished.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br />
+      <span class="post-time small text-muted">27th March 2003 16:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">excellent work, i think this is a great preset :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">27th March 2003 17:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The code is incredibly unoptimized... calculate common subparts only once, replace division by a constant with multiplication, etc.<br />
+      <br />
+      For example:<br />
+      <br />
+      x=(x3/(1+(5+z3)/d))/3;<br />
+      y=(y3/(1+(5+z3)/d))/3;<br />
+      <br />
+      can be changed to (d is always 3 in your scopes):<br />
+      <br />
+      x=(x3/(1+(5+z3)/3))/3;<br />
+      &lt;=&gt;<br />
+      x=(x3/((8+z3)/3))/3;<br />
+      &lt;=&gt;<br />
+      x=x3/(3*((8+z3)/3));<br />
+      &lt;=&gt;<br />
+      x=x3/(8+z3);<br />
+      <br />
+      In other words, you just change the last assignment of z3 to add +8, and then you can do:<br />
+      <br />
+      &lt;=&gt;<br />
+      x=x3/z3; y=y3/z3<br />
+      <br />
+      Oh but what's this? Two divisions by the same variable. Sloooooow! Instead:<br />
+      <br />
+      iz=1/z3;<br />
+      x=x3*iz;y=y3*iz;<br />
+      <br />
+      I see the x=(x3/(1+(5+z3)/d))/3 code pretty much everywhere... who invented this monster?? The same person who keeps forgetting to fix aspect ratio?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">27th March 2003 18:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks man, i'd already changed the d's when i started optimising but i didn't realise about the rest of it. Thanks a lot :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">28th March 2003 05:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">and the aspect ratio?</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

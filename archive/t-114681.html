@@ -1,1314 +1,946 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Tips&amp;Tricks in AVS AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tips&amp;Tricks in AVS " />
 
-	<title> Tips&amp;Tricks in AVS - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Tips&amp;Tricks in AVS - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Tips&amp;Tricks in AVS</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=114681">Tips&amp;Tricks in AVS</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">18th November 2002 17:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Tips&amp;Tricks in AVS</strong><br />
-		
-		
-
-		As i have made avs for 2 years now, i really don't know much about how to do things differently.<br />
-<br />
-Confused?<br />
-Read more.<br />
-<br />
-As <b>A</b>dvanced <b>V</b>isualization <b>S</b>tudio is a highly customizable visualization plugin/component there are usually many ways to do simple things. And when it comes to coding your own superscopes and dynamic movements there are several different ways to make things, like in the dynamic movement using rectangular coordinates rather than polar coordinates to create the exactly same effect.<br />
-<br />
-Sometimes if you do things differently you may gain some priviledges, like better frame rates or the benefits of using a different coordinate system. Also when you use the built-in functions differently you may get faster&amp;better results than doing the same thing with different effects.<br />
-<br />
-<br />
-<b><u><font size="2">EXAMPLE</font></u></b><br />
-Creating a rotoblitter effect in movement with both polar- &amp; rectangular coordinates.<br />
-<br />
-<br />
-<u>Polar</u><br />
-r=r+0.1<br />
-<br />
-BENEFITS:<br />
-Simple, easy and a fast way.<br />
-<br />
-<br />
-<u>Rectangular</u><br />
-x=x+y*0.1 ;<br />
-y=y-x*0.1<br />
-<br />
-BENEFITS:<br />
-You can shift it around the screen which can't be done in polar coordinates.<br />
-<br />
-<br />
-These helpful speed up tricks and better quality tips are scattered all over the forum, so what im asking here is to collect all those helpful notes into a single forum post, <u>this post.</u><br />
-<br />
-So feel free to post your ideas and comments how something that is frequently used can be done faster&amp;better, this is all for the common good and will surely help us all as we are always searching a alternative way to make presets.<br />
-<br />
-And please remember that, althought the most tips consider coding there is still many different ways to use the built-in effects differently and still get the same effect. If you have discovered a clever way of using <u>example:</u> <i>Trans / Water</i> , you can post it here so it will help other avs artists as well.<br />
-<br />
-Hope you all understanded the point of this post and hope that you all contribute as much as you can ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">19th November 2002 04:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Rotoblitter in polar:<br />
-r=r+spin;<br />
-d=d*(zoom+1);<br />
-<br />
-Rotoblitter in rectangular:<br />
-x1=x; zoom2=zoom+1;<br />
-x=x*zoom2+y*spin;<br />
-y=y*zoom2+x1*spin;<br />
-<br />
-Just a bit of a fix by your friendly local anal retentive AVSer... ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">19th November 2002 04:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		2 ways of shifting values, not sure which is executed faster:<br />
-<br />
-value = value * (1-speed) + target * speed;<br />
-<br />
-or<br />
-<br />
-value = value + (taget - value) * speed;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">19th November 2002 06:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No order targeting:<br />
-value = target<br />
-<br />
-First order targeting:<br />
-value = (value + target * speed) / (speed + 1)<br />
-<br />
-Linear Interpolation:<br />
-value = value1 * position + value2 * (1-position)<br />
-<br />
-Bilinear Interpolation:<br />
-value12 = value1 * posx + value2 * (1-posx)<br />
-value34 = value3 * posx + value4 * (1-posx)<br />
-value = value12 * posy + value34 * (1-posy)<br />
-<br />
-Trilinear Interpolation:<br />
-value12 = value1 * posx + value2 * (1-posx)<br />
-value34 = value3 * posx + value4 * (1-posx)<br />
-value56 = value5 * posx + value6 * (1-posx)<br />
-value78 = value7 * posx + value8 * (1-posx)<br />
-value1234 = value12 * posy + value34 * (1-posy)<br />
-value5678 = value56 * posy + value78 * (1-posy)<br />
-value = value1234 * posz + value5678 * (1-posz)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">20th November 2002 01:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Two questions...</strong><br />
-		
-		
-
-		First order targeting is increasing a value by increments (speed), until it reaches target, right?<br />
-<br />
-What is (bi/tri)linear interpolation?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">20th November 2002 02:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Bilinear is interpolation linearly in 2D... like zooming on a picture, but instead of blocky pixels you get a blurry, smooth texture.<br />
-<br />
-Trilinear is interpolation linearly in 3D.   It's commonly used to interpolate bilinearly between textures and linearly between an MIP-maps on a 3D card.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">20th November 2002 08:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		What i would like to know is: What is the fastest way to create a fullscreen gradient? I have used this method:<br />
-<br />
-1 single ssc line<br />
-<br />
-INIT: n=2<br />
-PER POINT: x=i*2-1 ; y=1<br />
-<br />
-1 movement with rect coords (bilinear filtering on)<br />
-y=y-0.0x<br />
-<br />
-It could also be done by using a gradient line and then using a movement with x=0.<br />
-<br />
-Which way is faster? Or is there even a faster way to do it?<br />
-<br />
-Thanks :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">20th November 2002 09:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Tug: in his HiRes pack that came with J7, jheriko used a vertical line, and a static movement with r=0. Looks awesome.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">20th November 2002 09:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		uNDefineD, it creates a conical gradient, right? <br />
-<br />
-Different gradients:<br />
-<br />
-<font size="3"><b><u>Linear:</u></b></font><br />
-<br />
-<br />
-<b><u>1 SuperScope</u></b><br />
-<br />
-<u>Init:</u><br />
-n=100 (the more numpoints the more accurate gradient)<br />
-<br />
-<u>Per Point:</u><br />
-x=i*2-1 ;<br />
-y=0 ;<br />
-col=i ;<br />
-blue=col ; red=col ; green=col<br />
-<br />
-<br />
-<b><u>1 Movement</u></b><br />
-<br />
-Rect Coords ON<br />
-<br />
-Bilinear Filtering ON/OFF (not absolutly necessary, it looks ok even without it)<br />
-<br />
-<u>Code:</u><br />
-y=0<br />
-<br />
-<br />
-<br />
-<font size="3"><b><u>Radial:</u></b></font><br />
-<br />
-<br />
-<b><u>1 SuperScope</u></b><br />
-<br />
-Same as in <i>Linear</i><br />
-<br />
-<br />
-<b><u>1 Movement</u></b><br />
-<br />
-Rect Coords ON<br />
-<br />
-Bilinear Filtering ON<br />
-<br />
-<u>Code:</u><br />
-y=0 ;<br />
-x=d<br />
-<br />
-<br />
-<br />
-Im not sure how the conical gradient is done, but i guess it's just using the r=0 movement and then using a color code in a superscope like col=sin(i*pi). I don't have avs right now so i can't check did i get those other two right, so ill edit this post tomorrow (at 8:XXam gmt +2).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">20th November 2002 10:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:rolleyes: <br />
-<br />
-Look in my 3rd pack (desert sunset) to see how to do fullscreen gradients in 1 scope.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">20th November 2002 12:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well yes you can use just one superscope, but to fill the entire screen with just one superscope requires a big numpoint number and the bigger the resolution the more numpoints and more slower it is. With the scope and the movement technique the numpoint number always stays the same and still the whole screen gets filled with the gradient.<br />
-<br />
-There for the movement and ssc technique is a lot faster than using one BIG ssc.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">20th November 2002 18:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		the fastest way I know to make a gradient is:<br />
-scope:<br />
-<br />
-n=w*detail; &lt; whith deatil going from 2/w to 1 &gt;<br />
-<br />
-x=x*2-1;y=0;<br />
-red=blabla;green=blablabla;green=blabla;<br />
-<br />
-movement:<br />
-<br />
-x=0;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">21st November 2002 00:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		GRADIENTS :<br />
-<br />
-Note : &quot;v&quot; stands for variable (Replace with something), and it will be number-tagged. Red/green/blue is to be coded yourself.<br />
-<br />
-Vertical, Horizontal, and Radial gradients already mentioned. Remember, you can always use another D/M to morph the gradient into one desired.<br />
-<br />
-Fullscreen Gradients :<br />
-<br />
-Horizontal gradient (Colors cycling left-right) :<br />
-<br />
-x=-1+i*2;<br />
-v1=bnot(v1) OR v1=1-v1<br />
-y=v1*2-1;<br />
-<br />
-Vertical : Exchange x and y.<br />
-<br />
-Polar : You'll need dot-grid and colorcode it... Too slow.<br />
-<br />
--You can combine Hor. and Ver. Gradients to make combinations. Experiment with render modes.<br />
-<br />
-Cheap fullscreen combo gradient :<br />
-<br />
-Use 2 lines, perpendicular, use a good linewidth (30-50 should do it), then use a movement to fill the screen. (Technique from several of UnConeD's presets) (Is it copyrighted? :p)<br />
-<br />
-Dot-Grid :<br />
-<br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=83695" target="_blank">http://forums.winamp.com/showthread....threadid=83695</a> - But I'll post the code here for convenience. The one here have edited variables to signify the new variables.<br />
-<br />
-FRAME :<br />
-<br />
-v1=w+1; v2=h+1; n=v1*v2; v3=0; v4=0; v5=1/ww; v6=1/hh;<br />
-<br />
-POINT :<br />
-<br />
-x=v3*v5*2-1; y=v4*v6*2-1;<br />
-<br />
-v3=if(above(v3+1,v1),0,v3+1);<br />
-v4=if(v3,v4,v4+1);<br />
-<br />
---<br />
-<br />
-But of course, that will be goddamn slow. You can always reduce the amount of points and manipulate the size to conform with the screen.<br />
-In colorcoding, use x and y, i won't work well. Additional tips are in the original page.<br />
-<br />
-Examples : El-Vis - I Cannot Dance, Carry Me Home, Lucy In The Sky With Diamonds, and some others.<br />
-<br />
-It's quite slow, but is the most versatile, providing you use the right effects. You can also use convolution filter to make the pixels bigger and make a pixel-doubled effect.<br />
-<br />
---<br />
-<br />
-All I can think for now... I think there are more ways...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">21st November 2002 06:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		DOH! I thought the edit time was 3 days :p (i don't remember where i heard that but it was somewhere around these forums, oh well...)<br />
-<br />
-Ok Here we go again!<br />
-<br />
-<font size="5"><u>Gradients</u></font><br />
-<br />
-<br />
-<br />
-<font size="3"><u>Linear</u></font><br />
-<br />
-<b><u>Ssc</u></b><br />
-<br />
-<u>Init:</u><br />
-n=255<br />
-<br />
-<u>Per Point:</u><br />
-x=i*2-1 ;<br />
-y=0 ;<br />
-col=i ;<br />
-red=col ; green=col ; blue=col<br />
-<br />
-<b><u>Movement</u></b><br />
-<br />
-Bilinear Filtering OFF<br />
-Rect Coords ON<br />
-<br />
-<u>Code:</u><br />
-y=0<br />
-<br />
-<br />
-<br />
-<font size="3"><u>Radial</u></font><br />
-<br />
-<b><u>Ssc</u></b><br />
-<br />
-Same as in <i>Linear</i><br />
-<br />
-<b><u>Movement</u></b><br />
-<br />
-Bilinear Filtering OFF<br />
-Rect Coords ON<br />
-<br />
-<u>Code:</u><br />
-y=0 ;<br />
-x=-d*1.5+0.5<br />
-<br />
-<br />
-<br />
-<font size="3"><u>Rectangular</u></font><br />
-<br />
-<b><u>Ssc</u></b><br />
-<br />
-<u>Init:</u><br />
-n=255 ; pi=acos(-1)<br />
-<br />
-<u>Per Point:</u><br />
-x=i*2-1 ;<br />
-y=0 ;<br />
-col=sin(i*pi) ;<br />
-red=col ; green=col ; blue=col<br />
-<br />
-<b><u>2 Movements</u></b><br />
-<br />
-<u>1st</u><br />
-Bilinear Filtering OFF<br />
-Rect Coords ON<br />
-<br />
-<u>Code:</u><br />
-y=0<br />
-<br />
-<br />
-<u>2nd</u><br />
-Bilinear Filtering OFF<br />
-Rect Coords ON<br />
-<br />
-<u>Code:</u><br />
-x=-if(above(y*y,x*x),y*y,x*x)*1.75+0.75 ;<br />
-<br />
-<br />
-<br />
-<font size="3"><u>Conical</u></font><br />
-<br />
-<b><u>Ssc</u></b><br />
-<br />
-Same as in <i>Rectangular</i><br />
-<br />
-<br />
-<b><u>2 Movements</u></b><br />
-<br />
-<u>1st</u><br />
-Bilinear Filtering OFF<br />
-Rect Coords ON<br />
-<br />
-<u>Code:</u><br />
-y=0<br />
-<br />
-<br />
-<u>2nd</u><br />
-Bilinear Filtering ON<br />
-Rect Coords OFF<br />
-<br />
-<u>Code:</u><br />
-r=((r-1.25)*1.25)*0.35 ;<br />
-d=r<br />
-<br />
-<br />
-<br />
-This time i actually <i>made</i> them, so they now work right. If you have trouble understanding code, or are just lazy download these example presets i made. Includes all the 4 gradients and a &quot;real&quot; preset i made in about 10 minutes that uses a &quot;Dynamic-Gradient-Utone&quot; :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">21st November 2002 21:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here are some code tips for you. :)<br />
-<br />
-Optimise everything. Higher FPS makes your presets a lot nicer. Here are some examples:<br />
-<br />
-<br />
-3D transformation<br />
-<br />
-x=x1/z1;<br />
-y=y1/z1;<br />
-<br />
-can be made faster by using:<br />
-<br />
-z1=1/z1;<br />
-x=x1*z1;<br />
-y=y1*z1;<br />
-<br />
-using trig in conjunction with a timer can be made faster too:<br />
-<br />
-on beat:<br />
-<br />
-drx=0.2*getosc(0.2,0.2,0);<br />
-<br />
-per frame:<br />
-<br />
-rx=rx+drx;crx=cos(rx);<br />
-<br />
-per pixel:<br />
-<br />
-x=crx;<br />
-y=0;<br />
-<br />
-Using this sort of thing a lot can make your code faster. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">22nd November 2002 00:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		3D transformation is:<br />
-Xp=Xc/Zc;<br />
-Yp=Yc/Zc;<br />
-where Xc (x-coordinate) and Yc are any numbers, positive or negative, and Zc is positive.<br />
-For a 3D object centered at the origin (0,0,0), use this formula:<br />
-Xp=Xc/(Zc+sqrt(mD));<br />
-Yp=Yc/(Zc+sqrt(mD));<br />
-where mD (maximum distance) is the largest distance from the origin to a point on the object.<br />
-<br />
-Rotation around any point, line, plane, solid, etc:<br />
-Ar=Ac*sin(theta)+Bc*cos(theta);<br />
-Br=Ac*cos(theta)-Bc*sin(theta);<br />
-where A and B are the axes defining the plane perpendicular to the axial point/line/plane/solid etc.  To find the perpendicular plane, simply use the 2 axes you do <i>not</i> use to define the axial object.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">22nd November 2002 14:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Quote:<br />
-   Rotation around any point, line, plane, solid, etc: <br />
-   Ar=Ac*sin(theta)+Bc*cos(theta); <br />
-   Br=Ac*cos(theta)-Bc*sin(theta); <br />
-   where A and B are the axes defining the plane perpendicular to the <br />
-   axial point/line/plane/solid etc. To find the perpendicular plane, <br />
-   simply use the 2 axes you do not use to define the axial object.<br />
-<br />
-<br />
-Another way to do this(slower way) is:<br />
-d=sqrt(Ac*Ac+Bc*Bc);r=atan2(Ac,Bc)+theta;<br />
-Ar=sin(r)*d;Br=cos(r)*d;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">22nd November 2002 17:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It's a whole lot slower, and it's much easier on AVS to use the rotation matrix
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">25th November 2002 00:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		That and you can optimise the rotation matrix if your not using it for a parameterisation or something else where the rotations change for every point.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">26th November 2002 08:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I have a kind of a problem, I have used a static background/texture for a movement with bunch of effects. I have made it by putting all the effects inside a effectlist with ignore/replace and on beat active 1 frame. Then i have used a custom bpm set to 30bpm and put both of them inside another effect list with ignore/replace. It now takes about 1-3 seconds to start, but the fps is much higher since it doesn't have to render the texture all the time. This solution works fine, but what im asking is: Is there a even better way doing this? If you use avs effects to create a static background is there a way to only &quot;render&quot; it once? Or how i activate it right at the begin of a song?<br />
-<br />
-Hope you understand :igor:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">26th November 2002 10:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Tuggummi: I think there isnt any better way. I had the same problem some time ago and only thing I learned is how limited effect custom bmp is. Atero posted something at the whishlist about a user defined  custom bmp so we can only wait for the next avs.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">26th November 2002 17:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You could just use Custom BPM and set it to skip as many beats as possible, then set First Skip to 1.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">26th November 2002 22:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>3D SSC</strong><br />
-		
-		
-			
-		
-
-		Here is a wonderful guide to AVS written by El-vis that was posted a while ago.  It gives code to create a superscope in 3D, rotate in along and move it along the x, y, and z axis (what's the spelling for the plural of axis?)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">26th November 2002 23:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think it's 'axes'.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">27th November 2002 02:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		A better 3D code system:<br />
-<br />
-init: zs=sqrt(... *)<br />
-<br />
-frame:<br />
-rx=rx+drx; ry=ry+dry; rz=rz+drz; cx=cos(x); sx=sin(x); cy=cos(y); sy=sin(y); cz=cos(z); sz=sin(z);<br />
-<br />
-pixel:<br />
-... *<br />
-x2=x1*sz+y1*cz; y2=x1*cz-y1*sz;<br />
-x3=x2*sy+z1*cy; z2=x2*cy-z1*sy;<br />
-y3=y2*sx+z2*cx; z3=1/(y2*cx-z2*sx+zs);<br />
-x=x3*z3; y=y3*z3;<br />
-<br />
-* This should be the maximum distance from the center to a point on your scope, multiplied by 2.  For a unit sphere, use the radius of the sphere multiplied by 2.<br />
-<br />
-** x1, y1, and z1 are the coordinates for your shape, and should be put here.<br />
-<br />
-rx, ry, and rz are the angles of rotation around the x, y, and z axes, respectively.  These angles are in radians (one radian = 180/pi degrees)<br />
-A good place to define these values is in the beat section of the scope, e.g.:<br />
-rx=rand(100)/1000-0.05; ry=rand(100)/1000-0.05; rz=rand(100)/1000-0.05;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">blazer1504</span><br />
-			<span class="date small text-muted">27th November 2002 08:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Don't kill me for this, but you're just pathetic. You're stressing your head dozens of priceless minutes. And for what ?! For saving about 0.0001 fps with using a different method !?<br />
-Don't get me wrong. I'm sure that these tips comes in handy for n00bs and if there's alot to be optimized, but these tips.... It's like thinking how could you put the wires to your electric toothbrush from car, so that you could recharge the battery with it, so it wouldn't see in electric bill...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">27th November 2002 09:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Dear Degnic...<br />
-<br />
-1) Are you talking to everyone who has replied to this forum or to one person and if, who?<br />
-<br />
-2) The faster the presets run the more enjoyable they are, besides it's more than just <b>0.&lt;insert ridiculous large ammount of zeros&gt;1</b> frames, example the gradients work a lot faster when you use different methods. And the static texture for a 3D movement or likes saves up huge ammount of fps if it is only rendered once per N beats. I made a preset with the static texture and the framerate difference between render-per-N-beat and render-all-the-time is incredibly huge, on my 266mhz pentium it was about 8 fps.<br />
-<br />
-3) Everything &amp; Anything can &amp; should be optimized. Or do you draw a static single colored ssc line with 800 numpoints when just 2 will do?<br />
-<br />
-4) Last, but not least, this thread was about people sharing their ways of doing things. Someone have might used some method for months/years never knowing that it could be done better&amp;faster.<br />
-<br />
-If you don't like people giving you helpful advice, buzz off. But by the looks, you are the one who should seriously learn how to do things faster.<br />
-<br />
-Have a nice day.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">27th November 2002 15:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I've done #3.<br />
-<br />
-It almost got out, then Unconed saw it and I fived it.<br />
-<br />
-It sped up the preset a lot.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">27th November 2002 19:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		This is a trick that can save more than 100% fps.<br />
-When you need more sinchronised scopes shaped the same you can make a counter and copy this scope to several locations. <br />
-Example:<br />
-<br />
-init: <br />
-n=500<br />
-<br />
-frame: <br />
-t=t-0.05;u=0;<br />
-<br />
-point: <br />
-u=u+1;u1=u%5;<br />
-d=i/5;r=t+i*3.14159*4;x=cos(r)*d;y=sin(r)*d+(u1+0.5)/5*2-1;<br />
-<br />
-This will create 1 spiral scope and place it at u1/5*2-1 locations,  u is a counter and equals the value of a point, u1 equals:<br />
-0 for u being 5,10,15,20,...<br />
-1 for u being 6,11,16,21,...<br />
-2 for u being 7,12,...<br />
-3 for u being 8,13,...<br />
-4 for u being 9,14,...<br />
-<br />
-For a more complex use of this see the attachment. The preset calculates the whole 3D rotation thing, music responce and scope shape only once for all of the cn(6) columns.<br />
-<br />
-Sorry for the shity explenation but i find it hard to express myself in english. :(
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">27th November 2002 19:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		My (and most everyone who doesn't depend on El-Vis's engine) 3D code is several FPS faster than El-Vis's, and it's a whole lot more user friendly.  Also, for those who didn't know: using zs=sqrt(maxdistance) projects the object so it is always inside the window.  To find the maximum distance from the center of any object to a point on the object, use this method: For any variables (e.g. i and v), assume they are as high as they can go (e.g. i=1, v=1).  Then simplify all your calculations.  For example:<br />
-(tpi=acos(-1)*2=2*pi)<br />
-<br />
-r=i*tpi;<br />
-x1=sin(r); y1=cos(r); z1=v/4;<br />
-<br />
-r=1*tpi=tpi;<br />
-x1=sin(tpi)=0; y1=cos(tpi)=1; z1=1/4=0.25;<br />
-<br />
-Now, find maxdistance like this:<br />
-sqrt(x1*x1+y1*y1+z1*z1)=sqrt(0*0+1*1+0.25*0.25)=sqrt(1.125)<br />
-<br />
-So for the example scope, zs should equal sqrt(sqrt(1.125)*2)=pow(4.5,0.25).<br />
-<br />
-If you want the scope to be slightly inside the frame, use a higher zs.  If you want it to be slightly outside the frame, use a lower zs.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">27th November 2002 22:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Here's the engine I created for Matrix_Reality.<br />
-<br />
-Dynamic Movement:<br />
-Init<pre><code><br />
-js=.002;pi=acos(-1);pitch=0;yaw=0;density=.33;<br />
-</code></pre><br />
-<br />
-Frame<pre><code><br />
-j=if(above(j,1),-1+js*2,j+js);<br />
-<br />
-ox=cos(j*pi)*.125;oy=sin(j*pi)*.5;oz=j*3.5;<br />
-<br />
-ys=yaw;yaw=cos(j*pi)*.125;<br />
-roll=(roll*5-ys*5)*.0125;pitch=sin(j*pi)*.125;<br />
-pitch=if(above(abs(pitch),.5),sign(pitch)*.5,pitch);<br />
-cy=cos(yaw*pi);cx=cos(pitch*pi);cz=cos(roll*pi);<br />
-sy=sin(yaw*pi);sx=sin(pitch*pi);sz=sin(roll*pi);<br />
-</code></pre><br />
-<br />
-Point<pre><code><br />
-dx=x;dy=y;dz=1;<br />
-<br />
-tx=dx*cy-dz*sy;tz=dz*cy+dx*sy;<br />
-ty=dy*cx-tz*sx;dz=tz*cx+dy*sx;<br />
-dx=tx*cz-ty*sz;dy=ty*cz+tx*sz;<br />
-<br />
-kx=if(above(dx,0),abs((ox-1)/dx),abs((ox+1)/dx));<br />
-ky=if(above(dy,0),abs((oy-1)/dy),abs((oy+1)/dy));<br />
-kz=if(above(dz,0),abs((oz-4)/dz),abs((oz+4)/dz));<br />
-<br />
-k=min(min(kx,ky),kz);<br />
-<br />
-utx=oz+dz*kx;uty=oy+dy*kx;utz=ox+dx*kx;<br />
-vtx=ox+dx*ky;vty=oz+dz*ky;vtz=oy+dy*ky;<br />
-wtx=ox+dx*kz;wty=oy+dy*kz;wtz=oz+dz*kz;<br />
-<br />
-x=if(equal(k,kz),wtx,if(equal(k,kx),utx,vtx));<br />
-y=if(equal(k,kz),wty,if(equal(k,kx),uty,-vty));<br />
-<br />
-alpha=(1/pow(2.71828,sqr(k*density)))*(1-abs(pow(j,5)));<br />
-</code></pre><br />
-<br />
-Blend:On | Bilinear:On | Wrap:On | RectCoord:On<br />
-<br />
-----------------<br />
-<br />
-Superscope.<br />
-Init<pre><code><br />
-n=200;js=.002;pi=acos(-1);pitch=0;yaw=0;density=.33;bp=.5;<br />
-</code></pre><br />
-<br />
-Frame<pre><code><br />
-bp=if(above(bp,-4),bp+.1,if(above(getspec(.1,.1,0),.25),-3.9,bp));bp=if(above(bp,8),-4,bp);<br />
-by=if(above(bp,4),by*1.1,.05);<br />
-ox=cos(j*pi)*.125;<br />
-oy=sin(j*pi)*.5;<br />
-oz=j*3.5;<br />
-sy=sin(-yaw*pi);<br />
-sx=sin(-pitch*pi);<br />
-sz=sin(-roll*pi);<br />
-cy=cos(-yaw*pi);<br />
-cx=cos(-pitch*pi);<br />
-cz=cos(-roll*pi);<br />
-pitch=if(above(abs(pitch),.5),sign(pitch)*.5,pitch);<br />
-roll=(roll*5-ys*5)*.0125;<br />
-pitch=sin(j*pi)*.125;<br />
-ys=yaw;yaw=cos(j*pi)*.125;<br />
-j=if(above(j,1),-1+js*2,j+js);<br />
-</code></pre><br />
-<br />
-Point<pre><code><br />
-dx=cos(i*pi*20)*.01-ox;<br />
-dy=sin(i*pi*20)*.01-oy+by-.05;<br />
-dz=i*.05-oz+if(above(bp,4),4,3+(1-pow(1-(bp+4)*.125,3)*8))*.35;<br />
-tx=dx*cz-dy*sz;ty=dy*cz+dx*sz;<br />
-dy=ty*cx-dz*sx;tz=dz*cx+ty*sx;<br />
-dx=tx*cy-tz*sy;dz=tz*cy+tx*sy;<br />
-a=if(above(bp,-4),(1/pow(2.71828,sqr(dz*density))),0);<br />
-red=if(below(dz,.1),0,1)*a;<br />
-green=red;<br />
-blue=0;<br />
-k=1/if(equal(dz,0),1,dz);<br />
-x=dx*k;y=dy*k;</code></pre><br />
-<br />
-Draw: Lines<br />
--------------------<br />
-<br />
-The above is the room and a bullet from my Matrix_Reality preset. Here is a basic description of variables:<ul><li>ox,oy,oz = Camera Position</li>
-<li>pitch,roll,yaw = Camera Rotation Angles</li>
-<li>density = Fog Density (Exponential Squared)</li>
-<li>j = Synchronization Variable (js = timing speed)</li>
-</ul>It limits the pitch to +/-.5 (Vertical) so there aren't any gimble situations, and automatic roll is created for changes in yaw.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">27th November 2002 23:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you want to post long pieces of code, use &lt;font=courier&gt;...&lt;/font&gt; (replace &lt;&gt; with square brackets) to prevent from stretching the page.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th November 2002 07:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Don't forget your manners, UnConeD<br />
-<br />
-<b>PLEASE</b> USE COURIER!!!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">blazer1504</span><br />
-			<span class="date small text-muted">28th November 2002 08:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No tug, you got me wrong. I'm not saying that every tip in this thread are total bullshit, but what I am saying is that this thread shouldn't be filled with codes / tips (and posts like this ;) ) that doesn't affect to fps rate &quot;efficiently&quot; . I tried some of these and I really couldn't see any fps difference between code A and code B. If some method saves alot fps compared to the others, yeah it's good to be mentioned, but if it saves only like 0.1 fps you think that this thread should be filled with codes/tips like these ?? :P<br />
-<br />
-And what comes to my presets. Usually the use of complex colors makes the preset slow. And colors aren't just that easy to optimize. Of course I always try to erase things you don't necessarily need &amp; try to make it as fast as possible, but sometimes you just can't make it any faster without radical changes. Sure I can replace all those tricky colors with a Utone or two for some real boost up, but that's just not me....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">29th November 2002 06:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Okay, just a tip...as long as we're on this page of<br />
-the thread, try just typing in your carriage returns<br />
-like this...<br />
-<br />
-Anyway, just one thing to remember as AVSers: Any god<br />
-damned thing is possible in AVS once you put your<br />
-mind to it.  Trust me, if I didn't keep telling<br />
-myself this, I wouldn't be doing any of what I've<br />
-been doing (i.e. 4D, life algorithms, etc.)  I'd bet<br />
-money that Jheriko's been having to reasure himself<br />
-of this a lot for some of his scopes lately ;)  My<br />
-point is, you shouldn't just give up because you think<br />
-it can't be done.  That's not a good reason.  Give up<br />
-because you're lazy, or because you need to clip your<br />
-toenails, or for something important like that.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">29th November 2002 14:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here's a simple one that I'm sue everyone here knows. Might help a<br />
-noob though. (that is kinda what this thread was intended to do, right?)<br />
-<br />
-sin, cos, and tan are all calculated from the radian value.<br />
-This means the wavs have a period of 2*PI.<br />
-<br />
-sin(3.141) = sin(3.141) = sin(6.282) = 0<br />
-sin (3.141/2) = 1<br />
-sin (3.141*3/2) = -1
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">2nd December 2002 21:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Atero </i><br />
-<b>I'd bet money that Jheriko's been having <br />
-to reasure himself of this a lot for some <br />
-of his scopes lately </b></blockquote>
-That is true.<br />
-<br />
-I still have ideas that I'm forcing myself <br />
-into doing right now, the coolest AVS i've <br />
-made haven't been released yet because they <br />
-don't work properly, but like atero said, <br />
-anything is possible so I never give up on <br />
-them, I just keep working on them in the <br />
-background. Like that sonic battlefield from<br />
-pack VI, I'm still working on that on and off.<br />
-<br />
-The point is never to give up, force yourself<br />
-through to the end. Thats more general life<br />
-advice though.<br />
-<br />
-<br />
-Here is something more useful though; I'm certain<br />
-that a lot of you out there know exactly what you<br />
-want to do in AVS but have no idea about what<br />
-sort of maths you need to do it. I'm also certain<br />
-that there are a lot of mathematical methods<br />
-that would be useful for AVS if we knew about them.<br />
-Personally I think that maths is pretty important<br />
-for AVS (the technical side at least) so if you<br />
-have any maths questions my tip would be to check<br />
-<a href="http://mathforum.org/dr.math/" target="_blank">this cool page</a> that I found, or alternatively send<br />
-me some mail. I'm not going to pretend to know<br />
-everything about maths but I have a lot of knowledge<br />
-and a lot of textbooks too. :)<br />
-<br />
-<a href="mailto:jheriko@ntlworld.com">jheriko@ntlworld.com</a><br />
-<br />
-EDIT: Here are some trig identities to add to Jaheckelsafar's list, these will probably all have some applications in AVS, don't ask me what though:<br />
-<br />
-<pre><code><br />
-<br />
-cos(pi/4) = sin(pi/4) = 1/sqrt(2)<br />
-cos(pi/6) = sin(pi/3) = sqrt(3)/2<br />
-cos(pi/3) = sin(pi/6) = 1/2<br />
-<br />
-(sin(x))^2+(cos(x))^2 = 1<br />
-cos(x)                = sin(x+pi/2)<br />
-cos(-x)               = cos(x)<br />
-sin(-x)               = -sin(x)<br />
-tan(x)                = sin(x)/cos(x)<br />
-cot(x) = 1/tan(x)     = cos(x)/sin(x)<br />
-sec(x)                = 1/cos(x)<br />
-csc(x)                = 1/sin(x)<br />
-<br />
-sin(x+y)              = cos(x)sin(y)+sin(x)cos(y)<br />
-sin(x-y)              = cos(x)sin(y)-sin(x)cos(y)<br />
-cos(x+y)              = cos(x)cos(y)-sin(x)sin(y)<br />
-cos(x-y)              = cos(x)cos(y)+sin(x)sin(y)<br />
-sin(2x)               = 2sin(x)cos(x)<br />
-cos(2x)               = 2(cos(x))^2-1<br />
-cos(2x)               = 1-2(sin(x))^2<br />
-cos(3x)               = 4(cos(x))^3-3cos(x)<br />
-sin(3x)               = 3sin(x)-4(sin(x))^3<br />
-<br />
-</code></pre><br />
-<br />
-There are a ton more things like this, identities <br />
-for cos(ax) and sin(ax) for instance, but I can't <br />
-remember them all off of the top of my head. :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">3rd December 2002 07:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Damn...NOW I know why my trig teacher wanted me to memorize identities.  She didn't show me the USEFUL ones.....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">VisualAgnosia</span><br />
-			<span class="date small text-muted">3rd December 2002 12:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hey there,<br />
-<br />
-I was wanting to ask, (I've spent the last week going throught the forums) If some one could give me a running example purley for reference how to create a plane in 3D SSC and effect it with this function<br />
-<br />
-z=x*e^(-x^2-y^2) <br />
-<br />
-I use a 3d ploting program that I'm used to and enter this<br />
-<br />
-plot3d(x*exp(-x^2-y^2), x=-2..2 y=-2..2)<br />
-<br />
-works fine .. You should see the triped stuff I'm getting &quot;TRYING to emulate this to AVS.. I've totaly forgot how to rearange the &quot;e&quot; with log and I got paper and shit all over my desk and room. ahhhhhhhhh where's my text books... I'm also giving up smoking 3 days now.<br />
-<br />
-z being the third axis of course, e is the exponent and ^ is to the power. Because I'm used to this program alot I tend to have blunders converting to AVS. Gimme a couple of weeks tho no probs but hey I'm always looking to learn quicker from some experienced bruzza'z.<br />
-<br />
-If anyone feeling Crwayzie mabey give z=cos(x)*sin(y) a try and show us. I feel that if I see an example of something I've done I might be able to bridge the gap faster. <br />
-<br />
-:weird: <br />
-<br />
-P.s. I's it just me or does anyone here alos go to sleep and end up dreaming about Freakin' equation's accompanied by some major tripped lighting visual dreams.... waaaaaaah. sheeesh If only I could remember what code I was dreaming I might be able to pull something awsome out of my subconcious ... I guess the best thing to say here is ...<br />
-<br />
- <font size="3">Keep Dreaming</font> <br />
-<br />
-Rez---pec-t..<br />
-<br />
-The VIzAG:igor:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">3rd December 2002 19:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		here's an idea: do your own work instead of expecting us to do it for you.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Tips&amp;Tricks in AVS</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=114681">Tips&amp;Tricks in AVS</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">18th November 2002 17:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Tips&amp;Tricks in AVS</strong><br />
+      As i have made avs for 2 years now, i really don't know much about how to do things differently.<br />
+      <br />
+      Confused?<br />
+      Read more.<br />
+      <br />
+      As <b>A</b>dvanced <b>V</b>isualization <b>S</b>tudio is a highly customizable visualization plugin/component there are usually many ways to do simple things. And when it comes to coding your own superscopes and dynamic movements there are several different ways to make things, like in the dynamic movement using rectangular coordinates rather than polar coordinates to create the exactly same effect.<br />
+      <br />
+      Sometimes if you do things differently you may gain some priviledges, like better frame rates or the benefits of using a different coordinate system. Also when you use the built-in functions differently you may get faster&amp;better results than doing the same thing with different effects.<br />
+      <br />
+      <br />
+      <b><u><font size="2">EXAMPLE</font></u></b><br />
+      Creating a rotoblitter effect in movement with both polar- &amp; rectangular coordinates.<br />
+      <br />
+      <br />
+      <u>Polar</u><br />
+      r=r+0.1<br />
+      <br />
+      BENEFITS:<br />
+      Simple, easy and a fast way.<br />
+      <br />
+      <br />
+      <u>Rectangular</u><br />
+      x=x+y*0.1 ;<br />
+      y=y-x*0.1<br />
+      <br />
+      BENEFITS:<br />
+      You can shift it around the screen which can't be done in polar coordinates.<br />
+      <br />
+      <br />
+      These helpful speed up tricks and better quality tips are scattered all over the forum, so what im asking here is to collect all those helpful notes into a single forum post, <u>this post.</u><br />
+      <br />
+      So feel free to post your ideas and comments how something that is frequently used can be done faster&amp;better, this is all for the common good and will surely help us all as we are always searching a alternative way to make presets.<br />
+      <br />
+      And please remember that, althought the most tips consider coding there is still many different ways to use the built-in effects differently and still get the same effect. If you have discovered a clever way of using <u>example:</u> <i>Trans / Water</i> , you can post it here so it will help other avs artists as well.<br />
+      <br />
+      Hope you all understanded the point of this post and hope that you all contribute as much as you can ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">19th November 2002 04:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Rotoblitter in polar:<br />
+      r=r+spin;<br />
+      d=d*(zoom+1);<br />
+      <br />
+      Rotoblitter in rectangular:<br />
+      x1=x; zoom2=zoom+1;<br />
+      x=x*zoom2+y*spin;<br />
+      y=y*zoom2+x1*spin;<br />
+      <br />
+      Just a bit of a fix by your friendly local anal retentive AVSer... ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">19th November 2002 04:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">2 ways of shifting values, not sure which is executed faster:<br />
+      <br />
+      value = value * (1-speed) + target * speed;<br />
+      <br />
+      or<br />
+      <br />
+      value = value + (taget - value) * speed;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">19th November 2002 06:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No order targeting:<br />
+      value = target<br />
+      <br />
+      First order targeting:<br />
+      value = (value + target * speed) / (speed + 1)<br />
+      <br />
+      Linear Interpolation:<br />
+      value = value1 * position + value2 * (1-position)<br />
+      <br />
+      Bilinear Interpolation:<br />
+      value12 = value1 * posx + value2 * (1-posx)<br />
+      value34 = value3 * posx + value4 * (1-posx)<br />
+      value = value12 * posy + value34 * (1-posy)<br />
+      <br />
+      Trilinear Interpolation:<br />
+      value12 = value1 * posx + value2 * (1-posx)<br />
+      value34 = value3 * posx + value4 * (1-posx)<br />
+      value56 = value5 * posx + value6 * (1-posx)<br />
+      value78 = value7 * posx + value8 * (1-posx)<br />
+      value1234 = value12 * posy + value34 * (1-posy)<br />
+      value5678 = value56 * posy + value78 * (1-posy)<br />
+      value = value1234 * posz + value5678 * (1-posz)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">20th November 2002 01:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Two questions...</strong><br />
+      First order targeting is increasing a value by increments (speed), until it reaches target, right?<br />
+      <br />
+      What is (bi/tri)linear interpolation?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">20th November 2002 02:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Bilinear is interpolation linearly in 2D... like zooming on a picture, but instead of blocky pixels you get a blurry, smooth texture.<br />
+      <br />
+      Trilinear is interpolation linearly in 3D. It's commonly used to interpolate bilinearly between textures and linearly between an MIP-maps on a 3D card.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">20th November 2002 08:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">What i would like to know is: What is the fastest way to create a fullscreen gradient? I have used this method:<br />
+      <br />
+      1 single ssc line<br />
+      <br />
+      INIT: n=2<br />
+      PER POINT: x=i*2-1 ; y=1<br />
+      <br />
+      1 movement with rect coords (bilinear filtering on)<br />
+      y=y-0.0x<br />
+      <br />
+      It could also be done by using a gradient line and then using a movement with x=0.<br />
+      <br />
+      Which way is faster? Or is there even a faster way to do it?<br />
+      <br />
+      Thanks :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
+      <span class="post-time small text-muted">20th November 2002 09:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Tug: in his HiRes pack that came with J7, jheriko used a vertical line, and a static movement with r=0. Looks awesome.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">20th November 2002 09:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">uNDefineD, it creates a conical gradient, right?<br />
+      <br />
+      Different gradients:<br />
+      <br />
+      <font size="3"><b><u>Linear:</u></b></font><br />
+      <br />
+      <br />
+      <b><u>1 SuperScope</u></b><br />
+      <br />
+      <u>Init:</u><br />
+      n=100 (the more numpoints the more accurate gradient)<br />
+      <br />
+      <u>Per Point:</u><br />
+      x=i*2-1 ;<br />
+      y=0 ;<br />
+      col=i ;<br />
+      blue=col ; red=col ; green=col<br />
+      <br />
+      <br />
+      <b><u>1 Movement</u></b><br />
+      <br />
+      Rect Coords ON<br />
+      <br />
+      Bilinear Filtering ON/OFF (not absolutly necessary, it looks ok even without it)<br />
+      <br />
+      <u>Code:</u><br />
+      y=0<br />
+      <br />
+      <br />
+      <br />
+      <font size="3"><b><u>Radial:</u></b></font><br />
+      <br />
+      <br />
+      <b><u>1 SuperScope</u></b><br />
+      <br />
+      Same as in <i>Linear</i><br />
+      <br />
+      <br />
+      <b><u>1 Movement</u></b><br />
+      <br />
+      Rect Coords ON<br />
+      <br />
+      Bilinear Filtering ON<br />
+      <br />
+      <u>Code:</u><br />
+      y=0 ;<br />
+      x=d<br />
+      <br />
+      <br />
+      <br />
+      Im not sure how the conical gradient is done, but i guess it's just using the r=0 movement and then using a color code in a superscope like col=sin(i*pi). I don't have avs right now so i can't check did i get those other two right, so ill edit this post tomorrow (at 8:XXam gmt +2).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">20th November 2002 10:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">:rolleyes:<br />
+      <br />
+      Look in my 3rd pack (desert sunset) to see how to do fullscreen gradients in 1 scope.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">20th November 2002 12:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Well yes you can use just one superscope, but to fill the entire screen with just one superscope requires a big numpoint number and the bigger the resolution the more numpoints and more slower it is. With the scope and the movement technique the numpoint number always stays the same and still the whole screen gets filled with the gradient.<br />
+      <br />
+      There for the movement and ssc technique is a lot faster than using one BIG ssc.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
+      <span class="post-time small text-muted">20th November 2002 18:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">the fastest way I know to make a gradient is:<br />
+      scope:<br />
+      <br />
+      n=w*detail; &lt; whith deatil going from 2/w to 1 &gt;<br />
+      <br />
+      x=x*2-1;y=0;<br />
+      red=blabla;green=blablabla;green=blabla;<br />
+      <br />
+      movement:<br />
+      <br />
+      x=0;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">21st November 2002 00:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">GRADIENTS :<br />
+      <br />
+      Note : "v" stands for variable (Replace with something), and it will be number-tagged. Red/green/blue is to be coded yourself.<br />
+      <br />
+      Vertical, Horizontal, and Radial gradients already mentioned. Remember, you can always use another D/M to morph the gradient into one desired.<br />
+      <br />
+      Fullscreen Gradients :<br />
+      <br />
+      Horizontal gradient (Colors cycling left-right) :<br />
+      <br />
+      x=-1+i*2;<br />
+      v1=bnot(v1) OR v1=1-v1<br />
+      y=v1*2-1;<br />
+      <br />
+      Vertical : Exchange x and y.<br />
+      <br />
+      Polar : You'll need dot-grid and colorcode it... Too slow.<br />
+      <br />
+      -You can combine Hor. and Ver. Gradients to make combinations. Experiment with render modes.<br />
+      <br />
+      Cheap fullscreen combo gradient :<br />
+      <br />
+      Use 2 lines, perpendicular, use a good linewidth (30-50 should do it), then use a movement to fill the screen. (Technique from several of UnConeD's presets) (Is it copyrighted? :p)<br />
+      <br />
+      Dot-Grid :<br />
+      <br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=83695" target="_blank">http://forums.winamp.com/showthread....threadid=83695</a> - But I'll post the code here for convenience. The one here have edited variables to signify the new variables.<br />
+      <br />
+      FRAME :<br />
+      <br />
+      v1=w+1; v2=h+1; n=v1*v2; v3=0; v4=0; v5=1/ww; v6=1/hh;<br />
+      <br />
+      POINT :<br />
+      <br />
+      x=v3*v5*2-1; y=v4*v6*2-1;<br />
+      <br />
+      v3=if(above(v3+1,v1),0,v3+1);<br />
+      v4=if(v3,v4,v4+1);<br />
+      <br />
+      --<br />
+      <br />
+      But of course, that will be goddamn slow. You can always reduce the amount of points and manipulate the size to conform with the screen.<br />
+      In colorcoding, use x and y, i won't work well. Additional tips are in the original page.<br />
+      <br />
+      Examples : El-Vis - I Cannot Dance, Carry Me Home, Lucy In The Sky With Diamonds, and some others.<br />
+      <br />
+      It's quite slow, but is the most versatile, providing you use the right effects. You can also use convolution filter to make the pixels bigger and make a pixel-doubled effect.<br />
+      <br />
+      --<br />
+      <br />
+      All I can think for now... I think there are more ways...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">21st November 2002 06:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">DOH! I thought the edit time was 3 days :p (i don't remember where i heard that but it was somewhere around these forums, oh well...)<br />
+      <br />
+      Ok Here we go again!<br />
+      <br />
+      <font size="5"><u>Gradients</u></font><br />
+      <br />
+      <br />
+      <br />
+      <font size="3"><u>Linear</u></font><br />
+      <br />
+      <b><u>Ssc</u></b><br />
+      <br />
+      <u>Init:</u><br />
+      n=255<br />
+      <br />
+      <u>Per Point:</u><br />
+      x=i*2-1 ;<br />
+      y=0 ;<br />
+      col=i ;<br />
+      red=col ; green=col ; blue=col<br />
+      <br />
+      <b><u>Movement</u></b><br />
+      <br />
+      Bilinear Filtering OFF<br />
+      Rect Coords ON<br />
+      <br />
+      <u>Code:</u><br />
+      y=0<br />
+      <br />
+      <br />
+      <br />
+      <font size="3"><u>Radial</u></font><br />
+      <br />
+      <b><u>Ssc</u></b><br />
+      <br />
+      Same as in <i>Linear</i><br />
+      <br />
+      <b><u>Movement</u></b><br />
+      <br />
+      Bilinear Filtering OFF<br />
+      Rect Coords ON<br />
+      <br />
+      <u>Code:</u><br />
+      y=0 ;<br />
+      x=-d*1.5+0.5<br />
+      <br />
+      <br />
+      <br />
+      <font size="3"><u>Rectangular</u></font><br />
+      <br />
+      <b><u>Ssc</u></b><br />
+      <br />
+      <u>Init:</u><br />
+      n=255 ; pi=acos(-1)<br />
+      <br />
+      <u>Per Point:</u><br />
+      x=i*2-1 ;<br />
+      y=0 ;<br />
+      col=sin(i*pi) ;<br />
+      red=col ; green=col ; blue=col<br />
+      <br />
+      <b><u>2 Movements</u></b><br />
+      <br />
+      <u>1st</u><br />
+      Bilinear Filtering OFF<br />
+      Rect Coords ON<br />
+      <br />
+      <u>Code:</u><br />
+      y=0<br />
+      <br />
+      <br />
+      <u>2nd</u><br />
+      Bilinear Filtering OFF<br />
+      Rect Coords ON<br />
+      <br />
+      <u>Code:</u><br />
+      x=-if(above(y*y,x*x),y*y,x*x)*1.75+0.75 ;<br />
+      <br />
+      <br />
+      <br />
+      <font size="3"><u>Conical</u></font><br />
+      <br />
+      <b><u>Ssc</u></b><br />
+      <br />
+      Same as in <i>Rectangular</i><br />
+      <br />
+      <br />
+      <b><u>2 Movements</u></b><br />
+      <br />
+      <u>1st</u><br />
+      Bilinear Filtering OFF<br />
+      Rect Coords ON<br />
+      <br />
+      <u>Code:</u><br />
+      y=0<br />
+      <br />
+      <br />
+      <u>2nd</u><br />
+      Bilinear Filtering ON<br />
+      Rect Coords OFF<br />
+      <br />
+      <u>Code:</u><br />
+      r=((r-1.25)*1.25)*0.35 ;<br />
+      d=r<br />
+      <br />
+      <br />
+      <br />
+      This time i actually <i>made</i> them, so they now work right. If you have trouble understanding code, or are just lazy download these example presets i made. Includes all the 4 gradients and a "real" preset i made in about 10 minutes that uses a "Dynamic-Gradient-Utone" :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">21st November 2002 21:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Here are some code tips for you. :)<br />
+      <br />
+      Optimise everything. Higher FPS makes your presets a lot nicer. Here are some examples:<br />
+      <br />
+      <br />
+      3D transformation<br />
+      <br />
+      x=x1/z1;<br />
+      y=y1/z1;<br />
+      <br />
+      can be made faster by using:<br />
+      <br />
+      z1=1/z1;<br />
+      x=x1*z1;<br />
+      y=y1*z1;<br />
+      <br />
+      using trig in conjunction with a timer can be made faster too:<br />
+      <br />
+      on beat:<br />
+      <br />
+      drx=0.2*getosc(0.2,0.2,0);<br />
+      <br />
+      per frame:<br />
+      <br />
+      rx=rx+drx;crx=cos(rx);<br />
+      <br />
+      per pixel:<br />
+      <br />
+      x=crx;<br />
+      y=0;<br />
+      <br />
+      Using this sort of thing a lot can make your code faster. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">22nd November 2002 00:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">3D transformation is:<br />
+      Xp=Xc/Zc;<br />
+      Yp=Yc/Zc;<br />
+      where Xc (x-coordinate) and Yc are any numbers, positive or negative, and Zc is positive.<br />
+      For a 3D object centered at the origin (0,0,0), use this formula:<br />
+      Xp=Xc/(Zc+sqrt(mD));<br />
+      Yp=Yc/(Zc+sqrt(mD));<br />
+      where mD (maximum distance) is the largest distance from the origin to a point on the object.<br />
+      <br />
+      Rotation around any point, line, plane, solid, etc:<br />
+      Ar=Ac*sin(theta)+Bc*cos(theta);<br />
+      Br=Ac*cos(theta)-Bc*sin(theta);<br />
+      where A and B are the axes defining the plane perpendicular to the axial point/line/plane/solid etc. To find the perpendicular plane, simply use the 2 axes you do <i>not</i> use to define the axial object.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
+      <span class="post-time small text-muted">22nd November 2002 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Quote:<br />
+      Rotation around any point, line, plane, solid, etc:<br />
+      Ar=Ac*sin(theta)+Bc*cos(theta);<br />
+      Br=Ac*cos(theta)-Bc*sin(theta);<br />
+      where A and B are the axes defining the plane perpendicular to the<br />
+      axial point/line/plane/solid etc. To find the perpendicular plane,<br />
+      simply use the 2 axes you do not use to define the axial object.<br />
+      <br />
+      <br />
+      Another way to do this(slower way) is:<br />
+      d=sqrt(Ac*Ac+Bc*Bc);r=atan2(Ac,Bc)+theta;<br />
+      Ar=sin(r)*d;Br=cos(r)*d;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">22nd November 2002 17:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">It's a whole lot slower, and it's much easier on AVS to use the rotation matrix</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">25th November 2002 00:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">That and you can optimise the rotation matrix if your not using it for a parameterisation or something else where the rotations change for every point.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">26th November 2002 08:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I have a kind of a problem, I have used a static background/texture for a movement with bunch of effects. I have made it by putting all the effects inside a effectlist with ignore/replace and on beat active 1 frame. Then i have used a custom bpm set to 30bpm and put both of them inside another effect list with ignore/replace. It now takes about 1-3 seconds to start, but the fps is much higher since it doesn't have to render the texture all the time. This solution works fine, but what im asking is: Is there a even better way doing this? If you use avs effects to create a static background is there a way to only "render" it once? Or how i activate it right at the begin of a song?<br />
+      <br />
+      Hope you understand :igor:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
+      <span class="post-time small text-muted">26th November 2002 10:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Tuggummi: I think there isnt any better way. I had the same problem some time ago and only thing I learned is how limited effect custom bmp is. Atero posted something at the whishlist about a user defined custom bmp so we can only wait for the next avs.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">26th November 2002 17:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">You could just use Custom BPM and set it to skip as many beats as possible, then set First Skip to 1.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">26th November 2002 22:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>3D SSC</strong><br />
+      Here is a wonderful guide to AVS written by El-vis that was posted a while ago. It gives code to create a superscope in 3D, rotate in along and move it along the x, y, and z axis (what's the spelling for the plural of axis?)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">26th November 2002 23:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I think it's 'axes'.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">27th November 2002 02:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">A better 3D code system:<br />
+      <br />
+      init: zs=sqrt(... *)<br />
+      <br />
+      frame:<br />
+      rx=rx+drx; ry=ry+dry; rz=rz+drz; cx=cos(x); sx=sin(x); cy=cos(y); sy=sin(y); cz=cos(z); sz=sin(z);<br />
+      <br />
+      pixel:<br />
+      ... *<br />
+      x2=x1*sz+y1*cz; y2=x1*cz-y1*sz;<br />
+      x3=x2*sy+z1*cy; z2=x2*cy-z1*sy;<br />
+      y3=y2*sx+z2*cx; z3=1/(y2*cx-z2*sx+zs);<br />
+      x=x3*z3; y=y3*z3;<br />
+      <br />
+      * This should be the maximum distance from the center to a point on your scope, multiplied by 2. For a unit sphere, use the radius of the sphere multiplied by 2.<br />
+      <br />
+      ** x1, y1, and z1 are the coordinates for your shape, and should be put here.<br />
+      <br />
+      rx, ry, and rz are the angles of rotation around the x, y, and z axes, respectively. These angles are in radians (one radian = 180/pi degrees)<br />
+      A good place to define these values is in the beat section of the scope, e.g.:<br />
+      rx=rand(100)/1000-0.05; ry=rand(100)/1000-0.05; rz=rand(100)/1000-0.05;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">blazer1504</span><br />
+      <span class="post-time small text-muted">27th November 2002 08:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Don't kill me for this, but you're just pathetic. You're stressing your head dozens of priceless minutes. And for what ?! For saving about 0.0001 fps with using a different method !?<br />
+      Don't get me wrong. I'm sure that these tips comes in handy for n00bs and if there's alot to be optimized, but these tips.... It's like thinking how could you put the wires to your electric toothbrush from car, so that you could recharge the battery with it, so it wouldn't see in electric bill...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">27th November 2002 09:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Dear Degnic...<br />
+      <br />
+      1) Are you talking to everyone who has replied to this forum or to one person and if, who?<br />
+      <br />
+      2) The faster the presets run the more enjoyable they are, besides it's more than just <b>0.&lt;insert ridiculous large ammount of zeros&gt;1</b> frames, example the gradients work a lot faster when you use different methods. And the static texture for a 3D movement or likes saves up huge ammount of fps if it is only rendered once per N beats. I made a preset with the static texture and the framerate difference between render-per-N-beat and render-all-the-time is incredibly huge, on my 266mhz pentium it was about 8 fps.<br />
+      <br />
+      3) Everything &amp; Anything can &amp; should be optimized. Or do you draw a static single colored ssc line with 800 numpoints when just 2 will do?<br />
+      <br />
+      4) Last, but not least, this thread was about people sharing their ways of doing things. Someone have might used some method for months/years never knowing that it could be done better&amp;faster.<br />
+      <br />
+      If you don't like people giving you helpful advice, buzz off. But by the looks, you are the one who should seriously learn how to do things faster.<br />
+      <br />
+      Have a nice day.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">27th November 2002 15:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I've done #3.<br />
+      <br />
+      It almost got out, then Unconed saw it and I fived it.<br />
+      <br />
+      It sped up the preset a lot.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
+      <span class="post-time small text-muted">27th November 2002 19:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">This is a trick that can save more than 100% fps.<br />
+      When you need more sinchronised scopes shaped the same you can make a counter and copy this scope to several locations.<br />
+      Example:<br />
+      <br />
+      init:<br />
+      n=500<br />
+      <br />
+      frame:<br />
+      t=t-0.05;u=0;<br />
+      <br />
+      point:<br />
+      u=u+1;u1=u%5;<br />
+      d=i/5;r=t+i*3.14159*4;x=cos(r)*d;y=sin(r)*d+(u1+0.5)/5*2-1;<br />
+      <br />
+      This will create 1 spiral scope and place it at u1/5*2-1 locations, u is a counter and equals the value of a point, u1 equals:<br />
+      0 for u being 5,10,15,20,...<br />
+      1 for u being 6,11,16,21,...<br />
+      2 for u being 7,12,...<br />
+      3 for u being 8,13,...<br />
+      4 for u being 9,14,...<br />
+      <br />
+      For a more complex use of this see the attachment. The preset calculates the whole 3D rotation thing, music responce and scope shape only once for all of the cn(6) columns.<br />
+      <br />
+      Sorry for the shity explenation but i find it hard to express myself in english. :(</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">27th November 2002 19:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">My (and most everyone who doesn't depend on El-Vis's engine) 3D code is several FPS faster than El-Vis's, and it's a whole lot more user friendly. Also, for those who didn't know: using zs=sqrt(maxdistance) projects the object so it is always inside the window. To find the maximum distance from the center of any object to a point on the object, use this method: For any variables (e.g. i and v), assume they are as high as they can go (e.g. i=1, v=1). Then simplify all your calculations. For example:<br />
+      (tpi=acos(-1)*2=2*pi)<br />
+      <br />
+      r=i*tpi;<br />
+      x1=sin(r); y1=cos(r); z1=v/4;<br />
+      <br />
+      r=1*tpi=tpi;<br />
+      x1=sin(tpi)=0; y1=cos(tpi)=1; z1=1/4=0.25;<br />
+      <br />
+      Now, find maxdistance like this:<br />
+      sqrt(x1*x1+y1*y1+z1*z1)=sqrt(0*0+1*1+0.25*0.25)=sqrt(1.125)<br />
+      <br />
+      So for the example scope, zs should equal sqrt(sqrt(1.125)*2)=pow(4.5,0.25).<br />
+      <br />
+      If you want the scope to be slightly inside the frame, use a higher zs. If you want it to be slightly outside the frame, use a lower zs.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">27th November 2002 22:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Here's the engine I created for Matrix_Reality.<br />
+      <br />
+      Dynamic Movement:<br />
+      Init</p>
+      <pre>
+<code><br />js=.002;pi=acos(-1);pitch=0;yaw=0;density=.33;<br /></code>
+</pre><br />
+      <br />
+      Frame
+      <pre>
+<code><br />j=if(above(j,1),-1+js*2,j+js);<br /><br />ox=cos(j*pi)*.125;oy=sin(j*pi)*.5;oz=j*3.5;<br /><br />ys=yaw;yaw=cos(j*pi)*.125;<br />roll=(roll*5-ys*5)*.0125;pitch=sin(j*pi)*.125;<br />pitch=if(above(abs(pitch),.5),sign(pitch)*.5,pitch);<br />cy=cos(yaw*pi);cx=cos(pitch*pi);cz=cos(roll*pi);<br />sy=sin(yaw*pi);sx=sin(pitch*pi);sz=sin(roll*pi);<br /></code>
+</pre><br />
+      <br />
+      Point
+      <pre>
+<code><br />dx=x;dy=y;dz=1;<br /><br />tx=dx*cy-dz*sy;tz=dz*cy+dx*sy;<br />ty=dy*cx-tz*sx;dz=tz*cx+dy*sx;<br />dx=tx*cz-ty*sz;dy=ty*cz+tx*sz;<br /><br />kx=if(above(dx,0),abs((ox-1)/dx),abs((ox+1)/dx));<br />ky=if(above(dy,0),abs((oy-1)/dy),abs((oy+1)/dy));<br />kz=if(above(dz,0),abs((oz-4)/dz),abs((oz+4)/dz));<br /><br />k=min(min(kx,ky),kz);<br /><br />utx=oz+dz*kx;uty=oy+dy*kx;utz=ox+dx*kx;<br />vtx=ox+dx*ky;vty=oz+dz*ky;vtz=oy+dy*ky;<br />wtx=ox+dx*kz;wty=oy+dy*kz;wtz=oz+dz*kz;<br /><br />x=if(equal(k,kz),wtx,if(equal(k,kx),utx,vtx));<br />y=if(equal(k,kz),wty,if(equal(k,kx),uty,-vty));<br /><br />alpha=(1/pow(2.71828,sqr(k*density)))*(1-abs(pow(j,5)));<br /></code>
+</pre><br />
+      <br />
+      Blend:On | Bilinear:On | Wrap:On | RectCoord:On<br />
+      <br />
+      ----------------<br />
+      <br />
+      Superscope.<br />
+      Init
+      <pre>
+<code><br />n=200;js=.002;pi=acos(-1);pitch=0;yaw=0;density=.33;bp=.5;<br /></code>
+</pre><br />
+      <br />
+      Frame
+      <pre>
+<code><br />bp=if(above(bp,-4),bp+.1,if(above(getspec(.1,.1,0),.25),-3.9,bp));bp=if(above(bp,8),-4,bp);<br />by=if(above(bp,4),by*1.1,.05);<br />ox=cos(j*pi)*.125;<br />oy=sin(j*pi)*.5;<br />oz=j*3.5;<br />sy=sin(-yaw*pi);<br />sx=sin(-pitch*pi);<br />sz=sin(-roll*pi);<br />cy=cos(-yaw*pi);<br />cx=cos(-pitch*pi);<br />cz=cos(-roll*pi);<br />pitch=if(above(abs(pitch),.5),sign(pitch)*.5,pitch);<br />roll=(roll*5-ys*5)*.0125;<br />pitch=sin(j*pi)*.125;<br />ys=yaw;yaw=cos(j*pi)*.125;<br />j=if(above(j,1),-1+js*2,j+js);<br /></code>
+</pre><br />
+      <br />
+      Point
+      <pre>
+<code><br />dx=cos(i*pi*20)*.01-ox;<br />dy=sin(i*pi*20)*.01-oy+by-.05;<br />dz=i*.05-oz+if(above(bp,4),4,3+(1-pow(1-(bp+4)*.125,3)*8))*.35;<br />tx=dx*cz-dy*sz;ty=dy*cz+dx*sz;<br />dy=ty*cx-dz*sx;tz=dz*cx+ty*sx;<br />dx=tx*cy-tz*sy;dz=tz*cy+tx*sy;<br />a=if(above(bp,-4),(1/pow(2.71828,sqr(dz*density))),0);<br />red=if(below(dz,.1),0,1)*a;<br />green=red;<br />blue=0;<br />k=1/if(equal(dz,0),1,dz);<br />x=dx*k;y=dy*k;</code>
+</pre><br />
+      <br />
+      Draw: Lines<br />
+      -------------------<br />
+      <br />
+      The above is the room and a bullet from my Matrix_Reality preset. Here is a basic description of variables:
+
+      <ul>
+        <li>ox,oy,oz = Camera Position</li>
+
+        <li>pitch,roll,yaw = Camera Rotation Angles</li>
+
+        <li>density = Fog Density (Exponential Squared)</li>
+
+        <li>j = Synchronization Variable (js = timing speed)</li>
+      </ul>It limits the pitch to +/-.5 (Vertical) so there aren't any gimble situations, and automatic roll is created for changes in yaw.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">27th November 2002 23:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">If you want to post long pieces of code, use &lt;font=courier&gt;...&lt;/font&gt; (replace &lt;&gt; with square brackets) to prevent from stretching the page.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">28th November 2002 07:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Don't forget your manners, UnConeD<br />
+      <br />
+      <b>PLEASE</b> USE COURIER!!!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">blazer1504</span><br />
+      <span class="post-time small text-muted">28th November 2002 08:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No tug, you got me wrong. I'm not saying that every tip in this thread are total bullshit, but what I am saying is that this thread shouldn't be filled with codes / tips (and posts like this ;) ) that doesn't affect to fps rate "efficiently" . I tried some of these and I really couldn't see any fps difference between code A and code B. If some method saves alot fps compared to the others, yeah it's good to be mentioned, but if it saves only like 0.1 fps you think that this thread should be filled with codes/tips like these ?? :P<br />
+      <br />
+      And what comes to my presets. Usually the use of complex colors makes the preset slow. And colors aren't just that easy to optimize. Of course I always try to erase things you don't necessarily need &amp; try to make it as fast as possible, but sometimes you just can't make it any faster without radical changes. Sure I can replace all those tricky colors with a Utone or two for some real boost up, but that's just not me....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">29th November 2002 06:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Okay, just a tip...as long as we're on this page of<br />
+      the thread, try just typing in your carriage returns<br />
+      like this...<br />
+      <br />
+      Anyway, just one thing to remember as AVSers: Any god<br />
+      damned thing is possible in AVS once you put your<br />
+      mind to it. Trust me, if I didn't keep telling<br />
+      myself this, I wouldn't be doing any of what I've<br />
+      been doing (i.e. 4D, life algorithms, etc.) I'd bet<br />
+      money that Jheriko's been having to reasure himself<br />
+      of this a lot for some of his scopes lately ;) My<br />
+      point is, you shouldn't just give up because you think<br />
+      it can't be done. That's not a good reason. Give up<br />
+      because you're lazy, or because you need to clip your<br />
+      toenails, or for something important like that.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">29th November 2002 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Here's a simple one that I'm sue everyone here knows. Might help a<br />
+      noob though. (that is kinda what this thread was intended to do, right?)<br />
+      <br />
+      sin, cos, and tan are all calculated from the radian value.<br />
+      This means the wavs have a period of 2*PI.<br />
+      <br />
+      sin(3.141) = sin(3.141) = sin(6.282) = 0<br />
+      sin (3.141/2) = 1<br />
+      sin (3.141*3/2) = -1</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">2nd December 2002 21:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>I'd bet money that Jheriko's been having<br />
+        to reasure himself of this a lot for some<br />
+        of his scopes lately</b>
+      </blockquote>That is true.<br />
+      <br />
+      I still have ideas that I'm forcing myself<br />
+      into doing right now, the coolest AVS i've<br />
+      made haven't been released yet because they<br />
+      don't work properly, but like atero said,<br />
+      anything is possible so I never give up on<br />
+      them, I just keep working on them in the<br />
+      background. Like that sonic battlefield from<br />
+      pack VI, I'm still working on that on and off.<br />
+      <br />
+      The point is never to give up, force yourself<br />
+      through to the end. Thats more general life<br />
+      advice though.<br />
+      <br />
+      <br />
+      Here is something more useful though; I'm certain<br />
+      that a lot of you out there know exactly what you<br />
+      want to do in AVS but have no idea about what<br />
+      sort of maths you need to do it. I'm also certain<br />
+      that there are a lot of mathematical methods<br />
+      that would be useful for AVS if we knew about them.<br />
+      Personally I think that maths is pretty important<br />
+      for AVS (the technical side at least) so if you<br />
+      have any maths questions my tip would be to check<br />
+      <a href="http://mathforum.org/dr.math/" target="_blank">this cool page</a> that I found, or alternatively send<br />
+      me some mail. I'm not going to pretend to know<br />
+      everything about maths but I have a lot of knowledge<br />
+      and a lot of textbooks too. :)<br />
+      <br />
+      <a href="mailto:jheriko@ntlworld.com">jheriko@ntlworld.com</a><br />
+      <br />
+      EDIT: Here are some trig identities to add to Jaheckelsafar's list, these will probably all have some applications in AVS, don't ask me what though:<br />
+      <br />
+      <pre>
+<code><br /><br />cos(pi/4) = sin(pi/4) = 1/sqrt(2)<br />cos(pi/6) = sin(pi/3) = sqrt(3)/2<br />cos(pi/3) = sin(pi/6) = 1/2<br /><br />(sin(x))^2+(cos(x))^2 = 1<br />cos(x)                = sin(x+pi/2)<br />cos(-x)               = cos(x)<br />sin(-x)               = -sin(x)<br />tan(x)                = sin(x)/cos(x)<br />cot(x) = 1/tan(x)     = cos(x)/sin(x)<br />sec(x)                = 1/cos(x)<br />csc(x)                = 1/sin(x)<br /><br />sin(x+y)              = cos(x)sin(y)+sin(x)cos(y)<br />sin(x-y)              = cos(x)sin(y)-sin(x)cos(y)<br />cos(x+y)              = cos(x)cos(y)-sin(x)sin(y)<br />cos(x-y)              = cos(x)cos(y)+sin(x)sin(y)<br />sin(2x)               = 2sin(x)cos(x)<br />cos(2x)               = 2(cos(x))^2-1<br />cos(2x)               = 1-2(sin(x))^2<br />cos(3x)               = 4(cos(x))^3-3cos(x)<br />sin(3x)               = 3sin(x)-4(sin(x))^3<br /><br /></code>
+</pre><br />
+      <br />
+      There are a ton more things like this, identities<br />
+      for cos(ax) and sin(ax) for instance, but I can't<br />
+      remember them all off of the top of my head. :p
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">3rd December 2002 07:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Damn...NOW I know why my trig teacher wanted me to memorize identities. She didn't show me the USEFUL ones.....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">VisualAgnosia</span><br />
+      <span class="post-time small text-muted">3rd December 2002 12:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Hey there,<br />
+      <br />
+      I was wanting to ask, (I've spent the last week going throught the forums) If some one could give me a running example purley for reference how to create a plane in 3D SSC and effect it with this function<br />
+      <br />
+      z=x*e^(-x^2-y^2)<br />
+      <br />
+      I use a 3d ploting program that I'm used to and enter this<br />
+      <br />
+      plot3d(x*exp(-x^2-y^2), x=-2..2 y=-2..2)<br />
+      <br />
+      works fine .. You should see the triped stuff I'm getting "TRYING to emulate this to AVS.. I've totaly forgot how to rearange the "e" with log and I got paper and shit all over my desk and room. ahhhhhhhhh where's my text books... I'm also giving up smoking 3 days now.<br />
+      <br />
+      z being the third axis of course, e is the exponent and ^ is to the power. Because I'm used to this program alot I tend to have blunders converting to AVS. Gimme a couple of weeks tho no probs but hey I'm always looking to learn quicker from some experienced bruzza'z.<br />
+      <br />
+      If anyone feeling Crwayzie mabey give z=cos(x)*sin(y) a try and show us. I feel that if I see an example of something I've done I might be able to bridge the gap faster.<br />
+      <br />
+      :weird:<br />
+      <br />
+      P.s. I's it just me or does anyone here alos go to sleep and end up dreaming about Freakin' equation's accompanied by some major tripped lighting visual dreams.... waaaaaaah. sheeesh If only I could remember what code I was dreaming I might be able to pull something awsome out of my subconcious ... I guess the best thing to say here is ...<br />
+      <br />
+      <font size="3">Keep Dreaming</font><br />
+      <br />
+      Rez---pec-t..<br />
+      <br />
+      The VIzAG:igor:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">3rd December 2002 19:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">here's an idea: do your own work instead of expecting us to do it for you.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

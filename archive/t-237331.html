@@ -1,187 +1,123 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Desktop Overlay w/Background image AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Desktop Overlay w/Background image " />
 
-	<title> Desktop Overlay w/Background image - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Desktop Overlay w/Background image - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Desktop Overlay w/Background image</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=237331">Desktop Overlay w/Background image</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">CulleokaDMB</span><br />
+      <span class="post-time small text-muted">6th February 2006 16:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Desktop Overlay w/Background image</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=237331">Desktop Overlay w/Background image</a></p>
+      <p class="post-content"><strong>Desktop Overlay w/Background image</strong><br />
+      Ok I am a noob but have a simple question. Is it possible to have desktop overlay enabled while having a .jpg in the back of the visualization? Having the visualization transparent and an embedded .jpg behind it non transparent. Not too concerned with full screen or adjustability. If you take a .jpg 400 x 400 and set the avs window to that size.<br />
+      <br />
+      I am not posting without searching and I'm currently continuing the search though it looks doubtful.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">ASD5A</span><br />
+      <span class="post-time small text-muted">6th February 2006 18:26 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">okay theres a (not noob) friendly possibility to do that<br />
+      all you need to do for every preset you want to watch is:<br />
+      get a .jpg<br />
+      add at the very start of the preset a buffer save set to restore buffer 8<br />
+      add at the very end of the preset a buffer save set to<br />
+      save buffer 8<br />
+      add at the very end then a effectslist with a picture.ape inside<br />
+      and output mode set to 50/50</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">CulleokaDMB</span><br />
-			<span class="date small text-muted">6th February 2006 16:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Desktop Overlay w/Background image</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">CulleokaDMB</span><br />
+      <span class="post-time small text-muted">6th February 2006 18:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Ok I am a noob but have a simple question. Is it possible to have desktop overlay enabled while having a .jpg in the back of the visualization? Having the visualization transparent and an embedded .jpg behind it non transparent. Not too concerned with full screen or adjustability. If you take a .jpg 400 x 400 and set the avs window to that size.<br />
-<br />
-I am not posting without searching and I'm currently continuing the search though it looks doubtful.
-		</p>
-</div>
+      <p class="post-content">Thanks for the response. I got the avs programming guide which will hopefully shed some light on your response. I do have some programming knowledge. Greatly appriciate the push in the right direction.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DummyDDD</span><br />
+      <span class="post-time small text-muted">6th February 2006 18:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ASD5A</span><br />
-			<span class="date small text-muted">6th February 2006 18:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">There is also a more noob friendly version.<br />
+      Use overlay with an odd color (like bright purple or orange), without using set desktop to color.<br />
+      Then edit you background image to use that color for spots that should be transparent. Also it would be best to save in png or bmp format, to prevent the colors from being slightly different, which would look ugly.<br />
+      <br />
+      Basicly the overlay replaces all pixels that have the selected color, with the AVS visual, hence you could for instance use white to replace most of windows view with AVS (which btw. looks quite odd, with most visuals, but can look quite cool with bright visuals)</p>
+    </div>
+    <hr />
 
-		okay theres a (not noob) friendly possibility to do that<br />
-all you need to do for every preset you want to watch is:<br />
-get a .jpg<br />
-add at the very start of the preset a buffer save set to restore buffer 8<br />
-add at the very end of the preset a buffer save set to <br />
-save buffer 8<br />
-add at the very end then a effectslist with a picture.ape inside<br />
-and output mode set to 50/50
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">CulleokaDMB</span><br />
+      <span class="post-time small text-muted">6th February 2006 22:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">I managed to do what your suggesting but wasn't quite what I was looking for. This way meshes the bmp with the visualization. I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
+      <br />
+      Is this possible?????</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">CulleokaDMB</span><br />
-			<span class="date small text-muted">6th February 2006 18:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">7th February 2006 05:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Thanks for the response. I got the avs programming guide which will hopefully shed some light on your response. I do have some programming knowledge. Greatly appriciate the push in the right direction.
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by CulleokaDMB</i><br />
+        <b>I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
+        <br />
+        Is this possible?????</b>
+      </blockquote>You assume badly...<br />
+      <br />
+      No. If you want to do some fancy blending you have to do the blending before it gets to the overlay. i.e. make a preset like this:<br />
+      <br />
+      Main<br />
+      -- Render \ Picture &lt;- picture to go at back<br />
+      -- Effect List &lt;- set blend modes you want<br />
+      ---\ Your preset stuff in here<br />
+      <br />
+      Then it creates the preset with the picture already 'behind it'. Running two instances of AVS rendering into the overlay, I would expect it to render one of them consistently, or to switch between both. Either way, there is no reason for it to work how you expect... and no indication in any of the menus/options either.
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DummyDDD</span><br />
-			<span class="date small text-muted">6th February 2006 18:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br />
+      <span class="post-time small text-muted">7th February 2006 11:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		There is also a more noob friendly version.<br />
-Use overlay with an odd color (like bright purple or orange), without using set desktop to color.<br />
-Then edit you background image to use that color for spots that should be transparent. Also it would be best to save in png or bmp format, to prevent the colors from being slightly different, which would look ugly.<br />
-<br />
-Basicly the overlay replaces all pixels that have the selected color, with the AVS visual, hence you could for instance use white to replace most of windows view with AVS (which btw. looks quite odd, with most visuals, but can look quite cool with bright visuals)
-		</p>
-</div>
+      <p class="post-content">Peoples must learn how to AVSing... ;)</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">CulleokaDMB</span><br />
-			<span class="date small text-muted">6th February 2006 22:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I managed to do what your suggesting but wasn't quite what I was looking for. This way meshes the bmp with the visualization. I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
-<br />
- Is this possible?????
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">7th February 2006 05:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by CulleokaDMB </i><br />
-<b>I,m asuming the only way to get the effect I want is to have 2 instances of avs running in 1 window like layers. The first layer with a bmp motionless with no effects and the second layer or top layer your average visualization with desktop overlay enabled on the top layer.<br />
-<br />
- Is this possible????? </b></blockquote>
-You assume badly...<br />
-<br />
-No. If you want to do some fancy blending you have to do the blending before it gets to the overlay. i.e. make a preset like this:<br />
-<br />
-Main<br />
--- Render \ Picture &lt;- picture to go at back<br />
--- Effect List  &lt;- set blend modes you want<br />
- ---\    Your preset stuff in here<br />
-<br />
-Then it creates the preset with the picture already 'behind it'. Running two instances of AVS rendering into the overlay, I would expect it to render one of them consistently, or to switch between both. Either way, there is no reason for it to work how you expect... and no indication in any of the menus/options either.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JaVS_v2.5</span><br />
-			<span class="date small text-muted">7th February 2006 11:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Peoples must learn how to AVSing... ;)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

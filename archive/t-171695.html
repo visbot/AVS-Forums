@@ -1,142 +1,92 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" How do you use alpha blending in SSC or DM? AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How do you use alpha blending in SSC or DM? " />
 
-	<title> How do you use alpha blending in SSC or DM? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>How do you use alpha blending in SSC or DM? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">How do you use alpha blending in SSC or DM?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=171695">How do you use alpha blending in SSC or DM?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Insolent_Chimp</span><br />
+      <span class="post-time small text-muted">2nd March 2004 00:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">How do you use alpha blending in SSC or DM?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=171695">How do you use alpha blending in SSC or DM?</a></p>
+      <p class="post-content"><strong>How do you use alpha blending in SSC or DM?</strong><br />
+      I searched and couldn't find anything that pointed me down the right path here.<br />
+      <br />
+      I read somewhere that alpha can help you eliminate the sloppies that you get all over the sides of your DM's that aren't wrapped. How do you do this? Anyone wanna tell me?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">2nd March 2004 04:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">1. Put the image in a buffer<br />
+      2. Clear the screen<br />
+      3. Put in DM<br />
+      4. Set buffer as source in DM<br />
+      5. Set the alpha value in DM<br />
+      <br />
+      That should just about cover it. :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Insolent_Chimp</span><br />
-			<span class="date small text-muted">2nd March 2004 00:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>How do you use alpha blending in SSC or DM?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
+      <span class="post-time small text-muted">2nd March 2004 04:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I searched and couldn't find anything that pointed me down the right path here. <br />
-<br />
-I read somewhere that alpha can help you eliminate the sloppies that you get all over the sides of your DM's that aren't wrapped. How do you do this? Anyone wanna tell me?
-		</p>
-</div>
+      <p class="post-content">you can use alpha to blend the DMed buffer over what is currently on the window. Alpha blending is only for DM's though. How you implement this really depends on what your DM is. If you're raytracing a sphere or something you can use shading to fade out the as it gets towards the edges.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Insolent_Chimp</span><br />
+      <span class="post-time small text-muted">4th March 2004 19:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">2nd March 2004 04:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Haha, here's my problem: the blend box in DM wasn't checked.<br />
+      <br />
+      It may be a stupid thing to mention, but people who are new to AVS might not know.<br />
+      <br />
+      Thanks guys.<br />
+      <br />
+      [edit]<br />
+      <br />
+      People like me that is.</p>
+    </div>
+    <hr />
 
-		1. Put the image in a buffer<br />
-2. Clear the screen<br />
-3. Put in DM<br />
-4. Set buffer as source in DM<br />
-5. Set the alpha value in DM<br />
-<br />
-That should just about cover it. :)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br />
+      <span class="post-time small text-muted">4th March 2004 21:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Well... uhm.. it says "blend" in the name, doesn't it? ;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">2nd March 2004 04:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		you can use alpha to blend the DMed buffer over what is currently on the window.  Alpha blending is only for DM's though.  How you implement this really depends on what your DM is.  If you're raytracing a sphere or something you can use shading to fade out the as it gets towards the edges.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Insolent_Chimp</span><br />
-			<span class="date small text-muted">4th March 2004 19:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Haha, here's my problem: the blend box in DM wasn't checked. <br />
-<br />
-It may be a stupid thing to mention, but people who are new to AVS might not know.<br />
-<br />
-Thanks guys. <br />
-<br />
-[edit] <br />
-<br />
-People like me that is.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">4th March 2004 21:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well... uhm.. it says &quot;blend&quot; in the name, doesn't it? ;)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

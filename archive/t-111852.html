@@ -1,182 +1,128 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Building APE's with Borland C++ Builder AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Building APE's with Borland C++ Builder " />
 
-	<title> Building APE's with Borland C++ Builder - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Building APE's with Borland C++ Builder - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Building APE's with Borland C++ Builder</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=111852">Building APE's with Borland C++ Builder</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fOSSili</span><br />
+      <span class="post-time small text-muted">28th October 2002 19:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Building APE's with Borland C++ Builder</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=111852">Building APE's with Borland C++ Builder</a></p>
+      <p class="post-content"><strong>Building APE's with Borland C++ Builder</strong><br />
+      Hi to all APEr's,<br />
+      <br />
+      I have several ideas for writing APE's. But I dont have MS Visual C++.<br />
+      <br />
+      So I tried to convert the tutbox example (from NSDN/WVS) to Borland C++ Builder 6.0. I've done it so far that I can compile without error's (using Tools-&gt;Visual C++ Conversion Utility), renamed to .ape and sent to avs\plugins\. But it will not be shown in AVS :down: (But also AVS doesn't crash :up: ).<br />
+      <br />
+      Has anyone got it working already? Can anyone send me c++ builder example-ape with source code? It would also be helpful to send me a miniminimini.ape in MS VC++ source code for conversion trial (without resource, config-screen-stuff, etc.)?<br />
+      <br />
+      I hope you can help me, because I WANT to make it run.<br />
+      <br />
+      Thank you everybody,<br />
+      Andreas<br />
+      <br />
+      PS: you can find the converted tutbox project attached</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">28th October 2002 21:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Sorry, no Borland here. Make sure you export the AVS_APE_Retr (or something like that) function.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fOSSili</span><br />
-			<span class="date small text-muted">28th October 2002 19:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Building APE's with Borland C++ Builder</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fOSSili</span><br />
+      <span class="post-time small text-muted">28th October 2002 23:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hi to all APEr's, <br />
-<br />
-I have several ideas for writing APE's. But I dont have MS Visual C++. <br />
-<br />
-So I tried to convert the tutbox example (from NSDN/WVS) to Borland C++ Builder 6.0. I've done it so far that I can compile without error's (using Tools-&gt;Visual C++ Conversion Utility), renamed to .ape and sent to avs\plugins\. But it will not be shown in AVS :down: (But also AVS doesn't crash :up: ). <br />
-<br />
-Has anyone got it working already? Can anyone send me c++ builder example-ape with source code? It would also be helpful to send me a miniminimini.ape in MS VC++ source code for conversion trial (without resource, config-screen-stuff, etc.)? <br />
-<br />
-I hope you can help me, because I WANT to make it run. <br />
-<br />
-Thank you everybody, <br />
-Andreas <br />
-<br />
-PS: you can find the converted tutbox project attached
-		</p>
-</div>
+      <p class="post-content">Hmmm,<br />
+      <br />
+      I looked into the export definition and found extern "C" __declspec (dllexport) int _AVS_APE_RetrFunc(...). That makes me wondering, because you (thanks UnConeD) mentioned AVS_APE_RetrFunc(). Removing preceding "_" fixes the loading problem, so that I can see the plugin under +-&gt;Tutorials-&gt;Box v1.0 now.<br />
+      <br />
+      But when I select it, it crashes Winamp with "Runtime Error" (Visual C++ runtime library). It seems to be harder than I thought.<br />
+      <br />
+      When debugging the .ape, everything works fine until the render() function is called. The "c_thisclass-&gt;enabled" flag (Set to "1" in constructor) is always a different _random_ number when I try to activate the plugin. So that it seems to be a problem with the c_thisclass instance (probably casted as c_rbase, and so the class property doeas not exists?). Many open questions here...<br />
+      <br />
+      I hope, a c++builder guru can assist me in porting this to Borland.<br />
+      <br />
+      Thank you<br />
+      Andreas<br />
+      <br />
+      PS: working, but crashing c++builder project and avstut00.ape attached</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">28th October 2002 23:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th October 2002 21:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content"></p>
 
-		Sorry, no Borland here. Make sure you export the AVS_APE_Retr (or something like that) function.
-		</p>
-</div>
+      <blockquote>
+        <i>Originally posted by fOSSili</i><br />
+        <b>"Runtime Error" (Visual C++ runtime library).</b>
+      </blockquote>Maybe you need visual c++.<br />
+      <br />
+      <br />
+      Which would suck heavily.
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">fOSSili</span><br />
+      <span class="post-time small text-muted">29th October 2002 00:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fOSSili</span><br />
-			<span class="date small text-muted">28th October 2002 23:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+      <p class="post-content">No,<br />
+      <br />
+      I don't think, visual c++ is needed. Shouldn't simple class definitions be equally represented by bcb and vc?<br />
+      <br />
+      Uh, when i think about it, c++ compilers differ in many way's. And when it comes to _MS_ compilers...<br />
+      <br />
+      I have a idea to solve this problem: If someone can write a "wrapper-ape" thet can load a .dll dynamically ? Like avi-render or image-render do this with media. In the loaded .dll (the one I will write) only three simple stdcall functions would need to be exported:<br />
+      - int init();<br />
+      - int render(char visdata[2][2][576], int isBeat, int *framebuffer, int *fbout, int w, int h);<br />
+      - int destroy();<br />
+      <br />
+      Thats all. And it can be heavily ported to other Languages (thinking of Borland C++ Builder and Delphi too) because it doesnt use this C++ Classes Stuff.<br />
+      <br />
+      It would be REALLY great if someone can think about it, because not everyone can buy Visual Studio, but has access to simpler compilers, which can build .dll's too.<br />
+      <br />
+      Thanks for your effort on that (hopefully),<br />
+      Andreas<br />
+      <br />
+      PS: no attachement this time</p>
+    </div>
+    <hr />
 
-		Hmmm,<br />
-<br />
-I looked into the export definition and found extern &quot;C&quot; __declspec (dllexport) int _AVS_APE_RetrFunc(...). That makes me wondering, because you (thanks UnConeD) mentioned AVS_APE_RetrFunc(). Removing preceding &quot;_&quot; fixes the loading problem, so that I can see the plugin under +-&gt;Tutorials-&gt;Box v1.0 now.<br />
-<br />
-But when I select it, it crashes Winamp with &quot;Runtime Error&quot; (Visual C++ runtime library). It seems to be harder than I thought.<br />
-<br />
-When debugging the .ape, everything works fine until the render() function is called. The &quot;c_thisclass-&gt;enabled&quot; flag (Set to &quot;1&quot; in constructor) is always a different _random_ number when I try to activate the plugin. So that it seems to be a problem with the c_thisclass instance (probably casted as c_rbase, and so the class property doeas not exists?). Many open questions here...<br />
-<br />
-I hope, a c++builder guru can assist me in porting this to Borland.<br />
-<br />
-Thank you<br />
-Andreas<br />
-<br />
-PS: working, but crashing c++builder project and avstut00.ape attached
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">28th October 2002 23:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by fOSSili </i><br />
-<b>&quot;Runtime Error&quot; (Visual C++ runtime library). </b></blockquote>
-Maybe you need visual c++. <br />
-<br />
-<br />
-Which would suck heavily.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fOSSili</span><br />
-			<span class="date small text-muted">29th October 2002 00:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No,<br />
-<br />
-I don't think, visual c++ is needed. Shouldn't simple class definitions be equally represented by bcb and vc?<br />
-<br />
-Uh, when i think about it, c++ compilers differ in many way's. And when it comes to _MS_ compilers...<br />
-<br />
-I have a idea to solve this problem: If someone can write a &quot;wrapper-ape&quot; thet can load a .dll dynamically ? Like avi-render or image-render do this with media. In the loaded .dll (the one I will write) only three simple stdcall functions would need to be exported:<br />
- - int init();<br />
- - int render(char visdata[2][2][576], int isBeat, int *framebuffer, int *fbout, int w, int h);<br />
- - int destroy();<br />
-<br />
-Thats all. And it can be heavily ported to other Languages (thinking of Borland C++ Builder and Delphi too) because it doesnt use this C++ Classes Stuff.<br />
-<br />
-It would be REALLY great if someone can think about it, because not everyone can buy Visual Studio, but has access to simpler compilers, which can build .dll's too.<br />
-<br />
-Thanks for your effort on that (hopefully),<br />
-Andreas<br />
-<br />
-PS: no attachement this time
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

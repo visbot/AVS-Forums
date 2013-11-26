@@ -1,126 +1,90 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Interference bug between AVS overlay mode &amp; Windows Screen Saver AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interference bug between AVS overlay mode &amp; Windows Screen Saver " />
 
-	<title> Interference bug between AVS overlay mode &amp; Windows Screen Saver - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Interference bug between AVS overlay mode &amp; Windows Screen Saver - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">Interference bug between AVS overlay mode &amp; Windows Screen Saver</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=117108">Interference bug between AVS overlay mode &amp; Windows Screen Saver</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">motenaio</span><br />
+      <span class="post-time small text-muted">8th December 2002 11:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Interference bug between AVS overlay mode &amp; Windows Screen Saver</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=117108">Interference bug between AVS overlay mode &amp; Windows Screen Saver</a></p>
+      <p class="post-content"><strong>Interference bug between AVS overlay mode &amp; Windows Screen Saver</strong><br />
+      Hello,<br />
+      <br />
+      there seems to be a bug in the way AVS overlay mode reacts<br />
+      when Windows goes into password-protected screen saver mode.<br />
+      <br />
+      When my win2k computer goes into screen saver mode, and<br />
+      then back (let's say I move the mouse), the AVS window<br />
+      just goes black and do not show the animation anymore.<br />
+      I have to close AVS and start it over to get the animation<br />
+      back.<br />
+      <br />
+      I made some tests and the exact conditions are the following:<br />
+      - AVS overlay mode needs to be active (any color)<br />
+      - screen saver must have "protected mode" active.<br />
+      <br />
+      It seems that when the screen saver protected mode gets active,<br />
+      it kind of resets the screen, which makes overlay mode lose<br />
+      the 'focus' on it.<br />
+      <br />
+      Any help, AVS developers?<br />
+      <br />
+      Thanks.<br />
+      Alex</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">8th December 2002 14:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Don't use password protected screensavers? There's no way for us to fix the bug, we don't have access to the AVS source. Do you have the same problem with other overlay-capable utilities or plug-ins?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">motenaio</span><br />
-			<span class="date small text-muted">8th December 2002 11:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Interference bug between AVS overlay mode &amp; Windows Screen Saver</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">motenaio</span><br />
+      <span class="post-time small text-muted">8th December 2002 15:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hello,<br />
-<br />
-there seems to be a bug in the way AVS overlay mode reacts<br />
- when Windows goes into password-protected screen saver mode.<br />
-<br />
-When my win2k computer goes into screen saver mode, and<br />
- then back (let's say I move the mouse), the AVS window<br />
- just goes black and do not show the animation anymore.<br />
- I have to close AVS and start it over to get the animation<br />
- back.<br />
-<br />
-I made some tests and the exact conditions are the following:<br />
-- AVS overlay mode needs to be active (any color)<br />
-- screen saver must have &quot;protected mode&quot; active.<br />
-<br />
-It seems that when the screen saver protected mode gets active,<br />
- it kind of resets the screen, which makes overlay mode lose<br />
- the 'focus' on it.<br />
-<br />
-Any help, AVS developers?<br />
-<br />
-Thanks.<br />
-Alex
-		</p>
-</div>
+      <p class="post-content">I do need to password-protect my screen saver.<br />
+      <br />
+      As there is no AVS section in nullsoft's bugzilla system,<br />
+      whom should I send this bug report to?<br />
+      <br />
+      I did not try any other overlay component, since I do<br />
+      not have any, but you can easily test if you have one.<br />
+      <br />
+      Alex</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">8th December 2002 14:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Don't use password protected screensavers? There's no way for us to fix the bug, we don't have access to the AVS source. Do you have the same problem with other overlay-capable utilities or plug-ins?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">motenaio</span><br />
-			<span class="date small text-muted">8th December 2002 15:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I do need to password-protect my screen saver.<br />
-<br />
-As there is no AVS section in nullsoft's bugzilla system,<br />
- whom should I send this bug report to?<br />
-<br />
-I did not try any other overlay component, since I do<br />
- not have any, but you can easily test if you have one.<br />
-<br />
-Alex
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

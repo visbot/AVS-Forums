@@ -1,129 +1,85 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Rendering text in APE AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rendering text in APE " />
 
-	<title> Rendering text in APE - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Rendering text in APE - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Rendering text in APE</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=76436">Rendering text in APE</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
+      <span class="post-time small text-muted">18th February 2002 15:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Rendering text in APE</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=76436">Rendering text in APE</a></p>
+      <p class="post-content"><strong>Rendering text in APE</strong><br />
+      Hi all,<br />
+      I'm a newbie at VC++, and would appreciate some help from you pros. I am writing an APE that has to render text to the AVS/WVS window. I have rendered it into a memBitmap, but can't figure out how to copy<br />
+      it to the AVS framebuffer. Since AVS doesn't expose a DC, I can't BitBlt it, and am clueless about writing directly to the framebuf. Any tips or example code would be appreciated.<br />
+      <br />
+      Thanks.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">19th February 2002 00:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">The AVS framebuffer uses the 32-bit color format RGB0 (or maybe BGR0, not sure). It's best to get rid of GDI DeviceContext for drawing because they'll always be slower: implement your own line-drawing algorithms and you'll be waaay faster. If you *really* need GDI, create 32-bit a DIB using CreateDIBSection as your bitmap. You'll receive a direct-pointer to the DIB-data when you create it, which you can use to copy the bitmap's contents in RGB0 straight into the AVS framebuffer.<br />
+      For optimal speed, you'll need to use MMX operations in your code for operations such as blending or adding. They're very suited to RGB0 images. You can always use them, as the width of an AVS window is always a multiple of 4.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">vapor</span><br />
-			<span class="date small text-muted">18th February 2002 15:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Rendering text in APE</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
+      <span class="post-time small text-muted">19th February 2002 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hi all,<br />
-I'm a newbie at VC++, and would appreciate some help from you pros.  I am writing an APE that has to render text to the AVS/WVS window.  I have rendered it into a memBitmap, but can't figure out how to copy<br />
-it to the AVS framebuffer. Since AVS doesn't expose a DC, I can't BitBlt it, and am clueless about writing directly to the framebuf.  Any tips or example code would be appreciated.<br />
-<br />
-Thanks.
-		</p>
-</div>
+      <p class="post-content"><strong>cool...</strong><br />
+      Cool, that was easy! Thanks, UnConeD, you're a sweetheart!<br />
+      <br />
+      It IS very slow though, nowhere near as fast as the built in text render. Did the author (lone, I think) use MMX? Can you point me to some MMX resources so I can get started?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">19th February 2002 20:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th February 2002 00:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I haven't tried MMX myself yet, but I've read about it on the web. Can't do it now, because my old VC++ doesn't know MMX assembly instructions.<br />
+      <br />
+      If it's really a lot slower, are you sure you're accessing the bits directly and not through GetDIBits()? I've made some APE's myself for my next preset pack (will release them at the same time) for a few effects such as larger fast brightness and special cases of color clip (all nonblack -&gt; white and vice-versa), and they approach the built-in effects in terms of speed. I can even improve my fast brightness if I use MMX instructions, in which case it'll be just as fast for the same functions, and faster than 2 or more instances of the built-in effect.<br />
+      <br />
+      Here are a few URLs on MMX instructions. There's quite a lot more tutorials on the web about using MMX instructions for 32-bit pixels. Look for code for fast alpha-blending, they should point you in the right direction.<br />
+      <br />
+      - <a href="http://space.virgilio.it/insignis@tin.it/tommesani/MMXDataTransfer.html" target="_blank">http://space.virgilio.it/insignis@ti...aTransfer.html</a><br />
+      - <a href="http://7gods.sk/coding_mmx.html" target="_blank">http://7gods.sk/coding_mmx.html</a><br />
+      <br />
+      I'm also going to clean up my APE's code and release them as open-source, so that other authors can improve theirs and code new ones based on mine.</p>
+    </div>
+    <hr />
 
-		The AVS framebuffer uses the 32-bit color format RGB0 (or maybe BGR0, not sure). It's best to get rid of GDI DeviceContext for drawing because they'll always be slower: implement your own line-drawing algorithms and you'll be waaay faster. If you *really* need GDI, create 32-bit a DIB using CreateDIBSection as your bitmap. You'll receive a direct-pointer to the DIB-data when you create it, which you can use to copy the bitmap's contents in RGB0 straight into the AVS framebuffer.<br />
-For optimal speed, you'll need to use MMX operations in your code for operations such as blending or adding. They're very suited to RGB0 images. You can always use them, as the width of an AVS window is always a multiple of 4.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">vapor</span><br />
-			<span class="date small text-muted">19th February 2002 14:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>cool...</strong><br />
-		
-		
-
-		Cool, that was easy!  Thanks, UnConeD, you're a sweetheart!<br />
-<br />
-It IS very slow though, nowhere near as fast as the built in text render.  Did the author (lone, I think) use MMX? Can you point me to some MMX resources so I can get started?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th February 2002 20:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I haven't tried MMX myself yet, but I've read about it on the web. Can't do it now, because my old VC++ doesn't know MMX assembly instructions.<br />
-<br />
-If it's really a lot slower, are you sure you're accessing the bits directly and not through GetDIBits()? I've made some APE's myself for my next preset pack (will release them at the same time) for a few effects such as larger fast brightness and special cases of color clip (all nonblack -&gt; white and vice-versa), and they approach the built-in effects in terms of speed. I can even improve my fast brightness if I use MMX instructions, in which case it'll be just as fast for the same functions, and faster than 2 or more instances of the built-in effect.<br />
-<br />
-Here are a few URLs on MMX instructions. There's quite a lot more tutorials on the web about using MMX instructions for 32-bit pixels. Look for code for fast alpha-blending, they should point you in the right direction.<br />
-<br />
-- <a href="http://space.virgilio.it/insignis@tin.it/tommesani/MMXDataTransfer.html" target="_blank">http://space.virgilio.it/insignis@ti...aTransfer.html</a><br />
-- <a href="http://7gods.sk/coding_mmx.html" target="_blank">http://7gods.sk/coding_mmx.html</a><br />
-<br />
-I'm also going to clean up my APE's code and release them as open-source, so that other authors can improve theirs and code new ones based on mine.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

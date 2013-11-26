@@ -1,280 +1,187 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" real backface culling? AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="real backface culling? " />
 
-	<title> real backface culling? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>real backface culling? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">real backface culling?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=179715">real backface culling?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">your-dentist</span><br />
+      <span class="post-time small text-muted">12th May 2004 09:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">real backface culling?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=179715">real backface culling?</a></p>
+      <p class="post-content"><strong>real backface culling?</strong><br />
+      I am trying to create a method to cull the backfaces of any polygon based superscope. I started with a simple cube. as a helper I created a texerII with one sprite for each side. when the side of the cube would be culled, the texerII sprite should become invisible. so i created a texer with 6 sprites at the positions<br />
+      (1;0;0), (-1;0;0), (0;1;0), (0;-1;0), (0;0;1), (0;0;-1). my idea of backface culling is the following:<br />
+      for each face you calculate the normal and then, via raytracing, you check the angle between normal and the ray to the middle of the face. if the angle is larger than 90°, the face must be invisible.<br />
+      for the texer my culling code looks like this:<br />
+      x2, y2 and z2 are the coordinates of the point after the rotation.<br />
+      so the normal if (x2;y2;z2). the rayvector is (x,y,1) where x and y are the 2d coordinates of the point after 3d-&gt;2d mapping.<br />
+      the angle of the normal is atan2(sqrt(x2*x2+y2*y2),z2);<br />
+      the rayangle is:<br />
+      atan2(sqrt(x*x+y*y),1);<br />
+      the angle between the two would now be:<br />
+      angle=abs(normalangle-rayangle);<br />
+      then with above(angle,$pi*.5) I do the color coding. but for some reason, it does not work.<br />
+      I can't post the preset right, but I will do that later if required.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br />
+      <span class="post-time small text-muted">12th May 2004 12:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Erm... im doing it little different:<br />
+      -I calculate normal vector<br />
+      -I calculate point-eye vector AND normalize it (normalization is only for correct shading)<br />
+      -Find dot product between those 2 vectors, and check if its below 0, if so, the eye doesnt see the point and you can easily skip it.<br />
+      Works perfectly for simple shapes, but as for torus and more complicated shapes it doesn't work (could fix it thanks to unconed for torus, you can see the preset in my da acc)=)<br />
+      <br />
+      Only thing thats complicated here is finding the deamn normal :D</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">your-dentist</span><br />
-			<span class="date small text-muted">12th May 2004 09:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>real backface culling?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">your-dentist</span><br />
+      <span class="post-time small text-muted">14th May 2004 10:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I am trying to create a method to cull the backfaces of any polygon based superscope. I started with a simple cube. as a helper I created a texerII with one sprite for each side. when the side of the cube would be culled, the texerII sprite should become invisible. so i created a texer with 6 sprites at the positions <br />
-(1;0;0), (-1;0;0), (0;1;0), (0;-1;0), (0;0;1), (0;0;-1). my idea of backface culling is the following:<br />
-for each face you calculate the normal and then, via raytracing, you check the angle between normal and the ray to the middle of the face. if the angle is larger than 90°, the face must be invisible.<br />
-for the texer my culling code looks like this:<br />
-x2, y2 and z2 are the coordinates of the point after the rotation.<br />
-so the normal if (x2;y2;z2). the rayvector is (x,y,1) where x and y are the 2d coordinates of the point after 3d-&gt;2d mapping.<br />
-the angle of the normal is atan2(sqrt(x2*x2+y2*y2),z2);<br />
-the rayangle is:<br />
-atan2(sqrt(x*x+y*y),1);<br />
-the angle between the two would now be:<br />
-angle=abs(normalangle-rayangle);<br />
-then with above(angle,$pi*.5) I do the color coding. but for some reason, it does not work.<br />
-I can't post the preset right, but I will do that later if required.
-		</p>
-</div>
+      <p class="post-content">err? afaik the dot product is the vector: c = a*b*sin(a,b)<br />
+      this vector has three components: x, y and z. so what do you mean by "below 0" and how does this work at all. can you please explain to my why my method doesn't work and why I have to use the product.<br />
+      btw: where can I find you culling preset?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
+      <span class="post-time small text-muted">14th May 2004 11:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaak</span><br />
-			<span class="date small text-muted">12th May 2004 12:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">dot product is:<br />
+      a*b<br />
+      =ax*bx+ay*by+az*bz<br />
+      =|a|*|b|*cos(angle(a,b))<br />
+      dot product returns a number, not a vector.<br />
+      <br />
+      and there is also a cosine formula:<br /></p>
+      <pre>
+<code><br />                     a*b            ax*bx+ay*by+az*bz<br />cos(angle(a,b)) = --------- = -----------------------------<br />                   |a|*|b|     (ax²+ay²+az²)*(bx²+by²+bz²)<br /></code>
+</pre><br />
+      this formula is basically reformed from 3rd line of the dot product formula above and then out-multiplied.<br />
+      btw your method sounds quite 2D-ish, and thus can't really work for 3D objects ;) at least not for all of them. 3D vectors do not have one angle as 2D vectors have, as they're not all in one plane. Angles are always connected to planes.<br />
+      <br />
+      Skalarprodukt ist:<br />
+      a*b<br />
+      =ax*bx+ay*by+az*bz<br />
+      =|a|*|b|*cos(winkel(a,b))<br />
+      Beim Skalarprodukt kommt ein Skalar raus wie der Name schon sagt ;) also eine Zahl, kein Vektor.<br />
+      <br />
+      und dann gibts da noch die Cosinusformel:<br />
+      <pre>
+<code><br />                      a*b            ax*bx+ay*by+az*bz<br />cos(winkel(a,b)) = --------- = -----------------------------<br />                    |a|*|b|     (ax²+ay²+az²)*(bx²+by²+bz²)<br /></code>
+</pre><br />
+      Diese Formel ist eigentlich nur die 3. Zeile der Skalarproduktsformel umgeformt und dann ausmultipliziert<br />
+      btw deine Methode hört sich ziemlich 2D-isch an, kann also eigentlich garnet funzen für 3D-Objekte ;) zumindest nicht für alle. 3D-Vektoren haben nicht nur einen Winkel wie 2D-Vektoren, weil sie nicht alle in einer Ebene liegen. Winkel gibt's immer nur in Ebenen.
+    </div>
+    <hr />
 
-		Erm... im doing it little different:<br />
--I calculate normal vector<br />
--I calculate point-eye vector AND normalize it (normalization is only for correct shading)<br />
--Find dot product between those 2 vectors, and check if its below 0, if so, the eye doesnt see the point and you can easily skip it.<br />
-Works perfectly for simple shapes, but as for torus and more complicated shapes it doesn't work (could fix it thanks to unconed for torus, you can see the preset in my da acc)=) <br />
-<br />
-Only thing thats complicated here is finding the deamn normal :D
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">your-dentist</span><br />
+      <span class="post-time small text-muted">14th May 2004 14:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">you didn't read my formula correctly. i didn't say that each vector has one angle, but there is only one angle between the two vectors. i also tried the thing with the product, but it didn't work.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">your-dentist</span><br />
-			<span class="date small text-muted">14th May 2004 10:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">14th May 2004 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		err? afaik the dot product is the vector: c = a*b*sin(a,b)<br />
-this vector has three components: x, y and z. so what do you mean by &quot;below 0&quot; and how does this work at all. can you please explain to my why my method doesn't work and why I have to use the product.<br />
-btw: where can I find you culling preset?
-		</p>
-</div>
+      <p class="post-content">y-d: First of all, you can't do an abs() on angles because e.g. 2***960; and 0 would not work.<br />
+      <br />
+      Tomy's comment is still valid: you cannot determine the angle between two vectors using one atan2 on each and then doing a difference: you're simply determining one of the angles in spherical coordinates and taking the difference.<br />
+      <br />
+      According to your formula, there is 0° between (1,1,1) and (-1,-1,1).</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">15th May 2004 09:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">14th May 2004 11:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Geeezz.<br />
+      <br />
+      just stop and look at jaak's method work out what each step doing. The purpose of the whole thing is to work out when a point is facing away from the camera, right?<br />
+      <br />
+      *you take the normal vector from the point (that tells you which direction the point is facing)<br />
+      <br />
+      *get the vector between the camera and the point (like you would with a raytraced dm).<br />
+      <br />
+      *now, you have two vectors, so we just need to check if they are pointing in the same direction(cull it) or the opposite direction(draw it).<br />
+      <br />
+      One way to do it is to do a dot product with:<br />
+      <br /></p>
+      <pre>
+<code><br />a.b=|a|*|b|*[(a*b)/(|a|*|b|)]<br /></code>
+</pre><br />
+      <br />
+      since the dot product finds the length of a projection of B onto A:<br />
+      <a href="http://mathworld.wolfram.com/d2img1872.gif" target="_blank">http://mathworld.wolfram.com/d2img1872.gif</a><br />
+      then the results yeild:<br />
+      <br />
+      if the two vectors are facing the same direction (like in the picture) then the dot product is positive, so we can safely cull that point. If they are facing away from each other, then the dot product is negative, so we want to draw it.<br />
+      <br />
+      OK?
+    </div>
+    <hr />
 
-		dot product is:<br />
-a*b<br />
-=ax*bx+ay*by+az*bz<br />
-=|a|*|b|*cos(angle(a,b))<br />
-dot product returns a number, not a vector.<br />
-<br />
-and there is also a cosine formula:<br />
-<pre><code><br />
-                     a*b            ax*bx+ay*by+az*bz<br />
-cos(angle(a,b)) = --------- = -----------------------------<br />
-                   |a|*|b|     (ax²+ay²+az²)*(bx²+by²+bz²)<br />
-</code></pre><br />
-this formula is basically reformed from 3rd line of the dot product formula above and then out-multiplied.<br />
-btw your method sounds quite 2D-ish, and thus can't really work for 3D objects ;) at least not for all of them. 3D vectors do not have one angle as 2D vectors have, as they're not all in one plane. Angles are always connected to planes.<br />
-<br />
-Skalarprodukt ist:<br />
-a*b<br />
-=ax*bx+ay*by+az*bz<br />
-=|a|*|b|*cos(winkel(a,b))<br />
-Beim Skalarprodukt kommt ein Skalar raus wie der Name schon sagt ;) also eine Zahl, kein Vektor.<br />
-<br />
-und dann gibts da noch die Cosinusformel:<br />
-<pre><code><br />
-                      a*b            ax*bx+ay*by+az*bz<br />
-cos(winkel(a,b)) = --------- = -----------------------------<br />
-                    |a|*|b|     (ax²+ay²+az²)*(bx²+by²+bz²)<br />
-</code></pre><br />
-Diese Formel ist eigentlich nur die 3. Zeile der Skalarproduktsformel umgeformt und dann ausmultipliziert<br />
-btw deine Methode hört sich ziemlich 2D-isch an, kann also eigentlich garnet funzen für 3D-Objekte ;) zumindest nicht für alle. 3D-Vektoren haben nicht nur einen Winkel wie 2D-Vektoren, weil sie nicht alle in einer Ebene liegen. Winkel gibt's immer nur in Ebenen.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br />
+      <span class="post-time small text-muted">15th May 2004 11:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">i even wrote comments to it</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">your-dentist</span><br />
-			<span class="date small text-muted">14th May 2004 14:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">your-dentist</span><br />
+      <span class="post-time small text-muted">17th May 2004 10:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		you didn't read my formula correctly. i didn't say that each vector has one angle, but there is only one angle between the two vectors. i also tried the thing with the product, but it didn't work.
-		</p>
-</div>
+      <p class="post-content">I tried it at home with the dot product, after I found out that I overread the "dot" and thus used the wrong formula, and it works a bit as it's supposed to. BUT, the point of the texer is culled away too early and reappears too late, so the still is some bug in there. I'll send the preset, so you can take a look at, tomorrow.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">your-dentist</span><br />
+      <span class="post-time small text-muted">20th May 2004 18:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th May 2004 17:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Well, "tomorrow" was not quite right. Anyway, here'S my preset, maybe someone can have a look at it to help me out.<br />
+      Some info 'bout the preset: the last superscope is the cube which should cover the texer's particles. The texer makes the particles and the culling, which does not work as expected.</p>
+    </div>
+    <hr />
 
-		y-d: First of all, you can't do an abs() on angles because e.g. 2***960; and 0 would not work.<br />
-<br />
-Tomy's comment is still valid: you cannot determine the angle between two vectors using one atan2 on each and then doing a difference: you're simply determining one of the angles in spherical coordinates and taking the difference.<br />
-<br />
-According to your formula, there is 0° between (1,1,1) and (-1,-1,1).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">15th May 2004 09:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Geeezz. <br />
-<br />
-just stop and look at jaak's method work out what each step doing. The purpose of the whole thing is to work out when a point is facing away from the camera, right?<br />
-<br />
-*you take the normal vector from the point (that tells you which direction the point is facing) <br />
-<br />
-*get the vector between the camera and the point (like you would with a raytraced dm).<br />
-<br />
-*now, you have two vectors, so we just need to check if they are pointing in the same direction(cull it) or the opposite direction(draw it).<br />
-<br />
-One way to do it is to do a dot product with:<br />
-<br />
-<pre><code><br />
-a.b=|a|*|b|*[(a*b)/(|a|*|b|)]<br />
-</code></pre><br />
-<br />
-since the dot product finds the length of a projection of B onto A:<br />
-<a href="http://mathworld.wolfram.com/d2img1872.gif" target="_blank">http://mathworld.wolfram.com/d2img1872.gif</a><br />
-then the results yeild:<br />
-<br />
-if the two vectors are facing the same direction (like in the picture) then the dot product is positive, so we can safely cull that point. If they are facing away from each other, then the dot product is negative, so we want to draw it.<br />
-<br />
-OK?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaak</span><br />
-			<span class="date small text-muted">15th May 2004 11:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		i even wrote comments to it
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">your-dentist</span><br />
-			<span class="date small text-muted">17th May 2004 10:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I tried it at home with the dot product, after I found out that I overread the &quot;dot&quot; and thus used the wrong formula, and it works a bit as it's supposed to. BUT, the point of the texer is culled away too early and reappears too late, so the still is some bug in there. I'll send the preset, so you can take a look at, tomorrow.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">your-dentist</span><br />
-			<span class="date small text-muted">20th May 2004 18:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Well, &quot;tomorrow&quot; was not quite right. Anyway, here'S my preset, maybe someone can have a look at it to help me out.<br />
-Some info 'bout the preset: the last superscope is the cube which should cover the texer's particles. The texer makes the particles and the culling, which does not work as expected.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

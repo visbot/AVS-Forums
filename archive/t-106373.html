@@ -1,956 +1,675 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Installer script AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Installer script " />
 
-	<title> Installer script - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Installer script - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Installer script</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106373">Installer script</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">21st September 2002 18:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Installer script</strong><br />
-		
-		
-
-		I've just finished my new installer script, I thought that maybe some of you people here might prefer this method of installing to Winamp 2 or 3 (but still not both unfortunately) to the one using those messy message boxes. This one uses the 'Install Options' menu to choose between Winamp 2 and 3 like my old script but it also autodetects the install directory.<br />
-<br />
-I've used my last minipack for the example script here. Please tell me if you find any bugs!<br />
-<br />
-Name &quot;Jheriko - Purely Platonic&quot;<br />
-Icon &quot;platonic.ico&quot;<br />
-OutFile &quot;J Platonic.exe&quot;<br />
-<br />
-EnabledBitmap d:\NSIS\Contrib\two-check.bmp<br />
-DisabledBitmap d:\NSIS\Contrib\two-nocheck.bmp<br />
-<br />
-Function .onInit<br />
-StrCpy $9 0<br />
-FunctionEnd<br />
-<br />
-Function .onNextPage<br />
-<br />
-IntOp $9 $9 + 1<br />
-<br />
-IntCmp $9 2 nothing<br />
-<br />
-Goto jump<br />
-<br />
-nothing:<br />
-<br />
-SectionGetFlags 1 $1<br />
-<br />
-IntCmpU $1 2147483648 getwa2path getwa3path getwa2path<br />
-<br />
-getwa2path:<br />
-ReadRegStr $INSTDIR HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp&quot; &quot;UninstallString&quot; <br />
-StrCpy $INSTDIR $INSTDIR &quot;&quot; 1 <br />
-Goto skippy<br />
-<br />
-getwa3path:<br />
-ReadRegStr $INSTDIR HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3&quot; &quot;UninstallString&quot;<br />
-<br />
-skippy:<br />
-<br />
-StrCpy $1 $INSTDIR<br />
-loopy:<br />
-StrCpy $2 $INSTDIR 1 $1<br />
-StrCmp $2 &quot;&quot; lpdone<br />
-StrCmp $2 &quot;\&quot; lpdone<br />
-IntOp $1 $1 - 1<br />
-Goto loopy<br />
-lpdone:<br />
-StrCpy $INSTDIR $INSTDIR $1<br />
-<br />
-jump:<br />
-<br />
-FunctionEnd<br />
-<br />
-Function .onPrevPage<br />
-<br />
-IntOp $9 $9 - 1<br />
-<br />
-FunctionEnd<br />
-<br />
-DirText &quot;Please enter your full Winamp path below.&quot;<br />
-<br />
-ComponentText &quot;Please choose the version of Winamp that you wish to install to:&quot;<br />
-<br />
-InstType &quot;Winamp 2&quot;<br />
-InstType &quot;Winamp 3&quot;<br />
-InstType /NOCUSTOM<br />
-<br />
-AutoCloseWindow false<br />
-ShowInstDetails show<br />
-<br />
-Section &quot;-&quot;<br />
-SectionIn 1 2<br />
-SectionEnd<br />
-<br />
-Section &quot;PP Minipack for Winamp 2&quot;<br />
-SectionIn 1<br />
-	SetOutPath &quot;$INSTDIR\Plugins\AVS&quot;<br />
-<br />
- 	File &quot;D:\winamp3\wacs\data\avs\multiplier.ape&quot;<br />
-<br />
-	SetOutPath &quot;$INSTDIR\Plugins\AVS\JHERiKO - Purely Platonic Minipack&quot;<br />
-<br />
-	File &quot;D:\winamp3\wacs\data\avs\Jheriko - Purely Platonic Minipack\*.avs&quot;<br />
-SectionEnd<br />
-<br />
-Section &quot;PP Minipack for Winamp 3&quot;<br />
-SectionIn 2<br />
-	SetOutPath &quot;$INSTDIR\wacs\data\AVS\&quot;<br />
-<br />
- 	File &quot;D:\winamp3\wacs\data\avs\multiplier.ape&quot;<br />
-<br />
-	SetOutPath &quot;$INSTDIR\wacs\data\AVS\JHERiKO - Purely Platonic Minipack&quot;<br />
-<br />
-	File &quot;D:\winamp3\wacs\data\avs\Jheriko - Purely Platonic Minipack\*.avs&quot;<br />
-SectionEnd
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">21st September 2002 18:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		it <u>is</u> schweet<br />
-<br />
-gj, and thx for all ur help again!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">22nd September 2002 06:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for the thanks, I like helping people, makes me feel all big and clever. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">22nd September 2002 06:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Oh but you are, anyone who can calculate phi without iterating is obviously of a higher species. (Non-sarcasm)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">22nd September 2002 07:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>I love maths.</strong><br />
-		
-		
-
-		Okay, I'll explain how the value I use as phi is calculated in a finite manner.<br />
-<br />
-Phi is the ratio of the sides of a rectangle which, when cut into a square and a remainder, gives a remainder rectangle with sides of ratio phi. So, by using areas, we can see that:<br />
-<br />
-1 + 1/phi = phi<br />
-<br />
-or, more nicely,<br />
-<br />
-1/phi = phi -1<br />
-<br />
-My calculation of phi is pretty standard, all that I did was solve the definiton of phi that I explained above by rearranging it a little:<br />
-<br />
-1/phi = phi - 1<br />
-<br />
-1 = phi^2 - phi<br />
-<br />
-phi^2 - phi - 1 = 0<br />
-<br />
-Using the quadratic formula and taking the postive solution (the negative one is -1/phi). There are iterative formulae which limit towards phi but, originally, phi was defined in Euclid's Elements geometrically using the ancient greek mathematics which was limited to whole numbers, fractions and the solutions to quadratic equations.<br />
-<br />
-I think Euclid also used phi to determine the vertices of the dodecahedron and icosahedron but I'm not sure because I haven't read all of 'The Elements' (his definitions of those shapes are right near the end) but I would think it is likely that he used the same method as I did since it is geometric rather than algebraic. <br />
-<br />
-The maths I've been using in my latest AVS presets is thousands of years old. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">23rd September 2002 17:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hmmm phi might be another magical math number, but unlike e or pi it's quite easy to calculate (it's not a trancendental number) :).<br />
-<br />
-Though you could say that Jheriko's method is iterative, because the traditional method of calculating square roots is an iterative algorithm that approximates the square root with a rational number of increasing precision.<br />
-<br />
-I learnt Jheriko's method in school too, don't see why you'd consider it to be so special.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">23rd September 2002 18:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well, I just never saw phi as being able to be calculated using a straight formula.<br />
-<br />
-How do you get the pi in 'loge (-1) = i*pi'? Here's what I've tried.<br />
-<br />
-logi (-1) = 2<br />
-<br />
-logi (-1) = loge (-1) / loge (i)<br />
-loge (-1) = logi (-1) / logi (e) <br />
-<br />
-loge (-1) = 2 / logi (e)<br />
-loge (-1) = loge (-1) / (loge (i) * logi (e))<br />
-loge (-1) = loge (-1) / (loge (i) * logi (e)) <br />
-<br />
-loge (-1) + loge (-1) = loge (i)<br />
-<br />
-Any suggestions?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">23rd September 2002 19:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		presumably you mean loge as in natural logarithm? so you mean e^ipi=-1.<br />
-<br />
-Well the easiest way to solve this one is to use the identity<br />
-<br />
-e^itheta = cos (theta) + isin(theta)<br />
-<br />
-which you can prove by expanding the series for e^x and cos(x)+isin(x)<br />
-(deriving these series is another matter entirely, you can use maclaurin expansions to get the sin(x) and cos(x) series and some calculus to define e as the sum of powers/factorials, remembering that x^0=1 and 0!=1)<br />
-<br />
-e^x = 1+x+x^2/2!+x^3/3!+x^4/4!...<br />
-cos(x)= 1-x^2/2!+x^4/4!-x^6/6!+x^8/8!...<br />
-sin(x) = x-x^3/3!+x^5/5!-x^7/7!...<br />
-<br />
-if you add if you do e^ix you get<br />
-<br />
-e^ix=1+ix+(ix)^2/2!+(ix)^3/3!...<br />
-using i^2=-1, i^3=-i, i^4=1, i^5=i, i^6=-1 ...<br />
-=1+ix-x^2/2!-ix^3/3!+x^4/4!+ix^5/5...<br />
-=(1+x^2/2!-x^4/4!...)+(ix-ix^3/3+ix^5/5...)<br />
-=cos(x)+isin(x)<br />
-<br />
-so since cos(pi)=-1 and sin(pi)=0<br />
-<br />
-e^ipi = -1<br />
-<br />
-hopefully i made that understandable :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">24th September 2002 06:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		That's kinda freaky though, that the 2 most irrational numbers and a number that can only be referred to, come together to form negative unity.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">24th September 2002 09:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You know that the sum of two positive infinities can be negative whole numbers as well.<br />
-<br />
-Integrate 1/(x^2) between 1 and -1<br />
-<br />
-= 1/-1 - 1/1 = -2<br />
-<br />
-Integrate between -1 and 0 or 0 and -1 and you get two values that tend to positive infinity.<br />
-<br />
-<br />
-10 points to someone who can explain why and 100 points to anyone who can prove that my first statement is wrong.<br />
-<br />
-&lt;ooooh, i have made 2^8 posts&gt;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">24th September 2002 12:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		STOP, YOU'RE KILLING ME!!! :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">24th September 2002 12:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think I will stop, all of this maths is taking away from the mega-coolness of my installer script. Which is what this thread was originally all about.<br />
-<br />
-:cool:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">1st October 2002 04:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah, i sure did like your script<br />
-<br />
-(<br />
-although, how many people <u>don't</u> have WA2 and WA3 on their systems?<br />
-<br />
-Winamp never did (and i dont believe they should) make an effort to erase or write over WA2<br />
-)<br />
-<br />
-(i know people disagree w/ me, but i sure do like WA3 a helluva lot better than WA2)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd October 2002 20:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Can I use your script for mah pack, jheriko?<br />
-<br />
-&lt;noob&gt; How do you make icons? &lt;/noob&gt;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">2nd October 2002 22:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		well, atero, i was having that same problem<br />
-<br />
-try <br />
-<a href="http://download.com.com/3120-20-0.html?qt=articons&amp;tg=dl-2001&amp;search=+Go%21+" target="_blank">ArtIcons</a><br />
-<br />
-<br />
-and i &quot;found&quot; my serial for that program<br />
-<br />
-its the best, (make sure the icon is the right dimension, NSIS wants exact shiznet) (its 32x32x16 i beleive
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">2nd October 2002 22:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Anyone can use my script, thats why I posted it here. :)<br />
-<br />
-EDIT: Atero try Icon Edit Pro, Tuggummi recommended it to me, you can get it from <a href="http://www.iconedit.com" target="_blank">http://www.iconedit.com</a> its a shareware version but is fully functional and really useful. You won't need to 'find' any serial numbers. ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">3rd October 2002 00:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Karnov </i><br />
-<b>make sure the icon is the right dimension, NSIS wants exact shiznet (its 32x32x16 i beleive </b></blockquote>
-that applies for the old NSIS 1.x only, <a href="http://nsis.sourceforge.net" target="_blank">NSIS 2.x</a> supports all sizes and colors!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">3rd October 2002 13:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Im gonna wait for nsis 2 to be finished before I start using it, although I have to admit that those develpoment versions are really snazzy.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">3rd October 2002 15:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>NSIS 2 Script</strong><br />
-		
-		
-
-		I made an NSIS 2 version of the script so that if you want to use the highcolor icons you can. The changes are negligable and mainly revolve around the directory detection bit since the SectionGetFlags function has changed to a more user friendly version. I haven't implemented any of the new UI features but I'm sure that you would probably want to add them yourself. I'll probably make a new script when NSIS 2 is finished with lots of nice things like uninstallers and subsections and a splash screen and stuff.<br />
-<br />
-You can add the icon tag where it was before.<br />
-<br />
-<br />
-<br />
-<br />
-Name &quot;Jheriko - 6point5 Minipack&quot;<br />
-OutFile &quot;6point5.exe&quot;<br />
-<br />
-Function .onInit<br />
-StrCpy $9 0<br />
-FunctionEnd<br />
-<br />
-Function .onNextPage<br />
-<br />
-IntOp $9 $9 + 1<br />
-<br />
-IntCmp $9 2 nothing<br />
-<br />
-Goto jump<br />
-<br />
-nothing:<br />
-<br />
-SectionGetFlags 1 $1<br />
-<br />
-IntCmp $1 1 getwa3path getwa2path getwa3path<br />
-<br />
-getwa2path:<br />
-ReadRegStr $INSTDIR HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp&quot; &quot;UninstallString&quot; <br />
-StrCpy $INSTDIR $INSTDIR &quot;&quot; 1 <br />
-Goto skippy<br />
-<br />
-getwa3path:<br />
-ReadRegStr $INSTDIR HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3&quot; &quot;UninstallString&quot;<br />
-<br />
-skippy:<br />
-<br />
-StrCpy $1 $INSTDIR<br />
-loopy:<br />
-StrCpy $2 $INSTDIR 1 $1<br />
-StrCmp $2 &quot;&quot; lpdone<br />
-StrCmp $2 &quot;\&quot; lpdone<br />
-IntOp $1 $1 - 1<br />
-Goto loopy<br />
-lpdone:<br />
-StrCpy $INSTDIR $INSTDIR $1<br />
-<br />
-jump:<br />
-<br />
-FunctionEnd<br />
-<br />
-Function .onPrevPage<br />
-<br />
-IntOp $9 $9 - 1<br />
-<br />
-FunctionEnd<br />
-<br />
-DirText &quot;Please enter your full Winamp path below.&quot;<br />
-<br />
-ComponentText &quot;Please choose the version of Winamp that you wish to install to:&quot;<br />
-<br />
-InstType &quot;Winamp 2&quot;<br />
-InstType &quot;Winamp 3&quot;<br />
-InstType /NOCUSTOM<br />
-<br />
-AutoCloseWindow false<br />
-ShowInstDetails show<br />
-<br />
-Section &quot;-&quot;<br />
-SectionIn 1 2<br />
-SectionEnd<br />
-<br />
-Section &quot;6point5 for Winamp 2.x&quot;<br />
-SectionIn 1<br />
-	SetOutPath &quot;$INSTDIR\Plugins\AVS&quot;<br />
-<br />
- 	File &quot;D:\winamp3\wacs\data\avs\multiplier.ape&quot;<br />
- 	File &quot;D:\winamp3\wacs\data\avs\convolution.ape&quot;<br />
- 	File &quot;D:\winamp3\wacs\data\avs\channelshift.ape&quot;	<br />
-<br />
-	SetOutPath &quot;$INSTDIR\Plugins\AVS\JHERiKO - 6point5&quot;<br />
-<br />
-	File &quot;D:\winamp3\wacs\data\avs\New Minipack\*.avs&quot;<br />
-SectionEnd<br />
-<br />
-Section &quot;6point5 for Winamp 3.x&quot;<br />
-SectionIn 2<br />
-	SetOutPath &quot;$INSTDIR\wacs\data\AVS\&quot;<br />
-<br />
- 	File &quot;D:\winamp3\wacs\data\avs\multiplier.ape&quot;<br />
- 	File &quot;D:\winamp3\wacs\data\avs\convolution.ape&quot;<br />
- 	File &quot;D:\winamp3\wacs\data\avs\channelshift.ape&quot;<br />
-<br />
-	SetOutPath &quot;$INSTDIR\wacs\data\AVS\JHERiKO - 6point5&quot;<br />
-<br />
-	File &quot;D:\winamp3\wacs\data\avs\New Minipack\*.avs&quot;<br />
-SectionEnd
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">stoopidgenius</span><br />
-			<span class="date small text-muted">20th November 2002 22:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>??</strong><br />
-		
-		
-
-		&lt;supernoob&gt;how do U use the scripts?&lt;/supernoob&gt;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">20th November 2002 23:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks J. I'll be using this for NDD3 and beyond.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">21st November 2002 03:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm no expert, but I believe you just change this line<br />
-
-	<pre><code>File</span><span style="color: #DD0000">"D:\winamp3\wacs\data\avs\NewMinipack\*.avs"
-</code></pre>
-	
-to the path of your pack and it's good.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">21st November 2002 14:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		stoopidgenius: you need <a href="http://nsis.sourceforge.net" target="_blank">NSIS</a>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">stoopidgenius</span><br />
-			<span class="date small text-muted">21st November 2002 22:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>NSIS</strong><br />
-		
-		
-
-		I have NSIS, but either it<br />
-1. installed bad, or<br />
-2. I'm a political dumbass.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">23rd November 2002 11:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Try getting NSIS2
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">23rd November 2002 12:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Jheriko: just a little question... in the script you used for your previous packs, installing for WA2 or WA3 was like choosing between different sections. However, you could only select one winamp and this had to be done through the drop-down selector at the top (install-type): you couldn't click the options themselves.<br />
-Have you fixed this yet? It really bugs me and I thought your installer was broken at first because of this.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">23rd November 2002 13:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		If you take a look at the J7 installer you will (hopefully) see that you can select multiple options for both winamps and also use the checkboxes to choose which version you want. The drop-down combo box is still there for convenience.<br />
-<br />
-I've also attached the script so that you can take a look at it and see how it works.<br />
-<br />
-(Requires latest cvs version of NSIS2)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">2nd May 2003 15:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		By the way, here's something that belongs here....<br />
-<br />
-If you want your presets to appear in numerical order, then you have to include each separately in your script.<br />
-<br />
-For example, if your presets are named &quot;Joe - 01 - Name.avs&quot;:<br />
-<br />
-File &quot;c:\winamp3\wacs\data\avs\Joe's pack\Joe - 01*&quot;<br />
-File &quot;c:\winamp3\wacs\data\avs\Joe's pack\Joe - 02*&quot;<br />
-File &quot;c:\winamp3\wacs\data\avs\Joe's pack\Joe - 03*&quot;<br />
-File &quot;c:\winamp3\wacs\data\avs\Joe's pack\Joe - 04*&quot;<br />
-etc.<br />
-<br />
-Always worked for me, and it gives a more professional touch ;).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">2nd May 2003 16:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by UnConeD </i><br />
-<b>If you want your presets to appear in numerical order, then you have to include each separately in your script.</b></blockquote>
-this is no longer necessary since avs 2.6.0 (or is it the nsis betas that now sort files?)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">2nd May 2003 18:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I believe it's the NFTS filesystem. Older versions of avs are also sorted on my computer (win xp with ntfs as filesystem). <br />
-My 98SE computer doesn't have sorting, even with NSIS beta installers. I haven't tried a winamp2 version with avs 2.6.0 on that computer though.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">2nd May 2003 19:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i've been using ntfs as long as i can think.. and in the past the files weren't sorted
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">2nd May 2003 20:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by UnConeD </i><br />
-<b>Hmmm phi might be another magical math number</b></blockquote>
-Ever watched PI - the movie? ;)<br />
-<br />
-Btw, thanks jheriko, this will come in handy for the hotlist 2.2 installer (saves me the &quot;figuring out&quot; time, grab and adjust is a lot faster :D)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">2nd May 2003 20:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		MagicX: yes I saw the movie, really cool and awesome soundtrack...<br />
-I revived this thread for installer info though, let's keep it on topic :) (we were talking about phi btw, not pi).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">4th May 2003 04:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yathosho: yes, but what about us smart people that have gone back to 2.5?  that's sort of like saying you don't need to code your installers for winamp 2.x support :rolleyes:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Wiser87</span><br />
-			<span class="date small text-muted">4th May 2003 05:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Atero </i><br />
-<b>yathosho: yes, but what about us smart people that have gone back to 2.5?  that's sort of like saying you don't need to code your installers for winamp 2.x support :rolleyes: </b></blockquote>
-2.5? :confused:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">4th May 2003 11:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		so you think you're smart ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">4th May 2003 20:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		great script jheriko. Keep`em coming :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Installer script</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106373">Installer script</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">21st September 2002 18:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Installer script</strong><br />
+      I've just finished my new installer script, I thought that maybe some of you people here might prefer this method of installing to Winamp 2 or 3 (but still not both unfortunately) to the one using those messy message boxes. This one uses the 'Install Options' menu to choose between Winamp 2 and 3 like my old script but it also autodetects the install directory.<br />
+      <br />
+      I've used my last minipack for the example script here. Please tell me if you find any bugs!<br />
+      <br />
+      Name "Jheriko - Purely Platonic"<br />
+      Icon "platonic.ico"<br />
+      OutFile "J Platonic.exe"<br />
+      <br />
+      EnabledBitmap d:\NSIS\Contrib\two-check.bmp<br />
+      DisabledBitmap d:\NSIS\Contrib\two-nocheck.bmp<br />
+      <br />
+      Function .onInit<br />
+      StrCpy $9 0<br />
+      FunctionEnd<br />
+      <br />
+      Function .onNextPage<br />
+      <br />
+      IntOp $9 $9 + 1<br />
+      <br />
+      IntCmp $9 2 nothing<br />
+      <br />
+      Goto jump<br />
+      <br />
+      nothing:<br />
+      <br />
+      SectionGetFlags 1 $1<br />
+      <br />
+      IntCmpU $1 2147483648 getwa2path getwa3path getwa2path<br />
+      <br />
+      getwa2path:<br />
+      ReadRegStr $INSTDIR HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" "UninstallString"<br />
+      StrCpy $INSTDIR $INSTDIR "" 1<br />
+      Goto skippy<br />
+      <br />
+      getwa3path:<br />
+      ReadRegStr $INSTDIR HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3" "UninstallString"<br />
+      <br />
+      skippy:<br />
+      <br />
+      StrCpy $1 $INSTDIR<br />
+      loopy:<br />
+      StrCpy $2 $INSTDIR 1 $1<br />
+      StrCmp $2 "" lpdone<br />
+      StrCmp $2 "\" lpdone<br />
+      IntOp $1 $1 - 1<br />
+      Goto loopy<br />
+      lpdone:<br />
+      StrCpy $INSTDIR $INSTDIR $1<br />
+      <br />
+      jump:<br />
+      <br />
+      FunctionEnd<br />
+      <br />
+      Function .onPrevPage<br />
+      <br />
+      IntOp $9 $9 - 1<br />
+      <br />
+      FunctionEnd<br />
+      <br />
+      DirText "Please enter your full Winamp path below."<br />
+      <br />
+      ComponentText "Please choose the version of Winamp that you wish to install to:"<br />
+      <br />
+      InstType "Winamp 2"<br />
+      InstType "Winamp 3"<br />
+      InstType /NOCUSTOM<br />
+      <br />
+      AutoCloseWindow false<br />
+      ShowInstDetails show<br />
+      <br />
+      Section "-"<br />
+      SectionIn 1 2<br />
+      SectionEnd<br />
+      <br />
+      Section "PP Minipack for Winamp 2"<br />
+      SectionIn 1<br />
+      SetOutPath "$INSTDIR\Plugins\AVS"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\multiplier.ape"<br />
+      <br />
+      SetOutPath "$INSTDIR\Plugins\AVS\JHERiKO - Purely Platonic Minipack"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\Jheriko - Purely Platonic Minipack\*.avs"<br />
+      SectionEnd<br />
+      <br />
+      Section "PP Minipack for Winamp 3"<br />
+      SectionIn 2<br />
+      SetOutPath "$INSTDIR\wacs\data\AVS\"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\multiplier.ape"<br />
+      <br />
+      SetOutPath "$INSTDIR\wacs\data\AVS\JHERiKO - Purely Platonic Minipack"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\Jheriko - Purely Platonic Minipack\*.avs"<br />
+      SectionEnd</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Karnov</span><br />
+      <span class="post-time small text-muted">21st September 2002 18:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">it <u>is</u> schweet<br />
+      <br />
+      gj, and thx for all ur help again!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">22nd September 2002 06:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks for the thanks, I like helping people, makes me feel all big and clever. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">22nd September 2002 06:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Oh but you are, anyone who can calculate phi without iterating is obviously of a higher species. (Non-sarcasm)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">22nd September 2002 07:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>I love maths.</strong><br />
+      Okay, I'll explain how the value I use as phi is calculated in a finite manner.<br />
+      <br />
+      Phi is the ratio of the sides of a rectangle which, when cut into a square and a remainder, gives a remainder rectangle with sides of ratio phi. So, by using areas, we can see that:<br />
+      <br />
+      1 + 1/phi = phi<br />
+      <br />
+      or, more nicely,<br />
+      <br />
+      1/phi = phi -1<br />
+      <br />
+      My calculation of phi is pretty standard, all that I did was solve the definiton of phi that I explained above by rearranging it a little:<br />
+      <br />
+      1/phi = phi - 1<br />
+      <br />
+      1 = phi^2 - phi<br />
+      <br />
+      phi^2 - phi - 1 = 0<br />
+      <br />
+      Using the quadratic formula and taking the postive solution (the negative one is -1/phi). There are iterative formulae which limit towards phi but, originally, phi was defined in Euclid's Elements geometrically using the ancient greek mathematics which was limited to whole numbers, fractions and the solutions to quadratic equations.<br />
+      <br />
+      I think Euclid also used phi to determine the vertices of the dodecahedron and icosahedron but I'm not sure because I haven't read all of 'The Elements' (his definitions of those shapes are right near the end) but I would think it is likely that he used the same method as I did since it is geometric rather than algebraic.<br />
+      <br />
+      The maths I've been using in my latest AVS presets is thousands of years old. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">23rd September 2002 17:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Hmmm phi might be another magical math number, but unlike e or pi it's quite easy to calculate (it's not a trancendental number) :).<br />
+      <br />
+      Though you could say that Jheriko's method is iterative, because the traditional method of calculating square roots is an iterative algorithm that approximates the square root with a rational number of increasing precision.<br />
+      <br />
+      I learnt Jheriko's method in school too, don't see why you'd consider it to be so special.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">23rd September 2002 18:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Well, I just never saw phi as being able to be calculated using a straight formula.<br />
+      <br />
+      How do you get the pi in 'loge (-1) = i*pi'? Here's what I've tried.<br />
+      <br />
+      logi (-1) = 2<br />
+      <br />
+      logi (-1) = loge (-1) / loge (i)<br />
+      loge (-1) = logi (-1) / logi (e)<br />
+      <br />
+      loge (-1) = 2 / logi (e)<br />
+      loge (-1) = loge (-1) / (loge (i) * logi (e))<br />
+      loge (-1) = loge (-1) / (loge (i) * logi (e))<br />
+      <br />
+      loge (-1) + loge (-1) = loge (i)<br />
+      <br />
+      Any suggestions?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">23rd September 2002 19:26 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">presumably you mean loge as in natural logarithm? so you mean e^ipi=-1.<br />
+      <br />
+      Well the easiest way to solve this one is to use the identity<br />
+      <br />
+      e^itheta = cos (theta) + isin(theta)<br />
+      <br />
+      which you can prove by expanding the series for e^x and cos(x)+isin(x)<br />
+      (deriving these series is another matter entirely, you can use maclaurin expansions to get the sin(x) and cos(x) series and some calculus to define e as the sum of powers/factorials, remembering that x^0=1 and 0!=1)<br />
+      <br />
+      e^x = 1+x+x^2/2!+x^3/3!+x^4/4!...<br />
+      cos(x)= 1-x^2/2!+x^4/4!-x^6/6!+x^8/8!...<br />
+      sin(x) = x-x^3/3!+x^5/5!-x^7/7!...<br />
+      <br />
+      if you add if you do e^ix you get<br />
+      <br />
+      e^ix=1+ix+(ix)^2/2!+(ix)^3/3!...<br />
+      using i^2=-1, i^3=-i, i^4=1, i^5=i, i^6=-1 ...<br />
+      =1+ix-x^2/2!-ix^3/3!+x^4/4!+ix^5/5...<br />
+      =(1+x^2/2!-x^4/4!...)+(ix-ix^3/3+ix^5/5...)<br />
+      =cos(x)+isin(x)<br />
+      <br />
+      so since cos(pi)=-1 and sin(pi)=0<br />
+      <br />
+      e^ipi = -1<br />
+      <br />
+      hopefully i made that understandable :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">24th September 2002 06:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">That's kinda freaky though, that the 2 most irrational numbers and a number that can only be referred to, come together to form negative unity.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">24th September 2002 09:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">You know that the sum of two positive infinities can be negative whole numbers as well.<br />
+      <br />
+      Integrate 1/(x^2) between 1 and -1<br />
+      <br />
+      = 1/-1 - 1/1 = -2<br />
+      <br />
+      Integrate between -1 and 0 or 0 and -1 and you get two values that tend to positive infinity.<br />
+      <br />
+      <br />
+      10 points to someone who can explain why and 100 points to anyone who can prove that my first statement is wrong.<br />
+      <br />
+      &lt;ooooh, i have made 2^8 posts&gt;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
+      <span class="post-time small text-muted">24th September 2002 12:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">STOP, YOU'RE KILLING ME!!! :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">24th September 2002 12:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I think I will stop, all of this maths is taking away from the mega-coolness of my installer script. Which is what this thread was originally all about.<br />
+      <br />
+      :cool:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Karnov</span><br />
+      <span class="post-time small text-muted">1st October 2002 04:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yeah, i sure did like your script<br />
+      <br />
+      (<br />
+      although, how many people <u>don't</u> have WA2 and WA3 on their systems?<br />
+      <br />
+      Winamp never did (and i dont believe they should) make an effort to erase or write over WA2<br />
+      )<br />
+      <br />
+      (i know people disagree w/ me, but i sure do like WA3 a helluva lot better than WA2)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd October 2002 20:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Can I use your script for mah pack, jheriko?<br />
+      <br />
+      &lt;noob&gt; How do you make icons? &lt;/noob&gt;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Karnov</span><br />
+      <span class="post-time small text-muted">2nd October 2002 22:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">well, atero, i was having that same problem<br />
+      <br />
+      try<br />
+      <a href="http://download.com.com/3120-20-0.html?qt=articons&amp;tg=dl-2001&amp;search=+Go%21+" target="_blank">ArtIcons</a><br />
+      <br />
+      <br />
+      and i "found" my serial for that program<br />
+      <br />
+      its the best, (make sure the icon is the right dimension, NSIS wants exact shiznet) (its 32x32x16 i beleive</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">2nd October 2002 22:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Anyone can use my script, thats why I posted it here. :)<br />
+      <br />
+      EDIT: Atero try Icon Edit Pro, Tuggummi recommended it to me, you can get it from <a href="http://www.iconedit.com" target="_blank">http://www.iconedit.com</a> its a shareware version but is fully functional and really useful. You won't need to 'find' any serial numbers. ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">3rd October 2002 00:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Karnov</i><br />
+        <b>make sure the icon is the right dimension, NSIS wants exact shiznet (its 32x32x16 i beleive</b>
+      </blockquote>that applies for the old NSIS 1.x only, <a href="http://nsis.sourceforge.net" target="_blank">NSIS 2.x</a> supports all sizes and colors!
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">3rd October 2002 13:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Im gonna wait for nsis 2 to be finished before I start using it, although I have to admit that those develpoment versions are really snazzy.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">3rd October 2002 15:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>NSIS 2 Script</strong><br />
+      I made an NSIS 2 version of the script so that if you want to use the highcolor icons you can. The changes are negligable and mainly revolve around the directory detection bit since the SectionGetFlags function has changed to a more user friendly version. I haven't implemented any of the new UI features but I'm sure that you would probably want to add them yourself. I'll probably make a new script when NSIS 2 is finished with lots of nice things like uninstallers and subsections and a splash screen and stuff.<br />
+      <br />
+      You can add the icon tag where it was before.<br />
+      <br />
+      <br />
+      <br />
+      <br />
+      Name "Jheriko - 6point5 Minipack"<br />
+      OutFile "6point5.exe"<br />
+      <br />
+      Function .onInit<br />
+      StrCpy $9 0<br />
+      FunctionEnd<br />
+      <br />
+      Function .onNextPage<br />
+      <br />
+      IntOp $9 $9 + 1<br />
+      <br />
+      IntCmp $9 2 nothing<br />
+      <br />
+      Goto jump<br />
+      <br />
+      nothing:<br />
+      <br />
+      SectionGetFlags 1 $1<br />
+      <br />
+      IntCmp $1 1 getwa3path getwa2path getwa3path<br />
+      <br />
+      getwa2path:<br />
+      ReadRegStr $INSTDIR HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" "UninstallString"<br />
+      StrCpy $INSTDIR $INSTDIR "" 1<br />
+      Goto skippy<br />
+      <br />
+      getwa3path:<br />
+      ReadRegStr $INSTDIR HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3" "UninstallString"<br />
+      <br />
+      skippy:<br />
+      <br />
+      StrCpy $1 $INSTDIR<br />
+      loopy:<br />
+      StrCpy $2 $INSTDIR 1 $1<br />
+      StrCmp $2 "" lpdone<br />
+      StrCmp $2 "\" lpdone<br />
+      IntOp $1 $1 - 1<br />
+      Goto loopy<br />
+      lpdone:<br />
+      StrCpy $INSTDIR $INSTDIR $1<br />
+      <br />
+      jump:<br />
+      <br />
+      FunctionEnd<br />
+      <br />
+      Function .onPrevPage<br />
+      <br />
+      IntOp $9 $9 - 1<br />
+      <br />
+      FunctionEnd<br />
+      <br />
+      DirText "Please enter your full Winamp path below."<br />
+      <br />
+      ComponentText "Please choose the version of Winamp that you wish to install to:"<br />
+      <br />
+      InstType "Winamp 2"<br />
+      InstType "Winamp 3"<br />
+      InstType /NOCUSTOM<br />
+      <br />
+      AutoCloseWindow false<br />
+      ShowInstDetails show<br />
+      <br />
+      Section "-"<br />
+      SectionIn 1 2<br />
+      SectionEnd<br />
+      <br />
+      Section "6point5 for Winamp 2.x"<br />
+      SectionIn 1<br />
+      SetOutPath "$INSTDIR\Plugins\AVS"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\multiplier.ape"<br />
+      File "D:\winamp3\wacs\data\avs\convolution.ape"<br />
+      File "D:\winamp3\wacs\data\avs\channelshift.ape"<br />
+      <br />
+      SetOutPath "$INSTDIR\Plugins\AVS\JHERiKO - 6point5"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\New Minipack\*.avs"<br />
+      SectionEnd<br />
+      <br />
+      Section "6point5 for Winamp 3.x"<br />
+      SectionIn 2<br />
+      SetOutPath "$INSTDIR\wacs\data\AVS\"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\multiplier.ape"<br />
+      File "D:\winamp3\wacs\data\avs\convolution.ape"<br />
+      File "D:\winamp3\wacs\data\avs\channelshift.ape"<br />
+      <br />
+      SetOutPath "$INSTDIR\wacs\data\AVS\JHERiKO - 6point5"<br />
+      <br />
+      File "D:\winamp3\wacs\data\avs\New Minipack\*.avs"<br />
+      SectionEnd</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">stoopidgenius</span><br />
+      <span class="post-time small text-muted">20th November 2002 22:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>??</strong><br />
+      &lt;supernoob&gt;how do U use the scripts?&lt;/supernoob&gt;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
+      <span class="post-time small text-muted">20th November 2002 23:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks J. I'll be using this for NDD3 and beyond.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">21st November 2002 03:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I'm no expert, but I believe you just change this line<br /></p>
+      <pre>
+<code>File</code><span style="color: #DD0000">"D:\winamp3\wacs\data\avs\NewMinipack\*.avs"
+</span>
+</pre>to the path of your pack and it's good.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">21st November 2002 14:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">stoopidgenius: you need <a href="http://nsis.sourceforge.net" target="_blank">NSIS</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">stoopidgenius</span><br />
+      <span class="post-time small text-muted">21st November 2002 22:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>NSIS</strong><br />
+      I have NSIS, but either it<br />
+      1. installed bad, or<br />
+      2. I'm a political dumbass.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">23rd November 2002 11:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Try getting NSIS2</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">23rd November 2002 12:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Jheriko: just a little question... in the script you used for your previous packs, installing for WA2 or WA3 was like choosing between different sections. However, you could only select one winamp and this had to be done through the drop-down selector at the top (install-type): you couldn't click the options themselves.<br />
+      Have you fixed this yet? It really bugs me and I thought your installer was broken at first because of this.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">23rd November 2002 13:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">If you take a look at the J7 installer you will (hopefully) see that you can select multiple options for both winamps and also use the checkboxes to choose which version you want. The drop-down combo box is still there for convenience.<br />
+      <br />
+      I've also attached the script so that you can take a look at it and see how it works.<br />
+      <br />
+      (Requires latest cvs version of NSIS2)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">2nd May 2003 15:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">By the way, here's something that belongs here....<br />
+      <br />
+      If you want your presets to appear in numerical order, then you have to include each separately in your script.<br />
+      <br />
+      For example, if your presets are named "Joe - 01 - Name.avs":<br />
+      <br />
+      File "c:\winamp3\wacs\data\avs\Joe's pack\Joe - 01*"<br />
+      File "c:\winamp3\wacs\data\avs\Joe's pack\Joe - 02*"<br />
+      File "c:\winamp3\wacs\data\avs\Joe's pack\Joe - 03*"<br />
+      File "c:\winamp3\wacs\data\avs\Joe's pack\Joe - 04*"<br />
+      etc.<br />
+      <br />
+      Always worked for me, and it gives a more professional touch ;).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">2nd May 2003 16:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by UnConeD</i><br />
+        <b>If you want your presets to appear in numerical order, then you have to include each separately in your script.</b>
+      </blockquote>this is no longer necessary since avs 2.6.0 (or is it the nsis betas that now sort files?)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">2nd May 2003 18:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I believe it's the NFTS filesystem. Older versions of avs are also sorted on my computer (win xp with ntfs as filesystem).<br />
+      My 98SE computer doesn't have sorting, even with NSIS beta installers. I haven't tried a winamp2 version with avs 2.6.0 on that computer though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">2nd May 2003 19:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i've been using ntfs as long as i can think.. and in the past the files weren't sorted</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
+      <span class="post-time small text-muted">2nd May 2003 20:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by UnConeD</i><br />
+        <b>Hmmm phi might be another magical math number</b>
+      </blockquote>Ever watched PI - the movie? ;)<br />
+      <br />
+      Btw, thanks jheriko, this will come in handy for the hotlist 2.2 installer (saves me the "figuring out" time, grab and adjust is a lot faster :D)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">2nd May 2003 20:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">MagicX: yes I saw the movie, really cool and awesome soundtrack...<br />
+      I revived this thread for installer info though, let's keep it on topic :) (we were talking about phi btw, not pi).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">4th May 2003 04:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">yathosho: yes, but what about us smart people that have gone back to 2.5? that's sort of like saying you don't need to code your installers for winamp 2.x support :rolleyes:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Wiser87</span><br />
+      <span class="post-time small text-muted">4th May 2003 05:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>yathosho: yes, but what about us smart people that have gone back to 2.5? that's sort of like saying you don't need to code your installers for winamp 2.x support :rolleyes:</b>
+      </blockquote>2.5? :confused:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br />
+      <span class="post-time small text-muted">4th May 2003 11:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">so you think you're smart ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">4th May 2003 20:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">great script jheriko. Keep`em coming :)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

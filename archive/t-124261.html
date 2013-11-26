@@ -1,395 +1,224 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" 3d sphere AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="3d sphere " />
 
-	<title> 3d sphere - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>3d sphere - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">3d sphere</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=124261">3d sphere</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">7th February 2003 21:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>3d sphere</strong><br />
-		
-		
-
-		Hey :)<br />
- I have searched the forums and i came up with several presets containing code to make a sphere...None of them was too great so i was wondering if you can tell me the simplest way to make one :) I`ve seen movements that create a sphere from a simple scope and scopes recreating the effect but i didnt like it.You need pi in the ecuation right ?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">7th February 2003 22:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The easiest way to create a sphere is to create a spiral on the xz plane, but have the y variable change from -r to r.  This will create the sphere that looks like a coil that starts small at the top, gets big in the middle, and gets small again at the bottom.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">7th February 2003 23:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you make a spiral like that, you should have an equal spread across the surface, not have the y var increase linearly.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">7th February 2003 23:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		parameterization for a sphere:<br />
-x=sin(theta)*sin(phi);<br />
-y=cos(theta)*sin(phi);<br />
-z=cos(phi);<br />
-where theta and phi are angles.  this gives you a point on the sphere, gravitating towards two poles...anyone know of any way to make a randomly-generated point sphere that doesn't do this?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">9th February 2003 00:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Create a 3D box of points, then normalize each one to the radius required.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">9th February 2003 21:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for your ideas...Im working on a scope right now to make a 3d sphere that moves...I believe it will replace a dm with success :) Now another small question : is theta recognised by AVS ? i saw a preset with theta and it had no value in init or anywhere else...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">9th February 2003 21:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No its not recognized by avs.  Are you sure it wasn't used in x=... or y=...?  Variables don't have to be initialized - they default to zero.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">9th February 2003 21:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It was in x=... I`ll try to look it up in my preset library hehe.Except x,y,d,r and all that crap are there some other variables avs have incorporated ?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">9th February 2003 21:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Search the forums.  This has been adressed.  Probably somewhere in the FAQ. Also, look below the per pixel box.  It tells you all of the variables there.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">9th February 2003 21:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I have that forum thread with variables saved :) I meant unknown variables as in easter eggs or hidden in the code...like pi(i hope avs would contain it...writing pi=acos(-1) everytime is boring).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">9th February 2003 22:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No, there are no easter egg variables in AVS.  They didn't document a couple of functions, though.  atan2(x,y) and another one(can't remember what it is).  These have also been mentioned in the forums.  Use the search feature.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">10th February 2003 02:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		the other one is:<br />
-exp(var)::e^var<br />
-as in the inverse of:<br />
-log(var)::ln var
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">10th February 2003 02:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks Atero.  I'd forgotten that one as I never use it(or log for that matter).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">10th February 2003 06:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Something that is stupidly missing though is a Base X log of Y function. They should implement a Log2(x,y) that should be is the same as: Log Y / Log X
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">10th February 2003 08:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Zevensoft, there's no point in that really, because your CPU calculates it exactly the same way. An x86 cpu can only take base-2 logarithms.<br />
-<br />
-Any other logarithm is calculated as log2(y) / log2(x).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">11th February 2003 11:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for your tips...Im working on a superscope trying to recreate a sphere :) I want to make a big big one change into dots and make it move.I`ve seen it several times and its amazing how it goes :) Btw...does AVS have any easter eggs at all ?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">11th February 2003 12:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No, just two functions that aren't documented - atan2(x,y) and exp(x).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">WHCode RED</span><br />
-			<span class="date small text-muted">14th February 2003 17:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		I dont know who made this, but it was on my comp... maybe it could help?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">16th February 2003 20:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for the file but i already have it :) Im trying to figure it out and i dont understand why the creator used such big numbers when i modified the preset and it work with smaller numbers too...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">16th February 2003 21:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		He used bigger numbers to create a better random number generator.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">WHCode RED</span><br />
-			<span class="date small text-muted">16th February 2003 22:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Now that i think about it.. I think it was made by UnConeD but im not 100% sure.. actually i'm not sure at all, but I get this feeling it was.<br />
-<br />
-<font size="1">I'm not saying im physcic or anything..</font>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">17th February 2003 05:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah, that was UnConed.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">3d sphere</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=124261">3d sphere</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">7th February 2003 21:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>3d sphere</strong><br />
+      Hey :)<br />
+      I have searched the forums and i came up with several presets containing code to make a sphere...None of them was too great so i was wondering if you can tell me the simplest way to make one :) I`ve seen movements that create a sphere from a simple scope and scopes recreating the effect but i didnt like it.You need pi in the ecuation right ?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">7th February 2003 22:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The easiest way to create a sphere is to create a spiral on the xz plane, but have the y variable change from -r to r. This will create the sphere that looks like a coil that starts small at the top, gets big in the middle, and gets small again at the bottom.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">7th February 2003 23:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">If you make a spiral like that, you should have an equal spread across the surface, not have the y var increase linearly.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">7th February 2003 23:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">parameterization for a sphere:<br />
+      x=sin(theta)*sin(phi);<br />
+      y=cos(theta)*sin(phi);<br />
+      z=cos(phi);<br />
+      where theta and phi are angles. this gives you a point on the sphere, gravitating towards two poles...anyone know of any way to make a randomly-generated point sphere that doesn't do this?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">9th February 2003 00:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Create a 3D box of points, then normalize each one to the radius required.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">9th February 2003 21:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks for your ideas...Im working on a scope right now to make a 3d sphere that moves...I believe it will replace a dm with success :) Now another small question : is theta recognised by AVS ? i saw a preset with theta and it had no value in init or anywhere else...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">9th February 2003 21:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No its not recognized by avs. Are you sure it wasn't used in x=... or y=...? Variables don't have to be initialized - they default to zero.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">9th February 2003 21:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">It was in x=... I`ll try to look it up in my preset library hehe.Except x,y,d,r and all that crap are there some other variables avs have incorporated ?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">9th February 2003 21:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Search the forums. This has been adressed. Probably somewhere in the FAQ. Also, look below the per pixel box. It tells you all of the variables there.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">9th February 2003 21:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I have that forum thread with variables saved :) I meant unknown variables as in easter eggs or hidden in the code...like pi(i hope avs would contain it...writing pi=acos(-1) everytime is boring).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">9th February 2003 22:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No, there are no easter egg variables in AVS. They didn't document a couple of functions, though. atan2(x,y) and another one(can't remember what it is). These have also been mentioned in the forums. Use the search feature.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">10th February 2003 02:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">the other one is:<br />
+      exp(var)::e^var<br />
+      as in the inverse of:<br />
+      log(var)::ln var</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">10th February 2003 02:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks Atero. I'd forgotten that one as I never use it(or log for that matter).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">10th February 2003 06:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Something that is stupidly missing though is a Base X log of Y function. They should implement a Log2(x,y) that should be is the same as: Log Y / Log X</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">10th February 2003 08:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Zevensoft, there's no point in that really, because your CPU calculates it exactly the same way. An x86 cpu can only take base-2 logarithms.<br />
+      <br />
+      Any other logarithm is calculated as log2(y) / log2(x).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">11th February 2003 11:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks for your tips...Im working on a superscope trying to recreate a sphere :) I want to make a big big one change into dots and make it move.I`ve seen it several times and its amazing how it goes :) Btw...does AVS have any easter eggs at all ?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">11th February 2003 12:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No, just two functions that aren't documented - atan2(x,y) and exp(x).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br />
+      <span class="post-time small text-muted">14th February 2003 17:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I dont know who made this, but it was on my comp... maybe it could help?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">16th February 2003 20:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Thanks for the file but i already have it :) Im trying to figure it out and i dont understand why the creator used such big numbers when i modified the preset and it work with smaller numbers too...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">16th February 2003 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">He used bigger numbers to create a better random number generator.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br />
+      <span class="post-time small text-muted">16th February 2003 22:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Now that i think about it.. I think it was made by UnConeD but im not 100% sure.. actually i'm not sure at all, but I get this feeling it was.<br />
+      <br />
+      <font size="1">I'm not saying im physcic or anything..</font></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">17th February 2003 05:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yeah, that was UnConed.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

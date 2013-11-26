@@ -1,1198 +1,605 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Two raytracing problems AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Two raytracing problems " />
 
-	<title> Two raytracing problems - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Two raytracing problems - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Two raytracing problems</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140507">Two raytracing problems</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">29th June 2003 13:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Two raytracing problems</strong><br />
-		
-		
-
-		I've been trying to do some more advanced raytracing and I have two questions. The code can be found in the sections under each question.<br />
-<br />
----------------<br />
-Question 1: I tried making a hyperboloid from one piece using the formule x^2+y^2-z^2=1. So far no problems, but I wanted to view it from the outside. This means the point of origin must lie outside the object with the equation x^2+y^2-z^2=1. I thought that that would be pretty easy to do by changing to the origin coördinates {ox,oy,oz} to {0,2,0} and then I could find out later how to make sure that the position of origin is relative to the rotation angles in such a way that the camera always look at the object. <br />
-But after I changed {ox,oy,oz} to {0,2,0} (you can do this changing the following line:<br />
-<pre><code><br />
-Frame:<br />
-ox=0;oy=0;oz=0;<br />
-</code></pre><br />
-to<br />
-<pre><code><br />
-Frame<br />
-ox=0;oy=2;oz=0;<br />
-</code></pre><br />
-The view isn't like the object I intended at all. What have I done wrong?<br />
-The code of the dynmov:<br />
-<pre><code><br />
-init<br />
-pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05<br />
-<br />
-frame<br />
-rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />
-ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />
-rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />
-cx=cos(rx);sx=sin(rx);<br />
-cy=cos(ry);sy=sin(ry);<br />
-cz=cos(rz);sz=sin(rz);<br />
-ox=0;oy=0;oz=0;<br />
-c1=ox*ox+oy*oy-oz*oz-1;<br />
-<br />
-beat<br />
-rxc=rand(40)/500-0.05;<br />
-ryc=rand(40)/500-0.05;<br />
-rzc=rand(40)/500-0.05;<br />
-<br />
-point<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-a1=x3d*x3d+y2d*y2d-z3d*z3d;b1=2*(x3d*ox+y2d*oy-z3d*oz);<br />
-ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />
-k1=-b1/(2*a1)+ki;<br />
-k2=-b1/(2*a1)-ki;<br />
-k=min(k1,k2);<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=abs(atan2(ix,iy))/pi*2;y=iz*3;<br />
-alpha=1.3-abs(iz)/2;<br />
-</code></pre><br />
-<br />
----------------<br />
-Question 2: I wanted to do a triangular tunnel by defining three planes with the following formulas: <br />
-<br />
--x+y=2<br />
-x+y=2<br />
-y=-sqrt(2)<br />
-<br />
-This should give you a triangle tunnel, but instead I get something very strange. There are three planes, which will form a triangle when extended, but on and around the places where the triangle sides should meet, there are some strange planes that go to infinity. Making the k1, k2 and k3 absolute solves the problem, but gives you a six-sided tunnel. I want a three-sided one.<br />
-I think the problem has to do with the -infinity outcomes for k1, k2 and k3, but I can't get rid of those without making the tunnel six-sided. The code of the dynmov:<br />
-<pre><code><br />
-init<br />
-pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05<br />
-<br />
-frame<br />
-rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />
-ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />
-rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />
-cx=cos(rx);sx=sin(rx);<br />
-cy=cos(ry);sy=sin(ry);<br />
-cz=cos(rz);sz=sin(rz);<br />
-ox=0;oy=0;oz=0;<br />
-<br />
-beat<br />
-rxc=rand(40)/500-0.05;<br />
-ryc=rand(40)/500-0.05;<br />
-rzc=rand(40)/500-0.05;<br />
-<br />
-point<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy)/(y2d-x3d);<br />
-k2=(2-ox-oy)/(y2d+x3d);<br />
-k3=(-sqrt(2)-oy)/y2d;<br />
-k=min(k1,min(k2,k3));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=ix;y=iz;<br />
-alpha=1.3-abs(iz)*0.5;<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">29th June 2003 14:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		For the second problem:<br />
-<br />
-<pre><code><br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy)/(y2d-x3d);<br />
-k1=if(below(k1,0),5000,k1);<br />
-k2=(2-ox-oy)/(y2d+x3d);<br />
-k2=if(below(k2,0),5000,k2);<br />
-k3=(-sqrt(2)-oy)/y2d;<br />
-k3=if(below(k3,0),5000,k3);<br />
-k=min(k1,min(k2,k3));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=ix;y=iz;<br />
-alpha=1.3-abs(iz)*0.5;<br />
-</code></pre><br />
-<br />
-Min takes the lowest value, so if k2=-100 and k3=-50, your math would choose k2.  I changed the code so it (essentially) takes the number with the lowest positive value, but does not use that number's absolute value.  At leat I think that's what I did...  It kinda don't look right to me<br />
-<br />
-I haven't worked on the first problem much, but i'll try to figgure it out...<br />
-<br />
-edit: put that code in per point.<br />
-<br />
-edit2: Man i'm dumb... All I did was get rid of all negative k1,k2,and k3 values, I dunno what I was talking about above...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">29th June 2003 15:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Wow, great, thanks a lot, I now see what I did wrong. 13373571, you'll get a word of thank when I finish my dynmov tetrahedron ;).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">29th June 2003 17:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		In the first one, you use<br />
-<br />
-ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />
-k1=-b1/(2*a1)+ki;<br />
-k2=-b1/(2*a1)-ki;<br />
-k=min(k1,k2);<br />
-<br />
-...  This has the same problem as the second one... if k1=-13373571 and k2=13373571, you will render the negative value...  I don't know if that's your only problem though, I haven't tested because I'm sick of winamp crashing every five minutes...  It's enough to make me want to try winamp 2.<br />
-<br />
-And by the way, I *think* you can use<br />
-<br />
-ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />
-k=-b1/(2*a1)-ki;<br />
-k=if(below(k,0),-b1/(2*a1)+ki,k);<br />
-<br />
-and then blend out negative ks...<br />
-<br />
-
-	<blockquote>
-			
-				Wow, great, thanks a lot, I now see what I did wrong. 13373571, you'll get a word of thank when I finish my dynmov tetrahedron .</blockquote>
-Yeesh, even thinking about a DM tetrahedron makes my head hurt :D  especially if you're going to be viewing it from outside...<br />
-<br />
-edit: Wow I use a lot of ...s, I need to try to stop doing that
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">30th June 2003 06:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		13373571, the dm master after UnConeD :D (btw, do you have a nick or something? feels funny to call you 13373571)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">30th June 2003 08:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Some people have called me &quot;I.P. Address&quot; and &quot;Numbers&quot;...<br />
-You can say &quot;leet&quot; or 1337 or any variation thereof.  Or just smack your keypad randomly and use the number that comes up.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">30th June 2003 14:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Looks like LeetEsti to me. ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">30th June 2003 16:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yeah, i thought of that too!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">30th June 2003 17:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i always thought it was leetest1<br />
-like &quot;leetest one&quot;.<br />
-<br />
-thanks for the advise though 14234563780, from now on i shall call you 0142387134610..
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">30th June 2003 19:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I made a DM tetraeder. I made it using the following formules for the sides:<br />
-<pre><code><br />
-x+y+z=2<br />
--x+y+z=2<br />
-y+z=-sqrt(2)<br />
-z=-sqrt(2)<br />
-</code></pre><br />
-<br />
-The code for that dynmov is the following:<br />
-<pre><code><br />
-init:<br />
-pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05;<br />
-<br />
-frame:<br />
-rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />
-ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />
-rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />
-cx=cos(rx);sx=sin(rx);<br />
-cy=cos(ry);sy=sin(ry);<br />
-cz=cos(rz);sz=sin(rz);<br />
-ox=0;oy=0;oz=0;<br />
-<br />
-beat:<br />
-rxc=rand(40)/500-0.05;<br />
-ryc=rand(40)/500-0.05;<br />
-rzc=rand(40)/500-0.05;<br />
-<br />
-pixel:<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-k1=if(below(k1,0),5000,k1);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-k2=if(below(k2,0),5000,k2);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-k3=if(below(k3,0),5000,k3);<br />
-k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />
-k4=if(below(k4,0),5000,k4);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-alpha=1.3-abs(iz)*0.5;<br />
-</code></pre><br />
-<br />
-But when I try to view that from the outside, it doesn't look like a tetraeder. The sides 'continue'. It looks like when you see a cube from the outside with all the sides extended infinitely. Using max() instead of min() doesn't work. If you do that, it gets all infinity. I think you have to determine the lines where two planes meet and then use an if()-function to choose min() when inside those lines and to use max() when outside those lines.<br />
-<br />
-I did figure out how to make the camera always point at the center of the object, after looking at UnConeD's WaterCube code. Instead of getting the origin {ox,oy,oz} from the rotation angles {rx,ry,rz}, you determine the rotation angles from the origin. You can do this with atan2(). An example is the following code, which you can paste in the frame section of the dynmov above. <br />
-<pre><code><br />
-frame:<br />
-o=o+or;or=(or*19+oc)*0.05;<br />
-ox=sin(o)*3;oy=cos(o)*3;oz=0;<br />
-rz=atan2(ox,oy);<br />
-rx=atan2(oy,oz);<br />
-ry=0;<br />
-cx=cos(rx);sx=sin(rx);<br />
-cy=cos(ry);sy=sin(ry);<br />
-cz=cos(rz);sz=sin(rz);<br />
-</code></pre><br />
-<br />
-Since oz=0, there's no need to calculate ry.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">1st July 2003 01:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				But when I try to view that from the outside, it doesn't look like a tetraeder. The sides 'continue'. It looks like when you see a cube from the outside with all the sides extended infinitely. Using max() instead of min() doesn't work. If you do that, it gets all infinity.</blockquote>
-The reason we were setting the k values to 5000 was because we were using min and there isn't much chance that 5000 will be the minimum value.  But when using max, we want the negative values to stay negative so that they aren't selected for rendering.<br />
-<br />
-
-	<blockquote>
-			
-				I think you have to determine the lines where two planes meet and then use an if()-function to choose min() when inside those lines and to use max() when outside those lines.</blockquote>
-Lines don't have insides.  And we already know how to get the tetrahedron to work from inside the tetrahedron.  Please be precise when describing ideas, otherwise it's hard for my puny brain to comprehend.  And if you have problems putting your idea into words, it will be even harder for you to put it into code.  This isn't just nitpicking, I honestly have no clue what you're saying.<br />
-<br />
-No, I haven't fixed your tetrahedron, I told you earlier that even thinking about a dm tetrahedron made my head hurt, didn't I?  It's more complex than a cube... :( <br />
-<br />
-Let's just wait for UCD to look at this.<br />
-<br />
-Edit: And no, six lines that intersect at the four corners of a tetrahedron don't have insides either.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">1st July 2003 08:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I meant the pieces of the planes that are inside and outside those lines.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">1st July 2003 09:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You can also make the camera view the orgin by using :<br />
-<br />
-frame: <br />
-rx=rx+bx;ry=ry+by;rz=rz+bz;<br />
-sx=sin(rx);sy=sin(ry);sz=sin(rz);<br />
-cx=cos(rx);cy=cos(ry);cz=cos(rz);<br />
-ox=cy*distance;oy=cz*sy*distance;oz=-sz*sy*distance;<br />
-<br />
-beat:<br />
-bx=(rand(201)*0.01-1)*sp;by=(rand(201)*0.01-1)*sp;bz=(rand(201)*0.01-1)*sp;<br />
-<br />
-point:<br />
-dx=sx*x+cx*y;dy2=cx*x-sx*y;<br />
-dz=sy+cy*dx;dx=cy-sy*dx;<br />
-dy=sz*dy2+cz*dz;dz=cz*dy2-sz*dz;<br />
-...<br />
-....<br />
-And the rotation will stay random
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">1st July 2003 11:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<pre><code><br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />
-k1=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />
-k2=if(below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />
-k3=if(below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iz,-sqrt(2)),k3,1337);<br />
-k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />
-ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />
-k4=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />
-y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-</code></pre><br />
-<br />
-It's supposed to calculate ix,iy,and iz for each plane and then if these coordinates are beyond the bounds of the triangle that each plane is going to be &quot;cut&quot; into, it sets k for that plane to be an arbitrary large number (1337).  When this is done for all of the planes, we should have the four triangles that make up the tetrahedron.  Then supposedly the closest triangle (found with min) should be the proper one.<br />
-<br />
-Unfortunately, it don't work. :(<br />
-anybody know why?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">1st July 2003 14:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The idea seems to be right, but like you said, it doesn't work. My guess is that the way you decide if the coordinates are outside the bounds of the triangle are somehow flawed. The sides of plane z=-sqrt(2) (k3) lie on -ix+iy+iz=2, ix+iy+iz=2, iy+iz=-sqrt(2) and ofcourse z=-sqrt(2), because that the plane itself. Yet you test for -ix+iy+iz=2, ix+iy+iz=2 and <b>iz=-sqrt(2)</b>, but not for iy+iz=-sqrt(2). Was that meant like this and if so, why?<br />
-<br />
-I think we should try to solve this first so that when you view the tetraeder from the inside, it's look normal. Then, if we did it correct, moving the origin outside the object, using nixa's code, would give us a nice DM tetraeder.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">1st July 2003 14:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		...... look carefully at <i>each</i> of the triangle cutter-upper lines.  For each plane, I tested its intersection with the other three, but not its intersection with itself because that would've been just a tad redundant...<br />
-<br />
-I just realized my error though... I had thought that earlier when you were listing the planes, you were putting them in order.  I guess that was a kinda dumb assumption.  Anyways, the fix after that is still a tad glitchy, here is the latest attempt:<br />
-<br />
-<pre><code><br />
-pixel:<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />
-k1=if(below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />
-k2=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />
-k3=if(below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iz,-sqrt(2)),k3,1337);<br />
-k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />
-ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />
-k4=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />
-y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-alpha=1-equal(k,1337);<br />
-</code></pre><br />
-<br />
-At least we have triangles now... sorta
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">1st July 2003 16:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		skupers: this is wrong:<br />
-rz=atan2(ox,oy);<br />
-rx=atan2(oy,oz);<br />
-<br />
-<br />
-The problem with your hyperboloid is twofold:<br />
-- you're not discarding points behind the camera (k&lt;0)<br />
-- you're not discarding points where there is no intersection (b^2-4*a*c &lt; 0 for the quadratic equation).<br />
-<br />
-I won't bother with the tetrahedron, too much trouble :P. Essentially you just raytrace all the front-facing planes, clip all intersectionpoints with the correct triangle and then min the remaining points. A good source for a fast triangle/line intersection test should be the 3D rendering scene. Try flipcode or something.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">1st July 2003 18:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				you're not discarding points where there is no intersection (b^2-4*a*c &lt; 0 for the quadratic equation).</blockquote>
-Right, I forgot that sqrt( a ) is in AVS the same as sqrt( |a| ) (try x=i*2-1;y=sqrt(i); in a SSC to see this).<br />
-<br />
-So, this seems to be a good version of the hyperboloid from one space:<br />
-<br />
-<pre><code><br />
-init:<br />
-pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05;<br />
-<br />
-frame:<br />
-rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />
-ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />
-rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />
-cx=cos(rx);sx=sin(rx);<br />
-cy=cos(ry);sy=sin(ry);<br />
-cz=cos(rz);sz=sin(rz);<br />
-ox=cy*3;oy=cz*sy*3;oz=-sz*sy*3; <br />
-c1=ox*ox+oy*oy-oz*oz-1;<br />
-<br />
-beat:<br />
-rxc=rand(40)/500-0.05;<br />
-ryc=rand(40)/500-0.05;<br />
-rzc=rand(40)/500-0.05;<br />
-<br />
-pixel:<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-a1=x3d*x3d+y2d*y2d-z3d*z3d;b1=2*(x3d*ox+y2d*oy-z3d*oz);<br />
-d1=b1*b1-4*a1*c1;<br />
-k1=if(below(d1,0),50000,(-b1+sqrt(d1))/(2*a1));<br />
-k1=if(below(k1,0),50000,k1);<br />
-k2=if(below(d1,0),50000,(-b1-sqrt(d1))/(2*a1));<br />
-k2=if(below(k2,0),50000,k2);<br />
-k=min(k1,k2);<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=abs(atan2(ix,iy))/pi*2;y=iz*3;<br />
-alpha=2/k-abs(iz)/6/k;<br />
-</code></pre><br />
-<br />
-It's really cool and looks kinda like a wormhole ;).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">1st July 2003 18:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				Essentially you just raytrace all the front-facing planes</blockquote>
-Uhh, what's wrong with doing the back-facing planes too?  It's easier and we're going to be doing min() on k anyways...<br />
-<br />
-I now have a fairly tetrahedral shape going on having fixed a few more obvious stupid errors (not all of which were mine for a change :p I actually looked at skuper's code) but one of the points of the tetrahedron always manages to stretch to infinity and both oy and oz seem to be changing the same value.<br />
-<br />
-The problem isn't with the triangle cutting stuff, that's working great, it's somethin about how dx,dy,dz, and/or ox,oy,oz are being used, they don't do what they're supposed to and I don't see why.<br />
-<br />
-<pre><code><br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />
-k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />
-k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />
-k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy+iz,-sqrt(2)),k3,1337);<br />
-k4=(-sqrt(2)-oy-oz)/(y2d+z3d);<br />
-ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />
-k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />
-y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-alpha=1-equal(k,1337);<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">1st July 2003 22:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yeah, it at least looks like a tetraeder now, but I don't know why on of the points goes to infinity. It seems to me z1=-sqrt(2) is the bottom plane. I'll look into it further tommorrow, it's 0:05 AM in the Netherlands now ;).<br />
-<br />
-
-	<blockquote>
-			
-				I now have a fairly tetrahedral shape going on having fixed a few more obvious stupid errors (not all of which were mine for a change  I actually looked at skuper's code)</blockquote>
-Maybe you could tell me some of those errors, so I don't end up repeating them.<br />
-<br />
-Do you mean oy and oz change per pixel? If so, that isn't happening. You can check that by adding x=x1*oy;y=y1*oz; to the end of the dynmov. They only change per frame (they're ofcourse supposed to do this), not per pixel.<br />
-<br />
-BTW, are you a university student like UnConeD and Jheriko, 1337?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">2nd July 2003 01:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				Maybe you could tell me some of those errors, so I don't end up repeating them.</blockquote>
-but.... they were obvious and I'm lazy.  Just remember the old adage that &quot;When describing many planes, you are likely to switch subtraction and addition once or twice.&quot;<br />
-<br />
-If you set everything to zero (the d's and the o's) and then add small increments to oy and then set it back to zero and do the same with oz, they seem to cause the same changes if I remember correctly.<br />
-<br />
-
-	<blockquote>
-			
-				BTW, are you a university student like UnConeD and Jheriko, 1337?</blockquote>
-No :D I'm entering junior year in high school.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">2nd July 2003 02:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		1337: there's nothing wrong with raytracing the backfacing points, but if you can avoid it easily, it's another optimization staring you in the face.<br />
-<br />
-For example for quadrics... the solutions to the equation are something like (-b-sqrt(d))/2a and (-b+sqrt(d))/2a. Because of the way the equation is written down, one of them is always the frontfacing point, and the other is always the backfacing point. If you never switch between inside/outside, then you can always use the same point.<br />
-<br />
-And in Watercube I only raytrace 3 planes rather than 6 because only 3 are ever visible at once.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">2nd July 2003 04:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		with the tetrahedron: its practiaclally impossible to perform any intelegent back-face culling in avs, due to lack of decent control structures. <br />
-<br />
-When you are veiwing it from the exterior, you cant just use max or min, or comninations of both, because you are dealling with infinite planes. Imagine that there is one face of the tertrahedron dirctly flat to the camera (x,y plane), this plane will never shine as the max or min k value becaue the angled  planes adjacent to stretch out to infinity, and therfore go infront of it. <br />
-<br />
-To get it to work properly, you would either have to write a backface culling line for each individual plane, or write a limiter for each plane, so that when it reaches the boundries of a particular face, it starts drawin the next plane. <br />
-<br />
-It might be easier to do one DM for each face.<br />
-<br />
-
-	<blockquote>
-			
-				 <b>(ucd)</b> Essentially you just raytrace all the front-facing planes, clip all intersectionpoints with the correct triangle</blockquote>
-How do you go about clipping the intersection point?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">2nd July 2003 06:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				1337: there's nothing wrong with raytracing the backfacing points, but if you can avoid it easily, it's another optimization staring you in the face. <br />
-<br />
-For example for quadrics... the solutions to the equation are something like (-b-sqrt(d))/2a and (-b+sqrt(d))/2a. Because of the way the equation is written down, one of them is always the frontfacing point, and the other is always the backfacing point. If you never switch between inside/outside, then you can always use the same point.</blockquote>
-Yes, I know that (-b-sqrt(d))/2a always gives the lowest k value in a quadratic because 2a and sqrt(d) are always positive.  But with a tetrahedron, I see no easy trick to determine weather you are looking at the front or the back of the plane.  The only way would be to figure out the relationships between ox,oy, and oz based on each plane's formula that signify weather the camera is &quot;behind&quot; the plane or in front of it, and after that, due to the funky if statements, I only think it would speed it up a little.  Cubes are a rare exception: the formulas for their planes are simple and you can use just three planes and shift their distance back and forth to fake 6 planes ( (distance-ox)/dx ).  In other words:  Skupers can do it if he wants the speed, I don't feel like it.<br />
-<br />
-siddhartha: one DM for each face would require that each DM has knowledge of the locations of the other faces... and each point has to calculate four identical rotations.  slow as hell and hard to code, methinks.  And you can use min once you've cut the planes into triangles like we've been doing in the last few examples.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">2nd July 2003 09:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		my eight sided dm :)<br />
-i understand, there is an extra rotation on the z axis, which i had made for a purpose, but it is not meant to be here and i am not interested in changing it now.<br />
-<pre><code><br />
-init:<br />
-pi=acos(-1)<br />
-<br />
-frame:<br />
-<br />
-t=t+.001+ti*.1;ti=ti*.9;<br />
-ox=cos(t)*.6*sin(t*.76+t);<br />
-oy=cos(t*.76+1)*.9;<br />
-oz=sin(t-1)*cos(t);<br />
-rx=0.1+atan2(ox,sqr(oy)+sqr(oz));<br />
-ry=atan2(ox,oz);<br />
-rz=-atan2(oz,sqr(ox)+sqr(oy));<br />
-<br />
-sx=sin(rx);sy=sin(ry);sz=sin(rz);<br />
-cx=cos(rx);cy=cos(ry);cz=cos(rz);<br />
-af=max(h,w)/min(h,w);<br />
-<br />
-cz1=cos(-pi/4);sz1=sin(-pi/4);<br />
-<br />
-beat:<br />
-ti=.4<br />
-<br />
-point:<br />
-<br />
-y=if(above(h,w),y*af,y);x=if(above(w,h),x*af,x);<br />
-<br />
-dx1=x*cz-y*sz;<br />
-dy1=x*sz+y*cz;<br />
-dy2=dy1*cx-sx;<br />
-dz2=dy1*sx+cx;<br />
-dx3=dx1*cy-dz2*sy;<br />
-dz2=dx1*sy+dz2*cy;<br />
-dx1=dx3*cz1-dy2*sz1;<br />
-dy1=dx3*sz1+dy2*cz1;<br />
-dx3=dx1;dy2=dy1;<br />
-<br />
-k1=(1-oy-ox)/(dy2+dx3);<br />
-k1=if(below(k1,0),(-1-oy-ox)/(dy2+dx3),k1);<br />
-<br />
-k3=(1-oy)/dy2;<br />
-k3=if(below(k3,0),(-1-oy)/dy2,k3);<br />
-<br />
-k4=(1-ox)/dx3;<br />
-k4=if(below(k4,0),(-1-ox)/dx3,k4);<br />
-<br />
-k5=(2-oz)/dz2;<br />
-k5=if(below(k5,0),(-2-oz)/dz2,k5);<br />
-<br />
-k=min(min(k1,k5),min(k4,k3));<br />
-<br />
-x=k*dx3-ox;<br />
-y=k*dz2-oz;<br />
-<br />
-x=if(equal(k,k4),k*dy2-oy,x);<br />
-y=if(equal(k,k5),k*dy2-oz,y);<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">2nd July 2003 09:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		that's great, although it doesn't render from the outside and doesn't help at all with the tetrahedron :rolleyes: <br />
-<br />
-nice work :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">2nd July 2003 10:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				And you can use min once you've cut the planes into triangles like we've been doing in the last few examples.</blockquote>
- true that.. Sorry, i stopped looking at the examples with scrutiny after the first couple. :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">2nd July 2003 13:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hehe, this thread turned into a code book :D<br />
-<br />
-btw. this shape is a hedron now, isnt it?<br />
-<br />
-i dont know exactly what a hedron is, leave alone a tetrahedron.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">2nd July 2003 14:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				i dont know exactly what a hedron is, leave alone a tetrahedron.</blockquote>
-Then <a href="http://mathworld.wolfram.com/search/" target="_blank">look it up.</a><br />
-<br />
-Skupers:  You ARE absolutely sure that the four planes you posted earlier form a tetrahedron, right?  Because it seems to me that they form a triangle tunnel with a plane intersecting it...  and it seems to me that that's what AVS is rendering...  and it seems to me that improper planes is the only way to explain what AVS is doing.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">2nd July 2003 15:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		I'm almost certain. I made a image to explain how I got the formulas. It's attached.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">3rd July 2003 04:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		wouldn't adding z on all 3 planes make all 3 planes slope downwards?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">3rd July 2003 06:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		A tetrahedron is a four sided 3D object with all faces being triangles. You people are talking about a triangular prism.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">3rd July 2003 06:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">3rd July 2003 07:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				A tetrahedron is a four sided 3D object with all faces being triangles. You people are talking about a triangular prism.</blockquote>
-Zevensoft, we've been talking about taking four planes, cutting them into triangles, and fitting the triangles together.  At least that's what I've been talking about ever since skupers said &quot;tetrahedron&quot;.  We made a triangular tunnel/prism a good while back.  WTF do you mean we've been talking about a triangular prism?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">3rd July 2003 07:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by 13373571 </i><br />
-<b>wouldn't adding z on all 3 planes make all 3 planes slope downwards? </b></blockquote>
-No, there's a plane z1=-1 to cut the tunnel. At z1=1, using x1+y1=1-z1 gives you x1+y1=0. And if there was something wrong with these formulas, wouldn't we have noticed earlier? Viewing from the outside gives you a tetrahedron.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">3rd July 2003 07:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				Viewing from the outside gives you a tetrahedron.</blockquote>
-No it doesn't, that's the problem, remember?  It gives us a triangular prism that stretches infinitely in one diagonal direction and is cut by the plane z=-sqrt(2).<br />
-<br />
-Edit:<br />
-<br />
-Here, i just fixed it.<br />
-<br />
-<pre><code><br />
-Pixel:<br />
-<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />
-k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />
-k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />
-k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy,-sqrt(2)),k3,1337);<br />
-k4=(-sqrt(2)-oy)/(y2d);<br />
-ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />
-k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />
-y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-alpha=1-equal(k,1337);<br />
-</code></pre><br />
-<br />
-I changed the plane z+y=-sqrt(2) into the plane y=-sqrt(2).  That's what was wrong, you had the wrong plane.  Blargh.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">3rd July 2003 16:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Then, it should be y-z=-sqrt(2), not y=-sqrt(2). Sorry for my stupid mistake. :(<br />
-<br />
-<pre><code><br />
-<br />
-x1=x;y1=y;<br />
-x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />
-y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />
-x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />
-k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />
-ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />
-k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy-iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />
-k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />
-ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />
-k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy-iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />
-k3=(-sqrt(2)-oz)/z3d;<br />
-ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />
-k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy-iz,-sqrt(2)),k3,1337);<br />
-k4=(-sqrt(2)-oy+oz)/(y2d-z3d);<br />
-ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />
-k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />
-k=min(k1,min(k2,min(k3,k4)));<br />
-ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />
-x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />
-y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />
-alpha=1-equal(k,1337);<br />
-</code></pre><br />
-<br />
-This should work.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">13373571</span><br />
-			<span class="date small text-muted">3rd July 2003 17:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				Sorry for my stupid mistake. :(</blockquote>
-No problem, everybody screws stuff like that up occasionally.<br />
-<br />
-I was just getting irritated because I couldn't get something to work even though it seemed so clear that it should've been working.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Two raytracing problems</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140507">Two raytracing problems</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">29th June 2003 13:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Two raytracing problems</strong><br />
+      I've been trying to do some more advanced raytracing and I have two questions. The code can be found in the sections under each question.<br />
+      <br />
+      ---------------<br />
+      Question 1: I tried making a hyperboloid from one piece using the formule x^2+y^2-z^2=1. So far no problems, but I wanted to view it from the outside. This means the point of origin must lie outside the object with the equation x^2+y^2-z^2=1. I thought that that would be pretty easy to do by changing to the origin coördinates {ox,oy,oz} to {0,2,0} and then I could find out later how to make sure that the position of origin is relative to the rotation angles in such a way that the camera always look at the object.<br />
+      But after I changed {ox,oy,oz} to {0,2,0} (you can do this changing the following line:<br /></p>
+      <pre>
+<code><br />Frame:<br />ox=0;oy=0;oz=0;<br /></code>
+</pre><br />
+      to<br />
+      <pre>
+<code><br />Frame<br />ox=0;oy=2;oz=0;<br /></code>
+</pre><br />
+      The view isn't like the object I intended at all. What have I done wrong?<br />
+      The code of the dynmov:<br />
+      <pre>
+<code><br />init<br />pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05<br /><br />frame<br />rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />cx=cos(rx);sx=sin(rx);<br />cy=cos(ry);sy=sin(ry);<br />cz=cos(rz);sz=sin(rz);<br />ox=0;oy=0;oz=0;<br />c1=ox*ox+oy*oy-oz*oz-1;<br /><br />beat<br />rxc=rand(40)/500-0.05;<br />ryc=rand(40)/500-0.05;<br />rzc=rand(40)/500-0.05;<br /><br />point<br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />a1=x3d*x3d+y2d*y2d-z3d*z3d;b1=2*(x3d*ox+y2d*oy-z3d*oz);<br />ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />k1=-b1/(2*a1)+ki;<br />k2=-b1/(2*a1)-ki;<br />k=min(k1,k2);<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=abs(atan2(ix,iy))/pi*2;y=iz*3;<br />alpha=1.3-abs(iz)/2;<br /></code>
+</pre><br />
+      <br />
+      ---------------<br />
+      Question 2: I wanted to do a triangular tunnel by defining three planes with the following formulas:<br />
+      <br />
+      -x+y=2<br />
+      x+y=2<br />
+      y=-sqrt(2)<br />
+      <br />
+      This should give you a triangle tunnel, but instead I get something very strange. There are three planes, which will form a triangle when extended, but on and around the places where the triangle sides should meet, there are some strange planes that go to infinity. Making the k1, k2 and k3 absolute solves the problem, but gives you a six-sided tunnel. I want a three-sided one.<br />
+      I think the problem has to do with the -infinity outcomes for k1, k2 and k3, but I can't get rid of those without making the tunnel six-sided. The code of the dynmov:<br />
+      <pre>
+<code><br />init<br />pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05<br /><br />frame<br />rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />cx=cos(rx);sx=sin(rx);<br />cy=cos(ry);sy=sin(ry);<br />cz=cos(rz);sz=sin(rz);<br />ox=0;oy=0;oz=0;<br /><br />beat<br />rxc=rand(40)/500-0.05;<br />ryc=rand(40)/500-0.05;<br />rzc=rand(40)/500-0.05;<br /><br />point<br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy)/(y2d-x3d);<br />k2=(2-ox-oy)/(y2d+x3d);<br />k3=(-sqrt(2)-oy)/y2d;<br />k=min(k1,min(k2,k3));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=ix;y=iz;<br />alpha=1.3-abs(iz)*0.5;<br /></code>
+</pre>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">29th June 2003 14:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">For the second problem:<br />
+      <br /></p>
+      <pre>
+<code><br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy)/(y2d-x3d);<br />k1=if(below(k1,0),5000,k1);<br />k2=(2-ox-oy)/(y2d+x3d);<br />k2=if(below(k2,0),5000,k2);<br />k3=(-sqrt(2)-oy)/y2d;<br />k3=if(below(k3,0),5000,k3);<br />k=min(k1,min(k2,k3));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=ix;y=iz;<br />alpha=1.3-abs(iz)*0.5;<br /></code>
+</pre><br />
+      <br />
+      Min takes the lowest value, so if k2=-100 and k3=-50, your math would choose k2. I changed the code so it (essentially) takes the number with the lowest positive value, but does not use that number's absolute value. At leat I think that's what I did... It kinda don't look right to me<br />
+      <br />
+      I haven't worked on the first problem much, but i'll try to figgure it out...<br />
+      <br />
+      edit: put that code in per point.<br />
+      <br />
+      edit2: Man i'm dumb... All I did was get rid of all negative k1,k2,and k3 values, I dunno what I was talking about above...
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">29th June 2003 15:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Wow, great, thanks a lot, I now see what I did wrong. 13373571, you'll get a word of thank when I finish my dynmov tetrahedron ;).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">29th June 2003 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">In the first one, you use<br />
+      <br />
+      ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />
+      k1=-b1/(2*a1)+ki;<br />
+      k2=-b1/(2*a1)-ki;<br />
+      k=min(k1,k2);<br />
+      <br />
+      ... This has the same problem as the second one... if k1=-13373571 and k2=13373571, you will render the negative value... I don't know if that's your only problem though, I haven't tested because I'm sick of winamp crashing every five minutes... It's enough to make me want to try winamp 2.<br />
+      <br />
+      And by the way, I *think* you can use<br />
+      <br />
+      ki=sqrt(b1*b1-4*a1*c1)/(2*a1);<br />
+      k=-b1/(2*a1)-ki;<br />
+      k=if(below(k,0),-b1/(2*a1)+ki,k);<br />
+      <br />
+      and then blend out negative ks...<br />
+      <br /></p>
+
+      <blockquote>
+        Wow, great, thanks a lot, I now see what I did wrong. 13373571, you'll get a word of thank when I finish my dynmov tetrahedron .
+      </blockquote>Yeesh, even thinking about a DM tetrahedron makes my head hurt :D especially if you're going to be viewing it from outside...<br />
+      <br />
+      edit: Wow I use a lot of ...s, I need to try to stop doing that
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">30th June 2003 06:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">13373571, the dm master after UnConeD :D (btw, do you have a nick or something? feels funny to call you 13373571)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">30th June 2003 08:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Some people have called me "I.P. Address" and "Numbers"...<br />
+      You can say "leet" or 1337 or any variation thereof. Or just smack your keypad randomly and use the number that comes up.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
+      <span class="post-time small text-muted">30th June 2003 14:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Looks like LeetEsti to me. ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
+      <span class="post-time small text-muted">30th June 2003 16:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">yeah, i thought of that too!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">30th June 2003 17:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">i always thought it was leetest1<br />
+      like "leetest one".<br />
+      <br />
+      thanks for the advise though 14234563780, from now on i shall call you 0142387134610..</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">30th June 2003 19:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I made a DM tetraeder. I made it using the following formules for the sides:<br /></p>
+      <pre>
+<code><br />x+y+z=2<br />-x+y+z=2<br />y+z=-sqrt(2)<br />z=-sqrt(2)<br /></code>
+</pre><br />
+      <br />
+      The code for that dynmov is the following:<br />
+      <pre>
+<code><br />init:<br />pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05;<br /><br />frame:<br />rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />cx=cos(rx);sx=sin(rx);<br />cy=cos(ry);sy=sin(ry);<br />cz=cos(rz);sz=sin(rz);<br />ox=0;oy=0;oz=0;<br /><br />beat:<br />rxc=rand(40)/500-0.05;<br />ryc=rand(40)/500-0.05;<br />rzc=rand(40)/500-0.05;<br /><br />pixel:<br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />k1=if(below(k1,0),5000,k1);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />k2=if(below(k2,0),5000,k2);<br />k3=(-sqrt(2)-oz)/z3d;<br />k3=if(below(k3,0),5000,k3);<br />k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />k4=if(below(k4,0),5000,k4);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />alpha=1.3-abs(iz)*0.5;<br /></code>
+</pre><br />
+      <br />
+      But when I try to view that from the outside, it doesn't look like a tetraeder. The sides 'continue'. It looks like when you see a cube from the outside with all the sides extended infinitely. Using max() instead of min() doesn't work. If you do that, it gets all infinity. I think you have to determine the lines where two planes meet and then use an if()-function to choose min() when inside those lines and to use max() when outside those lines.<br />
+      <br />
+      I did figure out how to make the camera always point at the center of the object, after looking at UnConeD's WaterCube code. Instead of getting the origin {ox,oy,oz} from the rotation angles {rx,ry,rz}, you determine the rotation angles from the origin. You can do this with atan2(). An example is the following code, which you can paste in the frame section of the dynmov above.<br />
+      <pre>
+<code><br />frame:<br />o=o+or;or=(or*19+oc)*0.05;<br />ox=sin(o)*3;oy=cos(o)*3;oz=0;<br />rz=atan2(ox,oy);<br />rx=atan2(oy,oz);<br />ry=0;<br />cx=cos(rx);sx=sin(rx);<br />cy=cos(ry);sy=sin(ry);<br />cz=cos(rz);sz=sin(rz);<br /></code>
+</pre><br />
+      <br />
+      Since oz=0, there's no need to calculate ry.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">1st July 2003 01:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        But when I try to view that from the outside, it doesn't look like a tetraeder. The sides 'continue'. It looks like when you see a cube from the outside with all the sides extended infinitely. Using max() instead of min() doesn't work. If you do that, it gets all infinity.
+      </blockquote>The reason we were setting the k values to 5000 was because we were using min and there isn't much chance that 5000 will be the minimum value. But when using max, we want the negative values to stay negative so that they aren't selected for rendering.<br />
+      <br />
+
+      <blockquote>
+        I think you have to determine the lines where two planes meet and then use an if()-function to choose min() when inside those lines and to use max() when outside those lines.
+      </blockquote>Lines don't have insides. And we already know how to get the tetrahedron to work from inside the tetrahedron. Please be precise when describing ideas, otherwise it's hard for my puny brain to comprehend. And if you have problems putting your idea into words, it will be even harder for you to put it into code. This isn't just nitpicking, I honestly have no clue what you're saying.<br />
+      <br />
+      No, I haven't fixed your tetrahedron, I told you earlier that even thinking about a dm tetrahedron made my head hurt, didn't I? It's more complex than a cube... :(<br />
+      <br />
+      Let's just wait for UCD to look at this.<br />
+      <br />
+      Edit: And no, six lines that intersect at the four corners of a tetrahedron don't have insides either.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">1st July 2003 08:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I meant the pieces of the planes that are inside and outside those lines.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
+      <span class="post-time small text-muted">1st July 2003 09:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">You can also make the camera view the orgin by using :<br />
+      <br />
+      frame:<br />
+      rx=rx+bx;ry=ry+by;rz=rz+bz;<br />
+      sx=sin(rx);sy=sin(ry);sz=sin(rz);<br />
+      cx=cos(rx);cy=cos(ry);cz=cos(rz);<br />
+      ox=cy*distance;oy=cz*sy*distance;oz=-sz*sy*distance;<br />
+      <br />
+      beat:<br />
+      bx=(rand(201)*0.01-1)*sp;by=(rand(201)*0.01-1)*sp;bz=(rand(201)*0.01-1)*sp;<br />
+      <br />
+      point:<br />
+      dx=sx*x+cx*y;dy2=cx*x-sx*y;<br />
+      dz=sy+cy*dx;dx=cy-sy*dx;<br />
+      dy=sz*dy2+cz*dz;dz=cz*dy2-sz*dz;<br />
+      ...<br />
+      ....<br />
+      And the rotation will stay random</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">1st July 2003 11:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+      <pre>
+<code><br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />k1=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />k2=if(below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />k3=(-sqrt(2)-oz)/z3d;<br />ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />k3=if(below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iz,-sqrt(2)),k3,1337);<br />k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />k4=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br /></code>
+</pre><br />
+      <br />
+      It's supposed to calculate ix,iy,and iz for each plane and then if these coordinates are beyond the bounds of the triangle that each plane is going to be "cut" into, it sets k for that plane to be an arbitrary large number (1337). When this is done for all of the planes, we should have the four triangles that make up the tetrahedron. Then supposedly the closest triangle (found with min) should be the proper one.<br />
+      <br />
+      Unfortunately, it don't work. :(<br />
+      anybody know why?
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">1st July 2003 14:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The idea seems to be right, but like you said, it doesn't work. My guess is that the way you decide if the coordinates are outside the bounds of the triangle are somehow flawed. The sides of plane z=-sqrt(2) (k3) lie on -ix+iy+iz=2, ix+iy+iz=2, iy+iz=-sqrt(2) and ofcourse z=-sqrt(2), because that the plane itself. Yet you test for -ix+iy+iz=2, ix+iy+iz=2 and <b>iz=-sqrt(2)</b>, but not for iy+iz=-sqrt(2). Was that meant like this and if so, why?<br />
+      <br />
+      I think we should try to solve this first so that when you view the tetraeder from the inside, it's look normal. Then, if we did it correct, moving the origin outside the object, using nixa's code, would give us a nice DM tetraeder.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">1st July 2003 14:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">...... look carefully at <i>each</i> of the triangle cutter-upper lines. For each plane, I tested its intersection with the other three, but not its intersection with itself because that would've been just a tad redundant...<br />
+      <br />
+      I just realized my error though... I had thought that earlier when you were listing the planes, you were putting them in order. I guess that was a kinda dumb assumption. Anyways, the fix after that is still a tad glitchy, here is the latest attempt:<br />
+      <br /></p>
+      <pre>
+<code><br />pixel:<br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />k1=if(below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />k2=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />k3=(-sqrt(2)-oz)/z3d;<br />ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />k3=if(below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iz,-sqrt(2)),k3,1337);<br />k4=(-sqrt(2)-oy-oz)/(y2d-z3d);<br />ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />k4=if(below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />alpha=1-equal(k,1337);<br /></code>
+</pre><br />
+      <br />
+      At least we have triangles now... sorta
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">1st July 2003 16:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">skupers: this is wrong:<br />
+      rz=atan2(ox,oy);<br />
+      rx=atan2(oy,oz);<br />
+      <br />
+      <br />
+      The problem with your hyperboloid is twofold:<br />
+      - you're not discarding points behind the camera (k&lt;0)<br />
+      - you're not discarding points where there is no intersection (b^2-4*a*c &lt; 0 for the quadratic equation).<br />
+      <br />
+      I won't bother with the tetrahedron, too much trouble :P. Essentially you just raytrace all the front-facing planes, clip all intersectionpoints with the correct triangle and then min the remaining points. A good source for a fast triangle/line intersection test should be the 3D rendering scene. Try flipcode or something.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">1st July 2003 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        you're not discarding points where there is no intersection (b^2-4*a*c &lt; 0 for the quadratic equation).
+      </blockquote>Right, I forgot that sqrt( a ) is in AVS the same as sqrt( |a| ) (try x=i*2-1;y=sqrt(i); in a SSC to see this).<br />
+      <br />
+      So, this seems to be a good version of the hyperboloid from one space:<br />
+      <br />
+      <pre>
+<code><br />init:<br />pi=acos(-1);rx=1.57;ry=1.57;rx=0;ry=0;rz=0;rxo=0.05;ryo=0.01;rzo=rand(10)/100-0.05;<br /><br />frame:<br />rx=rx+rxo;rxo=rxo*0.9+rxc*0.1;rxc=rxc*0.99;<br />ry=ry+ryo;ryo=ryo*0.9+ryc*0.1;<br />rz=rz+rzo;rzo=rzo*0.9+rzc*0.1;<br />cx=cos(rx);sx=sin(rx);<br />cy=cos(ry);sy=sin(ry);<br />cz=cos(rz);sz=sin(rz);<br />ox=cy*3;oy=cz*sy*3;oz=-sz*sy*3; <br />c1=ox*ox+oy*oy-oz*oz-1;<br /><br />beat:<br />rxc=rand(40)/500-0.05;<br />ryc=rand(40)/500-0.05;<br />rzc=rand(40)/500-0.05;<br /><br />pixel:<br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />a1=x3d*x3d+y2d*y2d-z3d*z3d;b1=2*(x3d*ox+y2d*oy-z3d*oz);<br />d1=b1*b1-4*a1*c1;<br />k1=if(below(d1,0),50000,(-b1+sqrt(d1))/(2*a1));<br />k1=if(below(k1,0),50000,k1);<br />k2=if(below(d1,0),50000,(-b1-sqrt(d1))/(2*a1));<br />k2=if(below(k2,0),50000,k2);<br />k=min(k1,k2);<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=abs(atan2(ix,iy))/pi*2;y=iz*3;<br />alpha=2/k-abs(iz)/6/k;<br /></code>
+</pre><br />
+      <br />
+      It's really cool and looks kinda like a wormhole ;).
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">1st July 2003 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Essentially you just raytrace all the front-facing planes
+      </blockquote>Uhh, what's wrong with doing the back-facing planes too? It's easier and we're going to be doing min() on k anyways...<br />
+      <br />
+      I now have a fairly tetrahedral shape going on having fixed a few more obvious stupid errors (not all of which were mine for a change :p I actually looked at skuper's code) but one of the points of the tetrahedron always manages to stretch to infinity and both oy and oz seem to be changing the same value.<br />
+      <br />
+      The problem isn't with the triangle cutting stuff, that's working great, it's somethin about how dx,dy,dz, and/or ox,oy,oz are being used, they don't do what they're supposed to and I don't see why.<br />
+      <br />
+      <pre>
+<code><br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy+iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />k3=(-sqrt(2)-oz)/z3d;<br />ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy+iz,-sqrt(2)),k3,1337);<br />k4=(-sqrt(2)-oy-oz)/(y2d+z3d);<br />ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />alpha=1-equal(k,1337);<br /></code>
+</pre>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">1st July 2003 22:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yeah, it at least looks like a tetraeder now, but I don't know why on of the points goes to infinity. It seems to me z1=-sqrt(2) is the bottom plane. I'll look into it further tommorrow, it's 0:05 AM in the Netherlands now ;).<br />
+      <br /></p>
+
+      <blockquote>
+        I now have a fairly tetrahedral shape going on having fixed a few more obvious stupid errors (not all of which were mine for a change I actually looked at skuper's code)
+      </blockquote>Maybe you could tell me some of those errors, so I don't end up repeating them.<br />
+      <br />
+      Do you mean oy and oz change per pixel? If so, that isn't happening. You can check that by adding x=x1*oy;y=y1*oz; to the end of the dynmov. They only change per frame (they're ofcourse supposed to do this), not per pixel.<br />
+      <br />
+      BTW, are you a university student like UnConeD and Jheriko, 1337?
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">2nd July 2003 01:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Maybe you could tell me some of those errors, so I don't end up repeating them.
+      </blockquote>but.... they were obvious and I'm lazy. Just remember the old adage that "When describing many planes, you are likely to switch subtraction and addition once or twice."<br />
+      <br />
+      If you set everything to zero (the d's and the o's) and then add small increments to oy and then set it back to zero and do the same with oz, they seem to cause the same changes if I remember correctly.<br />
+      <br />
+
+      <blockquote>
+        BTW, are you a university student like UnConeD and Jheriko, 1337?
+      </blockquote>No :D I'm entering junior year in high school.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">2nd July 2003 02:26 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">1337: there's nothing wrong with raytracing the backfacing points, but if you can avoid it easily, it's another optimization staring you in the face.<br />
+      <br />
+      For example for quadrics... the solutions to the equation are something like (-b-sqrt(d))/2a and (-b+sqrt(d))/2a. Because of the way the equation is written down, one of them is always the frontfacing point, and the other is always the backfacing point. If you never switch between inside/outside, then you can always use the same point.<br />
+      <br />
+      And in Watercube I only raytrace 3 planes rather than 6 because only 3 are ever visible at once.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">2nd July 2003 04:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">with the tetrahedron: its practiaclally impossible to perform any intelegent back-face culling in avs, due to lack of decent control structures.<br />
+      <br />
+      When you are veiwing it from the exterior, you cant just use max or min, or comninations of both, because you are dealling with infinite planes. Imagine that there is one face of the tertrahedron dirctly flat to the camera (x,y plane), this plane will never shine as the max or min k value becaue the angled planes adjacent to stretch out to infinity, and therfore go infront of it.<br />
+      <br />
+      To get it to work properly, you would either have to write a backface culling line for each individual plane, or write a limiter for each plane, so that when it reaches the boundries of a particular face, it starts drawin the next plane.<br />
+      <br />
+      It might be easier to do one DM for each face.<br />
+      <br /></p>
+
+      <blockquote>
+        <b>(ucd)</b> Essentially you just raytrace all the front-facing planes, clip all intersectionpoints with the correct triangle
+      </blockquote>How do you go about clipping the intersection point?
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">2nd July 2003 06:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        1337: there's nothing wrong with raytracing the backfacing points, but if you can avoid it easily, it's another optimization staring you in the face.<br />
+        <br />
+        For example for quadrics... the solutions to the equation are something like (-b-sqrt(d))/2a and (-b+sqrt(d))/2a. Because of the way the equation is written down, one of them is always the frontfacing point, and the other is always the backfacing point. If you never switch between inside/outside, then you can always use the same point.
+      </blockquote>Yes, I know that (-b-sqrt(d))/2a always gives the lowest k value in a quadratic because 2a and sqrt(d) are always positive. But with a tetrahedron, I see no easy trick to determine weather you are looking at the front or the back of the plane. The only way would be to figure out the relationships between ox,oy, and oz based on each plane's formula that signify weather the camera is "behind" the plane or in front of it, and after that, due to the funky if statements, I only think it would speed it up a little. Cubes are a rare exception: the formulas for their planes are simple and you can use just three planes and shift their distance back and forth to fake 6 planes ( (distance-ox)/dx ). In other words: Skupers can do it if he wants the speed, I don't feel like it.<br />
+      <br />
+      siddhartha: one DM for each face would require that each DM has knowledge of the locations of the other faces... and each point has to calculate four identical rotations. slow as hell and hard to code, methinks. And you can use min once you've cut the planes into triangles like we've been doing in the last few examples.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">2nd July 2003 09:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">my eight sided dm :)<br />
+      i understand, there is an extra rotation on the z axis, which i had made for a purpose, but it is not meant to be here and i am not interested in changing it now.<br /></p>
+      <pre>
+<code><br />init:<br />pi=acos(-1)<br /><br />frame:<br /><br />t=t+.001+ti*.1;ti=ti*.9;<br />ox=cos(t)*.6*sin(t*.76+t);<br />oy=cos(t*.76+1)*.9;<br />oz=sin(t-1)*cos(t);<br />rx=0.1+atan2(ox,sqr(oy)+sqr(oz));<br />ry=atan2(ox,oz);<br />rz=-atan2(oz,sqr(ox)+sqr(oy));<br /><br />sx=sin(rx);sy=sin(ry);sz=sin(rz);<br />cx=cos(rx);cy=cos(ry);cz=cos(rz);<br />af=max(h,w)/min(h,w);<br /><br />cz1=cos(-pi/4);sz1=sin(-pi/4);<br /><br />beat:<br />ti=.4<br /><br />point:<br /><br />y=if(above(h,w),y*af,y);x=if(above(w,h),x*af,x);<br /><br />dx1=x*cz-y*sz;<br />dy1=x*sz+y*cz;<br />dy2=dy1*cx-sx;<br />dz2=dy1*sx+cx;<br />dx3=dx1*cy-dz2*sy;<br />dz2=dx1*sy+dz2*cy;<br />dx1=dx3*cz1-dy2*sz1;<br />dy1=dx3*sz1+dy2*cz1;<br />dx3=dx1;dy2=dy1;<br /><br />k1=(1-oy-ox)/(dy2+dx3);<br />k1=if(below(k1,0),(-1-oy-ox)/(dy2+dx3),k1);<br /><br />k3=(1-oy)/dy2;<br />k3=if(below(k3,0),(-1-oy)/dy2,k3);<br /><br />k4=(1-ox)/dx3;<br />k4=if(below(k4,0),(-1-ox)/dx3,k4);<br /><br />k5=(2-oz)/dz2;<br />k5=if(below(k5,0),(-2-oz)/dz2,k5);<br /><br />k=min(min(k1,k5),min(k4,k3));<br /><br />x=k*dx3-ox;<br />y=k*dz2-oz;<br /><br />x=if(equal(k,k4),k*dy2-oy,x);<br />y=if(equal(k,k5),k*dy2-oz,y);<br /></code>
+</pre>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">2nd July 2003 09:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">that's great, although it doesn't render from the outside and doesn't help at all with the tetrahedron :rolleyes:<br />
+      <br />
+      nice work :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">2nd July 2003 10:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        And you can use min once you've cut the planes into triangles like we've been doing in the last few examples.
+      </blockquote>true that.. Sorry, i stopped looking at the examples with scrutiny after the first couple. :D
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">2nd July 2003 13:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">hehe, this thread turned into a code book :D<br />
+      <br />
+      btw. this shape is a hedron now, isnt it?<br />
+      <br />
+      i dont know exactly what a hedron is, leave alone a tetrahedron.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">2nd July 2003 14:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        i dont know exactly what a hedron is, leave alone a tetrahedron.
+      </blockquote>Then <a href="http://mathworld.wolfram.com/search/" target="_blank">look it up.</a><br />
+      <br />
+      Skupers: You ARE absolutely sure that the four planes you posted earlier form a tetrahedron, right? Because it seems to me that they form a triangle tunnel with a plane intersecting it... and it seems to me that that's what AVS is rendering... and it seems to me that improper planes is the only way to explain what AVS is doing.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">2nd July 2003 15:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I'm almost certain. I made a image to explain how I got the formulas. It's attached.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">3rd July 2003 04:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">wouldn't adding z on all 3 planes make all 3 planes slope downwards?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">3rd July 2003 06:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">A tetrahedron is a four sided 3D object with all faces being triangles. You people are talking about a triangular prism.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">3rd July 2003 06:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">:D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">3rd July 2003 07:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        A tetrahedron is a four sided 3D object with all faces being triangles. You people are talking about a triangular prism.
+      </blockquote>Zevensoft, we've been talking about taking four planes, cutting them into triangles, and fitting the triangles together. At least that's what I've been talking about ever since skupers said "tetrahedron". We made a triangular tunnel/prism a good while back. WTF do you mean we've been talking about a triangular prism?
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">3rd July 2003 07:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by 13373571</i><br />
+        <b>wouldn't adding z on all 3 planes make all 3 planes slope downwards?</b>
+      </blockquote>No, there's a plane z1=-1 to cut the tunnel. At z1=1, using x1+y1=1-z1 gives you x1+y1=0. And if there was something wrong with these formulas, wouldn't we have noticed earlier? Viewing from the outside gives you a tetrahedron.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">3rd July 2003 07:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Viewing from the outside gives you a tetrahedron.
+      </blockquote>No it doesn't, that's the problem, remember? It gives us a triangular prism that stretches infinitely in one diagonal direction and is cut by the plane z=-sqrt(2).<br />
+      <br />
+      Edit:<br />
+      <br />
+      Here, i just fixed it.<br />
+      <br />
+      <pre>
+<code><br />Pixel:<br /><br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />k3=(-sqrt(2)-oz)/z3d;<br />ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy,-sqrt(2)),k3,1337);<br />k4=(-sqrt(2)-oy)/(y2d);<br />ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />alpha=1-equal(k,1337);<br /></code>
+</pre><br />
+      <br />
+      I changed the plane z+y=-sqrt(2) into the plane y=-sqrt(2). That's what was wrong, you had the wrong plane. Blargh.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br />
+      <span class="post-time small text-muted">3rd July 2003 16:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Then, it should be y-z=-sqrt(2), not y=-sqrt(2). Sorry for my stupid mistake. :(<br />
+      <br /></p>
+      <pre>
+<code><br /><br />x1=x;y1=y;<br />x1d=x1*cz-y1*sz;y1d=x1*sz+y1*cz;<br />y2d=y1d*cx-sx;z2d=y1d*sx+cx;<br />x3d=x1d*cy-z2d*sy;z3d=x1d*sy+z2d*cy;<br />k1=(2+ox-oy-oz)/(y2d-x3d+z3d);<br />ix=k1*x3d+ox;iy=k1*y2d+oy;iz=k1*z3d+oz;<br />k1=if(above(k1,0)*below(ix+iy+iz,2)*above(iy-iz,-sqrt(2))*above(iz,-sqrt(2)),k1,1337);<br />k2=(2-ox-oy-oz)/(y2d+x3d+z3d);<br />ix=k2*x3d+ox;iy=k2*y2d+oy;iz=k2*z3d+oz;<br />k2=if(above(k2,0)*below(-ix+iy+iz,2)*above(iy-iz,-sqrt(2))*above(iz,-sqrt(2)),k2,1337);<br />k3=(-sqrt(2)-oz)/z3d;<br />ix=k3*x3d+ox;iy=k3*y2d+oy;iz=k3*z3d+oz;<br />k3=if(above(k3,0)*below(-ix+iy+iz,2)*below(ix+iy+iz,2)*above(iy-iz,-sqrt(2)),k3,1337);<br />k4=(-sqrt(2)-oy+oz)/(y2d-z3d);<br />ix=k4*x3d+ox;iy=k4*y2d+oy;iz=k4*z3d+oz;<br />k4=if(above(k4,0)*below(-ix+iy+iz,2)*above(iz,-sqrt(2))*below(ix+iy+iz,2),k4,1337);<br />k=min(k1,min(k2,min(k3,k4)));<br />ix=k*x3d+ox;iy=k*y2d+oy;iz=k*z3d+oz;<br />x=(1-equal(k,k3))*ix+equal(k,k3)*ix;<br />y=(1-equal(k,k3))*iz+equal(k,k3)*iy;<br />alpha=1-equal(k,1337);<br /></code>
+</pre><br />
+      <br />
+      This should work.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br />
+      <span class="post-time small text-muted">3rd July 2003 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Sorry for my stupid mistake. :(
+      </blockquote>No problem, everybody screws stuff like that up occasionally.<br />
+      <br />
+      I was just getting irritated because I couldn't get something to work even though it seemed so clear that it should've been working.
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,419 +1,263 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" 3D rotation AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="3D rotation " />
 
-	<title> 3D rotation - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>3D rotation - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">3D rotation</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=123771">3D rotation</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">3rd February 2003 16:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>3D rotation</strong><br />
-		
-		
-
-		Hi, I'm new here, so I hope this is the correct forum! :D<br />
-<br />
-anyways, after working out my equation for converting 3D coords into 2D:<br />
-<br />
-x=x1*z1/dst<br />
-y=y1*z1/dst<br />
-<br />
-I am looking to implement rotation. I am working with superscopes, and have worked with winamp for quite a while, so most of the jargon you use i should be familiar with!<br />
-<br />
-I have d/led el-vis's 3D t'ing and looked at his .txt file to go with it. I see the xs, xc etc etc and am wondering what it all means!<br />
-<br />
-basically, what is this, along with the equations leading up to x,y,z4 and why are they there?<br />
-(It's all very well making scopes, but i like to know how it all works, and then make one myself!)<br />
-<br />
-thankyou in advance, I hope I make sense!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">3rd February 2003 21:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		first of all, don't use the el-vis method of 3D.  it's slow and not very dynamic.  download avs primer :down: which has an explanation of 3D - a rough and non-precise one, but it works.  i'll be updating it soon, and it'll have a better version...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">4th February 2003 08:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>hrrrm...</strong><br />
-		
-		
-
-		Thanks! The AVS primer set t'ings out much better, along with other explanations<br />
-BUT...<br />
-It doesn't explain what:<br />
-<br />
-x2=x1*sin(zt)-y1*cos(zt); y2=x1*cos(zt)+y1*sin(zt);<br />
-x3=x2*sin(yt)-z1*cos(yt); z2=x2*cos(yt)+z1*sin(yt);<br />
-y3=y2*sin(xt)-z2*cos(xt); z3=y2*cos(xt)+z2*sin(xt);<br />
-<br />
-means, and this is what I want to know. also, exactly what x,y,zt mean would be useful.<br />
-Thanks again!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">4th February 2003 12:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		xt, yt, and zt are variables used to rotate the 3-D object.  Those three lines are an implementation of a rotation matrix, but since AVS doesn't support matrices, the crossproduct has to be spelled out.  Basically, you can modify xt, yt, and zt to make it move.  A complete explanation of 3-D will be coming out once Atero updates his primer(which I believe will be soon).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">4th February 2003 16:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		'Kay, i shall wait till then, then!<br />
-In the mean time, I will work on non-3D presets, and may well release a pack of them for reviewing.<br />
-Oh, and one question: what exactly do d and r mean in DMs?<br />
-r seems to be rotation, but d...? :D<br />
-anywho, thanks for help so far!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">4th February 2003 20:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		And as I said in the primer...don't just use my code because it's there, use it knowing how it works and why.  Again, I'll be updating soon, with a better explanation of all that....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">5th February 2003 08:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		d = distace from 0,0
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">5th February 2003 15:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thanks Jaheck<br />
-And don't worry Atero, I generally pick code apart before using it in anyway! (My dad conditioned me well...)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">5th February 2003 17:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		finally, a noob that dosent irritate the hell out of everyone, n1. GL with the avsing, took me ages to figure out 3d rotation. Pretty worthless post really but im exceptionally bored
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">6th February 2003 07:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		lol, so's this but hey!<br />
-I wouldn't consider myself a n00b, as I have worked on AVS for some time, but there we go!<br />
-<br />
-p.s.<br />
-The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">6th February 2003 07:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Fish-face</i><br />
-<b>Hi, I'm new here, so I hope this is the correct forum! </b></blockquote>
-
-	<blockquote>
-			
-				<i>Originally posted by Fish-face</i><br />
-<b>I wouldn't consider myself a n00b</b></blockquote>
-So which is it?:p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">6th February 2003 15:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		lol, i'm new here, but not to winamp.<br />
-basically, I meant I might not know conventions or whatever... but I ramble... *rambles pointlessly*
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">6th February 2003 17:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Fish-face </i><br />
-<b><br />
-p.s.<br />
-The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it? </b></blockquote>
-I cannot beleive people still use Pimp :) NSIS was the follow up to Pimp and now NSIS is open source and all the info you need is here<br />
-<br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?&amp;threadid=102650" target="_blank">http://forums.winamp.com/showthread....hreadid=102650</a><br />
-<br />
-I am pretty sure that Nullsofts Pimp has been official discontinued now and has been for some time.<br />
-<br />
-I honestly want to reject AVS preset packs that have the old Pimp installer. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">6th February 2003 19:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		okey dokey, then!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">6th February 2003 22:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		fish-face, read the forum rules.  signatures are restricted to three lines only.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Fish-face</span><br />
-			<span class="date small text-muted">7th February 2003 15:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		This is what I mean when I say &quot;i'm new here&quot;, hope this is better for ya!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">WHCode RED</span><br />
-			<span class="date small text-muted">14th February 2003 17:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i><u><b>From AVS Primer:</b></u></i> <br />
-This particular preet shows the ability to use one <b>effect</b>, and then<br />
-<b>effect</b> the <b>effected effect</b> without <b>effecting</b> the <b>effect effecting</b> the<br />
-<b>effect</b>.</blockquote>
-It took me 6 times to understand that, although I still don't understand it! :igor: <br />
-<br />
-BTW... You spelt preset wrong.;) :weird:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">14th February 2003 18:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		that's from the effect list preset, isn't it?  i can't even figure that out :igor: :p<br />
-I'M BUSY UPDATING IT.  keep your pants on.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th February 2003 19:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The verb is written as &quot;to affect&quot;. That should clear up some confusion.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">15th February 2003 00:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		LOL Atero just wanted to put something in there to rival the old children's book authors.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">3D rotation</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=123771">3D rotation</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">3rd February 2003 16:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>3D rotation</strong><br />
+      Hi, I'm new here, so I hope this is the correct forum! :D<br />
+      <br />
+      anyways, after working out my equation for converting 3D coords into 2D:<br />
+      <br />
+      x=x1*z1/dst<br />
+      y=y1*z1/dst<br />
+      <br />
+      I am looking to implement rotation. I am working with superscopes, and have worked with winamp for quite a while, so most of the jargon you use i should be familiar with!<br />
+      <br />
+      I have d/led el-vis's 3D t'ing and looked at his .txt file to go with it. I see the xs, xc etc etc and am wondering what it all means!<br />
+      <br />
+      basically, what is this, along with the equations leading up to x,y,z4 and why are they there?<br />
+      (It's all very well making scopes, but i like to know how it all works, and then make one myself!)<br />
+      <br />
+      thankyou in advance, I hope I make sense!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">3rd February 2003 21:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">first of all, don't use the el-vis method of 3D. it's slow and not very dynamic. download avs primer :down: which has an explanation of 3D - a rough and non-precise one, but it works. i'll be updating it soon, and it'll have a better version...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">4th February 2003 08:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>hrrrm...</strong><br />
+      Thanks! The AVS primer set t'ings out much better, along with other explanations<br />
+      BUT...<br />
+      It doesn't explain what:<br />
+      <br />
+      x2=x1*sin(zt)-y1*cos(zt); y2=x1*cos(zt)+y1*sin(zt);<br />
+      x3=x2*sin(yt)-z1*cos(yt); z2=x2*cos(yt)+z1*sin(yt);<br />
+      y3=y2*sin(xt)-z2*cos(xt); z3=y2*cos(xt)+z2*sin(xt);<br />
+      <br />
+      means, and this is what I want to know. also, exactly what x,y,zt mean would be useful.<br />
+      Thanks again!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">4th February 2003 12:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">xt, yt, and zt are variables used to rotate the 3-D object. Those three lines are an implementation of a rotation matrix, but since AVS doesn't support matrices, the crossproduct has to be spelled out. Basically, you can modify xt, yt, and zt to make it move. A complete explanation of 3-D will be coming out once Atero updates his primer(which I believe will be soon).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">4th February 2003 16:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">'Kay, i shall wait till then, then!<br />
+      In the mean time, I will work on non-3D presets, and may well release a pack of them for reviewing.<br />
+      Oh, and one question: what exactly do d and r mean in DMs?<br />
+      r seems to be rotation, but d...? :D<br />
+      anywho, thanks for help so far!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">4th February 2003 20:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">And as I said in the primer...don't just use my code because it's there, use it knowing how it works and why. Again, I'll be updating soon, with a better explanation of all that....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">5th February 2003 08:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">d = distace from 0,0</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">5th February 2003 15:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">thanks Jaheck<br />
+      And don't worry Atero, I generally pick code apart before using it in anyway! (My dad conditioned me well...)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">5th February 2003 17:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">finally, a noob that dosent irritate the hell out of everyone, n1. GL with the avsing, took me ages to figure out 3d rotation. Pretty worthless post really but im exceptionally bored</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">6th February 2003 07:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">lol, so's this but hey!<br />
+      I wouldn't consider myself a n00b, as I have worked on AVS for some time, but there we go!<br />
+      <br />
+      p.s.<br />
+      The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">6th February 2003 07:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Fish-face</i><br />
+        <b>Hi, I'm new here, so I hope this is the correct forum!</b>
+      </blockquote>
+
+      <blockquote>
+        <i>Originally posted by Fish-face</i><br />
+        <b>I wouldn't consider myself a n00b</b>
+      </blockquote>So which is it?:p
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">6th February 2003 15:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">lol, i'm new here, but not to winamp.<br />
+      basically, I meant I might not know conventions or whatever... but I ramble... *rambles pointlessly*</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">6th February 2003 17:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Fish-face</i><br />
+        <b><br />
+        p.s.<br />
+        The link for PiMP seems to be broken, should I e-mail someone, and is there another place for me to get it?</b>
+      </blockquote>I cannot beleive people still use Pimp :) NSIS was the follow up to Pimp and now NSIS is open source and all the info you need is here<br />
+      <br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?&amp;threadid=102650" target="_blank">http://forums.winamp.com/showthread....hreadid=102650</a><br />
+      <br />
+      I am pretty sure that Nullsofts Pimp has been official discontinued now and has been for some time.<br />
+      <br />
+      I honestly want to reject AVS preset packs that have the old Pimp installer. :)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">6th February 2003 19:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">okey dokey, then!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">6th February 2003 22:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">fish-face, read the forum rules. signatures are restricted to three lines only.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Fish-face</span><br />
+      <span class="post-time small text-muted">7th February 2003 15:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">This is what I mean when I say "i'm new here", hope this is better for ya!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">WHCode RED</span><br />
+      <span class="post-time small text-muted">14th February 2003 17:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i><u><b>From AVS Primer:</b></u></i><br />
+        This particular preet shows the ability to use one <b>effect</b>, and then<br />
+        <b>effect</b> the <b>effected effect</b> without <b>effecting</b> the <b>effect effecting</b> the<br />
+        <b>effect</b>.
+      </blockquote>It took me 6 times to understand that, although I still don't understand it! :igor:<br />
+      <br />
+      BTW... You spelt preset wrong.;) :weird:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">14th February 2003 18:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">that's from the effect list preset, isn't it? i can't even figure that out :igor: :p<br />
+      I'M BUSY UPDATING IT. keep your pants on.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">14th February 2003 19:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The verb is written as "to affect". That should clear up some confusion.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br />
+      <span class="post-time small text-muted">15th February 2003 00:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">LOL Atero just wanted to put something in there to rival the old children's book authors.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

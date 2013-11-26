@@ -1,876 +1,567 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Please don't flame me but... AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Please don't flame me but... " />
 
-	<title> Please don't flame me but... - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Please don't flame me but... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Please don't flame me but...</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=130484">Please don't flame me but...</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">1st April 2003 05:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Please don't flame me but...</strong><br />
-		
-		
-
-		Does anyone know where the ElVis 3D superscope guide is. I searched all over the winamp.com plugins and couldn't find the pack it was it. So can someone post it or a link to it please :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">1st April 2003 06:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		******************************<br />
-*                            *<br />
-*  SUPERSCOPES-3D by EL-VIS  *<br />
-*                            *<br />
-******************************<br />
-<br />
-First: &quot;Yes, I'm not a native speaker!&quot;<br />
-Second: &quot;But I've tried my best.&quot;<br />
-<br />
-The idea was to do some Superscopes in 3D. My first tries (_first3D_) were quite OK<br />
-but not the real thing. So I got deeper into 3D-mathematics and I finally managed <br />
-to develop a base setup for real 3D presets (_real3D_start.avs). <br />
-<br />
-<br />
-Real 3D means:<br />
-<br />
-Every point of the scope has now 3 coordinates: x1, y1 and z1 <br />
-(instead of x and y) which describe its position in the 3D-Room:<br />
- <br />
-<pre><code> <br />
-<br />
-           -y<br />
-            |  +z<br />
-            |  /<br />
-            | /<br />
-            |/<br />
--x ------------------- +x<br />
-           /|0<br />
-          / |<br />
-         /  |<br />
-       -z   |<br />
-           +y<br />
-<br />
-</code></pre> <br />
-<br />
-So the scope becomes a real 3D-Object, which could be rotated around and<br />
-moved along the three axes (x,y and z) of the 3D-Room. <br />
-<br />
-Finally the 3D-coordinates of the scope are translated into 2D-coordinates of the screen.<br />
-<br />
-Here's the explanation of the settings of real3D_start.avs by section:<br />
-<br />
-INIT_______________________________________________________________________________<br />
-<br />
-n=7; r=0.5; <br />
-Just for this scope, which is a simple circle with a radius of 0.5 done in 7 steps.<br />
-<br />
-mx=0;my=0;mz=0;<br />
-Use these to move the center/base of your scope along the axes.<br />
-<br />
-dst=2;<br />
-Normally you don't need to change this. It's the distance for the 3D/2D-Translation.<br />
-IMPORTANT: If you create, rotate or move a scope its z-values must not become lower <br />
-than -dst =&gt; !!! z &gt;= -dst for all z !!! <br />
-  <br />
-rx=0;ry=0;rz=0;<br />
-Initrotation around x,y and z-axis in degrees.<br />
-<br />
-rdx=1;rdy=1;rdz=1;<br />
-Permanent rotation around axes in degrees/frame. Set these to zero to<br />
-stop rotation.<br />
-<br />
-p=3.14159265;p2=2.0*p;p3=180/p<br />
-You'll never need to change these<br />
-<br />
-<br />
-<br />
-POINT______________________________________________________________________________<br />
-<br />
-x1=r*sin(p2*i);y1=0;z1=r*cos(p2*i);<br />
-This is the 3D-Scope. Add your own scopes here by setting x1,y1 and z1. <br />
-(Do not use x and y. They are generated in this section)<br />
-<br />
-(In fact the example is not really 3D because of y1=0, but as you see,<br />
-it can be nicely rotated anyway) <br />
-<br />
-IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br />
-The length of input in all of the sections is limited. So keep your scope as<br />
-short as possible. If the scope suddenly dissapears after a regular input you're<br />
-F***ed!<br />
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br />
-<br />
-Do not change anything else in this section:<br />
-<br />
-y2=y1*xc-z1*xs;z2=y1*xs+z1*xc;<br />
-Rotation around x-axis<br />
-<br />
-x2=z2*ys+x1*yc;z3=z2*yc-x1*ys;<br />
-Rotation around y-axis<br />
-<br />
-x3=x2*zc-y2*zs;y3=y2*zc+x2*zs;<br />
-Rotation around z-axis<br />
-<br />
-x4=mx+x3;y4=my+y3;z4=mz+z3;<br />
-Movement of center/base<br />
-<br />
-x=x4/(1+z4/dst);y=y4/(1+z4/dst);<br />
-3D/2D-Translation<br />
-<br />
-FRAME______________________________________________________________________________<br />
-<br />
-This is a good place to setup additional movement for your scope. For Example:<br />
-fr=fr+0.01;mz=1+sin(fr)<br />
-will move the scope back and forward along the z-axis.<br />
-<br />
-Do not change these and add your input in front of them:<br />
-<br />
-rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;<br />
-Rotation per Frame<br />
-<br />
-xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
-Sinuses and cosinuses for rotation in point-section (to save space and increase<br />
-performance).<br />
-<br />
-<br />
-BEAT_______________________________________________________________________________<br />
-<br />
-<br />
-Setup the beat reaction of your scope. For example change the rotation speed by random<br />
-like this:<br />
-<br />
-rdx=rand(3)+1;rdy=rand(3)+1;rdz=rand(3)+1<br />
-<br />
-<br />
-___________________________________________________________________________________<br />
-<br />
-THAT'S ALL FOLKS !<br />
-<br />
-edit: this guide sucks
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">1st April 2003 21:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<b><font size="4">DON'T USE EL-VIS'S 3D ENGINE.  WRITE ONE YOURSELF.</font></b><br />
-We just had this fucking conversation, idiot.  LEARN IT, DON'T STEAL IT.  :mad:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">1st April 2003 22:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Is'nt idiots name convenient for conversations such as this. I agree though, elvis's 3d translation is extremely hard to modify. Learn it yourself.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">legohead</span><br />
-			<span class="date small text-muted">1st April 2003 23:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Atero  - shhhhhhhh....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 01:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It's in his Real 3D pack, if you want the full thing, but I would reccommend taking a quick glance at Atero's primer, search the internet for rotation matrices, and then go to write your own 3D code, and see what you come out with, and check if it works or not.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">2nd April 2003 01:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I tried AVS Primer, It just confused me more about all this :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 02:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Like I said, just google for rotation matrices.  I'm sure you can find a lot at mathworld.wolfram.edu(is this the correct site?).  In order to fully get the grasp of it you will need to try to make your own.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd April 2003 03:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		legohead, is there ANY chance at all that you'll stop being a dumbshit and start being a contributing member of the avs community?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 04:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Atero, put legohead on ignore and please do not flame again.<br />
-<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">legohead</span><br />
-			<span class="date small text-muted">2nd April 2003 05:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Im contributing my share thanks champ :)<br />
-I'll leave dumbshiting to your capable hands
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">2nd April 2003 15:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok children calm down, leave each other alone and avoid each other. If you don't like each others posts, save it for someone who cares.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 15:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		legohead, put Atero on ignore and avoid flaming and/or inciting flames. You've now both had your warning and I'll be watching to be sure you abide by forum policy.  Remember, if you have a problem with someone, there is something you can do about it besides flaming, PM a mod or use the &quot;Report this Post&quot; function.<br />
-<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd April 2003 21:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Gonzotek: How about we both put you on ignore and you stop telling us what to do?<br />
-:) ..|., :hang:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">2nd April 2003 21:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Because if you do you can wave bye bye to your forum for a while ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 21:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Other than asking that you follow the rules of the forum, what have I done?  That thread wasn't locked by me.  I've been asked to do this, it wasn't my idea, but your actions that precipitated this.<br />
-<br />
-Strike two.<br />
-*whacked*<br />
-[edit]No, unwhacked.  If you'd like to discuss this is as good as place as any, but flame again and it's out of my hands.<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">2nd April 2003 21:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Just offtopic for a second but Gonzo, do you know where Rocker is? you seem to have become quite active but i have yet to see a post from Rocker. I didn't think it was worth a new post so i'll put it in here.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 21:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		How did this thread become open again?  Raz, did you somehow gain modding powers?:p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 21:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No idea really.  He's an aussie and I'm from Southern NJ, USA, so our paths don't cross all that much.<br />
-<br />
--gonzo
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 21:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Gonzotek </i><br />
-<b>Other than asking that you follow the rules of the forum, what have I done?  That thread wasn't locked by me.  I've been asked to do this, it wasn't my idea, but your actions that precipitated this.</b></blockquote>
-Our problem is that this forum is bogged down by posts that have been asked and answered many times.  First off, almost any n00b question is answered in the FAQ.  Second, n00bs tend to ignore the big, red letters telling them to search the forums.  After getting the same questions over and over and over again, all of us tend to get to the end of our rope because we are tired of answering the questions and it gives us less time to answer important questions and help each other perfect their packs.<br />
-<br />
-This is also fueled by regulars in these forums who are constantly making pointless, nonsensical posts or who say things without thinking or without knowing what they are talking about.<br />
-<br />
-We are also annoyed by people who come to this forum with a non-AVS post (i.e. the question about the playlist and the sentence game thread)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd April 2003 21:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Inexplicably, my goodbye letter, which had something to say on that point, seems to have vanished.  Seems like &quot;strike one&quot; for mod one to me :hang: Somehow this seems very reminiscent to the Matrix scene where the agents capture Neo for the first time...or maybe it's just me.<br />
-Just in case anyone wanted to know, the second to last line was:<br />
-
-	<blockquote>
-			
-				as for gonzotek and rocker, go ahead, silence me.  prove my point, cunts.</blockquote>
-You don't know a fucking thing about this forum.  Think twice before you go around deleting threads :mad:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd April 2003 21:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Yup.</strong><br />
-		
-		
-
-		Gee, and you guys wonder why I resent the new mods so much.  Wonder what this is all about?  Talk to gonzoboy :mad:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 21:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		so it did disappear...if you really DO leave, Atero, I will miss you.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 22:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Michaelthecat </i><br />
-<b>Our problem is that this forum is bogged down by posts that have been asked and answered many times.  First off, almost any n00b question is answered in the FAQ.  Second, n00bs tend to ignore the big, red letters telling them to search the forums.  After getting the same questions over and over and over again, all of us tend to get to the end of our rope because we are tired of answering the questions and it gives us less time to answer important questions and help each other perfect their packs.<br />
-<br />
-This is also fueled by regulars in these forums who are constantly making pointless, nonsensical posts or who say things without thinking or without knowing what they are talking about.<br />
-<br />
-We are also annoyed by people who come to this forum with a non-AVS post (i.e. the question about the playlist and the sentence game thread) </b></blockquote>
- How is that different from any other forum?  Winamp3 Discussion and Winamp3 Skins and Scripting have the same issues, and the solution is the same: follow the rules and fulfill the purpose of the forum while enjoying yourself.<br />
-<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 22:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				You don't know a fucking thing about this forum. Think twice before you go around deleting threads</blockquote>
-Think twice before you flame.  Whether I know anything about this forum or not, that post was, to be kind to you, highly inflammatory.<br />
-<br />
-I keep giving you the benefit of the doubt that you wanted to be part of this forum.  I've asked for your suggestions, I've ignored blatent examples of flaming BY YOU, and I've given you every opportunity to prove your not what they say you are.  You're hanging yourself here.<br />
-<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 22:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hmmm...did you merge the 'Yup. thread?'
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 22:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Threads merged.  I can take the heat.  Try calling me a long-nosed weirdo muppet-man next.<br />
-<br />
--Gonzotek
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 22:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		[edit]whoops...just realized that Rovastar posted the picture...[/edit]
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd April 2003 22:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		&quot;Highly inflamatory.&quot;  No shit, dumbfuck.  Then again, I suppose you'd have to tell everyone else seeing as how you wouldn't let anyone read it.  So it was &quot;highly inflammatory.&quot;  Wanna know the one thing worse than being &quot;highly inflammatory&quot;?  Abusing power.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 22:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		whoa...Atero's REALLY blown his top<br />
-<br />
-but, I think Atero has a point
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">2nd April 2003 22:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well take a holiday for a couple of weeks.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 22:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Wow, this thread is confusing.  Atero, calm down.  Just chill with the flaming - we've been asking you to do this for a long time.  Gonzo is merely trying to restore order.  You follow the simple rules and you won't get in trouble.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">2nd April 2003 22:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Atero post was removed as he offensively flamed a couple of mods and about 6 members here so Gonzo, rightly so, removed it.<br />
-<br />
-Getting stuck into themods is not a good idea at the best of times but this was silly and he keep going on and on.<br />
-<br />
-I let a lot go with atero as he was a useful member of teh team here and did sometimes help people out but way do we have to put up with this.<br />
-<br />
-So he is banned initally for a couple of weeks.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2003 22:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		atero banned? :cry:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Gonzotek</span><br />
-			<span class="date small text-muted">2nd April 2003 22:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Abusing power is having valuable knowledge that someone else needs and then flaming them when they ask you about it.<br />
-<br />
--=Gonzotek=-
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DJ Egg</span><br />
-			<span class="date small text-muted">2nd April 2003 22:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Michaelthecat </i><br />
-<b>Our problem is that this forum is bogged down by posts that have been asked and answered many times.</b></blockquote>
-Hey dude. Try responding to tech support questions for 3 years, hehe. We've got countless stickies/faq's, and a TSGH forum . . . but still we get the same questions over and over again.<br />
-The best tip I can give you is to take a page out of mine and Sawg's books, and knock up a text file of links, so when someone asks the same old question, all you need to do is point them to the relevant thread.<br />
-If it's answered in the faq, then knock up a simple copy+paste reply. Then it only takes a matter of seconds to post a reply.<br />
-And be as cool, patient and courteous as hell, no matter how much it hurts, lol.
-	<blockquote>
-			
-				<i>Originally posted by Atero </i><br />
-<b>Gee, and you guys wonder why I resent the new mods so much.  Wonder what this is all about?  Talk to gonzoboy :mad: </b></blockquote>
-Now what was it I said in the other thread about prospective moderator material? ;)<br />
-Remember, no-one is bigger than the forums themselves.<br />
-Apparently, you've already been sent many private warnings about flaming members, and now I'm warning you in public. Persistent flaming will NOT be tolerated!<br />
-Just to let the other good people here know, Atero posted a &quot;leaving&quot; message, where he blatently cursed and flamed other members and moderators in person.<br />
-Not nice, not nice at all.<br />
-As evidence, the thread was (re)moved.<br />
-Trust me, you do NOT want to see it!<br />
-<br />
-Whether Atero leaves on his own accord or not, you'll be seeing a lot less of him around these parts in the not too distant future... sad, but true :(<br />
-A temp ban means there's a second (conditional) chance.<br />
-After that, it becomes permanent.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 22:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Damn it atero, now we don't have the n00binator here anymore.  You did a great job of handling the n00bs most of the time - except when you went overboard and started flaming them.  Oh well, should still be able to hold them off for a couple of weeks.  See you when you come back(and please do come back).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">2nd April 2003 22:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The funny side of all of this is that the thread title is 'Please don't flame me but...'
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">2nd April 2003 22:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		LMAO.  Yeah, isn't that ironic.  Atero just got banned for flaming people.  He didn't flame idiot though(although it's hard not to - just saying his name makes the post sound derrogatory:p ).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DJ Egg</span><br />
-			<span class="date small text-muted">2nd April 2003 22:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yes, life can be so ironic at times ;)<br />
-However, I'm sure you'll all cope nicely in Atero's absence.<br />
-<br />
-Now please get back to making all those totally mental presets.<br />
-Nothing else to see here. Move along.<br />
-<br />
-Thank you :)<br />
-<br />
-Topic continued <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=130740" target="_blank">here</a><br />
-<br />
-*whacked*<br />
-<br />
-/me sneaks off back to the tech forums
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Please don't flame me but...</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=130484">Please don't flame me but...</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">ryan</span><br />
+      <span class="post-time small text-muted">1st April 2003 05:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Please don't flame me but...</strong><br />
+      Does anyone know where the ElVis 3D superscope guide is. I searched all over the winamp.com plugins and couldn't find the pack it was it. So can someone post it or a link to it please :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">1st April 2003 06:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">******************************<br />
+      * *<br />
+      * SUPERSCOPES-3D by EL-VIS *<br />
+      * *<br />
+      ******************************<br />
+      <br />
+      First: "Yes, I'm not a native speaker!"<br />
+      Second: "But I've tried my best."<br />
+      <br />
+      The idea was to do some Superscopes in 3D. My first tries (_first3D_) were quite OK<br />
+      but not the real thing. So I got deeper into 3D-mathematics and I finally managed<br />
+      to develop a base setup for real 3D presets (_real3D_start.avs).<br />
+      <br />
+      <br />
+      Real 3D means:<br />
+      <br />
+      Every point of the scope has now 3 coordinates: x1, y1 and z1<br />
+      (instead of x and y) which describe its position in the 3D-Room:<br />
+      <br /></p>
+      <pre>
+<code> <br /><br />           -y<br />            |  +z<br />            |  /<br />            | /<br />            |/<br />-x ------------------- +x<br />           /|0<br />          / |<br />         /  |<br />       -z   |<br />           +y<br /><br /></code>
+</pre><br />
+      <br />
+      So the scope becomes a real 3D-Object, which could be rotated around and<br />
+      moved along the three axes (x,y and z) of the 3D-Room.<br />
+      <br />
+      Finally the 3D-coordinates of the scope are translated into 2D-coordinates of the screen.<br />
+      <br />
+      Here's the explanation of the settings of real3D_start.avs by section:<br />
+      <br />
+      INIT_______________________________________________________________________________<br />
+      <br />
+      n=7; r=0.5;<br />
+      Just for this scope, which is a simple circle with a radius of 0.5 done in 7 steps.<br />
+      <br />
+      mx=0;my=0;mz=0;<br />
+      Use these to move the center/base of your scope along the axes.<br />
+      <br />
+      dst=2;<br />
+      Normally you don't need to change this. It's the distance for the 3D/2D-Translation.<br />
+      IMPORTANT: If you create, rotate or move a scope its z-values must not become lower<br />
+      than -dst =&gt; !!! z &gt;= -dst for all z !!!<br />
+      <br />
+      rx=0;ry=0;rz=0;<br />
+      Initrotation around x,y and z-axis in degrees.<br />
+      <br />
+      rdx=1;rdy=1;rdz=1;<br />
+      Permanent rotation around axes in degrees/frame. Set these to zero to<br />
+      stop rotation.<br />
+      <br />
+      p=3.14159265;p2=2.0*p;p3=180/p<br />
+      You'll never need to change these<br />
+      <br />
+      <br />
+      <br />
+      POINT______________________________________________________________________________<br />
+      <br />
+      x1=r*sin(p2*i);y1=0;z1=r*cos(p2*i);<br />
+      This is the 3D-Scope. Add your own scopes here by setting x1,y1 and z1.<br />
+      (Do not use x and y. They are generated in this section)<br />
+      <br />
+      (In fact the example is not really 3D because of y1=0, but as you see,<br />
+      it can be nicely rotated anyway)<br />
+      <br />
+      IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br />
+      The length of input in all of the sections is limited. So keep your scope as<br />
+      short as possible. If the scope suddenly dissapears after a regular input you're<br />
+      F***ed!<br />
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br />
+      <br />
+      Do not change anything else in this section:<br />
+      <br />
+      y2=y1*xc-z1*xs;z2=y1*xs+z1*xc;<br />
+      Rotation around x-axis<br />
+      <br />
+      x2=z2*ys+x1*yc;z3=z2*yc-x1*ys;<br />
+      Rotation around y-axis<br />
+      <br />
+      x3=x2*zc-y2*zs;y3=y2*zc+x2*zs;<br />
+      Rotation around z-axis<br />
+      <br />
+      x4=mx+x3;y4=my+y3;z4=mz+z3;<br />
+      Movement of center/base<br />
+      <br />
+      x=x4/(1+z4/dst);y=y4/(1+z4/dst);<br />
+      3D/2D-Translation<br />
+      <br />
+      FRAME______________________________________________________________________________<br />
+      <br />
+      This is a good place to setup additional movement for your scope. For Example:<br />
+      fr=fr+0.01;mz=1+sin(fr)<br />
+      will move the scope back and forward along the z-axis.<br />
+      <br />
+      Do not change these and add your input in front of them:<br />
+      <br />
+      rx=rx+rdx;ry=ry+rdy;rz=rz+rdz;<br />
+      Rotation per Frame<br />
+      <br />
+      xs=sin(rx/p3);ys=sin(ry/p3);zs=sin(rz/p3);xc=cos(rx/p3);yc=cos(ry/p3);zc=cos(rz/p3)<br />
+      Sinuses and cosinuses for rotation in point-section (to save space and increase<br />
+      performance).<br />
+      <br />
+      <br />
+      BEAT_______________________________________________________________________________<br />
+      <br />
+      <br />
+      Setup the beat reaction of your scope. For example change the rotation speed by random<br />
+      like this:<br />
+      <br />
+      rdx=rand(3)+1;rdy=rand(3)+1;rdz=rand(3)+1<br />
+      <br />
+      <br />
+      ___________________________________________________________________________________<br />
+      <br />
+      THAT'S ALL FOLKS !<br />
+      <br />
+      edit: this guide sucks
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">1st April 2003 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><b><font size="4">DON'T USE EL-VIS'S 3D ENGINE. WRITE ONE YOURSELF.</font></b><br />
+      We just had this fucking conversation, idiot. LEARN IT, DON'T STEAL IT. :mad:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">1st April 2003 22:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Is'nt idiots name convenient for conversations such as this. I agree though, elvis's 3d translation is extremely hard to modify. Learn it yourself.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">legohead</span><br />
+      <span class="post-time small text-muted">1st April 2003 23:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Atero - shhhhhhhh....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 01:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">It's in his Real 3D pack, if you want the full thing, but I would reccommend taking a quick glance at Atero's primer, search the internet for rotation matrices, and then go to write your own 3D code, and see what you come out with, and check if it works or not.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">ryan</span><br />
+      <span class="post-time small text-muted">2nd April 2003 01:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">I tried AVS Primer, It just confused me more about all this :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 02:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Like I said, just google for rotation matrices. I'm sure you can find a lot at mathworld.wolfram.edu(is this the correct site?). In order to fully get the grasp of it you will need to try to make your own.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd April 2003 03:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">legohead, is there ANY chance at all that you'll stop being a dumbshit and start being a contributing member of the avs community?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 04:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Atero, put legohead on ignore and please do not flame again.<br />
+      <br />
+      -=Gonzotek=-</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">legohead</span><br />
+      <span class="post-time small text-muted">2nd April 2003 05:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Im contributing my share thanks champ :)<br />
+      I'll leave dumbshiting to your capable hands</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">2nd April 2003 15:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Ok children calm down, leave each other alone and avoid each other. If you don't like each others posts, save it for someone who cares.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 15:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">legohead, put Atero on ignore and avoid flaming and/or inciting flames. You've now both had your warning and I'll be watching to be sure you abide by forum policy. Remember, if you have a problem with someone, there is something you can do about it besides flaming, PM a mod or use the "Report this Post" function.<br />
+      <br />
+      -=Gonzotek=-</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Gonzotek: How about we both put you on ignore and you stop telling us what to do?<br />
+      :) ..|., :hang:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Because if you do you can wave bye bye to your forum for a while ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Other than asking that you follow the rules of the forum, what have I done? That thread wasn't locked by me. I've been asked to do this, it wasn't my idea, but your actions that precipitated this.<br />
+      <br />
+      Strike two.<br />
+      *whacked*<br />
+      [edit]No, unwhacked. If you'd like to discuss this is as good as place as any, but flame again and it's out of my hands.<br />
+      -=Gonzotek=-</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Just offtopic for a second but Gonzo, do you know where Rocker is? you seem to have become quite active but i have yet to see a post from Rocker. I didn't think it was worth a new post so i'll put it in here.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">How did this thread become open again? Raz, did you somehow gain modding powers?:p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">No idea really. He's an aussie and I'm from Southern NJ, USA, so our paths don't cross all that much.<br />
+      <br />
+      -gonzo</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Gonzotek</i><br />
+        <b>Other than asking that you follow the rules of the forum, what have I done? That thread wasn't locked by me. I've been asked to do this, it wasn't my idea, but your actions that precipitated this.</b>
+      </blockquote>Our problem is that this forum is bogged down by posts that have been asked and answered many times. First off, almost any n00b question is answered in the FAQ. Second, n00bs tend to ignore the big, red letters telling them to search the forums. After getting the same questions over and over and over again, all of us tend to get to the end of our rope because we are tired of answering the questions and it gives us less time to answer important questions and help each other perfect their packs.<br />
+      <br />
+      This is also fueled by regulars in these forums who are constantly making pointless, nonsensical posts or who say things without thinking or without knowing what they are talking about.<br />
+      <br />
+      We are also annoyed by people who come to this forum with a non-AVS post (i.e. the question about the playlist and the sentence game thread)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Inexplicably, my goodbye letter, which had something to say on that point, seems to have vanished. Seems like "strike one" for mod one to me :hang: Somehow this seems very reminiscent to the Matrix scene where the agents capture Neo for the first time...or maybe it's just me.<br />
+      Just in case anyone wanted to know, the second to last line was:<br /></p>
+
+      <blockquote>
+        as for gonzotek and rocker, go ahead, silence me. prove my point, cunts.
+      </blockquote>You don't know a fucking thing about this forum. Think twice before you go around deleting threads :mad:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"><strong>Yup.</strong><br />
+      Gee, and you guys wonder why I resent the new mods so much. Wonder what this is all about? Talk to gonzoboy :mad:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 21:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">so it did disappear...if you really DO leave, Atero, I will miss you.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Michaelthecat</i><br />
+        <b>Our problem is that this forum is bogged down by posts that have been asked and answered many times. First off, almost any n00b question is answered in the FAQ. Second, n00bs tend to ignore the big, red letters telling them to search the forums. After getting the same questions over and over and over again, all of us tend to get to the end of our rope because we are tired of answering the questions and it gives us less time to answer important questions and help each other perfect their packs.<br />
+        <br />
+        This is also fueled by regulars in these forums who are constantly making pointless, nonsensical posts or who say things without thinking or without knowing what they are talking about.<br />
+        <br />
+        We are also annoyed by people who come to this forum with a non-AVS post (i.e. the question about the playlist and the sentence game thread)</b>
+      </blockquote>How is that different from any other forum? Winamp3 Discussion and Winamp3 Skins and Scripting have the same issues, and the solution is the same: follow the rules and fulfill the purpose of the forum while enjoying yourself.<br />
+      <br />
+      -=Gonzotek=-
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        You don't know a fucking thing about this forum. Think twice before you go around deleting threads
+      </blockquote>Think twice before you flame. Whether I know anything about this forum or not, that post was, to be kind to you, highly inflammatory.<br />
+      <br />
+      I keep giving you the benefit of the doubt that you wanted to be part of this forum. I've asked for your suggestions, I've ignored blatent examples of flaming BY YOU, and I've given you every opportunity to prove your not what they say you are. You're hanging yourself here.<br />
+      <br />
+      -=Gonzotek=-
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">hmmm...did you merge the 'Yup. thread?'</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Threads merged. I can take the heat. Try calling me a long-nosed weirdo muppet-man next.<br />
+      <br />
+      -Gonzotek</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">[edit]whoops...just realized that Rovastar posted the picture...[/edit]</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">"Highly inflamatory." No shit, dumbfuck. Then again, I suppose you'd have to tell everyone else seeing as how you wouldn't let anyone read it. So it was "highly inflammatory." Wanna know the one thing worse than being "highly inflammatory"? Abusing power.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">whoa...Atero's REALLY blown his top<br />
+      <br />
+      but, I think Atero has a point</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Well take a holiday for a couple of weeks.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Wow, this thread is confusing. Atero, calm down. Just chill with the flaming - we've been asking you to do this for a long time. Gonzo is merely trying to restore order. You follow the simple rules and you won't get in trouble.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Atero post was removed as he offensively flamed a couple of mods and about 6 members here so Gonzo, rightly so, removed it.<br />
+      <br />
+      Getting stuck into themods is not a good idea at the best of times but this was silly and he keep going on and on.<br />
+      <br />
+      I let a lot go with atero as he was a useful member of teh team here and did sometimes help people out but way do we have to put up with this.<br />
+      <br />
+      So he is banned initally for a couple of weeks.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">atero banned? :cry:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Gonzotek</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Abusing power is having valuable knowledge that someone else needs and then flaming them when they ask you about it.<br />
+      <br />
+      -=Gonzotek=-</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DJ Egg</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Michaelthecat</i><br />
+        <b>Our problem is that this forum is bogged down by posts that have been asked and answered many times.</b>
+      </blockquote>Hey dude. Try responding to tech support questions for 3 years, hehe. We've got countless stickies/faq's, and a TSGH forum . . . but still we get the same questions over and over again.<br />
+      The best tip I can give you is to take a page out of mine and Sawg's books, and knock up a text file of links, so when someone asks the same old question, all you need to do is point them to the relevant thread.<br />
+      If it's answered in the faq, then knock up a simple copy+paste reply. Then it only takes a matter of seconds to post a reply.<br />
+      And be as cool, patient and courteous as hell, no matter how much it hurts, lol.
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>Gee, and you guys wonder why I resent the new mods so much. Wonder what this is all about? Talk to gonzoboy :mad:</b>
+      </blockquote>Now what was it I said in the other thread about prospective moderator material? ;)<br />
+      Remember, no-one is bigger than the forums themselves.<br />
+      Apparently, you've already been sent many private warnings about flaming members, and now I'm warning you in public. Persistent flaming will NOT be tolerated!<br />
+      Just to let the other good people here know, Atero posted a "leaving" message, where he blatently cursed and flamed other members and moderators in person.<br />
+      Not nice, not nice at all.<br />
+      As evidence, the thread was (re)moved.<br />
+      Trust me, you do NOT want to see it!<br />
+      <br />
+      Whether Atero leaves on his own accord or not, you'll be seeing a lot less of him around these parts in the not too distant future... sad, but true :(<br />
+      A temp ban means there's a second (conditional) chance.<br />
+      After that, it becomes permanent.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Damn it atero, now we don't have the n00binator here anymore. You did a great job of handling the n00bs most of the time - except when you went overboard and started flaming them. Oh well, should still be able to hold them off for a couple of weeks. See you when you come back(and please do come back).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">The funny side of all of this is that the thread title is 'Please don't flame me but...'</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">LMAO. Yeah, isn't that ironic. Atero just got banned for flaming people. He didn't flame idiot though(although it's hard not to - just saying his name makes the post sound derrogatory:p ).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DJ Egg</span><br />
+      <span class="post-time small text-muted">2nd April 2003 22:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+
+      <p class="post-content">Yes, life can be so ironic at times ;)<br />
+      However, I'm sure you'll all cope nicely in Atero's absence.<br />
+      <br />
+      Now please get back to making all those totally mental presets.<br />
+      Nothing else to see here. Move along.<br />
+      <br />
+      Thank you :)<br />
+      <br />
+      Topic continued <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=130740" target="_blank">here</a><br />
+      <br />
+      *whacked*<br />
+      <br />
+      /me sneaks off back to the tech forums</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

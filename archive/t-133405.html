@@ -1,163 +1,106 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Method behind AVS overlay AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Method behind AVS overlay " />
 
-	<title> Method behind AVS overlay - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Method behind AVS overlay - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Method behind AVS overlay</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133405">Method behind AVS overlay</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Racalac</span><br />
+      <span class="post-time small text-muted">27th April 2003 20:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Method behind AVS overlay</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133405">Method behind AVS overlay</a></p>
+      <p class="post-content"><strong>Method behind AVS overlay</strong><br />
+      Hello,<br />
+      First, I'm new to these boards, so forgive me if this is the wrong forum for this question. I'll cheerfully move it to the correct one.<br />
+      <br />
+      My question is about the AVS overlay mode (it works great for me, this is not a "how do i turn it on" post). I've searched all the winamp forums (and google) to no avail, so I'm posting.<br />
+      <br />
+      How would one add a similar mode to AVS overlay mode in an application? I'm guessing it uses DirectDraw (7?) overlay surfaces, and have played with these, but can't seem to draw to the desktop background (yes the destination color key and desktop color match), it draws on top of everything else. If anyone has any tips/code/links for me, I'd appreciate it. Any links to a DirectX help forum that might be able to answer this would also be welcome.<br />
+      <br />
+      Thanks folks.<br />
+      <br />
+      Racalac</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">27th April 2003 20:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Make sure the key is exactly the same, if you're off one value it won't work.<br />
+      <br />
+      This isn't exactly the 'wrong' forum in terms of topic, but you won't find many programmers here. Try flipcode.com, there's lots of knowledgable programmers there.<br />
+      <br />
+      Overlay mode is commonly used by movie players (so that the hardware performs the blitting/rescaling rather than the software), maybe you can look into that.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Racalac</span><br />
-			<span class="date small text-muted">27th April 2003 20:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Method behind AVS overlay</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Racalac</span><br />
+      <span class="post-time small text-muted">27th April 2003 22:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hello,<br />
-First, I'm new to these boards, so forgive me if this is the wrong forum for this question. I'll cheerfully move it to the correct one.<br />
-<br />
-My question is about the AVS overlay mode (it works great for me, this is not a &quot;how do i turn it on&quot; post). I've searched all the winamp forums (and google) to no avail, so I'm posting. <br />
-<br />
-How would one add a similar mode to AVS overlay mode in an application? I'm guessing it uses DirectDraw (7?) overlay surfaces, and have played with these, but can't seem to draw to the desktop background (yes the destination color key and desktop color match), it draws on top of everything else. If anyone has any tips/code/links for me, I'd appreciate it. Any links to a DirectX help forum that might be able to answer this would also be welcome.<br />
-<br />
-Thanks folks.<br />
-<br />
-Racalac
-		</p>
-</div>
+      <p class="post-content">Okay, I'll check out flipcode, thanks. I guess I shouldn't expect the AVS author(s) to reply :)<br />
+      <br />
+      Racalac</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">28th April 2003 01:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">27th April 2003 20:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">But...<br />
+      <a href="http://forum.sonique.com/showthread.php?threadid=5800" target="_blank">http://forum.sonique.com/showthread.php?threadid=5800</a><br />
+      <br />
+      (sorry, just had to mention that :blah: )</p>
+    </div>
+    <hr />
 
-		Make sure the key is exactly the same, if you're off one value it won't work.<br />
-<br />
-This isn't exactly the 'wrong' forum in terms of topic, but you won't find many programmers here. Try flipcode.com, there's lots of knowledgable programmers there.<br />
-<br />
-Overlay mode is commonly used by movie players (so that the hardware performs the blitting/rescaling rather than the software), maybe you can look into that.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Racalac</span><br />
+      <span class="post-time small text-muted">28th April 2003 19:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">I thought I'd be helpful and post a link that answered my question: <a href="http://www.angelcode.com/source/" target="_blank">http://www.angelcode.com/source/</a><br />
+      <br />
+      The Overlay Demo on that page was perfect. My attempts were only a little off :)<br />
+      <br />
+      Racalac</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Racalac</span><br />
-			<span class="date small text-muted">27th April 2003 22:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br />
+      <span class="post-time small text-muted">29th April 2003 09:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Okay, I'll check out flipcode, thanks. I guess I shouldn't expect the AVS author(s) to reply :)<br />
-<br />
-Racalac
-		</p>
-</div>
+      <p class="post-content">GREAT! I love it when new people to these forums ask their questions politely, and keep clear what it exactly is they want. Keep it up (y) :D</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th April 2003 01:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		But...<br />
-<a href="http://forum.sonique.com/showthread.php?threadid=5800" target="_blank">http://forum.sonique.com/showthread.php?threadid=5800</a><br />
-<br />
-(sorry, just had to mention that :blah: )
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Racalac</span><br />
-			<span class="date small text-muted">28th April 2003 19:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I thought I'd be helpful and post a link that answered my question: <a href="http://www.angelcode.com/source/" target="_blank">http://www.angelcode.com/source/</a> <br />
-<br />
-The Overlay Demo on that page was perfect. My attempts were only a little off :)<br />
-<br />
-Racalac
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">29th April 2003 09:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		GREAT! I love it when new people to these forums ask their questions politely, and keep clear what it exactly is they want. Keep it up (y) :D
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

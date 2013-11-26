@@ -1,292 +1,179 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" DM source map AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DM source map " />
 
-	<title> DM source map - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>DM source map - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">DM source map</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138614">DM source map</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
+      <span class="post-time small text-muted">11th June 2003 04:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">DM source map</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138614">DM source map</a></p>
+      <p class="post-content"><strong>DM source map</strong><br />
+      I'm interested in implementing a sort of static (in that it's always on) DM source map. The problem is that I can't exactly figure out how the source map works. Can someone help me with this?<br />
+      <br />
+      Thanks<br />
+      ~K-dawg</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">11th June 2003 05:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">source map moves the color of each pixel into it's target position and leaves everything else black. normally it's the other way around; the color of the target pixel is moved into the original. for example:<br />
+      x=x*2;<br />
+      normally the pixel at x is colored according to the pixel at x*2. source map reverses this; the pixel at x*2 is colored by the pixel at x.<br />
+      in the long run, it's better to try to reverse the function before trying to use a source map, because source mapping just plain looks ugly. if you're not familiar with inverse functions then you need to brush up on your algebra - basically it's taking the function f(x)=..., replacing every instance of x with f(x)^-1 and every instance of f(x) with x, then solving for f(x)^-1. so the inverse of f(x)=x*2 is<br />
+      x=f(x)^-1*2<br />
+      x/2=f(x)^-1<br />
+      there are a few cases i can think of where you would want an actual source map for data storage and whatnot, but i really can't see anybody that isn't unconed and isn't me using that, and i certainly can't. why did you want it?<br />
+      <br />
+      <br />
+      <br />
+      <font size="1">not that i am in any way as good as unconed, but i'm about the only other person on this forum that would resort to tricky hacks like that...</font></p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">KeatonMill</span><br />
-			<span class="date small text-muted">11th June 2003 04:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>DM source map</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
+      <span class="post-time small text-muted">11th June 2003 09:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I'm interested in implementing a sort of static (in that it's always on) DM source map. The problem is that I can't exactly figure out how the source map works. Can someone help me with this?<br />
-<br />
-Thanks<br />
-~K-dawg
-		</p>
-</div>
+      <p class="post-content">yah, why do you want it for??(i mean i'm not able to use souce mapping in mov's to a good effect:( )</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">11th June 2003 11:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">11th June 2003 05:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content"></p>
 
-		source map moves the color of each pixel into it's target position and leaves everything else black.  normally it's the other way around; the color of the target pixel is moved into the original.  for example:<br />
-x=x*2;<br />
-normally the pixel at x is colored according to the pixel at x*2.  source map reverses this; the pixel at x*2 is colored by the pixel at x.<br />
-in the long run, it's better to try to reverse the function before trying to use a source map, because source mapping just plain looks ugly.  if you're not familiar with inverse functions then you need to brush up on your algebra - basically it's taking the function f(x)=..., replacing every instance of x with f(x)^-1 and every instance of f(x) with x, then solving for f(x)^-1.  so the inverse of f(x)=x*2 is<br />
-x=f(x)^-1*2<br />
-x/2=f(x)^-1<br />
-there are a few cases i can think of where you would want an actual source map for data storage and whatnot, but i really can't see anybody that isn't unconed and isn't me using that, and i certainly can't.  why did you want it?<br />
-<br />
-<br />
-<br />
-<font size="1">not that i am in any way as good as unconed, but i'm about the only other person on this forum that would resort to tricky hacks like that...</font>
-		</p>
-</div>
+      <blockquote>
+        i'm about the only other person on this forum that would resort to tricky hacks like that...
+      </blockquote>read the fine print boyz.. its a challenge!!!!<br />
+      <br />
+      atero, get yur arse off the parade float. If you said that for any other reason aber to get yer rocket off, and to have a spill at UCD, id like to know it.<br />
+      <br />
+      BTW, source map can be extreamely useful, and it can do many things that inverses cant (without a great deal of additional coding)<br />
+      For one, source map doesnt edge stretch, so you can make nice looking dms that are smaller than the screen size without having that ugly stretch on the sides, or resorting to the fungly add borders APE.<br />
+      <br />
+      Also, you can use a blank screen and a source mapped movement to make nce solid shapes, rather than using a hefty n'ed super scope.<br />
+      <br />
+      [edit] <b>btw, there is no source map for the DM, you mean the normal movement i presume.</b>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">11th June 2003 11:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">11th June 2003 09:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">sid, you are a total fucking moron, you know that? i said i'm the only one who *would* resort to those measures just for a damned preset. i also went on to say that i *could not* do so.<br />
+      if there was any reason to that post other than to try and instigate an argument (and if i had a dime for every time you've accused me of doing that i'd be a rich man), you tell me.</p>
+    </div>
+    <hr />
 
-		yah, why do you want it for??(i mean i'm not able to use souce mapping in mov's to a good effect:( )
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">11th June 2003 11:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">This sparked a huge argument on finnish flash between Atero and Sid, just in case anyone cared. :weird:</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">11th June 2003 11:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
+      <span class="post-time small text-muted">11th June 2003 11:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		
-	<blockquote>
-			
-				i'm about the only other person on this forum that would resort to tricky hacks like that...</blockquote>
-read the fine print boyz.. its a challenge!!!!<br />
-<br />
-atero, get yur arse off the parade float. If you said that for any other reason aber to get yer rocket off, and to have a spill at UCD, id like to know it.<br />
-<br />
-BTW, source map can be extreamely useful, and it can do many things that inverses cant (without a great deal of additional coding)<br />
-For one, source map doesnt edge stretch, so you can make nice looking dms that are smaller than the screen size without having that ugly stretch on the sides, or resorting to the fungly add borders APE.<br />
-<br />
-Also, you can use a blank screen and a source mapped movement to make nce solid shapes, rather than using a hefty n'ed super scope.<br />
-<br />
-[edit] <b>btw, there is no source map for the DM, you mean the normal movement i presume.</b>
-		</p>
-</div>
+      <p class="post-content">pak-9 ? forums ? :igor:<br />
+      Guys,quit the argument,it does not worth it..</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">11th June 2003 11:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">11th June 2003 11:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">no arguements then..<br />
+      :)</p>
+    </div>
+    <hr />
 
-		sid, you are a total fucking moron, you know that?  i said i'm the only one who *would* resort to those measures just for a damned preset.  i also went on to say that i *could not* do so.<br />
-if there was any reason to that post other than to try and instigate an argument (and if i had a dime for every time you've accused me of doing that i'd be a rich man), you tell me.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">11th June 2003 12:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">*sigh* another day another argument. What's this... Atero? Again? :rolleyes: :p</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">11th June 2003 11:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
+      <span class="post-time small text-muted">11th June 2003 12:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		This sparked a huge argument on finnish flash between Atero and Sid, just in case anyone cared. :weird:
-		</p>
-</div>
+      <p class="post-content">i wouldnt do that if i were you raz.<br />
+      please leave this topic alone.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
+      <span class="post-time small text-muted">11th June 2003 16:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Phaze1987</span><br />
-			<span class="date small text-muted">11th June 2003 11:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Atero: Well, actually my original idea would be to reverse a 3D DM just for the heck of it and see what it would look like... It could also be useful for a couple of my "trippy diner" presets. I understand what you're saying about function inverses... I'm just wondering if there's some sort of shortcut if you know x, y, x' and y'...<br />
+      Siddhartha: I'm talking about implementing source map in a DM. If I wanted to just have a static movement map I would of course use a regular movement, but that doesn't seem to work so well.</p>
+    </div>
+    <hr />
 
-		pak-9 ? forums ? :igor:<br />
-Guys,quit the argument,it does not worth it..
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
+      <span class="post-time small text-muted">11th June 2003 17:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">So you are wanting to implement a source map in a DM , then this should be in the wishlist aint it???:p</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">11th June 2003 11:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">11th June 2003 17:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		no arguements then.. <br />
-:)
-		</p>
-</div>
+      <p class="post-content">Siddhartha, don't worry if i get into arguments i either come up with a correct and relevant argument and present it in a mature and adult way or i say "i lub joo too" or some such :D</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
+      <span class="post-time small text-muted">12th June 2003 20:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">11th June 2003 12:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">So, aside from all of the non-existant ;) arguements, does anyone know how to duplicate the source map effect without re-writing the equations?</p>
+    </div>
+    <hr />
 
-		*sigh* another day another argument. What's this... Atero? Again? :rolleyes: :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">11th June 2003 12:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i wouldnt do that if i were you raz.<br />
-please leave this topic alone.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">KeatonMill</span><br />
-			<span class="date small text-muted">11th June 2003 16:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Atero: Well, actually my original idea would be to reverse a 3D DM just for the heck of it and see what it would look like... It could also be useful for a couple of my &quot;trippy diner&quot; presets. I understand what you're saying about function inverses... I'm just wondering if there's some sort of shortcut if you know x, y, x' and y'...<br />
-Siddhartha: I'm talking about implementing source map in a DM. If I wanted to just have a static movement map I would of course use a regular movement, but that doesn't seem to work so well.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">11th June 2003 17:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		So you are wanting to implement a source map in a DM , then this should be in the wishlist aint it???:p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">11th June 2003 17:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Siddhartha, don't worry if i get into arguments i either come up with a correct and relevant argument and present it in a mature and adult way or i say &quot;i lub joo too&quot; or some such :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">KeatonMill</span><br />
-			<span class="date small text-muted">12th June 2003 20:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		So, aside from all of the non-existant  ;)  arguements, does anyone know how to duplicate the source map effect without re-writing the equations?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

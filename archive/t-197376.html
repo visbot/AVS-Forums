@@ -1,229 +1,136 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" FPS adjustment for each preset AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FPS adjustment for each preset " />
 
-	<title> FPS adjustment for each preset - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>FPS adjustment for each preset - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">FPS adjustment for each preset</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=197376">FPS adjustment for each preset</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">q19</span><br />
+      <span class="post-time small text-muted">25th October 2004 12:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">FPS adjustment for each preset</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=197376">FPS adjustment for each preset</a></p>
+      <p class="post-content"><strong>FPS adjustment for each preset</strong><br />
+      Looking at some older presets, you might experience some perfomance problems: Older presets are often too fast for modern CPUs. Then you might adjust the fps within the avs options, but that has to be done for each single preset. So my idea is to create the possibility of saving fps limit information in the presets itself. Thus, your presets will look the same way on different computers.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
+      <span class="post-time small text-muted">25th October 2004 13:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Let me just jump in before Tugg...<br />
+      <br />
+      You can do this yourself in code, by using gettime(), so that movements are frame rate independant. It doesnt apply to 'moving particles' and other crappy codeless AVS elements...but you shouldn't be using them anyway ;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">q19</span><br />
-			<span class="date small text-muted">25th October 2004 12:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>FPS adjustment for each preset</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">25th October 2004 15:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Looking at some older presets, you might experience some perfomance problems: Older presets are often too fast for modern CPUs. Then you might adjust the fps within the avs options, but that has to be done for each single preset. So my idea is to create the possibility of saving fps limit information in the presets itself. Thus, your presets will look the same way on different computers.
-		</p>
-</div>
+      <p class="post-content">Oh PAK-9, you totally jumped the gun on this one, see if im right (which i am of course) he isn't looking a solution for making presets, instead he wants to view the old presets he already has with a little lesser framerate and also wants to save those fps settings for them.<br />
+      <br />
+      There has been much discussion about a framerate limiter APE, but so far no one has done that yet.<br />
+      <br />
+      So sorry, there isn't any other solution to this right now than to stick with the performance slider.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
+      <span class="post-time small text-muted">25th October 2004 18:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">25th October 2004 13:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Rectification: The slider doesn't have to be set per preset, it should stay as you have set it.<br />
+      (Stored on HDD when Winamp closes if I'm right... not sure about that)</p>
+    </div>
+    <hr />
 
-		Let me just jump in before Tugg...<br />
-<br />
-You can do this yourself in code, by using gettime(), so that movements are frame rate independant. It doesnt apply to 'moving particles' and other crappy codeless AVS elements...but you shouldn't be using them anyway ;)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">goebish</span><br />
+      <span class="post-time small text-muted">16th December 2004 15:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content"><strong>here it is</strong><br />
+      I just compiled such an ape, I think it is really usefull for "oldschool" presets that run too fast with nowadays CPUs.<br />
+      <br />
+      Get it at: <a href="http://goebish.free.fr/vfx" target="_blank">http://goebish.free.fr/vfx</a></p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">25th October 2004 15:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
+      <span class="post-time small text-muted">17th December 2004 01:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Oh PAK-9, you totally jumped the gun on this one, see if im right (which i am of course) he isn't looking a solution for making presets, instead he wants to view the old presets he already has with a little lesser framerate and also wants to save those fps settings for them.<br />
-<br />
-There has been much discussion about a framerate limiter APE, but so far no one has done that yet.<br />
-<br />
-So sorry, there isn't any other solution to this right now than to stick with the performance slider.
-		</p>
-</div>
+      <p class="post-content">Very nice job!<br />
+      <br />
+      I like it.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br />
+      <span class="post-time small text-muted">19th December 2004 02:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">25th October 2004 18:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You should post that ape somewhere more public.</p>
+    </div>
+    <hr />
 
-		Rectification: The slider doesn't have to be set per preset, it should stay as you have set it. <br />
-(Stored on HDD when Winamp closes if I'm right... not sure about that)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">goebish</span><br />
+      <span class="post-time small text-muted">19th December 2004 09:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">As it is a final version feel free to spread it where you want (websites, packs ...)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">goebish</span><br />
-			<span class="date small text-muted">16th December 2004 15:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>here it is</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">q19</span><br />
+      <span class="post-time small text-muted">28th December 2004 13:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I just compiled such an ape, I think it is really usefull for &quot;oldschool&quot; presets that run too fast with nowadays CPUs.<br />
-<br />
-Get it at:  <a href="http://goebish.free.fr/vfx" target="_blank">http://goebish.free.fr/vfx</a>
-		</p>
-</div>
+      <p class="post-content">@goebish: Great thing! Thank you very much :D</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">q19</span><br />
+      <span class="post-time small text-muted">25th January 2005 15:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">17th December 2004 01:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Another idea: I think, it would be very useful to have the Limiter in "Main", right under "clear every frame", with an enabling option, so that people don't have to download the APE.</p>
+    </div>
+    <hr />
 
-		Very nice job!<br />
-<br />
-I like it.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">goebish</span><br />
+      <span class="post-time small text-muted">25th January 2005 15:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">May not be possible ... I say "May" coz' I know someone made an APE capable of resizing AVS editor window without having to add the APE to each preset so it also "may" be possible ... I promise I'll have a look :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Mr_Nudge</span><br />
-			<span class="date small text-muted">19th December 2004 02:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You should post that ape somewhere more public.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">goebish</span><br />
-			<span class="date small text-muted">19th December 2004 09:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		As it is a final version feel free to spread it where you want (websites, packs ...)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">q19</span><br />
-			<span class="date small text-muted">28th December 2004 13:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		@goebish: Great thing! Thank you very much :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">q19</span><br />
-			<span class="date small text-muted">25th January 2005 15:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Another idea: I think, it would be very useful to have the Limiter in &quot;Main&quot;, right under &quot;clear every frame&quot;, with an enabling option, so that people don't have to download the APE.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">goebish</span><br />
-			<span class="date small text-muted">25th January 2005 15:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		May not be possible ... I say &quot;May&quot; coz' I know someone made an APE capable of resizing AVS editor window without having to add the APE to each preset so it also &quot;may&quot; be possible ... I promise I'll have a look :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

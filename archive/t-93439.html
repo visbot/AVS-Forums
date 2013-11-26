@@ -1,219 +1,138 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" log(var1,var2)? AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="log(var1,var2)? " />
 
-	<title> log(var1,var2)? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>log(var1,var2)? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">log(var1,var2)?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=93439">log(var1,var2)?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Sadarqii</span><br />
+      <span class="post-time small text-muted">4th July 2002 14:25 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">log(var1,var2)?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=93439">log(var1,var2)?</a></p>
+      <p class="post-content"><strong>log(var1,var2)?</strong><br />
+      Everyone agrees that pow(var1,var2) is a useful function. But quite often when working with logarythms log(var) and log10(var) is just not enough. In order to get a logarythm of a base other than 10 or e you have to do the following: log base A of var = log(var)/log(A). Can't it just be replaced with a log(var1,var2), where var1 is the base?<br />
+      <br />
+      log(var) can be replaced with ln(var) and log10(var) can be replaced with lg(var). The only problem with this is that the old presets that contained log and log10 functions won't work. In this case some sort of a conversion tool can be useful (a 'replace old functions button' of some sort in SSC, DM, DS, DDM and others that use manual coding).<br />
+      <br />
+      P.S. Has anyone wished for an integrated preset compression program like PIMP or NSIS in AVS that would allow to create packs fast an easy (without creating a separate script and using a windows interface. Just select files, output dir, uninstall path, different for various files and press "make pack")? Perhaps it can be a part of a preset browser.<br />
+      <br />
+      Or am I just dreaming?:hang:</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
+      <span class="post-time small text-muted">4th July 2002 14:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">I don't think we should be messing with the existing functions.<br />
+      <br />
+      It will cause too many complications. For me ne functions should be just that new functions with new names. Backwards compatibility is a very important part of it.<br />
+      <br />
+      What about a calling the function of Logbase(var1,var2) or something.<br />
+      <br />
+      Though I must say I don't know how often this function will be used. Too much excessive functions will only work against the speed of AVS.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Sadarqii</span><br />
-			<span class="date small text-muted">4th July 2002 14:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>log(var1,var2)?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">5th July 2002 00:26 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Everyone agrees that pow(var1,var2) is a useful function. But quite often when working with logarythms log(var) and log10(var) is just not enough. In order to get a logarythm of a base other than 10 or e you have to do the following: log base A of var = log(var)/log(A). Can't it just be replaced with a log(var1,var2), where var1 is the base?<br />
-<br />
-log(var) can be replaced with ln(var) and log10(var) can be replaced with lg(var). The only problem with this is that the old presets that contained log and log10 functions won't work. In this case some sort of a conversion tool can be useful (a 'replace old functions button' of some sort in SSC, DM, DS, DDM and others that use manual coding).<br />
-<br />
-P.S. Has anyone wished for an integrated preset compression program like PIMP or NSIS in AVS that would allow to create packs fast an easy (without creating a separate script and using a windows interface. Just select files, output dir, uninstall path, different for various files and press &quot;make pack&quot;)? Perhaps it can be a part of a preset browser.<br />
-<br />
-Or am I just dreaming?:hang:
-		</p>
-</div>
+      <p class="post-content">I don't see what the problem is with doing the division yourself though.<br />
+      On top of that, if you keep your base fixed, you can calculate log[e](base) or log[10](base) yourself and save its reciprocal (1/x) as a constant. That way, you only need one extra multiplication rather than a logarithm and a division.<br />
+      <br />
+      I'm curious what you're using logarithms for though.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Sadarqii</span><br />
+      <span class="post-time small text-muted">5th July 2002 11:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">4th July 2002 14:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I've used them to create a capsule-like shapes with a SSC. First create a tube made out of a spiral. Then apply the log function for let's say i&gt;0.75 and the pow function to i&lt;0.25 or the other way round (can't remember right now). That way the ends get rounded off.<br />
+      <br />
+      x=('code for spiral 3d tube')*(c1+c2+1)<br />
+      y=('code for spiral 3d tube')*(c1+c2+1)<br />
+      c1=-log(var1,var2)*above(i,somevalue)<br />
+      c2=-pow(var1,var2)*below(i,somevalue)<br />
+      <br />
+      I can't remember the code exactly because I'm not writing this at home and don't have my presets with me. Anyway I even managed to create a microphone shape with an antenna with a SSC. It's gonna come out in a pack (RomaAVS3) soon.<br />
+      <br />
+      UnConeD, you are right about that multiplication thing though. I just like being lazy sometimes, that's all.:) . Though Logbase(var1,var2)does sound good.</p>
+    </div>
+    <hr />
 
-		I don't think we should be messing with the existing functions.<br />
-<br />
-It will cause too many complications. For me ne functions should be just that new functions with new names. Backwards compatibility is a very important part of it.<br />
-<br />
-What about a calling the function of Logbase(var1,var2) or something.<br />
-<br />
-Though I must say I don't know how often this function will be used. Too much excessive functions will only work against the speed of AVS.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">5th July 2002 16:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content"><strong>Log vs power</strong><br />
+      Hmmm sounds like you're using log as a sort of mirror of pow... remember that log is the inverse function. In order to get a mirror, just use the inverse power (.5 instead of 2).<br />
+      <br />
+      If you want a correct circular/spherical rounding, use a variation on the function sqrt(1-sqr(x)) which is a half-circle for x in [-1;1]</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">5th July 2002 00:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Sadarqii</span><br />
+      <span class="post-time small text-muted">9th July 2002 07:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		I don't see what the problem is with doing the division yourself though.<br />
-On top of that, if you keep your base fixed, you can calculate log[e](base) or log[10](base) yourself and save its reciprocal (1/x) as a constant. That way, you only need one extra multiplication rather than a logarithm and a division.<br />
-<br />
-I'm curious what you're using logarithms for though.
-		</p>
-</div>
+      <p class="post-content"><strong>Thanks</strong><br />
+      I'll have to try that:)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">djcoolman</span><br />
+      <span class="post-time small text-muted">31st July 2002 15:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Sadarqii</span><br />
-			<span class="date small text-muted">5th July 2002 11:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content"><strong>thanx</strong><br />
+      Thanx 2 ur code i did a woderfull thing in the DM.<br />
+      I'll show u when I'll finsh it.</p>
+    </div>
+    <hr />
 
-		I've used them to create a capsule-like shapes with a SSC. First create a tube made out of a spiral. Then apply the log function for let's say i&gt;0.75 and the pow function to i&lt;0.25 or the other way round (can't remember right now). That way the ends get rounded off.<br />
-<br />
-x=('code for spiral 3d tube')*(c1+c2+1)<br />
-y=('code for spiral 3d tube')*(c1+c2+1)<br />
-c1=-log(var1,var2)*above(i,somevalue)<br />
-c2=-pow(var1,var2)*below(i,somevalue)<br />
-<br />
-I can't remember the code exactly because I'm not writing this at home and don't have my presets with me. Anyway I even managed to create a microphone shape with an antenna with a SSC. It's gonna come out in a pack (RomaAVS3) soon.<br />
-<br />
-UnConeD, you are right about that multiplication thing though. I just like being lazy sometimes, that's all.:) . Though Logbase(var1,var2)does sound good.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">31st July 2002 15:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">wrong thread?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">5th July 2002 16:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Log vs power</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">djcoolman</span><br />
+      <span class="post-time small text-muted">7th August 2002 17:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Hmmm sounds like you're using log as a sort of mirror of pow... remember that log is the inverse function. In order to get a mirror, just use the inverse power (.5 instead of 2).<br />
-<br />
-If you want a correct circular/spherical rounding, use a variation on the function sqrt(1-sqr(x)) which is a half-circle for x in [-1;1]
-		</p>
-</div>
+      <p class="post-content">no i did play with the code and its came wonderfull.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Sadarqii</span><br />
-			<span class="date small text-muted">9th July 2002 07:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Thanks</strong><br />
-		
-		
-
-		I'll have to try that:)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">djcoolman</span><br />
-			<span class="date small text-muted">31st July 2002 15:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>thanx</strong><br />
-		
-		
-
-		Thanx 2 ur code i did a woderfull thing in the DM.<br />
-I'll show u when I'll finsh it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">31st July 2002 15:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		wrong thread?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">djcoolman</span><br />
-			<span class="date small text-muted">7th August 2002 17:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		no i did play with the code and its came wonderfull.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

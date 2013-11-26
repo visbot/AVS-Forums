@@ -1,133 +1,79 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" need help AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="need help " />
 
-	<title> need help - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>need help - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">need help</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=166291">need help</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">robotisgod</span><br />
+      <span class="post-time small text-muted">23rd January 2004 19:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">need help</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=166291">need help</a></p>
+      <p class="post-content"><strong>need help</strong><br />
+      i was messing with 3d ssc's the other day and made this thingy, but i can't quite figure out how to get the smallest ring to rotate around the right axis (look at the preset, you'll see). all the rings should rotate with respect to the medium-sized ring, and it should run around 150fps (why doesnt avs have the 60fps limiter anymore?)</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
+      <span class="post-time small text-muted">23rd January 2004 22:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">I think it's because of the order of rotation. The outer ring is rotating on the Z axis and since you're rotating the entire shape by x, y, then z it works out. But since the X axis is the first to rotate it doesn't work right. You might have to rotate the inner ring twice. Once for the independent x rotation and then for the x,y,z rotation of the middle ring.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">robotisgod</span><br />
-			<span class="date small text-muted">23rd January 2004 19:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>need help</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
+      <span class="post-time small text-muted">23rd January 2004 22:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		i was messing with 3d ssc's the other day and made this thingy, but i can't quite figure out how to get the smallest ring to rotate around the right axis (look at the preset, you'll see). all the rings should rotate with respect to the medium-sized ring, and it should run around 150fps (why doesnt avs have the 60fps limiter anymore?)
-		</p>
-</div>
+      <p class="post-content">Here how's that look?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">robotisgod</span><br />
+      <span class="post-time small text-muted">25th January 2004 01:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">23rd January 2004 22:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">nice, man<br />
+      you rock<br />
+      <br />
+      i knew it had something to do with the order, but i couldnt completeley figure it out</p>
+    </div>
+    <hr />
 
-		I think it's because of the order of rotation.  The outer ring is rotating on the Z axis and since you're rotating the entire shape by x, y, then z it works out.  But since the X axis is the first to rotate it doesn't work right.  You might have to rotate the inner ring twice.  Once for the independent x rotation and then for the x,y,z rotation of the middle ring.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
+      <span class="post-time small text-muted">25th January 2004 09:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Anytime</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">23rd January 2004 22:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Here how's that look?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">robotisgod</span><br />
-			<span class="date small text-muted">25th January 2004 01:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		nice, man<br />
-you rock<br />
-<br />
-i knew it had something to do with the order, but i couldnt completeley figure it out
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">25th January 2004 09:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Anytime
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,198 +1,120 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" render / gradient AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="render / gradient " />
 
-	<title> render / gradient - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>render / gradient - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">render / gradient</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=176885">render / gradient</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">16th April 2004 17:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">render / gradient</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=176885">render / gradient</a></p>
+      <p class="post-content"><strong>render / gradient</strong><br />
+      why don't we just make a codable gradient fill renderer, so people stop having to use the el(ssc, movement) method? my ideal interface would be radio buttons for horizontal/vertical, init/frame/beat/row code blocks and some incarnation of some pertebution of colormap's mapping procedure, and radio buttons to switch between the two. i don't know how easy this would be to integrate directly into avs (since colormap hasn't yet been integrated), but i doubt it'd be that hard for someone knowledgable *coughunconedorjherikocough* to code an ape for it.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
+      <span class="post-time small text-muted">16th April 2004 21:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">very good idea! now we just need to find somone who knows C++ (and the APE SDK) well enough to write this :)<br />
+      hmm maybe optionally different gradient types:<br />
+      linear gradient (y=0;x=x)<br />
+      circle gradient (x=1-2*sqrt(sqr(x)+sqr(y));y=0;)<br />
+      square gradient<br />
+      a different circle gradient (x=1-r/$pi;y=0;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">16th April 2004 17:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>render / gradient</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
+      <span class="post-time small text-muted">18th April 2004 14:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		why don't we just make a codable gradient fill renderer, so people stop having to use the el(ssc, movement) method?  my ideal interface would be radio buttons for horizontal/vertical, init/frame/beat/row code blocks and some incarnation of some pertebution of colormap's mapping procedure, and radio buttons to switch between the two.  i don't know how easy this would be to integrate directly into avs (since colormap hasn't yet been integrated), but i doubt it'd be that hard for someone knowledgable *coughunconedorjherikocough* to code an ape for it.
-		</p>
-</div>
+      <p class="post-content">lol..<br />
+      Don't you just LOVE smilies?<br />
+      <br />
+      But yeah, that'd rock</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
+      <span class="post-time small text-muted">18th April 2004 16:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">16th April 2004 21:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">oops that was the automatic smiley conversion... that was supposed to bei ; ) not ;) :)</p>
+    </div>
+    <hr />
 
-		very good idea! now we just need to find somone who knows C++ (and the APE SDK) well enough to write this :)<br />
-hmm maybe optionally different gradient types:<br />
-linear gradient (y=0;x=x)<br />
-circle gradient (x=1-2*sqrt(sqr(x)+sqr(y));y=0;)<br />
-square gradient<br />
-a different circle gradient (x=1-r/$pi;y=0;)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">22nd April 2004 08:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">[offtopic]This still doesn't remove the need to fix the linesize ;)[/offtopic]<br />
+      <br />
+      But yeah, that would rock :)<br />
+      <br />
+      [edit]If someone makes this, it would be nice to have rotation, sliding &amp; "zooming" support too not to mention color shift ( although that is obvious :igor: ) (just a note...)[/edit]</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">18th April 2004 14:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
+      <span class="post-time small text-muted">22nd April 2004 18:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		lol..<br />
-Don't you just LOVE smilies?<br />
-<br />
-But yeah, that'd rock
-		</p>
-</div>
+      <p class="post-content">C++ is not enough for fast apes (especially not ones which do a lot of color blending, like a gradient), you need MMX asm ;).</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
+      <span class="post-time small text-muted">5th May 2004 21:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">18th April 2004 16:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I definatly agree on the cooless of something like this. I could probabbly do it in C++, but like UCD said, it's not fast enough.</p>
+    </div>
+    <hr />
 
-		oops that was the automatic smiley conversion... that was supposed to bei ; ) not ;) :)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br />
+      <span class="post-time small text-muted">6th May 2004 01:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">Good idea. It would allow for much nicer looking gradients.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">22nd April 2004 08:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">NemoOrange</span><br />
+      <span class="post-time small text-muted">6th May 2004 03:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		[offtopic]This still doesn't remove the need to fix the linesize ;)[/offtopic]<br />
-<br />
-But yeah, that would rock :)<br />
-<br />
-[edit]If someone makes this, it would be nice to have rotation, sliding &amp; &quot;zooming&quot; support too not to mention color shift ( although that is obvious :igor: ) (just a note...)[/edit]
-		</p>
-</div>
+      <p class="post-content">this would make my life a whole lot easier.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">22nd April 2004 18:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		C++ is not enough for fast apes (especially not ones which do a lot of color blending, like a gradient), you need MMX asm ;).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">OnionRingOfDoom</span><br />
-			<span class="date small text-muted">5th May 2004 21:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I definatly agree on the cooless of something like this. I could probabbly do it in C++, but like UCD said, it's not fast enough.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hungryskull</span><br />
-			<span class="date small text-muted">6th May 2004 01:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Good idea.  It would allow for much nicer looking gradients.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NemoOrange</span><br />
-			<span class="date small text-muted">6th May 2004 03:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		this would make my life a whole lot easier.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

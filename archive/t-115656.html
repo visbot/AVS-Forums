@@ -1,251 +1,145 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Why not simple alpha blending? AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Why not simple alpha blending? " />
 
-	<title> Why not simple alpha blending? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Why not simple alpha blending? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Why not simple alpha blending?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115656">Why not simple alpha blending?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">26th November 2002 16:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Why not simple alpha blending?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115656">Why not simple alpha blending?</a></p>
+      <p class="post-content"><strong>Why not simple alpha blending?</strong><br />
+      Wanna simple alpha blending in SuperScope for each pixel or line. In addition to red, green, blue variables just one more: alpha... Strongly wanted.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">26th November 2002 17:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">For static alpha blending, you can use a Set Render Mode w/Adjustable Blend.<br />
+      Why do you want alpha blend in ssc?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">26th November 2002 16:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Why not simple alpha blending?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">26th November 2002 19:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Wanna simple alpha blending in SuperScope for each pixel or line. In addition to red, green, blue variables just one more: alpha... Strongly wanted.
-		</p>
-</div>
+      <p class="post-content">This will allow easy create different effects on "objects" built using SSC. For example - glow effect arond LED lights in my VU-meters. Or around any other light in new preset. With size of glow changing in response to music. In my TryCatchThemAll it will allow remove black contour around lights. If there are lot of SSCs in frame - then per-pixel alpha blending is more effective than any other way. You can create semitransparent flame. Smoke trace. Mix two objects made from SSCs - parts of objects can be transparent with gradient. Object can smooth appear or disappear in response to music. And that will work for particular "object" only. Kinda of incapsulation.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">26th November 2002 20:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">26th November 2002 17:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You can still do that with the adjustable blend thing. Besides that, ask yourself 'Will other people use this, too?' before you make this kind of post. Personally I don't think it has much use at all...</p>
+    </div>
+    <hr />
 
-		For static alpha blending, you can use a Set Render Mode w/Adjustable Blend.<br />
-Why do you want alpha blend in ssc?
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">26th November 2002 21:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">But I'm sure they will. It gives more simple way to create different effects.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">26th November 2002 19:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">26th November 2002 22:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		This will allow easy create different effects on &quot;objects&quot; built using SSC. For example - glow effect arond LED lights in my VU-meters. Or around any other light in new preset. With size of glow changing in response to music. In my TryCatchThemAll it will allow remove black contour around lights. If there are lot of SSCs in frame - then per-pixel alpha blending is more effective than any other way. You can create semitransparent flame. Smoke trace. Mix two objects made from SSCs - parts of objects can be transparent with gradient. Object can smooth appear or disappear  in response to music. And that will work for particular &quot;object&quot; only. Kinda of incapsulation.
-		</p>
-</div>
+      <p class="post-content">What effects? Not many people are skilled enough that they'd need, or be able to create, good effects that require Alpha blending. Few people even need DM Alpha blending.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">27th November 2002 21:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">26th November 2002 20:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Man, if this looks complex for you - that deosnt' mean it will look complex for others. Just think about alpha value as about 4th color. 0 value means 100% opaque, 1 means 100% transparent. RGBA - is widely used combination in computer graphics.</p>
+    </div>
+    <hr />
 
-		You can still do that with the adjustable blend thing.  Besides that, ask yourself 'Will other people use this, too?' before you make this kind of post.  Personally I don't think it has much use at all...
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">28th November 2002 07:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">My point is, people really have no use for that because most people to linear scopes, in which alpha blending will get just about 0 notice. Even when you are doing solid scopes, it's much easier to do static blending, or no blending at all</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">26th November 2002 21:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br />
+      <span class="post-time small text-muted">28th November 2002 07:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		But I'm sure they will. It gives more simple way to create different effects.
-		</p>
-</div>
+      <p class="post-content">If you're so smart, you do realize that you can use the adjustable blend for the scopes or use addittive blend with darker colors.<br />
+      <br />
+      I don't think there is need for alpha blend if that means "opacity" (like in photoshop or likes)<br />
+      <br />
+      I think antialiasing in scopes would be good, and i believe UnConeD made a APE that used a scope render with antialiasing, so it is possible.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">28th November 2002 15:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">26th November 2002 22:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Man, you made excellent presets but I do not agree with you.</p>
+    </div>
+    <hr />
 
-		What effects?  Not many people are skilled enough that they'd need, or be able to create, good effects that require Alpha blending.  Few people even need DM Alpha blending.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">28th November 2002 16:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">I can see how it might be useful, but I'd like to see graduated between the points. (I'd like to see the same thing with the colours too)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">27th November 2002 21:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gourmet</span><br />
+      <span class="post-time small text-muted">28th November 2002 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Man, if this looks complex for you - that deosnt' mean it will look complex for others. Just think about alpha value as about 4th color. 0 value means 100% opaque, 1 means 100% transparent. RGBA - is widely used combination in computer graphics.
-		</p>
-</div>
+      <p class="post-content">That can be done with lot of points. But to not overload processor (my Athlon takes +20 C on some presets) it could be more simple way.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">28th November 2002 19:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th November 2002 07:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">It shouldn't have to be done with lots of points because it will slow down a preset. That's why I'd liek to see it built in.</p>
+    </div>
+    <hr />
 
-		My point is, people really have no use for that because most people to linear scopes, in which alpha blending will get just about 0 notice.  Even when you are doing solid scopes, it's much easier to do static blending, or no blending at all
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">28th November 2002 07:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you're so smart, you do realize that you can use the adjustable blend for the scopes or use addittive blend with darker colors.<br />
-<br />
-I don't think there is need for alpha blend if that means &quot;opacity&quot; (like in photoshop or likes)<br />
-<br />
-I think antialiasing in scopes would be good, and i believe UnConeD made a APE that used a scope render with antialiasing, so it is possible.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">28th November 2002 15:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Man, you made excellent presets but I do not agree with you.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">28th November 2002 16:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I can see how it might be useful, but I'd like to see graduated between the points. (I'd like to see the same thing with the colours too)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gourmet</span><br />
-			<span class="date small text-muted">28th November 2002 17:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		That can be done with lot of points. But to not overload processor (my Athlon takes +20 C on some presets) it could be more simple way.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">28th November 2002 19:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It shouldn't have to be done with lots of points because it will slow down a preset. That's why I'd liek to see it built in.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

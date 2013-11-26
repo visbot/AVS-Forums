@@ -1,221 +1,132 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Trapped AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trapped " />
 
-	<title> Trapped - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Trapped - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">Trapped</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133970">Trapped</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">2nd May 2003 03:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">Trapped</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133970">Trapped</a></p>
+      <p class="post-content"><strong>Trapped</strong><br />
+      Heres another one by me. The reason i'm posting it is because the fps is awful. Well it might not be with something else but on my computer the movement is slow and blocky and irritating. Any optimisation tips please? I'm afraid i'll have to remove bits of it this time though. Any help would be greatly appreciated :)</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br />
+      <span class="post-time small text-muted">2nd May 2003 04:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">First off, nice preset.<br />
+      <br />
+      Some optimization tips:<br />
+      1. Don't need the first effect list. Just put its contents onto the main line.<br />
+      2. I don't think the second DM needs that big of a grid size. I don't notice a difference when changing it to 12x12.<br />
+      3. Use a convo filters instead of blurs. Not sure if this actually improves the frame rate, but it is more accurate.<br />
+      4. Find a faster method to make black lines on the edges of the squares. Examples: n=2 superscopes, bitmap for the whole texture, etc.<br />
+      5. Also, the first DM's grid size could probably be a little lower. 22x22 looks fine for me at 408x314 resolution.<br />
+      <br />
+      Tip 4 should make the biggest difference. To be honest, though, it isn't THAT slow in the first place, so you shouldn't be too worried.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">2nd May 2003 03:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Trapped</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
+      <span class="post-time small text-muted">2nd May 2003 04:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Heres another one by me. The reason i'm posting it is because the fps is awful. Well it might not be with something else but on my computer the movement is slow and blocky and irritating. Any optimisation tips please? I'm afraid i'll have to remove bits of it this time though. Any help would be greatly appreciated :)
-		</p>
-</div>
+      <p class="post-content">Speed is fine here on my laptop.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">2nd May 2003 04:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Shock Value</span><br />
-			<span class="date small text-muted">2nd May 2003 04:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I originally made n=2 scopes for it but i thought that was faster for some reason. Thanks a lot it's got an acceptable fps and smooth movement on my toss computer. Cheers :)</p>
+    </div>
+    <hr />
 
-		First off, nice preset.<br />
-<br />
-Some optimization tips:<br />
-1. Don't need the first effect list. Just put its contents onto the main line.<br />
-2. I don't think the second DM needs that big of a grid size. I don't notice a difference when changing it to 12x12.<br />
-3. Use a convo filters instead of blurs. Not sure if this actually improves the frame rate, but it is more accurate.<br />
-4. Find a faster method to make black lines on the edges of the squares. Examples: n=2 superscopes, bitmap for the whole texture, etc.<br />
-5. Also, the first DM's grid size could probably be a little lower. 22x22 looks fine for me at 408x314 resolution.<br />
-<br />
-Tip 4 should make the biggest difference. To be honest, though, it isn't THAT slow in the first place, so you shouldn't be too worried.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br />
+      <span class="post-time small text-muted">2nd May 2003 10:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">ok, as everything is solved, what should I do? :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">2nd May 2003 04:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br />
+      <span class="post-time small text-muted">2nd May 2003 16:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		Speed is fine here on my laptop.
-		</p>
-</div>
+      <p class="post-content">give it logs of nice comments silly :D<br />
+      <br />
+      seriously though, this is an incredibly nice preset raz, you deserve something for this. like a can of cheap soda :)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Limpet</span><br />
+      <span class="post-time small text-muted">2nd May 2003 23:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">2nd May 2003 04:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Ah, a P4 at 2.4 is a wonderful thing.<br />
+      Very cool preset, or at least the main object. The bg is defenently lacking, but this isn't the final right?</p>
+    </div>
+    <hr />
 
-		I originally made n=2 scopes for it but i thought that was faster for some reason. Thanks a lot it's got an acceptable fps and smooth movement on my toss computer. Cheers :)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br />
+      <span class="post-time small text-muted">3rd May 2003 05:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">That wasn't but this very well could be :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">2nd May 2003 10:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Wiser87</span><br />
+      <span class="post-time small text-muted">3rd May 2003 05:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		ok, as everything is solved, what should I do? :)
-		</p>
-</div>
+      <p class="post-content">Hmm... I wish the lines in the center wouldn't be so repetitive. :( Maybe still have them in the circular formation, but have the distance from the "center" vary depending on the overall volume/intensity...<br />
+      <br />
+      &lt;edit...&gt; I wonder if it would be possible to have the background/cube walls slightly responsive to the music (ie. louder = brighter), yet still maintain a high framerate...<br />
+      <br />
+      &lt;edit2...&gt; Damn I wish I knew how to do AVS... I just had an idea where it could be the same situation as this except without the line things in the center. And make each mini-square (repeated for each face of the overall cube) correspond to a different part of the spectrum/waveform, with greyish color for low/no intensity and the red-orange color for high intensity...</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
+      <span class="post-time small text-muted">4th May 2003 05:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">moltarx</span><br />
-			<span class="date small text-muted">2nd May 2003 16:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">argh...that background and foreground DON'T mix. the water movement is nice but it doesn't respond and it is, afaik, an orthogonal projection (entirely flat). no offence, but looking at this makes my head hurt &gt;_&lt;</p>
+    </div>
+    <hr />
 
-		give it logs of nice comments silly :D<br />
-<br />
-seriously though, this is an incredibly nice preset raz, you deserve something for this. like a can of cheap soda :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Limpet</span><br />
-			<span class="date small text-muted">2nd May 2003 23:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ah, a P4 at 2.4 is a wonderful thing.<br />
-Very cool preset, or at least the main object. The bg is defenently lacking, but this isn't the final right?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">3rd May 2003 05:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		That wasn't but this very well could be :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Wiser87</span><br />
-			<span class="date small text-muted">3rd May 2003 05:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hmm... I wish the lines in the center wouldn't be so repetitive. :(   Maybe still have them in the circular formation, but have the distance from the &quot;center&quot; vary depending on the overall volume/intensity...<br />
-<br />
-&lt;edit...&gt; I wonder if it would be possible to have the background/cube walls slightly responsive to the music (ie. louder = brighter), yet still maintain a high framerate...<br />
-<br />
-&lt;edit2...&gt; Damn I wish I knew how to do AVS... I just had an idea where it could be the same situation as this except without the line things in the center.  And make each mini-square (repeated for each face of the overall cube) correspond to a different part of the spectrum/waveform, with greyish color for low/no intensity and the red-orange color for high intensity...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">4th May 2003 05:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		argh...that background and foreground DON'T mix.  the water movement is nice but it doesn't respond and it is, afaik, an orthogonal projection (entirely flat).  no offence, but looking at this makes my head hurt &gt;_&lt;
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

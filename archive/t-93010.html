@@ -1,174 +1,115 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" moving superscopes randomly AVS" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="moving superscopes randomly " />
 
-	<title> moving superscopes randomly - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>moving superscopes randomly - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">moving superscopes randomly</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=93010">moving superscopes randomly</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PhexTwin</span><br />
+      <span class="post-time small text-muted">1st July 2002 08:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">moving superscopes randomly</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=93010">moving superscopes randomly</a></p>
+      <p class="post-content"><strong>moving superscopes randomly</strong><br />
+      ive made a preset that is in the shape of an atom, it has 8 electrons orbiting around the edge of it and they only show up on the beat, but they are always in the same position, and even though i have added this in the per frame box: t=t+0.1+(rand(b))/0.5, they all move the same amount aroun their orbitals.<br />
+      <br />
+      any assistance in this would be greatly appreciated.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
+      <span class="post-time small text-muted">1st July 2002 08:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<br />
+      <p class="post-content">Had you searched the forums? I've answered this to another person...<br />
+      <br />
+      Rand(b)? omg...<br />
+      <br />
+      Here's the template :<br />
+      <br />
+      Beat : tx1=rand(401)/1000-0.2;ty1=rand(401)/1000-0.2;<br />
+      Frame : tx=tx+tx1;ty=ty+ty1;<br />
+      Pixel : x=(code)+sin(tx);y=(code)+sin(ty);<br />
+      <br />
+      I think that's all...</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PhexTwin</span><br />
-			<span class="date small text-muted">1st July 2002 08:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>moving superscopes randomly</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PhexTwin</span><br />
+      <span class="post-time small text-muted">1st July 2002 13:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		ive made a preset that is in the shape of an atom, it has 8 electrons orbiting around the edge of it and they only show up on the beat, but they are always in the same position, and even though i have added this in the per frame box: t=t+0.1+(rand(b))/0.5, they all move the same amount aroun their orbitals. <br />
-<br />
-any assistance in this would be greatly appreciated.
-		</p>
-</div>
+      <p class="post-content">i see what you mean but tthats not what i wanted, that moves them randomly all over the place, i need them to continue orbiting in a circle, but at random speeds, and directions.;)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Sadarqii</span><br />
+      <span class="post-time small text-muted">1st July 2002 14:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">1st July 2002 08:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Try this simple method:<br />
+      <br />
+      beat: q=rand(120)<br />
+      frame: t=t-0.3*below(q,50)-0.5*above(q,40)*below(q,80)+0.7*above(q,70)<br />
+      <br />
+      In the example above you will get five different speeds. If q is greater than 70 then the direction will change.<br />
+      <br />
+      Hope it helps;)</p>
+    </div>
+    <hr />
 
-		Had you searched the forums? I've answered this to another person...<br />
-<br />
-Rand(b)? omg...<br />
-<br />
-Here's the template :<br />
-<br />
-Beat : tx1=rand(401)/1000-0.2;ty1=rand(401)/1000-0.2;<br />
-Frame : tx=tx+tx1;ty=ty+ty1;<br />
-Pixel : x=(code)+sin(tx);y=(code)+sin(ty);<br />
-<br />
-I think that's all...
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PhexTwin</span><br />
+      <span class="post-time small text-muted">1st July 2002 14:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-	<hr />
+      <p class="post-content">thanks but i figured it out, i just modified a combination of the vibrating worm and vertiacl bouncing scope and now its direction and speed are compleatly random. :D:D:D<br />
+      <br />
+      but thanks anyway :up:<br />
+      <br />
+      <br />
+      init n=800;t=0; tq=0.1;wt=1;q=0.5<br />
+      beat tq=(rand(100)/100)*wt; wt=-wt;q=-q<br />
+      frame t=t+q*0.9+tq*0.1;ym=cos(t)/1.9;xm=sin(t)/1.9<br />
+      point r=(t+i*3.14159*4000+v); x=xm+cos(r)/100; y=ym+sin(r)/100;<br />
+      blue=abs(b);red=0;green=b</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PhexTwin</span><br />
-			<span class="date small text-muted">1st July 2002 13:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Sadarqii</span><br />
+      <span class="post-time small text-muted">4th July 2002 12:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
 
-		i see what you mean but tthats not what i wanted, that moves them randomly all over the place, i need them to continue orbiting in a circle, but at random speeds, and directions.;)
-		</p>
-</div>
+      <p class="post-content">Welcome.<br />
+      I could have told you to search the forums or check the FAQ but I figure it's not that hard to type a few words. If you don't want to help someone out just don't write anything, don't start getting all annoyed about it. :mad: Right?<br />
+      <br />
+      Go to <a href="http://www.geocities.com/avsdiscussion" target="_blank">AVS Discussion</a> . Perhaps you'll find some useful info there.:up:</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Sadarqii</span><br />
-			<span class="date small text-muted">1st July 2002 14:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Try this simple method:<br />
-<br />
-beat: q=rand(120)<br />
-frame: t=t-0.3*below(q,50)-0.5*above(q,40)*below(q,80)+0.7*above(q,70)<br />
-<br />
-In the example above you will get five different speeds. If q is greater than 70 then the direction will change.<br />
-<br />
-Hope it helps;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PhexTwin</span><br />
-			<span class="date small text-muted">1st July 2002 14:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thanks but i figured it out, i just modified a combination of the vibrating worm and vertiacl bouncing scope and now its direction and speed are compleatly random. :D:D:D<br />
-<br />
-but thanks anyway :up:<br />
-<br />
-<br />
- init n=800;t=0; tq=0.1;wt=1;q=0.5<br />
- beat tq=(rand(100)/100)*wt; wt=-wt;q=-q<br />
-frame t=t+q*0.9+tq*0.1;ym=cos(t)/1.9;xm=sin(t)/1.9<br />
-point r=(t+i*3.14159*4000+v); x=xm+cos(r)/100; y=ym+sin(r)/100;<br />
-        blue=abs(b);red=0;green=b
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Sadarqii</span><br />
-			<span class="date small text-muted">4th July 2002 12:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Welcome.<br />
-I could have told you to search the forums or check the FAQ but I figure it's not that hard to type a few words. If you don't want to help someone out just don't write anything, don't start getting all annoyed about it. :mad: Right?<br />
-<br />
-Go to <a href="http://www.geocities.com/avsdiscussion" target="_blank">AVS Discussion</a> . Perhaps you'll find some useful info there.:up:
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>
