@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Question " />
+  <meta name="description" content="Question" />
 
   <title>Question - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
-      <span class="post-time small text-muted">15th October 2006 19:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th October 2006 19:17 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Question</strong><br />
       This thing has been bothering me for a while now. Althought the code is really simple, something is wrong.<br />
@@ -52,7 +52,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">15th October 2006 19:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th October 2006 19:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">(I take you mean x=i-.5; instead of x=0 for your example?)<br />
       <br />
@@ -64,7 +64,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br />
-      <span class="post-time small text-muted">15th October 2006 21:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th October 2006 21:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Yeah I ment x=i-0.5;.<br />
       <br />
@@ -74,7 +74,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">15th October 2006 23:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th October 2006 23:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I don't know why it works either, but it does</p>
     </div>
@@ -82,7 +82,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br />
-      <span class="post-time small text-muted">17th October 2006 07:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">17th October 2006 07:07 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">you could always just use n=2, x=i-0.5 and mega fat linesize.</p>
     </div>
@@ -90,7 +90,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">18th October 2006 09:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th October 2006 09:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The reason this happens is quite obvious if you step through the code. x = i - .5 means that for each point it will be a little further across in the x-axis. with your s = -s you are alternating successive points between s and -s in the y axis. putting the two together creates a zig-zag, sawtooth wave... whatever you want to call it. by using the (pretty wasteful i might add) n = w you are creating one which is so dense that it appears to be a solid rectangle.<br />
       <br />

@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS Superscope Bug " />
+  <meta name="description" content="AVS Superscope Bug" />
 
   <title>AVS Superscope Bug - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">ShadowWolf</span><br />
-      <span class="post-time small text-muted">4th April 2004 17:38 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th April 2004 17:38 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>AVS Superscope Bug</strong><br />
       I have been reinstalling, uninstalling, deleting everything, installing and god knows what else, but i can't get the superscope effect to keep working. It works if you turn on a avs that uses superscope(s) before you turn on a beat. When the track is changed, the superscope effect stops working.<br />
@@ -56,7 +56,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">4th April 2004 19:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th April 2004 19:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">It would help if you'd be so kind to add the whole code, right now, I don't have a clue of what you're referring to.</p>
     </div>
@@ -64,7 +64,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">ShadowWolf</span><br />
-      <span class="post-time small text-muted">4th April 2004 21:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th April 2004 21:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Umm... i just added a superscope, even that doesnt work. Not even the "picks" that came with Winamp 5.03 works. It seems like superscope is not the only one bugging. There is some new effects and some of them seems to be doing the same thing :cry:</p>
     </div>
@@ -72,7 +72,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <span class="post-time small text-muted">4th April 2004 21:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th April 2004 21:44 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">You really need to give us exactly what is not working. I have absolutely no idea what you are trying to say.</p>
     </div>
@@ -80,7 +80,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <span class="post-time small text-muted">5th April 2004 03:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th April 2004 03:13 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">As far as I can guess his AVS isn't calculating values on frame or something like? I really have no good idea.</p>
     </div>
@@ -88,7 +88,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">ShadowWolf</span><br />
-      <span class="post-time small text-muted">5th April 2004 11:06 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th April 2004 11:06 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>I think i got it to work...</strong><br />
       I guess it started to work now. The problem was that the decimal value added to t were rounded to 0 since it was below 1. So all it really did was: t=t+0 (even if it said t=t+0.2 in the code). Well, like i said, i think it works now.<br />
@@ -100,7 +100,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
-      <span class="post-time small text-muted">5th April 2004 15:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th April 2004 15:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">maybe t is very high and there are rounding errors because of the floating point nature of the avs variables?<br />
       floating point data types have the disadvantage that if you have very high values, low values added to them simply get truncated.<br />
@@ -113,7 +113,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">ShadowWolf</span><br />
-      <span class="post-time small text-muted">5th April 2004 18:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th April 2004 18:28 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>It is confirmed!</strong><br />
       It works now! It's simply a bug, SO IF ANYONE HAS TROUBLE WITH AVS, LOOK OVER HERE. The value you add to t in a superscope, example: t=t+0.2 gets rounded to 0 when it stops to work. To avoid this, restart winamp to get the superscope to work again, open avs editor, add a superscope and save it as any name you like just like that, then restart winamp, start the avs you saved, and test it. Now thats what i did, dont ask me how that fixes it because i have now idea :igor:<br />
@@ -126,7 +126,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">7th April 2004 17:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">7th April 2004 17:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">what in the fuck are you smoking</p>
     </div>
@@ -134,7 +134,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">8th April 2004 20:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">8th April 2004 20:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">No flame wars, please.<br />
       <br />
@@ -147,7 +147,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">D12</span><br />
-      <span class="post-time small text-muted">9th April 2004 13:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">9th April 2004 13:56 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I don't undrastand when you run AVS SS will be close or generally your SS don't work.</p>
     </div>
@@ -155,7 +155,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">G_JDean</span><br />
-      <span class="post-time small text-muted">7th May 2004 08:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">7th May 2004 08:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">i'm too have problem with Sscope's. why Sscopes what have line "i=i+rand(10)/1000" don't working in AVS later than v2.5. some of my presets i must rewrite if i want they reflect like in AVS v1.8 &amp; AVS v2.5</p>
     </div>
@@ -163,7 +163,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
-      <span class="post-time small text-muted">7th May 2004 08:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">7th May 2004 08:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">can you attach the (unrewritten) preset? maybe it's something else :)</p>
     </div>
@@ -171,7 +171,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">piR</span><br />
-      <span class="post-time small text-muted">7th May 2004 12:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">7th May 2004 12:16 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I hope the usage of 'i' is only for your example, because, afaik, the variable 'i' is (was ?) 'read only' in SSC ...</p>
     </div>
@@ -179,7 +179,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fsk</span><br />
-      <span class="post-time small text-muted">9th May 2004 05:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">9th May 2004 05:07 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">nope 'i' was never read only:)</p>
     </div>
@@ -187,7 +187,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">10th May 2004 10:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">10th May 2004 10:17 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">But using 'i' as just any var could easily give errors. Why would you want to alter 'i'? you'd better change the position of the line somewhere else, and leave 'i' as it is.</p>
     </div>
@@ -195,7 +195,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">11th May 2004 21:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">11th May 2004 21:16 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">For one, in many cases you might want to use a modified version of i.<br />
       <br />
@@ -205,7 +205,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">13th May 2004 15:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">13th May 2004 15:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I never found that useful, for the times that you needed the normal i again for example.. but then, that's just me.<br />
       <br />
@@ -215,7 +215,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">14th May 2004 06:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">14th May 2004 06:19 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">There is a bug in SSC that i experience sometimes where init doesn't seem to ever run anything except the n=x line. It seems to pop up at random and is incredibly annoying. It is also machine independant. I sent sidd a preset a while ago i was having this problem with and it worked fine for him. If you are using a t=if(above(t,1)-1,t+0.02) for instance then you could get this problem.<br />
       <br />
@@ -225,7 +225,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">G_JDean</span><br />
-      <span class="post-time small text-muted">26th May 2004 08:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th May 2004 08:23 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">For example: in AVS v2.81b Sscope:<br />
       Init:n=100;r=0.1;mx=-0;my=0;mz=10;dst=2;rx=0;ry=0; rz=0;rdx=1;rdy=1;rdz=1;p=3.14159265;p2=2.0*p;p3=180/p<br />
@@ -257,7 +257,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">26th May 2004 08:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th May 2004 08:28 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"></p>
 

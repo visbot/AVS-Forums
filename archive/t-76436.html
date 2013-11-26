@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rendering text in APE " />
+  <meta name="description" content="Rendering text in APE" />
 
   <title>Rendering text in APE - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
-      <span class="post-time small text-muted">18th February 2002 15:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th February 2002 15:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Rendering text in APE</strong><br />
       Hi all,<br />
@@ -42,7 +42,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">19th February 2002 00:44 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">19th February 2002 00:44 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The AVS framebuffer uses the 32-bit color format RGB0 (or maybe BGR0, not sure). It's best to get rid of GDI DeviceContext for drawing because they'll always be slower: implement your own line-drawing algorithms and you'll be waaay faster. If you *really* need GDI, create 32-bit a DIB using CreateDIBSection as your bitmap. You'll receive a direct-pointer to the DIB-data when you create it, which you can use to copy the bitmap's contents in RGB0 straight into the AVS framebuffer.<br />
       For optimal speed, you'll need to use MMX operations in your code for operations such as blending or adding. They're very suited to RGB0 images. You can always use them, as the width of an AVS window is always a multiple of 4.</p>
@@ -51,7 +51,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">vapor</span><br />
-      <span class="post-time small text-muted">19th February 2002 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">19th February 2002 14:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>cool...</strong><br />
       Cool, that was easy! Thanks, UnConeD, you're a sweetheart!<br />
@@ -62,7 +62,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">19th February 2002 20:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">19th February 2002 20:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I haven't tried MMX myself yet, but I've read about it on the web. Can't do it now, because my old VC++ doesn't know MMX assembly instructions.<br />
       <br />

@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="3D Distortion " />
+  <meta name="description" content="3D Distortion" />
 
   <title>3D Distortion - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
-      <span class="post-time small text-muted">16th October 2002 00:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th October 2002 00:12 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>3D Distortion</strong><br />
       Hey guys, I'm having a problem with a 3D superscope I've been working on. I've got two SSs synchronized to look like a grid. However, when the camera moves close to the plane of the grid (so that it looks very horizon-ish), the lines of the grid become very distorted.<br />
@@ -40,7 +40,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">16th October 2002 05:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th October 2002 05:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Looks like it's caused by your points going behind the camera. Even if your z vale is negative AVS still draws the points.</p>
     </div>
@@ -48,7 +48,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">16th October 2002 09:35 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th October 2002 09:35 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The only easy way to fix this is to move the camera further away from the plane. The alternative is to split each line up into several pieces and then clip the bits which are distorted by checking if the next point is behind the clipping plane and then making the color black if it is. There is a fair amount of code involved in doing that so I'd recommend against it unless you really want to see your plane in close up in that fashion. It would be best to move the camera just far enough back that the circle described by the corners of the plane almost touches it when the rotation is at its lowest.</p>
     </div>

@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Multiple settings superscope " />
+  <meta name="description" content="Multiple settings superscope" />
 
   <title>Multiple settings superscope - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">24th February 2002 01:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th February 2002 01:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Multiple settings superscope</strong><br />
       I'm trying to make a superscope that changes between a number of different settings (i.e., ring, anchored scope, cross, flying vu, etc.). But I can't figure out the timing. Any help...?</p>
@@ -38,7 +38,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">24th February 2002 23:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th February 2002 23:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Suppose you have four different 'shapes'. Let 'sh' be a number from 0 to 3 that defines which shape you're drawing. You can either increase it every beat (sh=(sh+1)%4) or set it randomly (sh=rand(4)), or whatever.<br />
       <br />
@@ -69,7 +69,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">25th February 2002 07:20 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2002 07:20 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I knew how to calculate the shapes, I just needed to find out how to time it correctly. What I'm trying to get is something that will morph between the shapes, like in your "Reflect on it," just with 5 shapes (more or less) instead of 2. I've figured out how to fade between two, it's fairly simple (i'll use a circle and a cross here):<br />
       <br />
@@ -115,7 +115,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">25th February 2002 07:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2002 07:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">It really depends on what you want to do. If you want to morph between the 5 shapes independantly, you'll need 'n' weights in the range of 0-1 that add up to 1 (for the most desirable effect). You'll need to find a function that passes through most of the n-space containing all possible values.<br />
       <br />
@@ -139,7 +139,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">LittleBuddy88</span><br />
-      <span class="post-time small text-muted">25th February 2002 21:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2002 21:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Atero, I think I've done a similar morphing sequence once, reacting on beat, but otherwise equal to what you did.<br />
       And I can see but one problem with your code, I don't know if more exists, I just looked through it quickly, but simple, I think AVS sets ANY non-zero value to TRUE, this means that all of your scopes are executed, except one...<br />
@@ -153,7 +153,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <span class="post-time small text-muted">26th February 2002 01:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2002 01:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">okay i got the first one (random number change (and i even used it :D))<br />
       but the other two....<br />
@@ -165,7 +165,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">26th February 2002 02:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2002 02:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I think I've finally figured it out! I used this exact code for a color changing circle, cross, and anchored scope:<br />
       <br />
@@ -222,7 +222,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">BlurPak2k1</span><br />
-      <span class="post-time small text-muted">27th February 2002 18:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">27th February 2002 18:24 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">i cant really tell where your circle is in your code there but...<br />
       <br /></p>

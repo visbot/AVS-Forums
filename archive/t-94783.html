@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="1-plane DM " />
+  <meta name="description" content="1-plane DM" />
 
   <title>1-plane DM - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
-      <span class="post-time small text-muted">16th July 2002 21:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th July 2002 21:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>1-plane DM</strong><br />
       Hey guys, I've been working on 3D DMs. I can produce a two plane floor/ceiling type DM, however there is a lot of distortion between the planes.<br />
@@ -43,7 +43,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">16th July 2002 22:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th July 2002 22:07 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Raytracing</strong><br />
       I use raytracing... it's a totally different approach, but it allows you to do complex effects like tunnels and such.<br />
@@ -54,7 +54,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br />
-      <span class="post-time small text-muted">16th July 2002 23:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th July 2002 23:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">How does that work?</p>
     </div>
@@ -62,7 +62,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">17th July 2002 14:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">17th July 2002 14:40 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">For every point on the DM grid, you trace a ray from the camera origin through the space and intersect it with your primitives (it's hard to do anything above quadrics though) to find the point of intersection closest to the camera. Then, you need to find the texture coordinates to wrap the current image/buffer around the 3D shape, and use those as x,y.</p>
     </div>
@@ -70,7 +70,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
-      <span class="post-time small text-muted">18th July 2002 01:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 01:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">UC: Couldn't you use alphablending? Or is that the pussy's way out. :p</p>
     </div>
@@ -78,7 +78,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">18th July 2002 09:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 09:30 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">uNDefineD: What exactly do you mean? I was talking about making more complicated shapes and arrangements like only one plane or combinations of them. If you use the 'superscope-approach', you're mostly limited to two parallel planes.<br />
       For the distortion the best solution is indeed alpha-blending. In the original Winamp Disco preset I used an image though, because I didn't know about alpha-blending back then.</p>
@@ -87,7 +87,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">18th July 2002 09:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 09:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Well...back on topic - that's a question I've had for a while, too. UnConeD did it in WAVS4, but I'm unable to see how. Theoretically, all you do is move the camera very close to one of the planes when it rotates, and when it rotates away from the camera, move towards the other plane. On either side you alpha out the other plane. The trouble is doing this. I haven't tried yet.</p>
     </div>
@@ -95,7 +95,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">18th July 2002 10:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 10:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Hmmm? Actually the reason you probably get a second plane is because you need to make sure you only find intersection points in front of the camera. If you have a point above a plane and trace a ray that doesn't intersect the plane, then the ray that runs in the opposite direction *will* intersect.<br />
       <br />
@@ -107,7 +107,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br />
-      <span class="post-time small text-muted">18th July 2002 14:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 14:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Sorry, I might be a little out of the loop here. I meant the plane-division effect you had going in Alien Chessboard from WAVS2. Or is that a whole new ball game to this?<br />
       <br />
@@ -121,7 +121,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">18th July 2002 15:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">18th July 2002 15:37 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Every 3D DM I make uses the ray-tracing. In Nuclear warfare, I raytrace a sphere and calculate x,y as latitude and longtitude (phi and theta in spherical coordinates).</p>
     </div>
@@ -129,7 +129,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">19th July 2002 18:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">19th July 2002 18:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I still don't understand ray-tracing that well, I prefer to go with the straight math that will get me a desired effect. Such as, with the 2-plane DM, rotating the image, then making z=1/y and y=sign(y), then performing the translation (x=x/z; y=y/z);</p>
     </div>
@@ -137,7 +137,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Nic01</span><br />
-      <span class="post-time small text-muted">20th July 2002 01:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th July 2002 01:17 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">For more raytracing, just search through Google...<br />
       <br />

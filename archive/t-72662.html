@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Help For a newbie... " />
+  <meta name="description" content="Help For a newbie..." />
 
   <title>Help For a newbie... - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Tonest@r Deluxe</span><br />
-      <span class="post-time small text-muted">21st January 2002 03:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st January 2002 03:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Help For a newbie...</strong><br />
       Hi all who lurk within this forum, I have a question which hopefully someone here may assist me with. I have already read the FAQ so I'm not being entirely sinful, but I don't know if this question has come up before. If it has I apologise and ask for forgiveness, and that the curses of breaking nettiquette do not rest upon me.<br />
@@ -48,7 +48,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">21st January 2002 03:28 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st January 2002 03:28 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The 3D ape is by Aarni Koskela, and it sucks. It just renders a monotone wireframe object, and rotates it one direction one speed. The wireframes aren't even that good, they're full of diagonals. Anyway, you can it up you want, but I'll post the APE and ASC files here. The pack this is from is called "Aarni Koskela's AVS Add Ons" or something like that and is in the AVS Presets section.<br />
       "needfile.zip" contains the objects Lone uses (cube.asc and sphere.asc) and the APE files (3d.ape and tv.ape).</p>
@@ -57,7 +57,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Tonest@r Deluxe</span><br />
-      <span class="post-time small text-muted">21st January 2002 06:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st January 2002 06:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Thanks for that, and I do agree with you, those APE's could be better. The TV one is nothing special - I made a much better TV preset myself long before I saw that one. The wire objects are a little unimaginative, yes; however that sphere is just what I needed!<br />
       <br />
@@ -74,7 +74,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">21st January 2002 14:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st January 2002 14:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>I do</strong><br />
       "Whacko AVS pack" (my first) has a 'floating in a 3D disco' preset. It's not as advanced as my newest 3D DM's, but it's *very* disco.<br />
@@ -85,7 +85,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">21st January 2002 18:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st January 2002 18:45 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Hmm...for a disco ball, you'd want a globular wireframe sphere (instead of a normal spiral sphere, and I would NOT recommend the 3D ape), with the faces opaque and shaded. I don't know how UnConeD did the opaqueness in "Groovy Saturn," but I think it could be reprodced in a spiral. All you would have to do is find the size of a pixel in rect. coor. (1/w by 1/h), and find a way to twist the spiral so that it becomes opaque, no matter what screen size. The shading on that spiral might be hard, though. You would have to be able to find the angles of the faces in the sphere, then the angle of reflection from an imaginary light source. Then you could do your shading.<br />
       I don't think you'd have to do a DM for the disco lights (on the wall), you could probably use a fpg instead. Those actually are kind of hard (except for rotating starfields), but an fpg for simple disco lights (which goes one direction) could easily be figured out if you work at it. You would only need to generate positions for the X-coordinate, and then when that point reaches the side of the window, wrap it around and generate a random Y-coordinate. The speed of the particle's movement would be relative to the abs(x), i.e., the farther to the side the particle is, the faster it moves. If you wanted side walls, though, you could still generate those in the fpg. Just find where you want the walls to be, and when the particle hits the wall, move the Y-coordinate (again according to abs(y)). For source lights, those can easily be created by an opaque superscope like the spiral mentioned before, except this would be about 60 degrees. Then just shade the pixels according to how far away they are from the center. Or if you're too lazy, or you want it to look more realistic, you could just add a picture of disco lights. Of course, the lights on the wall would have to match the color of the lights on the cieling, as well as fade out as they went out of the range of the mirror ball's reflection. Now, for a disco floor, you might want a seperate effect list and a DM for that. That would be fairly easy, just render a couple of superscopes for the lighting, and then a movement to stretch them to the squares. Then use a DM to stretch and wrap those tiles. To do that, try this:<br />
@@ -102,7 +102,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">22nd January 2002 01:42 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">22nd January 2002 01:42 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>avs.acko.net</strong><br />
       You can grab them from the AVS section on my site: avs.acko.net<br />
@@ -113,7 +113,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Tonest@r Deluxe</span><br />
-      <span class="post-time small text-muted">22nd January 2002 07:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">22nd January 2002 07:09 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Yep Atero, big credit goes to you :D<br />
       And there's certainly great mana upon you UnConed for your work.:up:<br />
@@ -137,7 +137,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">23rd January 2002 04:19 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">23rd January 2002 04:19 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Yeah, there are a LOT of people who are just sort of "Oh, this is cool, I think I'll throw some shit together and send it into Nullsoft." That group includes Tonic, as far as I'm concerned.<br />
       Anyway, here's the system for 3D superscopes to get you started off.<br />
@@ -200,7 +200,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">23rd January 2002 12:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">23rd January 2002 12:00 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">It's your everyday ray-casting thingy :)<br />
       Take a line through the camera and the current grid point (x,y), slightly in front of the camera (you'll want a viewing angle of about 80°-90°). Intersect with a cylinder (Wormhole), sphere (Discoball) or collection of planes (Zero-G Maze).<br />
@@ -211,7 +211,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">26th January 2002 08:43 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th January 2002 08:43 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I FIGURED IT OUT! You...umm...nevermind.<br />
       Hey...YEAH I DID! All you do is set up your initial position on the Z axis, rotate the un-changed plane, warp the plane in different directions, and you have a 3D projectional DM!<br />
@@ -235,7 +235,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br />
-      <span class="post-time small text-muted">4th March 2003 23:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th March 2003 23:14 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Actually,Atero in the AVS primer you said 3D-2D translation was done like this:<br />
       x=x1/(z+2);<br />
@@ -246,7 +246,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
-      <span class="post-time small text-muted">4th March 2003 23:30 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th March 2003 23:30 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">i still don't understand raytracing, but I'm still in geometry, i'm sure I will understand once I learn trig and calculus.</p>
     </div>
@@ -254,7 +254,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <span class="post-time small text-muted">5th March 2003 00:02 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 00:02 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">hungryskull, please don't comment on something that you know nothing about. the 2 is the camera distance. Michael, you do not learn raytracing in either of those classes. It is an advanced topic that you may never learn in school(unless you take college computer science/programming courses).</p>
     </div>
@@ -262,7 +262,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">5th March 2003 05:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 05:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Went through a computer programming course, didn't learn anything like that. In comp eng at my college there's a game programming class where they touch on it, barely. Probably is different at other schools though.<br />
       <br />
@@ -272,7 +272,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br />
-      <span class="post-time small text-muted">5th March 2003 08:39 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 08:39 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Isnt raytracing also used in games ? I read an article some time ago and it mentioned that...</p>
     </div>
@@ -280,7 +280,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <span class="post-time small text-muted">5th March 2003 12:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 12:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">It is used in games.</p>
     </div>
@@ -288,7 +288,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">nixa</span><br />
-      <span class="post-time small text-muted">5th March 2003 12:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 12:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Here is my own disco preset, not highly realistic but a realistic disco ball was done before and it would be boring to make another copycat preset.</p>
     </div>
@@ -296,7 +296,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
-      <span class="post-time small text-muted">5th March 2003 14:12 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 14:12 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">ggrr people bringing threads back from the dead. :)<br />
       <br />
@@ -306,7 +306,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">5th March 2003 16:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 16:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">User your moderator powers Rova! Flex your mighty moderation muscles.</p>
     </div>
@@ -314,7 +314,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br />
-      <span class="post-time small text-muted">5th March 2003 19:01 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">5th March 2003 19:01 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">:) Mod powers are like the force and should only be used for good. :)</p>
     </div>
@@ -322,7 +322,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">6th March 2003 23:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">6th March 2003 23:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">jesus christ...this thread was over a year old hungryskull. <b>[size=huge]MAKE A NEW THREAD ABOUT IT.[/size]</b></p>
     </div>
@@ -330,7 +330,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">mikm</span><br />
-      <span class="post-time small text-muted">7th March 2003 00:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">7th March 2003 00:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">he's almost as bad as I am :)</p>
     </div>

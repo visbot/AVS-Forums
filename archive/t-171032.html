@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="global variable problem " />
+  <meta name="description" content="global variable problem" />
 
   <title>global variable problem - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
-      <span class="post-time small text-muted">26th February 2004 04:07 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2004 04:07 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>global variable problem</strong><br />
       Ok, I got a large problem here. I am working on a AVS port of the classic Space Invaders arcade game. Now, in the first level, there is a total of 55 enemy sprites on screen. However, each sprite uses 3 global variables: 1 for x possission, 1 for y possission, and 1 for whether it exists or not (IE, whether you have destroyed it or not). Plus, I have a bunch of other global variables (about 20) for various things such as mouse possission, state of the left mouse button, and whether or not your mouse is in the AVS window or not (the game goes into a demo mode if your mouse is not in the AVS window). In total, I would need about 185 global variables.<br />
@@ -42,7 +42,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br />
-      <span class="post-time small text-muted">26th February 2004 18:33 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2004 18:33 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">This should definitely be possible. Just make a multidimensional array with gmegabuf(). You can assign variables to it like this (example):<br />
       <br />
@@ -58,7 +58,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
-      <span class="post-time small text-muted">26th February 2004 18:36 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2004 18:36 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">OOH! :D I think I am beginning to understand this whole array thing! Thanks! Oh, and what is the 5000 for? Also, for v, would I just put a variable name?<br />
       <br />
@@ -68,7 +68,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
-      <span class="post-time small text-muted">26th February 2004 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2004 23:29 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">(Dang edit limit, I hate double-posting.)<br />
       <br />
@@ -78,7 +78,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">27th February 2004 06:45 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">27th February 2004 06:45 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">here it is in quick. :)<br />
       <br />
@@ -93,7 +93,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">piR</span><br />
-      <span class="post-time small text-muted">27th February 2004 11:54 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">27th February 2004 11:54 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">BTW, I really can't see why you need such an array !<br />
       IMO, the only useful global variables are :<br />
@@ -109,7 +109,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
-      <span class="post-time small text-muted">27th February 2004 15:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">27th February 2004 15:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">well, the way each sprite works is a bit complicated. Don't bother downloading the attachment I posted, cause it's old and I redid the entire sprite system. And since each sprite is animated on beat, I have 2 effects list, and one is enabled and the other is disabled every other beat. Therefore, I need two more variables for the on beat movement so that the movement of the sprite in the first effects list transfers over to the second.<br />
       <br />
@@ -129,7 +129,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">27th February 2004 16:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">27th February 2004 16:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I think you only realy need the position of one and can derive the position of the rest relative to that one. Then you only need keep whether the ship still exists global.</p>
     </div>
@@ -137,7 +137,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">OnionRingOfDoom</span><br />
-      <span class="post-time small text-muted">28th February 2004 18:18 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">28th February 2004 18:18 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Hmmm, interesting, but how would I keep whether the ship still exists global? If I destroy the ship that all the other ship's movements are based off of, then all the other ships would disapear as well, right?</p>
     </div>
@@ -145,7 +145,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">piR</span><br />
-      <span class="post-time small text-muted">1st March 2004 12:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">1st March 2004 12:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The fact that the ship still exists or not has nothing to do with its position on the screen. It is always computed but you just don't draw anything if it doesn't exist anymore (using skip=1 or n=0, if you use a superscope).</p>
     </div>

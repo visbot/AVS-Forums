@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Raytracing Space Curves... " />
+  <meta name="description" content="Raytracing Space Curves..." />
 
   <title>Raytracing Space Curves... - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">20th February 2004 07:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 07:40 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Raytracing Space Curves...</strong><br />
       Ok so I had a few new ideas but I'm not sure if they are even possible. I was thinking about raytracing space curves (by that I mean tracing the ray until it is a certain distance from the space curve). I guess this could get really nasty going down with derivatives to find the closest value of t... But technically you could setup the distance equation and take the derivative and solve for t in terms of x,y,z to find the closest point... Hmm the more I type this out the more I become aware of how complicated this could get if I use a complex equations... Any thoughts on this idea? UnConeD?<br />
@@ -53,7 +53,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">horse-fly</span><br />
-      <span class="post-time small text-muted">20th February 2004 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 17:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">that looks quite nasty... the code, that is, i haven't tried it out in avs...</p>
     </div>
@@ -61,7 +61,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">20th February 2004 19:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 19:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Well of course it'd be kinda nasty but if you use Whittaker iteration to solve it then I you could bypass some of that. I dont think it's been attempted in AVS at all anyways. I'll work on that and see what happens. Any other opinions?</p>
     </div>
@@ -69,7 +69,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">20th February 2004 20:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 20:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Here we go. It's a good old raytraced torus using my method (I've never seen this used anywhere so I dont know this has a name or something). :)<br />
       <br />
@@ -79,7 +79,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fragmer</span><br />
-      <span class="post-time small text-muted">20th February 2004 22:40 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 22:40 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I don't know anything about the coding part (looks cool though) but here's a better looking alpha code :p<br /></p>
       <pre>
@@ -90,7 +90,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fragmer</span><br />
-      <span class="post-time small text-muted">20th February 2004 22:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th February 2004 22:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">oh and replacing */$PI* with a variable *p* where "p=1/$PI" gives a 3fps b00st! :P</p>
     </div>
@@ -98,7 +98,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">21st February 2004 03:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st February 2004 03:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">No offense to you because I really do appreciate the comments and all, but I know it's not optimized. I'm just working with the method right now. Seeing how far I can push this trick. The current alpha coding just finds out whether the iterations are actually zeroing in on anything or not. If they aren't then I dont want to see the garbage at that point.</p>
     </div>
@@ -106,7 +106,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">21st February 2004 04:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st February 2004 04:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Ok so here's an update on the torus. Figured out a convenient way of implementing some shading which will work for all raytraced space curves (if some more can be solved) ;) So here's what the torus looks like now. Changed the whittaker constant because this function can be approximated rather quickly with a few iterations. You'll notice the center is pretty crisp and clean as well. I tried working with a few other equations but I'm not so sure that's gonna work for most... I'll keep trying though. Comments!? Ideas!?</p>
     </div>
@@ -114,7 +114,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
-      <span class="post-time small text-muted">21st February 2004 04:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st February 2004 04:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">um....do you speak twice? :p btw, nice preset.</p>
     </div>
@@ -122,7 +122,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">21st February 2004 04:56 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st February 2004 04:56 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Oh just caught what you were saying... Fixed it.<br />
       <br />
@@ -132,7 +132,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
-      <span class="post-time small text-muted">21st February 2004 05:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">21st February 2004 05:09 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">i'm not a very <i>techie</i> AVSer but i think its turning out good :up:</p>
     </div>
@@ -140,7 +140,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">23rd February 2004 04:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">23rd February 2004 04:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The surface equation idea works. So now the radius of the torus can vary along the ring. But I cant seem to solve any more space curve equations. I could numerically approximate them but then I'd be doing that for each iteration of the other approximation and thats just not gonna happen. I'll see if I can find any more but I dont know...</p>
     </div>
@@ -148,7 +148,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">25th February 2004 08:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2004 08:00 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Uhh haven't fixed the normals on this new shape but I think it looks awesome.<br />
       <br />
@@ -159,7 +159,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br />
-      <span class="post-time small text-muted">25th February 2004 09:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2004 09:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">hey nice work! maybe you can get them to morph between different shapes.</p>
     </div>
@@ -167,7 +167,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">25th February 2004 12:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2004 12:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I hadn't had time to read up on this. Your explanation is kind of chaotic ;)<br />
       <br />
@@ -219,7 +219,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">25th February 2004 15:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2004 15:14 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I hadn't thought of that. Yeah sorry about the chaotic explanation. I was working out the details as I was typing it more or less... That idea you is awesome! I'll put that in later today when I get the chance.<br />
       <br />
@@ -252,7 +252,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <span class="post-time small text-muted">25th February 2004 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th February 2004 17:51 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Nifty.</p>
     </div>
@@ -260,7 +260,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">26th February 2004 02:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">26th February 2004 02:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Here's the idea I had in action. The top and bottom of the sphere were leveled off because the shape gets too dynamic for whittaker iteration making it hard to zero in on a specific solution. Yeah I know the code isn't optimized. I just wanted to give out an example. I can make the surface change with the music. The shading isn't right yet but it works well enough. Ideas?</p>
     </div>
@@ -268,7 +268,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">16th March 2004 04:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th March 2004 04:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I'm still working with this idea. Anybody know any nice way of skewing those normals on the lumpy torus shape? I figure its dependent on the angle from the center and the angle from the closest point on the curve but I haven't really had the time to think it through fully. Any ideas? UnConeD? Jheriko? Anybody?</p>
     </div>
@@ -276,7 +276,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">16th March 2004 08:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th March 2004 08:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Skewing? Normals? Why? That torus looks fine as it is.. the edge fading looks okay imo, besides wouldn't better edge fading result in more ugly black 'occlusions' that shouldn't really happen? I assume you want normals for the edge fading since the lighting effect looks like distance fog to me.<br />
       <br />
@@ -298,7 +298,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">16th March 2004 16:46 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">16th March 2004 16:46 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The normals I'm using on the lumpy torus are exactly the same as the normals on the normal torus, but they dont account for the lumps so the lighting doesn't look quite right. That's why I wanted to skew the normals.</p>
     </div>
@@ -306,7 +306,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">D12</span><br />
-      <span class="post-time small text-muted">10th April 2004 06:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">10th April 2004 06:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">My experience &amp; my information about advanced method of writing hard DM's &amp; SSc's is very little.<br />
       But I try to learn them in AVS.</p>
@@ -315,7 +315,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br />
-      <span class="post-time small text-muted">10th April 2004 07:00 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">10th April 2004 07:00 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">D12: Can you please stop digging up old threads and adding absolutely NOTHING to them?</p>
     </div>

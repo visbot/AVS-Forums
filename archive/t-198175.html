@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Backface Culling " />
+  <meta name="description" content="Backface Culling" />
 
   <title>Backface Culling - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <span class="post-time small text-muted">2nd November 2004 23:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">2nd November 2004 23:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Backface Culling</strong><br />
       This is a technical backface culling question so noobs can hit the ol' back button now.<br />
@@ -50,7 +50,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Xerol</span><br />
-      <span class="post-time small text-muted">3rd November 2004 01:10 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">3rd November 2004 01:10 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Well, I'm not sure how you'd go about doing this, but assume you're looking top-down at the face. For sake of simplicity, let's just say it's vertical. Now, with the post-rotated normal vector, you should be able to calculate the angle it's pointing in.<br />
       <br />
@@ -64,7 +64,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <span class="post-time small text-muted">3rd November 2004 19:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">3rd November 2004 19:24 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">But thats a 2D example so it doesnt account for perspective...I'm not sure I really understand your explanation. Are you saying you take the angle of the rotated normal (of the face) and check if it is between 0 and 180 degrees? That makes sense, but we surely need to specify the angle of the normal *with relation* to the camera (as a vector?). Thats the part I dont know how to do.<br />
       <br />
@@ -96,7 +96,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">4th November 2004 08:52 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th November 2004 08:52 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Say you have the normal vector of the face you want to cull, you don't need to account for camera rotation. Just the object's own rotation in space.<br />
       <br />
@@ -114,7 +114,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br />
-      <span class="post-time small text-muted">4th November 2004 17:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th November 2004 17:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Okay yea I see your point, the rotation of the camera doesnt matter at all.<br />
       <br />
@@ -126,7 +126,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaak</span><br />
-      <span class="post-time small text-muted">6th November 2004 18:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">6th November 2004 18:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">just do culling before rotation<br />
       <br />
@@ -141,7 +141,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">17th November 2004 08:53 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">17th November 2004 08:53 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I always tend to work with the vector from a vertex to the camera so that if it's positive then you draw it. And then it works well with doing reflections and specular highlights etc.</p>
     </div>

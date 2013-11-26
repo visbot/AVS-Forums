@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DM Question " />
+  <meta name="description" content="DM Question" />
 
   <title>DM Question - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <span class="post-time small text-muted">9th July 2002 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">9th July 2002 17:27 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>DM Question</strong><br />
       i made a dm to make a smaller field, so i made x=1.5*x;y=1.5*y but there are lines, they go out of the border... how can i make that the border is clean?<br />
@@ -45,7 +45,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">9th July 2002 22:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">9th July 2002 22:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">the lines are repeating edge pixels - the default for when a movement pushes the render away from the edges of the screen. Use wrap to fix it, or blend w/ alpha=above(abs(x),0.98)+above(abs(y),0.98); in the pixel section.</p>
     </div>
@@ -53,7 +53,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <span class="post-time small text-muted">10th July 2002 23:50 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">10th July 2002 23:50 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">thanx, but wrap makes a copy the render, but i want to have a black border. i didn't know anythig about alpha so i don't know what to do with alpha.... i didn't see any changes if i insert alpha=above(abs(x),0.98)+above(abs(y),0.98); in the pixel section<br />
       <br />
@@ -63,7 +63,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">EL-VIS2</span><br />
-      <span class="post-time small text-muted">11th July 2002 07:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">11th July 2002 07:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Try setting up four black lines (superscopes) around the four borders of the image (before you use the DM on the image) and use misc/setrendermode before the four SSCs to give them a line width of 10 or so.<br />
       <br />
@@ -77,7 +77,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">EL-VIS2</span><br />
-      <span class="post-time small text-muted">11th July 2002 07:15 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">11th July 2002 07:15 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>The Preset</strong><br />
       Here's your preset with black borders but in fact you can swith the border to every color you like by setting the color in the SSCs...</p>
@@ -86,7 +86,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <span class="post-time small text-muted">11th July 2002 08:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">11th July 2002 08:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Danke für Deine Hilfe... ist ja eingentlich ganz einfach, aber auf die Sache die am nächsten liegt kommt man meistens nicht..<br />
       <br />
@@ -98,7 +98,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <span class="post-time small text-muted">11th July 2002 13:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">11th July 2002 13:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">now i colorized the border and made a osciloscope on top and bottom, so i can say it looks fine.<br />
       <br />
@@ -110,7 +110,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">12th July 2002 08:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">12th July 2002 08:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Well...the superscopes is one option, but it's more of a patch than a clean solution. Unfortunatley, the 'clean solution' to this problem involves (because of AVS's limitations) a clear screen and a buffer save, the superscopes is the quicker way. But learning Alpha blending is useful anyway, so I'll explain it to you.<br />
       <br />
@@ -133,7 +133,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">EL-VIS2</span><br />
-      <span class="post-time small text-muted">14th July 2002 14:03 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">14th July 2002 14:03 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">I know it is more a patch but in this case the last dynamic movement could be replaced by a static movement which will be much faster especially when avoiding alpha blending which will slow down the thing even more. So if using static movements the SSC-way will be better/faster I think...</p>
     </div>
@@ -141,7 +141,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">15th July 2002 13:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th July 2002 13:13 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">What about using a source-mapped movement to filter out the bad pixels? Just an idea.</p>
     </div>
@@ -149,7 +149,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">greatWho</span><br />
-      <span class="post-time small text-muted">15th July 2002 18:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th July 2002 18:09 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>UnConeD</strong><br />
       show me how... every idea gives more possibilities to create avs-presets...</p>
@@ -158,7 +158,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">15th July 2002 23:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">15th July 2002 23:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Just use a movement "d=d*.8" or something and set it to source map. The unused target pixels turn black.</p>
     </div>

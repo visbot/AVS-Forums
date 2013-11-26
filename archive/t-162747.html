@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="3D help? " />
+  <meta name="description" content="3D help?" />
 
   <title>3D help? - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fragmer</span><br />
-      <span class="post-time small text-muted">1st January 2004 20:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">1st January 2004 20:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>3D help?</strong><br />
       Hello everyone!<br />
@@ -57,7 +57,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <span class="post-time small text-muted">1st January 2004 23:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">1st January 2004 23:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">The way you would want to do it is base something off the pixel height. I didn't actually look at your code, but my best guess would be to use something like<br /></p>
       <pre>
@@ -77,7 +77,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fragmer</span><br />
-      <span class="post-time small text-muted">2nd January 2004 02:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">2nd January 2004 02:23 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Look:<br /></p>
       <pre>
@@ -98,7 +98,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">2nd January 2004 07:31 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">2nd January 2004 07:31 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><b>n=floor(w/25)*floor(h/25);</b><br />
       <br />
@@ -111,7 +111,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br />
-      <span class="post-time small text-muted">2nd January 2004 18:58 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">2nd January 2004 18:58 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">You need to use an image that you know the dimensions of and use that to calculate n. Like this.<br />
       <br />
@@ -123,7 +123,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">3rd January 2004 05:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">3rd January 2004 05:37 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">That's because his logic is wrong. You based your steps assuming that the particles are placed in terms of height and width and not in cartesian coordinates. Honestly I dont know why you are setting it up like this anyways if you are just going to add rotation. If you really feel the need to try and plow through this mess you need to set up your step like this.<br />
       <br />
@@ -136,7 +136,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br />
-      <span class="post-time small text-muted">3rd January 2004 16:55 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">3rd January 2004 16:55 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">UIUC85:Your n solution doesn't work at all. Try Copy&amp;Pasting it into his preset and removing his logic. It screws the preset up.<br />
       <br />
@@ -148,7 +148,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">4th January 2004 01:59 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th January 2004 01:59 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Here, you want me to explain it for ya? It's not just copy and paste. What he has isn't going to achieve what he wants. He's based his system off width and height instead of using cartesian coordinates. In order to keep the distance 25 pixels you have to know the cartesian equivalent of 1 pixel for both width and height. SO:<br />
       <br />
@@ -172,7 +172,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br />
-      <span class="post-time small text-muted">4th January 2004 03:24 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th January 2004 03:24 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">/me agrees with UIUC85 that it is easier and better to just set an arbitrary number of points for a grid like this.</p>
     </div>
@@ -180,7 +180,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">fragmer</span><br />
-      <span class="post-time small text-muted">4th January 2004 20:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th January 2004 20:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Thank you VERY much! Yeah, I re-wrote the preset now it works.</p>
     </div>
@@ -188,7 +188,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br />
-      <span class="post-time small text-muted">4th January 2004 21:14 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">4th January 2004 21:14 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Anytime :)</p>
     </div>

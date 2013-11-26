@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dynamic Movement Mathematical Explanation " />
+  <meta name="description" content="Dynamic Movement Mathematical Explanation" />
 
   <title>Dynamic Movement Mathematical Explanation - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">c-here</span><br />
-      <span class="post-time small text-muted">29th January 2007 01:04 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">29th January 2007 01:04 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Dynamic Movement Mathematical Explanation</strong><br />
       First off i wanna apologise if this post is at all noobish, but i did search the forums and saw nothing which really helped, and i do realise that this is one of the most commonly asked Q's, but i'm asking it from a different (probably even more difficult to answer) perspective, so try an bear with me. So my Q is : can anybody give a (semi) mathematical explanation of what A dynamic movement is doing? I kind of understand how to use them, the very basics anyway, but the reason i ask is i'm doing my uni project in AVS n need to give an explanation of what the APE's i'm using are doing? specifically why do you get ghosting when you divide cartesian co-ordinates by less than 0.5, and what form of interpolation is used? I kinda understand the concept of interpolation but don't really get how it's used with the DM - i've messed around with grid size values and don't get how they relate to the image on screen &amp; my knowledge of interpolation.<br />
@@ -40,7 +40,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br />
-      <span class="post-time small text-muted">29th January 2007 18:37 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">29th January 2007 18:37 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><a href="http://www.deviantart.com/deviation/11200891/" target="_blank">AVS Programming guide by PAK-9</a><br />
       Skip to chapter 3</p>
@@ -49,7 +49,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">c-here</span><br />
-      <span class="post-time small text-muted">30th January 2007 00:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">30th January 2007 00:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Interpolation &amp; Grid Sizes?</strong><br />
       Thanks for the Quick Reply WOTL, i've already had a read of Pak-9's Guide (its pretty much been my bible for learning AVS) and tbh i think I get What a DM is doing well enough to explain it(well at least give an example n let folk who haven't used them think its simple lol), what I don't understand is the whole interpolation thing, which i need to give a decent explanation off. for example if i plot a square In a SSC from points along all the 0.5 &amp; -0.5 points, then use A DM to zoom by doubling x and y values, I get no effect with a gird size of 2x2 or less, but anything more (or turning wrap on) gives me a square half the size as you'd expect. I can see how it might be something to do with those points lying on the grid intersections where the interpolation is sampling from, but ... i can't... quite.... get it! I do (think) i get what interpolation does, i've know about it in different contexts I just don't quite get how it works in DM's. Any clues?</p>
@@ -58,7 +58,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jon_joy_1999</span><br />
-      <span class="post-time small text-muted">20th March 2007 12:32 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">20th March 2007 12:32 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">if you double x&amp;y (x=-0.5+0.5,y=-0.5+0.5) by doing x*x and y*y, you'll get x-0.25+0.25 and y-0.25+0.25 for your result. however, if you do x*2 and y*2 you'll get x-1+1 and y-1+1, which is kinda backwards if you don't think about it too much, because if x=2, then x*x=4, and x*2=4, which can turn into a logical fallacy (you can easily fall into the assumption that x=0.5 then x*x=1 because x*2=1)<br />
       however, if x=3, then x*x=9, and x*2=6.<br />

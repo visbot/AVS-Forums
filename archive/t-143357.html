@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Help with Code! on/off detection " />
+  <meta name="description" content="Help with Code! on/off detection" />
 
   <title>Help with Code! on/off detection - AVS Forums</title><!-- Bootstrap core CSS -->
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">spyduck</span><br />
-      <span class="post-time small text-muted">24th July 2003 01:09 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 01:09 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"><strong>Help with Code! on/off detection</strong><br />
       Let me first say that Ive been studying AVS through Jheriko's Hi-RES, AVS pack and the things I am learning are incredible!<br />
@@ -51,7 +51,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br />
-      <span class="post-time small text-muted">24th July 2003 04:08 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 04:08 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Well, v is a point variable. It's the level at acertain point on the spectrum or osciliscope. Your best bet would probably to get the data using getosc() or getspec(). Just make sure you grab data from a wide enough spectrum.</p>
     </div>
@@ -59,7 +59,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <span class="post-time small text-muted">24th July 2003 04:17 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 04:17 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Or you could put it in the POINT box, depending on how high the n value is - that may be better than using many getosc's.</p>
     </div>
@@ -67,7 +67,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">24th July 2003 07:11 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 07:11 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">something like<br />
       on=if(getosc(0,1,0),1,0)<br />
@@ -77,7 +77,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">24th July 2003 09:13 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 09:13 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">this won't work because of a very small bug in avs that causes *any* signal to raise getosc very slightly. (or lower it, i actually don't know the exact amount.) so if anything is playing - and thus any signal being sent to avs - then your switch will be on. point being that if anything it should be getspec(0.5,1,0), and that might not even work. however, i don't really think that it should be a straight on/off switch because it would do the same thing for very quiet as very loud...which isn't exactly reactive. *unless* you're turning a scope off when there's no music. the only problem with this is that you get fps spikes when you turn a song off; you'll have to decide for yourself if that's acceptable in your preset or not.</p>
     </div>
@@ -85,7 +85,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">24th July 2003 10:47 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 10:47 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">ok, how about on=above(getspec(0,1,0),0.01)<br />
       <br />
@@ -97,7 +97,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">spyduck</span><br />
-      <span class="post-time small text-muted">24th July 2003 11:41 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 11:41 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">As of right now, the above(abs(v),0) is doing the job in my per frame box, if you care to look at the preset i included the scopes have a reaction, but then sometimes during a techno song when if for some reason the music gets all quiet (like, say the interlude or whatever u call it part) then all of sudden the abs(v) is 0 and then the on code triggers so you have a moment of inactivity.</p>
     </div>
@@ -105,7 +105,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br />
-      <span class="post-time small text-muted">24th July 2003 12:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 12:16 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Yeah. Actually, it should work. It's taking the v value for the last pixel drawn during the last frame. It will have a little [unnoticable] lag, but above(abs(v),0) should work.</p>
     </div>
@@ -113,7 +113,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br />
-      <span class="post-time small text-muted">24th July 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 12:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"></p>
 
@@ -127,7 +127,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
-      <span class="post-time small text-muted">24th July 2003 13:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 13:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Why dont you do this:<br />
       <br />
@@ -151,7 +151,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">spyduck</span><br />
-      <span class="post-time small text-muted">24th July 2003 14:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 14:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content"></p>
 
@@ -174,7 +174,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">24th July 2003 14:23 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 14:23 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">You could get avs to do the summing for you internally per frame (or beat) with a getspec(0,0,0) checking if this is below a small value would be a good way to see if the music is 'playing' or not.<br />
       <br />
@@ -189,7 +189,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
-      <span class="post-time small text-muted">24th July 2003 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 14:48 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Getspec'ing one point in spectrum won't get a good result.<br />
       <br />
@@ -199,7 +199,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">jheriko</span><br />
-      <span class="post-time small text-muted">24th July 2003 15:34 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 15:34 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">i heard that getspec(0,0,0) is the volume. can't remember where... i've been using it as if it were for ages.</p>
     </div>
@@ -207,7 +207,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">24th July 2003 18:22 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">24th July 2003 18:22 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">getspec(0,1,0) is volume.<br />
       It takes an average of all the available bands.<br />
@@ -224,7 +224,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br />
-      <span class="post-time small text-muted">25th July 2003 02:05 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th July 2003 02:05 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">umm<br />
       since when does getspec(a,b,c) average a..a+b? i'm damned sure it's a-b/2..a+b/2.</p>
@@ -233,7 +233,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">25th July 2003 06:16 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th July 2003 06:16 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">hmm.. damned if i can think of a sure way to check this.<br />
       You could well be right, it does make sense.<br />
@@ -243,7 +243,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br />
-      <span class="post-time small text-muted">25th July 2003 06:49 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th July 2003 06:49 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">This is because you take a range from -0.5 to +0.5 then. But as the major sound generated is within this range (bass and middle range) it works as well although its not really perfect.<br />
       <br />
@@ -253,7 +253,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">sidd</span><br />
-      <span class="post-time small text-muted">25th July 2003 17:21 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th July 2003 17:21 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">:) thanks</p>
     </div>
@@ -261,7 +261,7 @@
 
     <div class="post">
       <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br />
-      <span class="post-time small text-muted">25th July 2003 18:57 <abbr title="Coordinated Universal Time">UTC</abbr></span></p>
+      <p class="post-time small text-muted">25th July 2003 18:57 <abbr title="Coordinated Universal Time<abbr title="Coordinated Universal Time">UTC</abbr></p></p>
 
       <p class="post-content">Personally, I usually do something like this:<br />
       <br />
