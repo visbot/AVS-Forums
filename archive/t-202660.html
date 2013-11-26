@@ -1,124 +1,194 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="inform APE of samplerate AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" inform APE of samplerate AVS" />
 
-  <title>inform APE of samplerate - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> inform APE of samplerate - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">inform APE of samplerate</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=202660">inform APE of samplerate</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NeoAlus</span><br />
-      <span class="date small text-muted">21st December 2004 11:22 GMT</span></p>
 
-      <p class="post-content"><strong>inform APE of samplerate</strong><br />
-      visualization plugins get informed of the samplerate, so APEs should too.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">inform APE of samplerate</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=202660">inform APE of samplerate</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">21st December 2004 16:05 GMT</span></p>
 
-      <p class="post-content">Are you saying there should be an APE that lets you access the sample rate?<br />
-      <br />
-      Well Mp3's are almost always 44100 samples per second, but more importantly its not very useful information to have availible. Can you be a bit more descriptive?</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">21st December 2004 16:58 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NeoAlus</span><br />
+			<span class="date small text-muted">21st December 2004 11:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>inform APE of samplerate</strong><br />
+		
+		
 
-      <p class="post-content">say we had this, then what would it add to the presets that were made with it compared with those that don't?<br />
-      <br />
-      Don't get me wrong; I'm not saying it is impossible, but what would be the benefits? I don't get that either</p>
-    </div>
-    <hr />
+		visualization plugins get informed of the samplerate, so APEs should too.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NeoAlus</span><br />
-      <span class="date small text-muted">21st December 2004 21:09 GMT</span></p>
+	<hr />
 
-      <p class="post-content">First, I'm not asking for an APE which reports samplerate, I'm asking for the APE API to have samplerate available, so that people making APEs can access it, the same way visualizations plugins can.<br />
-      <br />
-      So the advantage is clear. You can do frequency specific calculations. I use my own FFT, but I assume the 576 band FTT that's passed to the APE is scaled to the correct samplerate. So a 1khz sine wave played at anything except 44.1 does not look like 1khz to the APE.<br />
-      <br />
-      Most mp3s are 44.1khz, I agree. But obviously not all of them are, and the majority of low-bandwidth shoutcast streams are 22khz.<br />
-      <br />
-      I'm facing the difference between my visualization plugin doing the right thing, and my APE plugin not. I would much rather release both, rather than re-implement all of the control AVS gives you over drawing, fullscreen, etc in the visualization plugin to cover my bases.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">21st December 2004 16:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">goebish</span><br />
-      <span class="date small text-muted">22nd December 2004 21:13 GMT</span></p>
+		Are you saying there should be an APE that lets you access the sample rate?<br />
+<br />
+Well Mp3's are almost always 44100 samples per second, but more importantly its not very useful information to have availible. Can you be a bit more descriptive?
+		</p>
+</div>
 
-      <p class="post-content">You can retrieve it into your APE, just retrieve Winamp's handle then use WM_USER id 126 (with data=0)<br />
-      <br />
-      here's a piece of code :<br />
-      <br />
-      HWND hwndWinamp = FindWindow("Winamp v1.x",NULL);<br />
-      int samplerate = SendMessage(hwndWinamp,WM_USER, 0, 126);<br />
-      <br />
-      I hope this help .. or maybe I don't understand your wish.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NeoAlus</span><br />
-      <span class="date small text-muted">22nd December 2004 22:30 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">21st December 2004 16:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Good thinking goebish, that works to an extent.<br />
-      I should mention for anyone that reads this thread that despite the documentation in wa_ipc.h, the IPC_GETINFO (126) message with mode=0 returns the khz sampling rate, for example 44. So if you always multiply the result by 1000 you'll get rates like 44000 and 22000.<br />
-      <br />
-      So that solves that problem (within &lt;1%).<br />
-      <br />
-      On a side note, has anyone noticed that the oscilloscope passed to an APE is different from that passed to a visualization plugin? I don't know if it's taking it from a different source, or applying some effect before it gets to the APE, or just dropping out some points, but there is an obvious difference between the two sets of data.</p>
-    </div>
-    <hr />
+		say we had this, then what would it add to the presets that were made with it compared with those that don't?<br />
+<br />
+Don't get me wrong; I'm not saying it is impossible, but what would be the benefits? I don't get that either
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">goebish</span><br />
-      <span class="date small text-muted">23rd December 2004 10:03 GMT</span></p>
+	<hr />
 
-      <p class="post-content">AVS get audio data in 8 bits/sample format (maybe to prevent high quality ripping ?)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NeoAlus</span><br />
+			<span class="date small text-muted">21st December 2004 21:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NeoAlus</span><br />
-      <span class="date small text-muted">23rd December 2004 21:09 GMT</span></p>
+		First, I'm not asking for an APE which reports samplerate, I'm asking for the APE API to have samplerate available, so that people making APEs can access it, the same way visualizations plugins can.<br />
+<br />
+So the advantage is clear. You can do frequency specific calculations. I use my own FFT, but I assume the 576 band FTT that's passed to the APE is scaled to the correct samplerate. So a 1khz sine wave played at anything except 44.1 does not look like 1khz to the APE.<br />
+<br />
+Most mp3s are 44.1khz, I agree. But obviously not all of them are, and the majority of low-bandwidth shoutcast streams are 22khz.<br />
+<br />
+I'm facing the difference between my visualization plugin doing the right thing, and my APE plugin not. I would much rather release both, rather than re-implement all of the control AVS gives you over drawing, fullscreen, etc in the visualization plugin to cover my bases.
+		</p>
+</div>
 
-      <p class="post-content">Visualization plugins also get 8 bits/sample. It's more than just low quality, there's a strange phase relationship between the two channels in AVS, that the visualization plugins do not see.<br />
-      (I don't see much reason to provide more that 8 bits for visualization. Couldn't you still do high quality ripping by making an output plugin? The thought had crossed my mind though, every player with visualization lets you rip an 8bit copy of whatever you're playing.)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">goebish</span><br />
+			<span class="date small text-muted">22nd December 2004 21:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You can retrieve it into your APE, just retrieve Winamp's handle then use WM_USER id 126 (with data=0)<br />
+<br />
+here's a piece of code :<br />
+<br />
+HWND hwndWinamp = FindWindow(&quot;Winamp v1.x&quot;,NULL);<br />
+int samplerate = SendMessage(hwndWinamp,WM_USER, 0, 126);<br />
+<br />
+I hope this help .. or maybe I don't understand your wish.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NeoAlus</span><br />
+			<span class="date small text-muted">22nd December 2004 22:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Good thinking goebish, that works to an extent.<br />
+I should mention for anyone that reads this thread that despite the documentation in wa_ipc.h, the IPC_GETINFO (126) message with mode=0 returns the khz sampling rate, for example 44. So if you always multiply the result by 1000 you'll get rates like 44000 and 22000.<br />
+<br />
+So that solves that problem (within &lt;1%).<br />
+<br />
+On a side note, has anyone noticed that the oscilloscope passed to an APE is different from that passed to a visualization plugin? I don't know if it's taking it from a different source, or applying some effect before it gets to the APE, or just dropping out some points, but there is an obvious difference between the two sets of data.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">goebish</span><br />
+			<span class="date small text-muted">23rd December 2004 10:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		AVS get audio data in 8 bits/sample format (maybe to prevent high quality ripping ?)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NeoAlus</span><br />
+			<span class="date small text-muted">23rd December 2004 21:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Visualization plugins also get 8 bits/sample. It's more than just low quality, there's a strange phase relationship between the two channels in AVS, that the visualization plugins do not see.<br />
+(I don't see much reason to provide more that 8 bits for visualization. Couldn't you still do high quality ripping by making an output plugin? The thought had crossed my mind though, every player with visualization lets you rip an 8bit copy of whatever you're playing.)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

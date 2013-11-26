@@ -1,108 +1,159 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="2D rotation problem AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" 2D rotation problem AVS" />
 
-  <title>2D rotation problem - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> 2D rotation problem - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">2D rotation problem</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=137896">2D rotation problem</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
-      <span class="date small text-muted">5th June 2003 00:50 GMT</span></p>
 
-      <p class="post-content"><strong>2D rotation problem</strong><br />
-      Quick question. Shouldn't ...<br />
-      <br /></p>
-      <pre>
-<code>theta</code><span style="color: #007700">=</span><span style="color: #0000BB">pi</span><span style="color: #007700">*</span><span style="color: #0000BB">cc</span><span style="color: #007700">/</span><span style="color: #0000BB">2</span><span style="color: #007700">;
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">2D rotation problem</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=137896">2D rotation problem</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Shock Value</span><br />
+			<span class="date small text-muted">5th June 2003 00:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>2D rotation problem</strong><br />
+		
+		
+
+		Quick question. Shouldn't ...<br />
+<br />
+
+	<pre><code>theta</span><span style="color: #007700">=</span><span style="color: #0000BB">pi</span><span style="color: #007700">*</span><span style="color: #0000BB">cc</span><span style="color: #007700">/</span><span style="color: #0000BB">2</span><span style="color: #007700">;
 <br /></span><span style="color: #0000BB">d</span><span style="color: #007700">=</span><span style="color: #0000BB">sqrt</span><span style="color: #007700">(</span><span style="color: #0000BB">x2</span><span style="color: #007700">*</span><span style="color: #0000BB">x2</span><span style="color: #007700">+</span><span style="color: #0000BB">z2</span><span style="color: #007700">*</span><span style="color: #0000BB">z2</span><span style="color: #007700">);
 <br /></span><span style="color: #0000BB">r</span><span style="color: #007700">=</span><span style="color: #0000BB">atan2</span><span style="color: #007700">(</span><span style="color: #0000BB">x2</span><span style="color: #007700">,</span><span style="color: #0000BB">z2</span><span style="color: #007700">)+</span><span style="color: #0000BB">theta</span><span style="color: #007700">;
 <br /></span><span style="color: #0000BB">x2</span><span style="color: #007700">=</span><span style="color: #0000BB">d</span><span style="color: #007700">*</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">r</span><span style="color: #007700">);
 <br /></span><span style="color: #0000BB">z2</span><span style="color: #007700">=</span><span style="color: #0000BB">d</span><span style="color: #007700">*</span><span style="color: #0000BB">cos</span><span style="color: #007700">(</span><span style="color: #0000BB">r</span><span style="color: #007700">);
-</span>
-</pre>... and ...<br />
-      <br />
-      <pre>
-<code>theta</code><span style="color: #007700">=</span><span style="color: #0000BB">pi</span><span style="color: #007700">*</span><span style="color: #0000BB">cc</span><span style="color: #007700">/</span><span style="color: #0000BB">2</span><span style="color: #007700">;
+</code></pre>
+	
+... and ...<br />
+<br />
+
+	<pre><code>theta</span><span style="color: #007700">=</span><span style="color: #0000BB">pi</span><span style="color: #007700">*</span><span style="color: #0000BB">cc</span><span style="color: #007700">/</span><span style="color: #0000BB">2</span><span style="color: #007700">;
 <br /></span><span style="color: #0000BB">ct</span><span style="color: #007700">=</span><span style="color: #0000BB">cos</span><span style="color: #007700">(</span><span style="color: #0000BB">theta</span><span style="color: #007700">);
 <br /></span><span style="color: #0000BB">st</span><span style="color: #007700">=</span><span style="color: #0000BB">sin</span><span style="color: #007700">(</span><span style="color: #0000BB">theta</span><span style="color: #007700">);
 <br /></span><span style="color: #0000BB">x2</span><span style="color: #007700">=</span><span style="color: #0000BB">x2</span><span style="color: #007700">*</span><span style="color: #0000BB">ct</span><span style="color: #007700">-</span><span style="color: #0000BB">z2</span><span style="color: #007700">*</span><span style="color: #0000BB">st</span><span style="color: #007700">;
 <br /></span><span style="color: #0000BB">z2</span><span style="color: #007700">=-</span><span style="color: #0000BB">x2</span><span style="color: #007700">*</span><span style="color: #0000BB">st</span><span style="color: #007700">-</span><span style="color: #0000BB">z2</span><span style="color: #007700">*</span><span style="color: #0000BB">ct</span><span style="color: #007700">;
-</span>
-</pre>... do the exact same thing? I thought so, but the second one seems to be acting differently (in other words messing my whole scope up).<br />
-      <br />
-      EDIT: Figured it out. I just needed to make new variables in place of x2 and z2 instead of using them over. Not sure why I would have to do this with the second method and not the first though.<br />
-      <br />
-      Would a mod be kind enough to lock/delete this thread?
-    </div>
-    <hr />
+</code></pre>
+	
+... do the exact same thing?  I thought so, but the second one seems to be acting differently (in other words messing my whole scope up).<br />
+<br />
+EDIT: Figured it out. I just needed to make new variables in place of x2 and z2 instead of using them over. Not sure why I would have to do this with the second method and not the first though.<br />
+<br />
+Would a mod be kind enough to lock/delete this thread?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th June 2003 04:03 GMT</span></p>
+	<hr />
 
-      <p class="post-content">...<br />
-      x2=x2*ct-z2*st;<br />
-      z2=-x2*st-z2*ct;<br />
-      <br />
-      you're altering x2, a term used in the z2 statment, before you get to the z2 statement. to get it to work properly use different variable names, or a storage variable:<br />
-      x3=x2*ct-z2*st;<br />
-      z2=-x2*st-z2*ct;<br />
-      or<br />
-      x2a=x2; x2=x2*ct-z2*st;<br />
-      z2=-x2a*st-z2*ct;</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th June 2003 04:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
-      <span class="date small text-muted">5th June 2003 23:36 GMT</span></p>
+		...<br />
+x2=x2*ct-z2*st;<br />
+z2=-x2*st-z2*ct;<br />
+<br />
+you're altering x2, a term used in the z2 statment, before you get to the z2 statement.  to get it to work properly use different variable names, or a storage variable:<br />
+x3=x2*ct-z2*st;<br />
+z2=-x2*st-z2*ct;<br />
+or<br />
+x2a=x2; x2=x2*ct-z2*st;<br />
+z2=-x2a*st-z2*ct;
+		</p>
+</div>
 
-      <p class="post-content">Aha, thanks for pointing that out, Atero. And to anyone who cares, my second pack should be done soon.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th June 2003 00:36 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Shock Value</span><br />
+			<span class="date small text-muted">5th June 2003 23:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">you do mean third pack, right? i could swear i've already got two on my comp...yep, i do....</p>
-    </div>
-    <hr />
+		Aha, thanks for pointing that out, Atero.  And to anyone who cares, my second pack should be done soon.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">6th June 2003 01:07 GMT</span></p>
+	<hr />
 
-      <p class="post-content">me too: onTV and Pixels..</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th June 2003 00:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		you do mean third pack, right?  i could swear i've already got two on my comp...yep, i do....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">6th June 2003 01:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		me too: onTV and Pixels..
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

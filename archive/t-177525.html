@@ -1,168 +1,263 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Buttons in AVS AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Buttons in AVS AVS" />
 
-  <title>Buttons in AVS - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Buttons in AVS - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Buttons in AVS</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=177525">Buttons in AVS</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">21st April 2004 20:04 GMT</span></p>
 
-      <p class="post-content"><strong>Buttons in AVS</strong><br />
-      It's questionable if this belongs in the presets subforum or in the AVS forum, but I didn't start this thread only about the preset, but more about the functionality.<br />
-      <br />
-      A lot of people have already worked this out, but here's my way of doing this:<br />
-      <br />
-      You don't want the button to flip per frame when you hold the mouse button for multiple frames, what would happen if you would simply use button=getkbmouse(3); I solved this by generating a pulse when the mouse-button is pressed.<br />
-      <br />
-      This pulse normally would only trigger the button for 1 frame. You want it to switch per pulse. Here's how I solved it all (button is reg02).<br />
-      <br /></p>
-      <pre>
-<code><br />xm=getkbmouse(1);<br />ym=getkbmouse(2);<br />rm=getkbmouse(3);<br />mc=if(below(xm,-.9)&amp;above(xm,-1)&amp;above(ym,.9)&amp;below(ym,1)&amp;rm,1,0);<br />mcpulse=if(equal(mcold,mcnew),0,if(equal(mcold,0),1,0));<br />mcold=var;<br />var=if(equal(mc,0),mcpulse,1);<br />mcnew=var;<br />mcswitch=if(mcpulse,bnot(mcswitch),mcswitch);<br />reg02=mcswitch;<br /></code>
-</pre><br />
-      <br />
-      Example preset is attached (will most likely be in my new pack).<br />
-      The button appears when you move the mouse over the left and bottom of the preset ( xpos &lt; -0.9 or ypos &lt; 0.9 ) Click it and the preset changes. Also explained in the comment.
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Buttons in AVS</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=177525">Buttons in AVS</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">22nd April 2004 01:00 GMT</span></p>
 
-      <p class="post-content">Your method is waaaaaay too complicated (not to mention such a thing has been posted before).<br />
-      <br />
-      Pulse:<br />
-      <br />
-      old=new;new=getkbmouse(3);pulse=band(new,bnot(old));<br />
-      <br />
-      Then just check the x/y coordinates and and with pulse:<br />
-      if(band(pulse,...), /* do mouse click */ ,0);</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">22nd April 2004 03:25 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">21st April 2004 20:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Buttons in AVS</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">UnConeD got it.<br />
-      I am kicking aorund an idea like that for a prest library GUI type fux0red thing, it would be nice if it worked.</p>
-    </div>
-    <hr />
+		It's questionable if this belongs in the presets subforum or in the AVS forum, but I didn't start this thread only about the preset, but more about the functionality.<br />
+<br />
+A lot of people have already worked this out, but here's my way of doing this:<br />
+<br />
+You don't want the button to flip per frame when you hold the mouse button for multiple frames, what would happen if you would simply use button=getkbmouse(3); I solved this by generating a pulse when the mouse-button is pressed.<br />
+<br />
+This pulse normally would only trigger the button for 1 frame. You want it to switch per pulse. Here's how I solved it all (button is reg02). <br />
+<br />
+<pre><code><br />
+xm=getkbmouse(1);<br />
+ym=getkbmouse(2);<br />
+rm=getkbmouse(3);<br />
+mc=if(below(xm,-.9)&amp;above(xm,-1)&amp;above(ym,.9)&amp;below(ym,1)&amp;rm,1,0);<br />
+mcpulse=if(equal(mcold,mcnew),0,if(equal(mcold,0),1,0));<br />
+mcold=var;<br />
+var=if(equal(mc,0),mcpulse,1);<br />
+mcnew=var;<br />
+mcswitch=if(mcpulse,bnot(mcswitch),mcswitch);<br />
+reg02=mcswitch;<br />
+</code></pre><br />
+<br />
+Example preset is attached (will most likely be in my new pack). <br />
+The button appears when you move the mouse over the left and bottom of the preset ( xpos &lt; -0.9 or ypos &lt; 0.9 ) Click it and the preset changes. Also explained in the comment.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">22nd April 2004 07:58 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Yup, i've used UnConeD's method for a while now and im very pleased by it :)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">22nd April 2004 01:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">22nd April 2004 10:55 GMT</span></p>
+		Your method is waaaaaay too complicated (not to mention such a thing has been posted before).<br />
+<br />
+Pulse:<br />
+<br />
+old=new;new=getkbmouse(3);pulse=band(new,bnot(old));<br />
+<br />
+Then just check the x/y coordinates and and with pulse:<br />
+if(band(pulse,...), /* do mouse click */ ,0);
+		</p>
+</div>
 
-      <p class="post-content">%@#$!!! just when I think I've worked someting out... :mad:<br />
-      <br />
-      Nevermind...<br />
-      <br />
-      By the way, why is band() faster than &amp; ? Aren't funtions slower than operators in this case (pulse) ? :confused:<br />
-      <br />
-      [edit]<br />
-      Am I the only one who likes the altered preset or am I the only one? None of my friends seem to like it... :cry:<br />
-      [/edit]</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">22nd April 2004 11:07 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">22nd April 2004 03:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Hmm, doesn't &amp; do something else? The explanation on the help is hard to understand for me tho :confused:<br />
-      <br />
-      But band would be * too in occasions, band(1,1)=1 and 1*1=1 Just as long as they are numbers and the values are 1 precisely.<br />
-      Don't know what is the fastest way though :p<br />
-      <br />
-      [edit]<br />
-      The altered preset is nicer with low fps, but with high fps it tends to flicker too much.<br />
-      [/edit]</p>
-    </div>
-    <hr />
+		UnConeD got it. <br />
+I am kicking aorund an idea like that for a prest library GUI type fux0red thing, it would be nice if it worked.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">22nd April 2004 14:14 GMT</span></p>
+	<hr />
 
-      <p class="post-content">band() is boolean AND<br />
-      &amp; is bitwise AND<br />
-      <br />
-      the C representation of band(x, y) should be something like<br />
-      (((x == 0) || (y==0))? 0 : 1)<br />
-      <br />
-      x &amp; y is probably<br />
-      (double)(((int)x)&amp;((int)y))<br />
-      <br />
-      band() is 2 floating point comparisons and a boolean OR,<br />
-      whereas &amp; is 3 type conversions and a bitwise AND<br />
-      guess which one is faster ;)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">22nd April 2004 07:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">23rd April 2004 13:51 GMT</span></p>
+		Yup, i've used UnConeD's method for a while now and im very pleased by it :)
+		</p>
+</div>
 
-      <p class="post-content">I know what they do :hang: i was talking about my case, but this makes it more clear... thanks</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">DynamicMovement</span><br />
-      <span class="date small text-muted">23rd April 2004 17:11 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">22nd April 2004 10:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">UnConeD's method has benefits &amp; disadvantages:<br />
-      <br />
-      For writing DM it has functionality, but, when I want to code other parts I have same problems.</p>
-    </div>
-    <hr />
+		%@#$!!! just when I think I've worked someting out... :mad: <br />
+<br />
+Nevermind...<br />
+<br />
+By the way, why is band() faster than &amp; ? Aren't funtions slower than operators in this case (pulse) ? :confused:<br />
+<br />
+[edit]<br />
+Am I the only one who likes the altered preset or am I the only one? None of my friends seem to like it... :cry:<br />
+[/edit]
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">23rd April 2004 18:22 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Comparing functions with operators in AVS makes no sense: the scripting language is way too high level to be able to decide what goes on on the assembly level.<br />
-      <br />
-      Get the WA5 SDK and look in the nseel dir, nseel-cfunc.c. Then come back and discuss speed issues :rolleyes: .</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">22nd April 2004 11:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		Hmm, doesn't &amp; do something else? The explanation on the help is hard to understand for me tho :confused:<br />
+<br />
+But band would be * too in occasions, band(1,1)=1 and 1*1=1 Just as long as they are numbers and the values are 1 precisely.<br />
+Don't know what is the fastest way though :p<br />
+<br />
+[edit]<br />
+The altered preset is nicer with low fps, but with high fps it tends to flicker too much.<br />
+[/edit]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">22nd April 2004 14:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		band() is boolean AND<br />
+&amp; is bitwise AND<br />
+<br />
+the C representation of band(x, y) should be something like<br />
+(((x == 0) || (y==0))? 0 : 1)<br />
+<br />
+x &amp; y is probably<br />
+(double)(((int)x)&amp;((int)y))<br />
+<br />
+band() is 2 floating point comparisons and a boolean OR,<br />
+whereas &amp; is 3 type conversions and a bitwise AND<br />
+guess which one is faster ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">23rd April 2004 13:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I know what they do :hang: i was talking about my case, but this makes it more clear... thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">DynamicMovement</span><br />
+			<span class="date small text-muted">23rd April 2004 17:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD's method has benefits &amp; disadvantages:<br />
+<br />
+For writing DM it has functionality, but, when I want to code other parts I have same problems.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">23rd April 2004 18:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Comparing functions with operators in AVS makes no sense: the scripting language is way too high level to be able to decide what goes on on the assembly level.<br />
+<br />
+Get the WA5 SDK and look in the nseel dir, nseel-cfunc.c. Then come back and discuss speed issues :rolleyes: .
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

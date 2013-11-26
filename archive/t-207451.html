@@ -1,159 +1,251 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Truchet lines AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Truchet lines AVS" />
 
-  <title>Truchet lines - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Truchet lines - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">Truchet lines</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=207451">Truchet lines</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">10th February 2005 22:15 GMT</span></p>
 
-      <p class="post-content"><strong>Truchet lines</strong><br />
-      long time since i've avsed...<br />
-      <br />
-      simple preset that draws truchet tilings. i'll expand it later.<br />
-      <br />
-      the reason i'm posting it now is because gmegabuf acts really weird in this preset. i have two instances of texerII. the first does some changes to gmegabuf onbeat. both should immediately accept these changes, but it seems that one or the other doesn't accept them until one frame aftewards (i *think* it's the first one, but i'm not sure)<br />
-      <br />
-      the first texerII changes reg00-02 as well, and occasionally it seems to take two frames for both texerIIs to synch that as well.<br />
-      <br />
-      i tested gmegabuf on this in another preset (included in the zip). if this were a universal bug, the two dots in that preset would be on different sides every beat. that doesn't happen, so i'm going to assume that the bug is isolated to my preset.<br />
-      <br />
-      i'd like to resolve the bug before i go any further with this idea. does anyone have a clue why avs would be doing something like this?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Truchet lines</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=207451">Truchet lines</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">10th February 2005 22:39 GMT</span></p>
 
-      <p class="post-content">I don't know <b>why</b> it does that, but putting the gmegabuf control to a superscope before the effect list's atleast solves the problem and you can use just 1 frame to render them.<br />
-      <br />
-      btw. Great idea and preset so far :)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">10th February 2005 22:45 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">10th February 2005 22:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Truchet lines</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">get the same problem here.. what about it if you'd calculate the globals in a seperate t2/ssc or in Jheriko's Global Variable Manager (still in beta)?<br />
-      <br />
-      Welcome back my the way...<br />
-      <br />
-      /edit: doh! you beat me on that!</p>
-    </div>
-    <hr />
+		long time since i've avsed...<br />
+<br />
+simple preset that draws truchet tilings.  i'll expand it later.<br />
+<br />
+the reason i'm posting it now is because gmegabuf acts really weird in this preset.  i have two instances of texerII.  the first does some changes to gmegabuf onbeat.  both should immediately accept these changes, but it seems that one or the other doesn't accept them until one frame aftewards (i *think* it's the first one, but i'm not sure)<br />
+<br />
+the first texerII changes reg00-02 as well, and occasionally it seems to take two frames for both texerIIs to synch that as well.<br />
+<br />
+i tested gmegabuf on this in another preset (included in the zip).  if this were a universal bug, the two dots in that preset would be on different sides every beat.  that doesn't happen, so i'm going to assume that the bug is isolated to my preset.<br />
+<br />
+i'd like to resolve the bug before i go any further with this idea.  does anyone have a clue why avs would be doing something like this?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">10th February 2005 23:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">OMG HE TEH LIVES!!!One!@$#!#elven@#!^!!!!<br />
-      <br />
-      Nice to see your back.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">10th February 2005 22:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">12th February 2005 17:08 GMT</span></p>
+		I don't know <b>why</b> it does that, but putting the gmegabuf control to a superscope before the effect list's atleast solves the problem and you can use just 1 frame to render them.<br />
+<br />
+btw. Great idea and preset so far :)
+		</p>
+</div>
 
-      <p class="post-content"><strong>Re: Truchet lines</strong><br />
-      First off, I'd like to welcome you back. (We had best start warning teh n00bs!11!!!!1!)<br />
-      <br /></p>
+	<hr />
 
-      <blockquote>
-        <i>Originally posted by dirkdeftly</i><br />
-        <b>i have two instances of texerII. the first does some changes to gmegabuf onbeat. both should immediately accept these changes, but it seems that one or the other doesn't accept them until one frame aftewards (i *think* it's the first one, but i'm not sure)</b>
-      </blockquote>From my recent work with apes I can tell you that Texer II probably executes init, frame, beat and point in a fixed order every frame. If it was executing init-&gt;frame-&gt;beat-&gt;point then changes on beat would only affect the second texer's frame code<br />
-      <br />
-      The reason for using this order is that you want on beat code to always take priority over on frame. This is because setting variables on beat should always overwrite what they were set to per frame so that right values are there for the per point code. In addition, it means that you can respond to a beat on the frame that the beat happens on, and not have to wait for the next one.<br />
-      <br />
-      I haven't tested this theory out... but I'd guess that superscope, dm etc do the same and that this is why they provide the 'b' variable.<br />
-      <br />
-      If I was making Texer II this is certainly how I would implement it, and this would cause a problem like what you describe where the first texer executes the code on beat and the second one executes its frame code with these new values, but the first does not.<br />
-      <br />
-      EDIT: just looking at your test preset... i don't get any bug... what is odd though is that if i insert effect lists to destroy fps then sometimes 4 blobs are rendered per frame instead of 2... I thought maybe I was going nuts so I slowed it right down to 10fps and screenshotted it a few times. All sensibly coded so as to avoid the problem I mentioned above too... setting the el to 1 frame has no effect here<br />
-      <br />
-      EDIT2: the above is actually just an artifact of the preset construction (els). If two consecutive frames are beat frames then the framebuffer isn't cleared so 4 dots are drawn instead of 2. could this be causing your problem also?(although i cant see it?).. i doubt it as this effect list job looks like it was made to expose the problem. btw... the tiling pattern is nice... looks correct in all res I tried it on.
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">10th February 2005 22:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">13th February 2005 13:05 GMT</span></p>
+		get the same problem here.. what about it if you'd calculate the globals in a seperate t2/ssc or in Jheriko's Global Variable Manager (still in beta)?<br />
+<br />
+Welcome back my the way...<br />
+<br />
+/edit: doh! you beat me on that!
+		</p>
+</div>
 
-      <p class="post-content"><strong>Re: Re: Truchet lines</strong><br /></p>
+	<hr />
 
-      <blockquote>
-        <i>Originally posted by jheriko</i><br />
-        <b>init, frame, beat and point in a fixed order every frame. If it was executing init-&gt;frame-&gt;beat-&gt;point then...</b>
-      </blockquote>I'm pretty sure the init code isnt evaluated every frame my friend ;)
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">10th February 2005 23:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">13th February 2005 13:48 GMT</span></p>
+		OMG HE TEH LIVES!!!One!@$#!#elven@#!^!!!!<br />
+<br />
+Nice to see your back.
+		</p>
+</div>
 
-      <p class="post-content">potentially every frame....</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th February 2005 13:54 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">12th February 2005 17:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Re: Truchet lines</strong><br />
+		
+		
 
-      <p class="post-content">...but realistically not</p>
-    </div>
-    <hr />
+		First off, I'd like to welcome you back. (We had best start warning teh n00bs!11!!!!1!)<br />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">15th February 2005 18:03 GMT</span></p>
+	<blockquote>
+			
+				<i>Originally posted by dirkdeftly </i><br />
+<b>i have two instances of texerII.  the first does some changes to gmegabuf onbeat.  both should immediately accept these changes, but it seems that one or the other doesn't accept them until one frame aftewards (i *think* it's the first one, but i'm not sure)</b></blockquote>
+From my recent work with apes I can tell you that Texer II probably executes init, frame, beat and point in a fixed order every frame. If it was executing init-&gt;frame-&gt;beat-&gt;point then changes on beat would only affect the second texer's frame code<br />
+<br />
+The reason for using this order is that you want on beat code to always take priority over on frame. This is because setting variables on beat should always overwrite what they were set to per frame so that right values are there for the per point code. In addition, it means that you can respond to a beat on the frame that the beat happens on, and not have to wait for the next one.<br />
+<br />
+I haven't tested this theory out... but I'd guess that superscope, dm etc do the same and that this is why they provide the 'b' variable.<br />
+<br />
+If I was making Texer II this is certainly how I would implement it, and this would cause a problem like what you describe where the first texer executes the code on beat and the second one executes its frame code with these new values, but the first does not.<br />
+<br />
+EDIT: just looking at your test preset... i don't get any bug... what is odd though is that if i insert effect lists to destroy fps then sometimes 4 blobs are rendered per frame instead of 2... I thought maybe I was going nuts so I slowed it right down to 10fps and screenshotted it a few times. All sensibly coded so as to avoid the problem I mentioned above too... setting the el to 1 frame has no effect here<br />
+<br />
+EDIT2: the above is actually just an artifact of the preset construction (els). If two consecutive frames are beat frames then the framebuffer isn't cleared so 4 dots are drawn instead of 2. could this be causing your problem also?(although i cant see it?).. i doubt it as this effect list job looks like it was made to expose the problem. btw... the tiling pattern is nice... looks correct in all res I tried it on.
+		</p>
+</div>
 
-      <p class="post-content">The point is that you have the same order of code execution every frame... which is useful to know for debugging since you know in which order all of your code gets evaluated at any time.<br />
-      <br />
-      And I make mistakes. :P</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">23rd February 2005 20:47 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">13th February 2005 13:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Re: Re: Truchet lines</strong><br />
+		
+		
 
-      <p class="post-content">Here's a "remix" i did, though as the preset isn't finished yet, so i can't say if it's a mix or a "making the preset complete"... but anyway, hope you "dig it" dude :p</p>
-    </div>
-    <hr />
+		
+	<blockquote>
+			
+				<i>Originally posted by jheriko </i><br />
+<b>init, frame, beat and point in a fixed order every frame. If it was executing init-&gt;frame-&gt;beat-&gt;point then...</b></blockquote>
+I'm pretty sure the init code isnt evaluated every frame my friend ;)
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">13th February 2005 13:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		potentially every frame....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th February 2005 13:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		...but realistically not
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">15th February 2005 18:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The point is that you have the same order of code execution every frame... which is useful to know for debugging since you know in which order all of your code gets evaluated at any time.<br />
+<br />
+And I make mistakes. :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">23rd February 2005 20:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Here's a &quot;remix&quot; i did, though as the preset isn't finished yet, so i can't say if it's a mix or a &quot;making the preset complete&quot;... but anyway, hope you &quot;dig it&quot; dude :p
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

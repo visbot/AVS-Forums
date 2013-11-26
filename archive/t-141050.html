@@ -1,117 +1,172 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="New Preset AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" New Preset AVS" />
 
-  <title>New Preset - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> New Preset - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">New Preset</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=141050">New Preset</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zana</span><br />
-      <span class="date small text-muted">3rd July 2003 23:51 GMT</span></p>
 
-      <p class="post-content"><strong>New Preset</strong><br />
-      Here's a pretty <font color="orangered">firey</font> preset. Any advice would be great, but before I submit it I have question.<br />
-      <br />
-      Sometimes when you use a bump, all the black pixels aren't completely affected by it, causing rough, sharp edges on the render object, which doesn't exactly look good. Is there any way to fix this?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">New Preset</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=141050">New Preset</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">4th July 2003 00:08 GMT</span></p>
 
-      <p class="post-content">No offense, but this doesn't look very 'firey' to me. It is too busy and hard to see what is going on.<br />
-      <br />
-      On the techincal side:<br />
-      <br />
-      SSC:<br />
-      Init:<br />
-      <b>n=80;t=0.0;</b><br />
-      Remove t=0.0. It is redundant.<br />
-      Add p9=acos(-1)*9. acos(-1) is equal to pi, so is much more accurate than writing it out.<br />
-      <br />
-      Per point:<br />
-      <br />
-      <b>r=i*3.14159*9;</b><br />
-      Repalce "3.14159*9" with p9. Because we calculated acos(-1)*9 in init, it is not calculated again, saving you 80 calculations per frame. While this is not important now, it will help once you make more and more complex presets.<br />
-      <br />
-      <b>d=sin(r*0)+v*0.5;</b><br />
-      Remove sin(r*0). When you multiply anything by 0, it is zero. The sine of 0 is also 0. Doing this saves you 160 calculations every frame. Again, it is not important now, but helps in the long run.<br />
-      <br />
-      The rest of the SSC is fine.<br />
-      <br />
-      <br />
-      In the bump, you have<br />
-      Frame:<br />
-      <br />
-      <b><br />
-      x=0.5+0*0.3;<br />
-      y=0.5+0*0.3;<br />
-      t=t+0.1;<br /></b><br />
-      You never use t, so there is no need to have it. Also, you have numbers multiplying by 0 again. Remove the +0*.3 in the x and y calculations.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">4th July 2003 00:26 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zana</span><br />
+			<span class="date small text-muted">3rd July 2003 23:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>New Preset</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Like m^2k was saying - make sure you OPTIMIZE - it makes your code faster(esp. when you have useless functions, such as sin,cos,tan,etc) and easier to read.<br />
-      <br />
-      I'm not exactly sure what you mean by the bump - it only does a certain area surrounding the bump location, so anything outside of that circle will not be affected. I also don't think that it modifies purely black pixels, but if the color has the slightest color(even if it's not noticable - such as RGB 0,0,1), it may apply the bump to it. I'm not sure about that, but I think that may be what you are talking about.</p>
-    </div>
-    <hr />
+		Here's a pretty <font color="orangered">firey</font> preset.  Any advice would be great, but before I submit it I have question.<br />
+<br />
+Sometimes when you use a bump, all the black pixels aren't completely affected by it, causing rough, sharp edges on the render object, which doesn't exactly look good.  Is there any way to fix this?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WHCode RED</span><br />
-      <span class="date small text-muted">4th July 2003 02:08 GMT</span></p>
+	<hr />
 
-      <p class="post-content"><strong>Quack</strong><br />
-      Dont mind me. I'm bored.<br />
-      <br />
-      Oh yeah, here is a remix. Dont complain, im bored. :rolleyes:<br />
-      <br />
-      [edit]<br />
-      im so bored i forgot to post about the preset.<br />
-      <br />
-      pretty nice, except for the things mentioned above. nothing else too say.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">4th July 2003 00:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">4th July 2003 11:04 GMT</span></p>
+		No offense, but this doesn't look very 'firey' to me.  It is too busy and hard to see what is going on.<br />
+<br />
+On the techincal side:<br />
+<br />
+SSC:<br />
+Init:<br />
+<b>n=80;t=0.0;</b><br />
+Remove t=0.0.  It is redundant.<br />
+Add p9=acos(-1)*9.  acos(-1) is equal to pi, so is much more accurate than writing it out.<br />
+<br />
+Per point:<br />
+<br />
+<b>r=i*3.14159*9;</b><br />
+Repalce &quot;3.14159*9&quot; with p9.  Because we calculated acos(-1)*9 in init, it is not calculated again, saving you 80 calculations per frame.  While this is not important now, it will help once you make more and more complex presets.<br />
+<br />
+<b>d=sin(r*0)+v*0.5;</b><br />
+Remove sin(r*0).  When you multiply anything by 0, it is zero.  The sine of 0 is also 0.  Doing this saves you 160 calculations every frame.  Again, it is not important now, but helps in the long run.<br />
+<br />
+The rest of the SSC is fine.<br />
+<br />
+<br />
+In the bump, you have<br />
+Frame:<br />
+<br />
+<b><br />
+x=0.5+0*0.3;<br />
+y=0.5+0*0.3;<br />
+t=t+0.1;<br />
+</b><br />
+You never use t, so there is no need to have it.  Also, you have numbers multiplying by 0 again.  Remove the +0*.3 in the x and y calculations.
+		</p>
+</div>
 
-      <p class="post-content">I like the color combination, but the preset aint that special:rolleyes:</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">4th July 2003 00:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Like m^2k was saying - make sure you OPTIMIZE - it makes your code faster(esp. when you have useless functions, such as sin,cos,tan,etc) and easier to read.<br />
+<br />
+I'm not exactly sure what you mean by the bump - it only does a certain area surrounding the bump location, so anything outside of that circle will not be affected.  I also don't think that it modifies purely black pixels, but if the color has the slightest color(even if it's not noticable - such as RGB 0,0,1), it may apply the bump to it.  I'm not sure about that, but I think that may be what you are talking about.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WHCode RED</span><br />
+			<span class="date small text-muted">4th July 2003 02:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Quack</strong><br />
+		
+		
+			
+		
+
+		Dont mind me. I'm bored.<br />
+<br />
+Oh yeah, here is a remix. Dont complain, im bored. :rolleyes:<br />
+<br />
+[edit] <br />
+im so bored i forgot to post about the preset.<br />
+<br />
+pretty nice, except for the things mentioned above. nothing else too say.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">4th July 2003 11:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I like the color combination, but the preset aint that special:rolleyes:
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

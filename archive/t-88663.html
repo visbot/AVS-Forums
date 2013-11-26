@@ -1,86 +1,128 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="probably a simple question AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" probably a simple question AVS" />
 
-  <title>probably a simple question - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> probably a simple question - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">probably a simple question</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=88663">probably a simple question</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">darrentheturkey</span><br />
-      <span class="date small text-muted">24th May 2002 01:32 GMT</span></p>
 
-      <p class="post-content"><strong>probably a simple question</strong><br />
-      When you are rendering things in avs, how do you make it to where on effect or transition effects one thing and a different one efects another rendering?<br />
-      <br />
-      For example. I made a particle and a text field. And let's say I want the movement for the particle to be x=x+0.02 and I want the movement for the text to be y=y+0.02 . When I try this I end up getting the two movement commands to both work on the text field. Is this what Effects lists are for? If so, could someone elaborate?<br />
-      <br />
-      Thanks.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">probably a simple question</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=88663">probably a simple question</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">24th May 2002 01:35 GMT</span></p>
 
-      <p class="post-content">You need to learn how to use Effect Lists. They are basically a preset-in-a-preset. Each effect list has its own internal buffer, and it loops inside itself each frame.<br />
-      <br />
-      When AVS encounters an Effect list, it puts the current image into the Effect list using the selected Input method (or not when 'Ignore' is selected).<br />
-      When AVS has finished the Effect list, the result is copied back into the main preset using the selected Output method (or not when 'Ignore' is selected);</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">darrentheturkey</span><br />
-      <span class="date small text-muted">24th May 2002 01:44 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">darrentheturkey</span><br />
+			<span class="date small text-muted">24th May 2002 01:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>probably a simple question</strong><br />
+		
+		
 
-      <p class="post-content">Wow, I don't know what is more impressive, the speed of this reply or that you could read my original post with so many typos.<br />
-      <br />
-      I kind of understand what you are saying. I am enjoying learning how to do stuff with AVS. I have been doing a lot of programming with Macromedia Flash lately involving placing simple objects over and over with trig, so when my brother showed me this plugin I was awed.<br />
-      <br />
-      Is there a thread or place I can go to to learn more about effects lists and other avs stuff? I checked out the oned in the faq and made the little expanding circle with the superscope that was in one of the suggested threads(I believe with your tute).<br />
-      <br />
-      Anyway, thanks for the guidance.</p>
-    </div>
-    <hr />
+		When you are rendering things in avs, how do you make it to where on effect or transition effects one thing and a different one efects another rendering?  <br />
+<br />
+For example.  I made a particle and a text field. And let's say I want the movement for the particle to be x=x+0.02 and I want the movement for the text to be y=y+0.02 .  When I try this I end up getting the two movement commands to both work on the text field.  Is this what Effects lists are for?  If so, could someone elaborate?<br />
+<br />
+Thanks.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">24th May 2002 05:29 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I haven't actually read it, but others seemed to think Atmos AVS primer to be quite good.<br />
-      <br />
-      Here's a thread link.<br />
-      <br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=88135" target="_blank">http://forums.winamp.com/showthread....threadid=88135</a></p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">24th May 2002 01:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		You need to learn how to use Effect Lists. They are basically a preset-in-a-preset. Each effect list has its own internal buffer, and it loops inside itself each frame.<br />
+<br />
+When AVS encounters an Effect list, it puts the current image into the Effect list using the selected Input method (or not when 'Ignore' is selected).<br />
+When AVS has finished the Effect list, the result is copied back into the main preset using the selected Output method (or not when 'Ignore' is selected);
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">darrentheturkey</span><br />
+			<span class="date small text-muted">24th May 2002 01:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow, I don't know what is more impressive, the speed of this reply or that you could read my original post with so many typos.<br />
+<br />
+I kind of understand what you are saying.  I am enjoying learning how to do stuff with AVS.  I have been doing a lot of programming with Macromedia Flash lately involving placing simple objects over and over with trig, so when my brother showed me this plugin I was awed.<br />
+<br />
+Is there a thread or place I can go to to learn more about effects lists and other avs stuff?  I checked out the oned in the faq and made the little expanding circle with the superscope that was in one of the suggested threads(I believe with your tute).<br />
+<br />
+Anyway, thanks for the guidance.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">24th May 2002 05:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I haven't actually read it, but others seemed to think Atmos AVS primer to be quite good.<br />
+<br />
+Here's a thread link.<br />
+<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=88135" target="_blank">http://forums.winamp.com/showthread....threadid=88135</a>
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

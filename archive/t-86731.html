@@ -1,1047 +1,1631 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hypercube (4-D analog of a cube) AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Hypercube (4-D analog of a cube) AVS" />
 
-  <title>Hypercube (4-D analog of a cube) - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Hypercube (4-D analog of a cube) - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">Hypercube (4-D analog of a cube)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=86731">Hypercube (4-D analog of a cube)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th May 2002 07:47 GMT</span></p>
-
-      <p class="post-content"><strong>Hypercube (4-D analog of a cube)</strong><br />
-      I've constructed a mostly functional (and extremely fast) hypercube, but since I don't have a functional zip program, I'll have to post the code here. People can use it as they wish, as long as they give me full credit for it<br />
-      <br />
-      <br />
-      Init:<br />
-      n=58;<br />
-      <br />
-      Beat:<br />
-      iwxt=rand(100)/1000-0.05; iwyt=rand(100)/1000-0.05; iwzt=rand(100)/1000-0.05; ixyt=rand(100)/1000-0.05; ixzt=rand(100)/1000-0.05; iyzt=rand(100)/1000-0.05;<br />
-      <br />
-      Frame:<br />
-      p=0; wxt=wxt+iwxt; wyt=wyt+iwyt; wzt=wzt+iwzt; xyt=xyt+ixyt; xzt=xzt+ixzt; yzt=yzt+iyzt; cwx=cos(wxt); swx=sin(wxt); cwy=cos(wyt); swy=sin(wyt); cwz=cos(wzt); swz=sin(wzt); cxy=cos(xyt); sxy=sin(xyt); cxz=cos(xzt); sxz=sin(xzt); cyz=cos(yzt); syz=sin(yzt);<br />
-      <br />
-      Point:<br />
-      p=p+1;<br />
-      w1=(equal(p,2)+equal(p,9)+equal(p,15)+equal(p,21)+equal(p,22)+equal(p,23)+equal(p,24)+equal(p,25)+equal(p,26)+equal(p,28)+equal(p,29)+equal(p,30)+equal(p,31)+equal(p,32)+equal(p,34)+equal(p,35)+equal(p,36)+equal(p,37)+equal(p,38)+equal(p,39)+equal(p, 40)+equal(p,42)+equal(p,43)+equal(p,44)+equal(p,45)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,56)+equal(p,57)+equal(p,58))*2-1;<br />
-      x1=(equal(p,4)+equal(p,11)+equal(p,17)+equal(p,18)+equal(p,19)+equal(p,20)+equal(p,21)+equal(p,26)+equal(p,27)+equal(p,28)+equal(p,29)+equal(p,30)+equal(p,31)+equal(p,40)+equal(p,41)+equal(p,42)+equal(p,43)+equal(p,44)+equal(p,45)+equal(p,46)+equal(p ,48)+equal(p,49)+equal(p,50)+equal(p,51)+equal(p,52)+equal(p,53)+equal(p,55)+equal(p,56)+equal(p,57)+equal(p,58))*2-1;<br />
-      y1=(equal(p,6)+equal(p,13)+equal(p,14)+equal(p,15)+equal(p,16)+equal(p,17)+equal(p,25)+equal(p,26)+equal(p,27)+equal(p,28)+equal(p,30)+equal(p,31)+equal(p,32)+equal(p,33)+equal(p,34)+equal(p,36)+equal(p,37)+equal(p,38)+equal(p,45)+equal(p,46)+equal(p ,47)+equal(p,48)+equal(p,50)+equal(p,51)+equal(p,52)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,57)+equal(p,58))*2-1;<br />
-      z1=(equal(p,8)+equal(p,9)+equal(p,10)+equal(p,11)+equal(p,12)+equal(p,13)+equal(p,19)+equal(p,23)+equal(p,31)+equal(p,32)+equal(p,33)+equal(p,34)+equal(p,35)+equal(p,36)+equal(p,38)+equal(p,39)+equal(p,40)+equal(p,41)+equal(p,42)+equal(p,44)+equal(p, 45)+equal(p,46)+equal(p,47)+equal(p,48)+equal(p,49)+equal(p,50)+equal(p,52)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,56)+equal(p,57))*2-1;<br />
-      w2=w1*cwx+x1*swx; x2=w1*swx-x1*cwx;<br />
-      w3=w2*cwy+y1*swy; y2=w2*swy-y1*cwy;<br />
-      w4=w3*cwz+z1*swz+5; z2=w3*swz-z1*cwz;<br />
-      x3=x2*cxy+y2*sxy; y3=x2*sxy-y2*cxy;<br />
-      x4=x3*cxz+z2*sxz; z3=x3*sxz-z2*cxz;<br />
-      y4=y3*cyz+z3+syz; z4=y3*syz-z3+cyz;<br />
-      x5=x4/w4; y5=y4/w4; z5=z4/w4+5;<br />
-      x=x5/z5*8; y=y5/z5*8;<br />
-      <br />
-      <br />
-      PS: If anyone knows where to get a free version of PKzip, e-mail the URL to me at <a href="mailto:therealatero@hotmail.com">therealatero@hotmail.com</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sonic.blade</span><br />
-      <span class="date small text-muted">5th May 2002 14:17 GMT</span></p>
-
-      <p class="post-content">haven&#194;&#180;t tried your cube yet<br />
-      but u could check on:<br />
-      <a href="http://www.tucows.com/system/comp95.html" target="_blank">http://www.tucows.com/system/comp95.html</a><br />
-      for comp/decomp utilities<br />
-      cu<br />
-      sonic</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">5th May 2002 14:55 GMT</span></p>
-
-      <p class="post-content">atero, cool thing, but what is it? a dm or a ssc?<br />
-      like i tried both thing and on the ssc and on the dm it didn't appear anything so...<br />
-      <br />
-      and atero, <a href="http://www.winzip.com" target="_blank">http://www.winzip.com</a> , download winzip 8.1, (and if you need a crack, pm me)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">5th May 2002 16:36 GMT</span></p>
-
-      <p class="post-content">Yeah, I plugged it into a superscope, but nothing. (60 fps though)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th May 2002 17:34 GMT</span></p>
-
-      <p class="post-content">That's odd...<br />
-      <br />
-      Aaaaaaaaaaaaaaaaaaaaaaaaagh, I know why it is. When you copy and paste it, it adds all the line breaks - you might have to get rid of them yourselves...<br />
-      <br />
-      And it's a superscope - I don't want to think of what it'd look like as a DM</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th May 2002 17:48 GMT</span></p>
-
-      <p class="post-content">There we go...I also slowed the movement down so you can follow it</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">5th May 2002 18:04 GMT</span></p>
-
-      <p class="post-content">Firstly I'm amazed on how quick it is... all that code...<br />
-      But since it's obvious you used point-by-point assignment, it's not as amazing as it is to me anymore =p<br />
-      <br />
-      It IS amazing... but I don't know whether an average AVS-viewer will like it - Some people don't even see what's in an AVS ya know - They'd think "It's just a boring stupid shape" and leave... fortunately we have a lot of people that digs in the AVS =)<br />
-      <br />
-      How are you going to implement that SSC into an AVS preset?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th May 2002 18:13 GMT</span></p>
-
-      <p class="post-content"><strong>Neat</strong><br />
-      So that's why you wanted 4D rotation :). I've been thinking of doing something like this, but I assumed that the result would be too confusing to be cool. If you look closely, you can see that it's a 3D-cube, but instead of square faces, each face is a 2D view of a 3D cube. The logical explanation is that a 4D hypercube consists of 6 cube 'faces'.<br />
-      <br />
-      I'm going to try more 4D things now.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">5th May 2002 18:48 GMT</span></p>
-
-      <p class="post-content">Man, that looks messed.<br />
-      <br />
-      I just don't get it. Can't really tell what's going on. Not for me, sorry.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th May 2002 20:28 GMT</span></p>
-
-      <p class="post-content">To understand what a 4D (or n-dimensional) cube is, look at the evolution of a cube from 0D to 3D:<br />
-      <br />
-      - Take a point (0D)<br />
-      - Copy the point and move it, and connect it with a line<br />
-      =&gt; we now have a 1D shape (a line)<br />
-      <br />
-      - Take the line (1D)<br />
-      - Copy the line and move it into the second dimension, and connect both ends with 2 lines<br />
-      =&gt; we now have a 2D shape (a square)<br />
-      <br />
-      - Take the square (2D)<br />
-      - Copy the square and move it into the third dimension, and connect the matching pairs of corners with 4 lines<br />
-      =&gt; we now have a 3D shape (a cube)<br />
-      <br />
-      Now comes the 'weird' part:<br />
-      - Take the cube (3D)<br />
-      - Copy the cube and move it into the fourth dimension, and connect the matching pairs of corners with 8 lines.<br />
-      <br />
-      If you understand the idea, you can expand it into n dimensions.<br />
-      <br />
-      Now, we live in a 3D world, and therefor we can't naturally visualise higher dimensional shapes. To understand what happens, consider a 2D universe (a flat plane) and how it relates to 3D. Just like you can represent 3D by an infinite amount of 2D 'slices' (planes), you can think of 4D as composed of an infinite amount of 3D 'slices' (spaces).<br />
-      Now, think about how we represent 3D space on a flat plane: we project all the points from an eye onto a plane, commonly by dividing by the 'z' coordinate. So if you wanted to represent a 4D hyperspace in 3D space, you'd need to divide 3 coordinates by a 4th (as you're projecting a 4D hyperspace onto a 3D space). This is what Atero's superscope does. On top of that, it takes the 3D result, and projects it onto 2D like any other 3D superscope.<br />
-      <br />
-      Now, you might say "aha! so it's not actual 4D! it's just a 3D shape that moves in a weird way!". Well, so is 3D on a computer: it's a 2D shape that looks like 3D, because our eyes view the world like that too.<br />
-      <br />
-      Now specifically about a 4D hypercube:<br />
-      <br />
-      A 3D cube has 6 square (2D) faces. A 4D cube has 8 cube 'faces' (3D). If you look at Atero's superscope, you'll notice that it hardly looks cubic: all the angles are distorted. Well, if you look at how you draw a 3D cube on a 2D paper, it'll be distorted too. You're just used to it so much, that it becomes natural.<br />
-      <br />
-      Higher-dimensional shapes might sound like an alien concept, but they have many uses in mathematics and science. And as we can now see, they look cool too :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th May 2002 20:31 GMT</span></p>
-
-      <p class="post-content"><strong>Typo?</strong><br />
-      I think there's a typo here:<br />
-      <br />
-      y4=y3*cyz+z3<u>+</u>syz; z4=y3*syz-z3<u>+</u>cyz;<br />
-      <br />
-      Those 2 + signs should be multiplications, right?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th May 2002 23:10 GMT</span></p>
-
-      <p class="post-content">That's what was the wrong with it! I've been checking all over my code for typos, but I couldn't find them. Thanx!!<br />
-      <br />
-      BTW, I'm still trying to work out the scaling/shifting so that it renders correctly. The scaling factors are in the last W-axis statement (w4), and in the very last line where the transforms are taking place</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">9th May 2002 11:58 GMT</span></p>
-
-      <p class="post-content">Would that mean that a torus is 4-dimensional? Because that HyperCube looks awfully like a very low-res toroidal shape.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">9th May 2002 16:19 GMT</span></p>
-
-      <p class="post-content">A regular torus is a simple 3D shape.<br />
-      <br />
-      You don't seem to be getting the point though. The dimension of a shape/space can be seen as the number of linearly independent vectors you can construct in it. For example:<br />
-      <br />
-      In a flat plane, you can construct 2 base vectors (e.g. the X and Y axis) that, when added up, can reach the entire plane. It's impossible to find a third vector that can't be broken up as a sum of the earlier two.<br />
-      <br />
-      In space, there are 3 such vectors (e.g. X, Y, Z). Now, imagine a hypothetical 4D space, where there are 4 such vectors. In our reality, there is no such thing (or at least not found :)).<br />
-      <br />
-      To show this 4D shape, we project it into 3D space, much like we can project a 3D shape onto a 2D plane (e.g. a computer screen). So while it becomes a 3D/2D shape, we actually still have the originating 4D shape in mind.<br />
-      <br />
-      A (hyper)cube is very different from a (hyper)torus. It might look the same here, but that's because it's very hard to visualise the 4D structure.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">13th May 2002 00:52 GMT</span></p>
-
-      <p class="post-content">UnConeD, were you talking to me or Zevensoft?<br />
-      <br />
-      Anyway, I'm trying to figure this one out: Theoretically, w, x, y, and z should only range from 1 to -1. However, when I shift w by 2 (so it's from 1 to 3) to translate it to 3D, I get distortion. Also, after that translation, the shift of sqrt(2) does not work on the 3D/2D translation - I have to shift and scale by 2. But that brings up another mystery: Using those shifts, the sphere the cube is projected into (and thereby the ring that sphere is projected into) fits perfectly into the window. With shifting and scaling by 2 on any 3D superscope, you end up with a ring larger than the window.<br />
-      Any ideas?<br />
-      <br />
-      <br />
-      ZS, the hypercube is a much different object from the hypertorus. Think of it this way: A two dimensional torus would be an O shape. Stretch that into the third dimension and it becomes a donut, or torus, in prissymathematicianspeak. (Why an I hungry all of a sudden?) You can then stretch that into the fourth dimesion (I don't know how, but I'm working on it); this is the hypertorus. Why did you think my hypercube looked 'toroidal?'<br />
-      <br />
-      This is a (rather poor) wireframe torus:<br />
-      tpi=acos(-1)*2;<br />
-      x=sin(i*tpi)*(sin(i*tpi*500)/3+1);<br />
-      y=cos(i*tpi)*(sin(i*tpi*500)/3+1);<br />
-      z=cos(i*tpi*500)/3;<br />
-      UnConeD, do you know the coordinates for a hypertorus?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th May 2002 09:17 GMT</span></p>
-
-      <p class="post-content">Well actually there are two things you can mean by a torus.<br />
-      <br />
-      Take a grid. Bend it so that two opposite edges are joined, you now have a cylinder-like shape. Bend it again so that the remaining two edges (now circles) are joined: you now have a donut.<br />
-      <br />
-      So the main property of a n-torus is that is an n-grid that is connected to itself in every direction. This has a few 'weird' consequences: for example, if you start out with the other pair of edges, you'll get a differently oriented donut, but the topological properties are still the same.<br />
-      <br />
-      I've been thinking about a system behind hypertori (like the system to go from dot to line to square to cube to hypercube) and here's what I believe is close to correct:<br />
-      <br />
-      - Take a point (0D)<br />
-      <br />
-      - Trace a circular path with it, so that the center of the circular path is outside the shape, and a new axis is used. We now have a circle (2D). However a point on the shape itself can always only move on 1 degree of freedom, so the shape's topology can be considered 1D. Note that this is essentially a line with its begin and endpoints connected.<br />
-      <br />
-      - Take this circle, and trace a circular path with it, so that the center of the circular path is outside the shape, and a new axis is used. We now have a torus/donut (3D). However a point on the shape itself can always move only on 2 degrees of freedom, so the shape's topology can be considered 2D. Note that this is a 2D grid with both pairs of ends connected to the opposite side.<br />
-      <br />
-      - Take this donut, and trace a circular path with it, so that the center of the circular path is outside the shape. We now have a 4-hypertorus (4D). However a point on the shape itself can always move only on 3 degrees of freedom, so the shape's topology can be considered 3D. Note that this is a 3D grid with all pairs of opposite faces connected to the opposite side.<br />
-      <br />
-      So for one, you have the topology, and always several geometrical representations that satisfy this topology. Think of generating it by having a hyperdimensional compass (is this the right word? a tool for drawing circles on paper) and dragging the dot, circle and donut through (hyper)space.<br />
-      <br />
-      The formulas have a system to them too. You're always shifting the previous shape around on one axis, and then rotating around to get the circular path:<br />
-      <br />
-      1:<br />
-      x1 = 0;<br />
-      <br />
-      2:<br />
-      x2 = (x1 + R1)*cos(a1);<br />
-      y2 = (x1 + R1)*sin(a1);<br />
-      <br />
-      3:<br />
-      x3 = x2;<br />
-      y3 = (y2 + R2)*cos(a2);<br />
-      z3 = (y2 + R2)*sin(a2);<br />
-      <br />
-      4:<br />
-      x4 = x3;<br />
-      y4 = y3;<br />
-      z4 = (z3 + R3)*cos(a3);<br />
-      w4 = (z3 + R3)*sin(a3);<br />
-      <br />
-      ...<br />
-      <br />
-      Rx are the radii of the separate stages, ax are a variable ranging from 0...2PI.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">14th May 2002 07:22 GMT</span></p>
-
-      <p class="post-content">Umm...I applied that to AVS, and the system renders a pringle-shape. I assume ax can be i*tpi?<br />
-      <br />
-      Anyway, attached is the 5D analog, missing only a few lines - I'm trying to find them (so I don't have to re-write the whole thing from scratch). I'm guessing since "hypercube" is 4d, "super-," "ultra-," or "sugarrushcube" could be names for 5d....</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">14th May 2002 07:32 GMT</span></p>
-
-      <p class="post-content">I get it now. It's a cube within a cube at first, right? Then the eight connecting lines manipulate their length, like that of a square does to form a generic 4-sided shape. Have I got it?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">14th May 2002 08:29 GMT</span></p>
-
-      <p class="post-content">uNDefineD: well yes and no.<br />
-      <br />
-      First of all, remember that it's not what it looks like. Just like a 3D cube is a very ugly shape when you draw it in 2D. It's only our brain that makes it look 3D.<br />
-      <br />
-      Now, remember how you go from a 2D square to a 3D cube, by taking 2 squares and connecting the corresponding pairs of vertices.<br />
-      <br />
-      Now, take a cube. Take another cube and move it in a theoretical 4th dimension. Connect the corresponding vertices.<br />
-      <br />
-      What we have now, is a 4D-hypercube. To understand what it 'looks' like, look at the following analogies:<br />
-      <br />
-      - A 1D line has 2 0D-points<br />
-      - A 2D square has 4 1D-lines<br />
-      - A 3D cube has 6 2D-squares<br />
-      - A 4D hypercube has 8 3D-cubes<br />
-      <br />
-      And there you have it. It's not just 2 cubes that you see, it's 8. Of course, because of the 4D-&gt;3D perspective, it'll only look cubic in some positions. But in the original 4D concept, every line is perpendicular to every other line, and they are all of length 1.<br />
-      To make it clearer: in the beginning you see the 'larger' cube and the 'smaller' cube (they're actually the same size if it weren't for the perspective). Now, each face of the smaller cube is connected with the corresponding face of the larger cube. Look at the series of analogies above: take 2 squares (the 2 corresponding faces) and connect them, you now have a cube (if they are the same size and spaced apart at the same length).<br />
-      <br />
-      There's really not much more to be said. It's a weird concept that you have to get used to. Just don't try to think of it in terms of 3D, because it isn't.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">14th May 2002 08:37 GMT</span></p>
-
-      <p class="post-content">The 5D version is nice by the way. As far as the naming goes, I've always been taught that 'hyper' is the generalized form:<br />
-      <br />
-      A 2-hypercube is a square. A 4-hypercube is what you posted at first. So the last one is a 5-hypercube, right?<br />
-      <br />
-      As far as the 4-hypertorus goes, the difficulty lies in drawing all the connecting lines. For example, to draw a sphere you need to draw both parallels and *******ns. I think the easiest way would be to synchronize 3 superscopes in which each superscope draws one main direction (remember that a 4-hypertorus is a connected 3D space, just like a 3D torus is a connected 2D grid).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">14th May 2002 11:14 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        It's a weird concept that you have to get used to.
-      </blockquote>Don't go any further, you explained it perfectly. :) So when the "smaller" cube is connected with the "larger", each connecting line completes another cube that forms the "sides" of the hypercube. Is that it?<br />
-      <br />
-      EDIT: I just saw the Supercube. Because it was moving too fast :p, I'm _guessing_ that since it's 5D, continuing from UnConeD's analogies, a 5D supercube has 10 4D hypercubes, is that correct?<br />
-      <br />
-      BTW, I must give you kudos for putting up with people who can't code. :)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">14th May 2002 11:38 GMT</span></p>
-
-      <p class="post-content">uNDefineD: you're totally correct. It has nothing to do with being able to code by the way... the concept of higher order dimensions is not easy to explain, because most people will still try and visualise everything in 3D. Once you let go of that, it's easier.<br />
-      <br />
-      The 5D hypercube should indeed have 10 hypercubes in it, but as Atero said there are a few sides missing. And because it's representing 5 dimensions in 2, it's very hard to see the geometry in it.<br />
-      <br />
-      All in all this is very fun thread :). Higher dimensional geometries are normally only used theoretically (e.g. a computer network can be connected in a 4D-hypercube arrangement, or even higher) but it seems they're cool for visuals too.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">15th May 2002 00:48 GMT</span></p>
-
-      <p class="post-content">Thanks, UnConeD. BTW, about the code thing, I was just making a reference to my inability to logically work out SSCs and DMs and stuff. :D For me, it's random equations and hope for the best. Seemed to work with my Power Core though...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">15th May 2002 21:01 GMT</span></p>
-
-      <p class="post-content">Some of my personal theories on n-dimensional geometry:<br />
-      Objects in the n'th dimension are seen in the (n-1)'th dimension. The closest example is real 3D life: you can see depth, but the depth is created by your mind. Put your hand up in front of your face. You can see the depth beyond your hand, but you cannot see what is behind it. Therefore you see in 2D. A more biological proof is that your retina is 2D, and therefore you cannot see in any higher of a dimension. Imagine then sight on a line. You would see in 0D. The only places you could see would be directly in front of and behind you. On a plane you would see in 1D. And in hyperspace you would see in 3D.<br />
-      To create a higher dimensional object, it is said that you need to move something 'back' into the next dimension. However, we cannot easily do this without creating a perspective into the next dimension first. Put yourself into the first dimension. Shrink the line you are on, then connect the endpoints. This creates a perspective of the second dimension. Then in the second dimension, shrink the square, and connect the vertecies. This is a perspective of the third dimension. Now shrink a cube and connect the vertecies. This is a perspective of a hypercube. Theoretically you would now shrink the hypercube, but since we don't know exactly what the hypercube looks like, we can't do that. The other way to create a perspective is to extend your current object on every dimension available. Then stretch the new objects to meet each other, creating the last new object. For example, copy a square to the left, right, up and down. Then stretch each square to meet the ones next to it, creating a new larger square. Another example is to copy a cube up, down, left, right, backwards, and forwards. Then stretch each new cube to meet the one next to it, creating a new cube. Now once you've created a perspective, move the new objects backwards into the next dimension, without changing the perspective, until all angles are right.<br />
-      I have also developed a formula for finding the number of edges in an n-dimensional cube:<br />
-      2^(n-1)*n<br />
-      which is basically an expression of the number of connections you can make between two adjacent points. 2^n is the number of points (a line is 2 points, four lines of a square is 4 points, six sides of a cube is 8 points, etc.), and n is the number of possible changes (one for each dimension). However, you do each connection twice with that formula: (1,1) : (1,-1) :: (1,-1) : (1,1), so you divide by 2; hence 2^(n-1).<br />
-      <br />
-      [edit: smilies were screwing up the above bit of code]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">16th May 2002 07:18 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        <b>[edit: smilies were screwing up the above bit of code]</b>
-      </blockquote>LMAO :D<br />
-      <br />
-      And one more thing Atero: could I use a remix of your preset for my AVS pack? Cause I reckon I've got something pretty good going on. :)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">17th May 2002 02:26 GMT</span></p>
-
-      <p class="post-content">Which preset? The one that I posted in a new topic, completely seperate and disassociated with this one? Or do you just want to use my hypercube?<br />
-      <br />
-      <br />
-      <br />
-      Yes, sure, why not, as long as you give me full credit for the morpher and the smoke bgdm or the hypercube coding.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">17th May 2002 05:38 GMT</span></p>
-
-      <p class="post-content">Sure. Credit is given where it is due. I didn't mess with the render anyway, all I added was Trans elements.<br />
-      <br />
-      Thank a lot! You've made my day! :) :) :)<br />
-      <br />
-      EDIT: I'm using the hypercube. I have no idea what the other thingy is... :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Scar Da Kookee</span><br />
-      <span class="date small text-muted">19th May 2002 04:00 GMT</span></p>
-
-      <p class="post-content">/me would like to use hypercube :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th May 2002 00:39 GMT</span></p>
-
-      <p class="post-content">Sure, I don't mind (again, as long as I'm given full credit for it)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
-      <span class="date small text-muted">22nd May 2002 06:42 GMT</span></p>
-
-      <p class="post-content">I think that every part of mathematics has now been integrated in to AVS.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">22nd May 2002 14:20 GMT</span></p>
-
-      <p class="post-content">Well, did you know that scientists have found 10 dimensional objects? Basically, they are the smallist objects you can get, called strings (atom &gt; quark &gt; gluon &gt; string). The way they can be explain is, take a line, extend it out into a plane, then wrap it round into a cylinder. Now, that cylinder is made very small, so it looks like a line again, then, extend that into a plane, and wrap it around, and so on. This has been thought to be the basis for all time and space in this universe.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
-      <span class="date small text-muted">23rd May 2002 05:28 GMT</span></p>
-
-      <p class="post-content">Mathematically, I suppose, there can be an infinite number of dimensions. I found a site a long time ago that had pictures of what a 15th dimensional object looked like. It was just a bunch of lines.<br />
-      ok I'm done...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">25th May 2002 11:10 GMT</span></p>
-
-      <p class="post-content"><strong>4D Sphere</strong><br />
-      Here's the code for a 4D sphere. It's colourcoded, so that values of W from -1 to 1 are parts of the spectrum from red through green to blue. Z is represented by Brightness.<br />
-      <br />
-      Init:<br /></p>
-      <pre>
-<code><br />res=15;pi=acos(-1);fov=120;dst=tan(fov*pi/180/2);wdst=1.5;rxs=pi/100;rys=pi/90;rzs=pi/80;rxys=pi/70;ryzs=pi/60;rxzs=pi/50;n=pow(res,3)<br /></code>
-</pre><br />
-      <br />
-      Per Frame:<br />
-      <pre>
-<code><br />rx=rx+rxs;ry=ry+rys;rz=rz+rzs;rxy=rxy+rxys;ryz=ryz+ryzs;rxz=rxz+rxzs;<br /></code>
-</pre><br />
-      <br />
-      Per Point:<br />
-      <pre>
-<code><br />x=cos(i*pi*res*res)*sin(i*pi*res)*sin(i*pi);<br />y=cos(i*pi*res)*sin(i*pi);<br />z=sin(i*pi*res*res)*sin(i*pi*res)*sin(i*pi);<br />w=cos(i*pi);<br />tx=x*cos(rz)-y*sin(rz);<br />ty=y*cos(rz)+x*sin(rz);<br />x=tx*cos(ry)-z*sin(ry);<br />tz=z*cos(ry)+tx*sin(ry);<br />z=tz*cos(rx)-ty*sin(rx);<br />y=ty*cos(rx)+tz*sin(rx);<br />tx=x*cos(ryz)-w*sin(ryz);<br />tw=w*cos(ryz)+x*sin(ryz);<br />w=tw*cos(rxy)-z*sin(rxy);<br />tz=z*cos(rxy)+tw*sin(rxy);<br />tw=w*cos(rxz)-y*sin(rxz);<br />ty=y*cos(rxz)+w*sin(rxz);<br />x=tx/(tw+wdst);y=ty/(tw+wdst);z=tz/(tw+wdst);<br />x=x/(z+dst);y=y/(z+dst);<br />h=(tw);b=z/2+.5;<br />red=(.5+sin((h+(2/3))*pi)/2)*b;<br />green=(.5+sin((h)*pi)/2)*b;<br />blue=(.5+sin((h-(2/3))*pi)/2)*b;<br /></code>
-</pre><br />
-      <br />
-      Its best also if you add a Misc-&gt;Set render mode and set it to maximum blend with line width of 3.<br />
-      <br />
-      BTW if you want change res to how many 3D sub-spheres you want (squared equals amount of cirles).
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Scar Da Kookee</span><br />
-      <span class="date small text-muted">25th May 2002 15:36 GMT</span></p>
-
-      <p class="post-content">just dont ask anyone to have res=100 :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">30th May 2002 02:27 GMT</span></p>
-
-      <p class="post-content">What's the derivation of the hypersphere? It works perfectly, I can see all 8 spheres and their rotation :up:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">31st May 2002 05:19 GMT</span></p>
-
-      <p class="post-content">I just made a stupid...I can see all the SUB-SPHERES and their rotation ;)<br />
-      <br />
-      WHOAH! I just noticed why my hypercube is all hugified! I was trying to solve the puzzle about the correct shifting factor, and I discovered that I had to shift it on the w-axis by sqrt(8) for it to work properly. Well, I just found out that if I do this:<br />
-      a=(...)-0.5;<br />
-      instead of this:<br />
-      a=(...)*2-1;<br />
-      (a is the axis, and ... is the tracing content)<br />
-      I only have to shift w by sqrt(2) - the supposedly correct shifting factor. Then I used this scope:<br />
-      w1=i*2-1; x1 through z1=0;<br />
-      and shifted by sqrt(2), and it worked fine.<br />
-      That means that the ... must equal 2 at the end. That shouldn't be happening! Each equal(a,b) statement only happens once, but it's like they're happening twice - they return 0 or 1, but right now they're either doubling themselves or they're returning 2.<br />
-      How would that be happening?<br />
-      <br />
-      The same goes for my 5-d rotation. If it's just a line spanning from -1 to 1, and u, w, and z are all shifted by sqrt(2), the 5-hypersphere that it's rotating in is projected correctly in the window. But I can't fix the 5-hypercube the same way. I'm still trying to find the right scaling factor for it...when I do I'll post it</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">31st May 2002 13:55 GMT</span></p>
-
-      <p class="post-content">the 4d-sphere, is that a sphere with 8 3d-spheres inside?<br />
-      <br />
-      and why does it look like a lot of spirals</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">31st May 2002 20:37 GMT</span></p>
-
-      <p class="post-content">I don't think you fully understand dimensional geometry yet. First of all, the step up from sphere to hypersphere is the same as from circle to sphere. A sphere is made up of an infinite number of circles, changing in size. A hypersphere is made up of an infinite number of spheres, ranging in size. Of course, we can't render an infinite number of spheres, or circles, so we have to take short cuts. For a sphere all we do is render a line spiraling around in a spherical shape. Then (I think) you render a sphere like this several times, and then stretch it into the fourth dimension (hyper)spherically. This creates the hypersphere Zevensoft made. res controls the number of spheres rendered.<br />
-      <br />
-      Also, I find for the hypersphere res should be a power of 10 and n should be an exponent of res divided by 10, 100, or 1000 PLUS ONE. The plus one ensures that everything is congruent (which makes it much easier to watch).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">1st June 2002 00:20 GMT</span></p>
-
-      <p class="post-content">The hypersphere is nice, but it has one flaw: it doesn't describe the surface of the sphere. Using a line to spiral around a spherical surface gives you the shape, but it fails to describe the topology.<br />
-      <br />
-      A better representation of a sphere is using parallels and *******ns (as in my Groovy Saturn preset). Of course, doing this for a hypersphere would be *very* hard. But it's really the best thing to do.<br />
-      Just like the hypercube is only complete with all the connecting lines.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">2nd June 2002 20:10 GMT</span></p>
-
-      <p class="post-content">UnConeD, I've been reading a book on the subject, and it had the source code for a program (in C) which will supposedly render n-dimensional cubes. I compiled it, the code is fine, it just doesn't work. The rendering part goes something like this:<br />
-      printf("%f %f \n",x1,y1)<br />
-      f, x1 and y1 should be the coordinates for the points. The only problem is, it's printing a series of numbers, not positions. I think it has something to do with my using a C++ compiler. Could you help?<br />
-      <br />
-      If you want I could send you it's code, my code (i had to tweak it a bit to fit my compiler), and the program.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">2nd June 2002 20:52 GMT</span></p>
-
-      <p class="post-content">The line you pasted means:<br />
-      <br />
-      printf("%f %f \n",x1,y1)<br />
-      <br />
-      Echo the real numbers 'x1' and 'y1' in the format "%f %f \n" (\n is a linebreak) to the screen.<br />
-      <br />
-      So it's only outputting 2 coordinates... I assume these are pre-transformed to a 2D projection then?<br />
-      <br />
-      If you want I could whip up a quick Windows program to draw them through basic GDI commands (ugly but works).<br />
-      <br />
-      Send it to <i>steven at acko dot net</i> (spam proof :)).<br />
-      <br />
-      (By the way, the book you're reading is that a physical or electronic book? In the second case I wouldn't mind getting a copy...)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">3rd June 2002 02:52 GMT</span></p>
-
-      <p class="post-content">No, it's not just outputting 2 coordinates, it's outputting the coordinates for the endpoints of every edge in the object.<br />
-      And it's supposed to draw the lines...<br />
-      <br />
-      And the book is a paperback by Clifford A. Pickover (do you suppose he's the same pickover as the one who created the pickover orbital? *looks it up*)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th June 2002 01:42 GMT</span></p>
-
-      <p class="post-content">BTW, I figured out why my hypercube wasn't working right. I was rotating it in a cube of the radius sqrt(3), not sqrt(2). I feel safer now...:p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Matt_W74656</span><br />
-      <span class="date small text-muted">6th June 2002 02:21 GMT</span></p>
-
-      <p class="post-content"><strong>sorry....</strong><br />
-      I'm sorry but i just cant get this thing to sork you make it sound so good though. Can plez when you get it to zip up post it here. It doesnt matter if we have to put it in are selves thanks.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">8th June 2002 05:19 GMT</span></p>
-
-      <p class="post-content">Okiedokie...Matt, the zipped version is in the fourth or fifth post on this thread.<br />
-      <br />
-      And this is my current application of the hypercube. I'm pretty sure this one is going in my pack.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">8th June 2002 16:17 GMT</span></p>
-
-      <p class="post-content"><strong>Legal Stuffs...</strong><br />
-      Just asking for permission to use yar hypercube...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">8th June 2002 19:58 GMT</span></p>
-
-      <p class="post-content">Shoot, I forgot to tell everybody this:<br />
-      DO NOT PUBLISH YOUR PRESET USING MY HYPERCUBE UNTIL THE FORWARD FLOW IS RELEASED ON WINAMP.COM!!!<br />
-      <br />
-      Anywho, yeah Nic, you can use it</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">9th June 2002 02:02 GMT</span></p>
-
-      <p class="post-content">Yada yada, anyone wanting to use me 4D sphere just include credit for me.<br />
-      <br />
-      Also, if you increase res to 10000, but add n=1000 to the init line, you'll get some cool-looking curves. Use res=1000,n=10000 to be able to clearly see the spheres.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sonic.blade</span><br />
-      <span class="date small text-muted">11th June 2002 22:37 GMT</span></p>
-
-      <p class="post-content"><strong>dimensions</strong><br />
-      one thing that should be mentioned is that<br />
-      the concept of dimensioned is not limited<br />
-      to distances is space.<br />
-      so you can basicly consider the r, g and b-<br />
-      values as dimensions.<br />
-      if we leave our dimensions clamped between 0 and 1<br />
-      (or -1 and 1(or-999999999999 and +99999999999<br />
-      (or whatever finite intervall) we can split time<br />
-      easily into x, y and z-movement eventually h, p and b-rotation<br />
-      and so on<br />
-      so u can easily construct a 12-dimensional object in screen-space<br />
-      <br />
-      jm2c<br />
-      sonic</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">12th June 2002 02:45 GMT</span></p>
-
-      <p class="post-content">I'm trying to decide whether that was actually a meaningful contribution or just a desperate attempt to sound cool.<br />
-      The concept of dimensional geometry IS about spacial relationships. The color of an object is a property. It has only to do with it's material configuration. Therefore color is a unidimensional property. Therefore color is not a dimension in itself.<br />
-      time has been theorized as a fourth spatial dimension, and our movement through it is relative to our movement in 3-space.<br />
-      And what are h-, b-, and p- rotation? Also remember that a rotation is a perpetually changing movement; it has no constant direction.<br />
-      <br />
-      And you kind of missed the point of this whole thread; that rotation in higher dimensions and translation between dimensions is extremely easy to program.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">12th June 2002 04:30 GMT</span></p>
-
-      <p class="post-content">I'm not sure what you mean sonic.blade...<br />
-      <br />
-      Of course a space doesn't need to have a spatial meaning... any vector can be used, wether it's a point, a colour, etc.<br />
-      <br />
-      Maybe you meant that you can use colour to indicate the coordinate of a point in a higher dimension as well?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Krash</span><br />
-      <span class="date small text-muted">12th June 2002 11:39 GMT</span></p>
-
-      <p class="post-content">I know what sonic.blade means, though I'm not sure how well I'll go with explaining it - I haven't done maths of any real sort in years, and multi-dimensional stuff in even longer.<br />
-      <br />
-      If we first of all think about a unit sphere. The sphere exists for values of x, y, and z between -1 and 1, and does not exist for all other values (outside the function's domain, as it were).<br />
-      This is a simple concept to grasp, as we deal with three dimensions every day.<br />
-      <br />
-      If you want to easily comprehend a 4th dimensional unit sphere, the best way is to arbitrarily assign some value to the 4th dimension. Most commonly, people assign time to the 4th dimension.<br />
-      <br />
-      You can then imagine that at time t=0, a 4th dimensional unit sphere would look identical to a 3d unit sphere. But if you went back to t=-0.5 (keeping x, y and z at 1, for simplicity's sake), you would see a smaller sphere.<br />
-      Why?<br />
-      Well, if you think about a 3d sphere, a 2d cross-section taken at z=-0.5 is a smaller circle than at z=0. So for a 4d sphere, the "cross-section" at t=-0.5 will be a smaller sphere than that taken at t=0.<br />
-      <br />
-      You can progress this across the entire domain of t (-1 to 1). If you remember that t is time, you can therefore imagine that 4d sphere would appear as nothing before t=-1, at which point it would become an infintesimal sphere. This sphere would grow until it reached unit dimensions at t=0, and would then shrink back to nothingness. Of course, this is just for visualising a 4d shape.<br />
-      <br />
-      The elegance of this method means that you can assign practically any continuous property to a dimension. You can even use non-continuous properties, provided you limit the domain appropriately.<br />
-      <br />
-      For example, you can set colour as an example. Colour is actually a value on an electromagnetic frequency spectrum. So if you assign colour to the 5th dimension, and set "red" to c=-1, and "blue" to c=1, with a smooth spectrum in between, you can imagine a 5th dimensional sphere.<br />
-      <br />
-      This would be a growing/shrinking sphere, as for the 4th dimensional sphere, but the sphere would have an infinite number of spheres inside it, of differing colours. In the center of the 5-hypersphere would be two infintesimal spheres, one red, and one blue. The outside of the sphere when it was at it's maximum size and colour variation (x,y,z,t and c all equal 0) would be green. There would be a smooth gradient opf colour within the sphere, in BOTH directions (green-&gt;red and green-&gt;blue). Sort of like an everlasting gobstopper...<br />
-      <br />
-      You can extend this however you like. Assign pitch, yaw and roll to dimensions - that brings us up to 8-d. Assign other properties - luminescence, transparency, roughness... brings us up to 11-d. You can even use non-visual properties (as these properties are simply there to help us understand the shape) such as volume, frequency of a generated noise, etc.<br />
-      <br />
-      Maybe I've explained this poorly... I don't know... it's been too long.<br />
-      <br />
-      - Krash</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sonic.blade</span><br />
-      <span class="date small text-muted">12th June 2002 12:20 GMT</span></p>
-
-      <p class="post-content">thanx krash and unConeD<br />
-      i really just wanted to give some imput to the topic and<br />
-      it was&#194;&#180;nt my intention to show off.<br />
-      Atero: -I just ment the 2-dimensional representation of n-dimensional<br />
-      objects (not just geometries)<br />
-      -HPB-rotation means heading-pitch-banking its basicly just<br />
-      another notation to prevent gimballockup<br />
-      to explain a bit more scintific why i counsider those<br />
-      things as (useable) dimensions i want to point out the sence of<br />
-      distances in space (i hope the translation is OK)<br />
-      a space is defined by it&#194;&#180;s metrik and the only three needs<br />
-      for a metrik (distance-funktion) d:XxX-&gt;R are:<br />
-      1.) d(x,y)=0 &lt;--&gt; x=y<br />
-      2.) d(x,y) = d(y,x)<br />
-      3.) d(x,z)&lt;= d(x,y)+d(y,z)<br />
-      as far as i know (please correct me if i&#194;&#180;m wrong)<br />
-      a n-dimensional metrik space can be easily constructed<br />
-      as space is (x1,x2,x3,...,xn) and<br />
-      metrix is d^n(x^n,y^n)=d(x1,y1)+d(x2,y2)+...+d(xn,yn)<br />
-      when all properties (x1,x2...xn) are independent<br />
-      so i consider every property that can be represented as a Real-Number<br />
-      as a valid dimension.<br />
-      hope it makes sence<br />
-      sonic</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">12th June 2002 22:25 GMT</span></p>
-
-      <p class="post-content">I think I'd trust you more if you would spell "meant," "metric ~ics," and "function" correctly.<br />
-      But in any case, no, you did not make sense.<br />
-      <br />
-      Krash: Again, that was kind of the point of this thread...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sonic.blade</span><br />
-      <span class="date small text-muted">14th June 2002 11:26 GMT</span></p>
-
-      <p class="post-content">sorry for my bad english, i do all the math-stuff<br />
-      at the university in german.<br />
-      i wasn&#194;&#180;t supposed to start and endless thread about math<br />
-      over here i just wanted to give some input.<br />
-      sonic</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">n-D being</span><br />
-      <span class="date small text-muted">5th June 2003 23:26 GMT</span></p>
-
-      <p class="post-content">Going back up to zevensoft's hypersphere, *******ns can be represented (approximately) by changing the first three lines of code to<br />
-      x=cos(i*pi*res)*sin(i*pi*res*res)*sin(i*pi);<br />
-      y=cos(i*pi*res*res)*sin(i*pi);<br />
-      z=sin(i*pi*res)*sin(i*pi*res*res)*sin(i*pi);<br />
-      <br />
-      Layering this scope on top of his original gives a much clearer view of the 4D surface shape.<br />
-      <br />
-      David</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th June 2003 00:37 GMT</span></p>
-
-      <p class="post-content">EEEEEEEAAAAAAARGH<br />
-      <br />
-      WHY ON EARTH DID YOU REVIVE THIS<br />
-      <br />
-      IT WAS DAMN NEAR A YEAR OLD!!!<br />
-      <br />
-      /me sobs uncontrollably :cry:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">BigBob</span><br />
-      <span class="date small text-muted">6th June 2003 20:08 GMT</span></p>
-
-      <p class="post-content">I can not see Zensoft's Hypersphere, am I suppose to do something beside copy and paste?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">6th June 2003 21:18 GMT</span></p>
-
-      <p class="post-content">not if its is a digital clock :p<br />
-      <br />
-      you should copy each part into the correct 'section' of the superscope and make sure you have it set to lines, not dots (or vice versa)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th June 2003 21:58 GMT</span></p>
-
-      <p class="post-content">somebody whack this thread &gt;_&lt;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">BigBob</span><br />
-      <span class="date small text-muted">6th June 2003 22:11 GMT</span></p>
-
-      <p class="post-content">I got it now!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">BigBob</span><br />
-      <span class="date small text-muted">6th June 2003 22:16 GMT</span></p>
-
-      <p class="post-content">Would it be possible to make any object in the forth demension, like a cylinder or a rectangle?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">7th June 2003 01:01 GMT</span></p>
-
-      <p class="post-content">use the edit button!!!<br />
-      <br />
-      well a rectangle is obviously very easy. take the hypercube code and stretch it along the axes. a hypercylinder is harder, although possible (look at the 3d sphere code and play w/ that).<br />
-      <br />
-      basically, 4d works more or less like 3d, except you have 4 axes to work with.<br />
-      <br />
-      so, you would be typing w1=...;y1=...;z1=...;x1=...; then use the rest of the engine to convert it to 2d.<br />
-      <br />
-      i second atero's request for a lock</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">7th June 2003 02:00 GMT</span></p>
-
-      <p class="post-content">weell.. if you looking at basic shapes like rectangles etc. It can be a bit confusing. By definition, a rectangle rectangular prism is a shape that has at least one set of sides a different size. So you have to work out how 'long' you 4th dimention is going to be. Same deal with cylinders, only evern more complicated, as a cylinder is definable only as a 3d object, something like (sqrt(x*x+y*y)*z). To put it in 4d you have to really use your imagination.<br />
-      <br />
-      For example a 4d cylender could be like an infinate 'shaft' of spheres heading off along the 4th dimention. Or and infinate series of tunnels heading off in parrallel to the first tunnel. Although these descriptions are using 3d terms, so you have to try to imagine it like that in 4d.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">7th June 2003 03:28 GMT</span></p>
-
-      <p class="post-content">Well siddhartha, the best way to think of it is that a 3D cylinder is an 'Extruded Circle', therefor the 3D version of circle is sphere, that makes the 4D cylinder an 'Extruded Sphere'.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">7th June 2003 03:49 GMT</span></p>
-
-      <p class="post-content">nice one..<br />
-      the problem is obviously that we are used to thinking in terms of 3d geometry. but when in gets to 4d, its hard to imagin what properties the fourth dimention should take on. Unless you are talking about figures that have equal properties on all axes (like cubes and spheres) you have to make up the 4th axis from what <i>seems</i> to be the logical way.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Wiser87</span><br />
-      <span class="date small text-muted">7th June 2003 07:11 GMT</span></p>
-
-      <p class="post-content">:confused: :igor:<br />
-      Help... I think my head's gonna explode... :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">7th June 2003 16:20 GMT</span></p>
-
-      <p class="post-content">going off of what Zvensoft said:<br />
-      <br />
-      you start with a point- the first dimension. You choose an arbitrary direction and translate that point and connect them with a line. You then take those two points and extend them in another arbitrary direction and connect them with a line. This is 2D. Take those four points and extend them in another arbitrary dimension, and connect them with a line. This is the third dimension. Now you can take those eight points and extend them in an arbitrary dimension, connecting them with lines. This is the 4th dimension. You can continue doing this forever.<br />
-      <br />
-      Try drawing this (you need a pencil and a lot of room)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">7th June 2003 19:33 GMT</span></p>
-
-      <p class="post-content">okay, what you all need to do is shut the fuck up, read the annotated flatland, then flatterland, and <b>go away</b> &gt;_&lt;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Wiser87</span><br />
-      <span class="date small text-muted">7th June 2003 21:40 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        <b>okay, what you all need to do is shut the fuck up, read the annotated flatland, then flatterland, and</b> go away &gt;_&lt;
-      </blockquote>Hehe... I have flatland. Quite interesting.<br />
-      <br />
-      :D
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WHCode RED</span><br />
-      <span class="date small text-muted">9th June 2003 20:35 GMT</span></p>
-
-      <p class="post-content">2 days isnt old right? .... after reading some of these posts I am having a hard time recognizing sentences... especially...<br />
-      <br /></p>
-
-      <blockquote>
-        <i>Originally posted by UnConeD</i><br />
-        <b>(By the way, the book you're reading is that a physical or electronic book? In the second case I wouldn't mind getting a copy...)</b>
-      </blockquote>It took me 3 re-reads to understand "physical or electronic book". Im.. so ... disoriented.<br />
-      <br />
-      *electronic buzzing coming from head*<br />
-      <br />
-      :igor: :igor: :igor: :igor: :igor: :igor:
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">9th June 2003 21:06 GMT</span></p>
-
-      <p class="post-content">but one year is. and it was almost dead again. and you revived it, again. fuckers &gt;_&lt;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">9th June 2003 21:09 GMT</span></p>
-
-      <p class="post-content">notice the person who revived it never came back.<br />
-      <br />
-      somebody lock this.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WHCode RED</span><br />
-      <span class="date small text-muted">9th June 2003 21:10 GMT</span></p>
-
-      <p class="post-content">almost dead??? maybe, but the AVS forums are going so slow it was the third thread from the top</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">9th June 2003 21:13 GMT</span></p>
-
-      <p class="post-content">just STFU and stop posting in this thread. there is no point in keeping this alive any longer. i will banish the next person who posts here (unless it is a mod locking it) to hell ( i am a minister...a friend was bored during study hall and found a site that ordains you for free, so i got ordained just for kicks. i am not very religious or anything in fact, i don't believe much in religion)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
-      <span class="date small text-muted">9th June 2003 22:09 GMT</span></p>
-
-      <p class="post-content">Locked but please chill people</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Hypercube (4-D analog of a cube)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=86731">Hypercube (4-D analog of a cube)</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th May 2002 07:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Hypercube (4-D analog of a cube)</strong><br />
+		
+		
+
+		I've constructed a mostly functional (and extremely fast) hypercube, but since I don't have a functional zip program, I'll have to post the code here.  People can use it as they wish, as long as they give me full credit for it<br />
+<br />
+<br />
+Init:<br />
+n=58;<br />
+<br />
+Beat:<br />
+iwxt=rand(100)/1000-0.05; iwyt=rand(100)/1000-0.05; iwzt=rand(100)/1000-0.05; ixyt=rand(100)/1000-0.05; ixzt=rand(100)/1000-0.05; iyzt=rand(100)/1000-0.05;<br />
+<br />
+Frame:<br />
+p=0; wxt=wxt+iwxt; wyt=wyt+iwyt; wzt=wzt+iwzt; xyt=xyt+ixyt; xzt=xzt+ixzt; yzt=yzt+iyzt; cwx=cos(wxt); swx=sin(wxt); cwy=cos(wyt); swy=sin(wyt); cwz=cos(wzt); swz=sin(wzt); cxy=cos(xyt); sxy=sin(xyt); cxz=cos(xzt); sxz=sin(xzt); cyz=cos(yzt); syz=sin(yzt);<br />
+<br />
+Point:<br />
+p=p+1;<br />
+w1=(equal(p,2)+equal(p,9)+equal(p,15)+equal(p,21)+equal(p,22)+equal(p,23)+equal(p,24)+equal(p,25)+equal(p,26)+equal(p,28)+equal(p,29)+equal(p,30)+equal(p,31)+equal(p,32)+equal(p,34)+equal(p,35)+equal(p,36)+equal(p,37)+equal(p,38)+equal(p,39)+equal(p,  40)+equal(p,42)+equal(p,43)+equal(p,44)+equal(p,45)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,56)+equal(p,57)+equal(p,58))*2-1;<br />
+x1=(equal(p,4)+equal(p,11)+equal(p,17)+equal(p,18)+equal(p,19)+equal(p,20)+equal(p,21)+equal(p,26)+equal(p,27)+equal(p,28)+equal(p,29)+equal(p,30)+equal(p,31)+equal(p,40)+equal(p,41)+equal(p,42)+equal(p,43)+equal(p,44)+equal(p,45)+equal(p,46)+equal(p  ,48)+equal(p,49)+equal(p,50)+equal(p,51)+equal(p,52)+equal(p,53)+equal(p,55)+equal(p,56)+equal(p,57)+equal(p,58))*2-1;<br />
+y1=(equal(p,6)+equal(p,13)+equal(p,14)+equal(p,15)+equal(p,16)+equal(p,17)+equal(p,25)+equal(p,26)+equal(p,27)+equal(p,28)+equal(p,30)+equal(p,31)+equal(p,32)+equal(p,33)+equal(p,34)+equal(p,36)+equal(p,37)+equal(p,38)+equal(p,45)+equal(p,46)+equal(p  ,47)+equal(p,48)+equal(p,50)+equal(p,51)+equal(p,52)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,57)+equal(p,58))*2-1;<br />
+z1=(equal(p,8)+equal(p,9)+equal(p,10)+equal(p,11)+equal(p,12)+equal(p,13)+equal(p,19)+equal(p,23)+equal(p,31)+equal(p,32)+equal(p,33)+equal(p,34)+equal(p,35)+equal(p,36)+equal(p,38)+equal(p,39)+equal(p,40)+equal(p,41)+equal(p,42)+equal(p,44)+equal(p,  45)+equal(p,46)+equal(p,47)+equal(p,48)+equal(p,49)+equal(p,50)+equal(p,52)+equal(p,53)+equal(p,54)+equal(p,55)+equal(p,56)+equal(p,57))*2-1;<br />
+w2=w1*cwx+x1*swx; x2=w1*swx-x1*cwx;<br />
+w3=w2*cwy+y1*swy; y2=w2*swy-y1*cwy;<br />
+w4=w3*cwz+z1*swz+5; z2=w3*swz-z1*cwz;<br />
+x3=x2*cxy+y2*sxy; y3=x2*sxy-y2*cxy;<br />
+x4=x3*cxz+z2*sxz; z3=x3*sxz-z2*cxz;<br />
+y4=y3*cyz+z3+syz; z4=y3*syz-z3+cyz;<br />
+x5=x4/w4; y5=y4/w4; z5=z4/w4+5;<br />
+x=x5/z5*8; y=y5/z5*8;<br />
+<br />
+<br />
+PS: If anyone knows where to get a free version of PKzip, e-mail the URL to me at <a href="mailto:therealatero@hotmail.com">therealatero@hotmail.com</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sonic.blade</span><br />
+			<span class="date small text-muted">5th May 2002 14:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		haven´t tried your cube yet<br />
+but u could check on:<br />
+<a href="http://www.tucows.com/system/comp95.html" target="_blank">http://www.tucows.com/system/comp95.html</a><br />
+for comp/decomp utilities<br />
+cu<br />
+sonic
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">5th May 2002 14:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		atero, cool thing, but what is it? a dm or a ssc?<br />
+like i tried both thing and on the ssc and on the dm it didn't appear anything so...<br />
+<br />
+and atero, <a href="http://www.winzip.com" target="_blank">http://www.winzip.com</a> , download winzip 8.1, (and if you need a crack, pm me)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">5th May 2002 16:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, I plugged it into a superscope, but nothing. (60 fps though)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th May 2002 17:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That's odd...<br />
+<br />
+Aaaaaaaaaaaaaaaaaaaaaaaaagh, I know why it is.  When you copy and paste it, it adds all the line breaks - you might have to get rid of them yourselves...<br />
+<br />
+And it's a superscope - I don't want to think of what it'd look like as a DM
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th May 2002 17:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		There we go...I also slowed the movement down so you can follow it
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">5th May 2002 18:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Firstly I'm amazed on how quick it is... all that code...<br />
+But since it's obvious you used point-by-point assignment, it's not as amazing as it is to me anymore =p<br />
+<br />
+It IS amazing... but I don't know whether an average AVS-viewer will like it - Some people don't even see what's in an AVS ya know - They'd think &quot;It's just a boring stupid shape&quot; and leave... fortunately we have a lot of people that digs in the AVS =)<br />
+<br />
+How are you going to implement that SSC into an AVS preset?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th May 2002 18:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Neat</strong><br />
+		
+		
+
+		So that's why you wanted 4D rotation :). I've been thinking of doing something like this, but I assumed that the result would be too confusing to be cool. If you look closely, you can see that it's a 3D-cube, but instead of square faces, each face is a 2D view of a 3D cube. The logical explanation is that a 4D hypercube consists of 6 cube 'faces'.<br />
+<br />
+I'm going to try more 4D things now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">5th May 2002 18:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Man, that looks messed.<br />
+<br />
+I just don't get it. Can't really tell what's going on. Not for me, sorry.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th May 2002 20:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		To understand what a 4D (or n-dimensional) cube is, look at the evolution of a cube from 0D to 3D:<br />
+<br />
+- Take a point (0D)<br />
+- Copy the point and move it, and connect it with a line<br />
+=&gt; we now have a 1D shape (a line)<br />
+<br />
+- Take the line (1D)<br />
+- Copy the line and move it into the second dimension, and connect both ends with 2 lines<br />
+=&gt; we now have a 2D shape (a square)<br />
+<br />
+- Take the square (2D)<br />
+- Copy the square and move it into the third dimension, and connect the matching pairs of corners with 4 lines<br />
+=&gt; we now have a 3D shape (a cube)<br />
+<br />
+Now comes the 'weird' part:<br />
+- Take the cube (3D)<br />
+- Copy the cube and move it into the fourth dimension, and connect the matching pairs of corners with 8 lines.<br />
+<br />
+If you understand the idea, you can expand it into n dimensions.<br />
+<br />
+Now, we live in a 3D world, and therefor we can't naturally visualise higher dimensional shapes. To understand what happens, consider a 2D universe (a flat plane) and how it relates to 3D. Just like you can represent 3D by an infinite amount of 2D 'slices' (planes), you can think of 4D as composed of an infinite amount of 3D 'slices' (spaces).<br />
+Now, think about how we represent 3D space on a flat plane: we project all the points from an eye onto a plane, commonly by dividing by the 'z' coordinate. So if you wanted to represent a 4D hyperspace in 3D space, you'd need to divide 3 coordinates by a 4th (as you're projecting a 4D hyperspace onto a 3D space). This is what Atero's superscope does. On top of that, it takes the 3D result, and projects it onto 2D like any other 3D superscope.<br />
+<br />
+Now, you might say &quot;aha! so it's not actual 4D! it's just a 3D shape that moves in a weird way!&quot;. Well, so is 3D on a computer: it's a 2D shape that looks like 3D, because our eyes view the world like that too.<br />
+<br />
+Now specifically about a 4D hypercube:<br />
+<br />
+A 3D cube has 6 square (2D) faces. A 4D cube has 8 cube 'faces' (3D). If you look at Atero's superscope, you'll notice that it hardly looks cubic: all the angles are distorted. Well, if you look at how you draw a 3D cube on a 2D paper, it'll be distorted too. You're just used to it so much, that it becomes natural.<br />
+<br />
+Higher-dimensional shapes might sound like an alien concept, but they have many uses in mathematics and science. And as we can now see, they look cool too :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th May 2002 20:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Typo?</strong><br />
+		
+		
+
+		I think there's a typo here:<br />
+<br />
+y4=y3*cyz+z3<u>+</u>syz; z4=y3*syz-z3<u>+</u>cyz; <br />
+<br />
+Those 2 + signs should be multiplications, right?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th May 2002 23:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That's what was the wrong with it!  I've been checking all over my code for typos, but I couldn't find them.  Thanx!!<br />
+<br />
+BTW, I'm still trying to work out the scaling/shifting so that it renders correctly.  The scaling factors are in the last W-axis statement (w4), and in the very last line where the transforms are taking place
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">9th May 2002 11:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Would that mean that a torus is 4-dimensional? Because that HyperCube looks awfully like a very low-res toroidal shape.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">9th May 2002 16:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		A regular torus is a simple 3D shape.<br />
+<br />
+You don't seem to be getting the point though. The dimension of a shape/space can be seen as the number of linearly independent vectors you can construct in it. For example:<br />
+<br />
+In a flat plane, you can construct 2 base vectors (e.g. the X and Y axis) that, when added up, can reach the entire plane. It's impossible to find a third vector that can't be broken up as a sum of the earlier two.<br />
+<br />
+In space, there are 3 such vectors (e.g. X, Y, Z). Now, imagine a hypothetical 4D space, where there are 4 such vectors. In our reality, there is no such thing (or at least not found :)).<br />
+<br />
+To show this 4D shape, we project it into 3D space, much like we can project a 3D shape onto a 2D plane (e.g. a computer screen). So while it becomes a 3D/2D shape, we actually still have the originating 4D shape in mind.<br />
+<br />
+A (hyper)cube is very different from a (hyper)torus. It might look the same here, but that's because it's very hard to visualise the 4D structure.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">13th May 2002 00:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD, were you talking to me or Zevensoft?<br />
+<br />
+Anyway, I'm trying to figure this one out:  Theoretically, w, x, y, and z should only range from 1 to -1.  However, when I shift w by 2 (so it's from 1 to 3) to translate it to 3D, I get distortion.  Also, after that translation, the shift of sqrt(2) does not work on the 3D/2D translation - I have to shift and scale by 2.  But that brings up another mystery:  Using those shifts, the sphere the cube is projected into (and thereby the ring that sphere is projected into) fits perfectly into the window.  With shifting and scaling by 2 on any 3D superscope, you end up with a ring larger than the window.<br />
+Any ideas?<br />
+<br />
+<br />
+ZS, the hypercube is a much different object from the hypertorus.  Think of it this way: A two dimensional torus would be an O shape.  Stretch that into the third dimension and it becomes a donut, or torus, in prissymathematicianspeak.  (Why an I hungry all of a sudden?)  You can then stretch that into the fourth dimesion (I don't know how, but I'm working on it); this is the hypertorus.  Why did you think my hypercube looked 'toroidal?'<br />
+<br />
+This is a (rather poor) wireframe torus:<br />
+tpi=acos(-1)*2;<br />
+x=sin(i*tpi)*(sin(i*tpi*500)/3+1);<br />
+y=cos(i*tpi)*(sin(i*tpi*500)/3+1);<br />
+z=cos(i*tpi*500)/3;<br />
+UnConeD, do you know the coordinates for a hypertorus?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th May 2002 09:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well actually there are two things you can mean by a torus.<br />
+<br />
+Take a grid. Bend it so that two opposite edges are joined, you now have a cylinder-like shape. Bend it again so that the remaining two edges (now circles) are joined: you now have a donut.<br />
+<br />
+So the main property of a n-torus is that is an n-grid that is connected to itself in every direction. This has a few 'weird' consequences: for example, if you start out with the other pair of edges, you'll get a differently oriented donut, but the topological properties are still the same.<br />
+<br />
+I've been thinking about a system behind hypertori (like the system to go from dot to line to square to cube to hypercube) and here's what I believe is close to correct:<br />
+<br />
+- Take a point (0D)<br />
+<br />
+- Trace a circular path with it, so that the center of the circular path is outside the shape, and a new axis is used. We now have a circle (2D). However a point on the shape itself can always only move on 1 degree of freedom, so the shape's topology can be considered 1D. Note that this is essentially a line with its begin and endpoints connected.<br />
+<br />
+- Take this circle, and trace a circular path with it, so that the center of the circular path is outside the shape, and a new axis is used. We now have a torus/donut (3D). However a point on the shape itself can always move only on 2 degrees of freedom, so the shape's topology can be considered 2D. Note that this is a 2D grid with both pairs of ends connected to the opposite side.<br />
+<br />
+- Take this donut, and trace a circular path with it, so that the center of the circular path is outside the shape. We now have a 4-hypertorus (4D). However a point on the shape itself can always move only on 3 degrees of freedom, so the shape's topology can be considered 3D. Note that this is a 3D grid with all pairs of opposite faces connected to the opposite side.<br />
+<br />
+So for one, you have the topology, and always several geometrical representations that satisfy this topology. Think of generating it by having a hyperdimensional compass (is this the right word? a tool for drawing circles on paper) and dragging the dot, circle and donut through (hyper)space.<br />
+<br />
+The formulas have a system to them too. You're always shifting the previous shape around on one axis, and then rotating around to get the circular path:<br />
+<br />
+1:<br />
+x1 = 0;<br />
+<br />
+2:<br />
+x2 = (x1 + R1)*cos(a1);<br />
+y2 = (x1 + R1)*sin(a1);<br />
+<br />
+3:<br />
+x3 = x2;<br />
+y3 = (y2 + R2)*cos(a2);<br />
+z3 = (y2 + R2)*sin(a2);<br />
+<br />
+4:<br />
+x4 = x3;<br />
+y4 = y3;<br />
+z4 = (z3 + R3)*cos(a3);<br />
+w4 = (z3 + R3)*sin(a3);<br />
+<br />
+...<br />
+<br />
+Rx are the radii of the separate stages, ax are a variable ranging from 0...2PI.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">14th May 2002 07:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Umm...I applied that to AVS, and the system renders a pringle-shape.  I assume ax can be i*tpi?<br />
+<br />
+Anyway, attached is the 5D analog, missing only a few lines - I'm trying to find them (so I don't have to re-write the whole thing from scratch).  I'm guessing since &quot;hypercube&quot; is 4d, &quot;super-,&quot; &quot;ultra-,&quot; or &quot;sugarrushcube&quot; could be names for 5d....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">14th May 2002 07:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I get it now. It's a cube within a cube at first, right? Then the eight connecting lines manipulate their length, like that of a square does to form a generic 4-sided shape. Have I got it?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">14th May 2002 08:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		uNDefineD: well yes and no.<br />
+<br />
+First of all, remember that it's not what it looks like. Just like a 3D cube is a very ugly shape when you draw it in 2D. It's only our brain that makes it look 3D.<br />
+<br />
+Now, remember how you go from a 2D square to a 3D cube, by taking 2 squares and connecting the corresponding pairs of vertices.<br />
+<br />
+Now, take a cube. Take another cube and move it in a theoretical 4th dimension. Connect the corresponding vertices.<br />
+<br />
+What we have now, is a 4D-hypercube. To understand what it 'looks' like, look at the following analogies:<br />
+<br />
+- A 1D line has 2 0D-points<br />
+- A 2D square has 4 1D-lines<br />
+- A 3D cube has 6 2D-squares<br />
+- A 4D hypercube has 8 3D-cubes<br />
+<br />
+And there you have it. It's not just 2 cubes that you see, it's 8. Of course, because of the 4D-&gt;3D perspective, it'll only look cubic in some positions. But in the original 4D concept, every line is perpendicular to every other line, and they are all of length 1.<br />
+To make it clearer: in the beginning you see the 'larger' cube and the 'smaller' cube (they're actually the same size if it weren't for the perspective). Now, each face of the smaller cube is connected with the corresponding face of the larger cube. Look at the series of analogies above: take 2 squares (the 2 corresponding faces) and connect them, you now have a cube (if they are the same size and spaced apart at the same length).<br />
+<br />
+There's really not much more to be said. It's a weird concept that you have to get used to. Just don't try to think of it in terms of 3D, because it isn't.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">14th May 2002 08:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The 5D version is nice by the way. As far as the naming goes, I've always been taught that 'hyper' is the generalized form:<br />
+<br />
+A 2-hypercube is a square. A 4-hypercube is what you posted at first. So the last one is a 5-hypercube, right?<br />
+<br />
+As far as the 4-hypertorus goes, the difficulty lies in drawing all the connecting lines. For example, to draw a sphere you need to draw both parallels and *******ns. I think the easiest way would be to synchronize 3 superscopes in which each superscope draws one main direction (remember that a 4-hypertorus is a connected 3D space, just like a 3D torus is a connected 2D grid).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">14th May 2002 11:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				It's a weird concept that you have to get used to.</blockquote>
+Don't go any further, you explained it perfectly. :) So when the &quot;smaller&quot; cube is connected with the &quot;larger&quot;, each connecting line completes another cube that forms the &quot;sides&quot; of the hypercube. Is that it?<br />
+<br />
+EDIT: I just saw the Supercube. Because it was moving too fast :p, I'm _guessing_ that since it's 5D, continuing from UnConeD's analogies, a 5D supercube has 10 4D hypercubes, is that correct?<br />
+<br />
+BTW, I must give you kudos for putting up with people who can't code. :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">14th May 2002 11:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		uNDefineD: you're totally correct. It has nothing to do with being able to code by the way... the concept of higher order dimensions is not easy to explain, because most people will still try and visualise everything in 3D. Once you let go of that, it's easier.<br />
+<br />
+The 5D hypercube should indeed have 10 hypercubes in it, but as Atero said there are a few sides missing. And because it's representing 5 dimensions in 2, it's very hard to see the geometry in it.<br />
+<br />
+All in all this is very fun thread :). Higher dimensional geometries are normally only used theoretically (e.g. a computer network can be connected in a 4D-hypercube arrangement, or even higher) but it seems they're cool for visuals too.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">15th May 2002 00:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks, UnConeD. BTW, about the code thing, I was just making a reference to my inability to logically work out SSCs and DMs and stuff. :D For me, it's random equations and hope for the best. Seemed to work with my Power Core though...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">15th May 2002 21:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Some of my personal theories on n-dimensional geometry:<br />
+Objects in the n'th dimension are seen in the (n-1)'th dimension.  The closest example is real 3D life: you can see depth, but the depth is created by your mind.  Put your hand up in front of your face.  You can see the depth beyond your hand, but you cannot see what is behind it.  Therefore you see in 2D.  A more biological proof is that your retina is 2D, and therefore you cannot see in any higher of a dimension.  Imagine then sight on a line.  You would see in 0D.  The only places you could see would be directly in front of and behind you.  On a plane you would see in 1D.  And in hyperspace you would see in 3D.<br />
+To create a higher dimensional object, it is said that you need to move something 'back' into the next dimension.  However, we cannot easily do this without creating a perspective into the next dimension first.  Put yourself into the first dimension.  Shrink the line you are on, then connect the endpoints.  This creates a perspective of the second dimension.  Then in the second dimension, shrink the square, and connect the vertecies.  This is a perspective of the third dimension.  Now shrink a cube and connect the vertecies.  This is a perspective of a hypercube.  Theoretically you would now shrink the hypercube, but since we don't know exactly what the hypercube looks like, we can't do that.  The other way to create a perspective is to extend your current object on every dimension available.  Then stretch the new objects to meet each other, creating the last new object.  For example, copy a square to the left, right, up and down.  Then stretch each square to meet the ones next to it, creating a new larger square.  Another example is to copy a cube up, down, left, right, backwards, and forwards.  Then stretch each new cube to meet the one next to it, creating a new cube.  Now once you've created a perspective, move the new objects backwards into the next dimension, without changing the perspective, until all angles are right.<br />
+I have also developed a formula for finding the number of edges in an n-dimensional cube:<br />
+2^(n-1)*n<br />
+which is basically an expression of the number of connections you can make between two adjacent points.  2^n is the number of points (a line is 2 points, four lines of a square is 4 points, six sides of a cube is 8 points, etc.), and n is the number of possible changes (one for each dimension).  However, you do each connection twice with that formula: (1,1) : (1,-1) :: (1,-1) : (1,1), so you divide by 2; hence 2^(n-1).<br />
+<br />
+[edit: smilies were screwing up the above bit of code]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">16th May 2002 07:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero </i><br />
+<b>[edit: smilies were screwing up the above bit of code]</b></blockquote>
+LMAO :D<br />
+<br />
+And one more thing Atero: could I use a remix of your preset for my AVS pack? Cause I reckon I've got something pretty good going on. :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">17th May 2002 02:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Which preset?  The one that I posted in a new topic, completely seperate and disassociated with this one?  Or do you just want to use my hypercube?<br />
+<br />
+<br />
+<br />
+Yes, sure, why not, as long as you give me full credit for the morpher and the smoke bgdm or the hypercube coding.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">17th May 2002 05:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sure. Credit is given where it is due. I didn't mess with the render anyway, all I added was Trans elements.<br />
+<br />
+Thank a lot! You've made my day! :) :) :)<br />
+<br />
+EDIT: I'm using the hypercube. I have no idea what the other thingy is... :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Scar Da Kookee</span><br />
+			<span class="date small text-muted">19th May 2002 04:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		/me would like to use hypercube :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th May 2002 00:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sure, I don't mind (again, as long as I'm given full credit for it)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NoSage</span><br />
+			<span class="date small text-muted">22nd May 2002 06:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think that every part of mathematics has now been integrated in to AVS.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">22nd May 2002 14:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well, did you know that scientists have found 10 dimensional objects? Basically, they are the smallist objects you can get, called strings (atom &gt; quark &gt; gluon &gt; string). The way they can be explain is, take a line, extend it out into a plane, then wrap it round into a cylinder. Now, that cylinder is made very small, so it looks like a line again, then, extend that into a plane, and wrap it around, and so on. This has been thought to be the basis for all time and space in this universe.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NoSage</span><br />
+			<span class="date small text-muted">23rd May 2002 05:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Mathematically, I suppose, there can be an infinite number of dimensions.  I found a site a long time ago that had pictures of what a 15th dimensional object looked like.  It was just a bunch of lines.<br />
+ok I'm done...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">25th May 2002 11:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>4D Sphere</strong><br />
+		
+		
+
+		Here's the code for a 4D sphere. It's colourcoded, so that values of W from -1 to 1 are parts of the spectrum from red through green to blue. Z is represented by Brightness.<br />
+<br />
+Init:<br />
+<pre><code><br />
+res=15;pi=acos(-1);fov=120;dst=tan(fov*pi/180/2);wdst=1.5;rxs=pi/100;rys=pi/90;rzs=pi/80;rxys=pi/70;ryzs=pi/60;rxzs=pi/50;n=pow(res,3)<br />
+</code></pre><br />
+<br />
+Per Frame:<br />
+<pre><code><br />
+rx=rx+rxs;ry=ry+rys;rz=rz+rzs;rxy=rxy+rxys;ryz=ryz+ryzs;rxz=rxz+rxzs;<br />
+</code></pre><br />
+<br />
+Per Point:<br />
+<pre><code><br />
+x=cos(i*pi*res*res)*sin(i*pi*res)*sin(i*pi);<br />
+y=cos(i*pi*res)*sin(i*pi);<br />
+z=sin(i*pi*res*res)*sin(i*pi*res)*sin(i*pi);<br />
+w=cos(i*pi);<br />
+tx=x*cos(rz)-y*sin(rz);<br />
+ty=y*cos(rz)+x*sin(rz);<br />
+x=tx*cos(ry)-z*sin(ry);<br />
+tz=z*cos(ry)+tx*sin(ry);<br />
+z=tz*cos(rx)-ty*sin(rx);<br />
+y=ty*cos(rx)+tz*sin(rx);<br />
+tx=x*cos(ryz)-w*sin(ryz);<br />
+tw=w*cos(ryz)+x*sin(ryz);<br />
+w=tw*cos(rxy)-z*sin(rxy);<br />
+tz=z*cos(rxy)+tw*sin(rxy);<br />
+tw=w*cos(rxz)-y*sin(rxz);<br />
+ty=y*cos(rxz)+w*sin(rxz);<br />
+x=tx/(tw+wdst);y=ty/(tw+wdst);z=tz/(tw+wdst);<br />
+x=x/(z+dst);y=y/(z+dst);<br />
+h=(tw);b=z/2+.5;<br />
+red=(.5+sin((h+(2/3))*pi)/2)*b;<br />
+green=(.5+sin((h)*pi)/2)*b;<br />
+blue=(.5+sin((h-(2/3))*pi)/2)*b;<br />
+</code></pre><br />
+<br />
+Its best also if you add a Misc-&gt;Set render mode and set it to maximum blend with line width of 3.<br />
+<br />
+BTW if you want change res to how many 3D sub-spheres you want (squared equals amount of cirles).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Scar Da Kookee</span><br />
+			<span class="date small text-muted">25th May 2002 15:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		just dont ask anyone to have res=100 :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">30th May 2002 02:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		What's the derivation of the hypersphere?  It works perfectly, I can see all 8 spheres and their rotation :up:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">31st May 2002 05:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I just made a stupid...I can see all the SUB-SPHERES and their rotation ;)<br />
+<br />
+WHOAH!  I just noticed why my hypercube is all hugified!  I was trying to solve the puzzle about the correct shifting factor, and I discovered that I had to shift it on the w-axis by sqrt(8) for it to work properly.  Well, I just found out that if I do this:<br />
+a=(...)-0.5;<br />
+instead of this:<br />
+a=(...)*2-1;<br />
+(a is the axis, and ... is the tracing content)<br />
+I only have to shift w by sqrt(2) - the supposedly correct shifting factor.  Then I used this scope:<br />
+w1=i*2-1; x1 through z1=0;<br />
+and shifted by sqrt(2), and it worked fine.<br />
+That means that the ... must equal 2 at the end.  That shouldn't be happening!  Each equal(a,b) statement only happens once, but it's like they're happening twice - they return 0 or 1, but right now they're either doubling themselves or they're returning 2.<br />
+How would that be happening?<br />
+<br />
+The same goes for my 5-d rotation.  If it's just a line spanning from -1 to 1, and u, w, and z are all shifted by sqrt(2), the 5-hypersphere that it's rotating in is projected correctly in the window.  But I can't fix the 5-hypercube the same way.  I'm still trying to find the right scaling factor for it...when I do I'll post it
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">31st May 2002 13:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		the 4d-sphere, is that a sphere with 8 3d-spheres inside?<br />
+<br />
+and why does it look like a lot of spirals
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">31st May 2002 20:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I don't think you fully understand dimensional geometry yet.  First of all, the step up from sphere to hypersphere is the same as from circle to sphere.  A sphere is made up of an infinite number of circles, changing in size.  A hypersphere is made up of an infinite number of spheres, ranging in size.  Of course, we can't render an infinite number of spheres, or circles, so we have to take short cuts.  For a sphere all we do is render a line spiraling around in a spherical shape.  Then (I think) you render a sphere like this several times, and then stretch it into the fourth dimension (hyper)spherically.  This creates the hypersphere Zevensoft made.  res controls the number of spheres rendered.<br />
+<br />
+Also, I find for the hypersphere res should be a power of 10 and n should be an exponent of res divided by 10, 100, or 1000 PLUS ONE.  The plus one ensures that everything is congruent (which makes it much easier to watch).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">1st June 2002 00:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The hypersphere is nice, but it has one flaw: it doesn't describe the surface of the sphere. Using a line to spiral around a spherical surface gives you the shape, but it fails to describe the topology.<br />
+<br />
+A better representation of a sphere is using parallels and *******ns (as in my Groovy Saturn preset). Of course, doing this for a hypersphere would be *very* hard. But it's really the best thing to do.<br />
+Just like the hypercube is only complete with all the connecting lines.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">2nd June 2002 20:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		UnConeD, I've been reading a book on the subject, and it had the source code for a program (in C) which will supposedly render n-dimensional cubes.  I compiled it, the code is fine, it just doesn't work.  The rendering part goes something like this:<br />
+printf(&quot;%f %f \n&quot;,x1,y1)<br />
+f, x1 and y1 should be the coordinates for the points.  The only problem is, it's printing a series of numbers, not positions.  I think it has something to do with my using a C++ compiler.  Could you help?<br />
+<br />
+If you want I could send you it's code, my code (i had to tweak it a bit to fit my compiler), and the program.
+		</p>
+</div>
+
+	<hr />
+
+
+
+
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">2nd June 2002 20:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The line you pasted means:<br />
+<br />
+printf(&quot;%f %f \n&quot;,x1,y1)<br />
+<br />
+Echo the real numbers 'x1' and 'y1' in the format &quot;%f %f \n&quot; (\n is a linebreak) to the screen.<br />
+<br />
+So it's only outputting 2 coordinates... I assume these are pre-transformed to a 2D projection then?<br />
+<br />
+If you want I could whip up a quick Windows program to draw them through basic GDI commands (ugly but works).<br />
+<br />
+Send it to <i>steven at acko dot net</i> (spam proof :)).<br />
+<br />
+(By the way, the book you're reading is that a physical or electronic book? In the second case I wouldn't mind getting a copy...)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">3rd June 2002 02:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		No, it's not just outputting 2 coordinates, it's outputting the coordinates for the endpoints of every edge in the object.<br />
+And it's supposed to draw the lines...<br />
+<br />
+And the book is a paperback by Clifford A. Pickover (do you suppose he's the same pickover as the one who created the pickover orbital? *looks it up*)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th June 2002 01:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		BTW, I figured out why my hypercube wasn't working right.  I was rotating it in a cube of the radius sqrt(3), not sqrt(2).  I feel safer now...:p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Matt_W74656</span><br />
+			<span class="date small text-muted">6th June 2002 02:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>sorry....</strong><br />
+		
+		
+
+		I'm sorry but i just cant get this thing to sork you make it sound so good though. Can plez when you get it to zip up post it here. It doesnt matter if we have to put it in are selves thanks.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">8th June 2002 05:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Okiedokie...Matt, the zipped version is in the fourth or fifth post on this thread.<br />
+<br />
+And this is my current application of the hypercube.  I'm pretty sure this one is going in my pack.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">8th June 2002 16:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Legal Stuffs...</strong><br />
+		
+		
+
+		Just asking for permission to use yar hypercube...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">8th June 2002 19:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Shoot, I forgot to tell everybody this:<br />
+DO NOT PUBLISH YOUR PRESET USING MY HYPERCUBE UNTIL THE FORWARD FLOW IS RELEASED ON WINAMP.COM!!!<br />
+<br />
+Anywho, yeah Nic, you can use it
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">9th June 2002 02:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yada yada, anyone wanting to use me 4D sphere just include credit for me.<br />
+<br />
+Also, if you increase res to 10000, but add n=1000 to the init line, you'll get some cool-looking curves. Use res=1000,n=10000 to be able to clearly see the spheres.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sonic.blade</span><br />
+			<span class="date small text-muted">11th June 2002 22:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>dimensions</strong><br />
+		
+		
+
+		one thing that should be mentioned is that <br />
+the concept of dimensioned is not limited<br />
+to distances is space.<br />
+so you can basicly consider the r, g and b-<br />
+values as dimensions.<br />
+if we leave our dimensions clamped between 0 and 1<br />
+(or -1 and 1(or-999999999999 and +99999999999<br />
+(or whatever finite intervall) we can split time<br />
+easily into x, y and z-movement eventually h, p and b-rotation<br />
+and so on<br />
+so u can easily construct a 12-dimensional object in screen-space<br />
+<br />
+jm2c<br />
+sonic
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">12th June 2002 02:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm trying to decide whether that was actually a meaningful contribution or just a desperate attempt to sound cool.<br />
+The concept of dimensional geometry IS about spacial relationships.  The color of an object is a property.  It has only to do with it's material configuration.  Therefore color is a unidimensional property.  Therefore color is not a dimension in itself.<br />
+time has been theorized as a fourth spatial dimension, and our movement through it is relative to our movement in 3-space.<br />
+And what are h-, b-, and p- rotation?  Also remember that a rotation is a perpetually changing movement; it has no constant direction.<br />
+<br />
+And you kind of missed the point of this whole thread; that rotation in higher dimensions and translation between dimensions is extremely easy to program.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">12th June 2002 04:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm not sure what you mean sonic.blade...<br />
+<br />
+Of course a space doesn't need to have a spatial meaning... any vector can be used, wether it's a point, a colour, etc.<br />
+<br />
+Maybe you meant that you can use colour to indicate the coordinate of a point in a higher dimension as well?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Krash</span><br />
+			<span class="date small text-muted">12th June 2002 11:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I know what sonic.blade means, though I'm not sure how well I'll go with explaining it - I haven't done maths of any real sort in years, and multi-dimensional stuff in even longer.<br />
+<br />
+If we first of all think about a unit sphere. The sphere exists for values of x, y, and z between -1 and 1, and does not exist for all other values (outside the function's domain, as it were).<br />
+This is a simple concept to grasp, as we deal with three dimensions every day.<br />
+<br />
+If you want to easily comprehend a 4th dimensional unit sphere, the best way is to arbitrarily assign some value to the 4th dimension. Most commonly, people assign time to the 4th dimension.<br />
+<br />
+You can then imagine that at time t=0, a 4th dimensional unit sphere would look identical to a 3d unit sphere. But if you went back to t=-0.5 (keeping x, y and z at 1, for simplicity's sake), you would see a smaller sphere.<br />
+Why?<br />
+Well, if you think about a 3d sphere, a 2d cross-section taken at z=-0.5 is a smaller circle than at z=0. So for a 4d sphere, the &quot;cross-section&quot; at t=-0.5 will be a smaller sphere than that taken at t=0.<br />
+<br />
+You can progress this across the entire domain of t (-1 to 1). If you remember that t is time, you can therefore imagine that 4d sphere would appear as nothing before t=-1, at which point it would become an infintesimal sphere. This sphere would grow until it reached unit dimensions at t=0, and would then shrink back to nothingness. Of course, this is just for visualising a 4d shape.<br />
+<br />
+The elegance of this method means that you can assign practically any continuous property to a dimension. You can even use non-continuous properties, provided you limit the domain appropriately.<br />
+<br />
+For example, you can set colour as an example. Colour is actually a value on an electromagnetic frequency spectrum. So if you assign colour to the 5th dimension, and set &quot;red&quot; to c=-1, and &quot;blue&quot; to c=1, with a smooth spectrum in between, you can imagine a 5th dimensional sphere.<br />
+<br />
+This would be a growing/shrinking sphere, as for the 4th dimensional sphere, but the sphere would have an infinite number of spheres inside it, of differing colours. In the center of the 5-hypersphere would be two infintesimal spheres, one red, and one blue. The outside of the sphere when it was at it's maximum size and colour variation (x,y,z,t and c all equal 0) would be green. There would be a smooth gradient opf colour within the sphere, in BOTH directions (green-&gt;red and green-&gt;blue). Sort of like an everlasting gobstopper...<br />
+<br />
+You can extend this however you like. Assign pitch, yaw and roll to dimensions - that brings us up to 8-d. Assign other properties - luminescence, transparency, roughness... brings us up to 11-d. You can even use non-visual properties (as these properties are simply there to help us understand the shape) such as volume, frequency of a generated noise, etc.<br />
+<br />
+Maybe I've explained this poorly... I don't know... it's been too long.<br />
+<br />
+- Krash
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sonic.blade</span><br />
+			<span class="date small text-muted">12th June 2002 12:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thanx krash and unConeD<br />
+i really just wanted to give some imput to the topic and<br />
+it was´nt my intention to show off.<br />
+Atero: -I just ment the 2-dimensional representation of n-dimensional<br />
+        objects (not just geometries)<br />
+       -HPB-rotation means heading-pitch-banking its basicly just<br />
+        another notation to prevent gimballockup<br />
+to explain a bit more scintific why i counsider those<br />
+things as (useable) dimensions i want to point out the sence of<br />
+distances in space (i hope the translation is OK)<br />
+a space is defined by it´s metrik and the only three needs<br />
+for a metrik (distance-funktion) d:XxX-&gt;R are:<br />
+1.) d(x,y)=0 &lt;--&gt; x=y<br />
+2.) d(x,y) = d(y,x)<br />
+3.) d(x,z)&lt;= d(x,y)+d(y,z)<br />
+as far as i know (please correct me if i´m wrong)<br />
+a n-dimensional metrik space can be easily constructed<br />
+as space is (x1,x2,x3,...,xn) and <br />
+metrix is d^n(x^n,y^n)=d(x1,y1)+d(x2,y2)+...+d(xn,yn)<br />
+when all properties (x1,x2...xn) are independent<br />
+so i consider every property that can be represented as a Real-Number<br />
+as a valid dimension.<br />
+hope it makes sence<br />
+sonic
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">12th June 2002 22:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think I'd trust you more if you would spell &quot;meant,&quot; &quot;metric ~ics,&quot; and &quot;function&quot; correctly.<br />
+But in any case, no, you did not make sense.<br />
+<br />
+Krash: Again, that was kind of the point of this thread...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sonic.blade</span><br />
+			<span class="date small text-muted">14th June 2002 11:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		sorry for my bad english, i do all the math-stuff <br />
+at the university in german.<br />
+i wasn´t supposed to start and endless thread about math<br />
+over here i just wanted to give some input.<br />
+sonic
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">n-D being</span><br />
+			<span class="date small text-muted">5th June 2003 23:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Going back up to zevensoft's hypersphere, *******ns can be represented (approximately) by changing the first three lines of code to<br />
+x=cos(i*pi*res)*sin(i*pi*res*res)*sin(i*pi);<br />
+y=cos(i*pi*res*res)*sin(i*pi);<br />
+z=sin(i*pi*res)*sin(i*pi*res*res)*sin(i*pi);<br />
+<br />
+Layering this scope on top of his original gives a much clearer view of the 4D surface shape.<br />
+<br />
+David
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th June 2003 00:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		EEEEEEEAAAAAAARGH<br />
+<br />
+WHY ON EARTH DID YOU REVIVE THIS<br />
+<br />
+IT WAS DAMN NEAR A YEAR OLD!!!<br />
+<br />
+/me sobs uncontrollably :cry:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">BigBob</span><br />
+			<span class="date small text-muted">6th June 2003 20:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can not see Zensoft's Hypersphere, am I suppose to do something beside copy and paste?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">6th June 2003 21:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		not if its is a digital clock :p<br />
+<br />
+you should copy each part into the correct 'section' of the superscope and make sure you have it set to lines, not dots (or vice versa)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th June 2003 21:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		somebody whack this thread &gt;_&lt;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">BigBob</span><br />
+			<span class="date small text-muted">6th June 2003 22:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I got it now!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">BigBob</span><br />
+			<span class="date small text-muted">6th June 2003 22:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Would it be possible to make any object in the forth demension, like a cylinder or a rectangle?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">7th June 2003 01:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		use the edit button!!!<br />
+<br />
+well a rectangle is obviously very easy.  take the hypercube code and stretch it along the axes.  a hypercylinder is harder, although possible (look at the 3d sphere code and play w/ that).<br />
+<br />
+basically, 4d works more or less like 3d, except you have 4 axes to work with.<br />
+<br />
+so, you would be typing w1=...;y1=...;z1=...;x1=...; then use the rest of the engine to convert it to 2d.<br />
+<br />
+i second atero's request for a lock
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">7th June 2003 02:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		weell.. if you looking at basic shapes like rectangles etc. It can be a bit confusing. By definition, a rectangle rectangular prism is a shape that has at least one set of sides a different size. So you have to work out how 'long' you 4th dimention is going to be. Same deal with cylinders, only evern more complicated, as a cylinder is definable only as a 3d object, something like (sqrt(x*x+y*y)*z). To put it in 4d you have to really use your imagination.  <br />
+<br />
+For example a 4d cylender could be like an infinate 'shaft' of spheres heading off along the 4th dimention. Or and infinate series of tunnels heading off in parrallel to the first tunnel. Although these descriptions are using 3d terms, so you have to try to imagine it like that in 4d.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">7th June 2003 03:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well siddhartha, the best way to think of it is that a 3D cylinder is an 'Extruded Circle', therefor the 3D version of circle is sphere, that makes the 4D cylinder an 'Extruded Sphere'.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">7th June 2003 03:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		nice one.. <br />
+the problem is obviously that we are used to thinking in terms of 3d geometry. but when in gets to 4d, its hard to imagin what properties the fourth dimention should take on. Unless you are talking about figures that have equal properties on all axes (like cubes and spheres) you have to make up the 4th axis from what <i>seems</i> to be the logical way.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Wiser87</span><br />
+			<span class="date small text-muted">7th June 2003 07:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:confused: :igor: <br />
+Help... I think my head's gonna explode... :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">7th June 2003 16:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		going off of what Zvensoft said:<br />
+<br />
+you start with a point- the first dimension.  You choose an arbitrary direction and translate that point and connect them with a line.  You then take those two points and extend them in another arbitrary direction and connect them with a line.  This is 2D.  Take those four points and extend them in another arbitrary dimension, and connect them with a line.  This is the third dimension.  Now you can take those eight points and extend them in an arbitrary dimension, connecting them with lines.  This is the 4th dimension.  You can continue doing this forever.  <br />
+<br />
+Try drawing this (you need a pencil and a lot of room)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">7th June 2003 19:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		okay, what you all need to do is shut the fuck up, read the annotated flatland, then flatterland, and <b>go away</b> &gt;_&lt;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Wiser87</span><br />
+			<span class="date small text-muted">7th June 2003 21:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero </i><br />
+<b>okay, what you all need to do is shut the fuck up, read the annotated flatland, then flatterland, and <b>go away</b> &gt;_&lt; </b></blockquote>
+Hehe... I have flatland.  Quite interesting.<br />
+<br />
+:D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WHCode RED</span><br />
+			<span class="date small text-muted">9th June 2003 20:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		2 days isnt old right? .... after reading some of these posts I am having a hard time recognizing sentences... especially...<br />
+<br />
+
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+<b>(By the way, the book you're reading is that a physical or electronic book? In the second case I wouldn't mind getting a copy...) </b></blockquote>
+It took me 3 re-reads to understand &quot;physical or electronic book&quot;. Im.. so ... disoriented.<br />
+<br />
+*electronic buzzing coming from head*<br />
+<br />
+:igor: :igor: :igor: :igor: :igor: :igor:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">9th June 2003 21:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		but one year is.  and it was almost dead again.  and you revived it, again.  fuckers &gt;_&lt;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">9th June 2003 21:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		notice the person who revived it never came back.<br />
+<br />
+somebody lock this.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WHCode RED</span><br />
+			<span class="date small text-muted">9th June 2003 21:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		almost dead??? maybe, but the AVS forums are going so slow it was the third thread from the top
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">9th June 2003 21:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		just STFU and stop posting in this thread.  there is no point in keeping this alive any longer.  i will banish the next person who posts here (unless it is a mod locking it) to hell ( i am a minister...a friend was bored during study hall and found a site that ordains you for free, so i got ordained just for kicks.  i am not very religious or anything in fact, i don't believe much in religion)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Rovastar</span><br />
+			<span class="date small text-muted">9th June 2003 22:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Locked but please chill people
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

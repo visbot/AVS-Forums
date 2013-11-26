@@ -1,83 +1,132 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Phase diagram, part II AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Phase diagram, part II AVS" />
 
-  <title>Phase diagram, part II - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Phase diagram, part II - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Phase diagram, part II</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=166309">Phase diagram, part II</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">threeoftwelve</span><br />
-      <span class="date small text-muted">23rd January 2004 21:53 GMT</span></p>
 
-      <p class="post-content"><strong>Phase diagram, part II</strong><br />
-      Alright. this is what i'm trying to do. I put this "x=getosc(i,0,1);y=-getosc(i,0,2)" into the Per Point field. Left channel on X axis, Right channel on Y axis. Not good enough. What i want to do, is almost the same thing, only left and right are each 45 degrees to the X axis, 90 degrees from each other, with 'in phase' information on the X axis, and 'out of phase' information on the Y axis. If anybody here listens to vinyl, they'll know what i'm talking about.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Phase diagram, part II</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=166309">Phase diagram, part II</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
-      <span class="date small text-muted">23rd January 2004 22:24 GMT</span></p>
 
-      <p class="post-content">Ok from what I'm reading, that doesn't make any sense at all. Right and left are 45 degrees from each other?? Right and left channels? What's right and left because the channels are just signals not something you can rotate.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">23rd January 2004 23:13 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">threeoftwelve</span><br />
+			<span class="date small text-muted">23rd January 2004 21:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Phase diagram, part II</strong><br />
+		
+		
 
-      <p class="post-content">I think I get what he is trying to say. I think he wants something like to clusters of dots coming out of the center of the SSC, each representing one channel. And in the center there would be a cluster representing the things the two channels have in common. I could be very wrong, that post was kinda cryptic.</p>
-    </div>
-    <hr />
+		Alright. this is what i'm trying to do.  I put this &quot;x=getosc(i,0,1);y=-getosc(i,0,2)&quot; into the Per Point field. Left channel on X axis, Right channel on Y axis. Not good enough. What i want to do, is almost the same thing, only left and right are each 45 degrees to the X axis, 90 degrees from each other, with 'in phase' information on the X axis, and 'out of phase' information on the Y axis. If anybody here listens to vinyl, they'll know what i'm talking about.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">24th January 2004 03:35 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Sounds like you need:<br />
-      <br />
-      l=getosc(i,0,1);r=getosc(i,0,2);<br />
-      x=(l+r)*.707;<br />
-      y=(l-r)*.707;<br />
-      <br />
-      Easy as pie.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UIUC85</span><br />
+			<span class="date small text-muted">23rd January 2004 22:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">threeoftwelve</span><br />
-      <span class="date small text-muted">24th January 2004 10:43 GMT</span></p>
+		Ok from what I'm reading, that doesn't make any sense at all.  Right and left are 45 degrees from each other??  Right and left channels?   What's right and left because the channels are just signals not something you can rotate.
+		</p>
+</div>
 
-      <p class="post-content">thanks, guys. I knew it would be hard to understand, i'm not really that good at explaining stuff. thanks alot.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">23rd January 2004 23:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think I get what he is trying to say.  I think he wants something like  to clusters of dots coming out of the center of the SSC, each representing one channel.  And in the center there would be a cluster representing the things the two channels have in common.  I could be very wrong, that post was kinda cryptic.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">24th January 2004 03:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sounds like you need:<br />
+<br />
+l=getosc(i,0,1);r=getosc(i,0,2);<br />
+x=(l+r)*.707;<br />
+y=(l-r)*.707;<br />
+<br />
+Easy as pie.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">threeoftwelve</span><br />
+			<span class="date small text-muted">24th January 2004 10:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thanks, guys. I knew it would be hard to understand, i'm not really that good at explaining stuff. thanks alot.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

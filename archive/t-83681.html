@@ -1,161 +1,200 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Some more wishes... AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Some more wishes... AVS" />
 
-  <title>Some more wishes... - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Some more wishes... - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">Some more wishes...</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=83681">Some more wishes...</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">5th April 2002 00:56 GMT</span></p>
 
-      <p class="post-content"><strong>Some more wishes...</strong><br />
-      Note : Some seem to only will stay as wishes =(<br />
-      <br />
-      -RenderAPE - 3D : (2 wishes)<br />
-      ------------The ability for users to send 3D "object preset" to Winamp site, under Plugins. (Of course, this would need users being able to MAKE 3D's)<br />
-      ------------A textbox for movement, variables are d (distance, affects size), x,y,z (those for location movement), rx, ry, rz (Rotation in those Axis), and, if possible, Red, Green, and Blue.<br />
-      <br />
-      -Fast Brightness - Affected colorspectrum can be edited<br />
-      <br />
-      -I heard of Trillinear Filtering... wait, never mind. Billinear Filtering is enough =)<br />
-      <br />
-      -Effect Lists - 2 Textboxes - One to determine how many frames the list commences, 1 to set how many frames until the list commences again.<br />
-      <br />
-      -AVS presets have presets for themselves (Alternatives - click somewhere and the preset changed to a desired alternative... Preset of a Preset can also be named. This makes it that Remixes won't clutter the AVS list too much)(One of the ones that is less likely to become true)<br />
-      <br />
-      -AVS now can dig to the depth of 2 folders in the right-click menu (Many packs of the same user, turn them into 1 folder. More space, less cluttered)<br />
-      <br />
-      -Daily/Weekly presets from the staffs. Who knows who's better at making presets, whether the Staffs or the non-Staffs :D<br />
-      <br />
-      -Monthly/Bi-weekly pack of the best presets in the AVS community.<br />
-      <br />
-      -I know it's mentioned before, but please, an Undo (if possible, Redo) button. Or, just to narrow it down, an Undo Delete button.<br />
-      <br />
-      -For the wishes in this forum to come true. Most/Some of them are for better AVS community - If they're made real, We'll all (probably) see much better presets. Who knows how good can AVS get up to... The Edge of the Universe is the limit.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">Some more wishes...</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=83681">Some more wishes...</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th April 2002 02:10 GMT</span></p>
 
-      <p class="post-content">Will add them to the list in the next update...<br />
-      <br />
-      Oh and for the tri-linear filtering, here's the scoop... (just read it slowly, I try to be clear :)). I've made a short image to illustrate the concepts:<br />
-      <br />
-      <a href="http://acko.net/dump/trilinear.png" target="_blank">http://acko.net/dump/trilinear.png</a><br />
-      <br />
-      Traditionally, real-time 3D on computers works by defining an object through a mesh of small triangles (a triangle is always flat) that compose the object's surface. To make them less boring, a texture (typically an image) is stretched over this surface.<br />
-      <br />
-      Now the texture obviously has a finite size, and when the camera comes too close to the surface, the individual texels (pixels of the texture) show as big squares on the screen. To counter this effect, bi-linear filtering was introduced. Instead of drawing the nearest texel, we blend the 4 surrounding texels with correct weights, so that you get a smooth surface. That fixes big ugly squares. The name comes from the fact that the color is blended linearly and in 2 dimensions (bi).<br />
-      <br />
-      On top of the texture looking like crap from up close, it also looked like crap from a large distance. Visualise the texture 'unstretched' again off the surface of the triangle. When the triangle gets smaller, the distance between the individual texels increases. Suppose you had an alternating white-black texture, like this:<br />
-      <br /></p>
-      <pre>
-<code>[ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ]</code>
-</pre><br />
-      <br />
-      When the texture is too small, so that only the even texels get picked to be drawn, we get:<br />
-      <pre>
-<code>[    0,    0,    0,    0,    0    ]</code>
-</pre><br />
-      <br />
-      which is something totally different. When the scale factor is not a decimal number, severe distortions occur.<br />
-      <br />
-      To counter this effect, MIP-mapping was introduced. This means that aside from the original texture, smaller copies of it are also stored. Suppose we have this texture:<br />
-      <br />
-      <pre>
-<code>[ 1, 0, 1, 1, 1, 0, 0, 1 ]</code>
-</pre><br />
-      <br />
-      We take the average of every 2 numbers, like this (and repeat the step):<br />
-      <br />
-      <pre>
-<code>[  0.5,    1,  0.5,  0.5 ]</code>
-</pre><br />
-      <br />
-      <pre>
-<code>[    0.75,        0.5    ]</code>
-</pre><br />
-      <br />
-      And when the triangle moves too far from the camera, we read the texels out of the smaller texture instead of the larger one. The distortions are gone, and like the human eye, we will see the average color if we move far away.<br />
-      <br />
-      Though MIP mapping was good (especially when combined with bi-linear filtering), it had one flaw: when you take a long polygon that is almost parallel to the viewing direction, you can visibly see where the renderer switches to a lower MIP level. To counter this, we add another layer of blending: on top of blending between the texels in one image, we blend between the texels in 2 separate MIP maps (and thus, in 3 directions). Now, the distortions in the distance are gone and separate mip maps blend smoothly too.<br />
-      <br />
-      <br />
-      Now... all that wasn't really necessary, but it has taught you something about how 3D and texture mapping work :). So when AVS does bilinear filtering, it simply means that when a movement specifies the coordinates (100.4, 105.1) that AVS will not draw pixel (100, 105) which is nearest, but that it will rather blend the pixels (100, 105), (101, 105), (100, 106), (101, 106) with correct weights. There is no need for MIP mapping, so no need for trilinear filtering (since there is no depth information anyway). Also, MIP maps are normally calculated when the program is started (it's slow, high-quality resizing), so they are too slow for real-time animations such as AVS.
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">5th April 2002 21:14 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">5th April 2002 00:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Some more wishes...</strong><br />
+		
+		
 
-      <p class="post-content">Hmm, just remembered one (that I think is) important wish :<br />
-      <br />
-      Instead of LineWidth in pixels, use % of screen size : This way, presets which critically uses edited LineWidth won't change much around different AVS window resolutions.</p>
-    </div>
-    <hr />
+		Note : Some seem to only will stay as wishes =(<br />
+<br />
+-RenderAPE - 3D : (2 wishes)<br />
+------------The ability for users to send 3D &quot;object preset&quot; to Winamp site, under Plugins. (Of course, this would need users being able to MAKE 3D's)<br />
+------------A textbox for movement, variables are d (distance, affects size), x,y,z (those for location movement), rx, ry, rz (Rotation in those Axis), and, if possible, Red, Green, and Blue.<br />
+<br />
+-Fast Brightness - Affected colorspectrum can be edited<br />
+<br />
+-I heard of Trillinear Filtering... wait, never mind. Billinear Filtering is enough =)<br />
+<br />
+-Effect Lists - 2 Textboxes - One to determine how many frames the list commences, 1 to set how many frames until the list commences again.<br />
+<br />
+-AVS presets have presets for themselves (Alternatives - click somewhere and the preset changed to a desired alternative... Preset of a Preset can also be named. This makes it that Remixes won't clutter the AVS list too much)(One of the ones that is less likely to become true)<br />
+<br />
+-AVS now can dig to the depth of 2 folders in the right-click menu (Many packs of the same user, turn them into 1 folder. More space, less cluttered)<br />
+<br />
+-Daily/Weekly presets from the staffs. Who knows who's better at making presets, whether the Staffs or the non-Staffs :D <br />
+<br />
+-Monthly/Bi-weekly pack of the best presets in the AVS community. <br />
+<br />
+-I know it's mentioned before, but please, an Undo (if possible, Redo) button. Or, just to narrow it down, an Undo Delete button.<br />
+<br />
+-For the wishes in this forum to come true. Most/Some of them are for better AVS community - If they're made real, We'll all (probably) see much better presets. Who knows how good can AVS get up to... The Edge of the Universe is the limit.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
-      <span class="date small text-muted">5th April 2002 22:08 GMT</span></p>
+	<hr />
 
-      <p class="post-content">So would tri-linear filtering be possible on AVS or would it slow down too much? From what I got from your article tri-linear would make the texture much more clearer and less glitchy. What about a qua-linear filtering? But of course nic01 has a good point, bi-linear is enough...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th April 2002 02:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th April 2002 01:21 GMT</span></p>
+		Will add them to the list in the next update...<br />
+<br />
+Oh and for the tri-linear filtering, here's the scoop... (just read it slowly, I try to be clear :)). I've made a short image to illustrate the concepts:<br />
+<br />
+<a href="http://acko.net/dump/trilinear.png" target="_blank">http://acko.net/dump/trilinear.png</a><br />
+<br />
+Traditionally, real-time 3D on computers works by defining an object through a mesh of small triangles (a triangle is always flat) that compose the object's surface. To make them less boring, a texture (typically an image) is stretched over this surface.<br />
+<br />
+Now the texture obviously has a finite size, and when the camera comes too close to the surface, the individual texels (pixels of the texture) show as big squares on the screen. To counter this effect, bi-linear filtering was introduced. Instead of drawing the nearest texel, we blend the 4 surrounding texels with correct weights, so that you get a smooth surface. That fixes big ugly squares. The name comes from the fact that the color is blended linearly and in 2 dimensions (bi).<br />
+<br />
+On top of the texture looking like crap from up close, it also looked like crap from a large distance. Visualise the texture 'unstretched' again off the surface of the triangle. When the triangle gets smaller, the distance between the individual texels increases. Suppose you had an alternating white-black texture, like this:<br />
+<br />
+<pre><code>[ 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ]</code></pre><br />
+<br />
+When the texture is too small, so that only the even texels get picked to be drawn, we get:<br />
+<pre><code>[    0,    0,    0,    0,    0    ]</code></pre><br />
+<br />
+which is something totally different. When the scale factor is not a decimal number, severe distortions occur.<br />
+<br />
+To counter this effect, MIP-mapping was introduced. This means that aside from the original texture, smaller copies of it are also stored. Suppose we have this texture:<br />
+<br />
+<pre><code>[ 1, 0, 1, 1, 1, 0, 0, 1 ]</code></pre><br />
+<br />
+We take the average of every 2 numbers, like this (and repeat the step):<br />
+<br />
+<pre><code>[  0.5,    1,  0.5,  0.5 ]</code></pre><br />
+<br />
+<pre><code>[    0.75,        0.5    ]</code></pre><br />
+<br />
+And when the triangle moves too far from the camera, we read the texels out of the smaller texture instead of the larger one. The distortions are gone, and like the human eye, we will see the average color if we move far away.<br />
+<br />
+Though MIP mapping was good (especially when combined with bi-linear filtering), it had one flaw: when you take a long polygon that is almost parallel to the viewing direction, you can visibly see where the renderer switches to a lower MIP level. To counter this, we add another layer of blending: on top of blending between the texels in one image, we blend between the texels in 2 separate MIP maps (and thus, in 3 directions). Now, the distortions in the distance are gone and separate mip maps blend smoothly too.<br />
+<br />
+<br />
+Now... all that wasn't really necessary, but it has taught you something about how 3D and texture mapping work :). So when AVS does bilinear filtering, it simply means that when a movement specifies the coordinates (100.4, 105.1) that AVS will not draw pixel (100, 105) which is nearest, but that it will rather blend the pixels (100, 105), (101, 105), (100, 106), (101, 106) with correct weights. There is no need for MIP mapping, so no need for trilinear filtering (since there is no depth information anyway). Also, MIP maps are normally calculated when the program is started (it's slow, high-quality resizing), so they are too slow for real-time animations such as AVS.
+		</p>
+</div>
 
-      <p class="post-content">Ouch... read my explanation again. Or maybe I'll shorten it and leave out the non-relevant stuff:<br />
-      <br />
-      Bi-linear filtering means that, when a pixel with non-integer coordinates is needed, the 4 surrounding pixels are blended with correct weights, so that you don't see the individual pixels. This makes movements/transformations a lot more accurate, because small movements are not lost.<br />
-      <br />
-      Mip-mapping means that you calculate high-quality smaller versions of the image on before hand, and when the distance between individual pixels gets too large, you read out of a smaller mip-map-level to avoid distortion and aliasing of details. This only works when depth information is available, e.g. in 3D geometry.<br />
-      <br />
-      Tri-linear filtering means that you have bi-linear filtering of texels, and that you blend between mip-map levels as well... so instead of 'switching' to a lower mip-map level, you blend from one into the other. The extra level of blending shouldn't have been called tri, because it makes it sound as if the 3 steps are related.<br />
-      <br />
-      There's no such thing as quad-linear filtering, simply because there is no other 'dimension' to blend in:<br />
-      there are 2 for the image itself, and 1 for the separate mip-levels...<br />
-      <br />
-      <br />
-      Here's a good page with images that explain mip mapping and trilinear filtering... the actual text is cyrillic (Russian, I think) though.<br />
-      <br />
-      <a href="http://www.ixbt.com/video/3linear.html" target="_blank">http://www.ixbt.com/video/3linear.html</a><br />
-      <br />
-      Just remember that none of this makes sense in AVS, because movements do not have depth information and AVS is simply a 2D tool.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">5th April 2002 21:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmm, just remembered one (that I think is) important wish :<br />
+<br />
+Instead of LineWidth in pixels, use % of screen size : This way, presets which critically uses edited LineWidth won't change much around different AVS window resolutions.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NoSage</span><br />
+			<span class="date small text-muted">5th April 2002 22:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		So would tri-linear filtering be possible on AVS or would it slow down too much?  From what I got from your article tri-linear would make the texture much more clearer and less glitchy.  What about a qua-linear filtering?  But of course nic01 has a good point, bi-linear is enough...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th April 2002 01:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ouch... read my explanation again. Or maybe I'll shorten it and leave out the non-relevant stuff:<br />
+<br />
+Bi-linear filtering means that, when a pixel with non-integer coordinates is needed, the 4 surrounding pixels are blended with correct weights, so that you don't see the individual pixels. This makes movements/transformations a lot more accurate, because small movements are not lost.<br />
+<br />
+Mip-mapping means that you calculate high-quality smaller versions of the image on before hand, and when the distance between individual pixels gets too large, you read out of a smaller mip-map-level to avoid distortion and aliasing of details. This only works when depth information is available, e.g. in 3D geometry.<br />
+<br />
+Tri-linear filtering means that you have bi-linear filtering of texels, and that you blend between mip-map levels as well... so instead of 'switching' to a lower mip-map level, you blend from one into the other. The extra level of blending shouldn't have been called tri, because it makes it sound as if the 3 steps are related.<br />
+<br />
+There's no such thing as quad-linear filtering, simply because there is no other 'dimension' to blend in:<br />
+there are 2 for the image itself, and 1 for the separate mip-levels...<br />
+<br />
+<br />
+Here's a good page with images that explain mip mapping and trilinear filtering... the actual text is cyrillic (Russian, I think) though.<br />
+<br />
+<a href="http://www.ixbt.com/video/3linear.html" target="_blank">http://www.ixbt.com/video/3linear.html</a><br />
+<br />
+Just remember that none of this makes sense in AVS, because movements do not have depth information and AVS is simply a 2D tool.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

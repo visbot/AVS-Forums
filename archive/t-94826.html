@@ -1,155 +1,257 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="3D Spheres AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" 3D Spheres AVS" />
 
-  <title>3D Spheres - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> 3D Spheres - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">3D Spheres</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=94826">3D Spheres</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Aliendesaster</span><br />
-      <span class="date small text-muted">17th July 2002 08:05 GMT</span></p>
 
-      <p class="post-content"><strong>3D Spheres</strong><br />
-      Is it possible to code this 3D Sphere in Winamp?<br />
-      <br />
-      It&#194;&#180;s coded my Ken Silverman [created Buildt engine]<br />
-      <br />
-      <a href="http://www.advsys.net/ken/spherand.exe" target="_blank">http://www.advsys.net/ken/spherand.exe</a></p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">3D Spheres</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=94826">3D Spheres</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">8th August 2002 22:26 GMT</span></p>
 
-      <p class="post-content">I assume you mean "code in AVS" rather than "code in Winamp".<br />
-      <br />
-      It's easy, but the result is kind of boring... there are lots of more exciting things to do with it.<br />
-      <br />
-      Note that the sphere I generate is not exactly the same as in the program you specified: points are randomly distributed rather than equally spaced apart. The method I used for generating the unit vectors is rather messy too because I map a cube to a sphere: this results in clustering at the 8 corners (turn up the n value to make this more visible).<br />
-      To prevent this, add<br />
-      <br />
-      red=if(below(x1,1),0,1);<br />
-      <br />
-      under the line<br />
-      <br />
-      x1=1/sqrt(sqr(px)+sqr(py)+sqr(pz));<br />
-      <br />
-      in the superscope's point code. This will generate a correct uniform random distribution (though you have less points).</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Aliendesaster</span><br />
-      <span class="date small text-muted">8th August 2002 23:12 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Aliendesaster</span><br />
+			<span class="date small text-muted">17th July 2002 08:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>3D Spheres</strong><br />
+		
+		
 
-      <p class="post-content">thx<br />
-      <br />
-      maybe you have already coded so many exiting things you can&#194;&#180;t enjoy this nice simple sphere:D hehe I do;)</p>
-    </div>
-    <hr />
+		Is it possible to code this 3D Sphere in Winamp?<br />
+<br />
+It´s coded my Ken Silverman [created Buildt engine]<br />
+<br />
+<a href="http://www.advsys.net/ken/spherand.exe" target="_blank">http://www.advsys.net/ken/spherand.exe</a>
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ssj2gohan1018</span><br />
-      <span class="date small text-muted">15th August 2002 02:42 GMT</span></p>
+	<hr />
 
-      <p class="post-content">KEN SILVERMAN ROCKS i like one of his early games kens laberint(i know i kant speel)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">8th August 2002 22:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">11th September 2002 21:33 GMT</span></p>
+		I assume you mean &quot;code in AVS&quot; rather than &quot;code in Winamp&quot;.<br />
+<br />
+It's easy, but the result is kind of boring... there are lots of more exciting things to do with it.<br />
+<br />
+Note that the sphere I generate is not exactly the same as in the program you specified: points are randomly distributed rather than equally spaced apart. The method I used for generating the unit vectors is rather messy too because I map a cube to a sphere: this results in clustering at the 8 corners (turn up the n value to make this more visible).<br />
+To prevent this, add <br />
+<br />
+red=if(below(x1,1),0,1);<br />
+<br />
+under the line<br />
+<br />
+x1=1/sqrt(sqr(px)+sqr(py)+sqr(pz));<br />
+<br />
+in the superscope's point code. This will generate a correct uniform random distribution (though you have less points).
+		</p>
+</div>
 
-      <p class="post-content"><strong>my sphere</strong><br />
-      just saw this and had to add this :) here is my 3d ssc sphere (the intro to one of my packs), looks pretty.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">11th September 2002 22:50 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Aliendesaster</span><br />
+			<span class="date small text-muted">8th August 2002 23:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Dude, no file :p<br />
-      <br />
-      Since there's a sharing thing going on, I thought I'd share mine too. Thers were part of an idea that hasn't come to fruition. The never really worked to my satisfaction.</p>
-    </div>
-    <hr />
+		thx<br />
+<br />
+maybe you have already coded so many exiting things you can´t enjoy this nice simple sphere:D  hehe I do;)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">12th September 2002 01:49 GMT</span></p>
+	<hr />
 
-      <p class="post-content">cack... i always do things like that :P i'll go check yours out in a bit</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ssj2gohan1018</span><br />
+			<span class="date small text-muted">15th August 2002 02:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Aliendesaster</span><br />
-      <span class="date small text-muted">12th September 2002 14:18 GMT</span></p>
+		KEN SILVERMAN ROCKS i like one of his early games kens laberint(i know i kant speel)
+		</p>
+</div>
 
-      <p class="post-content">:up: Go[o]d work.:p<br />
-      <br />
-      I modified your work, some small changes, but it no sphere anymore, tell me what it is :blah:</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">12th September 2002 17:21 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">11th September 2002 21:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>my sphere</strong><br />
+		
+		
 
-      <p class="post-content">the first one still looked quite spherish the second one was just a mess... like a figure eight or something? The first one was cool.<br />
-      <br />
-      PS I really love the sort of competition element here, makes everyone want to improve, and works!<br />
-      <br />
-      check this out:</p>
-    </div>
-    <hr />
+		just saw this and had to add this :) here is my 3d ssc sphere (the intro to one of my packs), looks pretty.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">13th September 2002 02:13 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Nifty... I liked Aliendesaster's second one better than the first. Meh... I'll have to see what I can do with it now.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">11th September 2002 22:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">13th September 2002 17:28 GMT</span></p>
+		Dude, no file :p<br />
+<br />
+Since there's a sharing thing going on, I thought I'd share mine too. Thers were part of an idea that hasn't come to fruition. The never really worked to my satisfaction.
+		</p>
+</div>
 
-      <p class="post-content">Man, I'm sick of spheres so here is a golden dodecahedron, it's one of my entries for the deviantart bw contest.<br />
-      <br />
-      <a href="http://www.deviantart.com/deviation/701507" target="_blank">http://www.deviantart.com/deviation/701507</a></p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">12th September 2002 01:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		cack... i always do things like that :P i'll go check yours out in a bit
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Aliendesaster</span><br />
+			<span class="date small text-muted">12th September 2002 14:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		:up: Go[o]d work.:p <br />
+<br />
+I modified your work, some small changes, but it no sphere anymore, tell me what it is :blah:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">12th September 2002 17:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		the first one still looked quite spherish the second one was just a mess... like a figure eight or something? The first one was cool.<br />
+<br />
+PS I really love the sort of competition element here, makes everyone want to improve, and works!<br />
+<br />
+check this out:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">13th September 2002 02:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nifty... I liked Aliendesaster's second one better than the first. Meh... I'll have to see what I can do with it now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">13th September 2002 17:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Man, I'm sick of spheres so here is a golden dodecahedron, it's one of my entries for the deviantart bw contest.<br />
+<br />
+<a href="http://www.deviantart.com/deviation/701507" target="_blank">http://www.deviantart.com/deviation/701507</a>
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

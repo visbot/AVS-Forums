@@ -1,167 +1,279 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="&quot;file writer&quot; APE AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" &quot;file writer&quot; APE AVS" />
 
-  <title>"file writer" APE - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> &quot;file writer&quot; APE - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">"file writer" APE</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=188478">"file writer" APE</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">1st August 2004 00:47 GMT</span></p>
 
-      <p class="post-content"><strong>"file writer" APE</strong><br />
-      I don't know how useful this would be, but I thought it might be nice to have a "file loader/writer" APE that would save and restore the global variables and array to/from a file.<br />
-      <br />
-      Essentially, it would monitor a global and would load or save the globals data when it reached an arbitrary number.<br />
-      <br />
-      The author could set it to always have the same name, or to have the user select a name.<br />
-      <br />
-      This could be nice for presets such as Shock Value's architectural design some games so level progress could be saved.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">&quot;file writer&quot; APE</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=188478">&quot;file writer&quot; APE</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AvsManDan</span><br />
-      <span class="date small text-muted">2nd August 2004 01:57 GMT</span></p>
 
-      <p class="post-content">I had the exact idea recently. I wrote down several pages of what it could look and act like. But I have little programming skill. I was going to work until I had a rough working version and then give someone smarter the source to fix it up, but I can't figure it out.<br />
-      <br />
-      I think it should basicly look like the effect list with read/write commands. There should be a scroolbar for reg00-99 with checkboxes on the side to save wanted variables all at once and then restore them manualy or when the code says to. An option for restoring the global megabuffer may be possible but would require good optomisation and possibly compression to prevent huge presets.<br />
-      <br />
-      When I get spare time I will draw an example of what I had in mind, around Tuesday afternoon. Architectural Design is an excellent preset, and I believe that it would be the first to use this APE.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">2nd August 2004 20:31 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">1st August 2004 00:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>&quot;file writer&quot; APE</strong><br />
+		
+		
 
-      <p class="post-content">The gmegabuf need not be complicated/bloated...just have two fields asking the user for the range to save.</p>
-    </div>
-    <hr />
+		I don't know how useful this would be, but I thought it might be nice to have a &quot;file loader/writer&quot; APE that would save and restore the global variables and array to/from a file.<br />
+<br />
+Essentially, it would monitor a global and would load or save the globals data when it reached an arbitrary number.<br />
+<br />
+The author could set it to always have the same name, or to have the user select a name.<br />
+<br />
+This could be nice for presets such as Shock Value's architectural design some games so level progress could be saved.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">5th August 2004 21:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">this idea was posted before by the aforementioned shock-value :)<br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=172241&amp;highlight=gmegabuf" target="_blank">http://forums.winamp.com/showthread....light=gmegabuf</a></p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AvsManDan</span><br />
+			<span class="date small text-muted">2nd August 2004 01:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AvsManDan</span><br />
-      <span class="date small text-muted">6th August 2004 03:07 GMT</span></p>
+		I had the exact idea recently. I wrote down several pages of what it could look and act like. But I have little programming skill. I was going to work until I had a rough working version and then give someone smarter the source to fix it up, but I can't figure it out.<br />
+<br />
+I think it should basicly look like the effect list with read/write commands. There should be a scroolbar for reg00-99 with checkboxes on the side to save wanted variables all at once and then restore them manualy or when the code says to. An option for restoring the global megabuffer may be possible but would require good optomisation and possibly compression to prevent huge presets.<br />
+<br />
+When I get spare time I will draw an example of what I had in mind, around Tuesday afternoon. Architectural Design is an excellent preset, and I believe that it would be the first to use this APE.
+		</p>
+</div>
 
-      <p class="post-content">Sorry I'm late on an example of what it might look like. Cat had to be put down and I have had no sleep. Will do it Saturday.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">6th August 2004 05:11 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">2nd August 2004 20:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Sorry about that...I've gone through that twice.</p>
-    </div>
-    <hr />
+		The gmegabuf need not be complicated/bloated...just have two fields asking the user for the range to save.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">6th August 2004 22:09 GMT</span></p>
+	<hr />
 
-      <p class="post-content">avsmandan: it can't really be done with the current APE SDK... you only have access to the registers but not to the gmegabuf from your APE</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">5th August 2004 21:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">6th August 2004 22:23 GMT</span></p>
+		this idea was posted before by the aforementioned shock-value :)<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=172241&amp;highlight=gmegabuf" target="_blank">http://forums.winamp.com/showthread....light=gmegabuf</a>
+		</p>
+</div>
 
-      <p class="post-content">Are you sure about that? The Texer II ape uses gmegabuf.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AvsManDan</span><br />
-      <span class="date small text-muted">6th August 2004 22:52 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AvsManDan</span><br />
+			<span class="date small text-muted">6th August 2004 03:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">I can't code anything yet anyway, let alone start with the Winamp SDK. I was creating an outline of how it would work, I just can't yet code complex c++. I have all of tomorrow to do something, so I'll try to create my idea of what the APE should look like, mabey a working one, and link it.</p>
-    </div>
-    <hr />
+		Sorry I'm late on an example of what it might look like. Cat had to be put down and I have had no sleep. Will do it Saturday.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">7th August 2004 13:07 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Texer II doesnt use gmegabuf<br />
-      Texer II uses the evallib<br />
-      which enables you to use gmegabuf in your scripts... you can use this to transport things from the gmegabuf to your APE... but this is VERY slow</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">6th August 2004 05:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AvsManDan</span><br />
-      <span class="date small text-muted">7th August 2004 15:50 GMT</span></p>
+		Sorry about that...I've gone through that twice.
+		</p>
+</div>
 
-      <p class="post-content">I don't think it matters if loading is slow because you could load the data/high scores once and use it. Later, you could also save the data you wanted using getkbmouse and code. If it took a second or two loading a few points of data then I think it is okay as long as it isn't used constantly. Since we have access to the registers we can still save a lot without any loss of framerate.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">7th August 2004 19:10 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">6th August 2004 22:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">to save gmegabuf completely you would need at least 10,000 runs of a piece of AVS code</p>
-    </div>
-    <hr />
+		avsmandan: it can't really be done with the current APE SDK... you only have access to the registers but not to the gmegabuf from your APE
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">8th August 2004 18:40 GMT</span></p>
+	<hr />
 
-      <p class="post-content">wow...that's almost a tenth a second, on a bad day. :rolleyes:<br />
-      one 1,000 point superscope with a=b, ten frames. it's not that slow. even if you were saving the whole of gmegabuf, it wouldn't take that long...like avsmandan said, you're only doing it once.<br />
-      <br />
-      however, i think what we need is an extention upon evallib that gives us a save() function:<br />
-      save(0 (megabuf) or 1 (gmegabuf),start,stop,index)<br />
-      which would save g/megabuf data to a data file (presetname.dat) under a certain index number. this way you could easily save and restore more than one set of data. i wouldn't think that it would be that hard to implement, either, especially considering the speed of which megabuf (the biggest hack of an array i've ever seen) was coded...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">6th August 2004 22:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">8th August 2004 19:46 GMT</span></p>
+		Are you sure about that?  The Texer II ape uses gmegabuf.
+		</p>
+</div>
 
-      <p class="post-content">Except for the fact that there is no one actively working on AVS right now...</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AvsManDan</span><br />
+			<span class="date small text-muted">6th August 2004 22:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can't code anything yet anyway, let alone start with the Winamp SDK. I was creating an outline of how it would work, I just can't yet code complex c++. I have all of tomorrow to do something, so I'll try to create my idea of what the APE should look like, mabey a working one, and link it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">7th August 2004 13:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Texer II doesnt use gmegabuf<br />
+Texer II uses the evallib<br />
+which enables you to use gmegabuf in your scripts... you can use this to transport things from the gmegabuf to your APE... but this is VERY slow
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AvsManDan</span><br />
+			<span class="date small text-muted">7th August 2004 15:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I don't think it matters if loading is slow because you could load the data/high scores once and use it. Later, you could also save the data you wanted using getkbmouse and code. If it took a second or two loading a few points of data then I think it is okay as long as it isn't used constantly. Since we have access to the registers we can still save a lot without any loss of framerate.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">7th August 2004 19:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		to save gmegabuf completely you would need at least 10,000 runs of a piece of AVS code
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">8th August 2004 18:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow...that's almost a tenth a second, on a bad day. :rolleyes:<br />
+one 1,000 point superscope with a=b, ten frames.  it's not that slow.  even if you were saving the whole of gmegabuf, it wouldn't take that long...like avsmandan said, you're only doing it once.<br />
+<br />
+however, i think what we need is an extention upon evallib that gives us a save() function:<br />
+save(0 (megabuf) or 1 (gmegabuf),start,stop,index)<br />
+which would save g/megabuf data to a data file (presetname.dat) under a certain index number.  this way you could easily save and restore more than one set of data.  i wouldn't think that it would be that hard to implement, either, especially considering the speed of which megabuf (the biggest hack of an array i've ever seen) was coded...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">8th August 2004 19:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Except for the fact that there is no one actively working on AVS right now...
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,289 +1,476 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Can&#194;&#180;t get that loop to work AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Can´t get that loop to work AVS" />
 
-  <title>Can&#194;&#180;t get that loop to work - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Can´t get that loop to work - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Can&#194;&#180;t get that loop to work</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=213492">Can&#194;&#180;t get that loop to work</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 09:59 GMT</span></p>
 
-      <p class="post-content"><strong>Can&#194;&#180;t get that loop to work</strong><br />
-      i need help, please look through this code:<br />
-      <br />
-      <font size="1">loop(32,exec2(assign(sb,if(above(gmegabuf(ct+2),z3),1,if(above,(r0/(1+gmegabuf(ct3+2)/dst),sqrt(sqr(x-gmegabuf(ct3))+sqr(y-gmegabuf(ct3+1)))),0,1))),assign(ct3,ct3+3)));</font><br />
-      <br />
-      this loop should assign sb 0 if the current point lies<br />
-      behind(z3 value)and near any buffered points.<br />
-      This code should be used to find invisible points.<br />
-      if you find any mistakes in the code feel free to post<br />
-      the corrected code or if you have a faster method to<br />
-      find invisible points please post.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Can´t get that loop to work</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=213492">Can´t get that loop to work</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">18th April 2005 12:39 GMT</span></p>
 
-      <p class="post-content">second if is fucked<br />
-      <br />
-      was that really worth posting?</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 13:08 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 09:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Can´t get that loop to work</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">i really don&#194;&#180;t see the point<br />
-      please post a corrected code</p>
-    </div>
-    <hr />
+		i need help, please look through this code:<br />
+<br />
+<font size="1">loop(32,exec2(assign(sb,if(above(gmegabuf(ct+2),z3),1,if(above,(r0/(1+gmegabuf(ct3+2)/dst),sqrt(sqr(x-gmegabuf(ct3))+sqr(y-gmegabuf(ct3+1)))),0,1))),assign(ct3,ct3+3)));</font> <br />
+<br />
+this loop should assign sb 0 if the current point lies<br />
+behind(z3 value)and near any buffered points.<br />
+This code should be used to find invisible points.<br />
+if you find any mistakes in the code feel free to post<br />
+the corrected code or if you have a faster method to <br />
+find invisible points please post.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">18th April 2005 13:35 GMT</span></p>
+	<hr />
 
-      <p class="post-content">if(above<b>,</b>(r0/(1+gmegabuf(ct3+2)/dst), ...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">18th April 2005 12:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 13:38 GMT</span></p>
+		second if is fucked<br />
+<br />
+was that really worth posting?
+		</p>
+</div>
 
-      <p class="post-content">oh a veery stupid mistake thanx jaak</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">18th April 2005 13:42 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 13:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Just a hint: Noone can be bothered to read that code because its all in one big block, people will be much more likely to help if you format it better, for example:<br />
-      <br /></p>
-      <pre>
-<code><br />loop(32,<br />  exec2(<br />    assign(<br />      sb<br />    ,<br />      if(above(gmegabuf(ct+2),z3),<br />        1<br />      ,<br />        if(<br />          above,(                         //extra comma<br />            r0/(1+gmegabuf(ct3+2)/dst)<br />          ,<br />            sqrt(<br />              sqr(<br />                x-gmegabuf(ct3)<br />              )<br />              +sqr(<br />                y-gmegabuf(ct3+1)<br />              )<br />            )<br />          )<br />        ,<br />          0<br />        ,<br />          1<br />        )<br />      )<br />    )<br />  ,<br />    assign(<br />      ct3<br />    ,<br />      ct3+3<br />    )<br />  )<br />); <br /><br /></code>
-</pre><br />
-      <br />
-      I know it looks long but its a lot easier to read
-    </div>
-    <hr />
+		i really don´t see the point <br />
+please post a corrected code
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 17:28 GMT</span></p>
+	<hr />
 
-      <p class="post-content">thanx pak-9<br />
-      but i have a more complicated (coding) problem in this preset.<br />
-      even with the mistake removed that code doesn&#194;&#180;t filter out<br />
-      normally invisible points.<br />
-      But i have totally no clue why.<br />
-      there are now two ways to go for me :<br />
-      1.hoping somebody gives me a working code or<br />
-      2.i figure out how to sort fast 4096 points.<br />
-      I&#194;&#180;ll start developing a sorting engine.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">18th April 2005 13:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">18th April 2005 18:16 GMT</span></p>
+		if(above<b>,</b>(r0/(1+gmegabuf(ct3+2)/dst), ...
+		</p>
+</div>
 
-      <p class="post-content">I think its unlikely you need to sort the points in your preset.<br />
-      <br />
-      If you explain the problem fully and in context it would help</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 18:27 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 13:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">i assume u downloaded the preset above corrected the silly mistake.<br />
-      ok..<br />
-      in certain angles of torus u see points of the inner side of the torus which should be invisible.<br />
-      there two way get rid of these points:<br />
-      1. sort all the points by z3 value<br />
-      2. filter them with a very simple raytrace.<br />
-      my code above should be the 2. way but it filters only a little circle out.<br />
-      gmegabuf(ct3) is the x value of an simple geometrical model<br />
-      used for the raytrace.<br />
-      gmegabuf(ct3+1) y value.<br />
-      gmegabuf(ct3+2) z3 value.</p>
-    </div>
-    <hr />
+		oh a veery stupid mistake thanx jaak
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">18th April 2005 18:28 GMT</span></p>
+	<hr />
 
-      <p class="post-content">probably it could be the fault of my laptop<br />
-      3ghz 12fps at this preset. how fast is yours?</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">18th April 2005 13:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">18th April 2005 20:09 GMT</span></p>
+		Just a hint: Noone can be bothered to read that code because its all in one big block, people will be much more likely to help if you format it better, for example:<br />
+<br />
+<pre><code><br />
+loop(32,<br />
+  exec2(<br />
+    assign(<br />
+      sb<br />
+    ,<br />
+      if(above(gmegabuf(ct+2),z3),<br />
+        1<br />
+      ,<br />
+        if(<br />
+          above,(                         //extra comma<br />
+            r0/(1+gmegabuf(ct3+2)/dst)<br />
+          ,<br />
+            sqrt(<br />
+              sqr(<br />
+                x-gmegabuf(ct3)<br />
+              )<br />
+              +sqr(<br />
+                y-gmegabuf(ct3+1)<br />
+              )<br />
+            )<br />
+          )<br />
+        ,<br />
+          0<br />
+        ,<br />
+          1<br />
+        )<br />
+      )<br />
+    )<br />
+  ,<br />
+    assign(<br />
+      ct3<br />
+    ,<br />
+      ct3+3<br />
+    )<br />
+  )<br />
+); <br />
+<br />
+</code></pre><br />
+<br />
+I know it looks long but its a lot easier to read
+		</p>
+</div>
 
-      <p class="post-content">Oh sorry I didnt see that you posted the preset already, I'll check it when I get home.<br />
-      <br />
-      preliminarily (having not seen the preset) you just have a culling/occlusion problem. If you store/calculate the normal at each point on the torus you can do a simple check to see if the vertex is facing away from the camera. Do a dot product with the camera vector and check if the angle is above a certain value, well, zero I guess (I cant really remember this all off the top of my head)<br />
-      <br />
-      torus is a bit of a bastard because you cant do any nice quick hacks that I can think of.... hmm, maybe splitting the torus into rings. Nah, I think a hack would be more complicated than just doing it right.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">18th April 2005 22:19 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 17:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Pak, simple normal calculation and bf culling isn`t enough for torus<br />
-      <br />
-      <a href="http://www.deviantart.com/deviation/6457036/" target="_blank">http://www.deviantart.com/deviation/6457036/</a><br />
-      <br />
-      really old preset and unfinished preset...<br />
-      it`s with little help from coned, to correct the clipping problem. It is quite nasty hack ya know.<br />
-      Torus can get intersected in 4 places if you trace line from eye through it, this means that regular bf culling does not work, if you do not want to use use max. blending... which you could actually live with in your example preset.<br />
-      <br />
-      Anyways, to correct the torus clipping problem, which i assume you want to do, you can use<br />
-      a) expencive raytracing hack<br />
-      b) relatevely fast and really nasty hack described below<br />
-      c) even slower way to sort the verices and do some dark magic *g*<br />
-      <br />
-      as for b. the one you can see from example preset:<br />
-      basically you have to split torus in 2, front and back and then:<br />
-      1. draw back normally<br />
-      2. draw front so it overlays not required part of back (try to disable 3rd scope in my preset)<br />
-      3. draw front normally<br />
-      <br />
-      as for you, if you are not going to advance that preset from its current state, i reccomend you just to use simple depth shading in addition to lighting shading to be able to use max blending so you won`t have clipping problems.<br />
-      <br />
-      [edit]<br />
-      Actually, I don`t know, I am really really sleepy right now. It would be best if you tolf us exactly what are you trying to do, because using the "correct" and "perfect" method with avs is usually the stupidest way of doing something, just remember that :p<br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      As a side note... This preset is just a tech demo. I had a much better and similar stuff cooking for a actual preset, but I`m not working on it anymore...</p>
-    </div>
-    <hr />
+		thanx pak-9<br />
+but i have a more complicated (coding) problem in this preset.<br />
+even with the mistake removed that code doesn´t filter out <br />
+normally invisible points.<br />
+But i have totally no clue why.<br />
+there are now two ways to go for me :<br />
+1.hoping somebody gives me a working code or<br />
+2.i figure out how to sort fast 4096 points.<br />
+I´ll start developing a sorting engine.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">19th April 2005 01:50 GMT</span></p>
+	<hr />
 
-      <p class="post-content">actually simple bf culling is enough for the torus if you render four superscopes. this is done by rendering the back facing back half, front facing back half then back facing front half and finally front facing front half. This can be done with a simple z check and normal check and using all four combinations.<br />
-      <br />
-      anything based totally on circles can usually be done correctly with no sorting or hax. this means shapes like torii, spheres and cylinders and arrangements like having objects on the points of a regular polygon etc...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">18th April 2005 18:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">19th April 2005 06:43 GMT</span></p>
+		I think its unlikely you need to sort the points in your preset.<br />
+<br />
+If you explain the problem fully and in context it would help
+		</p>
+</div>
 
-      <p class="post-content">...and which is what i am doing in the preset<br />
-      <br />
-      <br />
-      ...basically</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">19th April 2005 07:03 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 18:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">pak that what you suggest is already in the preset.<br />
-      got an idea : using my current scope as feeder scope.<br />
-      split the points into +z and -z and draw the nearer points later. that is actually what jheriko did suggest but i will leave out the backfacing halfes.<br />
-      I&#194;&#180;ll report if that works.</p>
-    </div>
-    <hr />
+		i assume u downloaded the preset above corrected the silly mistake.<br />
+ok..<br />
+in certain angles of torus u see points of the inner side of the torus which should be invisible.<br />
+there two way get rid of these points:<br />
+1. sort all the points by z3 value<br />
+2. filter them with a very simple raytrace.<br />
+my code above should be the 2. way but it filters only a little circle out.<br />
+gmegabuf(ct3) is the x value of an simple geometrical model<br />
+used for the raytrace.<br />
+gmegabuf(ct3+1) y value.<br />
+gmegabuf(ct3+2) z3 value.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">19th April 2005 12:55 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">18th April 2005 18:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by jheriko</i><br />
-        <b>actually simple bf culling is enough for the torus if you render four superscopes. this is done by rendering the back facing back half, front facing back half then back facing front half and finally front facing front half. This can be done with a simple z check and normal check and using all four combinations.<br />
-        <br />
-        anything based totally on circles can usually be done correctly with no sorting or hax. this means shapes like torii, spheres and cylinders and arrangements like having objects on the points of a regular polygon etc...</b>
-      </blockquote>I dont see how this would work, because you cant split the torus into 4 in the same way for all angles. If you imagine looking at the tours from the side and splitting it into 4 as you suggest, then rotate it 90 degrees so you are looking at it from the top (i.e. it looks like a fat circle) the four pieces are the wrong shape to represent the front and back of the torus from the camera. You would have to reshape the 4 pieces depending on the rotation, which is a pretty nasty way to approach the problem imo. In fact rereading Jaak's post he is suggesting something similar where the torus is split into 2, where reshaping the two pieces is still necessary because the 'front' and 'back' different shapes from different angles.<br />
-      <br />
-      I'm surprised the standard bf culling method doesnt work to be honest, because I would think you would compare the normal of the vertex on the torus with a camera ray, but not literaly fire a ray from the camera, just consider a vector which is 0 degrees from the camera direction. Then dot product that with the normal. But I havent actually implemented a torus model in AVS so I'm not going to pretend to be an authority on it.<br />
-      <br />
-      Like Jaak says you need to post an updated version of the preset really, that version you posted at the start is just a ring of dots :P
-    </div>
-    <hr />
+		probably it could be the fault of my laptop<br />
+3ghz 12fps at this preset. how fast is yours?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">19th April 2005 15:06 GMT</span></p>
+	<hr />
 
-      <p class="post-content">i finally solved the problem.<br />
-      i have split that superscope into two:<br />
-      one with z3&lt;0 and one with z3&gt;0;<br />
-      i added noexecution for performance issues(the if(skip,...);doubles my framerate ;))<br />
-      here is the correctet version.<br />
-      thank you all for providing help.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">18th April 2005 20:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">19th April 2005 17:09 GMT</span></p>
+		Oh sorry I didnt see that you posted the preset already, I'll check it when I get home.<br />
+<br />
+preliminarily (having not seen the preset) you just have a culling/occlusion problem. If you store/calculate the normal at each point on the torus you can do a simple check to see if the vertex is facing away from the camera. Do a dot product with the camera vector and check if the angle is above a certain value, well, zero I guess (I cant really remember this all off the top of my head)<br />
+<br />
+torus is a bit of a bastard because you cant do any nice quick hacks that I can think of.... hmm, maybe splitting the torus into rings. Nah, I think a hack would be more complicated than just doing it right.
+		</p>
+</div>
 
-      <p class="post-content">nope, it doesn`t fix the problem 100%<br />
-      torus still occludes itself under certain angles<br />
-      <br />
-      [edit]<br />
-      make it resolution independent and bigger... i`d make it myself, but the code you have produced is absolutely ugly, unoptimized and uncommented... not that it means there is something wrong with your coding skill :p</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">19th April 2005 18:51 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">18th April 2005 22:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">do you mean the torus itself or the resolution of the grid ?<br />
-      yes it&#194;&#180;s not 100% perfect but the rest is only tweaking values, nothing to bother you.</p>
-    </div>
-    <hr />
+		Pak, simple normal calculation and bf culling isn`t enough for torus<br />
+<br />
+<a href="http://www.deviantart.com/deviation/6457036/" target="_blank">http://www.deviantart.com/deviation/6457036/</a><br />
+<br />
+really old preset and unfinished preset...<br />
+it`s with little help from coned, to correct the clipping problem. It is quite nasty hack ya know. <br />
+Torus can get intersected in 4 places if you trace line from eye through it, this means that regular bf culling does not work, if you do not want to use use max. blending... which you could actually live with in your example preset.<br />
+<br />
+Anyways, to correct the torus clipping problem, which i assume you want to do, you can use<br />
+a) expencive raytracing hack<br />
+b) relatevely fast and really nasty hack described below<br />
+c) even slower way to sort the verices and do some dark magic *g*<br />
+<br />
+as for b. the one you can see from example preset:<br />
+basically you have to split torus in 2, front and back and then:<br />
+1. draw back normally<br />
+2. draw front so it overlays not required part of back (try to disable 3rd scope in my preset)<br />
+3. draw front normally<br />
+<br />
+as for you, if you are not going to advance that preset from its current state, i reccomend you just to use simple depth shading in addition to lighting shading to be able to use max blending so you won`t have clipping problems.<br />
+<br />
+[edit]<br />
+Actually, I don`t know, I am really really sleepy right now.  It would be best if you tolf us exactly what are you trying to do, because using the &quot;correct&quot; and &quot;perfect&quot; method with avs is usually the stupidest way of doing something, just remember that :p<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+As a side note... This preset is just a tech demo. I had a much better and similar stuff cooking for a actual preset, but I`m not working on it anymore...
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">19th April 2005 01:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		actually simple bf culling is enough for the torus if you render four superscopes. this is done by rendering the back facing back half, front facing back half then back facing front half and finally front facing front half. This can be done with a simple z check and normal check and using all four combinations.<br />
+<br />
+anything based totally on circles can usually be done correctly with no sorting or hax. this means shapes like torii, spheres and cylinders and arrangements like having objects on the points of a regular polygon etc...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">19th April 2005 06:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		...and which is what i am doing in the preset<br />
+<br />
+<br />
+...basically
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">19th April 2005 07:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		pak that what you suggest is already in the preset.<br />
+got an idea : using my current scope as feeder scope.<br />
+split the points into +z and -z and draw the nearer points later. that is actually what jheriko did suggest but i will leave out the backfacing halfes.<br />
+I´ll report if that works.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">19th April 2005 12:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by jheriko </i><br />
+<b>actually simple bf culling is enough for the torus if you render four superscopes. this is done by rendering the back facing back half, front facing back half then back facing front half and finally front facing front half. This can be done with a simple z check and normal check and using all four combinations.<br />
+<br />
+anything based totally on circles can usually be done correctly with no sorting or hax. this means shapes like torii, spheres and cylinders and arrangements like having objects on the points of a regular polygon etc... </b></blockquote>
+I dont see how this would work, because you cant split the torus into 4 in the same way for all angles. If you imagine looking at the tours from the side and splitting it into 4 as you suggest, then rotate it 90 degrees so you are looking at it from the top (i.e. it looks like a fat circle) the four pieces are the wrong shape to represent the front and back of the torus from the camera. You would have to reshape the 4 pieces depending on the rotation, which is a pretty nasty way to approach the problem imo. In fact rereading Jaak's post he is suggesting something similar where the torus is split into 2, where reshaping the two pieces is still necessary because the 'front' and 'back' different shapes from different angles.<br />
+<br />
+I'm surprised the standard bf culling method doesnt work to be honest, because I would think you would compare the normal of the vertex on the torus with a camera ray, but not literaly fire a ray from the camera, just consider a vector which is 0 degrees from the camera direction. Then dot product that with the normal. But I havent actually implemented a torus model in AVS so I'm not going to pretend to be an authority on it.<br />
+<br />
+Like Jaak says you need to post an updated version of the preset really, that version you posted at the start is just a ring of dots :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">19th April 2005 15:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		i finally solved the problem.<br />
+i have split that superscope into two:<br />
+one with z3&lt;0 and one with z3&gt;0;<br />
+i added noexecution for performance issues(the if(skip,...);doubles my framerate ;))<br />
+here is the correctet version.<br />
+thank you all for providing help.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">19th April 2005 17:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		nope, it doesn`t fix the problem 100%<br />
+torus still occludes itself under certain angles<br />
+<br />
+[edit]<br />
+make it resolution independent and bigger... i`d make it myself, but the code you have produced is absolutely ugly, unoptimized and uncommented... not that it means there is something wrong with your coding skill :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">19th April 2005 18:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		do you mean the torus itself or the resolution of the grid ?<br />
+yes it´s not 100% perfect but the rest is only tweaking values, nothing to bother you.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

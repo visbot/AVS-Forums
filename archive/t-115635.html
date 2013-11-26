@@ -1,97 +1,162 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Problem with Convolution filter AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Problem with Convolution filter AVS" />
 
-  <title>Problem with Convolution filter - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Problem with Convolution filter - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Problem with Convolution filter</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115635">Problem with Convolution filter</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">blazer1504</span><br />
-      <span class="date small text-muted">26th November 2002 12:02 GMT</span></p>
 
-      <p class="post-content"><strong>Problem with Convolution filter</strong><br />
-      This one is really annoying, if I put certain numbers to convolution filter and try to refresh the preset (no matter how simple the preset is), Winamp just crashes. Why is this happening ?! Here, I attached a picture with those certain numbers (i'm pretty sure that there are more combinations like this)<br />
-      <br />
-      Btw.For some reason this Didn't happen with all of persons I asked....</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Problem with Convolution filter</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115635">Problem with Convolution filter</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">26th November 2002 18:56 GMT</span></p>
 
-      <p class="post-content">Are you sure you have the latest version? If you are, try re-installing Winamp. It might also be a problem with WA3, if you're using it</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">27th November 2002 00:39 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">blazer1504</span><br />
+			<span class="date small text-muted">26th November 2002 12:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Problem with Convolution filter</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Scaling isn't allowed to be negative (I don't think bias is allowed to be either).</p>
-    </div>
-    <hr />
+		This one is really annoying, if I put certain numbers to convolution filter and try to refresh the preset (no matter how simple the preset is), Winamp just crashes. Why is this happening ?! Here, I attached a picture with those certain numbers (i'm pretty sure that there are more combinations like this)<br />
+<br />
+Btw.For some reason this Didn't happen with all of persons I asked....
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">27th November 2002 02:47 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Bias is. All it's doing is adding the value of every pixel surrounding the current pixel, multiplying them by their values on the 7x7 chart, then adding the bias, and then dividing it all by the scaling factor (which must be positive).</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">26th November 2002 18:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">27th November 2002 07:57 GMT</span></p>
+		Are you sure you have the latest version?  If you are, try re-installing Winamp.  It might also be a problem with WA3, if you're using it
+		</p>
+</div>
 
-      <p class="post-content">Seemed to work fine for me.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">blazer1504</span><br />
-      <span class="date small text-muted">27th November 2002 08:38 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">27th November 2002 00:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">I'm pretty sure that I have the latest version of it. I allready reinstalled winamp since convofilter totally crashed my AVS ( even deleting avs_vis.dat didn't help) I tried only negative scaling but it didn't crash, and I noticed that it also crashes with some positive scaling numbers.<br />
-      <br />
-      Like I said before, those convonumbers didn't crash winamp from all the people I asked....</p>
-    </div>
-    <hr />
+		Scaling isn't allowed to be negative (I don't think bias is allowed to be either).
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">27th November 2002 20:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Uninstall Winamp, AVS, and all of your APEs. Run Norton. Re-install.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">27th November 2002 02:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		Bias is.  All it's doing is adding the value of every pixel surrounding the current pixel, multiplying them by their values on the 7x7 chart, then adding the bias, and then dividing it all by the scaling factor (which must be positive).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">27th November 2002 07:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Seemed to work fine for me.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">blazer1504</span><br />
+			<span class="date small text-muted">27th November 2002 08:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm pretty sure that I have the latest version of it. I allready reinstalled winamp since convofilter totally crashed my AVS ( even deleting avs_vis.dat didn't help) I tried only negative scaling but it didn't crash, and I noticed that it also crashes with some positive scaling numbers.<br />
+<br />
+Like I said before, those convonumbers didn't crash winamp from all the people I asked....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">27th November 2002 20:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Uninstall Winamp, AVS, and all of your APEs.  Run Norton.  Re-install.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

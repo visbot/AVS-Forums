@@ -1,87 +1,145 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Red Dwarf AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Red Dwarf AVS" />
 
-  <title>Red Dwarf - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Red Dwarf - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">Red Dwarf</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=125930">Red Dwarf</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">22nd February 2003 00:08 GMT</span></p>
 
-      <p class="post-content"><strong>Red Dwarf</strong><br />
-      i wanted to make a red dwarf preset but the was no way in hell i was recreating the Red Dwarf ship so i recreated the starbug ship using a load of sphere scopes. Im not sure what i want to do with it though and i dont know how i can make the scopes work more in harmony, i mean like they rotate prefectly with each other, etc etc. Also some suggestions or tips on what to do with it would be nice :)</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Red Dwarf</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=125930">Red Dwarf</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">22nd February 2003 05:45 GMT</span></p>
 
-      <p class="post-content">i don't know why i have to keep saying this, but...<br />
-      NEVER USE STRAIGHT UP GETOSC FOR STATIC RANDOMS. Use something like: (getspec(0.24,0,0)*10000)%100/1000-0.05<br />
-      Basically it needs to move a LOT more, and change colors...it's a really cool effect, but it's ruined by that not-rotating thing. If you really need to keep what's in front in front, then use depth coloring and maximum blend.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">22nd February 2003 07:49 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">22nd February 2003 00:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Red Dwarf</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Atero's right about the depth coloring and max blend. Then you can do full 3D rotations and it'll still look decent. Toss in a star field maybe.</p>
-    </div>
-    <hr />
+		i wanted to make a red dwarf preset but the was no way in hell i was recreating the Red Dwarf ship so i recreated the starbug ship using a load of sphere scopes. Im not sure what i want to do with it though and i dont know how i can make the scopes work more in harmony, i mean like they rotate prefectly with each other, etc etc. Also some suggestions or tips on what to do with it would be nice :)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">22nd February 2003 12:42 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Your coordinate system is kind of messed up which causes the spheres to rotate incorrectly. You need to switch to a camera-oriented model rather than object, so you can synch different scopes more easily.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">22nd February 2003 05:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">23rd February 2003 01:16 GMT</span></p>
+		i don't know why i have to keep saying this, but...<br />
+NEVER USE STRAIGHT UP GETOSC FOR STATIC RANDOMS.  Use something like: (getspec(0.24,0,0)*10000)%100/1000-0.05<br />
+Basically it needs to move a LOT more, and change colors...it's a really cool effect, but it's ruined by that not-rotating thing.  If you really need to keep what's in front in front, then use depth coloring and maximum blend.
+		</p>
+</div>
 
-      <p class="post-content">Raz, this definitely doesn't look that great. Try doing the spheres a different way to make them look a bit better.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">23rd February 2003 01:34 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">22nd February 2003 07:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">ive just scrapped it for now, if im going to do it im going to do it completely different and i cant be bothered for now.</p>
-    </div>
-    <hr />
+		Atero's right about the depth coloring and max blend. Then you can do full 3D rotations and it'll still look decent. Toss in a star field maybe.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">22nd February 2003 12:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Your coordinate system is kind of messed up which causes the spheres to rotate incorrectly. You need to switch to a camera-oriented model rather than object, so you can synch different scopes more easily.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">23rd February 2003 01:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Raz, this definitely doesn't look that great.  Try doing the spheres a different way to make them look a bit better.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">23rd February 2003 01:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		ive just scrapped it for now, if im going to do it im going to do it completely different and i cant be bothered for now.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,371 +1,560 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bouncey Bouncey AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Bouncey Bouncey AVS" />
 
-  <title>Bouncey Bouncey - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Bouncey Bouncey - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">Bouncey Bouncey</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=142865">Bouncey Bouncey</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th July 2003 03:18 GMT</span></p>
 
-      <p class="post-content"><strong>Bouncey Bouncey</strong><br />
-      AVS collisions ;). Just for fun.<br />
-      <br />
-      If the balls start inside of eachother, weird behaviour will occur. Just restart and try again...<br />
-      It can theoretically be extended up to N balls, though it requires a lot of copy-pasting, because it simply handles all the possible one-on-one collisions. For n balls, there are:<br />
-      <br />
-      <u>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;n!&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</u><br />
-      (n-2)! * 2!<br />
-      <br />
-      possible one-on-one collisions.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Bouncey Bouncey</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=142865">Bouncey Bouncey</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">20th July 2003 03:28 GMT</span></p>
 
-      <p class="post-content">Good, you didn't beat me to 3D collisions.:p<br />
-      <br />
-      I like how yours have gravity - that's nice. I still like my 2D collisions more though.:p<br />
-      <br />
-      Bug: Circles aren't complete - there's a little hole in the bottom right of each circle. Probably because you used one SSC to draw all 3 balls.<br />
-      <br />
-      I'm going to post mine. Time for the faceoff.:p</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th July 2003 03:44 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th July 2003 03:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Bouncey Bouncey</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Gravity is just adding a constant vector to the speeds every tick. In any case, 3D is exactly the same, except more typing ;). The vectorial formula is:<br />
-      <br />
-      P1,P2 - Positions<br />
-      V1,V2 - Speeds before collision<br />
-      V1',V2' - Speeds after collision<br />
-      <br />
-      &amp;#x394;V = <u>(P2-P1).(V2-V1)</u> * (P2-P1)<br />
-      &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |(P2-P1)|&#194;&#178;<br />
-      <br />
-      (. = dot product, * = scalar*vector)<br />
-      <br />
-      V1' = V1 + &amp;#x394;V<br />
-      V2' = V2 - &amp;#x394;V<br />
-      <br />
-      Oh and as far as the circles go, it's AVS' buggy drawing routines actually. If you set green=1 or something, you'll notice that the circles are 'connected' at their rightmost points, not at the -45&#194;&#176; location.</p>
-    </div>
-    <hr />
+		AVS collisions ;). Just for fun.<br />
+<br />
+If the balls start inside of eachother, weird behaviour will occur. Just restart and try again...<br />
+It can theoretically be extended up to N balls, though it requires a lot of copy-pasting, because it simply handles all the possible one-on-one collisions. For n balls, there are:<br />
+<br />
+<u>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;n!&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</u><br />
+(n-2)! * 2!<br />
+<br />
+possible one-on-one collisions.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">20th July 2003 03:48 GMT</span></p>
+	<hr />
 
-      <p class="post-content">/me goes off to work on 3D collisions again.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">20th July 2003 03:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th July 2003 03:50 GMT</span></p>
+		Good, you didn't beat me to 3D collisions.:p <br />
+<br />
+I like how yours have gravity - that's nice.  I still like my 2D collisions more though.:p <br />
+<br />
+Bug: Circles aren't complete - there's a little hole in the bottom right of each circle.  Probably because you used one SSC to draw all 3 balls.<br />
+<br />
+I'm going to post mine.  Time for the faceoff.:p
+		</p>
+</div>
 
-      <p class="post-content">I hate it when people reply before I'm doing editing my post for the umpteenth time... I'd use PHP to write the 3D collisions ;).</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Akuso</span><br />
-      <span class="date small text-muted">20th July 2003 04:18 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th July 2003 03:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">well since I've only just finished Algebra II its ok that i don't understand this, right?<br />
-      and keep up the good work! looks awesome</p>
-    </div>
-    <hr />
+		Gravity is just adding a constant vector to the speeds every tick. In any case, 3D is exactly the same, except more typing ;). The vectorial formula is:<br />
+<br />
+P1,P2 - Positions<br />
+V1,V2 - Speeds before collision<br />
+V1',V2' - Speeds after collision<br />
+<br />
+&amp;#x394;V = <u>(P2-P1).(V2-V1)</u>  * (P2-P1)<br />
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |(P2-P1)|²<br />
+<br />
+(. = dot product, * = scalar*vector)<br />
+<br />
+V1' = V1 + &amp;#x394;V<br />
+V2' = V2 - &amp;#x394;V<br />
+<br />
+Oh and as far as the circles go, it's AVS' buggy drawing routines actually. If you set green=1 or something, you'll notice that the circles are 'connected' at their rightmost points, not at the -45° location.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">20th July 2003 05:59 GMT</span></p>
+	<hr />
 
-      <p class="post-content">That's a surprisingly small amount of code you've got there. Good job!</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">20th July 2003 03:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">20th July 2003 06:56 GMT</span></p>
+		/me goes off to work on 3D collisions again.
+		</p>
+</div>
 
-      <p class="post-content">remids me of the jezzball game:)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th July 2003 09:12 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th July 2003 03:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">GOD FREAKING DAMMIT! I worked that all out a long time ago and never got around to programming it...damn you all :D</p>
-    </div>
-    <hr />
+		I hate it when people reply before I'm doing editing my post for the umpteenth time... I'd use PHP to write the 3D collisions ;).
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th July 2003 09:50 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Hmmm I just realized this... how the heck do you like your collisions more? I worked mine out using conservation of impulse and energy, and unless you used other methods, they should be identical.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Akuso</span><br />
+			<span class="date small text-muted">20th July 2003 04:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th July 2003 10:33 GMT</span></p>
+		well since I've only just finished Algebra II its ok that i don't understand this, right?<br />
+and keep up the good work! looks awesome
+		</p>
+</div>
 
-      <p class="post-content">okay, just wondering if i have this all correct anyway: the speed of object A colliding with exactly identical object B is switched to object B with respect to the axis of incedent, and vice versa; i.e.:<br />
-      a ---&gt; &lt;- b<br />
-      &lt;- a b ---&gt;<br />
-      but only if they are exactly the same...i never worked it out exactly for differing masses.<br />
-      (and i'm only talking about head on collisions there; assumedly nothing happens on the opposite axis (in relation to the axis of incedent))</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">20th July 2003 16:09 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">20th July 2003 05:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Atero, that's common thought, but in actual fact, both forces would cancel out, and both would stop. All momentum is conserved. Thus is Ball A was +5 velocity, and Ball B was -5 velocity (Heading towards each other) when they collide, the total momentum is +5-5=0, thus they stop.<br />
-      <br />
-      --- BUT ---<br />
-      <br />
-      The ENERGY has to go somewhere, it doesn't get canceled out. If the balls can't get rid of the energy, it carries along through the balls to the other side, colliding and creating a new force towards the air. However, if the balls cannot withstand this force, they will break and the force will be exerted in the chunks they fly sideways from the collision.</p>
-    </div>
-    <hr />
+		That's a surprisingly small amount of code you've got there. Good job!
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">gaekwad2</span><br />
-      <span class="date small text-muted">20th July 2003 17:02 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Zevensoft, or they'll just heat up.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">20th July 2003 06:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">gaekwad2</span><br />
-      <span class="date small text-muted">20th July 2003 17:53 GMT</span></p>
+		remids me of the jezzball game:)
+		</p>
+</div>
 
-      <p class="post-content">but seriously, ever heard of something called elasticity?</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th July 2003 21:23 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th July 2003 09:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">but seriously, ever heard of something called the edit button?</p>
-    </div>
-    <hr />
+		GOD FREAKING DAMMIT!  I worked that all out a long time ago and never got around to programming it...damn you all :D
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th July 2003 22:28 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Conservation of momentum tells you the ratio between the change in velocity of the two balls (opposite for equal masses) while conservation of energy tells you the size of the change in velocity.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th July 2003 09:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st July 2003 01:29 GMT</span></p>
+		Hmmm I just realized this... how the heck do you like your collisions more? I worked mine out using conservation of impulse and energy, and unless you used other methods, they should be identical.
+		</p>
+</div>
 
-      <p class="post-content">Hope this helps anyone wanting to know how collisions are done. The picture attached is to help with the explanation of the n and t axes(they're red).<br />
-      <br />
-      -----------------------------------------------------------<br />
-      <br />
-      That's true for a perfectly elastic head on collision, but most collisions are not going to be head on.<br />
-      <br />
-      To find the final velocities with non head-on collisions:<br />
-      1. Find the normal and tangential axes. The normal axis lies along the line connecting the centers of both balls. The tangential axis is perpendicular to the normal axis(duh) and the two axes intersect at the point of collision. The normal line that we find is merely the two positions of the balls subtracted from eachother(we'll call those B and A).<br />
-      <br />
-      N = B - A = &lt;xb0 - xa0 , yb0 - ya0&gt;<br />
-      <br />
-      2. Normalize the normal axis. This means to make it a vector with length of 1. All you have to do is divide the vector by it's magnitude.<br />
-      <br />
-      n = N/|N| = &lt;NX , NY&gt; / sqrt(NX&#194;&#178; + NY&#194;&#178;)<br />
-      <br />
-      The tangential axis is just the normal axis rotated 90 degrees, which is real easy to do - you just switch the x and y components.<br />
-      <br />
-      t = &lt;ny , nx&gt;<br />
-      <br />
-      3. Find the components of the velocities:<br />
-      The normal component of one of the velocities is just the dot product of that velocity and the normal.<br />
-      <br />
-      vain = vai . n = &lt;vaix , vaiy&gt; . &lt;nx , ny&gt; = vaix * nx + vaiy * ny<br />
-      <br />
-      The other velocities are found in the same manner.<br />
-      <br />
-      vait = vai . t = &lt;vaix , vaiy&gt; . &lt;tx , ty&gt; = vaix * tx + vaiy * ty<br />
-      vbin = vbi . n = &lt;vbix , vbiy&gt; . &lt;nx , ny&gt; = vbix * nx + vbiy * ny<br />
-      vbit = vbi . t = &lt;vbix , vbiy&gt; . &lt;tx , ty&gt; = vbix * tx + vbiy * ty<br />
-      <br />
-      4. Find the final velocities:<br />
-      Like I said above, the tangential components don't change during the collision.<br />
-      <br />
-      vaft = vait<br />
-      vbft = vbit<br />
-      <br />
-      The normal components do - you just have to consider the energy and momentum like any head on collision.<br />
-      <br />
-      vafn = (mb * vbin * (e + 1) + vain * (ma - e * mb)) / (ma + mb)<br />
-      vbfn = (ma * vain * (e + 1) - vbin * (ma - e * mb)) / (ma + mb)<br />
-      <br />
-      Now to explain the above: ma and mb are the masses of the balls - if both masses are the same then things clear up nicely. E is the coefficient of restitution - kinda like the elasticity of the collision. A perfectly elastic collision(which is probably what you want - otherwise the balls would eventually stop moving) has a coefficient of 1, which also helps optimize the code.<br />
-      <br />
-      5. Convert back to the x and y coordinate system:<br />
-      That's done like this:<br />
-      <br />
-      vafx = vafn * nx + vaft * tx<br />
-      vafy = vafn * ny + vaft * ty<br />
-      vbfx = vbfn * nx + vbft * tx<br />
-      vbfy = vbfn * ny + vbft * ty<br />
-      <br />
-      And there you have your final velocities. Note: A LOT of optimizations can be done(tangential components, same masses, coeff., etc), but this gives the complete picture.<br />
-      <br />
-      List of variables and what they are:<br />
-      nx and ny - x and y components of the normal vector<br />
-      tx and ty - x and y components of the tangential vector<br />
-      vaix and vaiy - x and y components of the initial velocity of ball A<br />
-      vbix and vbiy - x and y components of the initial velocity of ball B<br />
-      vain and vait - n and t components of the initial velocity of ball A<br />
-      vbin and vbit - n and t components of the initial velocity of ball B<br />
-      vafn and vaft - n and t components of the final velocity of ball A<br />
-      vbfn and vbft - n and t components of the final velocity of ball B<br />
-      vafx and vafy - x and y components of the final velocity of ball A<br />
-      vbfx and vbfy - x and y components of the final velocity of ball B<br />
-      ma and mb - masses of balls A and B<br />
-      e - coefficient of restitution</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">21st July 2003 03:21 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th July 2003 10:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Thanks anubis! I think that is a best explanation of collisions I have gotten anywere else before! (I even understand it now!)</p>
-    </div>
-    <hr />
+		okay, just wondering if i have this all correct anyway: the speed of object A colliding with exactly identical object B is switched to object B with respect to the axis of incedent, and vice versa; i.e.:<br />
+a ---&gt; &lt;- b<br />
+&lt;- a b ---&gt;<br />
+but only if they are exactly the same...i never worked it out exactly for differing masses.<br />
+(and i'm only talking about head on collisions there; assumedly nothing happens on the opposite axis (in relation to the axis of incedent))
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st July 2003 03:23 GMT</span></p>
+	<hr />
 
-      <p class="post-content">No problem. I forgot to mention - About 90% of the credit goes to Andre LaMothe - the author of the book <i>Tricks of the Windows Game Programming Gurus</i>. That book has some great stuff in it.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">20th July 2003 16:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">21st July 2003 17:53 GMT</span></p>
+		Atero, that's common thought, but in actual fact, both forces would cancel out, and both would stop. All momentum is conserved. Thus is Ball A was +5 velocity, and Ball B was -5 velocity (Heading towards each other) when they collide, the total momentum is +5-5=0, thus they stop.<br />
+<br />
+--- BUT ---<br />
+<br />
+The ENERGY has to go somewhere, it doesn't get canceled out. If the balls can't get rid of the energy, it carries along through the balls to the other side, colliding and creating a new force towards the air. However, if the balls cannot withstand this force, they will break and the force will be exerted in the chunks they fly sideways from the collision.
+		</p>
+</div>
 
-      <p class="post-content">I just used conservation of energy and momentum...<br />
-      <br />
-      v1,v2 = speeds before collision<br />
-      v1',v2' = speeds after collision<br />
-      <br />
-      Any force between the balls (in an ideally hard collision) will lie along the axes between the ball's centres, so all you need to calculate are the two (signed) lengths of the vectors that describe the change between v1 and v1', and v2 and v2':<br />
-      <br />
-      k1, k2.<br />
-      <br />
-      Conservation of momentum:<br />
-      <br />
-      m1*v1 + m2*v2 = m1*v1' + m2*v2'<br />
-      &lt;=&gt;<br />
-      m1*v1 + m2*v2 = m1(v1 + k1*u) + m2(v2 + k2*u)<br />
-      where 'u' is a vector connecting the two balls.<br />
-      &lt;=&gt; 0 = m1*k1*u + m2*k2*u<br />
-      &lt;=&gt; -k2*m2 = k1*m1<br />
-      <br />
-      (for equal masses, k1 = -k2 = k)<br />
-      <br />
-      At this point I assumed the masses were equal, but you can do the same for different masses:<br />
-      <br />
-      Conservation of (kinetic) energy:<br />
-      m*(v1^2)/2 + m*(v2^2)/2 = m*(v1'^2)/2 + m*(v2'^2)/2<br />
-      &lt;=&gt; (divide by m and multiply by 2)<br />
-      v1^2 + v2^2 = v1'^2 + v2'^2<br />
-      &lt;=&gt;<br />
-      v1^2 + v2^2 = (v1 + k*u)^2 + (v2 - k*u)^2<br />
-      <br />
-      Eventually you will get a quadratic equation in 'k' without a constant term. This means k=0 is a solution (no-change = situation before collision = of course also valid). By dividing by k, you get a linear equation which can be rewritten into the vector-formula above.<br />
-      <br />
-      If you want non-perfect collisions, I think you could incorporate a loss of kinetic energy that has dissipated into heat into the second formula, but I'm not sure.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">22nd July 2003 01:48 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">gaekwad2</span><br />
+			<span class="date small text-muted">20th July 2003 17:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">My method goes through that - I didn't show that part. The main thing about my explanation was how to apply that to only the normal components of the velocities.</p>
-    </div>
-    <hr />
+		Zevensoft, or they'll just heat up.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">22nd July 2003 14:05 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Hmmm yeah but doesn't this mean that all the transformations in your code are useless? I just write out the general momentum/energy equations for the entire velocities (not just normal)... the requirement that only normal components change is built-in.<br />
-      <br />
-      E.g. I don't have a normalization, it's done later on (but without the square root).<br />
-      <br />
-      Also, a slighty mistake in your explanation (though it's probably just a slip, otherwise your balls would freak out I think):<br /></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">gaekwad2</span><br />
+			<span class="date small text-muted">20th July 2003 17:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        The tangential axis is just the normal axis rotated 90 degrees, which is real easy to do - you just switch the x and y components.<br />
-        t = &lt;ny , nx&gt;
-      </blockquote>This is not right ;). The correct rule is: switch the x and y components and change the sign of one of them.
-    </div>
-    <hr />
+		but seriously, ever heard of something called elasticity?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">22nd July 2003 17:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Whoops, yeah I didn't realize that. I would change it, but I don't think that I can edit it any more.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th July 2003 21:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">23rd July 2003 07:37 GMT</span></p>
+		but seriously, ever heard of something called the edit button?
+		</p>
+</div>
 
-      <p class="post-content">no u cant:rolleyes: it can only be done within 3 hrs of posting.(unless you are a mod)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th July 2003 22:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Conservation of momentum tells you the ratio between the change in velocity of the two balls (opposite for equal masses) while conservation of energy tells you the size of the change in velocity.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st July 2003 01:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Hope this helps anyone wanting to know how collisions are done.  The picture attached is to help with the explanation of the n and t axes(they're red).<br />
+<br />
+-----------------------------------------------------------<br />
+<br />
+That's true for a perfectly elastic head on collision, but most collisions are not going to be head on.  <br />
+<br />
+To find the final velocities with non head-on collisions:<br />
+1.  Find the normal and tangential axes.  The normal axis lies along the line connecting the centers of both balls.  The tangential axis is perpendicular to the normal axis(duh) and the two axes intersect at the point of collision.  The normal line that we find is merely the two positions of the balls subtracted from eachother(we'll call those B and A).<br />
+<br />
+N = B - A = &lt;xb0 - xa0 , yb0 - ya0&gt;<br />
+<br />
+2.  Normalize the normal axis.  This means to make it a vector with length of 1.  All you have to do is divide the vector by it's magnitude.<br />
+<br />
+n = N/|N| = &lt;NX , NY&gt; / sqrt(NX² + NY²)<br />
+<br />
+The tangential axis is just the normal axis rotated 90 degrees, which is real easy to do - you just switch the x and y components.<br />
+<br />
+t = &lt;ny , nx&gt;<br />
+<br />
+3.  Find the components of the velocities:<br />
+The normal component of one of the velocities is just the dot product of that velocity and the normal.<br />
+<br />
+vain = vai . n = &lt;vaix , vaiy&gt; . &lt;nx , ny&gt; = vaix * nx + vaiy * ny<br />
+<br />
+The other velocities are found in the same manner.<br />
+<br />
+vait = vai . t = &lt;vaix , vaiy&gt; . &lt;tx , ty&gt; = vaix * tx + vaiy * ty<br />
+vbin = vbi . n = &lt;vbix , vbiy&gt; . &lt;nx , ny&gt; = vbix * nx + vbiy * ny<br />
+vbit = vbi . t = &lt;vbix , vbiy&gt; . &lt;tx , ty&gt; = vbix * tx + vbiy * ty<br />
+<br />
+4.  Find the final velocities:<br />
+Like I said above, the tangential components don't change during the collision.<br />
+<br />
+vaft = vait<br />
+vbft = vbit<br />
+<br />
+The normal components do - you just have to consider the energy and momentum like any head on collision.<br />
+<br />
+vafn = (mb * vbin * (e + 1) + vain * (ma - e * mb)) / (ma + mb)<br />
+vbfn = (ma * vain * (e + 1) - vbin * (ma - e * mb)) / (ma + mb)<br />
+<br />
+Now to explain the above:  ma and mb are the masses of the balls - if both masses are the same then things clear up nicely.  E is the coefficient of restitution - kinda like the elasticity of the collision.  A perfectly elastic collision(which is probably what you want - otherwise the balls would eventually stop moving) has a coefficient of 1, which also helps optimize the code.<br />
+<br />
+5.  Convert back to the x and y coordinate system:<br />
+That's done like this:<br />
+<br />
+vafx = vafn * nx + vaft * tx<br />
+vafy = vafn * ny + vaft * ty<br />
+vbfx = vbfn * nx + vbft * tx<br />
+vbfy = vbfn * ny + vbft * ty<br />
+<br />
+And there you have your final velocities.  Note: A LOT of optimizations can be done(tangential components, same masses, coeff., etc), but this gives the complete picture.<br />
+<br />
+List of variables and what they are:<br />
+nx and ny - x and y components of the normal vector<br />
+tx and ty - x and y components of the tangential vector<br />
+vaix and vaiy - x and y components of the initial velocity of ball A<br />
+vbix and vbiy - x and y components of the initial velocity of ball B<br />
+vain and vait - n and t components of the initial velocity of ball A<br />
+vbin and vbit - n and t components of the initial velocity of ball B<br />
+vafn and vaft - n and t components of the final velocity of ball A<br />
+vbfn and vbft - n and t components of the final velocity of ball B<br />
+vafx and vafy - x and y components of the final velocity of ball A<br />
+vbfx and vbfy - x and y components of the final velocity of ball B<br />
+ma and mb - masses of balls A and B<br />
+e - coefficient of restitution
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">21st July 2003 03:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks anubis! I think that is a best explanation of collisions I have gotten anywere else before! (I even understand it now!)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st July 2003 03:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		No problem.  I forgot to mention - About 90% of the credit goes to Andre LaMothe - the author of the book <i>Tricks of the Windows Game Programming Gurus</i>.  That book has some great stuff in it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">21st July 2003 17:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I just used conservation of energy and momentum...<br />
+<br />
+v1,v2 = speeds before collision<br />
+v1',v2' = speeds after collision<br />
+<br />
+Any force between the balls (in an ideally hard collision) will lie along the axes between the ball's centres, so all you need to calculate are the two (signed) lengths of the vectors that describe the change between v1 and v1', and v2 and v2':<br />
+<br />
+k1, k2.<br />
+<br />
+Conservation of momentum:<br />
+<br />
+m1*v1 + m2*v2 = m1*v1' + m2*v2'<br />
+&lt;=&gt;<br />
+m1*v1 + m2*v2 = m1(v1 + k1*u) + m2(v2 + k2*u)<br />
+where 'u' is a vector connecting the two balls.<br />
+&lt;=&gt; 0 = m1*k1*u + m2*k2*u<br />
+&lt;=&gt; -k2*m2 = k1*m1<br />
+<br />
+(for equal masses, k1 = -k2 = k)<br />
+<br />
+At this point I assumed the masses were equal, but you can do the same for different masses:<br />
+<br />
+Conservation of (kinetic) energy:<br />
+m*(v1^2)/2 + m*(v2^2)/2 = m*(v1'^2)/2 + m*(v2'^2)/2<br />
+&lt;=&gt; (divide by m and multiply by 2)<br />
+v1^2 + v2^2 = v1'^2 + v2'^2<br />
+&lt;=&gt;<br />
+v1^2 + v2^2 = (v1 + k*u)^2 + (v2 - k*u)^2<br />
+<br />
+Eventually you will get a quadratic equation in 'k' without a constant term. This means k=0 is a solution (no-change = situation before collision = of course also valid). By dividing by k, you get a linear equation which can be rewritten into the vector-formula above.<br />
+<br />
+If you want non-perfect collisions, I think you could incorporate a loss of kinetic energy that has dissipated into heat into the second formula, but I'm not sure.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">22nd July 2003 01:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		My method goes through that - I didn't show that part.  The main thing about my explanation was how to apply that to only the normal components of the velocities.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">22nd July 2003 14:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmmm yeah but doesn't this mean that all the transformations in your code are useless? I just write out the general momentum/energy equations for the entire velocities (not just normal)... the requirement that only normal components change is built-in.<br />
+<br />
+E.g. I don't have a normalization, it's done later on (but without the square root).<br />
+<br />
+Also, a slighty mistake in your explanation (though it's probably just a slip, otherwise your balls would freak out I think):<br />
+
+	<blockquote>
+			
+				The tangential axis is just the normal axis rotated 90 degrees, which is real easy to do - you just switch the x and y components. <br />
+t = &lt;ny , nx&gt;</blockquote>
+This is not right ;). The correct rule is: switch the x and y components and change the sign of one of them.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">22nd July 2003 17:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Whoops, yeah I didn't realize that.  I would change it, but I don't think that I can edit it any more.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">23rd July 2003 07:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		no u cant:rolleyes: it can only be done within 3 hrs of posting.(unless you are a mod)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

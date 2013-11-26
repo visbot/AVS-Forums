@@ -1,152 +1,244 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Draw planes with superscope AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Draw planes with superscope AVS" />
 
-  <title>Draw planes with superscope - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Draw planes with superscope - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">Draw planes with superscope</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=116500">Draw planes with superscope</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">unknownkw</span><br />
-      <span class="date small text-muted">3rd December 2002 19:00 GMT</span></p>
 
-      <p class="post-content"><strong>Draw planes with superscope</strong><br />
-      If we can draw a filled superscope, we can draw 3D objects! NOT LINES LOOKS LIKE 3D NOR USING MOVEMENTS THAT LIMIT THE EFFECTS. If we can have an option to link the beginning and end of a superscope with color filling, we can use superscope to draw almost everything! Any comments?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">Draw planes with superscope</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=116500">Draw planes with superscope</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">3rd December 2002 19:24 GMT</span></p>
 
-      <p class="post-content">You're forgetting the fact that in order to do something in 3D, you need to include depth. There are a few tricks you can use to fake a correct depth-treatment in AVS:<br />
-      <br />
-      - Use maximum blend with a mono-color object that has depth as the brightness factor. This is like a z-buffer.<br />
-      <br />
-      or<br />
-      <br />
-      - Carefully sort all your drawing operations so that they are performed in the correct order (works only for certain objects, and the objects can't rotate)<br />
-      <br />
-      or<br />
-      <br />
-      - Cull backfacing lines (works only for objects that are convex)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">VisualAgnosia</span><br />
-      <span class="date small text-muted">3rd December 2002 19:32 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">unknownkw</span><br />
+			<span class="date small text-muted">3rd December 2002 19:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Draw planes with superscope</strong><br />
+		
+		
 
-      <p class="post-content"><strong>Early bird gets the worm</strong><br />
-      Problems sleeping??? like me or just up early ??</p>
-    </div>
-    <hr />
+		If we can draw a filled superscope, we can draw 3D objects! NOT LINES LOOKS LIKE 3D NOR USING MOVEMENTS THAT LIMIT THE EFFECTS. If we can have an option to link the beginning and end of a superscope with color filling, we can use superscope to draw almost everything! Any comments?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">unknownkw</span><br />
-      <span class="date small text-muted">3rd December 2002 19:44 GMT</span></p>
+	<hr />
 
-      <p class="post-content">So you want to implement a 3D engine for superscope including lighting effects? That will be impossible since it will be a HUGE project.<br />
-      <br />
-      But my main point is to draw PLANE, not lines with superscope. Using blend or other means of effects will ruin the background effects, and create tons of limitations.<br />
-      <br />
-      Still can't rotate the object tho. Perhaps one with insane formulas can do it. I don't know.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">3rd December 2002 19:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">3rd December 2002 19:53 GMT</span></p>
+		You're forgetting the fact that in order to do something in 3D, you need to include depth. There are a few tricks you can use to fake a correct depth-treatment in AVS:<br />
+<br />
+- Use maximum blend with a mono-color object that has depth as the brightness factor. This is like a z-buffer.<br />
+<br />
+or<br />
+<br />
+- Carefully sort all your drawing operations so that they are performed in the correct order (works only for certain objects, and the objects can't rotate)<br />
+<br />
+or<br />
+<br />
+- Cull backfacing lines (works only for objects that are convex)
+		</p>
+</div>
 
-      <p class="post-content">visag, would you please stop spamming!<br />
-      <br />
-      Who ever said that those lines or DMs weren't 3D? :weird: BTW, we already can draw anything we want with a superscope (as long as we don't have too many variables). Also, check out some of Jheriko's stuff, he's done some solid 3D sscs.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">unknownkw</span><br />
-      <span class="date small text-muted">3rd December 2002 20:28 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">VisualAgnosia</span><br />
+			<span class="date small text-muted">3rd December 2002 19:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Early bird gets the worm</strong><br />
+		
+		
 
-      <p class="post-content"></p>
+		Problems sleeping??? like me or just up early ??
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        <b>Who ever said that those lines or DMs weren't 3D? :weird: BTW, we already can draw anything we want with a superscope (as long as we don't have too many variables). Also, check out some of Jheriko's stuff, he's done some solid 3D sscs.</b>
-      </blockquote>Of course I know! But the DM or alike mess things up in the background. If we want to draw an isolated object we should resort to other means. So that filled superscope may be a *half* solution.
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">nixa</span><br />
-      <span class="date small text-muted">3rd December 2002 21:20 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">unknownkw</span><br />
+			<span class="date small text-muted">3rd December 2002 19:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">How about a build in option for solid scopes? It would connect the first and the last points(0 and 1 values of i) creating a closed area and fill this area.</p>
-    </div>
-    <hr />
+		So you want to implement a 3D engine for superscope including lighting effects? That will be impossible since it will be a HUGE project.<br />
+<br />
+But my main point is to draw PLANE, not lines with superscope. Using blend or other means of effects will ruin the background effects, and create tons of limitations.<br />
+<br />
+Still can't rotate the object tho. Perhaps one with insane formulas can do it. I don't know.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">unknownkw</span><br />
-      <span class="date small text-muted">3rd December 2002 21:33 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">3rd December 2002 19:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by nixa</i><br />
-        <b>How about a build in option for solid scopes? It would connect the first and the last points(0 and 1 values of i) creating a closed area and fill this area.</b>
-      </blockquote>That is exactly what my idea. This should be a simple improvement of superscope and could be done within a few weeks.
-    </div>
-    <hr />
+		visag, would you please stop spamming!<br />
+<br />
+Who ever said that those lines or DMs weren't 3D? :weird: BTW, we already can draw anything we want with a superscope (as long as we don't have too many variables).  Also, check out some of Jheriko's stuff, he's done some solid 3D sscs.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">4th December 2002 03:30 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I see what you're saying, but that's fairly easy to do with the current scopes. It's just no one's bothered creating a raster-line scope.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">unknownkw</span><br />
+			<span class="date small text-muted">3rd December 2002 20:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">4th December 2002 03:52 GMT</span></p>
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero </i><br />
+<b>Who ever said that those lines or DMs weren't 3D? :weird: BTW, we already can draw anything we want with a superscope (as long as we don't have too many variables).  Also, check out some of Jheriko's stuff, he's done some solid 3D sscs. </b></blockquote>
+Of course I know! But the DM or alike mess things up in the background. If we want to draw an isolated object we should resort to other means. So that filled superscope may be a *half* solution.
+		</p>
+</div>
 
-      <p class="post-content">This would mean that you could only do one polygon per scope though... hugely impractical for most objects.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">4th December 2002 19:46 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">nixa</span><br />
+			<span class="date small text-muted">3rd December 2002 21:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Quite...besides, there's other plugins for that. I believe the Psychokinetic plugin or something like that does that....</p>
-    </div>
-    <hr />
+		How about a build in option for solid scopes? It would connect the first and the last points(0 and 1 values of i) creating a closed area and fill this area.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">unknownkw</span><br />
+			<span class="date small text-muted">3rd December 2002 21:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by nixa </i><br />
+<b>How about a build in option for solid scopes? It would connect the first and the last points(0 and 1 values of i) creating a closed area and fill this area. </b></blockquote>
+That is exactly what my idea. This should be a simple improvement of superscope and could be done within a few weeks.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">4th December 2002 03:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I see what you're saying, but that's fairly easy to do with the current scopes. It's just no one's bothered creating a raster-line scope.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">4th December 2002 03:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		This would mean that you could only do one polygon per scope though... hugely impractical for most objects.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">4th December 2002 19:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Quite...besides, there's other plugins for that.  I believe the Psychokinetic plugin or something like that does that....
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

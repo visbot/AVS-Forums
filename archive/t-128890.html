@@ -1,406 +1,641 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="my first raytrace preset :) AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" my first raytrace preset :) AVS" />
 
-  <title>my first raytrace preset :) - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> my first raytrace preset :) - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">my first raytrace preset :)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128890">my first raytrace preset :)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">18th March 2003 12:22 GMT</span></p>
-
-      <p class="post-content"><strong>my first raytrace preset :)</strong><br />
-      I posted this yesterday but it seems I didnt put it in the right place ;). So I post it here again. I changed the name of the preset, everithing else is he same.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">18th March 2003 13:54 GMT</span></p>
-
-      <p class="post-content">Haha this effect rules!<br />
-      Though I would remove the front wall and let the ceiling/floor continue because it looks a bit weird when the light shines at the wall in front of the camera. If I were you I'd add some more patterns to the light (like non-square ones by blacking out some rays) and add a few more spheres floating around. The first time it crossed the beams I thought it was a bug. Or make the sphere larger.<br />
-      <br />
-      It looks pretty awesome when you add alternating high radius/low radius blurs w/ convolution to equalize the dots (see <a href="http://acko.net/dump/fsk%20-%20Vis%20Bizz%20(UnConeD%20Tweaked).zip" target="_blank">here</a>)<br />
-      <br />
-      By the way, is there any reason why the camera is not moving? If you're raytracing, what is keeping you from having the camera move around?<br />
-      <br />
-      <br />
-      Some optimization tricks... replace:<br />
-      <br />
-      Det=-sqr(vb)+4*va*vc;<br />
-      k51=(-vb+sqrt(Det))/(2*va);<br />
-      k52=(-vb-sqrt(Det))/(2*va);<br />
-      ...<br />
-      ....if(below(Det,0), ...<br />
-      <br />
-      with:<br />
-      <br />
-      Det=-sqr(vb)+4*va*vc;<br />
-      alpha=below(Det,0);Det=sqrt(Det);<br />
-      va=.5/va;<br />
-      k51=(-vb+Det)*va;<br />
-      k52=(-vb-Det)*va;<br />
-      ...<br />
-      ...if(alpha,<br />
-      <br />
-      (sqrt is a slow operation)<br />
-      <br />
-      Oh and 'sqr(.5)' can be replaced by a constant too :). I'm not sure why dz=1.3/15 would be faster, but I think it's because of random fluctuations. Remember that depending on the position of the camera, AVS has to draw more and longer lines, so the speed can vary a lot during the preset. I think you got the wrong impression because of this.<br />
-      <br />
-      Also, I think it wouldn't be very noticable if you didn't raytrace the sphere in the volumetric beams scope, and it would be slightly faster. Oh and you need to make it so it is already moving at the beginning... a common mistake which makes the preset weirder on slow songs :).<br />
-      <br />
-      Now of course for the ultimate effect, you need to add a discoball on the ceiling that reflects the rays correctly... :rolleyes: just kidding (though reflections aren't *that* difficult actually), this is an awesome effect!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">18th March 2003 13:58 GMT</span></p>
-
-      <p class="post-content">Really neato effecto... this is really good.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">18th March 2003 15:58 GMT</span></p>
-
-      <p class="post-content">wow, sweet effect, now that is nice. love that realistic shine when the projector thing points towards you. really nice job :up:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">18th March 2003 17:32 GMT</span></p>
-
-      <p class="post-content">By the way, any reason you're using:<br />
-      <br />
-      k5=if(below(min(k51,k52),0),max(k51,k52),min(k51,k52));;<br />
-      <br />
-      and not<br />
-      <br />
-      k5 = k52<br />
-      and thus<br />
-      k5 = (-vb-sqrt(Det))/(2*va) ?<br />
-      <br />
-      Because of the way you calculate the quadratic equation (va always positive), -vb-sqrt(Det) will always be the positive intersection closest to the camera as far as I know, so you don't need to check for that explicitly.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">18th March 2003 17:44 GMT</span></p>
-
-      <p class="post-content">And finally, if you replace:<br />
-      <br />
-      dx1=(3+ox)/(dx3);<br />
-      dx1=if(below(dx1,0),-dx1,(3-ox)/(dx3));<br />
-      <br />
-      with<br />
-      <br />
-      dx1=(3/pp+ox)/(dx3);<br />
-      dx1=if(below(dx1,0),-dx1,(3/pp-ox)/(dx3));<br />
-      <br />
-      <br />
-      Then your box won't have black edges on the sides, but the rotation will not look squashed :).<br />
-      <br />
-      You seem to have missed a lot of common optimizations though. Don't divide by a constant, always multiply by its inverse (instead of x/2, use x*.5).<br />
-      <br />
-      Also instead of:<br />
-      <br />
-      x=dx/(1+(dz+8)/3)*pp;<br />
-      y=dy/(1+(dz+8)/3);<br />
-      <br />
-      use:<br />
-      <br />
-      dz=1/(3.6666+dz*.3333);<br />
-      x=dx*pp*dz;y=dy*dz;<br />
-      <br />
-      Multiplications are a lot faster than divisions, and doing a calculation once instead of twice is faster too.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">18th March 2003 18:24 GMT</span></p>
-
-      <p class="post-content">There two reasons for me not using all the improvements that you pointed out. The first is me not knowing enough about programing and math:),and the second one is the preset is not realy finnshed yet,I usualy edit the presets before the finnal publish in a pack and thats when I get rid of the devideing by the constants thing). I said this before and I'll say it again, I really had no programing experience before AVS, I got my comuter 3 years ago and started playing with avs about two years ago. At the time I couldnt even understand the examples in the SSC:D. I'm slowly geting there and Im loveing it. Thanks for pointing them out I REALLY apreciate it, I'll aplly all of them before the finnal realease and when codeing in the future:).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">18th March 2003 20:16 GMT</span></p>
-
-      <p class="post-content">Wow...wow. The camera should move (the central one as well as the user's), and there should be more balls...and the balls should be translucent, as well as the walls.....<br />
-      <br />
-      <br />
-      ...but dayamn...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">18th March 2003 20:45 GMT</span></p>
-
-      <p class="post-content">That is a nice preset. I agree that it does need more balls.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">18th March 2003 22:14 GMT</span></p>
-
-      <p class="post-content">haha...your preset doesn't have enough balls<br />
-      <br />
-      ...nevermind</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Phaze1987</span><br />
-      <span class="date small text-muted">18th March 2003 22:54 GMT</span></p>
-
-      <p class="post-content">damn you are sick...fsk good preset,a bit too dynamic but nice :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">18th March 2003 23:36 GMT</span></p>
-
-      <p class="post-content">Nice preset!<br />
-      :up:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
-      <span class="date small text-muted">18th March 2003 23:54 GMT</span></p>
-
-      <p class="post-content">Wow, that's an awesome effect, especially considering it's your first experience with raytracing. I'm gonna have to learn that stuff one of these days.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">19th March 2003 00:46 GMT</span></p>
-
-      <p class="post-content">Wowowowowow<br />
-      <br />
-      The balls look like little lumps caused by coding mistakes to me though o_O</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">19th March 2003 01:59 GMT</span></p>
-
-      <p class="post-content">btw...those balls should bounce off the walls, and you shouldn't be able to see through them - esp. when the light shines on them from behind.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">19th March 2003 05:43 GMT</span></p>
-
-      <p class="post-content">what i want to say is already said.....by so many people.<br />
-      *sigh (why cant I be on the net at the right time ) *</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">19th March 2003 07:16 GMT</span></p>
-
-      <p class="post-content">When i heard the word "raytracing" i was in the impression that it was a dm :(<br />
-      <br />
-      Oh well, nice work. Tech freaks are in heaven i assume, but i didn't get that much out of it...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">19th March 2003 20:57 GMT</span></p>
-
-      <p class="post-content">[just what shreyas_potnis said]<br />
-      <br />
-      Dude, this is really original...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">20th March 2003 12:37 GMT</span></p>
-
-      <p class="post-content">Thats funny Atero:D.<br />
-      <br />
-      Tugg This is not really far away from a dm, actually its the same code just squezzed between a SSC grid and another projection, its like looking at a 3dDM from outside and at the end where the mapping usualy comes you calculate color valeues. You could easyly simulate a lamp and use the rays coordinates to calculate the texture(that would be static on the walls).I tried different stuff but this one had the best idea behind it :). You can make cool objects this way to.<br />
-      <br />
-      More balls and cool stuf = les FPS:P</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">20th March 2003 12:38 GMT</span></p>
-
-      <p class="post-content">That's fine. The FPS can still drop a little. Add 2 more balls or something.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Pixelcraft</span><br />
-      <span class="date small text-muted">28th March 2003 14:44 GMT</span></p>
-
-      <p class="post-content">Cool<br />
-      <br />
-      Raytracing has to be one of the hardest things to do with AVS, but you pulled it off! :up:<br />
-      <br />
-      BTW: your avatar rules:)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">moltarx</span><br />
-      <span class="date small text-muted">28th March 2003 21:02 GMT</span></p>
-
-      <p class="post-content">that is so awesome :)<br />
-      at first, i couldnt tell what the hell it was doing, but after i watched it for a little... it was so incredible :)<br />
-      very very excellent job ^_^</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AVS Axer</span><br />
-      <span class="date small text-muted">30th March 2003 08:46 GMT</span></p>
-
-      <p class="post-content">wowzaaz..<br />
-      this is about as cool a ssc as i have ever seen.<br />
-      even the pattern on the dot grid is insane..<br />
-      fsk-the ideas man..</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AVS Axer</span><br />
-      <span class="date small text-muted">31st March 2003 06:13 GMT</span></p>
-
-      <p class="post-content">sorry for double posting, but its to late to edit..<br />
-      <br />
-      Youre code is very nice fsk. Very user friendly.. i cant find anything wrong with it that ucd hasnt pointed out..<br />
-      though there are lots of optimisation thingys..<br />
-      there is no reason why the volumetric beams should be that complex..<br />
-      <br />
-      i tryed to add more spheres, but i hit the var limit.<br />
-      <br />
-      heres a version with a solid sphere..<br />
-      its not optimised yet though.. so its even slower than the orig.<br />
-      <br />
-      cant wait till you next pack man.. it will be something special..<br />
-      <br />
-      can we have another zvezda-ish scope perhaps?? i love that preset.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NemoOrange</span><br />
-      <span class="date small text-muted">4th April 2003 06:23 GMT</span></p>
-
-      <p class="post-content">holy crap, that is stunning. Too bad the FPS are so low its not even worth using as a visualization. but keep working on it. only good things can happen.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NemoOrange</span><br />
-      <span class="date small text-muted">4th April 2003 06:25 GMT</span></p>
-
-      <p class="post-content">I take that back. FPS are kinda low, but not too bad. keep working on this one.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">6th April 2003 14:37 GMT</span></p>
-
-      <p class="post-content">59.1fps @ 400x300<br />
-      19.0fps @ 1280x1024 fullscreen w/pd<br />
-      <br />
-      This is faster than most of my presets.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AVS Axer</span><br />
-      <span class="date small text-muted">6th April 2003 15:09 GMT</span></p>
-
-      <p class="post-content">this sort of wuestion always seems to piss people of on this board, but here goes:<br />
-      where can i find the rest of your packs fsk?<br />
-      i have pdm3.<br />
-      i have searched the forums and the wa3 site.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">6th April 2003 15:20 GMT</span></p>
-
-      <p class="post-content">Try using deviantart I got pickin dim 2 from there. winamp.com is pretty weak for AVS because it is flooded with noob packs and because the serious artists tend only to release their major releases there.<br />
-      <br />
-      Take a look at all of the artists that you like there, you will probably find a lot of amazing AVS presets that you won't see anywhere else. For instance... on winamp.com I haven't published anything since J7, yet at deviantart I have about 7 or 8 newer presets.<br />
-      <br />
-      Also if you are serious about AVS you should get an account there because you will get *real* feedback (a decent amount of useful comments) from actual AVS artists there. Also you will get to see the AVS packs first, usually before they turn up on winamp.com</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AVS Axer</span><br />
-      <span class="date small text-muted">6th April 2003 15:27 GMT</span></p>
-
-      <p class="post-content">hm.. i used to have an account there when i was into pixel art..<br />
-      im actually looking at your page at deviant now jheriko.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">6th April 2003 15:33 GMT</span></p>
-
-      <p class="post-content">Its always good to look at my page. :p<br />
-      <br />
-      Its better to download my presets. :D<br />
-      <br />
-      (NOTE: A dominating factor in my personality is self-plugging, I need publicity god dammit!)</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">my first raytrace preset :)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128890">my first raytrace preset :)</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">18th March 2003 12:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>my first raytrace preset :)</strong><br />
+		
+		
+			
+		
+
+		I posted this yesterday but it seems I didnt put it in the right place ;). So I post it here again. I changed the name of the preset, everithing else is he same.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">18th March 2003 13:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Haha this effect rules!<br />
+Though I would remove the front wall and let the ceiling/floor continue because it looks a bit weird when the light shines at the wall in front of the camera. If I were you I'd add some more patterns to the light (like non-square ones by blacking out some rays) and add a few more spheres floating around. The first time it crossed the beams I thought it was a bug. Or make the sphere larger.<br />
+<br />
+It looks pretty awesome when you add alternating high radius/low radius blurs w/ convolution to equalize the dots (see <a href="http://acko.net/dump/fsk - Vis Bizz (UnConeD Tweaked).zip" target="_blank">here</a>)<br />
+<br />
+By the way, is there any reason why the camera is not moving? If you're raytracing, what is keeping you from having the camera move around?<br />
+<br />
+<br />
+Some optimization tricks... replace:<br />
+<br />
+Det=-sqr(vb)+4*va*vc;<br />
+k51=(-vb+sqrt(Det))/(2*va);<br />
+k52=(-vb-sqrt(Det))/(2*va);<br />
+...<br />
+....if(below(Det,0), ...<br />
+<br />
+with:<br />
+<br />
+Det=-sqr(vb)+4*va*vc;<br />
+alpha=below(Det,0);Det=sqrt(Det);<br />
+va=.5/va;<br />
+k51=(-vb+Det)*va;<br />
+k52=(-vb-Det)*va;<br />
+...<br />
+...if(alpha,<br />
+<br />
+(sqrt is a slow operation)<br />
+<br />
+Oh and 'sqr(.5)' can be replaced by a constant too :). I'm not sure why dz=1.3/15 would be faster, but I think it's because of random fluctuations. Remember that depending on the position of the camera, AVS has to draw more and longer lines, so the speed can vary a lot during the preset. I think you got the wrong impression because of this.<br />
+<br />
+Also, I think it wouldn't be very noticable if you didn't raytrace the sphere in the volumetric beams scope, and it would be slightly faster. Oh and you need to make it so it is already moving at the beginning... a common mistake which makes the preset weirder on slow songs :).<br />
+<br />
+Now of course for the ultimate effect, you need to add a discoball on the ceiling that reflects the rays correctly... :rolleyes: just kidding (though reflections aren't *that* difficult actually), this is an awesome effect!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">18th March 2003 13:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Really neato effecto... this is really good.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">18th March 2003 15:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow, sweet effect, now that is nice. love that realistic shine when the projector thing points towards you. really nice job :up:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">18th March 2003 17:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		By the way, any reason you're using:<br />
+<br />
+k5=if(below(min(k51,k52),0),max(k51,k52),min(k51,k52));;<br />
+<br />
+and not<br />
+<br />
+k5 = k52<br />
+and thus<br />
+k5 = (-vb-sqrt(Det))/(2*va) ?<br />
+<br />
+Because of the way you calculate the quadratic equation (va always positive), -vb-sqrt(Det) will always be the positive intersection closest to the camera as far as I know, so you don't need to check for that explicitly.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">18th March 2003 17:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		And finally, if you replace:<br />
+<br />
+dx1=(3+ox)/(dx3);<br />
+dx1=if(below(dx1,0),-dx1,(3-ox)/(dx3));<br />
+<br />
+with<br />
+<br />
+dx1=(3/pp+ox)/(dx3);<br />
+dx1=if(below(dx1,0),-dx1,(3/pp-ox)/(dx3));<br />
+<br />
+<br />
+Then your box won't have black edges on the sides, but the rotation will not look squashed :).<br />
+<br />
+You seem to have missed a lot of common optimizations though. Don't divide by a constant, always multiply by its inverse (instead of x/2, use x*.5).<br />
+<br />
+Also instead of:<br />
+<br />
+x=dx/(1+(dz+8)/3)*pp;<br />
+y=dy/(1+(dz+8)/3);<br />
+<br />
+use:<br />
+<br />
+dz=1/(3.6666+dz*.3333);<br />
+x=dx*pp*dz;y=dy*dz;<br />
+<br />
+Multiplications are a lot faster than divisions, and doing a calculation once instead of twice is faster too.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">18th March 2003 18:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There two reasons for me not using all the improvements that you pointed out. The first is me not knowing enough about programing and math:),and the second one is the preset is not realy finnshed yet,I usualy edit the presets before the finnal publish in a pack and thats when I get rid of the devideing by the constants thing). I said this before and I'll say it again, I really had no programing experience before AVS, I got my comuter 3 years ago and started playing with avs about two years ago. At the time I couldnt even understand the examples in the SSC:D. I'm slowly geting there and Im loveing it. Thanks for pointing them out I REALLY apreciate it, I'll aplly all of them before the finnal realease and when codeing in the future:).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">18th March 2003 20:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow...wow.  The camera should move (the central one as well as the user's), and there should be more balls...and the balls should be translucent, as well as the walls.....<br />
+<br />
+<br />
+...but dayamn...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">18th March 2003 20:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That is a nice preset.  I agree that it does need more balls.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">18th March 2003 22:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		haha...your preset doesn't have enough balls<br />
+<br />
+...nevermind
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Phaze1987</span><br />
+			<span class="date small text-muted">18th March 2003 22:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		damn you are sick...fsk good preset,a bit too dynamic but nice :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">18th March 2003 23:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice preset!<br />
+:up:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Shock Value</span><br />
+			<span class="date small text-muted">18th March 2003 23:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow, that's an awesome effect, especially considering it's your first experience with raytracing. I'm gonna have to learn that stuff one of these days.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">19th March 2003 00:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wowowowowow<br />
+<br />
+The balls look like little lumps caused by coding mistakes to me though o_O
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">19th March 2003 01:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		btw...those balls should bounce off the walls, and you shouldn't be able to see through them - esp. when the light shines on them from behind.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">19th March 2003 05:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		what i want to say is already said.....by so many people.<br />
+*sigh (why cant I be on the net at the right time ) *
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">19th March 2003 07:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		When i heard the word &quot;raytracing&quot; i was in the impression that it was a dm :(<br />
+<br />
+Oh well, nice work. Tech freaks are in heaven i assume, but i didn't get that much out of it...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">19th March 2003 20:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		[just what shreyas_potnis said]<br />
+<br />
+Dude, this is really original...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">20th March 2003 12:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thats funny Atero:D.<br />
+<br />
+Tugg This is not really far away from a dm, actually its the same code just squezzed between a SSC grid and another projection, its like looking at a 3dDM from outside and at the end where the mapping usualy comes you calculate color valeues. You could easyly simulate a lamp and use the rays coordinates to calculate the texture(that would be static on the walls).I tried different stuff but this one had the best idea behind it :). You can make cool objects this way to.<br />
+<br />
+More balls and cool stuf = les FPS:P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">20th March 2003 12:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That's fine.  The FPS can still drop a little.  Add 2 more balls or something.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Pixelcraft</span><br />
+			<span class="date small text-muted">28th March 2003 14:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Cool<br />
+<br />
+Raytracing has to be one of the hardest things to do with AVS, but you pulled it off!  :up: <br />
+<br />
+BTW: your avatar rules:)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">moltarx</span><br />
+			<span class="date small text-muted">28th March 2003 21:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that is so awesome :)<br />
+at first, i couldnt tell what the hell it was doing, but after i watched it for a little... it was so incredible :)<br />
+very very excellent job ^_^
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AVS Axer</span><br />
+			<span class="date small text-muted">30th March 2003 08:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wowzaaz..<br />
+this is about as cool a ssc as i have ever seen.<br />
+even the pattern on the dot grid is insane..<br />
+fsk-the ideas man..
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AVS Axer</span><br />
+			<span class="date small text-muted">31st March 2003 06:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		sorry for double posting, but its to late to edit..<br />
+<br />
+Youre code is very nice fsk. Very user friendly.. i cant find anything wrong with it that ucd hasnt pointed out..<br />
+though there are lots of optimisation thingys.. <br />
+there is no reason why the volumetric beams should be that complex.. <br />
+<br />
+i tryed to add more spheres, but i hit the var limit.<br />
+<br />
+heres a version with a solid sphere..<br />
+its not optimised yet though.. so its even slower than the orig.<br />
+<br />
+cant wait till you next pack man.. it will be something special..<br />
+<br />
+can we have another zvezda-ish scope perhaps?? i love that preset.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NemoOrange</span><br />
+			<span class="date small text-muted">4th April 2003 06:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		holy crap, that is stunning.  Too bad the FPS are so low its not even worth using as a visualization.  but keep working on it.  only good things can happen.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NemoOrange</span><br />
+			<span class="date small text-muted">4th April 2003 06:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I take that back.  FPS are kinda low, but not too bad.  keep working on this one.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">6th April 2003 14:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		59.1fps @ 400x300<br />
+19.0fps @ 1280x1024 fullscreen w/pd<br />
+<br />
+This is faster than most of my presets.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AVS Axer</span><br />
+			<span class="date small text-muted">6th April 2003 15:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		this sort of wuestion always seems to piss people of on this board, but here goes:<br />
+where can i find the rest of your packs fsk?<br />
+i have pdm3.<br />
+i have searched the forums and the wa3 site.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">6th April 2003 15:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Try using deviantart I got pickin dim 2 from there. winamp.com is pretty weak for AVS because it is flooded with noob packs and because the serious artists tend only to release their major releases there.<br />
+<br />
+Take a look at all of the artists that you like there, you will probably find a lot of amazing AVS presets that you won't see anywhere else. For instance... on winamp.com I haven't published anything since J7, yet at deviantart I have about 7 or 8 newer presets.<br />
+<br />
+Also if you are serious about AVS you should get an account there because you will get *real* feedback (a decent amount of useful comments) from actual AVS artists there. Also you will get to see the AVS packs first, usually before they turn up on winamp.com
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AVS Axer</span><br />
+			<span class="date small text-muted">6th April 2003 15:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hm.. i used to have an account there when i was into pixel art..<br />
+im actually looking at your page at deviant now jheriko.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">6th April 2003 15:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Its always good to look at my page. :p<br />
+<br />
+Its better to download my presets. :D<br />
+<br />
+(NOTE: A dominating factor in my personality is self-plugging, I need publicity god dammit!)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

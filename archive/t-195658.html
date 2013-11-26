@@ -1,400 +1,610 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How to make a sentered cube AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" How to make a sentered cube AVS" />
 
-  <title>How to make a sentered cube - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> How to make a sentered cube - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">How to make a sentered cube</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=195658">How to make a sentered cube</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">eNeo</span><br />
-      <span class="date small text-muted">5th October 2004 14:13 GMT</span></p>
-
-      <p class="post-content"><strong>How to make a sentered cube</strong><br />
-      Can somebody tell me how to make a sentered cube? Something like this -&gt;<br />
-      <br />
-      <a href="http://www.nylands.org/~eneo/upload/uploads/cube.JPG" target="_blank">http://www.nylands.org/~eneo/upload/uploads/cube.JPG</a><br />
-      <br />
-      Thanks</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">5th October 2004 16:08 GMT</span></p>
-
-      <p class="post-content">link not working</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">5th October 2004 16:17 GMT</span></p>
-
-      <p class="post-content">It's working, but it's not a cube, it's just a square...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">5th October 2004 21:39 GMT</span></p>
-
-      <p class="post-content">I just ranted in that mysterious_w thread about noobs so I'm feeling generous...<br />
-      <br />
-      <i>init:</i><br />
-      n=5;<br />
-      size=0.5; //how big is the square (0-1)<br />
-      <i>frame:</i><br />
-      point=0;<br />
-      <i>pixel:</i><br />
-      point=point+1;<br />
-      x=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
-      y=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
-      x=x*size;<br />
-      y=y*size;<br />
-      <br />
-      there are slightly more efficient ways but this is more readable so please dont post petty optimisations.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">eNeo</span><br />
-      <span class="date small text-muted">6th October 2004 02:03 GMT</span></p>
-
-      <p class="post-content">Yea a square, I'm sorry. Not a cube.<br />
-      <br />
-      Thanks</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">6th October 2004 16:49 GMT</span></p>
-
-      <p class="post-content">re-looking at it that code is wrong, sorry, you need to put the point=point+1; at the end of the pixel box</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">6th October 2004 18:22 GMT</span></p>
-
-      <p class="post-content">also working is<br />
-      init:<br />
-      n=5;<br />
-      frame:<br />
-      asp=h/w;<br />
-      point:<br />
-      r=i*$pi*2+$pi/4;d=0.5;<br />
-      x=sin(r)*d*asp;y=cos(r)*d;<br />
-      <br />
-      <br />
-      d=0.5 //this is the size of the cube<br />
-      asp=h/w; // aspectratio correction</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">6th October 2004 21:11 GMT</span></p>
-
-      <p class="post-content">hmm, I guess, except thats pretty ugly and inefficient.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">6th October 2004 22:33 GMT</span></p>
-
-      <p class="post-content">Point per point is the way to go. PAK got it.<br />
-      <br />
-      There is another way to write it out, but thats not that big of a deal because it wouldn't make any noticible differenece in the preset.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">7th October 2004 09:46 GMT</span></p>
-
-      <p class="post-content">There is a way for making a square if you want to use more than 5 numpoints. (vibration anyone?)<br />
-      <br />
-      <i>Init</i><br />
-      n=500<br />
-      (or whatever numpoint value you wish for)<br />
-      <br />
-      <i>Per Pixel</i><br />
-      r=i*$pi*2 ; size=0.5 ;<br />
-      xa=asin(sin(r))*size ;<br />
-      ya=asin(cos(r))*size ;<br />
-      x=xa+ya ;<br />
-      y=xa-ya ;<br />
-      <br />
-      Now to make it vibrate on music, you can for example do:<br />
-      <br />
-      size=0.5+v*0.2</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">7th October 2004 10:24 GMT</span></p>
-
-      <p class="post-content">--- oops.. montana has mentioned it already, sorry---<br />
-      <br />
-      That's cool! Thanks for the tip!<br />
-      Correct me if i'm wrong: if you want to make it a real square and independent from screensize you have to change:<br />
-      <br />
-      FRAME:<br />
-      fixsize=h/w<br />
-      <br />
-      PIXEL:<br />
-      x=(xa+ya)*fixsize<br />
-      <br />
-      should work with circles and else too.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">7th October 2004 17:12 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
-        <b>There is a way for making a square if you want to use more than 5 numpoints. (vibration anyone?)<br />
-        <br />
-        <i>Init</i><br />
-        n=500<br />
-        (or whatever numpoint value you wish for)<br />
-        <br />
-        <i>Per Pixel</i><br />
-        r=i*$pi*2 ; size=0.5 ;<br />
-        xa=asin(sin(r))*size ;<br />
-        ya=asin(cos(r))*size ;<br />
-        x=xa+ya ;<br />
-        y=xa-ya ;<br />
-        <br />
-        Now to make it vibrate on music, you can for example do:<br />
-        <br />
-        size=0.5+v*0.2</b>
-      </blockquote>Mmmmm, 1000 asines and 1000 sines for a square
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">7th October 2004 17:51 GMT</span></p>
-
-      <p class="post-content">But if i use montana's or your code, my scope is just build out of 2 horizontal and 2 vertical lines that can react as a whole to the music. In Tug's example the scope consists out of 500 points that can vibrate independent, isn't it?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">10th October 2004 02:04 GMT</span></p>
-
-      <p class="post-content">Yup, it does "cost" a lot (atleast according to these &#195;&#188;ber benchmarkers...), but it can be sometimes more useful than the fast simple way.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">10th October 2004 08:33 GMT</span></p>
-
-      <p class="post-content">Only if you want shifting colors or sounds vibrating sounds or something fancier. There is still a fasterer way to do it point-per-point wise by using custom counters to move the points along the sides, then switching from side to side after a certain amount of points</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">10th October 2004 14:47 GMT</span></p>
-
-      <p class="post-content">Or if you want to use Texer II, don't forget about that.<br />
-      <br />
-      [edit]<br />
-      And btw. never <b>ever</b> say "only if...", because as soon as you say that someone already makes up another use for it you never even thought of.<br />
-      [/edit]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">10th October 2004 19:09 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by S-uper_T-oast</i><br />
-        <b>Only if you want shifting colors or sounds vibrating sounds or something fancier. There is still a fasterer way to do it point-per-point wise by using custom counters to move the points along the sides, then switching from side to side after a certain amount of points</b>
-      </blockquote>Thats a better way to do it than Tugs way, because your just doing a series of additions and a few 'ifs' rather than nasty trig. I'd post code but I cant be bothered.<br />
-      <br />
-      People overuse trig functions in AVS, they seem like a universal solution to any problem when you start coding AVS but you get better control over your preset replicating the effect with your own code. Plus trig is expensive, especially in the pixel box.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">10th October 2004 23:31 GMT</span></p>
-
-      <p class="post-content">Never understimate the power of the dark side my son...<br />
-      The sin()lords will get their <b>revenge!</b> buahahah!!!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">11th October 2004 02:03 GMT</span></p>
-
-      <p class="post-content">How many hours did you spend thinking that one up</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">11th October 2004 10:53 GMT</span></p>
-
-      <p class="post-content">Actually it just came to me in a vision, like all my PWNing presets that use lots and lots of sin's and cos's! :blah:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">15th October 2004 15:07 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by PAK-9</i><br />
-        <b>How many hours did you spend thinking that one up</b>
-      </blockquote>didn't you know?<br />
-      Tugg has slaved thousands of monkeys and made them type random code, eventually they *will* code best preset.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">16th October 2004 01:21 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Jaak</i><br />
-        <b>didn't you know?<br />
-        Tugg has slaved thousands of monkeys and made them type random code, eventually they *will* code best preset.</b>
-      </blockquote>Best preset? I thought thats how tugg came up with all his code. It's all in the PAK film "PAK-9 AVS 4 SE in outer space!"...<br />
-      <br />
-      Tugg, or 'space monster #3' wants to code the most amazing presets so he can rule the solar system and enslave mankind; but space monsters can't code so he travels to Earth and steals all the monkeys and takes them back to his secret base on Europa. Synth-C (Ambassador Middleton) sends Nemo (Captain 'Orange' Johnson) to find and return the monkeys but he is killed when the evil Vanish (Galgamaar) lures him into a white hole by creating an irrisistable siren song of swirling colour and stellar music response by making a sun go supernova inside it. Mysterious_w (Ensign McSpacey) launches an escape pod before the ship explodes and heads for Euoropa to return the monkeys.<br />
-      <br />
-      Meanwhile tugg is churning out great presets and slowly controlling mankind with his hypnotic colours and technical presets with bizzare I-can't-believe-this-works code (most of the stuff in Extra Dimension). Back on Earth Synth-C see's that nemo has failed and comissions montana (Dr. botchy adams) to create a computer virus to beam to tuggs evil headquarters and blow it up, so that at least mankind will not be controlled by the mad space monster. The virus is beamed out, and earth waits for the signal to arrive and destroy evil HQ.<br />
-      <br />
-      Back in space, mysterious_w has kept ahead of vanish and arrives on Europa, racing to the HQ to grab the monkeys. He messages earth saying he has almost finished his mission, when he learns of the virus heading for the planet! So with vanish chasing behind him he throws open the doors of the HQ and races to the monkey room. Bursting in he finds a shocking sight, earths monkeys typing away on a million computers (and about a thousand monkeys flinging poo because AVS crashed on them again). He pushes the button to release them from their shackles and shouts 'follow me to the ship!' But as he runs for the door, vanish looms above him dribbling saliva and foaming with rage. mysterious_w thinks its all over, when all of a sudden vanish simply steps over him! mysterious_w turns to see tugg in all his monstrous glory thundering through the monkey room toward him.<br />
-      <br />
-      "My Monkeys!" Tugg booms, "You will pay!"<br />
-      "Not so fast" Vanish spits "With these monkeys gone, I, VANISH can control the earth, your days of weird experimenting code are OVER"<br />
-      Tugg roars a deafening scream... "NEVVVEEEERRR!" And the two mighty AVS artists grab each other with the force of a thousand superscopes. mysterious_w sees his chance, running for his ship with all his might he hurries the monkeys into the tiny cargo hold of the escape pod, they barely fit, but it will have to do. From the evil HQ 200 ft away, murderous screams and thunderous blows echo, the ground shakes and ripples with shock. mysterious_w blasts into the sky and races from the planet as the virus ploughs into the HQ and triggers the explosion. For a moment all is white, then the raging heat of a thousand suns, concentrated to a single point expands to an explosive ball of nuclear energy. The escape pod blasts out of the smoke and flames, as the planet tears itself apart from the power of the nuclear inferno. The battered ship chuggs on, its weary warrior pilot picks up the transmitter and places it to his lips.<br />
-      <br />
-      "This is Ensign McSpacey... I'm coming home"<br />
-      <br />
-      The End<br />
-      <br />
-      *cough* yea I really didnt have anything better to do than write that.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">16th October 2004 15:33 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by PAK-9</i><br />
-        <b>How many hours did you spend thinking that one up</b>
-      </blockquote>*cough* :)<br />
-      <br />
-      It's funny though... (just a <i>bit</i> offtopic)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">16th October 2004 17:47 GMT</span></p>
-
-      <p class="post-content">hahahahahahah<br />
-      <br />
-      Great Story PAK-9 :D<br />
-      <br />
-      Maybe someone ought to produce a AVS-Movie from that script ;)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">18th October 2004 09:23 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
-        <b>hahahahahahah<br />
-        <br />
-        Great Story PAK-9 :D<br />
-        <br />
-        Maybe someone ought to produce a AVS-Movie from that script ;)</b>
-      </blockquote>I told you its called a PAK-Film <font size="1">tm</font> <font size="1">(R)</font>not an "AVS-Movie"
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">18th October 2004 15:30 GMT</span></p>
-
-      <p class="post-content">Oh go fudge yourself.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th October 2004 05:55 GMT</span></p>
-
-      <p class="post-content">But but.... how does the Man with Newspaper fit into all this?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">21st October 2004 17:17 GMT</span></p>
-
-      <p class="post-content">Well when Ambassador Middleton is talking to Captain 'Orange' Johnson about how much emergency jam to load onto the ship, there is a guy sitting just in view of the camera behind the crates of jam on the left. Man with newspaper is just behind him... reading a newspaper. And if you read carefully (you need to put your face really close to the screen) the headline on the front says "Wittens Arrested in Zebra Raid"... Just one of over three hundred zebra references crammed into the film.</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">How to make a sentered cube</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=195658">How to make a sentered cube</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">eNeo</span><br />
+			<span class="date small text-muted">5th October 2004 14:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>How to make a sentered cube</strong><br />
+		
+		
+
+		Can somebody tell me how to make a sentered cube? Something like this -&gt;  <br />
+<br />
+<a href="http://www.nylands.org/~eneo/upload/uploads/cube.JPG" target="_blank">http://www.nylands.org/~eneo/upload/uploads/cube.JPG</a><br />
+<br />
+Thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">5th October 2004 16:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		link not working
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">5th October 2004 16:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It's working, but it's not a cube, it's just a square...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">5th October 2004 21:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I just ranted in that mysterious_w thread about noobs so I'm feeling generous...<br />
+<br />
+<i>init:</i> <br />
+n=5;<br />
+size=0.5; //how big is the square (0-1)<br />
+<i>frame:</i><br />
+point=0;<br />
+<i>pixel:</i><br />
+point=point+1;<br />
+x=-equal(point,0)+equal(point,1)+equal(point,2)-equal(point,3);<br />
+y=equal(point,0)+equal(point,1)-equal(point,2)-equal(point,3);<br />
+x=x*size;<br />
+y=y*size;<br />
+<br />
+there are slightly more efficient ways but this is more readable so please dont post petty optimisations.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">eNeo</span><br />
+			<span class="date small text-muted">6th October 2004 02:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yea a square, I'm sorry. Not a cube.<br />
+<br />
+Thanks
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">6th October 2004 16:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		re-looking at it that code is wrong, sorry, you need to put the point=point+1; at the end of the pixel box
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">6th October 2004 18:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		also working is<br />
+init:<br />
+n=5;<br />
+frame:<br />
+asp=h/w;<br />
+point:<br />
+r=i*$pi*2+$pi/4;d=0.5;<br />
+x=sin(r)*d*asp;y=cos(r)*d;<br />
+<br />
+<br />
+d=0.5 //this is the size of the cube<br />
+asp=h/w; // aspectratio correction
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">6th October 2004 21:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hmm, I guess, except thats pretty ugly and inefficient.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">6th October 2004 22:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Point per point is the way to go. PAK got it.<br />
+<br />
+There is another way to write it out, but thats not that big of a deal because it wouldn't make any noticible differenece in the preset.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">7th October 2004 09:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There is a way for making a square if you want to use more than 5 numpoints. (vibration anyone?)<br />
+<br />
+<i>Init</i><br />
+n=500<br />
+(or whatever numpoint value you wish for)<br />
+<br />
+<i>Per Pixel</i><br />
+r=i*$pi*2 ; size=0.5 ;<br />
+xa=asin(sin(r))*size ;<br />
+ya=asin(cos(r))*size ;<br />
+x=xa+ya ;<br />
+y=xa-ya ;<br />
+<br />
+Now to make it vibrate on music, you can for example do:<br />
+<br />
+size=0.5+v*0.2
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">7th October 2004 10:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		--- oops.. montana has mentioned it already, sorry---<br />
+<br />
+That's cool! Thanks for the tip!<br />
+Correct me if i'm wrong: if you want to make it a real square and independent from screensize you have to change:<br />
+<br />
+FRAME:<br />
+fixsize=h/w<br />
+<br />
+PIXEL:<br />
+x=(xa+ya)*fixsize<br />
+<br />
+should work with circles and else too.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">7th October 2004 17:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tuggummi </i><br />
+<b>There is a way for making a square if you want to use more than 5 numpoints. (vibration anyone?)<br />
+<br />
+<i>Init</i><br />
+n=500<br />
+(or whatever numpoint value you wish for)<br />
+<br />
+<i>Per Pixel</i><br />
+r=i*$pi*2 ; size=0.5 ;<br />
+xa=asin(sin(r))*size ;<br />
+ya=asin(cos(r))*size ;<br />
+x=xa+ya ;<br />
+y=xa-ya ;<br />
+<br />
+Now to make it vibrate on music, you can for example do:<br />
+<br />
+size=0.5+v*0.2 </b></blockquote>
+Mmmmm, 1000 asines and 1000 sines for a square
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">7th October 2004 17:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		But if i use montana's or your code, my scope is just build out of 2 horizontal and 2 vertical lines that can react as a whole to the music. In Tug's example the scope consists out of 500 points that can vibrate independent, isn't it?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">10th October 2004 02:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yup, it does &quot;cost&quot; a lot (atleast according to these über benchmarkers...), but it can be sometimes more useful than the fast simple way.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">10th October 2004 08:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Only if you want shifting colors or sounds vibrating sounds or something fancier. There is still a fasterer way to do it point-per-point wise by using custom counters to move the points along the sides, then switching from side to side after a certain amount of points
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">10th October 2004 14:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Or if you want to use Texer II, don't forget about that.<br />
+<br />
+[edit]<br />
+And btw. never <b>ever</b> say &quot;only if...&quot;, because as soon as you say that someone already makes up another use for it you never even thought of.<br />
+[/edit]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">10th October 2004 19:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by S-uper_T-oast </i><br />
+<b>Only if you want shifting colors or sounds vibrating sounds or something fancier. There is still a fasterer way to do it point-per-point wise by using custom counters to move the points along the sides, then switching from side to side after a certain amount of points </b></blockquote>
+Thats a better way to do it than Tugs way, because your just doing a series of additions and a few 'ifs' rather than nasty trig. I'd post code but I cant be bothered.<br />
+<br />
+People overuse trig functions in AVS, they seem like a universal solution to any problem when you start coding AVS but you get better control over your preset replicating the effect with your own code. Plus trig is expensive, especially in the pixel box.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">10th October 2004 23:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Never understimate the power of the dark side my son...<br />
+The sin()lords will get their <b>revenge!</b> buahahah!!!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">11th October 2004 02:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		How many hours did you spend thinking that one up
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">11th October 2004 10:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually it just came to me in a vision, like all my PWNing presets that use lots and lots of sin's and cos's! :blah:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">15th October 2004 15:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by PAK-9 </i><br />
+<b>How many hours did you spend thinking that one up </b></blockquote>
+didn't you know?<br />
+Tugg has slaved thousands of monkeys and made them type random code, eventually they *will* code best preset.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">16th October 2004 01:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Jaak </i><br />
+<b>didn't you know?<br />
+Tugg has slaved thousands of monkeys and made them type random code, eventually they *will* code best preset. </b></blockquote>
+Best preset? I thought thats how tugg came up with all his code. It's all in the PAK film &quot;PAK-9 AVS 4 SE in outer space!&quot;... <br />
+<br />
+Tugg, or 'space monster #3' wants to code the most amazing presets so he can rule the solar system and enslave mankind; but space monsters can't code so he travels to Earth and steals all the monkeys and takes them back to his secret base on Europa. Synth-C (Ambassador Middleton) sends Nemo (Captain 'Orange' Johnson) to find and return the monkeys but he is killed when the evil Vanish (Galgamaar) lures him into a white hole by creating an irrisistable siren song of swirling colour and stellar music response by making a sun go supernova inside it. Mysterious_w (Ensign McSpacey) launches an escape pod before the ship explodes and heads for Euoropa to return the monkeys. <br />
+<br />
+Meanwhile tugg is churning out great presets and slowly controlling mankind with his hypnotic colours and technical presets with bizzare I-can't-believe-this-works code (most of the stuff in Extra Dimension). Back on Earth Synth-C see's that nemo has failed and comissions montana (Dr. botchy adams) to create a computer virus to beam to tuggs evil headquarters and blow it up, so that at least mankind will not be controlled by the mad space monster. The virus is beamed out, and earth waits for the signal to arrive and destroy evil HQ.<br />
+<br />
+Back in space, mysterious_w has kept ahead of vanish and arrives on Europa, racing to the HQ to grab the monkeys. He messages earth saying he has almost finished his mission, when he learns of the virus heading for the planet! So with vanish chasing behind him he throws open the doors of the HQ and races to the monkey room. Bursting in he finds a shocking sight, earths monkeys typing away on a million computers (and about a thousand monkeys flinging poo because AVS crashed on them again). He pushes the button to release them from their shackles and shouts 'follow me to the ship!' But as he runs for the door, vanish looms above him dribbling saliva and foaming with rage. mysterious_w thinks its all over, when all of a sudden vanish simply steps over him! mysterious_w turns to see tugg in all his monstrous glory thundering through the monkey room toward him.<br />
+<br />
+&quot;My Monkeys!&quot; Tugg booms, &quot;You will pay!&quot;<br />
+&quot;Not so fast&quot; Vanish spits &quot;With these monkeys gone, I, VANISH can control the earth, your days of weird experimenting code are OVER&quot;<br />
+Tugg roars a deafening scream... &quot;NEVVVEEEERRR!&quot; And the two mighty AVS artists grab each other with the force of a thousand superscopes. mysterious_w sees his chance, running for his ship with all his might he hurries the monkeys into the tiny cargo hold of the escape pod, they barely fit, but it will have to do. From the evil HQ 200 ft away, murderous screams and thunderous blows echo, the ground shakes and ripples with shock. mysterious_w blasts into the sky and races from the planet as the virus ploughs into the HQ and triggers the explosion. For a moment all is white, then the raging heat of a thousand suns, concentrated to a single point expands to an explosive ball of nuclear energy. The escape pod blasts out of the smoke and flames, as the planet tears itself apart from the power of the nuclear inferno. The battered ship chuggs on, its weary warrior pilot picks up the transmitter and places it to his lips.<br />
+<br />
+&quot;This is Ensign McSpacey... I'm coming home&quot;<br />
+<br />
+The End<br />
+<br />
+*cough* yea I really didnt have anything better to do than write that.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">16th October 2004 15:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by PAK-9 </i><br />
+<b>How many hours did you spend thinking that one up </b></blockquote>
+*cough* :)<br />
+<br />
+It's funny though... (just a <i>bit</i> offtopic)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">16th October 2004 17:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hahahahahahah<br />
+<br />
+Great Story PAK-9 :D<br />
+<br />
+Maybe someone ought to produce a AVS-Movie from that script ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">18th October 2004 09:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tuggummi </i><br />
+<b>hahahahahahah<br />
+<br />
+Great Story PAK-9 :D<br />
+<br />
+Maybe someone ought to produce a AVS-Movie from that script ;) </b></blockquote>
+ I told you its called a PAK-Film <font size="1">tm</font> <font size="1">(R)</font>not an &quot;AVS-Movie&quot;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">18th October 2004 15:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oh go fudge yourself.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th October 2004 05:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		But but.... how does the Man with Newspaper fit into all this?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">21st October 2004 17:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well when Ambassador Middleton is talking to Captain 'Orange' Johnson about how much emergency jam to load onto the ship, there is a guy sitting just in view of the camera behind the crates of jam on the left. Man with newspaper is just behind him... reading a newspaper. And if you read carefully (you need to put your face really close to the screen) the headline on the front says &quot;Wittens Arrested in Zebra Raid&quot;... Just one of over three hundred zebra references crammed into the film.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

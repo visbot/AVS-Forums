@@ -1,106 +1,170 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Spherical mapping AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Spherical mapping AVS" />
 
-  <title>Spherical mapping - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Spherical mapping - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Spherical mapping</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=183952">Spherical mapping</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Ninja.Bob</span><br />
-      <span class="date small text-muted">20th June 2004 10:19 GMT</span></p>
 
-      <p class="post-content"><strong>Spherical mapping</strong><br />
-      Im fairly new at using AVS and im having trouble mapping a rectangular image to a sphere Im not sure which trans effect to use for this effect. The preset involves a texered starfield which means it re-renders each frame so a gradual movement to the sphere is no help. It tried using trans/movement and even though im sure I had the maths right the screen just flashed a solid colour. Any help on this would be appreciated.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Spherical mapping</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=183952">Spherical mapping</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">20th June 2004 10:57 GMT</span></p>
 
-      <p class="post-content">uh....you want a sphere movement?</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">20th June 2004 13:28 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Ninja.Bob</span><br />
+			<span class="date small text-muted">20th June 2004 10:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Spherical mapping</strong><br />
+		
+		
 
-      <p class="post-content">Perhaps you could add the preset so that we can take a look at it and see what we're talking about and help you with the code?</p>
-    </div>
-    <hr />
+		Im fairly new at using AVS and im having trouble mapping a rectangular image to a sphere Im not sure which trans effect to use for this effect.  The preset involves a texered starfield which means it re-renders each frame so a gradual movement to the sphere is no help.  It tried using trans/movement and even though im sure I had the maths right the screen just flashed a solid colour.  Any help on this would be appreciated.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">20th June 2004 15:13 GMT</span></p>
+	<hr />
 
-      <p class="post-content">well if you want sphere movement then just search the forums once.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">20th June 2004 10:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">28th June 2004 10:34 GMT</span></p>
+		uh....you want a sphere movement?
+		</p>
+</div>
 
-      <p class="post-content">Use dm and think raytracing.<br />
-      As for pherical mapping you can use:<br />
-      <br /></p>
-      <pre>
-<code><br />x=atan2(pz,px);<br />y=asin(py);<br /></code>
-</pre>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Ninja.Bob</span><br />
-      <span class="date small text-muted">30th June 2004 12:24 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">20th June 2004 13:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Um basically this is what i have at the moment. The stuff after the buffer save transforms it from the flat to the sphere but i want to correct it so that <b>a)</b> it doesn't have the lines from the movement and <b>b)</b> the back of the sphere is not just the inverse of the front.<br />
-      <br />
-      I did search for sphere but could not find what i wanted.<br />
-      <br />
-      Also is there anyway to get AVS to render at a high res but display at a lower one?</p>
-    </div>
-    <hr />
+		Perhaps you could add the preset so that we can take a look at it and see what we're talking about and help you with the code?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">2nd July 2004 21:26 GMT</span></p>
+	<hr />
 
-      <p class="post-content">is this what you're looking for?<br />
-      <br />
-      trans/movement (rectangular coordinates, wrap, bilinear filtering):<br />
-      d=sqr(x)+sqr(y); z=if(below(d,1),sqrt(1-d),1);<br />
-      x=x/z; y=y/z;</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">20th June 2004 15:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		well if you want sphere movement then just search the forums once.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">28th June 2004 10:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Use dm and think raytracing.<br />
+As for pherical mapping you can use:<br />
+<br />
+<pre><code><br />
+x=atan2(pz,px);<br />
+y=asin(py);<br />
+</code></pre>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Ninja.Bob</span><br />
+			<span class="date small text-muted">30th June 2004 12:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Um basically this is what i have at the moment.  The stuff after the buffer save transforms it from the flat to the sphere but i want to correct it so that <b>a)</b> it doesn't have the lines from the movement and <b>b)</b> the back of the sphere is not just the inverse of the front.<br />
+<br />
+I did search for sphere but could not find what i wanted.<br />
+<br />
+Also is there anyway to get AVS to render at a high res but display at a lower one?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">2nd July 2004 21:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		is this what you're looking for?<br />
+<br />
+trans/movement (rectangular coordinates, wrap, bilinear filtering):<br />
+d=sqr(x)+sqr(y); z=if(below(d,1),sqrt(1-d),1);<br />
+x=x/z; y=y/z;
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,132 +1,216 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Variable Velocity AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Variable Velocity AVS" />
 
-  <title>Variable Velocity - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Variable Velocity - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Variable Velocity</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=130635">Variable Velocity</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">2nd April 2003 07:34 GMT</span></p>
 
-      <p class="post-content"><strong>Variable Velocity</strong><br />
-      Today is Gudi Padwa, the Hindu New Year and to celeberate it yesterday near the Thane City Lake there were organizers who bursted lots and lots and lots of firecrackers, and the sight was simply great. So, I decided to make a preset similar to those firecrackers.<br />
-      <br />
-      I can use FireWurX, but I wanted different types of crackers, those going silently up in the air and exploding, making sparkles, etc,etc.<br />
-      <br />
-      So, what I want is to make a particle scope which explodes on beat and all the particles have different velocities, something like in UnconeD's Groovy Saturn.<br />
-      The particles also should have a different fade velocity, so that each particle will fade at a different time.<br />
-      Is there anyway I can do this. I made something like that in C, but that uses arrays and typedef and structures.<br />
-      All that isnt possible in AVS, and I cant use lots of variables, so I would like to know more about the fake particle engines and ransom :) (random ( that was a typo but I left it as it is ) ) generators.<br />
-      <br />
-      Can someone please help me?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Variable Velocity</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=130635">Variable Velocity</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">2nd April 2003 08:14 GMT</span></p>
 
-      <p class="post-content">hmm you'll need to do a 3D scope that is a bit like the dot fountain renderer, so you can use it in diffrent angles an positions. Also you'll have to make sure that the next "explosion" can only start if the last has finished. Therefore you could use a var that fades the colors to black. if its black, te thing can be reinitialized.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">2nd April 2003 10:48 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">2nd April 2003 07:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Variable Velocity</strong><br />
+		
+		
 
-      <p class="post-content">What you said is the easy part, I can do that, but can anybody help me with the variable velocity of the particles thing?</p>
-    </div>
-    <hr />
+		Today is Gudi Padwa, the Hindu New Year and to celeberate it yesterday near the Thane City Lake there were organizers who bursted lots and lots and lots of firecrackers, and the sight was simply great. So, I decided to make a preset similar to those firecrackers.<br />
+<br />
+I can use FireWurX, but I wanted different types of crackers, those going silently up in the air and exploding, making sparkles, etc,etc.<br />
+<br />
+So, what I want is to make a particle scope which explodes on beat and all the particles have different velocities, something like in UnconeD's Groovy Saturn.<br />
+The particles also should have a different fade velocity, so that each particle will fade at a different time.<br />
+Is there anyway I can do this. I made something like that in C, but that uses arrays and typedef and structures.<br />
+All that isnt possible in AVS, and I cant use lots of variables, so I would like to know more about the fake particle engines and ransom :) (random ( that was a typo but I left it as it is ) ) generators.<br />
+<br />
+Can someone please help me?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">2nd April 2003 11:03 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Set certain seperate counters for the color values of a specific Area of the scope ond fade them. how you use depends on the amount of work you're willing to do. I would advise you to use max 20 of them. you shoud assign the spectrum/osc values to vars in the beginning.<br />
-      <br />
-      RedColorArea1=RedColorArea1-RedColorCounter1<br />
-      <br />
-      and this 60 times with a large if - chain</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">2nd April 2003 08:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">2nd April 2003 12:08 GMT</span></p>
+		hmm you'll need to do a 3D scope that is a bit like the dot fountain renderer, so you can use it in diffrent angles an positions. Also you'll have to make sure that the next &quot;explosion&quot; can only start if the last has finished. Therefore you could use a var that fades the colors to black. if its black, te thing can be reinitialized.
+		</p>
+</div>
 
-      <p class="post-content">It could be done using a pseudo random number generator, where you just set the velocity eacy pixel to a pseudo random number, which will be the same each frame.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">3rd April 2003 05:41 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">2nd April 2003 10:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">but how do you do that?</p>
-    </div>
-    <hr />
+		What you said is the easy part, I can do that, but can anybody help me with the variable velocity of the particles thing?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">3rd April 2003 12:20 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Look at some of UnConeD's particle presets. That weird code with the large numbers is the pseudo random number generator. I'll let you figure it out, or it will be really hard for you to adapt it to your uses.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">2nd April 2003 11:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">3rd April 2003 21:06 GMT</span></p>
+		Set certain seperate counters for the color values of a specific Area of the scope ond fade them. how you use depends on the amount of work you're willing to do. I would advise you to use max 20 of them. you shoud assign the spectrum/osc values to vars in the beginning.<br />
+<br />
+RedColorArea1=RedColorArea1-RedColorCounter1<br />
+<br />
+and this 60 times with a large if - chain
+		</p>
+</div>
 
-      <p class="post-content">something like a=bigprimenumber*a+smallprimenumber per pixel where a=0 per frame will mean that a is a different constant for each pixel drawn. the reason for the use of prime numbers is to make sure that a pattern doesn't form quickly.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">7th April 2003 07:35 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">2nd April 2003 12:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">You missed " % number of distinct values you want " at the end of you equation Jheriko.<br />
-      <br />
-      There are a few presets floating around the use them.</p>
-    </div>
-    <hr />
+		It could be done using a pseudo random number generator, where you just set the velocity eacy pixel to a pseudo random number, which will be the same each frame.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">7th April 2003 07:56 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Thanks for that. :p Thats gone unnoticed for 4 days.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">3rd April 2003 05:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		but how do you do that?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">3rd April 2003 12:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Look at some of UnConeD's particle presets.  That weird code with the large numbers is the pseudo random number generator.  I'll let you figure it out, or it will be really hard for you to adapt it to your uses.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">3rd April 2003 21:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		something like a=bigprimenumber*a+smallprimenumber per pixel where a=0 per frame will mean that a is a different constant for each pixel drawn. the reason for the use of prime numbers is to make sure that a pattern doesn't form quickly.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">7th April 2003 07:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You missed &quot; % number of distinct values you want &quot; at the end of you equation Jheriko.<br />
+<br />
+There are a few presets floating around the use them.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">7th April 2003 07:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks for that. :p Thats gone unnoticed for 4 days.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

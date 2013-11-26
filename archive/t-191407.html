@@ -1,119 +1,190 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="To all ye Pyros - The Starburster AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" To all ye Pyros - The Starburster AVS" />
 
-  <title>To all ye Pyros - The Starburster - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> To all ye Pyros - The Starburster - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">To all ye Pyros - The Starburster</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=191407">To all ye Pyros - The Starburster</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Digital Chaos</span><br />
-      <span class="date small text-muted">26th August 2004 11:04 GMT</span></p>
 
-      <p class="post-content"><strong>To all ye Pyros - The Starburster</strong><br />
-      This preset is a modified version of the first preset I posted. If anyone out there loves looking at fire, I suggest this one to you. I'd really like to know what everyone thinks of it. Any hints, tips, or other help is also appreciated.<br />
-      I mess around with AVS when I find time, which isn't that often, but I think I'm figuring it out alright. Most of the time I just end up typing in random expressions and see what happens. :)</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">To all ye Pyros - The Starburster</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=191407">To all ye Pyros - The Starburster</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">27th August 2004 15:03 GMT</span></p>
 
-      <p class="post-content">you seriously need to optimize that!<br />
-      for example:<br />
-      you use an effect list with input=multiply as the first component inside an effect list with clear screen enabled.<br />
-      multiply is not a very cheap filter, and you might as well activate clear screen on the inner effect list and set its input mode to Ignore.<br />
-      <br />
-      here's some useless filters :)<br />
-      the first parameter is always the current screen while the second parameter is the effect list content.<br />
-      0 means that current screen is completely black.<br />
-      These combinations can be substituted by "Replace" blending:<br />
-      xor(0,something)=something<br />
-      maximum(0,something)=something<br />
-      subtractive2(0,something)=something<br />
-      additive(0,something)=something<br />
-      <br />
-      These combinations can be substituted by blend mode=ignore+ a clear screen:<br />
-      subtractive1(0,something)=0<br />
-      minimum(0,something)=0<br />
-      multiply(0,something)=0</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">27th August 2004 16:53 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Digital Chaos</span><br />
+			<span class="date small text-muted">26th August 2004 11:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>To all ye Pyros - The Starburster</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">here's the "filter-optimized" version ;)<br />
-      i also added a first frame only clear screen to light grey to make it less flickery in the first seconds</p>
-    </div>
-    <hr />
+		This preset is a modified version of the first preset I posted. If anyone out there loves looking at fire, I suggest this one to you. I'd really like to know what everyone thinks of it. Any hints, tips, or other help is also appreciated.<br />
+I mess around with AVS when I find time, which isn't that often, but I think I'm figuring it out alright. Most of the time I just end up typing in random expressions and see what happens. :)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Digital Chaos</span><br />
-      <span class="date small text-muted">28th August 2004 06:57 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Thanks for the help, the fps has dramatically increased.:up:<br />
-      <br />
-      I guess I didn't realize what I was doing with the multiply and xoring, way too extraneous, huh.<br />
-      Anyway I messed with it a little so here is it now.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">27th August 2004 15:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">28th August 2004 08:17 GMT</span></p>
+		you seriously need to optimize that!<br />
+for example:<br />
+you use an effect list with input=multiply as the first component inside an effect list with clear screen enabled.<br />
+multiply is not a very cheap filter, and you might as well activate clear screen on the inner effect list and set its input mode to Ignore.<br />
+<br />
+here's some useless filters :)<br />
+the first parameter is always the current screen while the second parameter is the effect list content.<br />
+0 means that current screen is completely black.<br />
+These combinations can be substituted by &quot;Replace&quot; blending:<br />
+xor(0,something)=something<br />
+maximum(0,something)=something<br />
+subtractive2(0,something)=something<br />
+additive(0,something)=something<br />
+<br />
+These combinations can be substituted by blend mode=ignore+ a clear screen:<br />
+subtractive1(0,something)=0<br />
+minimum(0,something)=0<br />
+multiply(0,something)=0
+		</p>
+</div>
 
-      <p class="post-content">this one is too flickery imo...<br />
-      flickery things are bad for the eyes, which is why most ppl dont like them<br />
-      <br />
-      also, you used a convolution filter with a scaling of 15.<br />
-      use scalings of 1 2 4 8 16 32 and so on for best performance</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Digital Chaos</span><br />
-      <span class="date small text-muted">31st August 2004 09:17 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">27th August 2004 16:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-      <p class="post-content">Ok, made this thing much better. I fixed the convo filter, using a scaling of 16 as TommyLobo mentioned. ;) I then cut down the flickering as much as possible, so as not to strain the eyes. Also, I added a superscope (pulsar) thanks to Elvis' 3D superscopes package.</p>
-    </div>
-    <hr />
+		here's the &quot;filter-optimized&quot; version ;)<br />
+i also added a first frame only clear screen to light grey to make it less flickery in the first seconds
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">crawthorne</span><br />
-      <span class="date small text-muted">31st August 2004 11:21 GMT</span></p>
+	<hr />
 
-      <p class="post-content">That is a LOT better. It's actually rather nice now, like a particularly peppy sunflower.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Digital Chaos</span><br />
+			<span class="date small text-muted">28th August 2004 06:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		Thanks for the help, the fps has dramatically increased.:up:<br />
+<br />
+I guess I didn't realize what I was doing with the multiply and xoring, way too extraneous, huh.<br />
+Anyway I messed with it a little so here is it now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">28th August 2004 08:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		this one is too flickery imo...<br />
+flickery things are bad for the eyes, which is why most ppl dont like them<br />
+<br />
+also, you used a convolution filter with a scaling of 15.<br />
+use scalings of 1 2 4 8 16 32 and so on for best performance
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Digital Chaos</span><br />
+			<span class="date small text-muted">31st August 2004 09:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ok, made this thing much better. I fixed the convo filter, using a scaling of 16 as TommyLobo mentioned. ;) I then cut down the flickering as much as possible, so as not to strain the eyes. Also, I added a superscope (pulsar) thanks to Elvis' 3D superscopes package.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">crawthorne</span><br />
+			<span class="date small text-muted">31st August 2004 11:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That is a LOT better. It's actually rather nice now, like a particularly peppy sunflower.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

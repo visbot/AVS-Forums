@@ -1,127 +1,176 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="hey guys! AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" hey guys! AVS" />
 
-  <title>hey guys! - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> hey guys! - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">hey guys!</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=313796">hey guys!</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Scar Da Kookee</span><br />
-      <span class="date small text-muted">14th October 2009 01:51 GMT</span></p>
 
-      <p class="post-content"><strong>hey guys!</strong><br />
-      long time no postie! XD<br />
-      <br />
-      hey I just wanted to try out something that I'm learning in school (heh, collage!)<br />
-      <br />
-      obviously in AVS we're limited to a -1 &lt;-&gt; 1 in both x &amp; y fields, but I want to try and make lines that would normally be graphed greater than 1 and get the same result.<br />
-      <br />
-      I've tweaked out the math (like decreasing x &amp; y by a multiple) with no result.<br />
-      <br />
-      so, at least my example that I would like to work with is a line using f(x) = x / ( x^2 - x - 2)<br />
-      <br />
-      which solving for x, you swap "f(x)" as "y", and use "x" (in our case) should be the "i" (drawing the line)<br />
-      <br />
-      the result should split the line twice with two vertical asymptotes with those being at x= -1 &amp; 2<br />
-      <br />
-      can anyone translate this into an avs field (between -1 &lt;-&gt; 1)?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">hey guys!</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=313796">hey guys!</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOAL</span><br />
-      <span class="date small text-muted">14th October 2009 19:21 GMT</span></p>
 
-      <p class="post-content">Should just be a simple case of scaling i as needed.<br />
-      <br />
-      Try something like:<br />
-      <i>Init</i><br />
-      n = w;<br />
-      <br />
-      <i>Frame</i> //This is just code for aspect ratio correct<br />
-      asph = if(above(w, h), h / w, 1);<br />
-      aspv = if(above(h, w), w / h, 1);<br />
-      <br />
-      <i>Point</i><br />
-      k = (i * 10) - 5;<br />
-      x = (k / 5) * asph;<br />
-      y = (k / (pow(k, 2) - k - 2)) / aspv;<br />
-      <br />
-      <br />
-      <br />
-      That should do roughly what you're looking for.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Scar Da Kookee</span><br />
-      <span class="date small text-muted">15th October 2009 01:52 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Scar Da Kookee</span><br />
+			<span class="date small text-muted">14th October 2009 01:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>hey guys!</strong><br />
+		
+		
 
-      <p class="post-content">Aw! thanks!<br />
-      <br />
-      man, you have no idea how nice that looks.<br />
-      <br />
-      so basically if i wanted to edit all of that for different lines, i could only need to replace the code, but keep the 'k' where it is, and substitute (in x &amp; y) for 'k'?<br />
-      <br />
-      or just keep the function for k and x, but only change the 'y', and instead of said 'x' use 'k'? (then of course divide 'y' by 'k'</p>
-    </div>
-    <hr />
+		long time no postie! XD<br />
+<br />
+hey I just wanted to try out something that I'm learning in school (heh, collage!)<br />
+<br />
+obviously in AVS we're limited to a -1 &lt;-&gt; 1 in both x &amp; y fields, but I want to try and make lines that would normally be graphed greater than 1 and get the same result.<br />
+<br />
+I've tweaked out the math (like decreasing x &amp; y by a multiple) with no result.<br />
+<br />
+so, at least my example that I would like to work with is a line using f(x) = x / ( x^2 - x - 2)<br />
+<br />
+which solving for x, you swap &quot;f(x)&quot; as &quot;y&quot;, and use &quot;x&quot; (in our case) should be the &quot;i&quot; (drawing the line)<br />
+<br />
+the result should split the line twice with two vertical asymptotes with those being at x= -1 &amp; 2<br />
+<br />
+can anyone translate this into an avs field (between -1 &lt;-&gt; 1)?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOAL</span><br />
-      <span class="date small text-muted">15th October 2009 11:46 GMT</span></p>
+	<hr />
 
-      <p class="post-content">K is the position along the line, and X is the scaled position along the line. (So it fits between -1 and 1)<br />
-      So as long as you're just effecting Y you only need to edit the Y code, with K replacing X.<br />
-      To change what it's calculated between just change the equation for K and tweak what K is divided by for X, so it's zoomed correctly.<br />
-      <br />
-      Does that make sense?<br />
-      <br />
-      This does not scale the height of Y though. And the Y axis is the wrong way around I think too.<br />
-      To be honest it's not too complex to figure out anyway, it's not really anything AVS specific and where it is you can just turn to the Expression Help.<br />
-      <br />
-      <br />
-      Oh whoops the '/ aspv' should be '* aspv' btw. (I should actually test stuff before just writing stuff)<br />
-      <br />
-      (Someone shout at me if I'm wrong!)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOAL</span><br />
+			<span class="date small text-muted">14th October 2009 19:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">15th October 2009 14:41 GMT</span></p>
+		Should just be a simple case of scaling i as needed.<br />
+<br />
+Try something like:<br />
+<i>Init</i><br />
+n = w;<br />
+<br />
+<i>Frame</i> //This is just code for aspect ratio correct<br />
+asph = if(above(w, h), h / w, 1);<br />
+aspv = if(above(h, w), w / h, 1);<br />
+<br />
+<i>Point</i><br />
+k = (i * 10) - 5;<br />
+x = (k / 5) * asph;<br />
+y = (k / (pow(k, 2) - k - 2)) / aspv;<br />
+<br />
+<br />
+<br />
+That should do roughly what you're looking for.
+		</p>
+</div>
 
-      <p class="post-content">You're correct (tested it).<br />
-      if framerate were important, I would use sqr(k) instead of pow(k,2).</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Scar Da Kookee</span><br />
+			<span class="date small text-muted">15th October 2009 01:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Aw! thanks!<br />
+<br />
+man, you have no idea how nice that looks.<br />
+<br />
+so basically if i wanted to edit all of that for different lines, i could only need to replace the code, but keep the 'k' where it is, and substitute (in x &amp; y) for 'k'?<br />
+<br />
+or just keep the function for k and x, but only change the 'y', and instead of said 'x' use 'k'? (then of course divide 'y' by 'k'
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOAL</span><br />
+			<span class="date small text-muted">15th October 2009 11:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		K is the position along the line, and X is the scaled position along the line. (So it fits between -1 and 1)<br />
+So as long as you're just effecting Y you only need to edit the Y code, with K replacing X.<br />
+To change what it's calculated between just change the equation for K and tweak what K is divided by for X, so it's zoomed correctly.<br />
+<br />
+Does that make sense?<br />
+<br />
+This does not scale the height of Y though. And the Y axis is the wrong way around I think too.<br />
+To be honest it's not too complex to figure out anyway, it's not really anything AVS specific and where it is you can just turn to the Expression Help.<br />
+<br />
+<br />
+Oh whoops the '/ aspv' should be '* aspv' btw. (I should actually test stuff before just writing stuff)<br />
+<br />
+(Someone shout at me if I'm wrong!)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">15th October 2009 14:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You're correct (tested it).<br />
+if framerate were important, I would use sqr(k) instead of pow(k,2).
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

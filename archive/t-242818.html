@@ -1,247 +1,371 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="saturation? AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" saturation? AVS" />
 
-  <title>saturation? - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> saturation? - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">saturation?</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=242818">saturation?</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">6th April 2006 21:00 GMT</span></p>
 
-      <p class="post-content"><strong>saturation?</strong><br />
-      any hint how to increase the saturation of the colors of a preset? or will anybody do a tiny ape for this? ;)</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">saturation?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=242818">saturation?</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Kar-mAVS</span><br />
-      <span class="date small text-muted">6th April 2006 22:04 GMT</span></p>
 
-      <p class="post-content">It probably isnt the best solution, or the fastest or the anything, but if you put:<br />
-      level:<br />
-      red=(red-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
-      green=(green-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
-      blue=(blue-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
-      <br />
-      into the colour modifier it maxes the saturation (sorta).....<br />
-      ^_^ I guess for a subtler effect you could do<br />
-      <br />
-      red=((red-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+red*0.5;<br />
-      green=((green-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+green*0.5;<br />
-      blue=((blue-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+blue*0.<br />
-      <br />
-      someone (not me...) needs to optimise this...</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">StevenRoy</span><br />
-      <span class="date small text-muted">7th April 2006 05:41 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">6th April 2006 21:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>saturation?</strong><br />
+		
+		
 
-      <p class="post-content">The Color Modifier calculates red, green, and blue simultaneously. This means that, before the equation is processed, the "red", "green" and "blue" variables are set to the same values, so your code won't work the way it's intended to. That also means you can't mix channels with that effect.<br />
-      <br />
-      Programming an APE to do this would work, assuming there's still anyone out there who knows how to program a decent APE.<br />
-      <br />
-      For an effect similar to this, I think a "Color Map" could be a good approach. Use (R+G+B)/3 as the input, set the output to one of the "Subtractive" modes (I forget which is correct), and give it a black to gray gradient. (0,0,0 to 128,128,128.) This will make the image darker, so you'll want to follow that with a Trans/Multiplier (2x) to fix the brightness.<br />
-      <br />
-      Alternatively, it might be possible to use the Trans/Colorfade effect to do the same thing, but, frankly, that thing scares me.</p>
-    </div>
-    <hr />
+		any hint how to increase the saturation of the colors of a preset? or will anybody do a tiny ape for this? ;)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">7th April 2006 10:18 GMT</span></p>
+	<hr />
 
-      <p class="post-content">You should be able to do it 'properly' with a color modifier. You need to convert the RGB to HSL, increase S and convert back to RGB. I have some code to convert HSL-&gt;RGB but not the other way around, I will paste it later when i get home (i might just write the color mod).</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Kar-mAVS</span><br />
+			<span class="date small text-muted">6th April 2006 22:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">7th April 2006 14:18 GMT</span></p>
+		It probably isnt the best solution, or the fastest or the anything, but if you put:<br />
+level:<br />
+red=(red-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
+green=(green-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
+blue=(blue-(((1-red)+(1-green)+(1-blue))*0.33))*2;<br />
+<br />
+into the colour modifier it maxes the saturation (sorta).....<br />
+^_^ I guess for a subtler effect you could do<br />
+<br />
+red=((red-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+red*0.5;<br />
+green=((green-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+green*0.5;<br />
+blue=((blue-(((1-red)+(1-green)+(1-blue))*0.33))*2)*0.5+blue*0.<br />
+<br />
+someone (not me...) needs to optimise this...
+		</p>
+</div>
 
-      <p class="post-content">it doesnt work with color mod since you <b>cannot</b><br />
-      use all three channels for calculations.<br />
-      i.e. red=red*0.33+blue*0.33+green*0.33 wouldnt work.<br />
-      and you need to use all three channels to convert rgb to hsb or hsv</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">eheiney</span><br />
-      <span class="date small text-muted">7th April 2006 15:26 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">StevenRoy</span><br />
+			<span class="date small text-muted">7th April 2006 05:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"><a href="http://www.easyrgb.com/math.php?MATH=M18#text18" target="_blank">RGB -&gt; HSL</a><br />
-      <a href="http://www.easyrgb.com/math.php?MATH=M19#text19" target="_blank">HSL -&gt; RGB</a></p>
-    </div>
-    <hr />
+		The Color Modifier calculates red, green, and blue simultaneously. This means that, before the equation is processed, the &quot;red&quot;, &quot;green&quot; and &quot;blue&quot; variables are set to the same values, so your code won't work the way it's intended to. That also means you can't mix channels with that effect.<br />
+<br />
+Programming an APE to do this would work, assuming there's still anyone out there who knows how to program a decent APE.<br />
+<br />
+For an effect similar to this, I think a &quot;Color Map&quot; could be a good approach. Use (R+G+B)/3 as the input, set the output to one of the &quot;Subtractive&quot; modes (I forget which is correct), and give it a black to gray gradient. (0,0,0 to 128,128,128.) This will make the image darker, so you'll want to follow that with a Trans/Multiplier (2x) to fix the brightness.<br />
+<br />
+Alternatively, it might be possible to use the Trans/Colorfade effect to do the same thing, but, frankly, that thing scares me.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Grandchild</span><br />
-      <span class="date small text-muted">7th April 2006 15:30 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">7th April 2006 10:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by StevenRoy</i><br />
-        <b>I think a "Color Map" could be a good approach. Use (R+G+B)/3 as the input, set the output to one of the "Subtractive" modes, give it a black to gray gradient. This will make the image darker, so you'll want to follow that with a Trans/Multiplier (2x) to fix the brightness.</b>
-      </blockquote>Color Modifier can do sth like this all in one.<br />
-      <br />
-      look into this CM, maybe it's what is needed, although the colors are reduced in this process [but that's inevitable when increasing saturation, afaik]
-    </div>
-    <hr />
+		You should be able to do it 'properly' with a color modifier. You need to convert the RGB to HSL, increase S and convert back to RGB. I have some code to convert HSL-&gt;RGB but not the other way around, I will paste it later when i get home (i might just write the color mod).
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">9th April 2006 00:20 GMT</span></p>
+	<hr />
 
-      <p class="post-content">cheers</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">7th April 2006 14:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">StevenRoy</span><br />
-      <span class="date small text-muted">9th April 2006 23:16 GMT</span></p>
+		it doesnt work with color mod since you <b>cannot</b><br />
+use all three channels for calculations.<br />
+i.e. red=red*0.33+blue*0.33+green*0.33 wouldnt work.<br />
+and you need to use all three channels to convert rgb to hsb or hsv
+		</p>
+</div>
 
-      <p class="post-content">Color Modifier can't mix channels. That's the problem. It works like some paint programs' "Curves" function. You can alter brightness and contrast, gamma, invert, solarize (AKA "chrome"), posterize (AKA "color reduction"), and all sorts of similar effects, but you <b>can't mix channels</b> with Color Modifier!<br />
-      <br />
-      Should I go into more detail about why this is?<br />
-      <br />
-      For that reason, you also can't convert RGB to HSL in a Color Modifier, or back again. The closest you can come to increasing saturation would be increasing the contrast instead. (Although that could be close enough in most situations, as excellently demonstrated by the "saturation" preset posted above by Grandchild.)<br />
-      <br />
-      Color Map, on the other hand, <b>can</b> do channel mixing. You can specify "(R+G+B)/3" as an input, and set the output mode to "Subtractive 1", which gives you something very close to the before-mentioned "(((1-red)+(1-green)+(1-blue))*0.33". From there, it's just a matter of finding the right gray value to get the effect you want, and then correcting the brightness afterward (equivalent to the *2 at the end of the equations Kar-mAVS posted here).<br />
-      <br />
-      I'm attaching a preset that demonstrates this technique for increasing saturation. Note that it demonstrates three different strengths of the effect, too, and you can click the mouse to select them. This is explained a little more in the comment.<br />
-      <br />
-      Hope this helps.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">10th April 2006 12:37 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">eheiney</span><br />
+			<span class="date small text-muted">7th April 2006 15:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">oops, forgot about this. Yea I did the code for RGB-&gt;HSL-&gt;RGB in a colour mod but as people are pointing out it doesn't work.<br />
-      <br />
-      You would have to paste the code into every place you do a render (assuming it is a codable component). I blame UnConeD for making colormod poo :P<br />
-      <br />
-      Would be best as an APE as you suggested originally</p>
-    </div>
-    <hr />
+		<a href="http://www.easyrgb.com/math.php?MATH=M18#text18" target="_blank">RGB -&gt; HSL</a><br />
+<a href="http://www.easyrgb.com/math.php?MATH=M19#text19" target="_blank">HSL -&gt; RGB</a>
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">11th April 2006 15:17 GMT</span></p>
+	<hr />
 
-      <p class="post-content">ok, i've got lots to learn here.<br />
-      why does doing something like red=blue in colour modifier cause no change?<br />
-      i was expecting the entire red channel to change.<br />
-      obviously i am missing something.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Grandchild</span><br />
+			<span class="date small text-muted">7th April 2006 15:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Grandchild</span><br />
-      <span class="date small text-muted">12th April 2006 13:10 GMT</span></p>
+		
+	<blockquote>
+			
+				<i>Originally posted by StevenRoy </i><br />
+<b>I think a &quot;Color Map&quot; could be a good approach. Use (R+G+B)/3 as the input, set the output to one of the &quot;Subtractive&quot; modes, give it a black to gray gradient. This will make the image darker, so you'll want to follow that with a Trans/Multiplier (2x) to fix the brightness.</b></blockquote>
+Color Modifier can do sth like this all in one.<br />
+<br />
+look into this CM, maybe it's what is needed, although the colors are reduced in this process [but that's inevitable when increasing saturation, afaik]
+		</p>
+</div>
 
-      <p class="post-content">the magic words here are hidden in the<br /></p>
+	<hr />
 
-      <blockquote>
-        <i>AVS Color Modifier - Expression Help:</i><br />
-        "The color modifier allows you to modify the intensity of each color channel <b>with respect to itself.</b>"
-      </blockquote>which means that red can only take the values of red for reference.<br />
-      <br />
-      it might be more obvious when you know that the level box of the CMF is executed 256 times [pretty close to the number of color levels we have in RGB].<br />
-      <br />
-      I assume it's working like that:<br />
-      the first time the box gets evaluated it refers to all pixels that have: R=G=B=0. then it increases the reference-value by one each time the box gets evaluated.<br />
-      Now you can work with the new value [1/255 in our case], then it steps up to 2/255, 3/255, 4/255, ... ,255/255=1.<br />
-      But note, that at all time <b>R=B=G</b> is true!<br />
-      So exchanging rgb is pointless in a CMF<br />
-      <br />
-      See this post why it wouldn't be fast otherwise,<br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?postid=1844232#post1844232" target="_blank">http://forums.winamp.com/showthread....32#post1844232</a>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">9th April 2006 00:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">12th April 2006 21:07 GMT</span></p>
+		cheers
+		</p>
+</div>
 
-      <p class="post-content">i suck at expaining things but ill try anyway:).<br />
-      <br />
-      code in color mods level box:<br />
-      <br />
-      red=red*.2;<br />
-      green=green*.6;<br />
-      blue=blue*.5;<br />
-      <br />
-      now some pseudo code on what happens:<br />
-      <br />
-      for(i=0;i&lt;256;i++)<br />
-      {<br />
-      red[i]=max(0,min(round(i*.2),255));<br />
-      green[i]=max(0,min(round(i*.6),255));<br />
-      blue[i]=max(0,min(round(i*.5),255));<br />
-      }<br />
-      <br />
-      then color mod goes over every pixel and does this:<br />
-      <br />
-      red=red[red];<br />
-      green=green[green];<br />
-      blue=blue[blue];<br />
-      <br />
-      this is as far as i can explain it:D.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">eheiney</span><br />
-      <span class="date small text-muted">13th April 2006 06:26 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">StevenRoy</span><br />
+			<span class="date small text-muted">9th April 2006 23:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-      <p class="post-content">While we're all talking about colors, what's the square root of orange? :p</p>
-    </div>
-    <hr />
+		Color Modifier can't mix channels. That's the problem. It works like some paint programs' &quot;Curves&quot; function. You can alter brightness and contrast, gamma, invert, solarize (AKA &quot;chrome&quot;), posterize (AKA &quot;color reduction&quot;), and all sorts of similar effects, but you <b>can't mix channels</b> with Color Modifier!<br />
+<br />
+Should I go into more detail about why this is?<br />
+<br />
+For that reason, you also can't convert RGB to HSL in a Color Modifier, or back again. The closest you can come to increasing saturation would be increasing the contrast instead. (Although that could be close enough in most situations, as excellently demonstrated by the &quot;saturation&quot; preset posted above by Grandchild.)<br />
+<br />
+Color Map, on the other hand, <b>can</b> do channel mixing. You can specify &quot;(R+G+B)/3&quot; as an input, and set the output mode to &quot;Subtractive 1&quot;, which gives you something very close to the before-mentioned &quot;(((1-red)+(1-green)+(1-blue))*0.33&quot;. From there, it's just a matter of finding the right gray value to get the effect you want, and then correcting the brightness afterward (equivalent to the *2 at the end of the equations Kar-mAVS posted here).<br />
+<br />
+I'm attaching a preset that demonstrates this technique for increasing saturation. Note that it demonstrates three different strengths of the effect, too, and you can click the mouse to select them. This is explained a little more in the comment.<br />
+<br />
+Hope this helps.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">13th April 2006 07:26 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">10th April 2006 12:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        what's the square root of orange?
-      </blockquote>16,11,0 :P
-    </div>
-    <hr />
+		oops, forgot about this. Yea I did the code for RGB-&gt;HSL-&gt;RGB in a colour mod but as people are pointing out it doesn't work.<br />
+<br />
+You would have to paste the code into every place you do a render (assuming it is a codable component). I blame UnConeD for making colormod poo :P<br />
+<br />
+Would be best as an APE as you suggested originally
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">11th April 2006 15:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		ok, i've got lots to learn here.<br />
+why does doing something like red=blue in colour modifier cause no change?<br />
+i was expecting the entire red channel to change.<br />
+obviously i am missing something.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Grandchild</span><br />
+			<span class="date small text-muted">12th April 2006 13:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		the magic words here are hidden in the<br />
+
+	<blockquote>
+			
+				<i>AVS Color Modifier - Expression Help:</i><br />
+&quot;The color modifier allows you to modify the intensity of each color channel <b>with respect to itself.</b>&quot;</blockquote>
+which means that red can only take the values of red for reference.<br />
+<br />
+it might be more obvious when you know that the level box of the CMF is executed 256 times [pretty close to the number of color levels we have in RGB].<br />
+<br />
+I assume it's working like that:<br />
+the first time the box gets evaluated it refers to all pixels that have: R=G=B=0. then it increases the reference-value by one each time the box gets evaluated.<br />
+Now you can work with the new value [1/255 in our case], then it steps up to 2/255, 3/255, 4/255, ... ,255/255=1.<br />
+But note, that at all time <b>R=B=G</b> is true!<br />
+So exchanging rgb is pointless in a CMF<br />
+<br />
+See this post why it wouldn't be fast otherwise,<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?postid=1844232#post1844232" target="_blank">http://forums.winamp.com/showthread....32#post1844232</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">12th April 2006 21:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i suck at expaining things but ill try anyway:).<br />
+<br />
+code in color mods level box:<br />
+<br />
+red=red*.2;<br />
+green=green*.6;<br />
+blue=blue*.5;<br />
+<br />
+now some pseudo code on what happens:<br />
+<br />
+for(i=0;i&lt;256;i++)<br />
+{<br />
+   red[i]=max(0,min(round(i*.2),255));<br />
+   green[i]=max(0,min(round(i*.6),255));<br />
+   blue[i]=max(0,min(round(i*.5),255));<br />
+}<br />
+<br />
+then color mod goes over every pixel and does this:<br />
+<br />
+red=red[red];<br />
+green=green[green];<br />
+blue=blue[blue];<br />
+<br />
+this is as far as i can explain it:D.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">eheiney</span><br />
+			<span class="date small text-muted">13th April 2006 06:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		While we're all talking about colors, what's the square root of orange? :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">13th April 2006 07:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				what's the square root of orange?</blockquote>
+16,11,0 :P
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,101 +1,152 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Wacky crashing AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Wacky crashing AVS" />
 
-  <title>Wacky crashing - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Wacky crashing - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Wacky crashing</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=108424">Wacky crashing</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">5th October 2002 04:45 GMT</span></p>
 
-      <p class="post-content"><strong>Wacky crashing</strong><br />
-      Okay, i've been trying to make an equiangular spiral in AVS using a superscope by using the forumla d=e^r*cot(angle), which converts to avs code to look something like:<br />
-      <br />
-      r=blah*i-something;<br />
-      d=pow(2.718281828,r/tan(angle));<br />
-      x=d*cos(r);<br />
-      y=d*sin(r);<br />
-      <br />
-      Now the problem is that once I type all of the code AVS will either crash and close, display a blank screen and claim it is rendering at something like 60fps then not change preset when i choose a new one or it will crash winamp. Is there something horribly wrong with my code that I have missed? I tried doing it ina an alternate method which worked when i reloaded the preset after saving but making any changes to it causes my computer to freak out and slow down. I've attached this version to the post since it isn't so completely random bug causing.<br />
-      <br />
-      Anyway, does this have any link to a known avs bug or am i missing something blatantly obvious. Please play around with the attached preset to see if you suffer any similar problems.<br />
-      <br />
-      Maybe I've just watched 'pi' too many times...</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Wacky crashing</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=108424">Wacky crashing</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th October 2002 15:54 GMT</span></p>
 
-      <p class="post-content">Btw you can use exp(a) instead of pow(2.718, a). It's much faster because in assembly, only powers of e and natural logarithms are supported, so using pow() automatically adds a multiplication to change the base.<br />
-      <br />
-      The other undocumented AVS function is atan2. There aren't any others (I studied vis_avs.dll to confirm :))<br />
-      <br />
-      <br />
-      I think the problem is that your spiral is too large. If you're using e^(r*cotan(angle)) your radius can easily get huge. And if you're using lines, AVS will not clip them and attempt to draw the pixels that are outside of the window too.<br />
-      I'm not 100% sure about this, but I do know that if you don't clip 3D superscopes at (z &gt; .01) or similar, AVS can stall at random points. It will stop responding for a while, and then suddenly continue.<br />
-      <br />
-      Btw instead of using 1/tan(a) as cotan(a), why not use tan(pi/2-a)? Should be faster than a division.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">5th October 2002 23:11 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">5th October 2002 04:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Wacky crashing</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content"></p>
+		Okay, i've been trying to make an equiangular spiral in AVS using a superscope by using the forumla d=e^r*cot(angle), which converts to avs code to look something like:<br />
+<br />
+r=blah*i-something;<br />
+d=pow(2.718281828,r/tan(angle));<br />
+x=d*cos(r);<br />
+y=d*sin(r);<br />
+<br />
+Now the problem is that once I type all of the code AVS will either crash and close, display a blank screen and claim it is rendering at something like 60fps then not change preset when i choose a new one or it will crash winamp. Is there something horribly wrong with my code that I have missed? I tried doing it ina an alternate method which worked when i reloaded the preset after saving but making any changes to it causes my computer to freak out and slow down. I've attached this version to the post since it isn't so completely random bug causing.<br />
+<br />
+Anyway, does this have any link to a known avs bug or am i missing something blatantly obvious. Please play around with the attached preset to see if you suffer any similar problems.<br />
+<br />
+Maybe I've just watched 'pi' too many times...
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by UnConeD</i><br />
-        Btw instead of using 1/tan(a) as cotan(a), why not use tan(pi/2-a)? Should be faster than a division. [/B]
-      </blockquote>Aren't you just substituting one division for another,and tossing in a subtraction to boot? :p
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th October 2002 02:31 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th October 2002 15:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Errr no because you can calculate pi/2 on beforehand. I was talking mathematically, not in AVS code.</p>
-    </div>
-    <hr />
+		Btw you can use exp(a) instead of pow(2.718, a). It's much faster because in assembly, only powers of e and natural logarithms are supported, so using pow() automatically adds a multiplication to change the base.<br />
+<br />
+The other undocumented AVS function is atan2. There aren't any others (I studied vis_avs.dll to confirm :))<br />
+<br />
+<br />
+I think the problem is that your spiral is too large. If you're using e^(r*cotan(angle)) your radius can easily get huge. And if you're using lines, AVS will not clip them and attempt to draw the pixels that are outside of the window too.<br />
+I'm not 100% sure about this, but I do know that if you don't clip 3D superscopes at (z &gt; .01) or similar, AVS can stall at random points. It will stop responding for a while, and then suddenly continue.<br />
+<br />
+Btw instead of using 1/tan(a) as cotan(a), why not use tan(pi/2-a)? Should be faster than a division.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">6th October 2002 04:29 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Ignore my mathematical incompetence lately, it will all get back up to scratch soon. I have a huge book on Riemann integrals sitting here for me to read, I'm sure I'll find some way of making them do something for avs. Anyway I gave up on my spiral it just would not run in a stable fashion, crashes all over the place and not too great a superscope either, I'm gonna stick to working on heavy 3d stuff and 'animations'.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">5th October 2002 23:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+Btw instead of using 1/tan(a) as cotan(a), why not use tan(pi/2-a)? Should be faster than a division. [/B]</blockquote>
+Aren't you just substituting one division for another,and tossing in a subtraction to boot? :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th October 2002 02:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Errr no because you can calculate pi/2 on beforehand. I was talking mathematically, not in AVS code.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">6th October 2002 04:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ignore my mathematical incompetence lately, it will all get back up to scratch soon. I have a huge book on Riemann integrals sitting here for me to read, I'm sure I'll find some way of making them do something for avs. Anyway I gave up on my spiral it just would not run in a stable fashion, crashes all over the place and not too great a superscope either, I'm gonna stick to working on heavy 3d stuff and 'animations'.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,77 +1,113 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="what is &quot;i&quot;?? AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" what is &quot;i&quot;?? AVS" />
 
-  <title>what is "i"?? - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> what is &quot;i&quot;?? - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">what is "i"??</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=91652">what is "i"??</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">loop</span><br />
-      <span class="date small text-muted">19th June 2002 16:27 GMT</span></p>
 
-      <p class="post-content"><strong>what is "i"??</strong><br />
-      I've just started playing with the options in superscope. I was playing around with one of the presets (Vibrating Worm).<br />
-      I was looking at the per point information<br />
-      <br />
-      x=cos(2*i+t)*0.9*(v*0.5+0.5); y=sin(i*2+t)*0.9*(v*0.5+0.5);<br />
-      <br />
-      I cant seem to find out what "i" is?? It's value or how it is set.<br />
-      Does anyone know??</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">what is &quot;i&quot;??</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=91652">what is &quot;i&quot;??</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">19th June 2002 16:54 GMT</span></p>
 
-      <p class="post-content">It says what i is right after x and y in the little blurb at the bottom. i the the position of the point on the scope (from 0 to 1)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Sadarqii</span><br />
-      <span class="date small text-muted">1st July 2002 12:39 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">loop</span><br />
+			<span class="date small text-muted">19th June 2002 16:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>what is &quot;i&quot;??</strong><br />
+		
+		
 
-      <p class="post-content"><strong>i is a...</strong><br />
-      ...progress variable that identifies a current point. i gives the scope "length". i ranges from 0 to 1.<br />
-      <br />
-      Do the following:<br />
-      1. in the Point field write x=i. This creates a line - a set of points.<br />
-      2. write x=i-0,5. This moves the points.<br />
-      3. then write y=0*below(i,0.5)+0.5*above(i,0,5)*below(i,0.75)-0.5*above(i,0.75). The points that are for i more than 0.75 move up, the ones that are between 0.5 and 0.75 move down, and the ones below i=0.5 stay in the middle of the screen.<br />
-      <br />
-      Maybe that will help you out a little.<br />
-      <br />
-      Go to <a href="http://www.geocities.com/avsdiscussion" target="_blank">AVS Discussion</a> . There are some simple tutorials there on the SSC.</p>
-    </div>
-    <hr />
+		I've just started playing with the options in superscope. I was playing around with one of the presets (Vibrating Worm).<br />
+I was looking at the per point information<br />
+<br />
+x=cos(2*i+t)*0.9*(v*0.5+0.5); y=sin(i*2+t)*0.9*(v*0.5+0.5);<br />
+<br />
+I cant seem to find out what &quot;i&quot; is?? It's value or how it is set.<br />
+Does anyone know??
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">19th June 2002 16:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It says what i is right after x and y in the little blurb at the bottom. i the the position of the point on the scope (from 0 to 1)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Sadarqii</span><br />
+			<span class="date small text-muted">1st July 2002 12:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>i is a...</strong><br />
+		
+		
+
+		...progress variable that identifies a current point. i gives the scope &quot;length&quot;. i ranges from 0 to 1.<br />
+<br />
+Do the following:<br />
+1. in the Point field write x=i. This creates a line - a set of points.<br />
+2. write x=i-0,5. This moves the points.<br />
+3. then write y=0*below(i,0.5)+0.5*above(i,0,5)*below(i,0.75)-0.5*above(i,0.75). The points that are for i more than 0.75 move up, the ones that are between 0.5 and 0.75 move down, and the ones below i=0.5 stay in the middle of the screen.<br />
+<br />
+Maybe that will help you out a little.<br />
+<br />
+Go to <a href="http://www.geocities.com/avsdiscussion" target="_blank">AVS Discussion</a> . There are some simple tutorials there on the SSC.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

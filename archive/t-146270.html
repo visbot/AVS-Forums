@@ -1,123 +1,198 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="hue change AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" hue change AVS" />
 
-  <title>hue change - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> hue change - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">hue change</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=146270">hue change</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">macaroon</span><br />
-      <span class="date small text-muted">19th August 2003 10:50 GMT</span></p>
 
-      <p class="post-content"><strong>hue change</strong><br />
-      It is possible to change the hue of what's on the avs (on a beat) through either random colours or a random colour from a previously set of pre-defined colours? ie on a beat everything goes red, next beat goes green etc..<br />
-      <br />
-      Cheers</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">hue change</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=146270">hue change</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">19th August 2003 11:23 GMT</span></p>
 
-      <p class="post-content">UnConeD made an APE (additional Plugin) that will do fine. It's called ColorMap. <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=142522&amp;highlight=color+map+1.2" target="_blank">Get it here</a>.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">19th August 2003 11:49 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">macaroon</span><br />
+			<span class="date small text-muted">19th August 2003 10:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>hue change</strong><br />
+		
+		
 
-      <p class="post-content">Yep, that'll do the trick. Unless it's scopes you want to color, you can change color of scopes onbeat (or any trigger you want) as well. add rgb values to per point data.<br />
-      <br /></p>
-      <pre>
-<code><br />x=i*2-1;<br />y=v/2;<br /><br />r=1;<br />g=0;<br />b=0;<br /></code>
-</pre><br />
-      <br />
-      will result into a red colored scope. Values go from 0 to 1. You can of course always use all of avs coding terms, like sin, cos, abs and whatnot.
-    </div>
-    <hr />
+		It is possible to change the hue of what's on the avs (on a beat) through either random colours or a random colour from a previously set of pre-defined colours? ie on a beat everything goes red, next beat goes green etc..<br />
+<br />
+Cheers
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">19th August 2003 12:49 GMT</span></p>
+	<hr />
 
-      <p class="post-content">To change the hue of a color in a ssc, use this:<br />
-      <br />
-      tpi=2*acos(-1) //twice pi 6.28...<br />
-      hue=0..6.28;<br />
-      <br />
-      red=sin(hue+tpi*.33)*.5+.5;<br />
-      green=sin(hue+tpi*.66)*.5+.5;<br />
-      blue=sin(hue+tpi*.99)*.5+.5;</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">19th August 2003 11:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th August 2003 01:30 GMT</span></p>
+		UnConeD made an APE (additional Plugin) that will do fine. It's called ColorMap. <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=142522&amp;highlight=color+map+1.2" target="_blank">Get it here</a>.
+		</p>
+</div>
 
-      <p class="post-content">that's not really a hue setting, but it works okay....<br />
-      and shreyas, that should be<br />
-      red=abs(sin(hue));<br />
-      green=abs(sin(hue+pi/3));<br />
-      blue=abs(sin(hue-pi/3));<br />
-      works correctly (as far as i can tell yours doesn't but i haven't tried it yet) and with less operators...<br />
-      <br />
-      an actual hue shifter that was remotely customizeable would be hard because making a code parser even as simple as avs's in an ape is (afaik) pretty hard to do. unfortunately for us ape's don't come with internal avs language support. but i do think a simple hueshifter that shifted at a constant rate would be pretty easy....</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">20th August 2003 06:50 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">19th August 2003 11:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Its all there in the Tips and Tricks thread, and btw mine works fine.</p>
-    </div>
-    <hr />
+		Yep, that'll do the trick. Unless it's scopes you want to color, you can change color of scopes onbeat (or any trigger you want) as well. add rgb values to per point data.<br />
+<br />
+<pre><code><br />
+x=i*2-1;<br />
+y=v/2;<br />
+<br />
+r=1;<br />
+g=0;<br />
+b=0;<br />
+</code></pre><br />
+<br />
+will result into a red colored scope. Values go from 0 to 1. You can of course always use all of avs coding terms, like sin, cos, abs and whatnot.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">20th August 2003 07:51 GMT</span></p>
+	<hr />
 
-      <p class="post-content">it may work fine but it's --ing stupid. what the hell is *.99 about anyway? :P</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">19th August 2003 12:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">20th August 2003 08:27 GMT</span></p>
+		To change the hue of a color in a ssc, use this:<br />
+<br />
+tpi=2*acos(-1) //twice pi 6.28...<br />
+hue=0..6.28;<br />
+<br />
+red=sin(hue+tpi*.33)*.5+.5;<br />
+green=sin(hue+tpi*.66)*.5+.5;<br />
+blue=sin(hue+tpi*.99)*.5+.5;
+		</p>
+</div>
 
-      <p class="post-content">You could set up a basic assembler-like language for use in a APE with no more than about 20KB worth of code. The problem is whether people would figure it out. Hell, Commodore made an entire BASIC interpreter in <b>8KB</b>, and on a CPU without any floating point or division/multiplication instructions.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th August 2003 01:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that's not really a hue setting, but it works okay....<br />
+and shreyas, that should be<br />
+red=abs(sin(hue));<br />
+green=abs(sin(hue+pi/3));<br />
+blue=abs(sin(hue-pi/3));<br />
+works correctly (as far as i can tell yours doesn't but i haven't tried it yet) and with less operators...<br />
+<br />
+an actual hue shifter that was remotely customizeable would be hard because making a code parser even as simple as avs's in an ape is (afaik) pretty hard to do.  unfortunately for us ape's don't come with internal avs language support.  but i do think a simple hueshifter that shifted at a constant rate would be pretty easy....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">20th August 2003 06:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Its all there in the Tips and Tricks thread, and btw mine works fine.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">20th August 2003 07:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		it may work fine but it's --ing stupid.  what the hell is *.99 about anyway? :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">20th August 2003 08:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You could set up a basic assembler-like language for use in a APE with no more than about 20KB worth of code. The problem is whether people would figure it out. Hell, Commodore made an entire BASIC interpreter in <b>8KB</b>, and on a CPU without any floating point or division/multiplication instructions.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

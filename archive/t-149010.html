@@ -1,586 +1,887 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="New AVS (and APE sdk) build AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" New AVS (and APE sdk) build AVS" />
 
-  <title>New AVS (and APE sdk) build - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> New AVS (and APE sdk) build - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">New AVS (and APE sdk) build</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=149010">New AVS (and APE sdk) build</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">13th September 2003 03:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>New AVS (and APE sdk) build</strong><br />
+		
+		
+
+		OK here it is. <br />
+<br />
+<a href="http://genghis.winamp.com/~deadbeef/avs270pre.zip" target="_blank">http://genghis.winamp.com/~deadbeef/avs270pre.zip</a><br />
+<br />
+What's new:<ul><li>updated maximum local variables to 256 from 64</li>
+<li>added global registers [reg00,reg01,... reg99] for debug and effect synchronization (or inter-preset communication)</li>
+<li>added global register watch in root list window (for debugging)</li>
+<li>added comments for eval code. // and /* bla */</li>
+<li>updated eval documentation</li>
+<li>added gettime() function to eval</li>
+<li>made annoying grey rectangle below tree go away when you aren't docked</li>
+<li>added new color modifier effect, which can be used to replace (with script) a lot of different effects (and be faster and more flexible).</li>
+<li>added 'minimum blend' mode for effect lists/line drawing</li>
+<li>added 'round up' option for Blur.</li>
+<li>made a generic avs directory scanner routine for subdirs (yay!), and made it only generate menus when opened, for speed</li>
+<li>made effects that use evallib reset variables to empty on recompile</li>
+<li>made avs track dirtiness of presets, and (optionally) prompt to save etc</li>
+<li>made avs resize images when resizing (optionally)</li>
+<li>added extended APE interface, that lets you access evallib, global registers, line blend/width modes. (see apesdk.zip)</li>
+</ul><br />
+Also, in WA5a5+ (or 5.0 beta for most of you), you will be able to freely size the AVS window.<br />
+<br />
+Let me know what you think, and if you spot any glaring problems.<br />
+Also, text rendering bug? SSC bug? Explanations? :)<br />
+<br />
+(edit)<br />
+Oh yeah I forgot.. mig also updated the trans / movement, so you can edit builtin movements directly. It's kinda part way done, but kinda useful. <br />
+<br />
+Oh, and $PI and $E are available from eval code now, as constants. <br />
+(/edit)<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">13th September 2003 04:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		First!<br />
+Will post back here again once I play with it.<br />
+<br />
+With the text rendering bug, if you use an additive text, it will add more blue or something on 95/98 machines.  I'm not sure about the SSC bug, but in the DM it will shift up and left (or right).  With the SSC, it only takes the first 100 samples of spectrum data.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">13th September 2003 04:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		(I editted the original, but here is some more info on that:<br />
+<br />
+so mig also updated the trans / movement, so you can edit builtin movements directly. It's kinda part way done, but kinda useful (the downside for the moment is that if you have your user code, and you switch presets, *boom* your user code is gone. Doh. If enough people complain I'll revert it back to the old one. Either that, or we can update it so that it only blows away your user code if you happen to edit one of the builtin ones... hmmm).<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Pixelcraft</span><br />
+			<span class="date small text-muted">13th September 2003 05:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Aw, why did you remove the docking window?  I always used to use that thing :( <br />
+<br />
+Other than that it looks great, except I don't know what most of the stuff does, but oh well, I'll figure it out someday.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">13th September 2003 06:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It doesn't seem to be working correctly - with WA 2.91 anyway.<br />
+<br />
+Doesn't seem to have beat detection...<br />
+<br />
+Probably because I'm not using WA5.  Darn.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">13th September 2003 07:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i think i just creamed my pants :o<br />
+<br />
+Globals and the extended variable limit are the major things i was after, but I can imagine that the color modifier is going to be very useful. And the new ape structure will open some ideas im sure.<br />
+<br />
+Btw, Pixelcraft, the docking window is still there, just hidden when its not in use.<br />
+<br />
+Text render bug: slight blured border around all text (regaurdless of render mode and even when all borders/shadows are turned off), very noticable when you are dealing with large fonts. And espec when you are trying to clip the text using maximum blending etc. It looks like it might be something to do with antialiasing.<br />
+<br />
+Dont know anyhting about no superscope render bugs. And that 'first 100 samples' bug was with the render/simple, not the superscope.<br />
+<br />
+Another major thing people would like is multi line edit boxes with ALL of the scripted part.. (esp in the ssc).<br />
+<br />
+[edit]<br />
+maybe you could jack up the update speed on the reg watch. Or make it specifiable.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">13th September 2003 08:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow... I think I really am going to love this :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">13th September 2003 08:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hehe...i'll <b>have</b> to cheack this out:D:D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">13th September 2003 09:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		everything in the main AVS directory doesn't seem to work over here. I'm talking about all APE's and pictures etc. Is this just with my comp, or do I just have to reinstall all my AVS stuff?<br />
+<br />
+[edit]<br />
+Damn, Tuggummi's Bitmapped II looks ugly now :D<br />
+[/edit]<br />
+<br />
+[edit2]<br />
+Second problem: Scope editing fucks up. When editing a scope it completely dissapears or it just keeps rendering old mistakes. Am I the only one with these problems?<br />
+[/edit2]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">13th September 2003 10:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		*DROOOOOL*<br />
+<br />
+*Me hands Justin a beer... a hole box of THE beer*
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">skupers</span><br />
+			<span class="date small text-muted">13th September 2003 10:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Wow, thanks a lot. I've experimentating with it and I am loving it already. :up: And subdirs :D , now I can finally organize my enormous avs list.<br />
+<br />
+
+	<blockquote>
+			
+				<i>Originally posted by Deamon </i><br />
+<b>everything in the main AVS directory doesn't seem to work over here. I'm talking about all APE's and pictures etc. Is this just with my comp, or do I just have to reinstall all my AVS stuff?</b></blockquote>
+I don't have this problem, I can use all my pictures and APE's.<br />
+<br />
+
+	<blockquote>
+			
+				<b>Second problem: Scope editing fucks up. When editing a scope it completely dissapears or it just keeps rendering old mistakes. Am I the only one with these problems?<br />
+</b></blockquote>
+I'm having this problem too. If you edit a scope, it disappears, and you have to exit and start avs again to see it again.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">13th September 2003 10:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yep that's the same thing. Have you tried out the Color Modifier yet? It's so sweet :)<br />
+<br />
+And about the first problem, I'm going to install winamp AND avs all over again when winamp 5 full version comes out, so that's no major problem anyway.<br />
+<br />
+[edit]<br />
+never mind, I made a little mistake when re-organizing my AVS'es, it's working fine now :)<br />
+[/edit]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">13th September 2003 12:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The regBLABLABLA (regbx,regby) would be really cool, coz ill have a BIG BIG BIG mess if i try to use only reg00-99 i dont understand later what each varjable does... yes, i know i can use the // and /*<br />
+but then i would really need the multible line beat, int and frame fields (hint, hint)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">13th September 2003 12:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		cool, new version
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jonasc1</span><br />
+			<span class="date small text-muted">13th September 2003 12:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The &quot;expresion help&quot; is imposible to turn off when the screen is running in 800x600 mode(cant reach the OK button at the bottom and the X button in the corner dosent work). I also cant see all of it beacuse it is a little bigger now. a scroll will help.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">13th September 2003 12:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yea, i have the same problem, no one cares about the ppl who use the 800x600 :(<br />
+Anyways... one thing would make the color modifier a REALLY powerful too: add the x,y,r,d then you can even use it to raytrace (if you wish to make one wall blue and other red or something like this)<br />
+THAT would be amazing... <br />
+i hope the newer versions will come.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">13th September 2003 12:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Color Mod is freekin awsome. Ive toyed around abit with it. Can use it to replace color map, channel shift and multiplier ape's very easily. And faster in some cases.<br />
+<br />
+[edit] maybe not channel shift.. :\
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">13th September 2003 13:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i wrote a tool (using NSIS) called ClikBot, which allows a user to double-click an avs-file to open it directly in winamp. due to the nature of NSIS, i have not found a way to this without restarting winamp (which sucks).<br />
+<br />
+would be nice if winamp/avs supports this natively.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th September 2003 13:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		justin: Haven't played with the new one much, but here's some clarification for the SSC/Text 'bugs':<br />
+<br />
+- The text bugs are Win9x/ME only as far as I know, and are twofold. One is that when the shadow color is set to RGB 0,0,0, the entire screen is always replaced (black bg w/ text), regardless of blend mode. The workaround is to set shadow color to something else (even if shadowing/outlining is turned off).<br />
+- The second text bug is that on Win9x/ME, in certain cases, the blue channel seems to contain value 1 rather than 0 for black, resulting in a slow, but steady blue-ification if you use some form of additive mode.<br />
+I don't have a 9x machine handy, so I can't be sure.<br />
+<br />
+- The superscope bug that fsk was referring to is probably the hackish linedrawing algorithm, which has incorrect line-ends (horizontal/vertical rather than correct).<br />
+When drawing short segments of lines with a fat linewidth, this becomes really noticable and ugly. For a good example, take the default superscope (the spiral) and use linewidth 10. Notice the fringing at 45°.<br />
+<br />
+Trans / Color Modifier is really neat, sort of like a codable Trans / Color Map (though without the output modes).<br />
+<br />
+By the way, a lot of us have been using a res-hacked version of AVS, in which the superscope dialog has been changed to a similar layout as the DM, DMM or now CM: with multiline editboxes and vertical scrollbars.<br />
+The big block of explanation below the scope needs to go of course, but in its current form it's a big mess anyway (that most newbies seem to skip).<br />
+<br />
+Another issue: it seems backwards compatibility is lost for presets that contain a Trans / Movement (resulting in a crash). Any way of fixing this?<br />
+<br />
+Another movement issue... it seems clicking a default movement with supplied code will happily overwrite any code in the window at that time. I can see some precious code being lost this way. Possible solutions: always ask (annoying for non coders) or supply a button 'load as custom' (better).<br />
+<br />
+And finally: some of the built-in movements depend on the real pixel coordinates of x,y rather than relative ones. Why not supply the w,h vars like the SSC and DM get?<br />
+<br />
+(edit) forgot something... 'Adjustable Blend' and 'Blend 50/50' bug: this causes white+white to be blended into RGB 254. A simple trick is to add 1 to one of the input colors (after mmx unpacking).<br />
+To see this bug, add: <br />
+- Render / clear screen (white)<br />
+- Misc / Set Render Mode (adjustable or 50/50)<br />
+- Render / Superscope (white)<br />
+- Trans / Color Map (black/white, drag the black point all the way to the right to incrase the contrast).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">13th September 2003 13:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that is if justin has the color map :)<br />
+otherwise just use a color clip, below RGB 254 &gt; black. <br />
+(this reminds me of another small bug: the color clip's below and above features actually perform &quot;less than or equal to&quot; and &quot;greater or equal to&quot;. so you have to choose below RGB 254 instead of just white.<br />
+<br />
+Also.. the color mod cant be used at all to perform channel shifting.. nor could it use x,y,r,d coords. It works much like the color map. eg: the 'level' code is run over 256 bands of brightness, from black to white. It doesnt relate in any way to the rgb values on the actual pixels. Eg. for each 'level', the red, green and blue values are necessarily all the same, until you change them.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">13th September 2003 14:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		[deleted post]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">uNDefineD</span><br />
+			<span class="date small text-muted">13th September 2003 14:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm browsing through it now. This is fantastic! Thanks a lot to J. Save prompt and subdirs are really great, and so is the dynamic colour.<br />
+<br />
+I'll probably do my NDD5 development using this if a final version comes along before January. I could add this to the reasons why I'm taking a break after I finish the MiniPaks (6 more presets to go!!!).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">13th September 2003 15:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hmm , about the SSC and text bugs.I think UnConeD told the text thing but not what I meant about the SSC (aldough the thing he mentined sucks too. I think that all three chanels dont align right (they dont drav in the same place one of them is shifted one pixel) this is obvious in fullscreen. I noticed it in my icecube preset where you can see a green line on the left side of the blue line that spins around. Im not sure its a SSC bug but that is what I meant.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">13th September 2003 15:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Global variables work great.  I've gotten a ton of speed out of my presets because I don't need the pseudorandom number generator.  Also, I noticed that if you manually save then open another preset, the save window still comes up.  Otherwise, it works great.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Kagnar</span><br />
+			<span class="date small text-muted">13th September 2003 15:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by siddhartha_one </i><br />
+<b>Btw, Pixelcraft, the docking window is still there, just hidden when its not in use.</b></blockquote>
+I don't see it either.....how do you get it back?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">13th September 2003 16:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Right-click on the AVS window, select &quot;Dock in config&quot;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">13th September 2003 16:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		right click on the view window and click &quot;dock in config&quot; right at the top, just under &quot;full screen&quot;.<br />
+<br />
+In the preset quick launch menu
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">13th September 2003 16:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Pixelcraft </i><br />
+<b>Aw, why did you remove the docking window?  I always used to use that thing :(</b></blockquote>
+i wasnt aware somebody even uses this stupid feature :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">13th September 2003 17:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You can also drag from the avs window into the config tree and it will dock.<br />
+<br />
+Also, you can use 'sw' and 'sh' in Trans / Movement.<br />
+Try: d=d*0.93 + (((x*sw/2)&amp;(y*sh/2)&amp;1)*-0.3); <br />
+<br />
+I'm gonna put up a big fix of a build later today, too. I just need someone to give me a preset that crashes Trans / Movement, hmm.<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th September 2003 17:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Justin: I meant, a preset that uses the new trans / movement, crashes the old AVS. Not sure if this is an issue, though other components do degrade more gracefully as 'unknown render objects'.<br />
+<br />
+fsk: it sounds like your 'bug' is a sideeffect of the way fullscreen overlay works. It's designed for natural images and uses YUV colorspace. Interpolation of sharp images in yuv colorspace can causes color changes...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">13th September 2003 17:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+<b>Justin: I meant, a preset that uses the new trans / movement, crashes the old AVS. Not sure if this is an issue, though other components do degrade more gracefully as 'unknown render objects'.<br />
+</b></blockquote>
+Ah doh, yeah that's a bug in the old AVS, since mig added new presets. I will update it so it doesn't happen again if we add more,<br />
+but old versions are old versions I'm afraid :(<br />
+<br />
+Or I suppose I could make it encode it differently so the old version<br />
+ignores it, hmm...<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">skupers</span><br />
+			<span class="date small text-muted">13th September 2003 17:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by justin </i><br />
+<b>Also, you can use 'sw' and 'sh' in Trans / Movement.<br />
+Try: d=d*0.93 + (((x*sw/2)&amp;(y*sh/2)&amp;1)*-0.3); <br />
+</b></blockquote>
+Great, I always wanted this. Now I can do a movement that moves the pixel with an even y to the left, and those with an uneven y to the left. Thank you, Justin :D .
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">skupers</span><br />
+			<span class="date small text-muted">13th September 2003 17:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by justin </i><br />
+<b>Ah doh, yeah that's a bug in the old AVS, since mig added new presets. I will update it so it doesn't happen again if we add more,<br />
+but old versions are old versions I'm afraid :(<br />
+<br />
+Or I suppose I could make it encode it differently so the old version<br />
+ignores it, hmm...<br />
+<br />
+-Justin </b></blockquote>
+I don't think this is a problem. Why would someone use an old version of AVS? It's not like anyone now still uses an AVS version without the SSC and Dynmov. ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">13th September 2003 17:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Because they don't have the latest version.  Some people still use AVS without dynamove becasue they don't have MMX and have to use 2.47.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">zamuz</span><br />
+			<span class="date small text-muted">13th September 2003 18:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		really nice, specially subdirs :) thanks justin.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">13th September 2003 19:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I also notice that pi has been made a standard variable. :up:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th September 2003 20:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The main problem I get with scope editing is the wiping of all variables when you change code... when editing, you lose all your init-variables. This is definitely bad in my book and should be removed again.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">13th September 2003 21:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		1337ness abound :D<br />
+<br />
+A couple requests off the top of my head:<br />
+-Switch the new bitwise operators (| and &amp;) to something different (e.g. the C++ versions, || and &amp;&amp;) so that old presets that used them don't go fuxery.  (And update the expression help to show this.)<br />
+-Add a bitwise XOR operator<br />
+-Add the ability to save code presets, fruityloops style - have a save button at the bottom of a code construct that puts the code into a seperate folder, under a new extention (.acp or something).  Making them universal would be cool, so you could quickly bring up a SSC preset into a DM.<br />
+-Add a button at the bottom of the AVS config for docking/undocking (small and inconspicuous and under the config dialogue somewhere).  It's kind of cumbersome to have to have to go to the AVS window and click &quot;Dock in config&quot; every time...I miss the double-click shortcut ;)<br />
+-Kill the var resetting, like UCD said.  It really sucks to be editing your code and have to watch it initialize every time you type something (sometimes upwards of 10 seconds, and I'm on a fast comp...).  In place of it, put a &quot;Reset vars (local)&quot; button at the bottom of the dialogue, and a &quot;Reset vars (global)&quot; at the top of the AVS config.<br />
+-In movement, calculate the user defined movement when it's selected...and put that &quot;Load as user defined&quot; button at the top somewhere so it doesn't go erasing my movements ._.<br />
+-GET RID OF THE FUCKING WINDOW SNAPPING.  I have no fucking idea why in the hell you decided to put this in but it's really fucking annoying.<br />
+-Add the ability to make your own global vars; something like, to make the variable &quot;bleem&quot; global, put bleem* in init.  The regs are useful, but I like being able to remember what variables do from their names ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">skupers</span><br />
+			<span class="date small text-muted">13th September 2003 22:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero </i><br />
+<b>-GET RID OF THE FUCKING WINDOW SNAPPING.  I have no fucking idea why in the hell you decided to put this in but it's really fucking annoying.<br />
+</b></blockquote>
+I thought this was done by Winamp, not AVS.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">13th September 2003 23:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nope, it's AVS.  2.6+ does it, 2.5.1- doesn't.
+		</p>
+</div>
+
+	<hr />
+
+
+
+
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">14th September 2003 15:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by justin </i><br />
+<b>Or I suppose I could make it encode it differently so the old version<br />
+ignores it, hmm...<br />
+-Justin </b></blockquote>
+Justin, just embed it. If I'm not mistaken, each object in the AVS file has a header ID of 4 bytes, followed by the size in bytes (LongInt). Couldn't you just increase the size value? Or does AVS actually care more about the Null termination rather than the specified size?<br />
+<br />
+And Atero, it's actually AVS 2.6 using Winamp's window system. So it's kind of both involved, as to remove it requires hacking winamp.exe, which is more dangerous than vis_avs.dll. Unless you just put the old code back in, heh good luck!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">14th September 2003 17:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That's what I meant.  Instead of fucking with WA, just get rid of the use of WA's windows.  It's useless and stupid and there's no reason it should be there in the first place.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">New AVS (and APE sdk) build</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=149010">New AVS (and APE sdk) build</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">13th September 2003 03:51 GMT</span></p>
-
-      <p class="post-content"><strong>New AVS (and APE sdk) build</strong><br />
-      OK here it is.<br />
-      <br />
-      <a href="http://genghis.winamp.com/~deadbeef/avs270pre.zip" target="_blank">http://genghis.winamp.com/~deadbeef/avs270pre.zip</a><br />
-      <br />
-      What's new:</p>
-
-      <ul>
-        <li>updated maximum local variables to 256 from 64</li>
-
-        <li>added global registers [reg00,reg01,... reg99] for debug and effect synchronization (or inter-preset communication)</li>
-
-        <li>added global register watch in root list window (for debugging)</li>
-
-        <li>added comments for eval code. // and /* bla */</li>
-
-        <li>updated eval documentation</li>
-
-        <li>added gettime() function to eval</li>
-
-        <li>made annoying grey rectangle below tree go away when you aren't docked</li>
-
-        <li>added new color modifier effect, which can be used to replace (with script) a lot of different effects (and be faster and more flexible).</li>
-
-        <li>added 'minimum blend' mode for effect lists/line drawing</li>
-
-        <li>added 'round up' option for Blur.</li>
-
-        <li>made a generic avs directory scanner routine for subdirs (yay!), and made it only generate menus when opened, for speed</li>
-
-        <li>made effects that use evallib reset variables to empty on recompile</li>
-
-        <li>made avs track dirtiness of presets, and (optionally) prompt to save etc</li>
-
-        <li>made avs resize images when resizing (optionally)</li>
-
-        <li>added extended APE interface, that lets you access evallib, global registers, line blend/width modes. (see apesdk.zip)</li>
-      </ul><br />
-      Also, in WA5a5+ (or 5.0 beta for most of you), you will be able to freely size the AVS window.<br />
-      <br />
-      Let me know what you think, and if you spot any glaring problems.<br />
-      Also, text rendering bug? SSC bug? Explanations? :)<br />
-      <br />
-      (edit)<br />
-      Oh yeah I forgot.. mig also updated the trans / movement, so you can edit builtin movements directly. It's kinda part way done, but kinda useful.<br />
-      <br />
-      Oh, and $PI and $E are available from eval code now, as constants.<br />
-      (/edit)<br />
-      <br />
-      -Justin
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">13th September 2003 04:00 GMT</span></p>
-
-      <p class="post-content">First!<br />
-      Will post back here again once I play with it.<br />
-      <br />
-      With the text rendering bug, if you use an additive text, it will add more blue or something on 95/98 machines. I'm not sure about the SSC bug, but in the DM it will shift up and left (or right). With the SSC, it only takes the first 100 samples of spectrum data.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">13th September 2003 04:39 GMT</span></p>
-
-      <p class="post-content">(I editted the original, but here is some more info on that:<br />
-      <br />
-      so mig also updated the trans / movement, so you can edit builtin movements directly. It's kinda part way done, but kinda useful (the downside for the moment is that if you have your user code, and you switch presets, *boom* your user code is gone. Doh. If enough people complain I'll revert it back to the old one. Either that, or we can update it so that it only blows away your user code if you happen to edit one of the builtin ones... hmmm).<br />
-      <br />
-      -Justin</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Pixelcraft</span><br />
-      <span class="date small text-muted">13th September 2003 05:22 GMT</span></p>
-
-      <p class="post-content">Aw, why did you remove the docking window? I always used to use that thing :(<br />
-      <br />
-      Other than that it looks great, except I don't know what most of the stuff does, but oh well, I'll figure it out someday.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">13th September 2003 06:22 GMT</span></p>
-
-      <p class="post-content">It doesn't seem to be working correctly - with WA 2.91 anyway.<br />
-      <br />
-      Doesn't seem to have beat detection...<br />
-      <br />
-      Probably because I'm not using WA5. Darn.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">13th September 2003 07:33 GMT</span></p>
-
-      <p class="post-content">i think i just creamed my pants :o<br />
-      <br />
-      Globals and the extended variable limit are the major things i was after, but I can imagine that the color modifier is going to be very useful. And the new ape structure will open some ideas im sure.<br />
-      <br />
-      Btw, Pixelcraft, the docking window is still there, just hidden when its not in use.<br />
-      <br />
-      Text render bug: slight blured border around all text (regaurdless of render mode and even when all borders/shadows are turned off), very noticable when you are dealing with large fonts. And espec when you are trying to clip the text using maximum blending etc. It looks like it might be something to do with antialiasing.<br />
-      <br />
-      Dont know anyhting about no superscope render bugs. And that 'first 100 samples' bug was with the render/simple, not the superscope.<br />
-      <br />
-      Another major thing people would like is multi line edit boxes with ALL of the scripted part.. (esp in the ssc).<br />
-      <br />
-      [edit]<br />
-      maybe you could jack up the update speed on the reg watch. Or make it specifiable.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">13th September 2003 08:39 GMT</span></p>
-
-      <p class="post-content">wow... I think I really am going to love this :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">13th September 2003 08:50 GMT</span></p>
-
-      <p class="post-content">hehe...i'll <b>have</b> to cheack this out:D:D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">13th September 2003 09:42 GMT</span></p>
-
-      <p class="post-content">everything in the main AVS directory doesn't seem to work over here. I'm talking about all APE's and pictures etc. Is this just with my comp, or do I just have to reinstall all my AVS stuff?<br />
-      <br />
-      [edit]<br />
-      Damn, Tuggummi's Bitmapped II looks ugly now :D<br />
-      [/edit]<br />
-      <br />
-      [edit2]<br />
-      Second problem: Scope editing fucks up. When editing a scope it completely dissapears or it just keeps rendering old mistakes. Am I the only one with these problems?<br />
-      [/edit2]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">13th September 2003 10:26 GMT</span></p>
-
-      <p class="post-content">*DROOOOOL*<br />
-      <br />
-      *Me hands Justin a beer... a hole box of THE beer*</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">skupers</span><br />
-      <span class="date small text-muted">13th September 2003 10:38 GMT</span></p>
-
-      <p class="post-content">Wow, thanks a lot. I've experimentating with it and I am loving it already. :up: And subdirs :D , now I can finally organize my enormous avs list.<br />
-      <br /></p>
-
-      <blockquote>
-        <i>Originally posted by Deamon</i><br />
-        <b>everything in the main AVS directory doesn't seem to work over here. I'm talking about all APE's and pictures etc. Is this just with my comp, or do I just have to reinstall all my AVS stuff?</b>
-      </blockquote>I don't have this problem, I can use all my pictures and APE's.<br />
-      <br />
-
-      <blockquote>
-        <b>Second problem: Scope editing fucks up. When editing a scope it completely dissapears or it just keeps rendering old mistakes. Am I the only one with these problems?<br /></b>
-      </blockquote>I'm having this problem too. If you edit a scope, it disappears, and you have to exit and start avs again to see it again.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">13th September 2003 10:45 GMT</span></p>
-
-      <p class="post-content">yep that's the same thing. Have you tried out the Color Modifier yet? It's so sweet :)<br />
-      <br />
-      And about the first problem, I'm going to install winamp AND avs all over again when winamp 5 full version comes out, so that's no major problem anyway.<br />
-      <br />
-      [edit]<br />
-      never mind, I made a little mistake when re-organizing my AVS'es, it's working fine now :)<br />
-      [/edit]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">13th September 2003 12:23 GMT</span></p>
-
-      <p class="post-content">The regBLABLABLA (regbx,regby) would be really cool, coz ill have a BIG BIG BIG mess if i try to use only reg00-99 i dont understand later what each varjable does... yes, i know i can use the // and /*<br />
-      but then i would really need the multible line beat, int and frame fields (hint, hint)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">13th September 2003 12:26 GMT</span></p>
-
-      <p class="post-content">cool, new version</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jonasc1</span><br />
-      <span class="date small text-muted">13th September 2003 12:29 GMT</span></p>
-
-      <p class="post-content">The "expresion help" is imposible to turn off when the screen is running in 800x600 mode(cant reach the OK button at the bottom and the X button in the corner dosent work). I also cant see all of it beacuse it is a little bigger now. a scroll will help.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">13th September 2003 12:36 GMT</span></p>
-
-      <p class="post-content">Yea, i have the same problem, no one cares about the ppl who use the 800x600 :(<br />
-      Anyways... one thing would make the color modifier a REALLY powerful too: add the x,y,r,d then you can even use it to raytrace (if you wish to make one wall blue and other red or something like this)<br />
-      THAT would be amazing...<br />
-      i hope the newer versions will come.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">13th September 2003 12:42 GMT</span></p>
-
-      <p class="post-content">Color Mod is freekin awsome. Ive toyed around abit with it. Can use it to replace color map, channel shift and multiplier ape's very easily. And faster in some cases.<br />
-      <br />
-      [edit] maybe not channel shift.. :\</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">13th September 2003 13:19 GMT</span></p>
-
-      <p class="post-content">i wrote a tool (using NSIS) called ClikBot, which allows a user to double-click an avs-file to open it directly in winamp. due to the nature of NSIS, i have not found a way to this without restarting winamp (which sucks).<br />
-      <br />
-      would be nice if winamp/avs supports this natively.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th September 2003 13:19 GMT</span></p>
-
-      <p class="post-content">justin: Haven't played with the new one much, but here's some clarification for the SSC/Text 'bugs':<br />
-      <br />
-      - The text bugs are Win9x/ME only as far as I know, and are twofold. One is that when the shadow color is set to RGB 0,0,0, the entire screen is always replaced (black bg w/ text), regardless of blend mode. The workaround is to set shadow color to something else (even if shadowing/outlining is turned off).<br />
-      - The second text bug is that on Win9x/ME, in certain cases, the blue channel seems to contain value 1 rather than 0 for black, resulting in a slow, but steady blue-ification if you use some form of additive mode.<br />
-      I don't have a 9x machine handy, so I can't be sure.<br />
-      <br />
-      - The superscope bug that fsk was referring to is probably the hackish linedrawing algorithm, which has incorrect line-ends (horizontal/vertical rather than correct).<br />
-      When drawing short segments of lines with a fat linewidth, this becomes really noticable and ugly. For a good example, take the default superscope (the spiral) and use linewidth 10. Notice the fringing at 45&#194;&#176;.<br />
-      <br />
-      Trans / Color Modifier is really neat, sort of like a codable Trans / Color Map (though without the output modes).<br />
-      <br />
-      By the way, a lot of us have been using a res-hacked version of AVS, in which the superscope dialog has been changed to a similar layout as the DM, DMM or now CM: with multiline editboxes and vertical scrollbars.<br />
-      The big block of explanation below the scope needs to go of course, but in its current form it's a big mess anyway (that most newbies seem to skip).<br />
-      <br />
-      Another issue: it seems backwards compatibility is lost for presets that contain a Trans / Movement (resulting in a crash). Any way of fixing this?<br />
-      <br />
-      Another movement issue... it seems clicking a default movement with supplied code will happily overwrite any code in the window at that time. I can see some precious code being lost this way. Possible solutions: always ask (annoying for non coders) or supply a button 'load as custom' (better).<br />
-      <br />
-      And finally: some of the built-in movements depend on the real pixel coordinates of x,y rather than relative ones. Why not supply the w,h vars like the SSC and DM get?<br />
-      <br />
-      (edit) forgot something... 'Adjustable Blend' and 'Blend 50/50' bug: this causes white+white to be blended into RGB 254. A simple trick is to add 1 to one of the input colors (after mmx unpacking).<br />
-      To see this bug, add:<br />
-      - Render / clear screen (white)<br />
-      - Misc / Set Render Mode (adjustable or 50/50)<br />
-      - Render / Superscope (white)<br />
-      - Trans / Color Map (black/white, drag the black point all the way to the right to incrase the contrast).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">13th September 2003 13:44 GMT</span></p>
-
-      <p class="post-content">that is if justin has the color map :)<br />
-      otherwise just use a color clip, below RGB 254 &gt; black.<br />
-      (this reminds me of another small bug: the color clip's below and above features actually perform "less than or equal to" and "greater or equal to". so you have to choose below RGB 254 instead of just white.<br />
-      <br />
-      Also.. the color mod cant be used at all to perform channel shifting.. nor could it use x,y,r,d coords. It works much like the color map. eg: the 'level' code is run over 256 bands of brightness, from black to white. It doesnt relate in any way to the rgb values on the actual pixels. Eg. for each 'level', the red, green and blue values are necessarily all the same, until you change them.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">13th September 2003 14:05 GMT</span></p>
-
-      <p class="post-content">[deleted post]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
-      <span class="date small text-muted">13th September 2003 14:43 GMT</span></p>
-
-      <p class="post-content">I'm browsing through it now. This is fantastic! Thanks a lot to J. Save prompt and subdirs are really great, and so is the dynamic colour.<br />
-      <br />
-      I'll probably do my NDD5 development using this if a final version comes along before January. I could add this to the reasons why I'm taking a break after I finish the MiniPaks (6 more presets to go!!!).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">13th September 2003 15:10 GMT</span></p>
-
-      <p class="post-content">hmm , about the SSC and text bugs.I think UnConeD told the text thing but not what I meant about the SSC (aldough the thing he mentined sucks too. I think that all three chanels dont align right (they dont drav in the same place one of them is shifted one pixel) this is obvious in fullscreen. I noticed it in my icecube preset where you can see a green line on the left side of the blue line that spins around. Im not sure its a SSC bug but that is what I meant.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">13th September 2003 15:18 GMT</span></p>
-
-      <p class="post-content">Global variables work great. I've gotten a ton of speed out of my presets because I don't need the pseudorandom number generator. Also, I noticed that if you manually save then open another preset, the save window still comes up. Otherwise, it works great.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Kagnar</span><br />
-      <span class="date small text-muted">13th September 2003 15:33 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by siddhartha_one</i><br />
-        <b>Btw, Pixelcraft, the docking window is still there, just hidden when its not in use.</b>
-      </blockquote>I don't see it either.....how do you get it back?
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">13th September 2003 16:03 GMT</span></p>
-
-      <p class="post-content">Right-click on the AVS window, select "Dock in config"</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">13th September 2003 16:03 GMT</span></p>
-
-      <p class="post-content">right click on the view window and click "dock in config" right at the top, just under "full screen".<br />
-      <br />
-      In the preset quick launch menu</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">13th September 2003 16:11 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Pixelcraft</i><br />
-        <b>Aw, why did you remove the docking window? I always used to use that thing :(</b>
-      </blockquote>i wasnt aware somebody even uses this stupid feature :p
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">13th September 2003 17:01 GMT</span></p>
-
-      <p class="post-content">You can also drag from the avs window into the config tree and it will dock.<br />
-      <br />
-      Also, you can use 'sw' and 'sh' in Trans / Movement.<br />
-      Try: d=d*0.93 + (((x*sw/2)&amp;(y*sh/2)&amp;1)*-0.3);<br />
-      <br />
-      I'm gonna put up a big fix of a build later today, too. I just need someone to give me a preset that crashes Trans / Movement, hmm.<br />
-      <br />
-      -Justin</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th September 2003 17:09 GMT</span></p>
-
-      <p class="post-content">Justin: I meant, a preset that uses the new trans / movement, crashes the old AVS. Not sure if this is an issue, though other components do degrade more gracefully as 'unknown render objects'.<br />
-      <br />
-      fsk: it sounds like your 'bug' is a sideeffect of the way fullscreen overlay works. It's designed for natural images and uses YUV colorspace. Interpolation of sharp images in yuv colorspace can causes color changes...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">13th September 2003 17:14 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by UnConeD</i><br />
-        <b>Justin: I meant, a preset that uses the new trans / movement, crashes the old AVS. Not sure if this is an issue, though other components do degrade more gracefully as 'unknown render objects'.<br /></b>
-      </blockquote>Ah doh, yeah that's a bug in the old AVS, since mig added new presets. I will update it so it doesn't happen again if we add more,<br />
-      but old versions are old versions I'm afraid :(<br />
-      <br />
-      Or I suppose I could make it encode it differently so the old version<br />
-      ignores it, hmm...<br />
-      <br />
-      -Justin
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">skupers</span><br />
-      <span class="date small text-muted">13th September 2003 17:19 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by justin</i><br />
-        <b>Also, you can use 'sw' and 'sh' in Trans / Movement.<br />
-        Try: d=d*0.93 + (((x*sw/2)&amp;(y*sh/2)&amp;1)*-0.3);<br /></b>
-      </blockquote>Great, I always wanted this. Now I can do a movement that moves the pixel with an even y to the left, and those with an uneven y to the left. Thank you, Justin :D .
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">skupers</span><br />
-      <span class="date small text-muted">13th September 2003 17:22 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by justin</i><br />
-        <b>Ah doh, yeah that's a bug in the old AVS, since mig added new presets. I will update it so it doesn't happen again if we add more,<br />
-        but old versions are old versions I'm afraid :(<br />
-        <br />
-        Or I suppose I could make it encode it differently so the old version<br />
-        ignores it, hmm...<br />
-        <br />
-        -Justin</b>
-      </blockquote>I don't think this is a problem. Why would someone use an old version of AVS? It's not like anyone now still uses an AVS version without the SSC and Dynmov. ;)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">13th September 2003 17:35 GMT</span></p>
-
-      <p class="post-content">Because they don't have the latest version. Some people still use AVS without dynamove becasue they don't have MMX and have to use 2.47.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">zamuz</span><br />
-      <span class="date small text-muted">13th September 2003 18:09 GMT</span></p>
-
-      <p class="post-content">really nice, specially subdirs :) thanks justin.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">13th September 2003 19:01 GMT</span></p>
-
-      <p class="post-content">I also notice that pi has been made a standard variable. :up:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th September 2003 20:16 GMT</span></p>
-
-      <p class="post-content">The main problem I get with scope editing is the wiping of all variables when you change code... when editing, you lose all your init-variables. This is definitely bad in my book and should be removed again.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">13th September 2003 21:32 GMT</span></p>
-
-      <p class="post-content">1337ness abound :D<br />
-      <br />
-      A couple requests off the top of my head:<br />
-      -Switch the new bitwise operators (| and &amp;) to something different (e.g. the C++ versions, || and &amp;&amp;) so that old presets that used them don't go fuxery. (And update the expression help to show this.)<br />
-      -Add a bitwise XOR operator<br />
-      -Add the ability to save code presets, fruityloops style - have a save button at the bottom of a code construct that puts the code into a seperate folder, under a new extention (.acp or something). Making them universal would be cool, so you could quickly bring up a SSC preset into a DM.<br />
-      -Add a button at the bottom of the AVS config for docking/undocking (small and inconspicuous and under the config dialogue somewhere). It's kind of cumbersome to have to have to go to the AVS window and click "Dock in config" every time...I miss the double-click shortcut ;)<br />
-      -Kill the var resetting, like UCD said. It really sucks to be editing your code and have to watch it initialize every time you type something (sometimes upwards of 10 seconds, and I'm on a fast comp...). In place of it, put a "Reset vars (local)" button at the bottom of the dialogue, and a "Reset vars (global)" at the top of the AVS config.<br />
-      -In movement, calculate the user defined movement when it's selected...and put that "Load as user defined" button at the top somewhere so it doesn't go erasing my movements ._.<br />
-      -GET RID OF THE FUCKING WINDOW SNAPPING. I have no fucking idea why in the hell you decided to put this in but it's really fucking annoying.<br />
-      -Add the ability to make your own global vars; something like, to make the variable "bleem" global, put bleem* in init. The regs are useful, but I like being able to remember what variables do from their names ;)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">skupers</span><br />
-      <span class="date small text-muted">13th September 2003 22:00 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        <b>-GET RID OF THE FUCKING WINDOW SNAPPING. I have no fucking idea why in the hell you decided to put this in but it's really fucking annoying.<br /></b>
-      </blockquote>I thought this was done by Winamp, not AVS.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">13th September 2003 23:36 GMT</span></p>
-
-      <p class="post-content">Nope, it's AVS. 2.6+ does it, 2.5.1- doesn't.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">14th September 2003 15:35 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by justin</i><br />
-        <b>Or I suppose I could make it encode it differently so the old version<br />
-        ignores it, hmm...<br />
-        -Justin</b>
-      </blockquote>Justin, just embed it. If I'm not mistaken, each object in the AVS file has a header ID of 4 bytes, followed by the size in bytes (LongInt). Couldn't you just increase the size value? Or does AVS actually care more about the Null termination rather than the specified size?<br />
-      <br />
-      And Atero, it's actually AVS 2.6 using Winamp's window system. So it's kind of both involved, as to remove it requires hacking winamp.exe, which is more dangerous than vis_avs.dll. Unless you just put the old code back in, heh good luck!
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">14th September 2003 17:18 GMT</span></p>
-
-      <p class="post-content">That's what I meant. Instead of fucking with WA, just get rid of the use of WA's windows. It's useless and stupid and there's no reason it should be there in the first place.</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
 </body>
 </html>

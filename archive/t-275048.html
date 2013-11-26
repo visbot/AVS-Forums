@@ -1,100 +1,149 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS breaking old stuff again AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" AVS breaking old stuff again AVS" />
 
-  <title>AVS breaking old stuff again - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> AVS breaking old stuff again - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">AVS breaking old stuff again</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=275048">AVS breaking old stuff again</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">28th July 2007 20:58 GMT</span></p>
 
-      <p class="post-content"><strong>AVS breaking old stuff again</strong><br />
-      Is it just me seeing certain things (I'm not sure about specifically what) in nested effect lists. Example is my intro to WFC5/"Winamp" preset in my third pack. The nested list seems to overtake the containing list, and then it's completely ignored. And it works when i disable the contained list.<br />
-      <br />
-      So has someone been tinkering with the wrong bit again or have i jacked up my install or something? On the off chance that someone who might actually be able to do anything would by some miracle be reading the forum. ;)<br />
-      <br />
-      Edit:<br />
-      Aha! Source Mapped movements seem to be the culprit. No change to the 'shouldn't be' situation, but that's where the problem is.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">AVS breaking old stuff again</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=275048">AVS breaking old stuff again</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">DrO</span><br />
-      <span class="date small text-muted">28th July 2007 21:58 GMT</span></p>
 
-      <p class="post-content">the avs dll hasn't been changed since the 'd' spec revision i last did so i've no idea what would be the cause of that. now makes me not want to do the mini updates i've got to do on avs for something else...<br />
-      <br />
-      -daz</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">28th July 2007 22:20 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">28th July 2007 20:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>AVS breaking old stuff again</strong><br />
+		
+		
 
-      <p class="post-content">I can imagine, AVS's code is probably what Munch's guy was so horrified by. ;)<br />
-      <br />
-      edit:<br />
-      By the way, disregard the nested effect list thing. It appears to be just ("just", like this makes it so much easier) source mapped movements in effect lists.<br />
-      <br />
-      edit again:<br />
-      Okay i'm wrong, it's not as clear cut as that, it's extremely odd. I'll keep experimenting with it, try and nail down exactly where the problem occurs.<br />
-      <br />
-      edit the third:<br />
-      Okay, the circumstance seems to be when there is a source mapped movement in an effect list, with any movement directly before it in the list. Except when there is a source mapped movement anywhere in the list before [the movement just before the problem movement].<br />
-      <br />
-      edit^4:<br />
-      Oh christ, I have circumstances that contradict that, it seems that every time i add more there's a whole extra dimension added to the weirdness.</p>
-    </div>
-    <hr />
+		Is it just me seeing certain things (I'm not sure about specifically what) in nested effect lists. Example is my intro to WFC5/&quot;Winamp&quot; preset in my third pack. The nested list seems to overtake the containing list, and then it's completely ignored. And it works when i disable the contained list.<br />
+<br />
+So has someone been tinkering with the wrong bit again or have i jacked up my install or something? On the off chance that someone who might actually be able to do anything would by some miracle be reading the forum. ;)<br />
+<br />
+Edit:<br />
+Aha! Source Mapped movements seem to be the culprit. No change to the 'shouldn't be' situation, but that's where the problem is.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">16th August 2007 16:58 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Hahahahahaha.<br />
-      <br />
-      <a href="http://www.stonedroses.co.uk/ryan/crap/avser.jpg" target="_blank">http://www.stonedroses.co.uk/ryan/crap/avser.jpg</a><br />
-      <br />
-      <font size="1">(Couldn't think where else to put it)</font></p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">DrO</span><br />
+			<span class="date small text-muted">28th July 2007 21:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">16th August 2007 17:46 GMT</span></p>
+		the avs dll hasn't been changed since the 'd' spec revision i last did so i've no idea what would be the cause of that. now makes me not want to do the mini updates i've got to do on avs for something else...<br />
+<br />
+-daz
+		</p>
+</div>
 
-      <p class="post-content">always good when people can still laugh about these errors :)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">28th July 2007 22:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can imagine, AVS's code is probably what Munch's guy was so horrified by. ;)<br />
+<br />
+edit:<br />
+By the way, disregard the nested effect list thing. It appears to be just (&quot;just&quot;, like this makes it so much easier) source mapped movements in effect lists.<br />
+<br />
+edit again:<br />
+Okay i'm wrong, it's not as clear cut as that, it's extremely odd. I'll keep experimenting with it, try and nail down exactly where the problem occurs.<br />
+<br />
+edit the third:<br />
+Okay, the circumstance seems to be when there is a source mapped movement in an effect list, with any movement directly before it in the list. Except when there is a source mapped movement anywhere in the list before [the movement just before the problem movement].<br />
+<br />
+edit^4:<br />
+Oh christ, I have circumstances that contradict that, it seems that every time i add more there's a whole extra dimension added to the weirdness.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">16th August 2007 16:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hahahahahaha.<br />
+<br />
+<a href="http://www.stonedroses.co.uk/ryan/crap/avser.jpg" target="_blank">http://www.stonedroses.co.uk/ryan/crap/avser.jpg</a><br />
+<br />
+<font size="1">(Couldn't think where else to put it)</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">16th August 2007 17:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		always good when people can still laugh about these errors :)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

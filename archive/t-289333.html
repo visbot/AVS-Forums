@@ -1,285 +1,378 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="need help ... volume correction AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" need help ... volume correction AVS" />
 
-  <title>need help ... volume correction - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> need help ... volume correction - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">need help ... volume correction</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=289333">need help ... volume correction</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">HuRriC4nE</span><br />
-      <span class="date small text-muted">30th March 2008 14:02 GMT</span></p>
 
-      <p class="post-content"><strong>need help ... volume correction</strong><br />
-      Hello coders,<br />
-      <br />
-      I'm just stuck here with a little problem.<br />
-      <br />
-      The preset I'm just working on shall work with classic musik as well. The only problem with classic is the volume. Most recordings are very very quiet.<br />
-      <br />
-      As all my variables are coming from getspec or getosc those are very small, too. What I need is a way to "correct" those parameters.<br />
-      <br />
-      I tried this.<br />
-      <br />
-      volume=volume*0.999+getspec(0.5,1,0)*0.001;<br />
-      <br />
-      correction=1/(volume+0.001);<br />
-      //"+0.001" shall avoid zero-division<br />
-      <br />
-      actually this works well with normal music (since there are still great differences in volume - the new foo fighters album is a good example for VERY VERY LOUD).<br />
-      <br />
-      but when i tried some piano recordings from Chopin (the "raindrop sonata" nothing really happens. Also Soundtracks are difficult.<br />
-      <br />
-      The thing is the preset really can work on classic music.<br />
-      It already works fine with pop music although i don't use the beatdetection in any way.<br />
-      Classic musik doesn't have a beat actually so this could look good.<br />
-      <br />
-      Maybe someone here did a volume correction already and can help me. I would be very happy.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">need help ... volume correction</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=289333">need help ... volume correction</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">31st March 2008 11:47 GMT</span></p>
 
-      <p class="post-content">you want to normalise the volume somehow... you can't do this instantaneously without simply destroying the signal. Consider the following 3 volume samples:<br />
-      <br />
-      a b c d e f ...<br />
-      <br />
-      You want to correct them somehow, so per frame you find 1 / (a + 0.001) for the first one, 1 / (b + 0.001) and 1 / (c + 0.001) etc... for the others as multiplicative corrections, note that too a good approximation, once you multiply them out your samples are now roughly:<br />
-      <br />
-      1 1 1 1 1 1 ...<br />
-      <br />
-      i.e. nothing.<br />
-      <br />
-      What you want is to keep the last n samples, using the example above we take the last 3 as an example the corrections need to be:<br />
-      <br />
-      3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
-      <br />
-      we can't calculate these properly for a or b and have to start at c really... so we get:<br />
-      <br />
-      3*c/(a+0.001) 3*c/(a+b+0.001) 3*c/(a+b+c+0.001) 3*d/(b+c+d+0.001) 3*e/(c+d+e+0.001)3*e/(d+e+f+0.001) ...<br />
-      <br />
-      etc...<br />
-      <br />
-      You get a little mess at the front, and the more samples you use for the moving average the longer the mess lasts... but the actual results inbetween should be usable.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">HuRriC4nE</span><br />
-      <span class="date small text-muted">31st March 2008 12:43 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">HuRriC4nE</span><br />
+			<span class="date small text-muted">30th March 2008 14:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>need help ... volume correction</strong><br />
+		
+		
 
-      <p class="post-content">WOW that sounds really ...sophisticated...<br />
-      <br />
-      what are the volume samples a b c d e ?<br />
-      something like<br />
-      <br />
-      a=getspec(0,0,0);<br />
-      b=getspec(0.1,0,4,0);<br />
-      c= ....<br />
-      ?<br />
-      <br />
-      my correction value shall not be the value that is directly used for the preset. The volume (that very slow interpolated one) shall represent something like the overall volume of a song. The correction shall be a value that every other value<br />
-      is multiplikated with.<br />
-      In quiet mixed songs these values than have the same "size" as in loud songs.<br />
-      <br />
-      why do you use more than one sample for the volume?<br />
-      is that better?</p>
-    </div>
-    <hr />
+		Hello coders,<br />
+<br />
+I'm just stuck here with a little problem.<br />
+<br />
+The preset I'm just working on shall work with classic musik as well. The only problem with classic is the volume. Most recordings are very very quiet. <br />
+<br />
+As all my variables are coming from getspec or getosc those are very small, too. What I need is a way to &quot;correct&quot; those parameters.<br />
+<br />
+I tried this.<br />
+<br />
+volume=volume*0.999+getspec(0.5,1,0)*0.001;<br />
+<br />
+correction=1/(volume+0.001); <br />
+//&quot;+0.001&quot; shall avoid zero-division<br />
+<br />
+actually this works well with normal music (since there are still great differences in volume - the new foo fighters album is a good example for VERY VERY LOUD).<br />
+<br />
+but when i tried some piano recordings from Chopin (the &quot;raindrop sonata&quot; nothing really happens. Also Soundtracks are difficult.<br />
+<br />
+The thing is the preset really can work on classic music.<br />
+It already works fine with pop music although i don't use the beatdetection in any way.<br />
+Classic musik doesn't have a beat actually so this could look good.<br />
+<br />
+Maybe someone here did a volume correction already and can help me. I would be very happy.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">31st March 2008 20:02 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">31st March 2008 11:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>WOW that sounds really ...sophisticated...<br />
-        <br />
-        what are the volume samples a b c d e ?<br />
-        something like<br />
-        <br />
-        a=getspec(0,0,0);<br />
-        b=getspec(0.1,0,4,0);<br />
-        c= ....<br />
-        ?<br /></b>
-      </blockquote>yes.<br />
-      <br />
+		you want to normalise the volume somehow... you can't do this instantaneously without simply destroying the signal. Consider the following 3 volume samples:<br />
+<br />
+a b c d e f ...<br />
+<br />
+You want to correct them somehow, so per frame you find 1 / (a + 0.001) for the first one, 1 / (b + 0.001) and 1 / (c + 0.001) etc... for the others as multiplicative corrections, note that too a good approximation, once you multiply them out your samples are now roughly:<br />
+<br />
+1 1 1 1 1 1 ...<br />
+<br />
+i.e. nothing.<br />
+<br />
+What you want is to keep the last n samples, using the example above we take the last 3 as an example the corrections need to be:<br />
+<br />
+3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
+<br />
+we can't calculate these properly for a or b and have to start at c really... so we get:<br />
+<br />
+3*c/(a+0.001) 3*c/(a+b+0.001) 3*c/(a+b+c+0.001) 3*d/(b+c+d+0.001) 3*e/(c+d+e+0.001)3*e/(d+e+f+0.001) ...<br />
+<br />
+etc...<br />
+<br />
+You get a little mess at the front, and the more samples you use for the moving average the longer the mess lasts... but the actual results inbetween should be usable.
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>why do you use more than one sample for the volume?<br />
-        is that better?</b>
-      </blockquote>well, its just a moving average, it adds some temporal smoothing to the value calculated. this way the value is the average volume over so many frames, not just the instantaneous volume, which, if i understand correctly, would ruin the effect you are after.<br />
-      <br />
-      look up averages and moving averages... its one of those many wheels i reinvented... if ever asked yourself "how do i find the value half way between a and b" you have all the prerequisite knowledge to both understand and independently derive the result.<br />
-      <br />
-      happy maths. :)
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">HuRriC4nE</span><br />
-      <span class="date small text-muted">31st March 2008 22:17 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">HuRriC4nE</span><br />
+			<span class="date small text-muted">31st March 2008 12:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Hm I'm sorry,<br />
-      but I'm always a little slow in understanding<br />
-      (GC can tell you... :) ).<br />
-      I also got a little problems with the english language.<br />
-      <br />
-      you said "temporal smoothing". Isn't an interpolation of 0.999 to 0.001 giving the volume-value a very big temporal smoothing?<br />
-      <br />
-      "<br />
-      3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
-      "<br />
-      <br />
-      are these three terms the correction-values for the different values a,b and c?<br />
-      <br />
-      ...<br />
-      maybe i give you an example of how i get my values.<br />
-      I have rotation parameters. ... x,y,z-values.<br />
-      <br />
-      i show you the process the x value is created:<br />
-      <br />
-      xrta = xrta*0.99 + getosc(rand(101)*0.01,0,0)*0.05;<br />
-      xrt = xrt + xrt;<br />
-      <br />
-      [xrta for "x rotation a"]<br />
-      [xrt for "x rotation"]<br />
-      the xsh value is tha final value i need.<br />
-      but in low-volume songs it is very little.<br />
-      my aim is to have a correction-value ["cor"] ,that can erase the effect as following:<br />
-      <br />
-      xrta = xrta*0.99 + getosc( rand(101)*0.01, 0, 0)*0.05*cor;<br />
-      xsh = xsh*0.95 + xrta;<br />
-      <br />
-      When i understood you right you have corretion values for every sample you need in your preset.<br />
-      (maybe one for the bass, one for the more "vocal" frequencies and one for crash-sounds - or maybe much more)<br />
-      those samples are influencing each others correction-values.<br />
-      <br />
-      maybe i sould send you the preset.</p>
-    </div>
-    <hr />
+		WOW that sounds really ...sophisticated...<br />
+<br />
+what are the volume samples a b c d e ?<br />
+something like<br />
+<br />
+a=getspec(0,0,0);<br />
+b=getspec(0.1,0,4,0);<br />
+c= ....<br />
+?<br />
+<br />
+my correction value shall not be the value that is directly used for the preset. The volume (that very slow interpolated one) shall represent something like the overall volume of a song. The correction shall be a value that every other value <br />
+is multiplikated with. <br />
+In quiet mixed songs these values than have the same &quot;size&quot; as in loud songs.<br />
+  <br />
+why do you use more than one sample for the volume?<br />
+is that better?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">1st April 2008 14:18 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">31st March 2008 20:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>you said "temporal smoothing". Isn't an interpolation of 0.999 to 0.001 giving the volume-value a very big temporal smoothing?</b>
-      </blockquote>By temporal smoothing I meant "smoother over time" the +0.001 has nothing to do with that... its just to avoid division by zero. Like motion blur for videos, except with sound... difficult to explain with my poor grasp of technobabble.<br />
-      <br />
+		
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>WOW that sounds really ...sophisticated...<br />
+<br />
+what are the volume samples a b c d e ?<br />
+something like<br />
+<br />
+a=getspec(0,0,0);<br />
+b=getspec(0.1,0,4,0);<br />
+c= ....<br />
+?<br />
+</b></blockquote>
+yes.<br />
+<br />
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b><br />
-        "<br />
-        3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
-        "<br />
-        <br />
-        are these three terms the correction-values for the different values a,b and c?<br /></b>
-      </blockquote>Yes.<br />
-      <br />
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>why do you use more than one sample for the volume?<br />
+is that better? </b></blockquote>
+well, its just a moving average, it adds some temporal smoothing to the value calculated. this way the value is the average volume over so many frames, not just the instantaneous volume, which, if i understand correctly, would ruin the effect you are after.<br />
+<br />
+look up averages and moving averages... its one of those many wheels i reinvented... if ever asked yourself &quot;how do i find the value half way between a and b&quot; you have all the prerequisite knowledge to both understand and independently derive the result.<br />
+<br />
+happy maths. :)
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>xrta = xrta*0.99 + getosc(rand(101)*0.01,0,0)*0.05;<br />
-        xrt = xrt + xrt;<br /></b>
-      </blockquote>This will smooth out the rotation over time, but not very controlledly.<br />
-      <br />
-      a*(1-t) + b*t is interpolation between a and b by t, in your case the constants don't add to 1 which "leaks" data, either by making the signal over strong or over weak (if they sum to less than one).<br />
-      <br />
+	<hr />
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>my aim is to have a correction-value ["cor"] ,that can erase the effect as following:<br />
-        <br />
-        xrta = xrta*0.99 + getosc( rand(101)*0.01, 0, 0)*0.05*cor;<br />
-        xsh = xsh*0.95 + xrta;<br />
-        <br /></b>
-      </blockquote>This is sort of what I expected. Certainly I am describing "cor" and no other variable here. All I am saying is to make it a moving average so that it is smooth over time. Nothing to do with tonality.<br />
-      <br />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">HuRriC4nE</span><br />
+			<span class="date small text-muted">31st March 2008 22:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by HuRriC4nE</i><br />
-        <b>maybe i sould send you the preset.</b>
-      </blockquote>Most certainly, that would be easiest. :)
-    </div>
-    <hr />
+		Hm I'm sorry, <br />
+but I'm always a little slow in understanding<br />
+(GC can tell you... :) ).<br />
+I also got a little problems with the english language.<br />
+<br />
+you said &quot;temporal smoothing&quot;. Isn't an interpolation of 0.999 to 0.001 giving the volume-value a very big temporal smoothing?<br />
+<br />
+&quot;<br />
+3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
+&quot;<br />
+<br />
+are these three terms the correction-values for the different values a,b and c?<br />
+<br />
+...<br />
+maybe i give you an example of how i get my values.<br />
+I have rotation parameters. ... x,y,z-values.<br />
+<br />
+i show you the process the x value is created:<br />
+<br />
+xrta = xrta*0.99 + getosc(rand(101)*0.01,0,0)*0.05;<br />
+xrt = xrt + xrt;<br />
+<br />
+[xrta for &quot;x rotation a&quot;]<br />
+[xrt for &quot;x rotation&quot;]<br />
+the xsh value is tha final value i need.<br />
+but in low-volume songs it is very little.<br />
+my aim is to have a correction-value [&quot;cor&quot;] ,that can erase the effect as following:<br />
+<br />
+xrta = xrta*0.99 + getosc( rand(101)*0.01, 0, 0)*0.05*cor;<br />
+ xsh = xsh*0.95 + xrta;<br />
+<br />
+When i understood you right you have corretion values for every sample you need in your preset.<br />
+(maybe one for the bass, one for the more &quot;vocal&quot; frequencies and one for crash-sounds - or maybe much more)<br />
+those samples are influencing each others correction-values.<br />
+<br />
+maybe i sould send you the preset.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">HuRriC4nE</span><br />
-      <span class="date small text-muted">3rd April 2008 09:27 GMT</span></p>
+	<hr />
 
-      <p class="post-content">jheriko is sent you a private message with a download link.<br />
-      it took me a while to tidy up the code so that another person can (easier) understand it....</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">1st April 2008 14:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">3rd April 2008 11:52 GMT</span></p>
+		
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>you said &quot;temporal smoothing&quot;. Isn't an interpolation of 0.999 to 0.001 giving the volume-value a very big temporal smoothing?</b></blockquote>
+By temporal smoothing I meant &quot;smoother over time&quot; the +0.001 has nothing to do with that... its just to avoid division by zero. Like motion blur for videos, except with sound... difficult to explain with my poor grasp of technobabble.<br />
+<br />
 
-      <p class="post-content">thx. in future use my e-mail address though. i'm more likely to get it... I get a ton of e-mails from the forums and generally ignore them all without noticing whether they are pm's are not. :)</p>
-    </div>
-    <hr />
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b><br />
+&quot;<br />
+3/(a+b+c+0.001), 3/(b+c+d+0.001), 3/(d+e+f+0.001)...<br />
+&quot;<br />
+<br />
+are these three terms the correction-values for the different values a,b and c?<br />
+</b></blockquote>
+Yes.<br />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">HuRriC4nE</span><br />
-      <span class="date small text-muted">6th April 2008 09:15 GMT</span></p>
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>xrta = xrta*0.99 + getosc(rand(101)*0.01,0,0)*0.05;<br />
+xrt = xrt + xrt;<br />
+</b></blockquote>
+This will smooth out the rotation over time, but not very controlledly.<br />
+<br />
+a*(1-t) + b*t is interpolation between a and b by t, in your case the constants don't add to 1 which &quot;leaks&quot; data, either by making the signal over strong or over weak (if they sum to less than one).<br />
+<br />
 
-      <p class="post-content">@jheriko<br />
-      i somehow find out why some classic songs are so bad reacting in this preset.<br />
-      the output is not very well "distributed" over the spectrum.<br />
-      a piano song has actually only mids - noc real bass or treble.<br />
-      so the volume has to be made different.<br />
-      <br />
-      i guess i will have to find another way to fix this.<br />
-      so don't worry - i will fix it myself later :)<br />
-      <br />
-      the preset already works very well</p>
-    </div>
-    <hr />
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>my aim is to have a correction-value [&quot;cor&quot;] ,that can erase the effect as following:<br />
+<br />
+xrta = xrta*0.99 + getosc( rand(101)*0.01, 0, 0)*0.05*cor;<br />
+ xsh = xsh*0.95 + xrta;<br />
+<br />
+</b></blockquote>
+This is sort of what I expected. Certainly I am describing &quot;cor&quot; and no other variable here. All I am saying is to make it a moving average so that it is smooth over time. Nothing to do with tonality.<br />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">8th April 2008 13:04 GMT</span></p>
+	<blockquote>
+			
+				<i>Originally posted by HuRriC4nE </i><br />
+<b>maybe i sould send you the preset. </b></blockquote>
+Most certainly, that would be easiest. :)
+		</p>
+</div>
 
-      <p class="post-content">cool. :)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">HuRriC4nE</span><br />
+			<span class="date small text-muted">3rd April 2008 09:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		jheriko is sent you a private message with a download link.<br />
+it took me a while to tidy up the code so that another person can (easier) understand it....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">3rd April 2008 11:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thx. in future use my e-mail address though. i'm more likely to get it... I get a ton of e-mails from the forums and generally ignore them all without noticing whether they are pm's are not. :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">HuRriC4nE</span><br />
+			<span class="date small text-muted">6th April 2008 09:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		@jheriko<br />
+i somehow find out why some classic songs are so bad reacting in this preset.<br />
+the output is not very well &quot;distributed&quot; over the spectrum.<br />
+a piano song has actually only mids - noc real bass or treble.<br />
+so the volume has to be made different.<br />
+<br />
+i guess i will have to find another way to fix this.<br />
+so don't worry - i will fix it myself later :)<br />
+<br />
+the preset already works very well
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">8th April 2008 13:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		cool. :)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

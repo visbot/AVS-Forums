@@ -1,589 +1,958 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Misc / Comic AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Misc / Comic AVS" />
 
-  <title>Misc / Comic - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Misc / Comic - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Misc / Comic</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=208340">Misc / Comic</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">20th February 2005 15:54 GMT</span></p>
-
-      <p class="post-content"><strong>Misc / Comic</strong><br />
-      Some fun at the expense of my favorite kind of AVS'r<br />
-      <br />
-      <a href="http://www.deviantart.com/view/15352657/" target="_blank">http://www.deviantart.com/view/15352657/</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">21st February 2005 12:34 GMT</span></p>
-
-      <p class="post-content">:D nice comic...<br />
-      funny but unfortuantely a frequent occurrence...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">21st February 2005 15:08 GMT</span></p>
-
-      <p class="post-content">sines of factors of pi on init...<br />
-      :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">21st February 2005 16:25 GMT</span></p>
-
-      <p class="post-content">sines of factors of pi on init is a ligitimate optimisation</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">21st February 2005 16:29 GMT</span></p>
-
-      <p class="post-content">sure... but why should it be advantageous?<br />
-      factors of pi, ok! but sines of factors of pi?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">21st February 2005 16:36 GMT</span></p>
-
-      <p class="post-content">because sine is an expensive operation, if you fill the megabuf with a load of sines of 0-$pi you can reference the megabuf rather than doing an actual sin(x) because sin(x)=megabuf(x*scaling factor) much cheaper. The advantage really comes if your doing sines in the point box. Mind you the rotation matrices can be done in frame so the speed benefit would be pretty small... good for any other trig stuff in point/pixel tho</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">21st February 2005 16:53 GMT</span></p>
-
-      <p class="post-content">yeah, somehow i thought on rotation matrices... cause then it's really just a marginal + in speed.<br />
-      <br />
-      <font size="1">let me just repeat that idea, to see if i understood it correct: in innit you store y-values of a sin-function into the megabuf using loop and assign and stuff. Then you, when it comes to the point you need the values, you don't calulate a sin of a variable, but get it directly from the corresponding entry in megabuf. Tricky, and that read-out-method really provides a noticeable advantaqe compared to "sin(..)"?</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">21st February 2005 18:33 GMT</span></p>
-
-      <p class="post-content">yea thats the idea, a sin() is a lot lot slower than a x=megabuf(y), just fill a ssc point box with 100 sines and compare it to a 100 megabuf retrievals. The slower part is the conversion process because say you have 100 megabuf entries of:<br />
-      <br />
-      sin(($pi*2)/100)<br />
-      sin(($pi*2)/100*2)<br />
-      sin(($pi*2)/100*3)<br />
-      etc..<br />
-      <br />
-      you can have a counter t=(t+1)%100 which is nice an quick to reference but if you specifically want sin(23) or something you need a calculation to get the megabuf reference...<br />
-      <br />
-      i.e. make it fall between 0 and 2*pi<br />
-      <br />
-      ((23*100)%628)*0.01;<br />
-      <br />
-      but covert it to a reference<br />
-      <br />
-      floor((23*100)%628);<br />
-      <br />
-      Its a multiply and divide (mod is a divide) as opposed to a sin() so its still cheaper, but its a bit more complicated, and of course the accuracy of the result is limited to the number of sines you calculated on init.<br />
-      <br />
-      I think that maths is right, im not in front of avs so I cant check.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">21st February 2005 21:30 GMT</span></p>
-
-      <p class="post-content">Look-up tables are known to be slower than the FPU in many, many cases. Megabuf access is slow as well, as it is stored in chunks of 16KB and allocated dynamically. Every access requires a check.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">21st February 2005 22:43 GMT</span></p>
-
-      <p class="post-content">im about making a preset to compare both kinds of calculation. But as i thought i would get stuck, cause i didn't have enough time to learn the correct use of loop/megabuf/assign until recently.<br />
-      <br />
-      However, it'd be nice if you could have a look: <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=208467" target="_blank">here</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">23rd February 2005 20:58 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by UnConeD</i><br />
-        <b>Look-up tables are known to be slower than the FPU in many, many cases. Megabuf access is slow as well, as it is stored in chunks of 16KB and allocated dynamically. Every access requires a check.</b>
-      </blockquote>I still maintain that retrieving the item of the stack is quicker than a sine, I'll have to check evallib to see the exact full method by which each is performed but I would be very surprised to find otherwise.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">27th February 2005 06:50 GMT</span></p>
-
-      <p class="post-content">From megabuf.c in ns-eel:<br /></p>
-      <pre>
-<code><br />static double * NSEEL_CGEN_CALL megabuf_(double ***blocks, double *which)<br />{<br />  static double error;<br />  int w=(int)(*which + 0.0001);<br />  int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br /><br />  if (!*blocks)<br />  {<br />    *blocks = (double **)GlobalAlloc(GPTR,sizeof(double *)*MEGABUF_BLOCKS);<br />  }<br />  if (!*blocks) return &amp;error;<br /><br />  if (w &gt;= 0 &amp;&amp; whichblock &gt;= 0 &amp;&amp; whichblock &lt; MEGABUF_BLOCKS)<br />  {<br />    int whichentry = w%MEGABUF_ITEMSPERBLOCK;<br />    if (!(*blocks)[whichblock])<br />    {<br />      (*blocks)[whichblock]=(double *)GlobalAlloc(GPTR,sizeof(double)*MEGABUF_ITEMSPERBLOCK);<br />    }<br />    if ((*blocks)[whichblock])<br />      return &amp;(*blocks)[whichblock][whichentry];<br />  }<br /><br />  return &amp;error;<br />}<br /><br />static double * (NSEEL_CGEN_CALL *__megabuf)(double ***,double *) = &amp;megabuf_;<br />__declspec ( naked ) void _asm_megabuf(void)<br />{<br />  double ***my_ctx;<br />  double *parm_a, *__nextBlock;<br />  __asm { mov edx, 0xFFFFFFFF }<br />  __asm { mov ebp, esp }<br />  __asm { sub esp, __LOCAL_SIZE }<br />  __asm { mov dword ptr my_ctx, edx }<br />  __asm { mov dword ptr parm_a, eax }<br />  <br />  __nextBlock = __megabuf(my_ctx,parm_a);<br /><br />  __asm { mov eax, __nextBlock } // this is custom, returning pointer<br />  __asm { mov esp, ebp }<br />}<br />__declspec ( naked ) void _asm_megabuf_end(void) {}<br /></code>
-</pre><br />
-      <br />
-      If you can't figure it out (it's justin-style coding):<br />
-      <br />
-      _asm_megabuf is the ASM code for the AVS function megabuf(x)<br />
-      <br />
-      It calls __megabuf, which is in fact the same as megabuf_, just with a slightly different declaration:<br />
-      <br />
-      <pre>
-<code>static double * (NSEEL_CGEN_CALL *__megabuf)(double ***,double *) = &amp;megabuf_;</code>
-</pre><br />
-      <br />
-      And megabuf_ is the huge-ass function at the top.<br />
-      <br />
-      Now, for sin, the asm code for the function is:<br />
-      <pre>
-<code><br />  __asm <br />  {<br />    fld qword ptr [eax]<br />    fsin<br />    mov eax, esi<br />    fstp qword ptr [esi]<br />    add esi, 8<br />  }<br /></code>
-</pre><br />
-      <br />
-      Still convinced megabuf is faster?
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">27th February 2005 11:56 GMT</span></p>
-
-      <p class="post-content">wow, the code behind megabuf is huge! Although it is beyond me to understand that code :eek: But all this is executed when avs uses megabuf or gmegabuf?<br />
-      OK, i see that calculating a sin here is actually faster than retrieving data from the megabuf, though it seems strange when you look at it with pure logic.<br />
-      <br />
-      btw: how did you look up the code for sin and megabuf? Can it be red from the vis_avs.dll?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">27th February 2005 16:34 GMT</span></p>
-
-      <p class="post-content">Just because the megabuf code is long and convoluted doesnt mean its slower. The sine function looks all lovely and neat but it doesnt have any clever hacks, the bottom line is it calls an fsin which is 16-126 clock cycles, and we're double precision here so most of the time I reckon your looking at the upper end of that figure.<br />
-      <br />
-      The megabuf function is almost entirely mov instructions which are... you guessed it... a big fat 1 clock cycle each. In fact depending on the alignment of code in memory accessing data from a register can be LESS than 1 clock cycle. I think I also see a sub, thats 2 clock cycles, an add, thats about 2. Those condition statements, all the if's, are jne's jnz's etc.. which are mostly 3 clock cycles.<br />
-      <br />
-      Also the compiler will optimise the ASM a bit for the megabuf code, but it cant optimise an fsin its just one instruction. I'd guess If you follow the code through a megabuf retrieval its (very) roughly 40-50 clocks, and thats without any compiler optimisation, and not accounting for code alignment etc...<br />
-      <br />
-      Some clock cycle reference<br />
-      <a href="http://www.singlix.org/trdos/pentium.txt" target="_blank">http://www.singlix.org/trdos/pentium.txt</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">28th February 2005 15:27 GMT</span></p>
-
-      <p class="post-content">fsin takes longer for higher numbers<br />
-      <br />
-      double precision is just a means of storing floating point values in the RAM. it doesnt influence fsin's speed at all.<br />
-      <br />
-      when loading a double or a float, the FPU converts it to an 80 bit floating point value, which is then stored to one of the FPU's registers<br />
-      <br />
-      and afaik msvc6 doesnt optimize asm<br />
-      <br />
-      do you really thing those dozens of pointer operations are faster than fsin?<br />
-      not counting the stuff that is needed <u>around</u> the megabuf call</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">28th February 2005 17:09 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by TomyLobo</i><br />
-        <b>double precision is just a means of storing floating point values in the RAM. it doesnt influence fsin's speed at all.</b>
-      </blockquote>Thats not strictly true, because for example a number that is extremely small might be rounded to zero in a single which would make the sin operation faster.<br />
-      <br />
-
-      <blockquote>
-        <i>Originally posted by TomyLobo</i><br />
-        <b>and afaik msvc6 doesnt optimize asm</b>
-      </blockquote>...which means the evallib sin function will not be optimised by the compiler but the megabuf function will (because its not all asm)<br />
-      <br />
-
-      <blockquote>
-        <i>Originally posted by TomyLobo</i><br />
-        <b>do you really thing those dozens of pointer operations are faster than fsin?</b>
-      </blockquote>I already explained this, pointer operations are just movs and adds etc... really cheap operations 1 and 2 clock cycles each.<br />
-      <br />
-      _asm_megabuf is about 8 mov's and a sub, and some quick stack work to megabuf_ so its really quick. megabuf_ looks big and ugly but if you break it down:<br />
-      <br />
-      <pre>
-<code><br />  static double error;<br />  int w=(int)(*which + 0.0001);<br />  int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br /></code>
-</pre><br />
-      <br />
-      this is the setup for the function, a few movs an add and a div (most expensive op in the function)<br />
-      <br />
-      <pre>
-<code><br />  if (!*blocks)<br />  {<br />    *blocks = (double **)GlobalAlloc(GPTR,sizeof(double *)*MEGABUF_BLOCKS);<br />  }<br />  if (!*blocks) return &amp;error;<br /></code>
-</pre><br />
-      <br />
-      These conditions arent met in a normal retrieval so its just two conditions about 3 clocks each<br />
-      <br />
-      <pre>
-<code><br />  if (w &gt;= 0 &amp;&amp; whichblock &gt;= 0 &amp;&amp; whichblock &lt; MEGABUF_BLOCKS)<br />  {<br />    int whichentry = w%MEGABUF_ITEMSPERBLOCK;<br /></code>
-</pre><br />
-      <br />
-      This condition gets entered, a few conditions movs and a mod (another div, damnit justin)<br />
-      <br />
-      <pre>
-<code><br />    if (!(*blocks)[whichblock])<br />    {<br />      (*blocks)[whichblock]=(double *)GlobalAlloc(GPTR,sizeof(double)*MEGABUF_ITEMSPERBLOCK);<br />    }<br /></code>
-</pre><br />
-      <br />
-      This condition is not met in a normal megabuf retrieval, so its just a few clocks for the check<br />
-      <br />
-      <pre>
-<code><br />    if ((*blocks)[whichblock])<br />      return &amp;(*blocks)[whichblock][whichentry];<br />  }<br /></code>
-</pre><br />
-      <br />
-      This is the actual memory retirieval, a few clocks for the condition and some stack work to return the value, another few clocks.<br />
-      <br />
-      <pre>
-<code><br />  return &amp;error;<br /></code>
-</pre><br />
-      <br />
-      This doesnt get reached<br />
-      <br />
-      you see its really not that slow, those divs are probably the slowest thing in it, but dont forget they are integer divisions not floating point so they arent that slow.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">6th March 2005 22:15 GMT</span></p>
-
-      <p class="post-content">megabuf involves lots of memory access, whereas fsin is just 2 of them (getting the value from [eax] i think and storing the result back to it)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th March 2005 22:18 GMT</span></p>
-
-      <p class="post-content">Pak, are you just being obtuse? Any AVS code involves doubles. That means that even the megabuf indexes are calculated in floating point and then rounded to ints (which is a significant speed hit as well). Then there's the huge megabuf lookup procedure, which translates to a 100 lines of ASM code or so.<br />
-      <br />
-      The floating point sine op has to take one value <i>which is already in the cache</i> and sine it. The algorithm to do this is implemented in hardware and fully pipelined. As Tomy said, the upper time limit for sine calculations is for really huge angles, which tend to be rare in AVS anyway, and which you don't even handle in your current code. Handling them would be even worse because you'd need a bunch of evallib code in AVS to do that and there is no easy floating point modulus function/instruction/operator in evallib.<br />
-      <br />
-      The fact is: evallib is pretty darn close to ASM when it comes to floating point operations. That's what it is designed for. No amount of wishful thinking or self-righteousness is going to change that. So let's drop this topic while you still have your dignity, sweetheart. :rolleyes:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">7th March 2005 14:01 GMT</span></p>
-
-      <p class="post-content">Fine, I will drop this subject but after a last post (because I want the last word):<br />
-      <br />
-      first of all my point about the divisions is that they are integer divisions, in assembly they will by 'divs' not 'fdivs' because Justin has explicitly arranged it that way, for example<br />
-      <br />
-      int w=(int)(*which + 0.0001);<br />
-      int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br />
-      <br />
-      a division of two integer values. Yes the values have to be rounded first and yes that will slow it down but the divides themselves are integer.<br />
-      <br />
-      Secondly I already explained that more lines of code doesnt necessarily mean its slower<br />
-      <br />
-      Thirdly I already explained that memory access and moving is all just mov's which are incredibly quick<br />
-      <br />
-      Fourth if you actually bothered making some preset tests with loads of sines and loads of megabuf retrievals youd see the megabuf retrievals come out faster. So bottom line in real world tests megabuf is faster.<br />
-      <br />
-      Fifth and finally, dont fucking condescend to me. I'm just voicing my opinion on a technical subject I dont appreciate you trying to make me look stupid.<br />
-      <br />
-      Okay, consider the topic finished, as we said at the start the realistic difference it makes in normal AVS use is negligible.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">7th March 2005 15:48 GMT</span></p>
-
-      <p class="post-content">Re divs: You're forgetting all the extra evallib code needed to actually /use/ the megabuf. For sin(), you just pass in the angle directly and don't need to do anything.<br />
-      <br />
-      "Fourth if you actually bothered making some preset tests with loads of sines and loads of megabuf retrievals youd see the megabuf retrievals come out faster. So bottom line in real world tests megabuf is faster."<br />
-      <br />
-      So did you make actual test cases, or just a loop where you calculate a sine 10000 times? Caching will completely destroy any validity of such an artificial test. Furthermore, if you just do a loop in evallib code, you're not actually doing anything in between, like actually drawing SSC points or lines, which will cause the cache to get filled with image data instead.<br />
-      <br />
-      PS: For someone making a comic, your sense of humor is pretty bad :rolleyes:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">7th March 2005 18:18 GMT</span></p>
-
-      <p class="post-content">"Re divs: You're forgetting all the extra evallib code needed to actually /use/ the megabuf. For sin(), you just pass in the angle directly and don't need to do anything."<br />
-      <br />
-      if you mean the code the user types to get the right megabuf entry then yes that is another overhead, I already meantioned that a few posts up.<br />
-      <br />
-      I have done tests, the difference is insignificant but it is faster with megabuf. The tests I've done are just making presets of average complexity in my own style, and thats probably a harsher test than is necessary since 90% of AVS'rs dont make presets with as much code as I or you would.<br />
-      <br />
-      I'd be lying if I said I regularily make sin lookup tables for presets, its a massive fag for little result. The closest thing I use is lookups for my rotation matrices for high point/triangle count stuff (please god dont start an argument about that as well)<br />
-      <br />
-      PS: Sorry if you think I have a bad sense of humor, I just dont think that little roll eyes smiley is a licence to insult someone under the guise of a bad joke</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mysterious_w</span><br />
-      <span class="date small text-muted">7th March 2005 20:02 GMT</span></p>
-
-      <p class="post-content">I make comics too! Mine are funnier!<br />
-      <br />
-      <a href="http://www.imageshack.us" target="_blank"></a><a href="http://img87.exs.cx/img87/2571/balleandshorty17jc.png" target="_blank">http://img87.exs.cx/img87/2571/balleandshorty17jc.png</a><br />
-      <br />
-      <a href="http://www.imageshack.us" target="_blank"></a><a href="http://img101.exs.cx/img101/4459/balleandshorty38wx.png" target="_blank">http://img101.exs.cx/img101/4459/balleandshorty38wx.png</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">7th March 2005 23:58 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        Maybe the next installment could feature a certain newbie spontaneously combusting due to flames.
-      </blockquote>hey im working on a new pack for later anyways...
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">8th March 2005 01:45 GMT</span></p>
-
-      <p class="post-content">Oh well, back to the original topic I guess... maybe this'll cheer you up Pak-9 :P.<br />
-      <a href="http://www.acko.net/dumpx/notfunny.png" target="_blank">http://www.acko.net/dumpx/notfunny.png</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">9th March 2005 00:32 GMT</span></p>
-
-      <p class="post-content">I really do see such irony in anything.<br />
-      <font size="1">you need some flames :p</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">9th March 2005 12:17 GMT</span></p>
-
-      <p class="post-content">since we are returning swiftly to the topic I made another misc/comic, but I'm hesistant to upload it because it involves Tugg graphically shooting himself in the face, and he might object.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">9th March 2005 15:42 GMT</span></p>
-
-      <p class="post-content">.. perhaps you should mail him the image and ask for his approval? if he doesn't mind then you're free to upload it...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">13th March 2005 11:25 GMT</span></p>
-
-      <p class="post-content">Why would i object?<br />
-      Is it because i might mind about blowing my face up?<br />
-      Is it because you would use graphics from my avatar or pictures?<br />
-      Or is it that this whole post is just a clever piece of sarcasm involving late actions of mine and there really isn't any comic about me blowing my face up.<br />
-      <br />
-      <br />
-      <br />
-      :rolleyes:<br />
-      <br />
-      <font size="1">really PAK, i expected more from you</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">14th March 2005 09:08 GMT</span></p>
-
-      <p class="post-content">Yes PAK we all wanna see the comic :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th March 2005 13:50 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
-        <b>Why would i object?<br />
-        Is it because i might mind about blowing my face up?<br />
-        Is it because you would use graphics from my avatar or pictures?<br />
-        Or is it that this whole post is just a clever piece of sarcasm involving late actions of mine and there really isn't any comic about me blowing my face up.<br />
-        <br />
-        <br />
-        <br />
-        :rolleyes:<br />
-        <br />
-        <font size="1">really PAK, i expected more from you</font></b>
-      </blockquote>No it's because of your sudden and violent mood swings that mean I cant really guess your reaction to things<br />
-      <br />
-      I'll upload it next time i remember to bring it to uni
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">14th March 2005 14:03 GMT</span></p>
-
-      <p class="post-content">Oh... <b>that thing.</b><br />
-      <br />
-      But that's really quite easy to predict, you only need to know how much beer i've consumed before taking a action of approach.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th March 2005 18:07 GMT</span></p>
-
-      <p class="post-content">Shit I went home and forgot to put it on my usb drive</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th March 2005 18:14 GMT</span></p>
-
-      <p class="post-content">whoops, It was on my usb drive all along<br />
-      <br />
-      [edit]<br />
-      I guess you cant image link bmp's<br />
-      <br />
-      <a href="http://www.deviantart.com/view/16097090/" target="_blank">http://www.deviantart.com/view/16097090/</a><br />
-      [/edit]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">14th March 2005 18:40 GMT</span></p>
-
-      <p class="post-content"><font size="3"><br />
-      God damn it PAK! What the hell is <b>wrong</b> with you?! You're one sidd motherfudder! What's your problem? Why do you hate me so much?! All I ever wanted to be was your <u>friend</u>, and you treat me like this?!<br /></font><br />
-      <br />
-      <font size="1"><br />
-      My PC is in a TOWER case, not some sucky-ass 486-age horizontal shitbox!!!<br /></font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th March 2005 20:23 GMT</span></p>
-
-      <p class="post-content">Dont hit me!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">14th March 2005 20:35 GMT</span></p>
-
-      <p class="post-content">guess pak has got an asshole day. He also offended me in the i-caf&#195;&#169;. God knows what his problem with life is...<br />
-      <br />
-      (yes, pak im <b>really</b> pissed off)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">14th March 2005 20:50 GMT</span></p>
-
-      <p class="post-content">Actually Tug was joking<br />
-      <br />
-      But your right, I have terrible and disturbing problems with my life; like sometimes I'm hungry but I cant be arsed to cook anything, so I think maybe I'll just get a takeaway from somewhere... but I'm too lazy to go out too! WHAT THE HELL SHOULD I DO!?!?!<br />
-      <br />
-      Terrible, disturbing problems.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">14th March 2005 20:52 GMT</span></p>
-
-      <p class="post-content">perhaps starve to death?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">14th March 2005 22:31 GMT</span></p>
-
-      <p class="post-content">Smoke, drink coffee (black, no sugar) or masturbate. All of these thing take your mind off from hunger. <font size="1">-Tug's tip for student life #203</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">14th March 2005 23:41 GMT</span></p>
-
-      <p class="post-content">pak-9 has a desktop with the almighty quaking machine?!! :igor:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">15th March 2005 14:11 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
-        <b>Smoke, drink coffee (black, no sugar) or masturbate. All of these thing take your mind off from hunger. <font size="1">-Tug's tip for student life #203</font></b>
-      </blockquote>Coffee? yuck
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Misc / Comic</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=208340">Misc / Comic</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">20th February 2005 15:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Misc / Comic</strong><br />
+		
+		
+
+		Some fun at the expense of my favorite kind of AVS'r<br />
+<br />
+<a href="http://www.deviantart.com/view/15352657/" target="_blank">http://www.deviantart.com/view/15352657/</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">21st February 2005 12:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:D nice comic...<br />
+funny but unfortuantely a frequent occurrence...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">21st February 2005 15:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		sines of factors of pi on init...<br />
+:D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">21st February 2005 16:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		sines of factors of pi on init is a ligitimate optimisation
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">21st February 2005 16:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		sure... but why should it be advantageous?<br />
+factors of pi, ok! but sines of factors of pi?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">21st February 2005 16:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		because sine is an expensive operation, if you fill the megabuf with a load of sines of 0-$pi you can reference the megabuf rather than doing an actual sin(x) because sin(x)=megabuf(x*scaling factor) much cheaper. The advantage really comes if your doing sines in the point box. Mind you the rotation matrices can be done in frame so the speed benefit would be pretty small... good for any other trig stuff in point/pixel tho
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">21st February 2005 16:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah, somehow i thought on rotation matrices... cause then it's really just a marginal + in speed.<br />
+<br />
+<font size="1">let me just repeat that idea, to see if i understood it correct: in innit you store y-values of a sin-function into the megabuf using loop and assign and stuff. Then you, when it comes to the point you need the values, you don't calulate a sin of a variable, but get it directly from the corresponding entry in megabuf. Tricky, and that read-out-method really provides a noticeable advantaqe compared to &quot;sin(..)&quot;?</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">21st February 2005 18:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yea thats the idea, a sin() is a lot lot slower than a x=megabuf(y), just fill a ssc point box with 100 sines and compare it to a 100 megabuf retrievals. The slower part is the conversion process because say you have 100 megabuf entries of:<br />
+<br />
+sin(($pi*2)/100)<br />
+sin(($pi*2)/100*2)<br />
+sin(($pi*2)/100*3) <br />
+etc.. <br />
+<br />
+you can have a counter t=(t+1)%100 which is nice an quick to reference but if you specifically want sin(23) or something you need a calculation to get the megabuf reference... <br />
+<br />
+i.e. make it fall between 0 and 2*pi <br />
+<br />
+((23*100)%628)*0.01;<br />
+<br />
+but covert it to a reference<br />
+<br />
+floor((23*100)%628);<br />
+<br />
+Its a multiply and divide (mod is a divide) as opposed to a sin() so its still cheaper, but its a bit more complicated, and of course the accuracy of the result is limited to the number of sines you calculated on init.<br />
+<br />
+I think that maths is right, im not in front of avs so I cant check.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">21st February 2005 21:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Look-up tables are known to be slower than the FPU in many, many cases. Megabuf access is slow as well, as it is stored in chunks of 16KB and allocated dynamically. Every access requires a check.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">21st February 2005 22:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		im about making a preset to compare both kinds of calculation. But as i thought i would get stuck, cause i didn't have enough time to learn the correct use of loop/megabuf/assign until recently.<br />
+<br />
+However, it'd be nice if you could have a look: <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=208467" target="_blank"> here</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">23rd February 2005 20:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+<b>Look-up tables are known to be slower than the FPU in many, many cases. Megabuf access is slow as well, as it is stored in chunks of 16KB and allocated dynamically. Every access requires a check. </b></blockquote>
+I still maintain that retrieving the item of the stack is quicker than a sine, I'll have to check evallib to see the exact full method by which each is performed but I would be very surprised to find otherwise.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">27th February 2005 06:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		From megabuf.c in ns-eel:<br />
+<pre><code><br />
+static double * NSEEL_CGEN_CALL megabuf_(double ***blocks, double *which)<br />
+{<br />
+  static double error;<br />
+  int w=(int)(*which + 0.0001);<br />
+  int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br />
+<br />
+  if (!*blocks)<br />
+  {<br />
+    *blocks = (double **)GlobalAlloc(GPTR,sizeof(double *)*MEGABUF_BLOCKS);<br />
+  }<br />
+  if (!*blocks) return &amp;error;<br />
+<br />
+  if (w &gt;= 0 &amp;&amp; whichblock &gt;= 0 &amp;&amp; whichblock &lt; MEGABUF_BLOCKS)<br />
+  {<br />
+    int whichentry = w%MEGABUF_ITEMSPERBLOCK;<br />
+    if (!(*blocks)[whichblock])<br />
+    {<br />
+      (*blocks)[whichblock]=(double *)GlobalAlloc(GPTR,sizeof(double)*MEGABUF_ITEMSPERBLOCK);<br />
+    }<br />
+    if ((*blocks)[whichblock])<br />
+      return &amp;(*blocks)[whichblock][whichentry];<br />
+  }<br />
+<br />
+  return &amp;error;<br />
+}<br />
+<br />
+static double * (NSEEL_CGEN_CALL *__megabuf)(double ***,double *) = &amp;megabuf_;<br />
+__declspec ( naked ) void _asm_megabuf(void)<br />
+{<br />
+  double ***my_ctx;<br />
+  double *parm_a, *__nextBlock;<br />
+  __asm { mov edx, 0xFFFFFFFF }<br />
+  __asm { mov ebp, esp }<br />
+  __asm { sub esp, __LOCAL_SIZE }<br />
+  __asm { mov dword ptr my_ctx, edx }<br />
+  __asm { mov dword ptr parm_a, eax }<br />
+  <br />
+  __nextBlock = __megabuf(my_ctx,parm_a);<br />
+<br />
+  __asm { mov eax, __nextBlock } // this is custom, returning pointer<br />
+  __asm { mov esp, ebp }<br />
+}<br />
+__declspec ( naked ) void _asm_megabuf_end(void) {}<br />
+</code></pre><br />
+<br />
+If you can't figure it out (it's justin-style coding):<br />
+<br />
+_asm_megabuf is the ASM code for the AVS function megabuf(x)<br />
+<br />
+It calls __megabuf, which is in fact the same as megabuf_, just with a slightly different declaration:<br />
+<br />
+<pre><code>static double * (NSEEL_CGEN_CALL *__megabuf)(double ***,double *) = &amp;megabuf_;</code></pre><br />
+<br />
+And megabuf_ is the huge-ass function at the top.<br />
+<br />
+Now, for sin, the asm code for the function is:<br />
+<pre><code><br />
+  __asm <br />
+  {<br />
+    fld qword ptr [eax]<br />
+    fsin<br />
+    mov eax, esi<br />
+    fstp qword ptr [esi]<br />
+    add esi, 8<br />
+  }<br />
+</code></pre><br />
+<br />
+Still convinced megabuf is faster?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">27th February 2005 11:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		wow, the code behind megabuf is huge! Although it is beyond me to understand that code :eek: But all this is executed when avs uses megabuf or gmegabuf?<br />
+OK, i see that calculating a sin here is actually faster than retrieving data from the megabuf, though it seems strange when you look at it with pure logic.<br />
+<br />
+btw: how did you look up the code for sin and megabuf? Can it be red from the vis_avs.dll?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">27th February 2005 16:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just because the megabuf code is long and convoluted doesnt mean its slower. The sine function looks all lovely and neat but it doesnt have any clever hacks, the bottom line is it calls an fsin which is 16-126 clock cycles, and we're double precision here so most of the time I reckon your looking at the upper end of that figure.<br />
+<br />
+The megabuf function is almost entirely mov instructions which are... you guessed it... a big fat 1 clock cycle each. In fact depending on the alignment of code in memory accessing data from a register can be LESS than 1 clock cycle. I think I also see a sub, thats 2 clock cycles, an add, thats about 2. Those condition statements, all the if's, are jne's jnz's etc.. which are mostly 3 clock cycles.<br />
+<br />
+Also the compiler will optimise the ASM a bit for the megabuf code, but it cant optimise an fsin its just one instruction. I'd guess If you follow the code through a megabuf retrieval its (very) roughly 40-50 clocks, and thats without any compiler optimisation, and not accounting for code alignment etc...<br />
+<br />
+Some clock cycle reference<br />
+<a href="http://www.singlix.org/trdos/pentium.txt" target="_blank">http://www.singlix.org/trdos/pentium.txt</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">28th February 2005 15:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		fsin takes longer for higher numbers<br />
+<br />
+double precision is just a means of storing floating point values in the RAM. it doesnt influence fsin's speed at all.<br />
+<br />
+when loading a double or a float, the FPU converts it to an 80 bit floating point value, which is then stored to one of the FPU's registers<br />
+<br />
+and afaik msvc6 doesnt optimize asm<br />
+<br />
+do you really thing those dozens of pointer operations are faster than fsin?<br />
+not counting the stuff that is needed <u>around</u> the megabuf call
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">28th February 2005 17:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by TomyLobo </i><br />
+<b>double precision is just a means of storing floating point values in the RAM. it doesnt influence fsin's speed at all.</b></blockquote>
+Thats not strictly true, because for example a number that is extremely small might be rounded to zero in a single which would make the sin operation faster.<br />
+<br />
+
+	<blockquote>
+			
+				<i>Originally posted by TomyLobo </i><br />
+<b>and afaik msvc6 doesnt optimize asm</b></blockquote>
+...which means the evallib sin function will not be optimised by the compiler but the megabuf function will (because its not all asm)<br />
+<br />
+
+	<blockquote>
+			
+				<i>Originally posted by TomyLobo </i><br />
+<b>do you really thing those dozens of pointer operations are faster than fsin?</b></blockquote>
+ I already explained this, pointer operations are just movs and adds etc... really cheap operations 1 and 2 clock cycles each.<br />
+<br />
+_asm_megabuf is about 8 mov's and a sub, and some quick stack work to megabuf_ so its really quick. megabuf_ looks big and ugly but if you break it down:<br />
+<br />
+<pre><code><br />
+  static double error;<br />
+  int w=(int)(*which + 0.0001);<br />
+  int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br />
+</code></pre><br />
+<br />
+this is the setup for the function, a few movs an add and a div (most expensive op in the function)<br />
+<br />
+<pre><code><br />
+  if (!*blocks)<br />
+  {<br />
+    *blocks = (double **)GlobalAlloc(GPTR,sizeof(double *)*MEGABUF_BLOCKS);<br />
+  }<br />
+  if (!*blocks) return &amp;error;<br />
+</code></pre><br />
+<br />
+These conditions arent met in a normal retrieval so its just two conditions about 3 clocks each<br />
+<br />
+<pre><code><br />
+  if (w &gt;= 0 &amp;&amp; whichblock &gt;= 0 &amp;&amp; whichblock &lt; MEGABUF_BLOCKS)<br />
+  {<br />
+    int whichentry = w%MEGABUF_ITEMSPERBLOCK;<br />
+</code></pre><br />
+<br />
+This condition gets entered, a few conditions movs and a mod (another div, damnit justin) <br />
+<br />
+<pre><code><br />
+    if (!(*blocks)[whichblock])<br />
+    {<br />
+      (*blocks)[whichblock]=(double *)GlobalAlloc(GPTR,sizeof(double)*MEGABUF_ITEMSPERBLOCK);<br />
+    }<br />
+</code></pre><br />
+<br />
+This condition is not met in a normal megabuf retrieval, so its just a few clocks for the check<br />
+<br />
+<pre><code><br />
+    if ((*blocks)[whichblock])<br />
+      return &amp;(*blocks)[whichblock][whichentry];<br />
+  }<br />
+</code></pre><br />
+<br />
+This is the actual memory retirieval, a few clocks for the condition and some stack work to return the value, another few clocks.<br />
+<br />
+<pre><code><br />
+  return &amp;error;<br />
+</code></pre><br />
+<br />
+This doesnt get reached<br />
+<br />
+you see its really not that slow, those divs are probably the slowest thing in it, but dont forget they are integer divisions not floating point so they arent that slow.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">6th March 2005 22:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		megabuf involves lots of memory access, whereas fsin is just 2 of them (getting the value from [eax] i think and storing the result back to it)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th March 2005 22:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Pak, are you just being obtuse? Any AVS code involves doubles. That means that even the megabuf indexes are calculated in floating point and then rounded to ints (which is a significant speed hit as well). Then there's the huge megabuf lookup procedure, which translates to a 100 lines of ASM code or so.<br />
+<br />
+The floating point sine op has to take one value <i>which is already in the cache</i> and sine it. The algorithm to do this is implemented in hardware and fully pipelined. As Tomy said, the upper time limit for sine calculations is for really huge angles, which tend to be rare in AVS anyway, and which you don't even handle in your current code. Handling them would be even worse because you'd need a bunch of evallib code in AVS to do that and there is no easy floating point modulus function/instruction/operator in evallib.<br />
+<br />
+The fact is: evallib is pretty darn close to ASM when it comes to floating point operations. That's what it is designed for. No amount of wishful thinking or self-righteousness is going to change that. So let's drop this topic while you still have your dignity, sweetheart. :rolleyes:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">7th March 2005 14:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Fine, I will drop this subject but after a last post (because I want the last word):<br />
+<br />
+first of all my point about the divisions is that they are integer divisions, in assembly they will by 'divs' not 'fdivs' because Justin has explicitly arranged it that way, for example<br />
+<br />
+int w=(int)(*which + 0.0001);<br />
+int whichblock = w/MEGABUF_ITEMSPERBLOCK;<br />
+<br />
+a division of two integer values. Yes the values have to be rounded first and yes that will slow it down but the divides themselves are integer.<br />
+<br />
+Secondly I already explained that more lines of code doesnt necessarily mean its slower<br />
+<br />
+Thirdly I already explained that memory access and moving is all just mov's which are incredibly quick<br />
+<br />
+Fourth if you actually bothered making some preset tests with loads of sines and loads of megabuf retrievals youd see the megabuf retrievals come out faster. So bottom line in real world tests megabuf is faster.<br />
+<br />
+Fifth and finally, dont fucking condescend to me. I'm just voicing my opinion on a technical subject I dont appreciate you trying to make me look stupid.<br />
+<br />
+Okay, consider the topic finished, as we said at the start the realistic difference it makes in normal AVS use is negligible.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">7th March 2005 15:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Re divs: You're forgetting all the extra evallib code needed to actually /use/ the megabuf. For sin(), you just pass in the angle directly and don't need to do anything.<br />
+<br />
+&quot;Fourth if you actually bothered making some preset tests with loads of sines and loads of megabuf retrievals youd see the megabuf retrievals come out faster. So bottom line in real world tests megabuf is faster.&quot;<br />
+<br />
+So did you make actual test cases, or just a loop where you calculate a sine 10000 times? Caching will completely destroy any validity of such an artificial test. Furthermore, if you just do a loop in evallib code, you're not actually doing anything in between, like actually drawing SSC points or lines, which will cause the cache to get filled with image data instead.<br />
+<br />
+PS: For someone making a comic, your sense of humor is pretty bad :rolleyes:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">7th March 2005 18:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		&quot;Re divs: You're forgetting all the extra evallib code needed to actually /use/ the megabuf. For sin(), you just pass in the angle directly and don't need to do anything.&quot; <br />
+<br />
+if you mean the code the user types to get the right megabuf entry then yes that is another overhead, I already meantioned that a few posts up.<br />
+<br />
+I have done tests, the difference is insignificant but it is faster with megabuf. The tests I've done are just making presets of average complexity in my own style, and thats probably a harsher test than is necessary since 90% of AVS'rs dont make presets with as much code as I or you would.<br />
+<br />
+I'd be lying if I said I regularily make sin lookup tables for presets, its a massive fag for little result. The closest thing I use is lookups for my rotation matrices for high point/triangle count stuff (please god dont start an argument about that as well)<br />
+<br />
+PS: Sorry if you think I have a bad sense of humor, I just dont think that little roll eyes smiley is a licence to insult someone under the guise of a bad joke
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mysterious_w</span><br />
+			<span class="date small text-muted">7th March 2005 20:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I make comics too! Mine are funnier!<br />
+<br />
+<a href="http://www.imageshack.us" target="_blank"><a href="http://img87.exs.cx/img87/2571/balleandshorty17jc.png" target="_blank">http://img87.exs.cx/img87/2571/balleandshorty17jc.png</a></a><br />
+<br />
+<a href="http://www.imageshack.us" target="_blank"><a href="http://img101.exs.cx/img101/4459/balleandshorty38wx.png" target="_blank">http://img101.exs.cx/img101/4459/balleandshorty38wx.png</a></a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">7th March 2005 23:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				Maybe the next installment could feature a certain newbie spontaneously combusting due to flames.</blockquote>
+hey im working on a new pack for later anyways...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">8th March 2005 01:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oh well, back to the original topic I guess... maybe this'll cheer you up Pak-9 :P.<br />
+<a href="http://www.acko.net/dumpx/notfunny.png" target="_blank">http://www.acko.net/dumpx/notfunny.png</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">9th March 2005 00:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I really do see such irony in anything.<br />
+<font size="1">you need some flames :p </font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">9th March 2005 12:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		since we are returning swiftly to the topic I made another misc/comic, but I'm hesistant to upload it because it involves Tugg graphically shooting himself in the face, and he might object.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">9th March 2005 15:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		.. perhaps you should mail him the image and ask for his approval? if he doesn't mind then you're free to upload it...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">13th March 2005 11:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Why would i object?<br />
+Is it because i might mind about blowing my face up?<br />
+Is it because you would use graphics from my avatar or pictures?<br />
+Or is it that this whole post is just a clever piece of sarcasm involving late actions of mine and there really isn't any comic about me blowing my face up.<br />
+<br />
+<br />
+<br />
+:rolleyes:<br />
+<br />
+<font size="1">really PAK, i expected more from you</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">14th March 2005 09:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yes PAK we all wanna see the comic :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th March 2005 13:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tuggummi </i><br />
+<b>Why would i object?<br />
+Is it because i might mind about blowing my face up?<br />
+Is it because you would use graphics from my avatar or pictures?<br />
+Or is it that this whole post is just a clever piece of sarcasm involving late actions of mine and there really isn't any comic about me blowing my face up.<br />
+<br />
+<br />
+<br />
+:rolleyes:<br />
+<br />
+<font size="1">really PAK, i expected more from you</font> </b></blockquote>
+No it's because of your sudden and violent mood swings that mean I cant really guess your reaction to things<br />
+<br />
+I'll upload it next time i remember to bring it to uni
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">14th March 2005 14:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oh... <b>that thing.</b><br />
+<br />
+But that's really quite easy to predict, you only need to know how much beer i've consumed before taking a action of approach.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th March 2005 18:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Shit I went home and forgot to put it on my usb drive
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th March 2005 18:14 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		whoops, It was on my usb drive all along<br />
+<br />
+[edit]<br />
+I guess you cant image link bmp's<br />
+<br />
+<a href="http://www.deviantart.com/view/16097090/" target="_blank">http://www.deviantart.com/view/16097090/</a><br />
+[/edit]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">14th March 2005 18:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<font size="3"><br />
+God damn it PAK! What the hell is <b>wrong</b> with you?! You're one sidd motherfudder! What's your problem? Why do you hate me so much?! All I ever wanted to be was your <u>friend</u>, and you treat me like this?!<br />
+</font><br />
+<br />
+<font size="1"><br />
+My PC is in a TOWER case, not some sucky-ass 486-age horizontal shitbox!!!<br />
+</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th March 2005 20:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Dont hit me!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">14th March 2005 20:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		guess pak has got an asshole day. He also offended me in the i-café. God knows what his problem with life is...<br />
+<br />
+(yes, pak im <b>really</b> pissed off)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">14th March 2005 20:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually Tug was joking<br />
+<br />
+But your right, I have terrible and disturbing problems with my life; like sometimes I'm hungry but I cant be arsed to cook anything, so I think maybe I'll just get a takeaway from somewhere... but I'm too lazy to go out too! WHAT THE HELL SHOULD I DO!?!?!<br />
+<br />
+Terrible, disturbing problems.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">14th March 2005 20:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		perhaps starve to death?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">14th March 2005 22:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Smoke, drink coffee (black, no sugar) or masturbate. All of these thing take your mind off from hunger. <font size="1">-Tug's tip for student life #203</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">14th March 2005 23:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		pak-9 has a desktop with the almighty quaking machine?!! :igor:
+		</p>
+</div>
+
+	<hr />
+
+
+
+
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">15th March 2005 14:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Tuggummi </i><br />
+<b>Smoke, drink coffee (black, no sugar) or masturbate. All of these thing take your mind off from hunger. <font size="1">-Tug's tip for student life #203</font> </b></blockquote>
+Coffee? yuck
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

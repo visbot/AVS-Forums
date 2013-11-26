@@ -1,74 +1,105 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Including AVSTrans translation into the evallib AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Including AVSTrans translation into the evallib AVS" />
 
-  <title>Including AVSTrans translation into the evallib - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Including AVSTrans translation into the evallib - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">Including AVSTrans translation into the evallib</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=177325">Including AVSTrans translation into the evallib</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">20th April 2004 06:03 GMT</span></p>
 
-      <p class="post-content"><strong>Including AVSTrans translation into the evallib</strong><br />
-      Hi :)<br />
-      In case you don't know AVSTrans yet here's an abstract:<br />
-      AVSTrans does some AVS code translations that facilate code writing a lot and enable you to write code that is more readable and easier to understand and debug. Here are a few examples of its translation features:<br />
-      <br />
-      - you can write things like "megabuf(b)=a" instead of "assign(megabuf(b),a)"<br />
-      <br />
-      - you can write normal code nested in functions like loop() and if():<br />
-      normally you'd have to write "loop(n,exec2(assign(a,b),assign(c,d)))". AVSTrans does all these translations for you and allows you to easily write<br /></p>
-      <pre>
-<code><br />loop(n,<br />  a=b;<br />  c=d;<br />)<br /></code>
-</pre><br />
-      - AVSTrans also provides a versatile replacement mechanism: You can tell it to replace one string by another string automatically before the other translations are done. Regular Expressions are also supported. You can tell it to automatically change something like "foo(bar+1)" to "megabuf(bar+1+n2)", which greatly improves the readability and reduces errors resulting from wrong indexing of the megabufs.<br />
-      <br />
-      I had the idea of including the translations AVSTrans does directly in the evallib or something like that. I put the whole Translation algorithm into an ActiveX .dll (it is written in VB6, so i can't use make .dll :(). It should be possible to use this in C++, too.<br />
-      I think some AVSers would apreciate this.<br />
-      The source code is included in the download package, in case you need it.<br />
-      [edit]<br />
-      This should be completely backwards-compatible as it doesn't translate working normal AVS code at all.<br />
-      [/edit]<br />
-      <br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=173672" target="_blank">Original AVSTrans Thread</a><br />
-      <a href="http://www.geocities.com/tomyloboavs" target="_blank">AVSTrans is available here</a>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">Including AVSTrans translation into the evallib</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=177325">Including AVSTrans translation into the evallib</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">20th April 2004 06:49 GMT</span></p>
 
-      <p class="post-content">could be useful</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">20th April 2004 06:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Including AVSTrans translation into the evallib</strong><br />
+		
+		
+
+		Hi :)<br />
+In case you don't know AVSTrans yet here's an abstract:<br />
+AVSTrans does some AVS code translations that facilate code writing a lot and enable you to write code that is more readable and easier to understand and debug. Here are a few examples of its translation features:<br />
+<br />
+ - you can write things like &quot;megabuf(b)=a&quot; instead of &quot;assign(megabuf(b),a)&quot;<br />
+<br />
+ - you can write normal code nested in functions like loop() and if():<br />
+normally you'd have to write &quot;loop(n,exec2(assign(a,b),assign(c,d)))&quot;. AVSTrans does all these translations for you and allows you to easily write<br />
+<pre><code><br />
+loop(n,<br />
+  a=b;<br />
+  c=d;<br />
+)<br />
+</code></pre><br />
+ - AVSTrans also provides a versatile replacement mechanism: You can tell it to replace one string by another string automatically before the other translations are done. Regular Expressions are also supported. You can tell it to automatically change something like &quot;foo(bar+1)&quot; to &quot;megabuf(bar+1+n2)&quot;, which greatly improves the readability and reduces errors resulting from wrong indexing of the megabufs.<br />
+<br />
+I had the idea of including the translations AVSTrans does directly in the evallib or something like that. I put the whole Translation algorithm into an ActiveX .dll (it is written in VB6, so i can't use make .dll :(). It should be possible to use this in C++, too.<br />
+I think some AVSers would apreciate this.<br />
+The source code is included in the download package, in case you need it.<br />
+[edit]<br />
+This should be completely backwards-compatible as it doesn't translate working normal AVS code at all.<br />
+[/edit]<br />
+<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=173672" target="_blank">Original AVSTrans Thread</a><br />
+<a href="http://www.geocities.com/tomyloboavs" target="_blank">AVSTrans is available here</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">20th April 2004 06:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		could be useful
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

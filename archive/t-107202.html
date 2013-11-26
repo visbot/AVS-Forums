@@ -1,251 +1,385 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Superscopes... AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Superscopes... AVS" />
 
-  <title>Superscopes... - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Superscopes... - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Superscopes...</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=107202">Superscopes...</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xion(810)</span><br />
-      <span class="date small text-muted">26th September 2002 23:31 GMT</span></p>
 
-      <p class="post-content"><strong>Superscopes...</strong><br />
-      I don't understand this: I can't figure out the superscope...I tried to make my own superscope from scratch by making a basic pulsar from a sphere. I found in my geometry book a Volume equasion and thought that would work to make the sphere...(4/3)*3.14*(r*r*r). I just don't know how to make it work, and my Init is r=2 (anything bigger may go off the screen I think...) and It doesn't work: Black screen. Any help?</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Superscopes...</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=107202">Superscopes...</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">26th September 2002 23:52 GMT</span></p>
 
-      <p class="post-content">The equation for your sphere calculates the volume.. that's a scalar quantity, which won't help you draw your sphere.<br />
-      <br />
-      Instead you have to calculate the 2d coordinates of the points that represent your object. You can use x=cos(i*6.28);y=sin(i*6.28); to draw a circle.<br />
-      <br />
-      Note that the superscope will be squashed when the AVS window is not a perfect square. To counter this, multiply your end result 'x' by 'h/w' or the result 'y' by 'w/h'.<br />
-      (w = width, h = height of the window)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">28th September 2002 17:30 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xion(810)</span><br />
+			<span class="date small text-muted">26th September 2002 23:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Superscopes...</strong><br />
+		
+		
 
-      <p class="post-content">If you want to learn superscope you could always look up co-ordinate geometry. If you want to draw spheres though you will need to use some parametric equation because standard cartesian equations (x,y) can only define 1 to 1 mappings. i.e. you can only have one y value associated with any one z value.<br />
-      <br />
-      If i'm confusing you then just play around with x=2*i-1; and y=some function of x. i.e, x=2*i-1;y=x*x; etc.. this way you can draw the graphs that you've probably been doing something about at school.</p>
-    </div>
-    <hr />
+		I don't understand this: I can't figure out the superscope...I tried to make my own superscope from scratch by making a basic pulsar from a sphere.  I found in my geometry book a Volume equasion and thought that would work to make the sphere...(4/3)*3.14*(r*r*r).  I just don't know how to make it work, and my Init is r=2 (anything bigger may go off the screen I think...) and It doesn't work: Black screen.  Any help?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xion(810)</span><br />
-      <span class="date small text-muted">28th September 2002 21:20 GMT</span></p>
+	<hr />
 
-      <p class="post-content">all we've been learning is the basics: Angle, Congruent, Bicect, Tricect, and now we're just touching on Perpendicular.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">26th September 2002 23:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">28th September 2002 21:32 GMT</span></p>
+		The equation for your sphere calculates the volume.. that's a scalar quantity, which won't help you draw your sphere.<br />
+<br />
+Instead you have to calculate the 2d coordinates of the points that represent your object. You can use x=cos(i*6.28);y=sin(i*6.28); to draw a circle.<br />
+<br />
+Note that the superscope will be squashed when the AVS window is not a perfect square. To counter this, multiply your end result 'x' by 'h/w' or the result 'y' by 'w/h'.<br />
+(w = width, h = height of the window)
+		</p>
+</div>
 
-      <p class="post-content">So you haven't done any co-ordinate geometry?<br />
-      <br />
-      Okay well, I'll give a quick explaination:<br />
-      <br />
-      Firstly you need an equation, a quick example is y=x;<br />
-      <br />
-      On a graph were the x axis is horizontal and the y axis is vertical:<br />
-      y ^<br />
-      +3| /<br />
-      +2| /<br />
-      +1| /<br />
-      0--------&gt; we draw a line through all of the points were x=y.<br />
-      -1| 1 2 3 x<br />
-      -2|<br />
-      -3|<br />
-      <br />
-      Not a good diagram because it is ascii and it will probably get messed up when i submit. You can then convert this into superscope by doing:<br />
-      <br />
-      x=2*i-1;y=x; You will get a straight diagonal line going through the centre of the screen (the origin) which passes through the points where the x co-ordinate is equal to the y co-ordinate. (the superscope y axis is inverted with + at the bottom and - at the top so it will look a little different to my diagram).<br />
-      <br />
-      The way that this works is that i is a sort of length variable that goes from 0 to 1 so by multiplying it by 2 and subtracting 1 we make it go from -1 to 1. setting it to x means it will draw the line horizontally across the screen (along the x-axis) and setting y=x specifies for each x co-ordinate (-1 to 1) what the y value will be (x). Result is a line that passes through (x=-1,y=-1)...(x=1,y=1).<br />
-      <br />
-      If you have trouble with my litle intro here then look up cartesian coordinates on the net, you're bound to find something that you can learn from. After you're familiar with using cartesians then you should look up all of the functions that superscope has, like sin(), cos(), log(), atan()... to find out what they all do and what they look like as graphs of y=sin(x), y=log(x)...<br />
-      <br />
-      After that look up polar and parametric coordinates and then you will be able to create almost anyshape using a superscope, from a straight line to a sphere (and some even more complicated ones if you wish).<br />
-      <br />
-      Hope that that was useful.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xion(810)</span><br />
-      <span class="date small text-muted">28th September 2002 22:08 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">28th September 2002 17:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">*Has a gaping hole between his Ears*<br />
-      <br />
-      I...Didn't get squat.</p>
-    </div>
-    <hr />
+		If you want to learn superscope you could always look up co-ordinate geometry. If you want to draw spheres though you will need to use some parametric equation because standard cartesian equations (x,y) can only define 1 to 1 mappings. i.e. you can only have one y value associated with any one z value.<br />
+<br />
+If i'm confusing you then just play around with x=2*i-1; and y=some function of x. i.e, x=2*i-1;y=x*x; etc.. this way you can draw the graphs that you've probably been doing something about at school.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">28th September 2002 22:09 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Never mind, at least I try!<br />
-      <br />
-      BTW: I made you a numeral II superscope in the avs preset forum.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xion(810)</span><br />
+			<span class="date small text-muted">28th September 2002 21:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">30th September 2002 08:44 GMT</span></p>
+		all we've been learning is the basics:  Angle, Congruent, Bicect, Tricect, and now we're just touching on Perpendicular.
+		</p>
+</div>
 
-      <p class="post-content"></p>
+	<hr />
 
-      <blockquote>
-        Note that the superscope will be squashed when the AVS window is not a perfect square. To counter this, multiply your end result 'x' by 'h/w' or the result 'y' by 'w/h'.
-      </blockquote>That's a very useful tip UnConeD. Thanks! I already corrected several presets in my next pack with it :)
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">28th September 2002 21:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
-      <span class="date small text-muted">30th September 2002 22:12 GMT</span></p>
+		So you haven't done any co-ordinate geometry?<br />
+<br />
+Okay well, I'll give a quick explaination:<br />
+<br />
+Firstly you need an equation, a quick example is y=x;<br />
+<br />
+On a graph were the x axis is horizontal and the y axis is vertical:<br />
+y ^<br />
++3|     /<br />
++2|   /<br />
++1| /<br />
+0--------&gt;  we draw a line through all of the points were x=y.<br />
+-1| 1 2 3 x<br />
+-2|<br />
+-3|<br />
+<br />
+Not a good diagram because it is ascii and it will probably get messed up when i submit. You can then convert this into superscope by doing:<br />
+<br />
+x=2*i-1;y=x;  You will get a straight diagonal line going through the centre of the screen (the origin) which passes through the points where the x co-ordinate is equal to the y co-ordinate. (the superscope y axis is inverted with + at the bottom and - at the top so it will look a little different to my diagram).<br />
+<br />
+The way that this works is that i is a sort of length variable that goes from 0 to 1 so by multiplying it by 2 and subtracting 1 we make it go from -1 to 1. setting it to x means it will draw the line horizontally across the screen (along the x-axis) and setting y=x specifies for each x co-ordinate (-1 to 1) what the y value will be (x). Result is a line that passes through (x=-1,y=-1)...(x=1,y=1).<br />
+<br />
+If you have trouble with my litle intro here then look up cartesian coordinates on the net, you're bound to find something that you can learn from. After you're familiar with using cartesians then you should look up all of the functions that superscope has, like sin(), cos(), log(), atan()... to find out what they all do and what they look like as graphs of y=sin(x), y=log(x)...<br />
+<br />
+After that look up polar and parametric coordinates and then you will be able to create almost anyshape using a superscope, from a straight line to a sphere (and some even more complicated ones if you wish).<br />
+<br />
+Hope that that was useful.
+		</p>
+</div>
 
-      <p class="post-content">i find that screwing around with a graphing calculator (yes, the graphing functions, not the games) during algebra II helps me understand adv. math functions<br />
-      <br />
-      i wish i could have AVS on the calc (even if it was black and white, it would be frickin schweet)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Montana</span><br />
-      <span class="date small text-muted">1st October 2002 17:49 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xion(810)</span><br />
+			<span class="date small text-muted">28th September 2002 22:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"></p>
+		*Has a gaping hole between his Ears*<br />
+<br />
+I...Didn't get squat.
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
-        <b>That's a very useful tip UnConeD. Thanks! I already corrected several presets in my next pack with it :)</b>
-      </blockquote>yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">1st October 2002 18:22 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">28th September 2002 22:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"></p>
+		Never mind, at least I try!<br />
+<br />
+BTW: I made you a numeral II superscope in the avs preset forum.
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by Montana</i><br />
-        <b><br />
-        <br />
-        yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size</b>
-      </blockquote>I always just modify x because very few people (in my experience) use tall thin windows
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">2nd October 2002 02:58 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">30th September 2002 08:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Actually, in some cases I've seen that makes the scopes look a bit squashed. Maybe go for in-between perfectly square and fitting the window perfectly...?</p>
-    </div>
-    <hr />
+		
+	<blockquote>
+			
+				Note that the superscope will be squashed when the AVS window is not a perfect square. To counter this, multiply your end result 'x' by 'h/w' or the result 'y' by 'w/h'.</blockquote>
+That's a very useful tip UnConeD. Thanks! I already corrected several presets in my next pack with it :)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">2nd October 2002 07:43 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Well i also experienced that it didn't always work and they looked streched vertically (vertically.. lol i don't know how to spell it), in fullscreen mode, but it still corrects a loads of errors in my presets.<br />
-      <br /></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Karnov</span><br />
+			<span class="date small text-muted">30th September 2002 22:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by Montana</i><br />
-        <br />
-        yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size
-      </blockquote>uhm is it really that different? Sounds like it's just a more fancy way to do the same thing :D ( what's wrong with simple? is it too n00bish? are you so &#195;&#188;ber1337? :p )
-    </div>
-    <hr />
+		i find that screwing around with a graphing calculator (yes, the graphing functions, not the games) during algebra II helps me understand adv. math functions<br />
+<br />
+i wish i could have AVS on the calc (even if it was black and white, it would be frickin schweet)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">2nd October 2002 19:34 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Yes, you spelled it right :D<br />
-      It's not the same thing. One squashes Y, the other squashes X.<br />
-      And Simple sux. It's entirely uncustomizeable. Can't rotate, can't choose height specifically, etc.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Montana</span><br />
+			<span class="date small text-muted">1st October 2002 17:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xion(810)</span><br />
-      <span class="date small text-muted">3rd October 2002 01:59 GMT</span></p>
+		
+	<blockquote>
+			
+				<i>Originally posted by Tuggummi </i><br />
+<b>That's a very useful tip UnConeD. Thanks! I already corrected several presets in my next pack with it :) </b></blockquote>
+yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size
+		</p>
+</div>
 
-      <p class="post-content">Erm...okay...<br />
-      <br />
-      *Xion searches for 'Superscopes for Dummies' by UnConeD*</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">3rd October 2002 07:00 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">1st October 2002 18:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"></p>
+		
+	<blockquote>
+			
+				<i>Originally posted by Montana </i><br />
+<b><br />
+<br />
+yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size </b></blockquote>
+I always just modify x because very few people (in my experience) use tall thin windows
+		</p>
+</div>
 
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        It's entirely uncustomizeable. Can't rotate, can't choose height specifically, etc.
-      </blockquote>So how does one customize it?<br />
-      Just simple:<br />
-      <br />
-      h1=h*whatever ; h2=h*whatever ;<br />
-      w1=w*whatnot ; w2=w*whatnot ;<br />
-      min(h1,w1)/max(h2,w2)<br />
-      <br />
-      Rotation? uhm don't you do that in the scope code :) And you then add the correction code into the final result.
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">3rd October 2002 07:08 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">2nd October 2002 02:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Atero was talking about render/simple :igor:</p>
-    </div>
-    <hr />
+		Actually, in some cases I've seen that makes the scopes look a bit squashed.  Maybe go for in-between perfectly square and fitting the window perfectly...?
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">2nd October 2002 07:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well i also experienced that it didn't always work and they looked streched vertically (vertically.. lol i don't know how to spell it), in fullscreen mode, but it still corrects a loads of errors in my presets.<br />
+<br />
+
+	<blockquote>
+			
+				<i> Originally posted by Montana </i><br />
+<br />
+yeah it is but, a better system is to multiply x with min(h,w)/max(h,w) or multiply y with max(h,w)/min(h,w), so if a person use a window with a bigger vertical window size then a horizontal window size</blockquote>
+uhm is it really that different? Sounds like it's just a more fancy way to do the same thing :D  ( what's wrong with simple? is it too n00bish? are you so über1337? :p  )
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">2nd October 2002 19:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yes, you spelled it right :D<br />
+It's not the same thing.  One squashes Y, the other squashes X.<br />
+And Simple sux.  It's entirely uncustomizeable.  Can't rotate, can't choose height specifically, etc.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xion(810)</span><br />
+			<span class="date small text-muted">3rd October 2002 01:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Erm...okay...<br />
+<br />
+*Xion searches for 'Superscopes for Dummies' by UnConeD*
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">3rd October 2002 07:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero</i> <br />
+It's entirely uncustomizeable. Can't rotate, can't choose height specifically, etc.</blockquote>
+So how does one customize it?<br />
+Just simple:<br />
+<br />
+h1=h*whatever ; h2=h*whatever ;<br />
+w1=w*whatnot ; w2=w*whatnot ;<br />
+min(h1,w1)/max(h2,w2)<br />
+<br />
+Rotation? uhm don't you do that in the scope code :) And you then add the correction code into the final result.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">3rd October 2002 07:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Atero was talking about render/simple :igor:
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

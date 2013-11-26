@@ -1,92 +1,127 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DDR-Like AVS? AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" DDR-Like AVS? AVS" />
 
-  <title>DDR-Like AVS? - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> DDR-Like AVS? - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">DDR-Like AVS?</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=297883">DDR-Like AVS?</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dj_fender</span><br />
-      <span class="date small text-muted">26th September 2008 04:12 GMT</span></p>
 
-      <p class="post-content"><strong>DDR-Like AVS?</strong><br />
-      :D I had this Idea to implement a primitive beat detection to randomly generate arrows and have a human or the PC keep up to the music.<br />
-      <br />
-      It stems from that little Car vis that unConed made...<br />
-      <br />
-      I'd really like to stretch my brain around this and have some fun.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">DDR-Like AVS?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=297883">DDR-Like AVS?</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">26th September 2008 08:33 GMT</span></p>
 
-      <p class="post-content">zamuz did something like this for a les Noobiens pack</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">1st October 2008 16:28 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dj_fender</span><br />
+			<span class="date small text-muted">26th September 2008 04:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>DDR-Like AVS?</strong><br />
+		
+		
 
-      <p class="post-content">certainly possible with a superscope<br />
-      <br />
-      on beat:<br />
-      ar = $PI*(rand(2001)-1000)/1000;<br />
-      ax = cos(ar); ay = sin(ar);<br />
-      <br />
-      this isn't perfect but gives you two vertices: (ax,ay),(-ax,-ay) which you can use to make the line in the direction of your arrow.<br />
-      <br />
-      per point:<br />
-      x = ax*(1-i) + (-ax)*i;<br />
-      y = ay*(1-i) + (-ay)*i;<br />
-      <br />
-      or more efficiently:<br />
-      x = ax - 2*ax*i;<br />
-      y = ay - 2*ay*i;<br />
-      <br />
-      you can also use a similar ar to move a dynamic movement so you can make a nice picture of an arrow if you like...<br />
-      <br />
-      I don't have avs at work to test, or remember the name of the code box, but try something like this in the bottom one.<br />
-      <br />
-      d = sqrt(sqr(x)+sqr(y));<br />
-      r = atan2(-y,x);<br />
-      x = d*cos(r + ar);<br />
-      y = d*sin(r + ar);<br />
-      <br />
-      I can't remember but I think there is a tick box for rectangular coords as well which if you untick you can just use "r = r + ar;"<br />
-      <br />
-      have fun. :)</p>
-    </div>
-    <hr />
+		:D I had this Idea to implement a primitive beat detection to randomly generate arrows and have a human or the PC keep up to the music.<br />
+<br />
+It stems from that little Car vis that unConed made...<br />
+<br />
+I'd really like to stretch my brain around this and have some fun.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">26th September 2008 08:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		zamuz did something like this for a les Noobiens pack
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">1st October 2008 16:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		certainly possible with a superscope<br />
+<br />
+on beat:<br />
+ar = $PI*(rand(2001)-1000)/1000;<br />
+ax = cos(ar); ay = sin(ar);<br />
+<br />
+this isn't perfect but gives you two vertices: (ax,ay),(-ax,-ay) which you can use to make the line in the direction of your arrow.<br />
+<br />
+per point:<br />
+x = ax*(1-i) + (-ax)*i;<br />
+y = ay*(1-i) + (-ay)*i;<br />
+<br />
+or more efficiently:<br />
+x = ax - 2*ax*i;<br />
+y = ay - 2*ay*i;<br />
+<br />
+you can also use a similar ar to move a dynamic movement so you can make a nice picture of an arrow if you like...<br />
+<br />
+I don't have avs at work to test, or remember the name of the code box, but try something like this in the bottom one.<br />
+<br />
+d = sqrt(sqr(x)+sqr(y));<br />
+r = atan2(-y,x);<br />
+x = d*cos(r + ar);<br />
+y = d*sin(r + ar);<br />
+<br />
+I can't remember but I think there is a tick box for rectangular coords as well which if you untick you can just use &quot;r = r + ar;&quot;<br />
+<br />
+have fun. :)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

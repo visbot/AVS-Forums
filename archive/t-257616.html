@@ -1,123 +1,179 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Question AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Question AVS" />
 
-  <title>Question - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Question - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Question</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=257616">Question</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fastingaciu</span><br />
-      <span class="date small text-muted">15th October 2006 19:17 GMT</span></p>
 
-      <p class="post-content"><strong>Question</strong><br />
-      This thing has been bothering me for a while now. Althought the code is really simple, something is wrong.<br />
-      <br />
-      <b>Frame</b><br />
-      n=w;<br />
-      drawmode=1;<br />
-      s=0.5;<br />
-      <br />
-      <br />
-      <b>Pixel</b><br />
-      s=-s;<br />
-      x=0;<br />
-      y=s;<br />
-      <br />
-      <br />
-      <a href="http://img528.imageshack.us/img528/9471/untitledpd9.png" target="_blank">http://img528.imageshack.us/img528/9471/untitledpd9.png</a></p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Question</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=257616">Question</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">15th October 2006 19:59 GMT</span></p>
 
-      <p class="post-content">(I take you mean x=i-.5; instead of x=0 for your example?)<br />
-      <br />
-      It has to do with how the lines are drawn since there's only a one-pixel shift for 2 points.<br />
-      <br />
-      I always use n=w+2 (or n=w*2+2 for fullscreen). This makes it one pixel wider, but it fixes the problem and noone will notice</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fastingaciu</span><br />
-      <span class="date small text-muted">15th October 2006 21:39 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fastingaciu</span><br />
+			<span class="date small text-muted">15th October 2006 19:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Question</strong><br />
+		
+		
 
-      <p class="post-content">Yeah I ment x=i-0.5;.<br />
-      <br />
-      It never hit me that n=w+2; would solve it. Thanks.</p>
-    </div>
-    <hr />
+		This thing has been bothering me for a while now. Althought the code is really simple, something is wrong.<br />
+<br />
+<b>Frame</b><br />
+n=w;<br />
+drawmode=1;<br />
+s=0.5;<br />
+<br />
+<br />
+<b>Pixel</b><br />
+s=-s;<br />
+x=0;<br />
+y=s;<br />
+ <br />
+<br />
+<a href="http://img528.imageshack.us/img528/9471/untitledpd9.png" target="_blank">http://img528.imageshack.us/img528/9471/untitledpd9.png</a>
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">15th October 2006 23:11 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I don't know why it works either, but it does</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">15th October 2006 19:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Mr_Nudge</span><br />
-      <span class="date small text-muted">17th October 2006 07:07 GMT</span></p>
+		(I take you mean x=i-.5; instead of x=0 for your example?)<br />
+<br />
+It has to do with how the lines are drawn since there's only a one-pixel shift for 2 points.<br />
+<br />
+I always use n=w+2 (or n=w*2+2 for fullscreen). This makes it one pixel wider, but it fixes the problem and noone will notice
+		</p>
+</div>
 
-      <p class="post-content">you could always just use n=2, x=i-0.5 and mega fat linesize.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">18th October 2006 09:59 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fastingaciu</span><br />
+			<span class="date small text-muted">15th October 2006 21:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">The reason this happens is quite obvious if you step through the code. x = i - .5 means that for each point it will be a little further across in the x-axis. with your s = -s you are alternating successive points between s and -s in the y axis. putting the two together creates a zig-zag, sawtooth wave... whatever you want to call it. by using the (pretty wasteful i might add) n = w you are creating one which is so dense that it appears to be a solid rectangle.<br />
-      <br />
-      by convenience n = w is the exact amount needed for it to break down like this since you are covering half the width of the screen with w/2 points per side of rectangle. e.g. each subsequent point is so close on the x axis that the point moves one pixel to the left for every two points evaluated. the only reason for it to not look perfect is rounding errors, since the n = w/2 means each point is half a pixel infront of the other. n = w+2 pushes it past the magic point of w/2 and so there is no chance of a visible artefact from a rounding error. such artefacts are still there but the zig-zag is so dense that they always get drawn over.<br />
-      <br />
-      a better way to do this is to work out a single pixel width per frame then, still using s = -s for y, incrementing x manually with this width only when s is +ve or -ve (which ever you choose will probably not matter) you can then skip redundant lines too.<br />
-      <br />
-      per frame:<br />
-      ix = .5/w<br />
-      xi = -.5<br />
-      <br />
-      per point:<br />
-      s=-s;<br />
-      xi = if(above(s,0),xi + ix,xi);<br />
-      x = xi;<br />
-      y = s;<br />
-      <br />
-      (untested since i am at work)<br />
-      <br />
-      an even better way to draw a solid rectangle is with triangle.ape :P</p>
-    </div>
-    <hr />
+		Yeah I ment x=i-0.5;. <br />
+<br />
+It never hit me that n=w+2; would solve it. Thanks.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">15th October 2006 23:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I don't know why it works either, but it does
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Mr_Nudge</span><br />
+			<span class="date small text-muted">17th October 2006 07:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		you could always just use n=2, x=i-0.5 and mega fat linesize.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">18th October 2006 09:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The reason this happens is quite obvious if you step through the code. x = i - .5 means that for each point it will be a little further across in the x-axis. with your s = -s you are alternating successive points between s and -s in the y axis. putting the two together creates a zig-zag, sawtooth wave... whatever you want to call it. by using the (pretty wasteful i might add) n = w you are creating one which is so dense that it appears to be a solid rectangle. <br />
+<br />
+by convenience n = w is the exact amount needed for it to break down like this since you are covering half the width of the screen with w/2 points per side of rectangle. e.g. each subsequent point is so close on the x axis that the point moves one pixel to the left for every two points evaluated. the only reason for it to not look perfect is rounding errors, since the n = w/2 means each point is half a pixel infront of the other. n = w+2 pushes it past the magic point of w/2 and so there is no chance of a visible artefact from a rounding error. such artefacts are still there but the zig-zag is so dense that they always get drawn over.<br />
+<br />
+a better way to do this is to work out a single pixel width per frame then, still using s = -s for y, incrementing x manually with this width only when s is +ve or -ve (which ever you choose will probably not matter) you can then skip redundant lines too.<br />
+<br />
+per frame:<br />
+ix = .5/w<br />
+xi = -.5<br />
+<br />
+per point:<br />
+s=-s;<br />
+xi = if(above(s,0),xi + ix,xi);<br />
+x = xi;<br />
+y = s;<br />
+<br />
+(untested since i am at work)<br />
+<br />
+an even better way to draw a solid rectangle is with triangle.ape :P
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

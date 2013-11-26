@@ -1,95 +1,144 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="w,h as dm grid size AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" w,h as dm grid size AVS" />
 
-  <title>w,h as dm grid size - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> w,h as dm grid size - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">w,h as dm grid size</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115210">w,h as dm grid size</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">nixa</span><br />
-      <span class="date small text-muted">22nd November 2002 18:45 GMT</span></p>
 
-      <p class="post-content"><strong>w,h as dm grid size</strong><br />
-      It would be usefull if dm grid size could be defined like:<br />
-      (w|8) (h|12)<br />
-      I think the | sign is called div in programing or is it mod? :confused:</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">w,h as dm grid size</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115210">w,h as dm grid size</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">22nd November 2002 19:24 GMT</span></p>
 
-      <p class="post-content">| is usually the OR command, in AVS it's an integral bitwise OR:<br />
-      <br />
-      14.3|25.8<br />
-      15|26 &lt;-convert to integer<br />
-      00001011|0011010 &lt;-convert to binary<br />
-      00011011 &lt;-do bitwise OR; if a digit is 1 in either of the numbers, it is 1 in the final number<br />
-      27 &lt;-convert back to decimal<br />
-      14.3|25.8=27<br />
-      <br />
-      C++'s TRUE/FALSE OR (||) and AND (&amp;&amp;) go like this:<br />
-      <br />
-      (a&gt;b||b!=c&amp;&amp;c==a) :: conditional (a is greater than b OR (b is not equal to c AND c is equal to a))<br />
-      This returns TRUE if a is greater than b, or if b is not equal to c and c is equal to a.<br />
-      <br />
-      <br />
-      Anyway, I don't think we ned to have that capability with DM gridsizes, since you'd get people like me who had never done DM's before using w and h for gridsizes, and getting 0 fps out of it, then coming to the forum complaining about how crappy AVS's Dynamic Movement component is (except I didn't complain about it, since it wasn't crappy, it just didn't have W and H for gridsize.)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">nixa</span><br />
-      <span class="date small text-muted">22nd November 2002 19:56 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">nixa</span><br />
+			<span class="date small text-muted">22nd November 2002 18:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>w,h as dm grid size</strong><br />
+		
+		
 
-      <p class="post-content">I wrote it wrong. Its (8|w) and (12|h). For any x,y e N and x&gt;y there are such q,r e N that x/y=y*q+r and r&lt;y. Anyway | is a math sigh and that x|y=q.<br />
-      I thought it would be usefull for making grid size resolution dependable. I dont really understand yore argument, its the same as someone would say that avs sucks becouse you can sett superscope n to 1000000.</p>
-    </div>
-    <hr />
+		It would be usefull if dm grid size could be defined like:<br />
+(w|8) (h|12)<br />
+I think the | sign is called div in programing or is it mod? :confused:
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">22nd November 2002 21:50 GMT</span></p>
+	<hr />
 
-      <p class="post-content">So your 'DIV' or '|' is just integral division? 'MOD' is the modulus operator btw (% in AVS).</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">22nd November 2002 19:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">nixa</span><br />
-      <span class="date small text-muted">23rd November 2002 18:48 GMT</span></p>
+		| is usually the OR command, in AVS it's an integral bitwise OR:<br />
+<br />
+14.3|25.8<br />
+15|26 &lt;-convert to integer<br />
+00001011|0011010 &lt;-convert to binary<br />
+00011011 &lt;-do bitwise OR; if a digit is 1 in either of the numbers, it is 1 in the final number<br />
+27 &lt;-convert back to decimal<br />
+14.3|25.8=27<br />
+<br />
+C++'s TRUE/FALSE OR (||) and AND (&amp;&amp;) go like this:<br />
+<br />
+(a&gt;b||b!=c&amp;&amp;c==a) :: conditional (a is greater than b OR (b is not equal to c AND c is equal to a))<br />
+This returns TRUE if a is greater than b, or if b is not equal to c and c is equal to a.<br />
+<br />
+<br />
+Anyway, I don't think we ned to have that capability with DM gridsizes, since you'd get people like me who had never done DM's before using w and h for gridsizes, and getting 0 fps out of it, then coming to the forum complaining about how crappy AVS's Dynamic Movement component is (except I didn't complain about it, since it wasn't crappy, it just didn't have W and H for gridsize.)
+		</p>
+</div>
 
-      <p class="post-content">Unconed: Yes thats that.I knew there was an English word for it.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">nixa</span><br />
+			<span class="date small text-muted">22nd November 2002 19:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I wrote it wrong. Its (8|w) and (12|h). For any x,y e N and x&gt;y there are such q,r e N that x/y=y*q+r and r&lt;y. Anyway | is a math sigh and that x|y=q.<br />
+I thought it would be usefull for making grid size resolution dependable. I dont really understand yore argument, its the same as someone would say that avs sucks becouse you can sett superscope n to 1000000.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">22nd November 2002 21:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		So your 'DIV' or '|' is just integral division? 'MOD' is the modulus operator btw (% in AVS).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">nixa</span><br />
+			<span class="date small text-muted">23rd November 2002 18:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Unconed: Yes thats that.I knew there was an English word for it.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

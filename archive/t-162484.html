@@ -1,86 +1,121 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hardware Acceleration Clarification (I know...) AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Hardware Acceleration Clarification (I know...) AVS" />
 
-  <title>Hardware Acceleration Clarification (I know...) - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Hardware Acceleration Clarification (I know...) - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-138.html">AVS Wishlist</a></li>
 
-      <li class="active">Hardware Acceleration Clarification (I know...)</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=162484">Hardware Acceleration Clarification (I know...)</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">duerra</span><br />
-      <span class="date small text-muted">30th December 2003 16:24 GMT</span></p>
 
-      <p class="post-content"><strong>Hardware Acceleration Clarification (I know...)</strong><br />
-      Ok, before anybody slaughters me with the "it's been asked a million times before, &lt;snip&gt;" stuff, I'd like you guys to know that I've read every thread I can find in these forums on the issue ;)<br />
-      <br />
-      I understand how AVS works, and that it uses CPU power and not hardware acceleration, etc. etc. Anyway, the one thing that I have failed to find anywhere is the answer to these questions:<br />
-      1. Are there any plans to, at some point in time, make compatible with graphics cards and hardware acceleration? Obviously it's been requested a guapzillion times, but I can't seem to find a definitive "no, it will never be done", or "there are no current plans to", or "when we get the time we will" answers to that question.<br />
-      <br />
-      2. If the answer to #1 is that there are no plans to do this, what are the chances, in terms of 0-100%, that AVS could become open sourced, so that somebody who has the time and desire *could* take on this task? While the time and money issue might be an issue for Winamp developers, it surely isn't for many people who love AVS, and want to see it at its absolute finest.<br />
-      <br />
-      Obviously the only reason that this issue keeps coming up is because people see just how incredibly awesome AVS visualizations are, and can be, yet there is obviously a bottleneck there that many people would really love to have worked out. So I guess the issue for me is more of whether this is something that I can potentially look forward to in the future, and not that of complaining, or repeating to everybody here an issue that everybody who's spent 5 minutes in the forums is already more than aware of.<br />
-      <br />
-      My personal opinion on it would be to open up the code in order to free up the development time and costs, and let AVS be a team sport, since there are many people here who are more than apt, and willing, to work on this for the bennefit of everybody. I can understand why this wouldn't happen, but even if it doesn't, at that point I'd just like to put in my vote to see AVS become hardware accelerator ready. Currently I am using Milkdrop, but I love the AVS visualizations 100x more, because they're so absolutely gorgeous... except that I just can't use it.<br />
-      <br />
-      Thanks. :)<br />
-      <br />
-      <font size="1">Edit: Spelling Correction</font></p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-138.html">AVS Wishlist</a></li>
+		<li class="active">Hardware Acceleration Clarification (I know...)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=162484">Hardware Acceleration Clarification (I know...)</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">30th December 2003 17:10 GMT</span></p>
 
-      <p class="post-content">This /has/ been discussed before: the code would be only useful in some parts because considerable portions would need to be rewritten and rethought.<br />
-      Software and hardware graphics works differently. Directly porting AVS and coding each effect in hardware would result in an application that is slow, sucks video-memory and is ugly.<br />
-      <br />
-      AVS's plug-and-play components just don't work well on videocards: 3D engines are commonly optimized so that everything is done at the right time and wastes as little resources. When you start making generic pluggable components, you lose this streamlining.<br />
-      Compare it to the elegance of a finely crafted scale model-set versus the versatility of a pack of Lego-bricks.<br />
-      <br />
-      Milkdrop is fast is because it is optimized for what videocards can and can't do, and how they do that.<br />
-      <br />
-      AVS is pretty because it's not limited to what videocards can do and how they are built.<br />
-      <br />
-      There are no plans for it and open-sourcing isn't going to happen.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">duerra</span><br />
-      <span class="date small text-muted">30th December 2003 17:27 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">duerra</span><br />
+			<span class="date small text-muted">30th December 2003 16:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Hardware Acceleration Clarification (I know...)</strong><br />
+		
+		
 
-      <p class="post-content">Alright. That's what I was looking for.<br />
-      <br />
-      Thanks =)</p>
-    </div>
-    <hr />
+		Ok, before anybody slaughters me with the &quot;it's been asked a million times before, &lt;snip&gt;&quot; stuff, I'd like you guys  to know that I've read every thread I can find in these forums on the issue ;)<br />
+<br />
+I understand how AVS works, and that it uses CPU power and not hardware acceleration, etc. etc.  Anyway, the one thing that I have failed to find anywhere is the answer to these questions:<br />
+1.  Are there any plans to, at some point in time, make compatible with graphics cards and hardware acceleration?  Obviously it's been requested a guapzillion times, but I can't seem to find a definitive &quot;no, it will never be done&quot;, or &quot;there are no current plans to&quot;, or &quot;when we get the time we will&quot; answers to that question.<br />
+<br />
+2.  If the answer to #1 is that there are no plans to do this, what are the chances, in terms of 0-100%, that AVS could become open sourced, so that somebody who has the time and desire *could* take on this task?  While the time and money issue might be an issue for Winamp developers, it surely isn't for many people who love AVS, and want to see it at its absolute finest.<br />
+<br />
+Obviously the only reason that this issue keeps coming up is because people see just how incredibly awesome AVS visualizations are, and can be, yet there is obviously a bottleneck there that many people would really love to have worked out.  So I guess the issue  for me is more of whether this is something that I can potentially look forward to in the future, and not that of complaining, or repeating to everybody here an issue that everybody who's spent 5 minutes in the forums is already more than aware of.<br />
+<br />
+My personal opinion on it would be to open up the code in order to free up the development time and costs, and let AVS be a team sport, since there are many people here who are more than apt, and willing, to work on this for the bennefit of everybody.  I can understand why this wouldn't happen, but even if it doesn't, at that point I'd just like to put in my vote to see AVS become hardware accelerator ready.  Currently I am using Milkdrop, but I love the AVS visualizations 100x more, because they're so absolutely gorgeous... except that I just can't use it. <br />
+<br />
+Thanks.  :)<br />
+<br />
+<font size="1">Edit:  Spelling Correction</font>
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">30th December 2003 17:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		This /has/ been discussed before: the code would be only useful in some parts because considerable portions would need to be rewritten and rethought.<br />
+Software and hardware graphics works differently. Directly porting AVS and coding each effect in hardware would result in an application that is slow, sucks video-memory and is ugly.<br />
+<br />
+AVS's plug-and-play components just don't work well on videocards: 3D engines are commonly optimized so that everything is done at the right time and wastes as little resources. When you start making generic pluggable components, you lose this streamlining.<br />
+Compare it to the elegance of a finely crafted scale model-set versus the versatility of a pack of Lego-bricks.<br />
+<br />
+Milkdrop is fast is because it is optimized for what videocards can and can't do, and how they do that.<br />
+<br />
+AVS is pretty because it's not limited to what videocards can do and how they are built.<br />
+<br />
+There are no plans for it and open-sourcing isn't going to happen.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">duerra</span><br />
+			<span class="date small text-muted">30th December 2003 17:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Alright.  That's what I was looking for.<br />
+<br />
+Thanks =)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

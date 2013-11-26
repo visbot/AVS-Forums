@@ -1,294 +1,476 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Converting AVS to Milkdrop AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Converting AVS to Milkdrop AVS" />
 
-  <title>Converting AVS to Milkdrop - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Converting AVS to Milkdrop - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Converting AVS to Milkdrop</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=143447">Converting AVS to Milkdrop</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">24th July 2003 18:35 GMT</span></p>
 
-      <p class="post-content"><strong>Converting AVS to Milkdrop</strong><br />
-      With the new MD beta we have, we can make custom waves. I decided to go back and convert my "Why does avs keep changing" preset over to milkdrop, or atleast the scope. I'm having some trouble and I though you guys might know.<br />
-      <br />
-      Since MD dosen't use D &amp; R I have to convert them, but I don't know how.<br />
-      <br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=1030067#post1030067" target="_blank">http://forums.winamp.com/showthread....67#post1030067</a><br />
-      <br />
-      I posted it in the MD forums if anyone wants to help.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Converting AVS to Milkdrop</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=143447">Converting AVS to Milkdrop</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">24th July 2003 19:32 GMT</span></p>
 
-      <p class="post-content">Cartesian to polar conversions:<br />
-      <br />
-      d=sqrt(sqr(x)+sqr(y));<br />
-      r=atan2(x,y);<br />
-      <br />
-      x=cos(r)*d;<br />
-      y=sin(r)*d;</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">25th July 2003 02:15 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">24th July 2003 18:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Converting AVS to Milkdrop</strong><br />
+		
+		
 
-      <p class="post-content">not quite m2k, but close. the actual conversion (in a *perfectly* square window) is:<br />
-      d=sqrt(sqr(x)+sqr(y))/sqrt(2);<br />
-      r=atan2(x,-y);<br />
-      x=sin(r)*d;<br />
-      y=-cos(r)*d;<br />
-      <br />
-      i KNOW that's not the way it's supposed to work, but since when did anything else in avs work correctly anyhow...</p>
-    </div>
-    <hr />
+		With the new MD beta we have, we can make custom waves. I decided to go back and convert my &quot;Why does avs keep changing&quot; preset over to milkdrop, or atleast the scope. I'm having some trouble and I though you guys might know.<br />
+<br />
+Since MD dosen't use D &amp; R I have to convert them, but I don't know how.<br />
+<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=1030067#post1030067" target="_blank">http://forums.winamp.com/showthread....67#post1030067</a><br />
+<br />
+I posted it in the MD forums if anyone wants to help.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">25th July 2003 19:50 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Heh how long until the first 3D SSC in Milkdrop?</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">24th July 2003 19:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">25th July 2003 21:25 GMT</span></p>
+		Cartesian to polar conversions:<br />
+<br />
+d=sqrt(sqr(x)+sqr(y));<br />
+r=atan2(x,y);<br />
+<br />
+x=cos(r)*d;<br />
+y=sin(r)*d;
+		</p>
+</div>
 
-      <p class="post-content">How soon is <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=143273" target="_blank">now</a>?</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">25th July 2003 21:47 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">25th July 2003 02:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">I think a better question is, how long until milkdrop starts looking good and stops sucking avs's fat and aestheticly pleasing cock?</p>
-    </div>
-    <hr />
+		not quite m2k, but close.  the actual conversion (in a *perfectly* square window) is:<br />
+d=sqrt(sqr(x)+sqr(y))/sqrt(2);<br />
+r=atan2(x,-y);<br />
+x=sin(r)*d;<br />
+y=-cos(r)*d;<br />
+<br />
+i KNOW that's not the way it's supposed to work, but since when did anything else in avs work correctly anyhow...
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">25th July 2003 23:51 GMT</span></p>
+	<hr />
 
-      <p class="post-content">(erm..removed..)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">25th July 2003 19:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">26th July 2003 00:30 GMT</span></p>
+		Heh how long until the first 3D SSC in Milkdrop?
+		</p>
+</div>
 
-      <p class="post-content">Now that Milkdrop has custom waves, are there any plans for taking Milkdrop preset customization to the same level as AVS?<br />
-      <br />
-      I have to admit I haven't tried the latest version (geisswerks only has 1.03), but I assume Milkdrop is still stuck in the same Movement + Drawing + Color Adjustments loop, rather than providing freeform stacking...<br />
-      <br />
-      <br />
-      Oh Atero, I have this lovely image for you:<br />
-      <a href="http://acko.net/dump/stfu.png" target="_blank">http://acko.net/dump/stfu.png</a></p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
-      <span class="date small text-muted">26th July 2003 11:13 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">25th July 2003 21:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Well at this stage MilkDrop still has similiar setup as before. It is not at the level of customization of AVS but with 3d ssc's and other things there is more posibilities and it is more like AVS. :)<br />
-      <br />
-      Anyways here si the latest beta for all those interested. Didn't want to spam but there appears to be some interest ANd maybe oneday we will see the equivalant AVS features in a 3d enviornment like MilkDrop. At least one of Nullsofts visualizations is still being worked on.<br />
-      <br />
-      v1.04beta4b - <a href="http://www.geisswerks.com/t/milkdrop_fractal_pancake_surprise.zip" target="_blank">http://www.geisswerks.com/t/milkdrop...e_surprise.zip</a><br />
-      <br />
-      There are examples of ssc's etc from the forums.</p>
-    </div>
-    <hr />
+		How soon is <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=143273" target="_blank">now</a>?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">26th July 2003 12:12 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Yay, milkdrop is becoming more like AVS. Or you could just use AVS.<br />
-      <br />
-      :rolleyes:</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">25th July 2003 21:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
-      <span class="date small text-muted">26th July 2003 13:07 GMT</span></p>
+		I think a better question is, how long until milkdrop starts looking good and stops sucking avs's fat and aestheticly pleasing cock?
+		</p>
+</div>
 
-      <p class="post-content">*sigh* not going to enter some flaming battle. WE all know the problems/limitations with the various visualizations that Nullsoft make.<br />
-      <br />
-      It has been discusssed many time before about the lack of 3d H/w support of AVS and how the best thing for it would be to start from the ground up to make a new version which uses these features.<br />
-      <br />
-      Thankfully the engine for MIlkDrop has been updated to DX8 too so it is a load faster too.<br />
-      <br />
-      Anyway as a lover of all visualiations I am just glad Nullsoft are at least updating one of there vvises.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">26th July 2003 14:59 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">25th July 2003 23:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">*idiot decides not to crack jokes about rovastar and being a lover :)</p>
-    </div>
-    <hr />
+		(erm..removed..)
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">27th July 2003 11:27 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">26th July 2003 00:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by Raz</i><br />
-        <b>Yay, milkdrop is becoming more like AVS. Or you could just use AVS.<br />
-        <br />
-        :rolleyes:</b>
-      </blockquote>Eeeeeey :D
-    </div>
-    <hr />
+		Now that Milkdrop has custom waves, are there any plans for taking Milkdrop preset customization to the same level as AVS?<br />
+<br />
+I have to admit I haven't tried the latest version (geisswerks only has 1.03), but I assume Milkdrop is still stuck in the same Movement + Drawing + Color Adjustments loop, rather than providing freeform stacking...<br />
+<br />
+<br />
+Oh Atero, I have this lovely image for you:<br />
+<a href="http://acko.net/dump/stfu.png" target="_blank">http://acko.net/dump/stfu.png</a>
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">27th July 2003 14:59 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Me can't see no text in new MD. :(</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Rovastar</span><br />
+			<span class="date small text-muted">26th July 2003 11:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">27th July 2003 17:53 GMT</span></p>
+		Well at this stage MilkDrop still has similiar setup as before. It is not at the level of customization of AVS but with 3d ssc's and other things there is more posibilities and it is more like AVS. :)<br />
+<br />
+Anyways here si the latest beta for all those interested. Didn't want to spam but there appears to be some interest ANd maybe oneday we will see the equivalant AVS features in a 3d enviornment like MilkDrop. At least one of Nullsofts visualizations is still being worked on.<br />
+<br />
+v1.04beta4b - <a href="http://www.geisswerks.com/t/milkdrop_fractal_pancake_surprise.zip" target="_blank">http://www.geisswerks.com/t/milkdrop...e_surprise.zip</a><br />
+<br />
+There are examples of ssc's etc from the forums.
+		</p>
+</div>
 
-      <p class="post-content"></p>
+	<hr />
 
-      <blockquote>
-        Eeeeeey :D
-      </blockquote>zev, are you being fonzey again?
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">26th July 2003 12:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Phaze1987</span><br />
-      <span class="date small text-muted">27th July 2003 21:11 GMT</span></p>
+		Yay, milkdrop is becoming more like AVS. Or you could just use AVS.<br />
+<br />
+:rolleyes:
+		</p>
+</div>
 
-      <p class="post-content">AVS pwnz MD.period.period.period.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">28th July 2003 10:33 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Rovastar</span><br />
+			<span class="date small text-muted">26th July 2003 13:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Who cares which is better?<br />
-      <br />
-      .....<br />
-      <br />
-      <br />
-      exactly</p>
-    </div>
-    <hr />
+		*sigh* not going to enter some flaming battle. WE all know the problems/limitations with the various visualizations that Nullsoft make.<br />
+<br />
+It has been discusssed many time before about the lack of 3d H/w support of AVS and how the best thing for it would be to start from the ground up to make a new version which uses these features.<br />
+<br />
+Thankfully the engine for MIlkDrop has been updated to DX8 too so it is a load faster too.<br />
+<br />
+Anyway as a lover of all visualiations I am just glad Nullsoft are at least updating one of there vvises.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">29th July 2003 01:12 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Well obviously not Milkdroppers :rolleyes:</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">26th July 2003 14:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">31st July 2003 09:25 GMT</span></p>
+		*idiot decides not to crack jokes about rovastar and being a lover :)
+		</p>
+</div>
 
-      <p class="post-content"><font color="purple">[12:28] * idiot kills Atero</font></p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">31st July 2003 12:20 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">27th July 2003 11:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Kinda offtopic, but this thread is going nowhere and it's about both of the main Winamp visualizations, and I didn't want to get yelled at for crossposting:<br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=144218" target="_blank">http://forums.winamp.com/showthread.php?threadid=144218</a><br />
-      <br />
-      Ryan Geiss is being laid off. AOL seems to be royally fucking up winamp in every way that they can. It seems as though nobody cares about any of the visualizations any more.:mad:</p>
-    </div>
-    <hr />
+		
+	<blockquote>
+			
+				<i>Originally posted by Raz </i><br />
+<b>Yay, milkdrop is becoming more like AVS. Or you could just use AVS.<br />
+<br />
+:rolleyes: </b></blockquote>
+Eeeeeey :D
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">31st July 2003 19:39 GMT</span></p>
+	<hr />
 
-      <p class="post-content">hey, i have an idea<br />
-      <br />
-      lets make OMFGWEHATEAOLTHOSEBASTARDSAmp! and we could have WTFAVSSOMUCHOWNEDMILKDROPWHENWINAMPWASCOOL...VS!<br />
-      <br />
-      ...or something like that...<br />
-      <br />
-      i'm half serious, it's time we gave aol the finger and moved on to better things. i'm convinced winamp5 is going to be only slightly less of the pos that 3 was, and we've got several more than capable cpp programmers (/me looks at jheriko, pak-9, unconed, etc.), and a knowledge of what *we* want in the vis/player...<br />
-      <br />
-      or maybe i'm just babbling and dragging this thread off topic.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">27th July 2003 14:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">31st July 2003 20:02 GMT</span></p>
+		Me can't see no text in new MD. :(
+		</p>
+</div>
 
-      <p class="post-content">It depends what you consider the topic is.:p The original topic kinda faded away into AVS vs Milkdrop, so I changed it. AOL does suck ass though.:mad:</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ryan</span><br />
-      <span class="date small text-muted">31st July 2003 22:38 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">27th July 2003 17:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Krash also does coding and stuff :D</p>
-    </div>
-    <hr />
+		
+	<blockquote>
+			
+				Eeeeeey :D</blockquote>
+zev, are you being fonzey again?
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Illusion</span><br />
-      <span class="date small text-muted">1st August 2003 08:00 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Has anyone who wants to develop a plugin considered using Ryan's visualisation SDK framework? That would have to give someone a decent start surely, provided they had decent knowledge in that area...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Phaze1987</span><br />
+			<span class="date small text-muted">27th July 2003 21:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		AVS pwnz MD.period.period.period.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">28th July 2003 10:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Who cares which is better? <br />
+<br />
+.....<br />
+<br />
+<br />
+exactly
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">29th July 2003 01:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well obviously not Milkdroppers :rolleyes:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">31st July 2003 09:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<font color="purple">[12:28] * idiot kills Atero</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">31st July 2003 12:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Kinda offtopic, but this thread is going nowhere and it's about both of the main Winamp visualizations, and I didn't want to get yelled at for crossposting:<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=144218" target="_blank">http://forums.winamp.com/showthread.php?threadid=144218</a><br />
+<br />
+Ryan Geiss is being laid off.  AOL seems to be royally fucking up winamp in every way that they can.  It seems as though nobody cares about any of the visualizations any more.:mad:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">31st July 2003 19:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hey, i have an idea<br />
+<br />
+lets make OMFGWEHATEAOLTHOSEBASTARDSAmp!  and we could have WTFAVSSOMUCHOWNEDMILKDROPWHENWINAMPWASCOOL...VS!<br />
+<br />
+...or something like that...<br />
+<br />
+i'm half serious, it's time we gave aol the finger and moved on to better things.  i'm convinced winamp5 is going to be only slightly less of the pos that 3 was, and we've got several more than capable cpp programmers (/me looks at jheriko, pak-9, unconed, etc.), and a knowledge of what *we* want in the vis/player...<br />
+<br />
+or maybe i'm just babbling and dragging this thread off topic.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">31st July 2003 20:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It depends what you consider the topic is.:p   The original topic kinda faded away into AVS vs Milkdrop, so I changed it.  AOL does suck ass though.:mad:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ryan</span><br />
+			<span class="date small text-muted">31st July 2003 22:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Krash also does coding and stuff :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Illusion</span><br />
+			<span class="date small text-muted">1st August 2003 08:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Has anyone who wants to develop a plugin considered using Ryan's visualisation SDK framework? That would have to give someone a decent start surely, provided they had decent knowledge in that area...
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,87 +1,138 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Party Planet AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Party Planet AVS" />
 
-  <title>Party Planet - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Party Planet - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">Party Planet</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=141807">Party Planet</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">EnDurA</span><br />
-      <span class="date small text-muted">11th July 2003 03:47 GMT</span></p>
 
-      <p class="post-content"><strong>Party Planet</strong><br />
-      my 2nd remix from "the x factor".<br />
-      hope you enjoy blah blah blah...</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Party Planet</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=141807">Party Planet</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">11th July 2003 03:53 GMT</span></p>
 
-      <p class="post-content">It's a nice effect, but the SSC is too jumpy(and it isn't that great of a SSC either, but it works OK). I would make it change the speed that t changes onbeat instead of t itself. Something like this:<br />
-      <br />
-      Beat:<br />
-      dt2=rand(100)/1000;<br />
-      Frame:<br />
-      dt1=.9*dt1+.1*dt2;t=t+dt1;<br />
-      Pixel:<br />
-      r=r+6; y=cos(r-t); x=sin(r)<br />
-      <br />
-      That should be better.</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">11th July 2003 03:56 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">EnDurA</span><br />
+			<span class="date small text-muted">11th July 2003 03:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Party Planet</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Nice colors, your scope needs a little bit of work though, for one thing you don't need the *r in the onbeat line, but I still like the color effect you got!</p>
-    </div>
-    <hr />
+		my 2nd remix from &quot;the x factor&quot;. <br />
+hope you enjoy blah blah blah...
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Pixelcraft</span><br />
-      <span class="date small text-muted">11th July 2003 04:06 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Cool.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">11th July 2003 03:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Phaze1987</span><br />
-      <span class="date small text-muted">11th July 2003 09:28 GMT</span></p>
+		It's a nice effect, but the SSC is too jumpy(and it isn't that great of a SSC either, but it works OK).  I would make it change the speed that t changes onbeat instead of t itself.  Something like this:<br />
+<br />
+Beat:<br />
+dt2=rand(100)/1000;<br />
+Frame:<br />
+dt1=.9*dt1+.1*dt2;t=t+dt1;<br />
+Pixel:<br />
+r=r+6; y=cos(r-t); x=sin(r)<br />
+<br />
+That should be better.
+		</p>
+</div>
 
-      <p class="post-content">Yeah,the colors are very nice,but thats all.You know,this would look great with a shape shifting scope :)</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">11th July 2003 03:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice colors, your scope needs a little bit of work though, for one thing you don't need the *r in the onbeat line, but I still like the color effect you got!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Pixelcraft</span><br />
+			<span class="date small text-muted">11th July 2003 04:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Cool.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Phaze1987</span><br />
+			<span class="date small text-muted">11th July 2003 09:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah,the colors are very nice,but thats all.You know,this would look great with a shape shifting scope :)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

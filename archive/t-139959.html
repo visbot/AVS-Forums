@@ -1,157 +1,241 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Flip image AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Flip image AVS" />
 
-  <title>Flip image - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Flip image - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">Flip image</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=139959">Flip image</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">macaroon</span><br />
-      <span class="date small text-muted">24th June 2003 12:42 GMT</span></p>
 
-      <p class="post-content"><strong>Flip image</strong><br />
-      Is it possible to flip the entire avs image horizontally after a random amount of time? If so how can this be done?- And, no, mirror isn't what I am after.<br />
-      <br />
-      Thank you.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">Flip image</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=139959">Flip image</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">24th June 2003 13:44 GMT</span></p>
 
-      <p class="post-content">In movement:<br />
-      <br />
-      x=-x (to flip it horizontally)<br />
-      <br />
-      y=-y (to flip it vertically)<br />
-      <br />
-      <br />
-      <br />
-      With a dynamic movement:<br />
-      <br />
-      For a flip at every N beat you can do...<br />
-      <br />
-      <u>Init</u><br />
-      flip=1 ; beatlimit=10<br />
-      <br />
-      <u>Beat</u><br />
-      counter= if( above(counter,beatlimit), 0 , counter+1 ) ;<br />
-      flip= if( equal(counter,0), -flip , flip ) ;<br />
-      <br />
-      <u>frame</u><br />
-      x=x*flip (for horizontal flip)<br />
-      <br />
-      or<br />
-      <br />
-      y=y*flip (for vertical flip)<br />
-      <br />
-      <br />
-      <br />
-      That simple :)</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">24th June 2003 16:31 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">macaroon</span><br />
+			<span class="date small text-muted">24th June 2003 12:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Flip image</strong><br />
+		
+		
 
-      <p class="post-content">god why couldnt I reply first :p</p>
-    </div>
-    <hr />
+		Is it possible to flip the entire avs image horizontally after a random amount of time? If so how can this be done?- And, no, mirror isn't what I am after. <br />
+<br />
+Thank you.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">24th June 2003 17:22 GMT</span></p>
+	<hr />
 
-      <p class="post-content">And if, instead of after a certain number of beats you want it to go after a certain amount of time(for whatever reason) then instead of increasing the counter and setting the flip variable in the ON BEAT section, you could set it in the ON FRAME section, so that you could specify the number of frames instead of the number of beats.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">24th June 2003 13:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">macaroon</span><br />
-      <span class="date small text-muted">24th June 2003 18:13 GMT</span></p>
+		In movement:<br />
+<br />
+x=-x (to flip it horizontally)<br />
+<br />
+y=-y (to flip it vertically)<br />
+<br />
+<br />
+<br />
+With a dynamic movement:<br />
+<br />
+For a flip at every N beat you can do...<br />
+<br />
+<u>Init</u><br />
+flip=1 ; beatlimit=10<br />
+<br />
+<u>Beat</u><br />
+counter= if( above(counter,beatlimit), 0 , counter+1 ) ;<br />
+flip= if( equal(counter,0), -flip , flip ) ;<br />
+<br />
+<u>frame</u><br />
+x=x*flip (for horizontal flip)<br />
+<br />
+or<br />
+<br />
+y=y*flip (for vertical flip)<br />
+<br />
+<br />
+<br />
+That simple :)
+		</p>
+</div>
 
-      <p class="post-content">Thanks for the info!<br />
-      I managed to get the "static" flipping working, but not the dynamic<br />
-      <br />
-      <a href="http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif" target="_blank">http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif</a><br />
-      <br />
-      (see piccy) What am I doing wrong/left out/forgotton etc? I've never messed around with variables and the like in the AVS....Until now.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">24th June 2003 18:29 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">24th June 2003 16:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">x=x*flip goes in pixel, not frame.<br />
-      <br />
-      x,y,d,r are never calculated in frame</p>
-    </div>
-    <hr />
+		god why couldnt I reply first :p
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
-      <span class="date small text-muted">25th June 2003 06:40 GMT</span></p>
+	<hr />
 
-      <p class="post-content">X and Y are claculated in Per Frame only in Dynamic Shift</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">24th June 2003 17:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">macaroon</span><br />
-      <span class="date small text-muted">25th June 2003 09:35 GMT</span></p>
+		And if, instead of after a certain number of beats you want it to go after a certain amount of time(for whatever reason) then instead of increasing the counter and setting the flip variable in the ON BEAT section, you could set it in the ON FRAME section, so that you could specify the number of frames instead of the number of beats.
+		</p>
+</div>
 
-      <p class="post-content">HUZZZZAH!<br />
-      <br />
-      Many thanks once again. All is working luverly juberly now.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">25th June 2003 16:18 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">macaroon</span><br />
+			<span class="date small text-muted">24th June 2003 18:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">hehe, you speak funny :D...<br />
-      nice sig also...</p>
-    </div>
-    <hr />
+		Thanks for the info!<br />
+I managed to get the &quot;static&quot; flipping working, but not the dynamic<br />
+<br />
+<a href="http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif" target="_blank">http://www.aroundmidnight.demon.co.uk/temp/avshelp.gif</a><br />
+<br />
+(see piccy) What am I doing wrong/left out/forgotton etc? I've never messed around with variables and the like in the AVS....Until now.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">29th June 2003 12:27 GMT</span></p>
+	<hr />
 
-      <p class="post-content">lol even I know the answer on that :)</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">24th June 2003 18:29 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		x=x*flip goes in pixel, not frame.<br />
+<br />
+x,y,d,r are never calculated in frame
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">[Ishan]</span><br />
+			<span class="date small text-muted">25th June 2003 06:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		X and Y are claculated in Per Frame only in Dynamic Shift
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">macaroon</span><br />
+			<span class="date small text-muted">25th June 2003 09:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		HUZZZZAH!<br />
+<br />
+Many thanks once again. All is working luverly juberly now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">25th June 2003 16:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hehe, you speak funny :D...<br />
+nice sig also...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">29th June 2003 12:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		lol even I know the answer on that :)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,357 +1,578 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="My first pack (in devemopment stage :) AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" My first pack (in devemopment stage :) AVS" />
 
-  <title>My first pack (in devemopment stage :) - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> My first pack (in devemopment stage :) - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">My first pack (in devemopment stage :)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=237065">My first pack (in devemopment stage :)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOALsoft</span><br />
-      <span class="date small text-muted">3rd February 2006 13:43 GMT</span></p>
-
-      <p class="post-content"><strong>My first pack (in devemopment stage :)</strong><br />
-      Hey, i've decided to post my first pack on here so you guys/gals can see if i'm any good at making presets.<br />
-      I think that i have few good presets and maybe some crappy ones but whatever.<br />
-      i've also included some other presets that I havent put int the pack yet.<br />
-      I would really like to have some feed back on my work and if you want you can remix one or two or five... just let me see it.<br />
-      I know i need a new intro and that tunel of the light is wrong (ish) but i corrected it and it looked crap.<br />
-      Yep, that will do for now.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JaVS_v2.5</span><br />
-      <span class="date small text-muted">3rd February 2006 15:04 GMT</span></p>
-
-      <p class="post-content"><font size="3"><b>Nice or Maybe a Cool Pack! ;)</b></font><br />
-      <br />
-      <font size="1"><b>Drawing Is Fun</b> is one of my favourite! Love to sketches with it. Yeah, released my tensions..<br />
-      <br />
-      <b>On My Beach</b>: Pretty cool (reminds me a preset made by PAK-9, Beanies), but least stuffs in it. Should be added more, btw it's great~<br />
-      <br />
-      p.s.: I like your style.</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">3rd February 2006 15:51 GMT</span></p>
-
-      <p class="post-content">Not bad for the first pack I have seen from you... Some of the stuff is really awesome too imo. e.g. the pong game :)<br />
-      <br />
-      There is also some terrible noob shit in here too :P<br />
-      <br />
-      Some tips:<br />
-      <br />
-      1.) El-vis code does some cool stuff, but its usually a bit lazy and inefficient, better to steal from someone more recent for 3d code.<br />
-      <br />
-      2.) Your 'torus' is interesting, however, I am the torus king:<br />
-      <a href="http://www.deviantart.com/deviation/2809465/" target="_blank">http://www.deviantart.com/deviation/2809465/</a><br />
-      <br />
-      3.) Keep creating! You rock so far :)<br />
-      <br />
-      <br />
-      EDIT: Feel free to ask any avs/graphics related questions, I and the others here understand pretty much everything which has ever been done in AVS.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">3rd February 2006 17:47 GMT</span></p>
-
-      <p class="post-content">yeah i second jheriko<br />
-      and i have corrected your torus code<br />
-      and i added aspect ratio correction.<br />
-      glancing at code i see that youre coding inefficient.<br />
-      keep in mind that a multiplication is much faster than a division so try to replace something like:<br />
-      vara=varb/varc;<br />
-      vard=vare/varc;<br />
-      varf=varg/varc;<br />
-      <br />
-      with:<br />
-      invarc=1/varc;<br />
-      vara=varb*invarc;<br />
-      vard=vare*invarc;<br />
-      varf=varg*invarc;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
-      <span class="date small text-muted">3rd February 2006 18:20 GMT</span></p>
-
-      <p class="post-content">It's a cool pack, but like he said, the n00b stuff has to be shaken out...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">3rd February 2006 18:31 GMT</span></p>
-
-      <p class="post-content">btw: welcome to the avs part of the winamp forum</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">3rd February 2006 20:37 GMT</span></p>
-
-      <p class="post-content">i liked aquarius, though i usually think that interactive presets are pretty useless (leaving aside the show off effect). black backgrounds are pretty boring too :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">4th February 2006 14:57 GMT</span></p>
-
-      <p class="post-content">Hmm, really not bad for a first pack!<br />
-      I found "On My Beach" quite interesting, but perhaps you should add some more details to it like clouds or some common beach utensils. <font size="1">(btw: somehow it reminded me a bit of Pak's "Beanies" preset ;) )</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOALsoft</span><br />
-      <span class="date small text-muted">6th February 2006 10:40 GMT</span></p>
-
-      <p class="post-content">Thanks for all the nice coments about my presets people, it really nice to get good feedback,<br />
-      The n00b shite is being weeded out and will be gone in a week or two (if I put my mind to work)<br />
-      The thing with 'On my beach' is that I made it before I saw beanies (I hadn't downloaded any new avs packs for a while :))<br />
-      Thanks ASD5A for making my torus look the part!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">6th February 2006 19:17 GMT</span></p>
-
-      <p class="post-content">"Forum n00b in non-shit pack shocker"<br />
-      <br />
-      I can see the headlines now.<br />
-      <br />
-      Well its about 100 times better than the average noob pack, on my beach is fun and Torus is fairly stylish (ignore the preset nazi's with rods up their tori).<br />
-      <br />
-      Be careful using too much text and interactivity, text in presets gets very irritating on re-watching. Interactivity is only worth putting in if it adds a significant dimension to the preset, rather than just being able to pick a stationary light position or invert the colours.<br />
-      <br />
-      Some other people have mentioned the noobier parts, which im sure u are aware of. Good first effort, keep learning and enjoy.<br />
-      <br />
-      P.S. Keep learning the code too... a preset's awesomeness is directly proportional to how much code is in it<br />
-      /runs</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">6th February 2006 21:34 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by PAK-9</i><br />
-        <b>P.S. Keep learning the code too... a preset's awesomeness is directly proportional to how much code is in it<br />
-        /runs</b>
-      </blockquote>/waits for tug to reply to that :D<br />
-      <br />
-      Honestly, code isn't everything. Of course, you should always know how to handle the tools you're working with (and i'm not talking about the built-in effects btw), but since AVS'ing is also a kind of art you have to care for the esthetical aspects like color-schemes, style etc as well.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">7th February 2006 18:43 GMT</span></p>
-
-      <p class="post-content">Understanding code lets you implement nicer aesthetics.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">7th February 2006 21:40 GMT</span></p>
-
-      <p class="post-content">Of course! But i just wanted to contradict PAK, before our new enthusiast aims to become another code-monkey! :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">8th February 2006 07:45 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by ^..^</i><br />
-        <b>Of course! But i just wanted to contradict PAK, before our new enthusiast aims to become another code-monkey! :p</b>
-      </blockquote>I think you forget noobs that only believe in aesthetics... will churn out noob presets.<br />
-      <br />
-      Balance must be achieved for the best AVS presets imo.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">8th February 2006 15:45 GMT</span></p>
-
-      <p class="post-content">You're speaking of the one who will bring balance to the force? You believe it's- this boy?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">8th February 2006 16:06 GMT</span></p>
-
-      <p class="post-content">Ok, completely ignoring code is bad. But only aming to develop the most complicated code-stuff is also bad. Obviously the truth must lie somewhere in between. :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">9th February 2006 06:41 GMT</span></p>
-
-      <p class="post-content">just have a look at some of nemoorange`s work ;)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Kar-mAVS</span><br />
-      <span class="date small text-muted">9th February 2006 07:35 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by MaTTFURY</i><br />
-        <b>just have a look at some of nemoorange`s work ;)</b>
-      </blockquote>or tuggimmi,i think he's got the mix just about right.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">9th February 2006 09:41 GMT</span></p>
-
-      <p class="post-content">or PAK-9, he's totally l33t</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JaVS_v2.5</span><br />
-      <span class="date small text-muted">9th February 2006 09:55 GMT</span></p>
-
-      <p class="post-content">Yeah, PAK-9 rocks than Tugg! :P</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Kar-mAVS</span><br />
-      <span class="date small text-muted">9th February 2006 10:33 GMT</span></p>
-
-      <p class="post-content">Tuggummi's better (/runs)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JaVS_v2.5</span><br />
-      <span class="date small text-muted">9th February 2006 10:45 GMT</span></p>
-
-      <p class="post-content">We'll see, *huh*</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Kar-mAVS</span><br />
-      <span class="date small text-muted">9th February 2006 11:56 GMT</span></p>
-
-      <p class="post-content">*runs further*</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">9th February 2006 15:34 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by JaVS_v2.5</i><br />
-        <b>Yeah, PAK-9 rocks than Tugg! :P</b>
-      </blockquote>And i always thought that ASD5A was Pak's little servant! :p
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
-      <span class="date small text-muted">9th February 2006 16:53 GMT</span></p>
-
-      <p class="post-content">i wasnt at any time Pak-9's servant..<br />
-      he and jheriko just showed me how to make my code less crappy</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">9th February 2006 17:01 GMT</span></p>
-
-      <p class="post-content">Oh! :o<br />
-      Well, in that case i'm sorry. I always thought you wanted to show your deep admiration for Pak when you had that PAK-like avatar... :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOALsoft</span><br />
-      <span class="date small text-muted">13th February 2006 11:30 GMT</span></p>
-
-      <p class="post-content">Well this post got out of control...<br />
-      Can some one help name this preset (you may think that i'm joking but i'm not, i've kinda hit a naming creative block)<br />
-      <a href="http://quiche_on_a_leash.***********/untitled1.avs" target="_blank">http://quiche_on_a_leash.***********/untitled1.avs</a><br />
-      also I think these a bit to cbbc/crap<br />
-      <a href="http://quiche_on_a_leash.***********/untitled2.avs" target="_blank">http://quiche_on_a_leash.***********/untitled2.avs</a><br />
-      <a href="http://quiche_on_a_leash.***********/untitled3.avs" target="_blank">http://quiche_on_a_leash.***********/untitled3.avs</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">13th February 2006 14:06 GMT</span></p>
-
-      <p class="post-content">You should definitely learn how to (correctly) make your code framerate independent! Your first preset is so fast, i can't really see what it's supposed to be. It just flashes randomly. The other two presets are also running way too fast on my machine (even though a bit slower).<br />
-      <br />
-      So, i'd suggest "UHFROD 1-3" (Ultra High Frequenzy Rotor Of Doom) for their names. :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOALsoft</span><br />
-      <span class="date small text-muted">14th February 2006 11:36 GMT</span></p>
-
-      <p class="post-content">Ugh thats my bad. I can code time based, i guess i just a stupid n00b that and they tricked me by being at a nice frame rate on my old bagger.<br />
-      [damn i suck, i'm gonna go throw my self under a micro scooter and then impale my self in a cusion]</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">My first pack (in devemopment stage :)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=237065">My first pack (in devemopment stage :)</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOALsoft</span><br />
+			<span class="date small text-muted">3rd February 2006 13:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>My first pack (in devemopment stage :)</strong><br />
+		
+		
+			
+		
+
+		Hey, i've decided to post my first pack on here so you guys/gals can see if i'm any good at making presets.<br />
+I think that i have few good presets and maybe some crappy ones but whatever.<br />
+i've also included some other presets that I havent put int the pack yet.<br />
+I would really like to have some feed back on my work and if you want you can remix one or two or five... just let me see it.<br />
+I know i need a new intro and that tunel of the light is wrong (ish) but i corrected it and it looked crap.<br />
+Yep, that will do for now.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JaVS_v2.5</span><br />
+			<span class="date small text-muted">3rd February 2006 15:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		<font size="3"><b>Nice or Maybe a Cool Pack! ;)</b></font><br />
+<br />
+<font size="1"><b>Drawing Is Fun</b> is one of my favourite! Love to sketches with it. Yeah, released my tensions..<br />
+<br />
+<b>On My Beach</b>: Pretty cool (reminds me a preset made by PAK-9, Beanies), but least stuffs in it. Should be added more, btw it's great~<br />
+<br />
+p.s.: I like your style.</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">3rd February 2006 15:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Not bad for the first pack I have seen from you... Some of the stuff is really awesome too imo. e.g. the pong game :)<br />
+<br />
+There is also some terrible noob shit in here too :P<br />
+<br />
+Some tips:<br />
+<br />
+1.) El-vis code does some cool stuff, but its usually a bit lazy and inefficient, better to steal from someone more recent for 3d code.<br />
+<br />
+2.) Your 'torus' is interesting, however, I am the torus king:<br />
+<a href="http://www.deviantart.com/deviation/2809465/" target="_blank">http://www.deviantart.com/deviation/2809465/</a><br />
+<br />
+3.) Keep creating! You rock so far :)<br />
+<br />
+<br />
+EDIT: Feel free to ask any avs/graphics related questions, I and the others here understand pretty much everything which has ever been done in AVS.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">3rd February 2006 17:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		yeah i second jheriko<br />
+and i have corrected your torus code<br />
+and i added aspect ratio correction.<br />
+glancing at code i see that youre coding inefficient.<br />
+keep in mind that a multiplication is much faster than a division so try to replace something like:<br />
+vara=varb/varc;<br />
+vard=vare/varc;<br />
+varf=varg/varc;<br />
+<br />
+with:<br />
+invarc=1/varc;<br />
+vara=varb*invarc;<br />
+vard=vare*invarc;<br />
+varf=varg*invarc;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JFASI</span><br />
+			<span class="date small text-muted">3rd February 2006 18:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It's a cool pack, but like he said, the n00b stuff has to be shaken out...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">3rd February 2006 18:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		btw: welcome to the avs part of the winamp forum
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">3rd February 2006 20:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i liked aquarius, though i usually think that interactive presets are pretty useless (leaving aside the show off effect). black backgrounds are pretty boring too :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">4th February 2006 14:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmm, really not bad for a first pack!<br />
+I found &quot;On My Beach&quot; quite interesting, but perhaps you should add some more details to it like clouds or some common beach utensils. <font size="1">(btw: somehow it reminded me a bit of Pak's &quot;Beanies&quot; preset ;) )</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOALsoft</span><br />
+			<span class="date small text-muted">6th February 2006 10:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks for all the nice coments about my presets people, it really nice to get good feedback,<br />
+The n00b shite is being weeded out and will be gone in a week or two (if I put my mind to work)<br />
+The thing with 'On my beach' is that I made it before I saw beanies (I hadn't downloaded any new avs packs for a while :))<br />
+Thanks ASD5A for making my torus look the part!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">6th February 2006 19:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		&quot;Forum n00b in non-shit pack shocker&quot;<br />
+<br />
+I can see the headlines now.<br />
+<br />
+Well its about 100 times better than the average noob pack, on my beach is fun and Torus is fairly stylish (ignore the preset nazi's with rods up their tori).<br />
+<br />
+Be careful using too much text and interactivity, text in presets gets very irritating on re-watching. Interactivity is only worth putting in if it adds a significant dimension to the preset, rather than just being able to pick a stationary light position or invert the colours.<br />
+<br />
+Some other people have mentioned the noobier parts, which im sure u are aware of. Good first effort, keep learning and enjoy.<br />
+<br />
+P.S. Keep learning the code too... a preset's awesomeness is directly proportional to how much code is in it<br />
+/runs
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">6th February 2006 21:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by PAK-9 </i><br />
+<b>P.S. Keep learning the code too... a preset's awesomeness is directly proportional to how much code is in it<br />
+/runs </b></blockquote>
+/waits for tug to reply to that :D<br />
+<br />
+Honestly, code isn't everything. Of course, you should always know how to handle the tools you're working with (and i'm not talking about the built-in effects btw), but since AVS'ing is also a kind of art you have to care for the esthetical aspects like color-schemes, style etc as well.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">7th February 2006 18:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Understanding code lets you implement nicer aesthetics.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">7th February 2006 21:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Of course! But i just wanted to contradict PAK, before our new enthusiast aims to become another code-monkey! :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">8th February 2006 07:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by ^..^ </i><br />
+<b>Of course! But i just wanted to contradict PAK, before our new enthusiast aims to become another code-monkey! :p </b></blockquote>
+I think you forget noobs that only believe in aesthetics... will churn out noob presets.<br />
+<br />
+Balance must be achieved for the best AVS presets imo.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">8th February 2006 15:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You're speaking of the one who will bring balance to the force? You believe it's- this boy?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">8th February 2006 16:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ok, completely ignoring code is bad. But only aming to develop the most complicated code-stuff is also bad. Obviously the truth must lie somewhere in between. :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">9th February 2006 06:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		just have a look at some of nemoorange`s work ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Kar-mAVS</span><br />
+			<span class="date small text-muted">9th February 2006 07:35 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by MaTTFURY </i><br />
+<b>just have a look at some of nemoorange`s work ;) </b></blockquote>
+or tuggimmi,i think he's got the mix just about right.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">9th February 2006 09:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		or PAK-9, he's totally l33t
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JaVS_v2.5</span><br />
+			<span class="date small text-muted">9th February 2006 09:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, PAK-9 rocks than Tugg! :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Kar-mAVS</span><br />
+			<span class="date small text-muted">9th February 2006 10:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Tuggummi's better (/runs)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JaVS_v2.5</span><br />
+			<span class="date small text-muted">9th February 2006 10:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		We'll see, *huh*
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Kar-mAVS</span><br />
+			<span class="date small text-muted">9th February 2006 11:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		*runs further*
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">9th February 2006 15:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by JaVS_v2.5 </i><br />
+<b>Yeah, PAK-9 rocks than Tugg! :P </b></blockquote>
+And i always thought that ASD5A was Pak's little servant! :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">ASD5A</span><br />
+			<span class="date small text-muted">9th February 2006 16:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i wasnt at any time Pak-9's servant..<br />
+he and jheriko just showed me how to make my code less crappy
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">9th February 2006 17:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oh! :o<br />
+Well, in that case i'm sorry. I always thought you wanted to show your deep admiration for Pak when you had that PAK-like avatar... :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOALsoft</span><br />
+			<span class="date small text-muted">13th February 2006 11:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Well this post got out of control...<br />
+Can some one help name this preset (you may think that i'm joking but i'm not, i've kinda hit a naming creative block)<br />
+<a href="http://quiche_on_a_leash.***********/untitled1.avs" target="_blank">http://quiche_on_a_leash.***********/untitled1.avs</a><br />
+also I think these a bit to cbbc/crap<br />
+<a href="http://quiche_on_a_leash.***********/untitled2.avs" target="_blank">http://quiche_on_a_leash.***********/untitled2.avs</a><br />
+<a href="http://quiche_on_a_leash.***********/untitled3.avs" target="_blank">http://quiche_on_a_leash.***********/untitled3.avs</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">13th February 2006 14:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You should definitely learn how to (correctly) make your code framerate independent! Your first preset is so fast, i can't really see what it's supposed to be. It just flashes randomly. The other two presets are also running way too fast on my machine (even though a bit slower).<br />
+<br />
+So, i'd suggest &quot;UHFROD 1-3&quot; (Ultra High Frequenzy Rotor Of Doom) for their names. :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOALsoft</span><br />
+			<span class="date small text-muted">14th February 2006 11:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ugh thats my bad. I can code time based, i guess i just a stupid n00b that and they tricked me by being at a nice frame rate on my old bagger.<br />
+[damn i suck, i'm gonna go throw my self under a micro scooter and then impale my self in a cusion]
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,163 +1,236 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="some questions about 'if' AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" some questions about 'if' AVS" />
 
-  <title>some questions about 'if' - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> some questions about 'if' - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">some questions about 'if'</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=87737">some questions about 'if'</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Serenyddion</span><br />
-      <span class="date small text-muted">14th May 2002 23:15 GMT</span></p>
 
-      <p class="post-content"><strong>some questions about 'if'</strong><br />
-      I've been working on a preset recently and i've wanted to use if statements such as:<br />
-      <br />
-      ws=getspec(0,1,0); if(ws&gt;3){ws=3;}<br />
-      <br />
-      but of couse this syntax and form isn't supported by AVS. So really, my question is: is it possible to do something if a number is greater then a differnt number in AVS? The if statement that they have so far i've only been able to get to work for 0 or non-0... like it says it does..:(<br />
-      <br />
-      <br />
-      oh and if your interested here's the preset i want to add it to, it's kinda cool in my opnion.<br />
-      <br />
-      <br />
-      (edit)<br />
-      <br />
-      ooo i think i figured it out!<br />
-      d=i*0.98*max(min(getspec(0,1,0),.2),.05)*5;<br />
-      vwahahaha I'm so smart :p<br />
-      :) :)<br />
-      no thanks to all you suckers! (just kidding :p {but what gives i mean you had almost an hour to respond! :p})</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">some questions about 'if'</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=87737">some questions about 'if'</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">15th May 2002 21:53 GMT</span></p>
 
-      <p class="post-content">Just look it up in expression help. It's really not that hard. The structure is if(condition,true,false), and &gt; is replaced by the 'above' function (x&gt;y::above(x,y)) so:<br />
-      v1=getspec(0,1,0); ws=if(above(v1,3),3,v1);</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Serenyddion</span><br />
-      <span class="date small text-muted">15th May 2002 22:05 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Serenyddion</span><br />
+			<span class="date small text-muted">14th May 2002 23:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>some questions about 'if'</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Thanks, i didn't see how the above worked into it all.<br />
-      <br />
-      Anyways it would be nice in nullsoft would implement the 'standard' kind of if statement... I'm sure more people are used to working with that form...</p>
-    </div>
-    <hr />
+		I've been working on a preset recently and i've wanted to use if statements such as:<br />
+<br />
+ws=getspec(0,1,0); if(ws&gt;3){ws=3;}<br />
+<br />
+but of couse this syntax and form isn't supported by AVS.  So really, my question is: is it possible to do something if a number is greater then a differnt number in AVS?  The if statement that they have so far i've only been able to get to work for 0 or non-0... like it says it does..:( <br />
+<br />
+<br />
+oh and if your interested here's the preset i want to add it to, it's kinda cool in my opnion.<br />
+<br />
+<br />
+(edit)<br />
+<br />
+ooo  i think i figured it out!<br />
+d=i*0.98*max(min(getspec(0,1,0),.2),.05)*5;<br />
+vwahahaha I'm so smart :p <br />
+:)     :) <br />
+no thanks to all you suckers!  (just kidding :p {but what gives i mean you had almost an hour to respond! :p})
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">15th May 2002 23:06 GMT</span></p>
+	<hr />
 
-      <p class="post-content">The AVS-language doesn't have any form of flow control, so the if-pseudofunction is only a simple 'hack'. Works nicely though once you get used to it.<br />
-      <br />
-      And of course, flow-control and all the other whistles and bells is already on the wishlist.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">15th May 2002 21:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">cmountford</span><br />
-      <span class="date small text-muted">16th May 2002 00:24 GMT</span></p>
+		Just look it up in expression help.  It's really not that hard.  The structure is if(condition,true,false), and &gt; is replaced by the 'above' function (x&gt;y::above(x,y)) so:<br />
+v1=getspec(0,1,0); ws=if(above(v1,3),3,v1);
+		</p>
+</div>
 
-      <p class="post-content"><strong>it takes time</strong><br />
-      Serenyddion: I know you said you were kidding when you said, "no thanks to all you suckers! (just kidding {but what gives i mean you had almost an hour to respond! })"<br />
-      <br />
-      And the people in the forums are generally very friendly. I (as you may have noticed) was signed in at the time you made your post. I immediately looked at it-and I would have gladly written a reply responding to your question-but I didn't *know* the answer for sure.<br />
-      <br />
-      The Winamp AVS forum is meant to be more like a bunch of helpful (but sometimes busy) people who enjoy answering other people's questions in their spare time. But keep in mind that the forums aren't like a 24-hour technical support line - because what makes the forums so great is that the the everything the members do is on their own free time; so whenever the members are booked up either because of school, a job, or whatever, it may seem to take a long time before your question gets answered.<br />
-      <br />
-      And considering that many members like me might not know the answer, I'd say getting an answer within a day is a very quick response.<br />
-      <br />
-      Take for example, my post called "Sneak peek at AVS pack!!!!" Here's a hyperlink-but I'm not sure it will work...<br />
-      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=87661" target="_blank">http://forums.winamp.com/showthread....threadid=87661</a><br />
-      There's a lot of presets in my preview to my AVS pack, so I anticipate that it will take a while before I get a reply back-because there's so many presets to look through &amp; analyze completely.<br />
-      <br />
-      <br />
-      <br />
-      But since you were just kidding, I was just answering your question 'what gives' that you didn't get an immediate reply.<br />
-      <br />
-      So I guess it's all in good fun :)<br />
-      <br />
-      --C. Mountford--</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">16th May 2002 03:04 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Serenyddion</span><br />
+			<span class="date small text-muted">15th May 2002 22:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">The c++ statements:<br />
-      if(x)<br />
-      {<br />
-      y<br />
-      }<br />
-      else<br />
-      {<br />
-      z<br />
-      }<br />
-      translate into the AVS language as:<br />
-      if(x,y,z)<br />
-      The normal &gt; and &lt; operators are equivalent to the above and below functions, respectively. So a&gt;b = above(a,b); and a&lt;b = below(a,b)</p>
-    </div>
-    <hr />
+		Thanks, i didn't see how the above worked into it all.<br />
+<br />
+Anyways it would be nice in nullsoft would implement the 'standard' kind of if statement...  I'm sure more people are used to working with that form...
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Serenyddion</span><br />
-      <span class="date small text-muted">16th May 2002 03:23 GMT</span></p>
+	<hr />
 
-      <p class="post-content">cmountford:<br />
-      <br />
-      I just said that because i figured that an hour <i>WAS</i> a far too short time for a post to get any responces, which seems to hold true here, and does for most of the other forums i visit...<br />
-      <br />
-      so the what gives was a joke as well</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">15th May 2002 23:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">16th May 2002 10:59 GMT</span></p>
+		The AVS-language doesn't have any form of flow control, so the if-pseudofunction is only a simple 'hack'. Works nicely though once you get used to it.<br />
+<br />
+And of course, flow-control and all the other whistles and bells is already on the wishlist.
+		</p>
+</div>
 
-      <p class="post-content">By the way Atero, you got a detail wrong:<br />
-      <br />
-      In the C++ code<br />
-      if (x) { y } else { z }<br />
-      <br />
-      y and z can be multiple statements, in AVS, they have to return a value.<br />
-      <br />
-      So in fact, AVS's a=if(x,y,z) is exactly the same as using the ternary operator a = (x ? y : z). Though most people don't even know it exists.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">cmountford</span><br />
+			<span class="date small text-muted">16th May 2002 00:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>it takes time</strong><br />
+		
+		
+
+		Serenyddion:  I know you said you were kidding when you said, &quot;no thanks to all you suckers! (just kidding  {but what gives i mean you had almost an hour to respond! })&quot;<br />
+<br />
+And the people in the forums are generally very friendly.  I (as you may have noticed) was signed in at the time you made your post.  I immediately looked at it-and I would have gladly written a reply responding to your question-but I didn't *know* the answer for sure.<br />
+<br />
+The Winamp AVS forum is meant to be more like a bunch of helpful (but sometimes busy) people who enjoy answering other people's questions in their spare time.  But keep in mind that the forums aren't like a 24-hour technical support line - because what makes the forums so great is that the the everything the members do is on their own free time; so whenever the members are booked up either because of school, a job, or whatever, it may seem to take a long time before your question gets answered.<br />
+<br />
+And considering that many members like me might not know the answer, I'd say getting an answer within a day is a very quick response.<br />
+<br />
+Take for example, my post called &quot;Sneak peek at AVS pack!!!!&quot;  Here's a hyperlink-but I'm not sure it will work...<br />
+<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=87661" target="_blank">http://forums.winamp.com/showthread....threadid=87661</a>  <br />
+There's a lot of presets in my preview to my AVS pack, so I anticipate that it will take a while before I get a reply back-because there's so many presets to look through &amp; analyze completely.<br />
+<br />
+<br />
+<br />
+But since you were just kidding, I was just answering your question 'what gives' that you didn't get an immediate reply.<br />
+<br />
+So I guess it's all in good fun :)<br />
+<br />
+--C. Mountford--
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">16th May 2002 03:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The c++ statements:<br />
+if(x)<br />
+{<br />
+   y<br />
+}<br />
+else<br />
+{<br />
+   z<br />
+}<br />
+translate into the AVS language as:<br />
+if(x,y,z)<br />
+The normal &gt; and &lt; operators are equivalent to the above and below functions, respectively.  So a&gt;b = above(a,b); and a&lt;b = below(a,b)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Serenyddion</span><br />
+			<span class="date small text-muted">16th May 2002 03:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		cmountford:<br />
+<br />
+I just said that because i figured that an hour <i>WAS</i> a far too short time for a post to get any responces, which seems to hold true here, and does for most of the other forums i visit...<br />
+<br />
+so the what gives was a joke as well
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">16th May 2002 10:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		By the way Atero, you got a detail wrong:<br />
+<br />
+In the C++ code<br />
+if (x) { y } else { z }<br />
+<br />
+y and z can be multiple statements, in AVS, they have to return a value.<br />
+<br />
+So in fact, AVS's a=if(x,y,z) is exactly the same as using the ternary operator a = (x ? y : z). Though most people don't even know it exists.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

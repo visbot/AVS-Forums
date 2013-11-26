@@ -1,199 +1,299 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="confused by tunnel code of UnConeD and el-vis AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" confused by tunnel code of UnConeD and el-vis AVS" />
 
-  <title>confused by tunnel code of UnConeD and el-vis - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> confused by tunnel code of UnConeD and el-vis - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">confused by tunnel code of UnConeD and el-vis</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=139550">confused by tunnel code of UnConeD and el-vis</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">13373571</span><br />
-      <span class="date small text-muted">19th June 2003 20:32 GMT</span></p>
 
-      <p class="post-content"><strong>confused by tunnel code of UnConeD and el-vis</strong><br />
-      when I attempt to create my own simple* tunnel code I get (for movement):<br />
-      <br />
-      x=constant1*r;<br />
-      y=constant2/d;<br />
-      <br />
-      but looking at the simple tunnel code in el-vis's "last exit" preset (he says in the comment that it's UnConeD's code with some changes) which achieves basically the same effect there's:<br />
-      <br />
-      dr=sqrt(x*x+y*y);<br />
-      dx=(x)/dr;dy=(y)/dr;dz=1/dr-6;<br />
-      e=dx*dx+dy*dy;<br />
-      k=-0.2*sqrt(8*e)/e;<br />
-      ix=dx*k;iy=dy*k;iz=oz+dz*k;<br />
-      x=iz/4;y=atan2(ix,-iy)/3.14;<br />
-      <br />
-      this was what i was looking at to help me figure out how people make tunnels until i decided it was too confusing and came up with the uppermost code. This code still confuses me and since UnConeD and el-vis made it I figgure that it can't be that complex for no reason. First of all, isn't dr the same as d? why isn't d used? And since dr is d, dx must be cos(theta) and dy must be sin(theta) correct? and that means that for all points, e=1. this means that k is always apprx. -0.5656. Also, what is the purpose of dz, iz, and oz? does this code have a different effect than mine that I am not noticing? thank you for any help.<br />
-      <br />
-      * when i say simple i mean that the viewpoint doesn't rotate around inside the tunnel on the x or y axis and travels straight through the center of it.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">confused by tunnel code of UnConeD and el-vis</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=139550">confused by tunnel code of UnConeD and el-vis</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">19th June 2003 23:09 GMT</span></p>
 
-      <p class="post-content">this is done with raytracing. i do not understand it, but it has been addressed before. search the forums.<br />
-      <br />
-      because x, y, d, and r are the only "set" variables used in DM, ox, oy, dx, dy...have no <i>direct</i> effect...that is, you cannot make a DM by just typing ox=x*2;oy=y*2;.<br />
-      <br />
-      For his code, UnConeD posted an explanation of variables he commonly uses<br /></p>
+<br />
 
-      <blockquote>
-        cx,sx,cy,sy,sz,sz: cosine/sine of rx,ry,rz (rotation angles)<br />
-        cr,cg,cb: red,green,blue color used as the basis for the scope<br />
-        ip: alternating 1,0 or 1,-1 variable<br />
-        ox,oy,oz: camera position in a world-fixed 3D SSC or a 3D DM.<br />
-        ot: usually used to normalize/equalize ox,oy,oz<br />
-        k, dx, dy, dz (and k2, dx3, ...): used for raytracing a DM<br />
-        ix,iy,iz: raytracing DM, coordinates of intersection of ray with object<br />
-        af: aspect-ratio correction multiply factor<br />
-        sd1, sd2, sd3: random generator registers<br />
-        t, ti: time and timeshift (onbeat)<br />
-        <br />
-        In complicated scopes I sometimes reuse a variable as a temporary variable (not enough variables in AVS) so you'll have to watch out for that. Red,green,blue are often used as temporary vars if they appear near the top of a scope's per-point.<br />
-        <br />
-        tpi: 2*pi<br />
-        u is often a scaled value of i, used for evaluating paths (e.g. rollercoaster, da-traced logo, ...)<br />
-        th,ph: often used as "theta, phi" for 3D polar coordinates<br />
-        ph: sometimes used as phase for controlling the camera in a 3D dm. for example in Wolf3D, the camera can be in one of several 'modes' depending on where it is and what it has to do (face corridor, move ahead, stop and rotate, ...). Ph will have the values 1,2,3,4, for each possible phase a value.<br />
-        bc: sometimes a beatcounter, when it will appear as bc=(bc+1)%8 (or different constant) in onbeat
-      </blockquote>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">13373571</span><br />
+			<span class="date small text-muted">19th June 2003 20:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>confused by tunnel code of UnConeD and el-vis</strong><br />
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">13373571</span><br />
-      <span class="date small text-muted">20th June 2003 02:00 GMT</span></p>
+		when I attempt to create my own simple* tunnel code I get (for movement):<br />
+<br />
+x=constant1*r;<br />
+y=constant2/d;<br />
+<br />
+but looking at the simple tunnel code in el-vis's &quot;last exit&quot; preset (he says in the comment that it's UnConeD's code with some changes) which achieves basically the same effect there's:<br />
+<br />
+dr=sqrt(x*x+y*y);<br />
+dx=(x)/dr;dy=(y)/dr;dz=1/dr-6;<br />
+e=dx*dx+dy*dy;<br />
+k=-0.2*sqrt(8*e)/e;<br />
+ix=dx*k;iy=dy*k;iz=oz+dz*k;<br />
+x=iz/4;y=atan2(ix,-iy)/3.14;<br />
+<br />
+this was what i was looking at to help me figure out how people make tunnels until i decided it was too confusing and came up with the uppermost code.  This code still confuses me and since UnConeD and el-vis made it I figgure that it can't be that complex for no reason. First of all, isn't dr the same as d? why isn't d used? And since dr is d, dx must be cos(theta) and dy must be sin(theta) correct? and that means that for all points, e=1. this means that k is always apprx. -0.5656.  Also, what is the purpose of dz, iz, and oz? does this code have a different effect than mine that I am not noticing? thank you for any help.<br />
+<br />
+* when i say simple i mean that the viewpoint doesn't rotate around inside the tunnel on the x or y axis and travels straight through the center of it.
+		</p>
+</div>
 
-      <p class="post-content">wow, ray tracing is neat, although it may have been a tad overkill for last exit... there really should be a link to ray tracing in the FAQ or something, it helps a lot with DMs. Thank you for the help.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">20th June 2003 03:24 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">19th June 2003 23:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">13373571: elvis made a static version of one of my tunnel movements... because mine are coded for any viewpoint and any direction, the static version is indeed quite bloated and can be optimized a lot.</p>
-    </div>
-    <hr />
+		this is done with raytracing.  i do not understand it, but it has been addressed before.  search the forums.  <br />
+<br />
+because x, y, d, and r are the only &quot;set&quot; variables used in DM, ox, oy, dx, dy...have no <i>direct</i> effect...that is, you cannot make a DM by just typing ox=x*2;oy=y*2;.  <br />
+<br />
+For his code, UnConeD posted an explanation of variables he commonly uses<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">20th June 2003 08:19 GMT</span></p>
+	<blockquote>
+			
+				cx,sx,cy,sy,sz,sz: cosine/sine of rx,ry,rz (rotation angles) <br />
+cr,cg,cb: red,green,blue color used as the basis for the scope <br />
+ip: alternating 1,0 or 1,-1 variable <br />
+ox,oy,oz: camera position in a world-fixed 3D SSC or a 3D DM. <br />
+ot: usually used to normalize/equalize ox,oy,oz <br />
+k, dx, dy, dz (and k2, dx3, ...): used for raytracing a DM <br />
+ix,iy,iz: raytracing DM, coordinates of intersection of ray with object <br />
+af: aspect-ratio correction multiply factor <br />
+sd1, sd2, sd3: random generator registers <br />
+t, ti: time and timeshift (onbeat) <br />
+<br />
+In complicated scopes I sometimes reuse a variable as a temporary variable (not enough variables in AVS) so you'll have to watch out for that. Red,green,blue are often used as temporary vars if they appear near the top of a scope's per-point. <br />
+<br />
+tpi: 2*pi <br />
+u is often a scaled value of i, used for evaluating paths (e.g. rollercoaster, da-traced logo, ...) <br />
+th,ph: often used as &quot;theta, phi&quot; for 3D polar coordinates <br />
+ph: sometimes used as phase for controlling the camera in a 3D dm. for example in Wolf3D, the camera can be in one of several 'modes' depending on where it is and what it has to do (face corridor, move ahead, stop and rotate, ...). Ph will have the values 1,2,3,4, for each possible phase a value. <br />
+bc: sometimes a beatcounter, when it will appear as bc=(bc+1)%8 (or different constant) in onbeat</blockquote>
 
-      <p class="post-content">If you want an explanation on raytracing, UnConeD did a massive explanation <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=115329" target="_blank">here</a>. I haven't waded through it yet, but I mean to at some point.</p>
-    </div>
-    <hr />
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Phaze1987</span><br />
-      <span class="date small text-muted">12th July 2003 16:44 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Dont jump straight into understaing raytracing,its damn hard.Try making a tunnel with your code,experiments some more then take a look at UnConeD`s explanation( it also has drawings :) )</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">13373571</span><br />
+			<span class="date small text-muted">20th June 2003 02:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
-      <span class="date small text-muted">12th July 2003 17:31 GMT</span></p>
+		wow, ray tracing is neat, although it may have been a tad overkill for last exit... there really should be a link to ray tracing in the FAQ or something, it helps a lot with DMs.  Thank you for the help.
+		</p>
+</div>
 
-      <p class="post-content">For me, its quite easy now, the formula for a tunel is:<br />
-      <br />
-      x^2+y^2=r^2<br />
-      therefore,<br />
-      (k*dx+ox)^2+(k*dy+oy)^2=r^2<br />
-      k^2(dx^2+dy^2)+2k(dx*ox+dy*oy)+(ox^2+oy^2-r^2)=0<br />
-      as this one is a quadratic equation,<br />
-      a=dx^2+dy^2;b=2*(dx*ox+dy*oy);c=(ox^2+oy^2-r^2)<br />
-      <br />
-      k=(-b+(or-)sqrt(b^2+4*a*c))/(2*a)<br />
-      simple.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">13373571</span><br />
-      <span class="date small text-muted">13th July 2003 03:26 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">20th June 2003 03:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Phaze: Don't revive threads.<br />
-      <br />
-      Raytracing is simple enough to understand, I just wasn't aware that it existed back then because I was a complete newb.</p>
-    </div>
-    <hr />
+		13373571: elvis made a static version of one of my tunnel movements... because mine are coded for any viewpoint and any direction, the static version is indeed quite bloated and can be optimized a lot.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">13th July 2003 03:42 GMT</span></p>
+	<hr />
 
-      <p class="post-content">HAHAHA<br />
-      <br />
-      Sorry, I couldn't resist. The DR is NOT D. D is an actual pixel distance, DR is just relative to (x,y) [-1..1]. The purpose of most of the formula is to perform aspect ratio correction (incorrection?).</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">20th June 2003 08:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">13373571</span><br />
-      <span class="date small text-muted">13th July 2003 04:30 GMT</span></p>
+		If you want an explanation on raytracing, UnConeD did a massive explanation <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=115329" target="_blank">here</a>. I haven't waded through it yet, but I mean to at some point.
+		</p>
+</div>
 
-      <p class="post-content">umm, what?<br />
-      <br />
-      all your saying is that dr doesn't have correct aspect ratio while d does?<br />
-      <br />
-      why is this funny?</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">24th July 2003 10:57 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Phaze1987</span><br />
+			<span class="date small text-muted">12th July 2003 16:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">its funny because zevensoft is the local fonze..<br />
-      anything he says should be laffed at purely because he is the fonze.<br />
-      <br /></p>
+		Dont jump straight into understaing raytracing,its damn hard.Try making a tunnel with your code,experiments some more then take a look at UnConeD`s explanation( it also has drawings :) )
+		</p>
+</div>
 
-      <blockquote>
-        "hey fonze"<br />
-        fonze: "eeeeeeeeeyy!"
-      </blockquote>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
-      <span class="date small text-muted">24th July 2003 23:43 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">shreyas_potnis</span><br />
+			<span class="date small text-muted">12th July 2003 17:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">:D</p>
-    </div>
-    <hr />
+		For me, its quite easy now, the formula for a tunel is:<br />
+<br />
+x^2+y^2=r^2<br />
+therefore,<br />
+(k*dx+ox)^2+(k*dy+oy)^2=r^2<br />
+k^2(dx^2+dy^2)+2k(dx*ox+dy*oy)+(ox^2+oy^2-r^2)=0<br />
+as this one is a quadratic equation,<br />
+a=dx^2+dy^2;b=2*(dx*ox+dy*oy);c=(ox^2+oy^2-r^2)<br />
+<br />
+k=(-b+(or-)sqrt(b^2+4*a*c))/(2*a)<br />
+simple.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">13373571</span><br />
+			<span class="date small text-muted">13th July 2003 03:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Phaze:  Don't revive threads.<br />
+<br />
+Raytracing is simple enough to understand, I just wasn't aware that it existed back then because I was a complete newb.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">13th July 2003 03:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		HAHAHA<br />
+<br />
+Sorry, I couldn't resist. The DR is NOT D. D is an actual pixel distance, DR is just relative to (x,y) [-1..1]. The purpose of most of the formula is to perform aspect ratio correction (incorrection?).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">13373571</span><br />
+			<span class="date small text-muted">13th July 2003 04:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		umm, what?<br />
+<br />
+all your saying is that dr doesn't have correct aspect ratio while d does?<br />
+<br />
+why is this funny?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">24th July 2003 10:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		its funny because zevensoft is the local fonze..<br />
+anything he says should be laffed at purely because he is the fonze.<br />
+<br />
+
+	<blockquote>
+			
+				&quot;hey fonze&quot;<br />
+fonze: &quot;eeeeeeeeeyy!&quot;</blockquote>
+
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Zevensoft</span><br />
+			<span class="date small text-muted">24th July 2003 23:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:D
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

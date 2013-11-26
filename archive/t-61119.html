@@ -1,773 +1,1226 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Superscope...any help out there? AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Superscope...any help out there? AVS" />
 
-  <title>Superscope...any help out there? - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Superscope...any help out there? - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Superscope...any help out there?</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=61119">Superscope...any help out there?</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xaxor</span><br />
-      <span class="date small text-muted">28th September 2001 17:37 GMT</span></p>
-
-      <p class="post-content"><strong>Superscope...any help out there?</strong><br />
-      I'm rather new to AVS and I've been wondering, is there any sort of simple explanation posted somewhere about Superscope? I've seen it used to great effect, but I have no idea how to get started on making my own. Suggestions?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">LittleBuddy88</span><br />
-      <span class="date small text-muted">29th September 2001 10:50 GMT</span></p>
-
-      <p class="post-content">Hmm...<br />
-      You know the syntax don't you?<br />
-      = to assign a var to either<br />
-      x, y, i, v, ect...<br />
-      ; ends a statement<br />
-      <br />
-      x is the line on X, try writing " x=i-0.5; " in a superscope.<br />
-      y is the vertical line, try changing " x=i-0.5; " to " y=i-0.5: ".<br />
-      v is used to read the sound, try writing "x=i*2-1; y=v;" to get an example of this.<br />
-      I is what creates the line, without it you'll just get a dot. try " x=0; " for an example.<br />
-      to make a moving line use "x=sin(t)-i", in "frame" write "t=t+0.02", this will add 0.02 to "T" on each frame. sin/cos/others closes it into the box so it won't go out of it. I assume you know math here. ;)<br />
-      x and y both go from -1 to 1, where -1 on both is the top left corner and one is bottom right.<br />
-      That's the basics for ya, try continuing on this yourself. ;)<br />
-      <br />
-      <br />
-      Linus</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">29th September 2001 18:27 GMT</span></p>
-
-      <p class="post-content"><strong>Different explanation</strong><br />
-      I found Linus' explanation to be a bit unclear so here's my way of explaining the superscope:<br />
-      <br />
-      A superscope is basically a renderer that draws either dots, or the lines between these dots. You have to write code that, at the end, outputs a set of x,y coordinates for each point to be drawn. X ranges from -1 to 1 and is the horizontal coordinate, Y ranges from -1 to 1 and is the vertical coordinate. Some examples:<br />
-      <br />
-      (0,0) - the center of the AVS screen<br />
-      (-1,-1) - the top-left of the AVS screen<br />
-      (0,1) - the center of the bottom border of the AVS screen<br />
-      (0.8,0.9) - a point near the bottom right<br />
-      <br />
-      The variable <i>n</i> is used to set the number of points to calculate each frame. Higher n means slower presets, so don't use huge numbers if it's not needed.<br />
-      <br />
-      The variable <i>i</i> is different for each point and is a percentage that tells you which point you're drawing. For example:<br />
-      - first point: i=0 (0%)<br />
-      - last point: i=1 (100%)<br />
-      - the 50th point of a 150 point superscope: i=0.33333... (33%)<br />
-      <br />
-      The variable <i>v</i> is also different for each point and contains the current sound value for this point (either oscilloscope- or spectrumdata, depending on your choice).<br />
-      <br />
-      If you click the 'help' button, you'll see all the functions you can use. Experiment with them if you don't know what they do exactly.<br />
-      <br />
-      So now we'll make a basic superscope:<br />
-      Init: n=300;t=0;tpi=acos(-1)*2;<br />
-      Beat: t=t+rand(200)/50<br />
-      Frame: t=t-0.05;rad=sin(t)/2+0.5<br />
-      Point: x=cos(i*tpi)*(rad+v/5);y=sin(i*tpi)*(rad+v/5)<br />
-      <br />
-      This will seem very complex at first, but let's look at it step by step:<br />
-      <br />
-      Init - First we set <i>n</i> to 300, so that the superscope draws 300 different points. We also set the variable <i>t</i> to 0. Then, we set the variable <i>tpi</i> to twice the arc-cosine of -1. If you do the math, that means 2 times Pi (6.28....). Don't worry, it's just a trick to prevent you from having to type the number pi yourself, which is a useful number.<br />
-      <br />
-      On Beat - Every beat, the variable <i>t</i> will be increased by a random integer number from 0-200, divided by 50. So that means a random decimal number from 0.00 to 4.00.<br />
-      <br />
-      Per Frame - Every frame we decrease the <i>t</i> value slightly. We also calculate <i>rad</i> by taking the sine of <i>t</i> and scaling it a bit. If you know that a sine is a repetive wave-shape and that <i>t</i> is decreased slightly each frame, then you'll understand that the <i>rad</i> value will slowly pulse from 0 to 1 and back, except every beat. Then <i>t</i> gets modified drastically and the <i>rad</i> value jumps.<br />
-      <br />
-      Per Point - Here we do the actual points. In our equation <i>x</i> and <i>y</i> are coordinates of a point on a circle. The circle has radius <i>rad</i> plus the current sound-value divided by 5. To make sure we traverse a full circle, we multiply i (range 0-1) with 2 times pi, so we get a range of 0-6.28...<br />
-      <br />
-      Now you have a superscope that draws a spectrum or oscilloscope circle with a jumpy radius.<br />
-      <br />
-      Another aspect of the superscope is colour. You can either use the (boring) color selector at the bottom, or you can write your own equations for the variables <i>red</i>, <i>green</i> and <i>blue</i>. They range from 0-1 and contain the value for their color. Let's spice up our superscope by adding this to the "on beat" equation:<br />
-      <br />
-      cr=rand(100)/100;cg=rand(100)/100;cb=rand(100)/100;<br />
-      <br />
-      And this to "per frame":<br />
-      <br />
-      red=cr;green=cg;blue=cb;<br />
-      <br />
-      What's going on here? Every beat we set <i>cr</i>, <i>cg</i> and <i>cb</i> to a random value in the range 0-1. Every frame, we assign these three to <i>red</i>, <i>green</i> and <i>blue</i>. Couldn't we just assign them directly 'on beat'? Nope... AVS resets them every frame with the color defined by the color-selector at the bottom.<br />
-      <br />
-      So there you have your own groovy, color-changing superscope. It looks neat if you remove the <i>t</i>-changing on beat and combine it with a Trans / Water filter.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">transfrmr</span><br />
-      <span class="date small text-muted">29th September 2001 23:54 GMT</span></p>
-
-      <p class="post-content"><strong>WHOA!</strong><br />
-      That was absolutely magnificent. Thanks!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Scarface2k1</span><br />
-      <span class="date small text-muted">30th September 2001 02:37 GMT</span></p>
-
-      <p class="post-content"><strong>trans...</strong><br />
-      ...didnt any of the stuff i sent u help any?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">transfrmr</span><br />
-      <span class="date small text-muted">30th September 2001 09:58 GMT</span></p>
-
-      <p class="post-content"><strong>Oh yeah, definitely :)</strong><br />
-      But you hafta admit,<br />
-      <br />
-      Unconed was just alittle more detailed.. :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Xaxor</span><br />
-      <span class="date small text-muted">30th September 2001 19:34 GMT</span></p>
-
-      <p class="post-content"><strong>Thanks</strong><br />
-      Thanks for the help guys. Though i guesss this means more work for me. :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
-      <span class="date small text-muted">19th February 2002 21:28 GMT</span></p>
-
-      <p class="post-content">I posting this reply so people can read Unconed's explaination of scopes....<br />
-      <br />
-      <br />
-      NoSage|Jason</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">12th January 2004 09:11 GMT</span></p>
-
-      <p class="post-content">Just wondering, is it possible to specify the exact coordinates for each dot (so you could create images and shapes out of dots)?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">12th January 2004 09:24 GMT</span></p>
-
-      <p class="post-content">yes, it is possible but a whole lot of work, especially(sp) when using 3D scopes.. here's an example that siddharta_one gave me once, but try to get Deamon's newest pack (hypernation) too, it has a 3D rendered cross..</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">12th January 2004 11:32 GMT</span></p>
-
-      <p class="post-content">OK, had a look at both the box example and Deamon's cross. It's for the Christian vis thing, so both of them help.<br />
-      <br />
-      EDIT: I'm still unsure of how to determine the coordinates for each pixel, if ayone can help by creating a vis with just 2 pixels in different postitions, it would be much appreciated.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">12th January 2004 20:32 GMT</span></p>
-
-      <p class="post-content">It's easy to do. All you have to is use a custom point count then use equal( to set the locations.<br />
-      In Init<br /></p>
-      <pre>
-<code><font size="1"><font face="century"><br />Xloc1=-.5;//sets the X coordinate of our first point to -.5<br />Xloc2=.5;//sets the X coordinate of our second point to .5<br />Yloc1=-.5;//sets the Y coordinate of our first  point to -.5<br />Yloc2=.5;//sets the Y coordinate of our second point to .5<br /></font></font></code>
-</pre><br />
-      In Perframe<br />
-      <pre>
-<code><font size="1"><font face="century"><br />p=0;//reset perpoint counter to 0<br /></font></font></code>
-</pre><br />
-      In PerPoint<br />
-      <pre>
-<code><font size="1"><font face="century"><br />p=p+1;//adds one to out perpoimt counter for every point being drawn<br />x=equal(p,1)*Yloc1+equal(p,2)*sloc2;//When P equals 1, sets the X coordinate to our Xloc1, and when P equals 2, sets our X coordinate to our Xloc2<br />y=equal(p,1)*Yloc1+equal(p,2)*Xloc2;//When P equals 1, set our Y coordinate to our Yloc1, and when P equals 2, sets our Y coordinate to our Yloc<br /></font></font></code>
-</pre><br />
-      You can copy and paste this into a superscope and fiddle with it if you want to. If you are sill confused just tell us what you are having a problem with or you could search the fourms for <b>Superscopes</b> or <b>Per-Point</b>, those might bring up some helpful things.<br />
-      <br />
-      //edit-Fixed a few little mess-ups and "fixed" format
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">12th January 2004 22:15 GMT</span></p>
-
-      <p class="post-content">Somewhat simpler (but the theory is the same):<br />
-      <br /></p>
-      <pre>
-<code><br />per frame:<br /><br />p=0; (this is to reset the counter <i>p</i> you use for each point)<br /><br />per point:<br /><br />p=p+1; (meaning for every point p is increased by one).<br />x=0.1*equal(p,1)-0.5*equal(p,2);<br />y=0.4*equal(p,1)-0.35*equal(p,2);<br /></code>
-</pre><br />
-      <br />
-      In this case (and in all cases) you use a counter variable for each point. This counter is called p in this example.<br />
-      <br />
-      Since we know n is the number of points to render, we set n to 2 in this case, otherwise the rest of the points have the coords (0,0). The equal statement is 1 or 0. It's 1 when p=1 for the first point, and p=2 for the second point. The rest of the points have coords (0,0), but since we don't have any other points, we don't have to bother about that. The reason why it works:<br />
-      <br />
-      It works Per Point. It's really important to realise this. The code is run for every single dot. P is increased every dot, so we can number them. Point 1 equals p=1 etc. After that, you only have to enter coordinates for each point, and use the counter. Mind that N has to equal the last number of P or the last dots won't be drawn.<br />
-      <br />
-      The statement:<br />
-      <br />
-      If you multiply (*) any number 0, the result will be 0. If you multply by 1, the result will remain the same. Knowing this, we can do things like x=0.3*equal(p,1). In normal language: X equal 0.3 if p=1, otherwise it'll be 0.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">13th January 2004 05:18 GMT</span></p>
-
-      <p class="post-content">Anyways... its easy to store points to megabuf(), like tell a scope run only once. wile doing it, store points to gmegabuf() and every other frame just load the points from buffer.<br />
-      Im too lazy to write an example now :P</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">13th January 2004 06:24 GMT</span></p>
-
-      <p class="post-content">Thanks for the help.<br />
-      <br />
-      EDIT: S-uper_T-oast, your code has a few mistakes in it, but I got the general idea. Thanks.<br />
-      <br />
-      EDIT 2: Still having trouble. I'm trying to get a line from the center of the screen to the top-right corner, but I keep getting a line from the center straight down. My code:<br />
-      In Init<br /></p>
-      <pre>
-<code><font size="1"><font face="century"><br />Xloc1=0;   //sets the X coordinate of our first point<br />Yloc1=1;   //sets the Y coordinate of our first point<br />Xloc2=0;   //sets the X coordinate of our second point<br />Yloc2=1;   //sets the Y coordinate of our second point<br /></font></font></code>
-</pre><br />
-      In Frame<br />
-      <pre>
-<code><font size="1"><font face="century"><br />p=0;  //reset perpoint counter to 0<br /></font></font></code>
-</pre><br />
-      In Perpoint<br />
-      <pre>
-<code><font size="1"><font face="century"><br />p=p+1;  //adds one to out perpoint counter for every point being drawn<br />x=equal(p,1)*Xloc1+equal(p,2)*Xloc2;  //When P equals 1, sets the X coordinate to our Xloc1, and when P equals 2, sets our X coordinate to our Xloc2<br />y=equal(p,1)*Yloc1+equal(p,2)*Yloc2;  //When P equals 1, set our Y coordinate to our Yloc1, and when P equals 2, sets our Y coordinate to our Yloc2<br /></font></font></code>
-</pre>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">13th January 2004 08:24 GMT</span></p>
-
-      <p class="post-content">Set n to the exact number of points, or else AVS sets all other numbers to 0<br />
-      <br />
-      Edit: Instead of using Xloc1, Yloc2 and stuff, you can also use the numbers directly, since you'll only need them once<br />
-      simplest example:<br /></p>
-      <pre>
-<code><br />---init----<br />n=1<br />---frame---<br />p=0<br />---pixel---<br />p=p+1;<br />x=equal(p,1)*.5;<br />y=equal(p,1)*-.25<br /></code>
-</pre><br />
-      This sets a dot somewhere in the upper right of the screen.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">13th January 2004 08:53 GMT</span></p>
-
-      <p class="post-content">You forgot to change the X coord, Braininator. Try:<br />
-      <br /></p>
-      <pre>
-<code><br /><b>Per frame:</b><br />p=0;<br /><br /><b>per point:</b><br /><br />p=p+1;<br />x=0*equal(p,1)+1*equal(p,2);<br />y=0*equal(p,1)-1*equal(p,2);<br /></code>
-</pre><br />
-      <br />
-      I have used a minus in the Y coords because AVS has the Y coords from top to down from -1 to 1 for some strange reason. Somehow it's faster for your computer, though I don't know why.<br />
-      <br />
-      <br />
-      To Jaak: Please write an example, I don't understand it as well, and I really like to know how to use the buffers.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">13th January 2004 10:18 GMT</span></p>
-
-      <p class="post-content">The y starting at -1 instead of 1 is quite simple to understand: A PC 'thinks' from the upper left of the screen to the lower right. It's more that we as humans are strange, by starting at a high number and lowering our way down along the Y-axis :igor:<br />
-      <br />
-      And I don't think it has something to do with the X-co&#195;&#182;rds</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">13th January 2004 10:20 GMT</span></p>
-
-      <p class="post-content">Deamon here ya go:<br />
-      <br />
-      note that bla is set to 0 in end of frame, so that all loops will be run only 1 time after loading the preset<br />
-      ;)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">13th January 2004 10:33 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Deamon</i><br />
-        <b>You forgot to change the X coord, Braininator.<br />
-        <br />
-        I have used a minus in the Y coords because AVS has the Y coords from top to down from -1 to 1 for some strange reason.<br /></b>
-      </blockquote>Yeah, worked it all out. Already knew about the whole minus thing, just changed the wrong vars and forgot the minus. Thanks for looking at it.<br />
-      <br />
-
-      <blockquote>
-        <i>Originally posted by ;-c ,rattaplan</i><br />
-        Instead of using Xloc1, Yloc2 and stuff, you can also use the numbers directly, since you'll only need them once
-      </blockquote>Good point, but I wish to keep the variables so it makes it easier to change them. (I plan to have a few of them!)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">13th January 2004 10:55 GMT</span></p>
-
-      <p class="post-content">@Jaak<br />
-      <br />
-      ...And here is where coding becomes programming<br />
-      -Guess what? I love it!!!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th January 2004 11:15 GMT</span></p>
-
-      <p class="post-content">By the way if you want to interrupt your shape somewhere, use:<br />
-      <br />
-      skip=equal(p,4)+equal(p,6);<br />
-      <br />
-      This will hide the 4th and 6th line segment (or 3rd and 5th, depending on how your counter works).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">13th January 2004 11:19 GMT</span></p>
-
-      <p class="post-content">First bit of success!<br />
-      <br />
-      Basically, the variables thing means you could set up a template for creating images in the superscope. All you'd need to do is create a number of different points (20 perhaps), set their coordinates to 0, then when wanting to create a new image just change the amount of points required and change their coordinates. So simple now!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">13th January 2004 17:10 GMT</span></p>
-
-      <p class="post-content">Another way of using p2p scoping (point-to-point, which is what you're doing now...) is to let AVS figure out the coords instead of giving them. Here's a nice example I just made. I'm quite proud of it :). Take a good look at the Texer II code. Don't bother the 3D stuff around it, the part that matters is:<br />
-      <br /></p>
-      <pre>
-<code><br /><b>init</b><br />pd=0.4                          //Distance between points<br /><br /><b>Per frame</b><br />xp=-1;                          //starting positions every frame<br />yp=-1;<br /><br /><b>Per point</b><br />xp=xp+pd;                       //gridforming<br />yp=if(above(xp,1),yp+pd,yp);<br /><br />xp=if(above(xp,1),-1,xp);       //grid reset if N is set too high<br />yp=if(above(yp,1),-1,yp);<br /><br /></code>
-</pre><br />
-      <br />
-      It took me some time to figure this out, though it's quite simple now I've got it. I was playing with extra counters first, but after some puzzling, I realised I didn't need any. Let's see if you can figure out what's happening yourself, it's better that way than if I say it right now ;).<br />
-      <br />
-      Other dudes around here, tell me what you think. Me personally likes it a lot.<br />
-      <br />
-      [edit]<br />
-      Read the comment for code explanation<br />
-      [/edit]
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">15th January 2004 08:12 GMT</span></p>
-
-      <p class="post-content">Next job with my stuff, trying to get points to change on beat.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">17th January 2004 19:37 GMT</span></p>
-
-      <p class="post-content">by the by, next time please don't revive three year old threads....</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">18th January 2004 16:34 GMT</span></p>
-
-      <p class="post-content">lol, I didn't even notice that :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">19th January 2004 04:04 GMT</span></p>
-
-      <p class="post-content">Neither did I, sorry about that!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">25th January 2004 08:43 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Atero</i><br />
-        <b>by the by, next time please don't revive three year old threads....</b>
-      </blockquote>rofl.<br />
-      <br />
-      i think that i too have been guilty of this once so thats all i'll say right there. it is strange how old threads get resurrected.. i think its probably the result of the search feature being used then replying to a post without thinking. or do people really search through page after page of winamp forum archives by hand (mouse i suppose)?<br />
-      <br />
-      :weird:
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">26th January 2004 10:06 GMT</span></p>
-
-      <p class="post-content">of course it's the search option, no-one would read about 50 pages of forum topics if maybe their question is already answered. Certainly not new people.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Braininator</span><br />
-      <span class="date small text-muted">28th January 2004 08:56 GMT</span></p>
-
-      <p class="post-content">So we're expected to search for a thread relevant to our problem, but if it's three years old we can't reply to it. Weird.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Timzone8</span><br />
-      <span class="date small text-muted">28th January 2004 13:22 GMT</span></p>
-
-      <p class="post-content"><strong>Newbie here....</strong><br />
-      I've been making some avs' with the presets and eventually found it well, boring, so I want to learn how to make Superscopes...<br />
-      All I need to know is a few basic formulas to get me started. Could someone post some Superscope "codes" for:<br />
-      Circle, Triangle, Square, Star, Sphere, Cube, Prism???<br />
-      I can understand the x,y,i,v just not quite the sin(cos(tan( to it.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">28th January 2004 15:15 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        So we're expected to search for a thread relevant to our problem, but if it's three years old we can't reply to it. Weird.
-      </blockquote>Err no. You're supposed to look for old discussions about your question. If you find an answer, that's it. If you don't, start a new topic with your specific issue.<br />
-      <br />
-      <br />
-      Oh and Timzone8: Read. The. FAQ. It's right in front of your nose.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Timzone8</span><br />
-      <span class="date small text-muted">29th January 2004 06:13 GMT</span></p>
-
-      <p class="post-content">Where's the FAQ on superscopes? (this is it isn't it?) :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">29th January 2004 06:19 GMT</span></p>
-
-      <p class="post-content">There isn't one, but there are several threads which discuss superscope maths which are linked to in the AVS FAQ at the top of the main AVS forum.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">martyexodus</span><br />
-      <span class="date small text-muted">2nd January 2005 04:53 GMT</span></p>
-
-      <p class="post-content">now, i may be mistaken, but instead of going through all that to make a line from the center to the upper-left, could you just put:<br />
-      <br />
-      init:<br />
-      n=50;x=0;y=0<br />
-      <br />
-      point:<br />
-      x=x+i<br />
-      y=y-i<br />
-      <br />
-      <br />
-      I havent tried it, but judging from what i know, that should work.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hboy</span><br />
-      <span class="date small text-muted">2nd January 2005 08:43 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by martyexodus</i><br />
-        <b><br />
-        I havent tried it, but judging from what i know, that should work.</b>
-      </blockquote>No, it doesn't work like this. It works like this:<br />
-      <br />
-      <pre>
-<code><br />"init"<br />n=10<br /><br />"per pixel"<br />x=-i;<br />y=-i;<br /></code>
-</pre><br />
-      <br />
-      at least if you reviwe dead for a year ago, please do it with thinking before it. Why the fuck didn't you just try the code before posting? Be ready for some serious flaming dude.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">2nd January 2005 09:43 GMT</span></p>
-
-      <p class="post-content">umm someone wanna deploy a ACTUAL SSC HELP GUIDE?! (ffs not hard enough?)<br /></p>
-
-      <blockquote>
-        Superscope tutorial goes here<br />
-        But for now, here is the old text:<br />
-        You can specify expressions that run on Init, Frame, and on Beat.<br />
-        'n' specifies the number of points to render (set this in Init, Beat, or Frame).<br />
-        For the 'Per Point' expression (which happens 'n' times per frame), use:<br />
-        'x' and 'y' are the coordinates to draw to (-1..1)<br />
-        'i' is the position of the scope (0..1)<br />
-        'v' is the value at that point (-1..1).<br />
-        'b' is 1 if beat, 0 if not.<br />
-        'red', 'green' and 'blue' are all (0..1) and can be modified<br />
-        'linesize' can be set from 1.0 to 255.0<br />
-        'skip' can be set to &gt;0 to skip drawing the current item<br />
-        'drawmode' can be set to &gt; 0 for lines, &lt;= 0 for points<br />
-        'w' and 'h' are the width and height of the screen, in pixels.<br />
-        Anybody want to send me better text to put here? Please :)
-      </blockquote>umm how's this supposed to help?! :( ?
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hboy</span><br />
-      <span class="date small text-muted">2nd January 2005 09:49 GMT</span></p>
-
-      <p class="post-content">actually, if you do know some english and posess some logic, you may fully understand that quoted help. and besides, somehow all avs artists before today and some even today understand it. because it is simple! you just have to think!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">2nd January 2005 19:52 GMT</span></p>
-
-      <p class="post-content">hboy pwnd joo<br />
-      <br />
-      I learned superscopes all by myself back when I was in 6th grade. I had no fourms, no online help, it was just me and the code, and I conquered it. Do it yourself.<br />
-      <br />
-      <br />
-      bunny<br />
-      <a href="http://www.evsc.k12.in.us/curriculum/socstud/images/ch1/rabbit.jpg" target="_blank">http://www.evsc.k12.in.us/curriculum...ch1/rabbit.jpg</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hboy</span><br />
-      <span class="date small text-muted">2nd January 2005 19:56 GMT</span></p>
-
-      <p class="post-content">thats a cute bunny i must say ^.^</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">5th January 2005 21:07 GMT</span></p>
-
-      <p class="post-content">This thread just dont wanna die</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">5th January 2005 21:48 GMT</span></p>
-
-      <p class="post-content">so let's keep it as it is now and come back in a year from now...<br />
-      good bye everyone and see you next january</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">randomee</span><br />
-      <span class="date small text-muted">24th October 2007 00:11 GMT</span></p>
-
-      <p class="post-content">some question to the superscope stuff, im new to the plugins and visualisation stuff but interested in something like an oscilloscope.<br />
-      <br />
-      i just recently came around this youtube video of a "song" (flac compressed audio data) that was published on the assembly 2007 to make an oscilloscope display fancy animations and "intro"-like stuff...<br />
-      <br />
-      <a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
-      <br />
-      the flac song file can be found here:<br />
-      <a href="http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac" target="_blank">http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac</a><br />
-      <br />
-      since winamp can play flac stuff and can visualize stuff, i was trying to draw the x and y axis with the values of the song or something like that.<br />
-      <br />
-      any hints into this?<br />
-      <br />
-      thanks for any replies.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">randomee</span><br />
-      <span class="date small text-muted">24th October 2007 09:27 GMT</span></p>
-
-      <p class="post-content">are my posted links supposed to appear properly, or are links forbidden in this forum?<br />
-      <br />
-      :(</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Grandchild</span><br />
-      <span class="date small text-muted">24th October 2007 12:10 GMT</span></p>
-
-      <p class="post-content">links by jubior members aren't visible but can be seen by clicking on quote.<br />
-      <a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
-      and<br />
-      <a href="http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac" target="_blank">http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac</a><br />
-      <br />
-      i think i understand what you want, which is very simple indeed.<br />
-      - you have opened the avs editor<br />
-      - preset&gt;new<br />
-      - in [main] check "clear every frame"<br />
-      - +&gt;render&gt;superscope<br />
-      - select the scope delete everything in it.<br />
-      - put this in the point box:<br /></p>
-      <pre>
-<code>x=getosc(i,0,2);<br />y=-getosc(i,0,1);</code>
-</pre><br />
-      - and in the init box:<br />
-      <pre>
-<code>n = 1000</code>
-</pre><br />
-      - there you go, now play the file...<br />
-      <br />
-      it's actually kind of funny, i've never seen stuff like that on avs :) only problem is, it doesn't look quite as good as the thing on youtube, because avs' oscillograph resolution isn't so good.<br />
-      <br />
-      gc
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">randomee</span><br />
-      <span class="date small text-muted">24th October 2007 16:33 GMT</span></p>
-
-      <p class="post-content">thats cool, thanks for the quick reply mate and help with the task :)<br />
-      <br />
-      cheers.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">QOAL</span><br />
-      <span class="date small text-muted">24th October 2007 17:46 GMT</span></p>
-
-      <p class="post-content">Lets make it a bit more oscilloscope like then...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">randomee</span><br />
-      <span class="date small text-muted">24th October 2007 19:02 GMT</span></p>
-
-      <p class="post-content">hehe sweetness. thanks for the update on the effects :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
-      <span class="date small text-muted">31st October 2007 14:49 GMT</span></p>
-
-      <p class="post-content">Revived for the fourth time, its like night of the living thread.<br />
-      <br />
-      <font size="1">sorry</font></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Grandchild</span><br />
-      <span class="date small text-muted">2nd November 2007 18:46 GMT</span></p>
-
-      <p class="post-content">well that pun wasn't too bad :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">AJ Sindri</span><br />
-      <span class="date small text-muted">27th November 2007 05:39 GMT</span></p>
-
-      <p class="post-content">Here's so basic shapes that are easy to make:<br />
-      <br />
-      Oscope line:<br />
-      x=i*2-1;<br />
-      y=v<br />
-      <br />
-      Rotating oscope line:<br />
-      t=//angle in radians;<br />
-      x=sin(t+v)*i;<br />
-      y=cos(t+v)*i;<br />
-      <br />
-      Oscope circle:<br />
-      i=i*2*$pi;<br />
-      x=sin(i)*acos(v)/3;<br />
-      y=cos(i)*acos(v)/3;<br />
-      <br />
-      Instead of using v, you could do something like this:<br />
-      vNew=getosc(i,0,0)<br />
-      <br />
-      Crazy? (saw this off of FramesOfReality's black hole):<br />
-      x=getosc(i/2,0,0);<br />
-      y=getosc(i/2+.5,0,0)<br />
-      <br />
-      Hope that helps. Sorry it's so uber basic ^_^</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">18th December 2007 13:44 GMT</span></p>
-
-      <p class="post-content">Let this die! FFS!<br />
-      <br />
-      Also see PAK's excellent AVS guide for help with SSC. Also the help.<br />
-      <br />
-      As usual, you can all do it with no reference... because we did!</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Superscope...any help out there?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=61119">Superscope...any help out there?</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xaxor</span><br />
+			<span class="date small text-muted">28th September 2001 17:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Superscope...any help out there?</strong><br />
+		
+		
+
+		I'm rather new to AVS and I've been wondering, is there any sort of simple explanation posted somewhere about Superscope?  I've seen it used to great effect, but I have no idea how to get started on making my own.  Suggestions?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">LittleBuddy88</span><br />
+			<span class="date small text-muted">29th September 2001 10:50 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Hmm...<br />
+You know the syntax don't you?<br />
+= to assign a var to either<br />
+x, y, i, v, ect...<br />
+; ends a statement<br />
+<br />
+x is the line on X, try writing &quot; x=i-0.5; &quot; in a superscope.<br />
+y is the vertical line, try changing &quot; x=i-0.5; &quot; to &quot; y=i-0.5: &quot;.<br />
+v is used to read the sound, try writing &quot;x=i*2-1; y=v;&quot; to get an example of this.<br />
+I is what creates the line, without it you'll just get a dot. try &quot; x=0; &quot; for an example.<br />
+to make a moving line use &quot;x=sin(t)-i&quot;, in &quot;frame&quot; write &quot;t=t+0.02&quot;, this will add 0.02 to &quot;T&quot; on each frame. sin/cos/others closes it into the box so it won't go out of it. I assume you know math here. ;)<br />
+x and y both go from -1 to 1, where -1 on both is the top left corner and one is bottom right.<br />
+That's the basics for ya, try continuing on this yourself. ;)<br />
+<br />
+<br />
+Linus
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">29th September 2001 18:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Different explanation</strong><br />
+		
+		
+
+		I found Linus' explanation to be a bit unclear so here's my way of explaining the superscope:<br />
+<br />
+A superscope is basically a renderer that draws either dots, or the lines between these dots. You have to write code that, at the end, outputs a set of x,y coordinates for each point to be drawn. X ranges from -1 to 1 and is the horizontal coordinate, Y ranges from -1 to 1 and is the vertical coordinate. Some examples:<br />
+<br />
+(0,0)   - the center of the AVS screen<br />
+(-1,-1) - the top-left of the AVS screen<br />
+(0,1)   - the center of the bottom border of the AVS screen<br />
+(0.8,0.9) - a point near the bottom right<br />
+<br />
+The variable <i>n</i> is used to set the number of points to calculate each frame. Higher n means slower presets, so don't use huge numbers if it's not needed.<br />
+<br />
+The variable <i>i</i> is different for each point and is a percentage that tells you which point you're drawing. For example:<br />
+- first point: i=0  (0%)<br />
+- last point: i=1   (100%)<br />
+- the 50th point of a 150 point superscope: i=0.33333...  (33%)<br />
+<br />
+The variable <i>v</i> is also different for each point and contains the current sound value for this point (either oscilloscope- or spectrumdata, depending on your choice).<br />
+<br />
+If you click the 'help' button, you'll see all the functions you can use. Experiment with them if you don't know what they do exactly.<br />
+<br />
+So now we'll make a basic superscope:<br />
+Init:  n=300;t=0;tpi=acos(-1)*2;<br />
+Beat:  t=t+rand(200)/50<br />
+Frame: t=t-0.05;rad=sin(t)/2+0.5<br />
+Point: x=cos(i*tpi)*(rad+v/5);y=sin(i*tpi)*(rad+v/5)<br />
+<br />
+This will seem very complex at first, but let's look at it step by step:<br />
+<br />
+Init - First we set <i>n</i> to 300, so that the superscope draws 300 different points. We also set the variable <i>t</i> to 0. Then, we set the variable <i>tpi</i> to twice the arc-cosine of -1. If you do the math, that means 2 times Pi (6.28....). Don't worry, it's just a trick to prevent you from having to type the number pi yourself, which is a useful number.<br />
+<br />
+On Beat - Every beat, the variable <i>t</i> will be increased by a random integer number from 0-200, divided by 50. So that means a random decimal number from 0.00 to 4.00.<br />
+<br />
+Per Frame - Every frame we decrease the <i>t</i> value slightly. We also calculate <i>rad</i> by taking the sine of <i>t</i> and scaling it a bit. If you know that a sine is a repetive wave-shape and that <i>t</i> is decreased slightly each frame, then you'll understand that the <i>rad</i> value will slowly pulse from 0 to 1 and back, except every beat. Then <i>t</i> gets modified drastically and the <i>rad</i> value jumps.<br />
+<br />
+Per Point - Here we do the actual points. In our equation <i>x</i> and <i>y</i> are coordinates of a point on a circle. The circle has radius <i>rad</i> plus the current sound-value divided by 5. To make sure we traverse a full circle, we multiply i (range 0-1) with 2 times pi, so we get a range of 0-6.28...<br />
+<br />
+Now you have a superscope that draws a spectrum or oscilloscope circle with a jumpy radius.<br />
+<br />
+Another aspect of the superscope is colour. You can either use the (boring) color selector at the bottom, or you can write your own equations for the variables <i>red</i>, <i>green</i> and <i>blue</i>. They range from 0-1 and contain the value for their color. Let's spice up our superscope by adding this to the &quot;on beat&quot; equation:<br />
+<br />
+cr=rand(100)/100;cg=rand(100)/100;cb=rand(100)/100;<br />
+<br />
+And this to &quot;per frame&quot;:<br />
+<br />
+red=cr;green=cg;blue=cb;<br />
+<br />
+What's going on here? Every beat we set <i>cr</i>, <i>cg</i> and <i>cb</i> to a random value in the range 0-1. Every frame, we assign these three to <i>red</i>, <i>green</i> and <i>blue</i>. Couldn't we just assign them directly 'on beat'? Nope... AVS resets them every frame with the color defined by the color-selector at the bottom.<br />
+<br />
+So there you have your own groovy, color-changing superscope. It looks neat if you remove the <i>t</i>-changing on beat and combine it with a Trans / Water filter.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">transfrmr</span><br />
+			<span class="date small text-muted">29th September 2001 23:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>WHOA!</strong><br />
+		
+		
+
+		That was absolutely magnificent. Thanks!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Scarface2k1</span><br />
+			<span class="date small text-muted">30th September 2001 02:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>trans...</strong><br />
+		
+		
+
+		...didnt any of the stuff i sent u help any?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">transfrmr</span><br />
+			<span class="date small text-muted">30th September 2001 09:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Oh yeah, definitely :)</strong><br />
+		
+		
+
+		But you hafta admit,<br />
+<br />
+ Unconed was just alittle more detailed..  :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Xaxor</span><br />
+			<span class="date small text-muted">30th September 2001 19:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong> Thanks</strong><br />
+		
+		
+
+		Thanks for the help guys. Though i guesss this means more work for me. :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">NoSage</span><br />
+			<span class="date small text-muted">19th February 2002 21:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I posting this reply so people can read Unconed's explaination of scopes....<br />
+<br />
+<br />
+NoSage|Jason
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">12th January 2004 09:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just wondering, is it possible to specify the exact coordinates for each dot (so you could create images and shapes out of dots)?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">12th January 2004 09:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		yes, it is possible but a whole lot of work, especially(sp) when using 3D scopes.. here's an example that siddharta_one gave me once, but try to get Deamon's newest pack (hypernation) too, it has a 3D rendered cross..
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">12th January 2004 11:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		OK, had a look at both the box example and Deamon's cross. It's for the Christian vis thing, so both of them help.<br />
+<br />
+EDIT: I'm still unsure of how to determine the coordinates for each pixel, if ayone can help by creating a vis with just 2 pixels in different postitions, it would be much appreciated.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">12th January 2004 20:32 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It's easy to do. All you have to is use a custom point count then use equal( to set the locations.<br />
+In Init<br />
+<pre><code><font size="1"><font face="century"><br />
+Xloc1=-.5;//sets the X coordinate of our first point to -.5<br />
+Xloc2=.5;//sets the X coordinate of our second point to .5<br />
+Yloc1=-.5;//sets the Y coordinate of our first  point to -.5<br />
+Yloc2=.5;//sets the Y coordinate of our second point to .5<br />
+</font></font></code></pre><br />
+In Perframe<br />
+<pre><code><font size="1"><font face="century"><br />
+p=0;//reset perpoint counter to 0<br />
+</font></font></code></pre><br />
+In PerPoint<br />
+<pre><code><font size="1"><font face="century"><br />
+p=p+1;//adds one to out perpoimt counter for every point being drawn<br />
+x=equal(p,1)*Yloc1+equal(p,2)*sloc2;//When P equals 1, sets the X coordinate to our Xloc1, and when P equals 2, sets our X coordinate to our Xloc2<br />
+y=equal(p,1)*Yloc1+equal(p,2)*Xloc2;//When P equals 1, set our Y coordinate to our Yloc1, and when P equals 2, sets our Y coordinate to our Yloc<br />
+</font></font></code></pre><br />
+You can copy and paste this into a superscope and fiddle with it if you want to. If you are sill confused just tell us what you are having a problem with or you could search the fourms for <b>Superscopes</b> or <b>Per-Point</b>, those might bring up some helpful things.<br />
+<br />
+//edit-Fixed a few little mess-ups and &quot;fixed&quot; format
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">12th January 2004 22:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Somewhat simpler (but the theory is the same):<br />
+<br />
+<pre><code><br />
+per frame:<br />
+<br />
+p=0; (this is to reset the counter <i>p</i> you use for each point)<br />
+<br />
+per point:<br />
+<br />
+p=p+1; (meaning for every point p is increased by one).<br />
+x=0.1*equal(p,1)-0.5*equal(p,2);<br />
+y=0.4*equal(p,1)-0.35*equal(p,2);<br />
+</code></pre><br />
+<br />
+In this case (and in all cases) you use a counter variable for each point. This counter is called p in this example.<br />
+<br />
+Since we know n is the number of points to render, we set n to 2 in this case, otherwise the rest of the points have the coords (0,0). The equal statement is 1 or 0. It's 1 when p=1 for the first point, and p=2 for the second point. The rest of the points have coords (0,0), but since we don't have any other points, we don't have to bother about that. The reason why it works:<br />
+<br />
+It works Per Point. It's really important to realise this. The code is run for every single dot. P is increased every dot, so we can number them. Point 1 equals p=1 etc. After that, you only have to enter coordinates for each point, and use the counter. Mind that N has to equal the last number of P or the last dots won't be drawn.<br />
+<br />
+The statement:<br />
+<br />
+If you multiply (*) any number 0, the result will be 0. If you multply by 1, the result will remain the same. Knowing this, we can do things like x=0.3*equal(p,1). In normal language: X equal 0.3 if p=1, otherwise it'll be 0.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">13th January 2004 05:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Anyways... its easy to store points to megabuf(), like tell a scope run only once. wile doing it, store points to gmegabuf() and every other frame just load the points from buffer. <br />
+Im too lazy to write an example now :P
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">13th January 2004 06:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks for the help.<br />
+<br />
+EDIT: S-uper_T-oast, your code has a few mistakes in it, but I got the general idea. Thanks.<br />
+<br />
+EDIT 2: Still having trouble. I'm trying to get a line from the center of the screen to the top-right corner, but I keep getting a line from the center straight down. My code:<br />
+In Init<br />
+<pre><code><font size="1"><font face="century"><br />
+Xloc1=0;   //sets the X coordinate of our first point<br />
+Yloc1=1;   //sets the Y coordinate of our first point<br />
+Xloc2=0;   //sets the X coordinate of our second point<br />
+Yloc2=1;   //sets the Y coordinate of our second point<br />
+</font></font></code></pre><br />
+In Frame<br />
+<pre><code><font size="1"><font face="century"><br />
+p=0;  //reset perpoint counter to 0<br />
+</font></font></code></pre><br />
+In Perpoint<br />
+<pre><code><font size="1"><font face="century"><br />
+p=p+1;  //adds one to out perpoint counter for every point being drawn<br />
+x=equal(p,1)*Xloc1+equal(p,2)*Xloc2;  //When P equals 1, sets the X coordinate to our Xloc1, and when P equals 2, sets our X coordinate to our Xloc2<br />
+y=equal(p,1)*Yloc1+equal(p,2)*Yloc2;  //When P equals 1, set our Y coordinate to our Yloc1, and when P equals 2, sets our Y coordinate to our Yloc2<br />
+</font></font></code></pre>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">13th January 2004 08:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Set n to the exact number of points, or else AVS sets all other numbers to 0<br />
+<br />
+Edit: Instead of using Xloc1, Yloc2 and stuff, you can also use the numbers directly, since you'll only need them once<br />
+simplest example: <br />
+<pre><code><br />
+---init----<br />
+n=1<br />
+---frame---<br />
+p=0<br />
+---pixel---<br />
+p=p+1;<br />
+x=equal(p,1)*.5;<br />
+y=equal(p,1)*-.25<br />
+</code></pre><br />
+This sets a dot somewhere in the upper right of the screen.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">13th January 2004 08:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		You forgot to change the X coord, Braininator. Try:<br />
+<br />
+<pre><code><br />
+<b>Per frame:</b><br />
+p=0;<br />
+<br />
+<b>per point:</b><br />
+<br />
+p=p+1;<br />
+x=0*equal(p,1)+1*equal(p,2);<br />
+y=0*equal(p,1)-1*equal(p,2);<br />
+</code></pre><br />
+<br />
+I have used a minus in the Y coords because AVS has the Y coords from top to down from -1 to 1 for some strange reason. Somehow it's faster for your computer, though I don't know why.<br />
+<br />
+<br />
+To Jaak: Please write an example, I don't understand it as well, and I really like to know how to use the buffers.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">13th January 2004 10:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		The y starting at -1 instead of 1 is quite simple to understand: A PC 'thinks' from the upper left of the screen to the lower right. It's more that we as humans are strange, by starting at a high number and lowering our way down along the Y-axis :igor:<br />
+<br />
+And I don't think it has something to do with the X-coörds
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">13th January 2004 10:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Deamon here ya go:<br />
+<br />
+note that bla is set to 0 in end of frame, so that all loops will be run only 1 time after loading the preset<br />
+;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">13th January 2004 10:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Deamon </i><br />
+<b>You forgot to change the X coord, Braininator.<br />
+<br />
+I have used a minus in the Y coords because AVS has the Y coords from top to down from -1 to 1 for some strange reason. <br />
+</b></blockquote>
+ Yeah, worked it all out. Already knew about the whole minus thing, just changed the wrong vars and forgot the minus. Thanks for looking at it.<br />
+<br />
+
+	<blockquote>
+			
+				<i>Originally posted by  ;-c ,rattaplan </i><br />
+Instead of using Xloc1, Yloc2 and stuff, you can also use the numbers directly, since you'll only need them once</blockquote>
+ Good point, but I wish to keep the variables so it makes it easier to change them. (I plan to have a few of them!)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">13th January 2004 10:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		@Jaak<br />
+<br />
+...And here is where coding becomes programming<br />
+-Guess what? I love it!!!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th January 2004 11:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		By the way if you want to interrupt your shape somewhere, use:<br />
+<br />
+skip=equal(p,4)+equal(p,6);<br />
+<br />
+This will hide the 4th and 6th line segment (or 3rd and 5th, depending on how your counter works).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">13th January 2004 11:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		First bit of success!<br />
+<br />
+Basically, the variables thing means you could set up a template for creating images in the superscope. All you'd need to do is create a number of different points (20 perhaps), set their coordinates to 0, then when wanting to create a new image just change the amount of points required and change their coordinates. So simple now!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">13th January 2004 17:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Another way of using p2p scoping (point-to-point, which is what you're doing now...) is to let AVS figure out the coords instead of giving them. Here's a nice example I just made. I'm quite proud of it :). Take a good look at the Texer II code. Don't bother the 3D stuff around it, the part that matters is:<br />
+<br />
+<pre><code><br />
+<b>init</b><br />
+pd=0.4                          //Distance between points<br />
+<br />
+<b>Per frame</b><br />
+xp=-1;                          //starting positions every frame<br />
+yp=-1;<br />
+<br />
+<b>Per point</b><br />
+xp=xp+pd;                       //gridforming<br />
+yp=if(above(xp,1),yp+pd,yp);<br />
+<br />
+xp=if(above(xp,1),-1,xp);       //grid reset if N is set too high<br />
+yp=if(above(yp,1),-1,yp);<br />
+<br />
+</code></pre><br />
+<br />
+It took me some time to figure this out, though it's quite simple now I've got it. I was playing with extra counters first, but after some puzzling, I realised I didn't need any. Let's see if you can figure out what's happening yourself, it's better that way than if I say it right now ;).<br />
+<br />
+Other dudes around here, tell me what you think. Me personally likes it a lot.<br />
+<br />
+[edit]<br />
+Read the comment for code explanation<br />
+[/edit]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">15th January 2004 08:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Next job with my stuff, trying to get points to change on beat.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">17th January 2004 19:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		by the by, next time please don't revive three year old threads....
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">18th January 2004 16:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		lol, I didn't even notice that :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">19th January 2004 04:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Neither did I, sorry about that!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">25th January 2004 08:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Atero </i><br />
+<b>by the by, next time please don't revive three year old threads.... </b></blockquote>
+rofl.<br />
+<br />
+i think that i too have been guilty of this once so thats all i'll say right there. it is strange how old threads get resurrected.. i think its probably the result of the search feature being used then replying to a post without thinking. or do people really search through page after page of winamp forum archives by hand (mouse i suppose)?<br />
+<br />
+:weird:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">26th January 2004 10:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		of course it's the search option, no-one would read about 50 pages of forum topics if maybe their question is already answered. Certainly not new people.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Braininator</span><br />
+			<span class="date small text-muted">28th January 2004 08:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		So we're expected to search for a thread relevant to our problem, but if it's three years old we can't reply to it. Weird.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Timzone8</span><br />
+			<span class="date small text-muted">28th January 2004 13:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Newbie here....</strong><br />
+		
+		
+
+		I've been making some avs' with the presets and eventually found it well, boring, so I want to learn how to make Superscopes...<br />
+All I need to know is a few basic formulas to get me started. Could someone post some Superscope &quot;codes&quot; for:<br />
+Circle, Triangle, Square, Star, Sphere, Cube, Prism???<br />
+I can understand the x,y,i,v just not quite the sin(cos(tan( to it.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">28th January 2004 15:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				So we're expected to search for a thread relevant to our problem, but if it's three years old we can't reply to it. Weird.</blockquote>
+Err no. You're supposed to look for old discussions about your question. If you find an answer, that's it. If you don't, start a new topic with your specific issue.<br />
+<br />
+<br />
+Oh and Timzone8: Read. The. FAQ. It's right in front of your nose.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Timzone8</span><br />
+			<span class="date small text-muted">29th January 2004 06:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Where's the FAQ on superscopes? (this is it isn't it?) :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">29th January 2004 06:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		There isn't one, but there are several threads which discuss superscope maths which are linked to in the AVS FAQ at the top of the main AVS forum.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">martyexodus</span><br />
+			<span class="date small text-muted">2nd January 2005 04:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		now, i may be mistaken, but instead of going through all that to make a line from the center to the upper-left, could you just put:<br />
+<br />
+init:<br />
+n=50;x=0;y=0<br />
+<br />
+point:<br />
+x=x+i<br />
+y=y-i<br />
+<br />
+<br />
+I havent tried it, but judging from what i know, that should work.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hboy</span><br />
+			<span class="date small text-muted">2nd January 2005 08:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by martyexodus </i><br />
+<b><br />
+I havent tried it, but judging from what i know, that should work. </b></blockquote>
+No, it doesn't work like this. It works like this:<br />
+<br />
+<pre><code><br />
+&quot;init&quot;<br />
+n=10<br />
+<br />
+&quot;per pixel&quot;<br />
+x=-i;<br />
+y=-i;<br />
+</code></pre><br />
+<br />
+at least if you reviwe dead for a year ago, please do it with thinking before it. Why the fuck didn't you just try the code before posting? Be ready for some serious flaming dude.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">2nd January 2005 09:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		umm someone wanna deploy a ACTUAL SSC HELP GUIDE?! (ffs not hard enough?)<br />
+
+	<blockquote>
+			
+				Superscope tutorial goes here<br />
+But for now, here is the old text:<br />
+You can specify expressions that run on Init, Frame, and on Beat.<br />
+  'n' specifies the number of points to render (set this in Init, Beat, or Frame).<br />
+For the 'Per Point' expression (which happens 'n' times per frame), use:<br />
+  'x' and 'y' are the coordinates to draw to (-1..1)<br />
+  'i' is the position of the scope (0..1)<br />
+  'v' is the value at that point (-1..1).<br />
+  'b' is 1 if beat, 0 if not.<br />
+  'red', 'green' and 'blue' are all (0..1) and can be modified<br />
+  'linesize' can be set from 1.0 to 255.0<br />
+  'skip' can be set to &gt;0 to skip drawing the current item<br />
+  'drawmode' can be set to &gt; 0 for lines, &lt;= 0 for points<br />
+  'w' and 'h' are the width and height of the screen, in pixels.<br />
+ Anybody want to send me better text to put here? Please :)</blockquote>
+umm how's this supposed to help?! :( ?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hboy</span><br />
+			<span class="date small text-muted">2nd January 2005 09:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		actually, if you do know some english and posess some logic, you may fully understand that quoted help. and besides, somehow all avs artists before today and some even today understand it. because it is simple! you just have to think!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">2nd January 2005 19:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hboy pwnd joo<br />
+<br />
+I learned superscopes all by myself back when I was in 6th grade. I had no fourms, no online help, it was just me and the code, and I conquered it. Do it yourself.<br />
+<br />
+<br />
+bunny<br />
+<a href="http://www.evsc.k12.in.us/curriculum/socstud/images/ch1/rabbit.jpg" target="_blank">http://www.evsc.k12.in.us/curriculum...ch1/rabbit.jpg</a>
+		</p>
+</div>
+
+	<hr />
+
+
+
+
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hboy</span><br />
+			<span class="date small text-muted">2nd January 2005 19:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thats a cute bunny i must say ^.^
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">5th January 2005 21:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		This thread just dont wanna die
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">5th January 2005 21:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		so let's keep it as it is now and come back in a year from now...<br />
+good bye everyone and see you next january
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">randomee</span><br />
+			<span class="date small text-muted">24th October 2007 00:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		some question to the superscope stuff, im new to the plugins and visualisation stuff but interested in something like an oscilloscope.<br />
+<br />
+i just recently came around this youtube video of a &quot;song&quot; (flac compressed audio data) that was published on the assembly 2007 to make an oscilloscope display fancy animations and &quot;intro&quot;-like stuff...<br />
+<br />
+<a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
+<br />
+the flac song file can be found here:<br />
+<a href="http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac" target="_blank">http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac</a><br />
+<br />
+since winamp can play flac stuff and can visualize stuff, i was trying to draw the x and y axis with the values of the song or something like that.<br />
+<br />
+any hints into this?<br />
+<br />
+thanks for any replies.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">randomee</span><br />
+			<span class="date small text-muted">24th October 2007 09:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		are my posted links supposed to appear properly, or are links forbidden in this forum?<br />
+<br />
+:(
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Grandchild</span><br />
+			<span class="date small text-muted">24th October 2007 12:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		links by jubior members aren't visible but can be seen by clicking on quote.<br />
+<a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
+and<br />
+<a href="http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac" target="_blank">http://kapsi.fi/~jpa/stuff/other/youscope-wave.flac</a><br />
+<br />
+i think i understand what you want, which is very simple indeed.<br />
+- you have opened the avs editor<br />
+- preset&gt;new<br />
+- in [main] check &quot;clear every frame&quot;<br />
+- +&gt;render&gt;superscope<br />
+- select the scope delete everything in it.<br />
+- put this in the point box:<br />
+<pre><code>x=getosc(i,0,2);<br />
+y=-getosc(i,0,1);</code></pre><br />
+- and in the init box:<br />
+<pre><code>n = 1000</code></pre><br />
+- there you go, now play the file...<br />
+<br />
+it's actually kind of funny, i've never seen stuff like that on avs :) only problem is, it doesn't look quite as good as the thing on youtube, because avs' oscillograph resolution isn't so good.<br />
+<br />
+gc
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">randomee</span><br />
+			<span class="date small text-muted">24th October 2007 16:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thats cool, thanks for the quick reply mate and help with the task :)<br />
+<br />
+cheers.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">QOAL</span><br />
+			<span class="date small text-muted">24th October 2007 17:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Lets make it a bit more oscilloscope like then...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">randomee</span><br />
+			<span class="date small text-muted">24th October 2007 19:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hehe sweetness. thanks for the update on the effects :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">PAK-9</span><br />
+			<span class="date small text-muted">31st October 2007 14:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Revived for the fourth time, its like night of the living thread.<br />
+<br />
+<font size="1">sorry</font>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Grandchild</span><br />
+			<span class="date small text-muted">2nd November 2007 18:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		well that pun wasn't too bad :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">AJ Sindri</span><br />
+			<span class="date small text-muted">27th November 2007 05:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Here's so basic shapes that are easy to make:<br />
+<br />
+Oscope line:<br />
+x=i*2-1;<br />
+y=v<br />
+<br />
+Rotating oscope line:<br />
+t=//angle in radians;<br />
+x=sin(t+v)*i;<br />
+y=cos(t+v)*i;<br />
+<br />
+Oscope circle:<br />
+i=i*2*$pi;<br />
+x=sin(i)*acos(v)/3;<br />
+y=cos(i)*acos(v)/3;<br />
+<br />
+Instead of using v, you could do something like this:<br />
+vNew=getosc(i,0,0)<br />
+<br />
+Crazy? (saw this off of FramesOfReality's black hole):<br />
+x=getosc(i/2,0,0);<br />
+y=getosc(i/2+.5,0,0)<br />
+<br />
+Hope that helps. Sorry it's so uber basic ^_^
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">18th December 2007 13:44 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Let this die! FFS!<br />
+<br />
+Also see PAK's excellent AVS guide for help with SSC. Also the help.<br />
+<br />
+As usual, you can all do it with no reference... because we did!
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

@@ -1,380 +1,642 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="My best so far AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" My best so far AVS" />
 
-  <title>My best so far - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> My best so far - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">My best so far</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=120947">My best so far</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">11th January 2003 01:21 GMT</span></p>
-
-      <p class="post-content"><strong>My best so far</strong><br />
-      Starting to get the hang of this now, heres ten of my best. Some feedback please, suggestions, etc etc.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">11th January 2003 02:09 GMT</span></p>
-
-      <p class="post-content">Psychotic Mental Patient - Needs alpha blending and something else besides the DM. Also the colors form a hard edge - try to get rid of this.<br />
-      Softening - Alright effect with the DM, but it turns completely white sometimes because of the bump. The SSC shouldn't use the color cycler - use the red/green/blue variables to make it responsive.<br />
-      Supersonic - Don't really like the colors. This preset isn't very responsive and needs some more work.<br />
-      Hellfire - Needs some changes IMHO. I like it more with the first movement being changed to a DM (for ex. - frame: gd=.9*gd+.1*dd;beat: dd=rand(100)/100;pixel: d=d*gd;) and without the unique tone.<br />
-      Nightmare - O.K. but I've seen similar. Change the oscilliscope star to a SS.<br />
-      No escape - Not bad, I kinda like the effect. The last DM should be changed to a more reactive 3D DM.<br />
-      Water movement - I like the background. Nice tile effect. The SS is definitely different - kinda looks cool when you raise in to about 2000 or so.<br />
-      Drained - get rid of the stretched edges - Also the drain effect isn't very obvious.<br />
-      Tiled - Similar to others in the pack. Use a 3D DM.<br />
-      Swirly - Seen a similar effect before. Change the moving particles to SSCs - this will improve it some, but this is an often used effect.<br />
-      <br />
-      Overall I give the pack a 3. Work on 3D math and make the colors more eye-friendly.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">11th January 2003 02:20 GMT</span></p>
-
-      <p class="post-content">Thanks for the tips, in agreement with most of them, i like the colours in supersonic btw :p<br />
-      <br />
-      been avsing for a couple months and 3d math really isnt my speciality (major understatement) but i got that lot done so i could probably do it with a little time. See more feedback first tho.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">11th January 2003 09:07 GMT</span></p>
-
-      <p class="post-content">Not bad overall. Some need work, some are fine the way they are. Personal fave was water movement. Don't think I've seen anything quite like it. :)<br />
-      <br />
-      I found some of them to run a bit too slow on my athalon 800. :(<br />
-      <br />
-      I wouldn't use anything as jumpy as getosc in a calculation that's done each frame, I find it makes the preset too chaotic and dtracts from the whole preset.<br />
-      <br />
-      A quick and easy way to get rid of the edges for drain would be 4 black superscopes, one for each side.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">11th January 2003 15:47 GMT</span></p>
-
-      <p class="post-content">Another way is to tile it so that the edges match (several ways to do this). Water movement is definitely original. Also, to speed up some of them you can take out things like blurs. Here's some recomendations.<br />
-      In psychotic mental patient the brightness, the simple, and the blur are hardly noticable; use alpha blending to hide the back instead of the simples.<br />
-      In softening I would recommend taking out the bump and changing the effect list to subtractive2/replace. It looks somewhat interesting with a fast brightness in there too.<br />
-      In supersonic take out at least one of the blurs and I like it w/o the water.<br />
-      In hellfire change the brightness to a fast brightness and the last effectlist doesn't seem to do anything.<br />
-      In no escape take out some bumps and blends in the effectlist.<br />
-      In Water Movement take out the blur and blitter feedback and try to find a different dynamic movement that doesn't have a vertical line that doesn't change (this is somewhat obvious in the preset).<br />
-      In drained take out a blur.<br />
-      In tiled take out a couple bumps and blurs and taking out the first mirror is optional. This added a total of 10FPS on my computer.<br />
-      In swirly taking out the bump adds a lot of FPS but changes the effect some. Doesn't really matter because swirly is already fast.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">11th January 2003 20:01 GMT</span></p>
-
-      <p class="post-content">Can anyone give me any help regarding alpha blending in DM's?<br />
-      <br />
-      Ive searched around the forums but i havent found anything that could help me in the Dm's ive used in these presets.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">11th January 2003 20:39 GMT</span></p>
-
-      <p class="post-content">Ive done what i wanted to do with phsycoticmentalpatient with a superscope but i dont know how to blend the black and white with the colours of the other one, i just want to know if i can and how to do this effect to bland with the colours.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">11th January 2003 20:54 GMT</span></p>
-
-      <p class="post-content">oh by the way i forgot to mention, this isnt the slightest bit useful in any way, i was just using it to show what i wanted to do with alpha blending.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">11th January 2003 23:34 GMT</span></p>
-
-      <p class="post-content">alpha is a variable used to define the transparency of the pixels changed by the DM. Alpha ranges from 0 (no trans.) to 1 (full trans. where only the image defined in the source box is displayed). To see the effects of it in 04.avs add the line "alpha=(x+1)/2;" to the end of the pixel editbox and check the blend box.<br />
-      <br />
-      I might have gotten the alpha values mixed up. Let me know if I did.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">12th January 2003 00:24 GMT</span></p>
-
-      <p class="post-content">Ok i think i get it now, thanks annubis, ill repost all of them with some improvememt when im done.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">12th January 2003 01:31 GMT</span></p>
-
-      <p class="post-content">Ive redone a lot of things, thanks for the help guys, ive got 5 presets that i consider packworthy. I dont want to release one of those crappy packs full of presets all seen before and too bright and chaotic moving particles.... etc etc you get the idea. I want to release a good pack i can be proud of.<br />
-      <br />
-      First off, "Phsycoticmentalpatient", Used a different movement to get rid of that line that kept moving around and used alpha blending and a superscope to redo the back bit. Used mirrors at points though (last resort).<br />
-      "Softening", changed the superscope so it dosent use the colour cycler, no longer fades to white at points.<br />
-      "No Escape", its basically the same, i tried making a 3d DM for it but it ruined the effect so i left it the way it was, probably made some minor changes, cant remember.<br />
-      "Water movement", made this much more interesting with a DM.<br />
-      "Tiled", Changed the Dmso its less like No Escape, changed the colours around and some of the cheap effects, no major changes but still looks much better.<br />
-      <br />
-      Any suggestions, tips, constructive critisism, whatever, the usual crap very welcome.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">12th January 2003 05:10 GMT</span></p>
-
-      <p class="post-content">Psychotic Mental Patient - Much better but still has a couple of problems. The alpha blending runs into the sides some. This can be fixed by changing it to alpha=x+3. Also using a buffer blend with a solid color could look a little better but isn't necessary.<br />
-      Softening - Try making the colors beat responsive.<br />
-      No escape - take out the bumps and blends for additional FPS.<br />
-      Water movement - This is definitely original<br />
-      Tiled - I like it! Take out the colorfade the first mirror and the blur. And in the second DM you use x and y but rectangular coordinates isn't checked.<br />
-      Big improvement on all presets. Make some more before you release a pack though. 5 isn't enough.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">12th January 2003 05:30 GMT</span></p>
-
-      <p class="post-content">Yeah i know im not finished yet lol, i was just showing what ive done so far.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">VisualAgnosia</span><br />
-      <span class="date small text-muted">14th January 2003 07:46 GMT</span></p>
-
-      <p class="post-content">hey Raz nice work.. I love water movement It's beautiful do you mind if I use it ... I will give you credit for it. I will turn it into a jellyfish sacle it down (hopefully-code) and put it in my fish bowl.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">14th January 2003 17:43 GMT</span></p>
-
-      <p class="post-content">yea sure nice idea, just some credit and do what you want :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">15th January 2003 21:36 GMT</span></p>
-
-      <p class="post-content">Did some work on drained, looks better. Might keep it, might not. Needs something else i think. Here it is anyway</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">15th January 2003 21:42 GMT</span></p>
-
-      <p class="post-content">It now has UES(Ugly Edge Syndrome). Use a higher grid size to fix this. Or you can find another way to cut off the rest of the screen (i.e black lines at x=-1, x=1, y=-1, and y=1). Also have it change rotational velocities smoothly (vx=.9*vx+.1*tvx, etc.).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 01:59 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by anubis2003</i><br />
-        <b>It now has UES(Ugly Edge Syndrome).</b>
-      </blockquote>I don't think u have the right to say that<br />
-      <br />
-      the preset in your eyes may seem dull or now how you want it but never the less as long as the maker likes it..thats all that matters<br />
-      <br />
-      <br />
-      anyway I've been getting retro again with avs have alook at my tweek on Raz's avs<br />
-      <br />
-      btw where abouts in Manchester are you Raz?
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">21st January 2003 02:10 GMT</span></p>
-
-      <p class="post-content">Nice remix, i like the soft colours and the way the edges dont look to abrupt now, good job. Oh yeah from middleton btw.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st January 2003 02:13 GMT</span></p>
-
-      <p class="post-content">Ugly Edges are considered the edges in DM's that seem out of place and are side effects of some 3D DM's. In his preset if you look at the edges of the rectangle you will notice them curving and folding. If this is the effect that he is going for, then he is free to use it, but it is normally not desired. I'm not personally dissing his preset, I'm just using what is the common name given to this side effect. In order to fix it, the grid size can be increased or use some sort of tiling, etc.<br />
-      Regarding your remix- not much of a remix than a new preset, I can't even tell visually that it is a remix. I like the effect though. The brightness needs to be turned down some and it needs to be sped up(only 11FPS at 320x200 windowed).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 02:25 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Raz_001</i><br />
-        <b>Nice remix, i like the soft colours and the way the edges dont look to abrupt now, good job. Oh yeah from middleton btw.</b>
-      </blockquote>used to live in Heywood (hopwood) now living in Rochdale :) nice to someone close to me :D
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">21st January 2003 02:31 GMT</span></p>
-
-      <p class="post-content">yeah, i go to school in rochdale, go to cardinal langley.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 02:41 GMT</span></p>
-
-      <p class="post-content">what the hell u doing up :D its way past your bedtime<br />
-      <br />
-      kids these days!!! :)<br />
-      <br />
-      I went to St Joesphs in hopwood - now I'm doing sod all :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">21st January 2003 02:46 GMT</span></p>
-
-      <p class="post-content">i have a very strange sleeping pattern, i sleep about 1 hour a night and do a shitload of work during the 5 day week, then sleep most of the weekend. Weird but hey, works for me.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 02:49 GMT</span></p>
-
-      <p class="post-content">hey if it works for you then I can't say anything bad about it :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st January 2003 02:56 GMT</span></p>
-
-      <p class="post-content">Do you guys mind using a PM?:cool:</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 03:00 GMT</span></p>
-
-      <p class="post-content">:D lol its a forum m8tee, u never know who your talking to :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st January 2003 03:02 GMT</span></p>
-
-      <p class="post-content">Yeah, but they put in the private message feature for a reason. Most people don't care about manchester(no offense).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Raz</span><br />
-      <span class="date small text-muted">21st January 2003 03:06 GMT</span></p>
-
-      <p class="post-content">I dont care about manchester, its a shithole, im shifting as soon as possible, will use PM from now on.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 03:07 GMT</span></p>
-
-      <p class="post-content">I totally agree with you but it was a post reply<br />
-      <br />
-      I can see why I'm in GD most of the time...not many talk in avs..shame..might promote #******* here again</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">21st January 2003 03:12 GMT</span></p>
-
-      <p class="post-content">Yeah, in GD you can talk about whatever. What was really pissing me off is that for some reason I was subscribed to this thread and it wasn't letting me unsubscribe so I got an e-mail everytime you guys put up a message. It finally let me unsubscribe though.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">bluetape2k1</span><br />
-      <span class="date small text-muted">21st January 2003 03:16 GMT</span></p>
-
-      <p class="post-content">I'm sorry about that<br />
-      <br />
-      I normally turn that option off</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">22nd January 2003 16:49 GMT</span></p>
-
-      <p class="post-content">Set up your profile option so that you're not subscribed as default. That's what I do. I just check in every couple of days.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">22nd January 2003 17:06 GMT</span></p>
-
-      <p class="post-content">It wasn't defaulted. Something weird happened and subscribed be to the thread. Oh well, I'm not subscribed anymore.</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">My best so far</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=120947">My best so far</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">11th January 2003 01:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>My best so far</strong><br />
+		
+		
+			
+		
+
+		Starting to get the hang of this now, heres ten of my best. Some feedback please, suggestions, etc etc.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">11th January 2003 02:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Psychotic Mental Patient - Needs alpha blending and something else besides the DM.  Also the colors form a hard edge - try to get rid of this.<br />
+Softening - Alright effect with the DM, but it turns completely white sometimes because of the bump.  The SSC shouldn't use the color cycler - use the red/green/blue variables to make it responsive.<br />
+Supersonic - Don't really like the colors.  This preset isn't very responsive and needs some more work.<br />
+Hellfire - Needs some changes IMHO. I like it more with the first movement being changed to a DM (for ex. - frame: gd=.9*gd+.1*dd;beat: dd=rand(100)/100;pixel: d=d*gd;) and without the unique tone.<br />
+Nightmare - O.K. but I've seen similar. Change the oscilliscope star to a SS.<br />
+No escape - Not bad, I kinda like the effect.  The last DM should be changed to a more reactive 3D DM.<br />
+Water movement - I like the background. Nice tile effect. The SS is definitely different - kinda looks cool when you raise in to about 2000 or so.<br />
+Drained - get rid of the stretched edges - Also the drain effect isn't very obvious.<br />
+Tiled - Similar to others in the pack. Use a 3D DM.<br />
+Swirly - Seen a similar effect before.  Change the moving particles to SSCs - this will improve it some, but this is an often used effect.<br />
+<br />
+Overall I give the pack a 3.  Work on 3D math and make the colors more eye-friendly.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">11th January 2003 02:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Thanks for the tips, in agreement with most of them, i like the colours in supersonic btw :p <br />
+<br />
+been avsing for a couple months and 3d math really isnt my speciality (major understatement) but i got that lot done so i could probably do it with a little time. See more feedback first tho.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">11th January 2003 09:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Not bad overall. Some need work, some are fine the way they are. Personal fave was water movement. Don't think I've seen anything quite like it. :)<br />
+<br />
+I found some of them to run a bit too slow on my athalon 800. :( <br />
+<br />
+I wouldn't use anything as jumpy as getosc in a calculation that's done each frame, I find it makes the preset too chaotic and dtracts from the whole preset.<br />
+<br />
+A quick and easy way to get rid of the edges for drain would be 4 black superscopes, one for each side.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">11th January 2003 15:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Another way is to tile it so that the edges match (several ways to do this).  Water movement is definitely original.  Also, to speed up some of them you can take out things like blurs.  Here's some recomendations.<br />
+In psychotic mental patient the brightness, the simple, and the blur are hardly noticable; use alpha blending to hide the back instead of the simples.<br />
+In softening I would recommend taking out the bump and changing the effect list to subtractive2/replace. It looks somewhat interesting with a fast brightness in there too.<br />
+In supersonic take out at least one of the blurs and I like it w/o the water.<br />
+In hellfire change the brightness to a fast brightness and the last effectlist doesn't seem to do anything.<br />
+In no escape take out some bumps and blends in the effectlist.<br />
+In Water Movement take out the blur and blitter feedback and try to find a different dynamic movement that doesn't have a vertical line that doesn't change (this is somewhat obvious in the preset).<br />
+In drained take out a blur.<br />
+In tiled take out a couple bumps and blurs and taking out the first mirror is optional. This added a total of 10FPS on my computer.<br />
+In swirly taking out the bump adds a lot of FPS but changes the effect some.  Doesn't really matter because swirly is already fast.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">11th January 2003 20:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Can anyone give me any help regarding alpha blending in DM's? <br />
+<br />
+Ive searched around the forums but i havent found anything that could help me in the Dm's ive used in these presets.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">11th January 2003 20:39 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ive done what i wanted to do with phsycoticmentalpatient with a superscope but i dont know how to blend the black and white with the colours of the other one, i just want to know if i can and how to do this effect to bland with the colours.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">11th January 2003 20:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		oh by the way i forgot to mention, this isnt the slightest bit useful in any way, i was just using it to show what i wanted to do with alpha blending.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">11th January 2003 23:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		alpha is a variable used to define the transparency of the pixels changed by the DM.  Alpha ranges from 0 (no trans.) to 1 (full trans. where only the image defined in the source box is displayed). To see the effects of it in 04.avs add the line &quot;alpha=(x+1)/2;&quot; to the end of the pixel editbox and check the blend box.<br />
+<br />
+I might have gotten the alpha values mixed up. Let me know if I did.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">12th January 2003 00:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ok i think i get it now, thanks annubis, ill repost all of them with some improvememt when im done.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">12th January 2003 01:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Ive redone a lot of things, thanks for the help guys, ive got 5 presets that i consider packworthy. I dont want to release one of those crappy packs full of presets all seen before and too bright and chaotic moving particles.... etc etc you get the idea. I want to release a good pack i can be proud of.<br />
+<br />
+First off, &quot;Phsycoticmentalpatient&quot;, Used a different movement to get rid of that line that kept moving around and used alpha blending and a superscope to redo the back bit. Used mirrors at points though (last resort).<br />
+&quot;Softening&quot;, changed the superscope so it dosent use the colour cycler, no longer fades to white at points.<br />
+&quot;No Escape&quot;, its basically the same, i tried making a 3d DM for it but it ruined the effect so i left it the way it was, probably made some minor changes, cant remember.<br />
+&quot;Water movement&quot;, made this much more interesting with a DM.<br />
+&quot;Tiled&quot;, Changed the Dmso its less like No Escape, changed the colours around and some of the cheap effects, no major changes but still looks much better.<br />
+<br />
+Any suggestions, tips, constructive critisism, whatever, the usual crap very welcome.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">12th January 2003 05:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Psychotic Mental Patient - Much better but still has a couple of problems. The alpha blending runs into the sides some.  This can be fixed by changing it to alpha=x+3.  Also using a buffer blend with a solid color could look a little better but isn't necessary.<br />
+Softening - Try making the colors beat responsive.<br />
+No escape - take out the bumps and blends for additional FPS.<br />
+Water movement - This is definitely original<br />
+Tiled - I like it! Take out the colorfade the first mirror and the blur.  And in the second DM you use x and y but rectangular coordinates isn't checked.<br />
+Big improvement on all presets.  Make some more before you release a pack though. 5 isn't enough.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">12th January 2003 05:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah i know im not finished yet lol, i was just showing what ive done so far.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">VisualAgnosia</span><br />
+			<span class="date small text-muted">14th January 2003 07:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hey Raz nice work.. I love water movement It's beautiful do you mind if I use it ... I will give you credit for it. I will turn it into a jellyfish sacle it down (hopefully-code) and put it in my fish bowl.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">14th January 2003 17:43 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yea sure nice idea, just some credit and do what you want :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">15th January 2003 21:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		Did some work on drained, looks better. Might keep it, might not. Needs something else i think. Here it is anyway
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">15th January 2003 21:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It now has UES(Ugly Edge Syndrome).  Use a higher grid size to fix this.  Or you can find another way to cut off the rest of the screen (i.e black lines at x=-1, x=1, y=-1, and y=1).  Also have it change rotational velocities smoothly (vx=.9*vx+.1*tvx, etc.).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 01:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by anubis2003 </i><br />
+<b>It now has UES(Ugly Edge Syndrome).</b></blockquote>
+I don't think u have the right to say that<br />
+<br />
+the preset in your eyes may seem dull or now how you want it but never the less as long as the maker likes it..thats all that matters<br />
+<br />
+<br />
+anyway I've been getting retro again with avs have alook at my tweek on Raz's avs<br />
+<br />
+btw where abouts in Manchester are you Raz?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">21st January 2003 02:10 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice remix, i like the soft colours and the way the edges dont look to abrupt now, good job. Oh yeah from middleton btw.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st January 2003 02:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Ugly Edges are considered the edges in DM's that seem out of place and are side effects of some 3D DM's.  In his preset if you look at the edges of the rectangle you will notice them curving and folding.  If this is the effect that he is going for, then he is free to use it, but it is normally not desired.  I'm not personally dissing his preset, I'm just using what is the common name given to this side effect.  In order to fix it, the grid size can be increased or use some sort of tiling, etc.<br />
+Regarding your remix- not much of a remix than a new preset, I can't even tell visually that it is a remix.  I like the effect though.  The brightness needs to be turned down some and it needs to be sped up(only 11FPS at 320x200 windowed).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 02:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Raz_001 </i><br />
+<b>Nice remix, i like the soft colours and the way the edges dont look to abrupt now, good job. Oh yeah from middleton btw. </b></blockquote>
+used to live in Heywood (hopwood) now living in Rochdale :) nice to someone close to me :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">21st January 2003 02:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah, i go to school in rochdale, go to cardinal langley.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 02:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		what the hell u doing up :D its way past your bedtime<br />
+<br />
+kids these days!!! :)<br />
+<br />
+I went to St Joesphs in hopwood - now I'm doing sod all :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">21st January 2003 02:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i have a very strange sleeping pattern, i sleep about 1 hour a night and do a shitload of work during the 5 day week, then sleep most of the weekend. Weird but hey, works for me.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 02:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		hey if it works for you then I can't say anything bad about it :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st January 2003 02:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Do you guys mind using a PM?:cool:
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 03:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:D lol its a forum m8tee, u never know who your talking to :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st January 2003 03:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, but they put in the private message feature for a reason. Most people don't care about manchester(no offense).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Raz</span><br />
+			<span class="date small text-muted">21st January 2003 03:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I dont care about manchester, its a shithole, im shifting as soon as possible, will use PM from now on.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 03:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I totally agree with you but it was a post reply <br />
+<br />
+I can see why I'm in GD most of the time...not many talk in avs..shame..might promote #******* here again
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">21st January 2003 03:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yeah, in GD you can talk about whatever. What was really pissing me off is that for some reason I was subscribed to this thread and it wasn't letting me unsubscribe so I got an e-mail everytime you guys put up a message. It finally let me unsubscribe though.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">bluetape2k1</span><br />
+			<span class="date small text-muted">21st January 2003 03:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'm sorry about that<br />
+<br />
+I normally turn that option off
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">22nd January 2003 16:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Set up your profile option so that you're not subscribed as default. That's what I do. I just check in every couple of days.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">22nd January 2003 17:06 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It wasn't defaulted.  Something weird happened and subscribed be to the thread. Oh well, I'm not subscribed anymore.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

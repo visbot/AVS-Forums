@@ -1,202 +1,339 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="linesize capped? AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" linesize capped? AVS" />
 
-  <title>linesize capped? - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> linesize capped? - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
-      <li class="active">linesize capped?</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=175375">linesize capped?</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">5th April 2004 06:28 GMT</span></p>
 
-      <p class="post-content"><strong>linesize capped?</strong><br />
-      Well while trying to do a fullscreen linear gradient with one superscope alone and with the help of linesize, i noticed that for some very very odd reason it is capped at certain point and it doesn't fill the whole screen :(<br />
-      <br />
-      Just try to make a fullscreen gradient with:<br />
-      frame<br />
-      linesize=w ; n=h<br />
-      <br />
-      pixel<br />
-      y=i*2-1 ; x=0 ; red=i ; green=red ; blue=red<br />
-      <br />
-      <br />
-      I think the linesize is a very powerful and useful variable and i can't just understand why it is limited this way... I hope they could update this or we will have to go on using a superscope and a movement :hang:</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-139.html">AVS Troubleshooting</a></li>
+		<li class="active">linesize capped?</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=175375">linesize capped?</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">5th April 2004 15:22 GMT</span></p>
 
-      <p class="post-content">yes, i noticed that too i think it's capped at 256 :(</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">5th April 2004 23:25 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">5th April 2004 06:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>linesize capped?</strong><br />
+		
+		
 
-      <p class="post-content">Never noticed that before, kinda stupid.</p>
-    </div>
-    <hr />
+		Well while trying to do a fullscreen linear gradient with one superscope alone and with the help of linesize, i noticed that for some very very odd reason it is capped at certain point and it doesn't fill the whole screen :(<br />
+<br />
+Just try to make a fullscreen gradient with:<br />
+frame<br />
+linesize=w ; n=h<br />
+<br />
+pixel<br />
+y=i*2-1 ; x=0 ; red=i ; green=red ; blue=red<br />
+<br />
+<br />
+I think the linesize is a very powerful and useful variable and i can't just understand why it is limited this way... I hope they could update this or we will have to go on using a superscope and a movement :hang:
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">6th April 2004 06:26 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I think it is 255 not 256 and its not stupid at all, you can use<br />
-      <b>unsigned char</b> in c++ that ofcourse optimizes avs code, but do you really need more line width?</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">5th April 2004 15:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">6th April 2004 06:37 GMT</span></p>
+		yes, i noticed that too i think it's capped at 256 :(
+		</p>
+</div>
 
-      <p class="post-content">Jaak...<br />
-      Now would i be posting this and whining and bitching about it if i would be happy with such great restrictions. :rolleyes:<br />
-      <br />
-      Now if i make a simple 2D square by using linesize, i want it to look correct even at 1024x768 resolution. And if i want to make a linear fullscreen gradient i sure as hell want that to look correct in all resolutions.<br />
-      <br />
-      The coded parts in the new avs version seem to run so fast that a single linesize free superscope would be faster than the superscope+movement combo /me thinks. Also i wouldn't have to use a effect list if i for example want to multiply blend it with something, just misc render mode and voil&#195;&#161;! :D</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">6th April 2004 15:28 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">5th April 2004 23:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"><strong>single SSC fullscreen gradient :)</strong><br />
-      you need a single superscope fullscreen gradient? here it is :D<br />
-      tested at 1152x864 :)<br />
-      it's done using the same system you use when wallpapering :)<br />
-      it simply does multiple gradients next to each other</p>
-    </div>
-    <hr />
+		Never noticed that before, kinda stupid.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th April 2004 22:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">if (lw&lt;1) lw=1;<br />
-      else if (lw&gt;255)lw=255;<br />
-      <br />
-      Yup.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">6th April 2004 06:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">7th April 2004 07:23 GMT</span></p>
+		I think it is 255 not 256 and its not stupid at all, you can use<br />
+<b>unsigned char</b> in c++ that ofcourse optimizes avs code, but do you really need more line width?
+		</p>
+</div>
 
-      <p class="post-content">Ok, now do me a square that is 50% size of the screen, with linesize.<br />
-      After that do me a solid oscilliscope that is 75% of the height, with linesize.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
-      <span class="date small text-muted">7th April 2004 08:22 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">6th April 2004 06:37 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">ok you won :)</p>
-    </div>
-    <hr />
+		Jaak...<br />
+Now would i be posting this and whining and bitching about it if i would be happy with such great restrictions. :rolleyes:<br />
+<br />
+Now if i make a simple 2D square by using linesize, i want it to look correct even at 1024x768 resolution. And if i want to make a linear fullscreen gradient i sure as hell want that to look correct in all resolutions.<br />
+<br />
+The coded parts in the new avs version seem to run so fast that a single linesize free superscope would be faster than the superscope+movement combo /me thinks. Also i wouldn't have to use a effect list if i for example want to multiply blend it with something, just misc render mode and voilá! :D
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">7th April 2004 08:53 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I just want it to be fixed, not a alternative solution. I don't think that it's a sin to ask for it :(</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">6th April 2004 15:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>single SSC fullscreen gradient :)</strong><br />
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">8th April 2004 00:31 GMT</span></p>
+		you need a single superscope fullscreen gradient? here it is :D<br />
+tested at 1152x864 :)<br />
+it's done using the same system you use when wallpapering :)<br />
+it simply does multiple gradients next to each other
+		</p>
+</div>
 
-      <p class="post-content">it is. there is absolutely no feasable reason any sane man would ever, ever want to have a line width greater than 64 to begin with. there are alternative ways to make gradients. i don't think i have to ennumerate them for you.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">8th April 2004 02:48 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th April 2004 22:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Just wanted to point this out, sorry.<br />
-      <br /></p>
+		if (lw&lt;1) lw=1;<br />
+else if (lw&gt;255)lw=255;<br />
+<br />
+Yup.
+		</p>
+</div>
 
-      <blockquote>
-        I just want it to be fixed
-      </blockquote>If Jaak is right about why it doesn't work, then it isn't really a bug, but a slightly overly agressive optimization. So it needs to be changed, not fixed.
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
-      <span class="date small text-muted">8th April 2004 08:19 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">7th April 2004 07:23 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">Atero, and i don't think i have to tell you the slowness of using a fullscreen solid scope with something like s=bnot(s) or a scope, movement and effect list just to get a different blend mode than replace.</p>
-    </div>
-    <hr />
+		Ok, now do me a square that is 50% size of the screen, with linesize.<br />
+After that do me a solid oscilliscope that is 75% of the height, with linesize.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">9th April 2004 16:34 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Slowness isn't the only problem, if you use s=bnot(s) it gets less solid looking when the window gets bigger which forces you to use crazy high values for n.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">TomyLobo</span><br />
+			<span class="date small text-muted">7th April 2004 08:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">11th April 2004 21:26 GMT</span></p>
+		ok you won :)
+		</p>
+</div>
 
-      <p class="post-content">using unsigned char's isn't a speed optimization though... using UCHARs will actually be slower than using int's. Modern processors run fastest with 32bit data so it would actually make more since to use int's. I think tuggummi's request is 100% valid.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">13th April 2004 03:17 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">7th April 2004 08:53 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">It doesn't actually use unsigned chars, it just caps the linesize.</p>
-    </div>
-    <hr />
+		I just want it to be fixed, not a alternative solution. I don't think that it's a sin to ask for it :(
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">13th April 2004 20:03 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Another downside of the s=bnot(s) thing is the 1 pixel shift. You won't notice this on n=w<i>(or h)</i>*2+2 with 100% fill, but it is inaccurate. If the problem could be changed, this would be an optimization. It sure is faster and more accurate.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">8th April 2004 00:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		it is.  there is absolutely no feasable reason any sane man would ever, ever want to have a line width greater than 64 to begin with.  there are alternative ways to make gradients.  i don't think i have to ennumerate them for you.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">8th April 2004 02:48 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Just wanted to point this out, sorry.<br />
+<br />
+
+	<blockquote>
+			
+				 I just want it to be fixed</blockquote>
+If Jaak is right about why it doesn't work, then it isn't really a bug, but a slightly overly agressive optimization.  So it needs to be changed, not fixed.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Tuggummi</span><br />
+			<span class="date small text-muted">8th April 2004 08:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Atero, and i don't think i have to tell you the slowness of using a fullscreen solid scope with something like s=bnot(s) or a scope, movement and effect list just to get a different blend mode than replace.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">9th April 2004 16:34 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Slowness isn't the only problem, if you use s=bnot(s) it gets less solid looking when the window gets bigger which forces you to use crazy high values for n.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">11th April 2004 21:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		using unsigned char's isn't a speed optimization though... using UCHARs will actually be slower than using int's.  Modern processors run fastest with 32bit data so it would actually make more since to use int's.  I think tuggummi's request is 100% valid.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">13th April 2004 03:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It doesn't actually use unsigned chars, it just caps the linesize.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">13th April 2004 20:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Another downside of the s=bnot(s) thing is the 1 pixel shift. You won't notice this on n=w<i>(or h)</i>*2+2 with 100% fill, but it is inaccurate. If the problem could be changed, this would be an optimization. It sure is faster and more accurate.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

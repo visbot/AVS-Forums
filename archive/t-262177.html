@@ -1,190 +1,297 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rigid body physics... AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Rigid body physics... AVS" />
 
-  <title>Rigid body physics... - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Rigid body physics... - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-137.html">AVS Presets</a></li>
 
-      <li class="active">Rigid body physics...</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=262177">Rigid body physics...</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">21st December 2006 00:38 GMT</span></p>
 
-      <p class="post-content"><strong>Rigid body physics...</strong><br />
-      I made this preset recently to test the practicality of making a physicsy preset... it seems to work fine except for a couple of strange bugs.<br />
-      <br />
-      1.) After the cube settles a mysterious "wobbling" starts to happen. Despite how it may appear this doesn't come from the collision (like the usual wobbling in most game physics) but from my integrator. I've tried adding dampening to no avail. If I remove the constraints the problem doesn't disappear either. I have a hunch that it is to do with rounding errors somehow but can't work it out.<br />
-      <br />
-      2.) It doesnt draw anything when TomyLobo tries to watch it.<br />
-      <br />
-      I get the feeling that I will be able to resolve the wobble by either fixing my integrator, or abandoning it and replacing it... but 2 is just weird since there is no dependency on external files or the like..<br />
-      <br />
-      If you want to change the starting velocity and spin of the cube I added some variables to apply different velocities to two opposite vertices on the first frame. In the first superscope you can modify these lines to change them:<br />
-      <br />
-      svx = 2; svy = 0; svz = ivz; // velocity for the first vertex so that it can spin<br />
-      tvx = -2; tvy = 1; tvz = ivz; // velocity for the second vertex so that it can tumble<br />
-      <br />
-      It is possible to roll the cube along the ground by making sure that the velocities don't balance in x and z.<br />
-      <br />
-      If anyone is interested this physics model can be quite easily extended to any triangular model with a little preprocessing to determine some constraints. Its just a shame that there is an instability for the moment...<br />
-      <br />
-      If anyone can shed any light on the bugs it would be most appreciated. :)<br />
-      <br />
-      Please excuse the ugliness of the cube, it doesn't even backface cull!</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-137.html">AVS Presets</a></li>
+		<li class="active">Rigid body physics...</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=262177">Rigid body physics...</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">21st December 2006 10:27 GMT</span></p>
 
-      <p class="post-content">I stayed up quite late working on this last night... I managed to remove the instability from the integrator, it is now stable if I remove the constraints, I also added some different friction for the ground and some simple deformability/elasticity for the cube. It is still unstable but might be okay with a little work, or when applied to a situation where nothing comes to rest (imagine the cube rolling down a 45-degree incline).<br />
-      <br />
-      Anyway, I was going to post it up this morning but I forgot to update the file on my ftp with the latest version. I also forgot that I can't access ftp at work.<br />
-      <br />
-      I would post the link but I don't particularly want people browsing the unsecure root of my ftp...<br />
-      <br />
-      Anyway, I am disappointed that there has been no feedback yet... being the first new technical thing in AVS for quite a while and all.<br />
-      <br />
-      Now... to make a hypercube with physics... and project it onto a 3-sphere...</p>
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">21st December 2006 17:18 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">21st December 2006 00:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Rigid body physics...</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">here it is. i changed the starting conditions so it looks cooler too... :)</p>
-    </div>
-    <hr />
+		I made this preset recently to test the practicality of making a physicsy preset... it seems to work fine except for a couple of strange bugs.<br />
+<br />
+1.) After the cube settles a mysterious &quot;wobbling&quot; starts to happen. Despite how it may appear this doesn't come from the collision (like the usual wobbling in most game physics) but from my integrator. I've tried adding dampening to no avail. If I remove the constraints the problem doesn't disappear either. I have a hunch that it is to do with rounding errors somehow but can't work it out.<br />
+<br />
+2.) It doesnt draw anything when TomyLobo tries to watch it.<br />
+<br />
+I get the feeling that I will be able to resolve the wobble by either fixing my integrator, or abandoning it and replacing it... but 2 is just weird since there is no dependency on external files or the like..<br />
+<br />
+If you want to change the starting velocity and spin of the cube I added some variables to apply different velocities to two opposite vertices on the first frame. In the first superscope you can modify these lines to change them:<br />
+<br />
+svx = 2; svy = 0; svz = ivz;  // velocity for the first vertex so that it can spin<br />
+tvx = -2; tvy = 1; tvz = ivz;  // velocity for the second vertex so that it can tumble<br />
+<br />
+It is possible to roll the cube along the ground by making sure that the velocities don't balance in x and z.<br />
+<br />
+If anyone is interested this physics model can be quite easily extended to any triangular model with a little preprocessing to determine some constraints. Its just a shame that there is an instability for the moment...<br />
+<br />
+If anyone can shed any light on the bugs it would be most appreciated. :)<br />
+<br />
+Please excuse the ugliness of the cube, it doesn't even backface cull!
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
-      <span class="date small text-muted">22nd December 2006 00:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content"></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">21st December 2006 10:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <blockquote>
-        <i>Originally posted by jheriko</i><br />
-        <b>Now... to make a hypercube with physics... and project it onto a 3-sphere...</b>
-      </blockquote>&lt;droool&gt;<br />
-      <br />
-      I'll check out the preset latter tonight.
-    </div>
-    <hr />
+		I stayed up quite late working on this last night... I managed to remove the instability from the integrator, it is now stable if I remove the constraints, I also added some different friction for the ground and some simple deformability/elasticity for the cube. It is still unstable but might be okay with a little work, or when applied to a situation where nothing comes to rest (imagine the cube rolling down a 45-degree incline).<br />
+<br />
+Anyway, I was going to post it up this morning but I forgot to update the file on my ftp with the latest version. I also forgot that I can't access ftp at work.<br />
+<br />
+I would post the link but I don't particularly want people browsing the unsecure root of my ftp... <br />
+<br />
+Anyway, I am disappointed that there has been no feedback yet... being the first new technical thing in AVS for quite a while and all.<br />
+<br />
+Now... to make a hypercube with physics... and project it onto a 3-sphere...
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">22nd December 2006 00:55 GMT</span></p>
+	<hr />
 
-      <p class="post-content">Now it is so very nearly stable, you have to wait a good few seconds for it to flip out. This is good enough for a preset in several ways now. As long as the cube keeps moving there is no instability. I might make a version tomorrow with a cube rolling down a slope.. but now its getting quite late here.<br />
-      <br />
-      Enjoy.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">21st December 2006 17:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JaVS_v2.5</span><br />
-      <span class="date small text-muted">23rd December 2006 03:36 GMT</span></p>
+		here it is. i changed the starting conditions so it looks cooler too... :)
+		</p>
+</div>
 
-      <p class="post-content">wOw, pretty cool!</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nanakiwurkz</span><br />
-      <span class="date small text-muted">23rd December 2006 20:11 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">S-uper_T-oast</span><br />
+			<span class="date small text-muted">22nd December 2006 00:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content"><strong>Here you go</strong><br />
-      I looked into the code and found what was causing the warping.<br />
-      <br />
-      I've tested the preset like 100 times and waited without closing avs window and the cube remains stable for about 1-5 mins. i'll let you take it from there.<br />
-      also as you know i'm not very Inclined in math so please show some mercy if the correction is not what you wanted.<br />
-      Chow.</p>
-    </div>
-    <hr />
+		
+	<blockquote>
+			
+				<i>Originally posted by jheriko </i><br />
+<b>Now... to make a hypercube with physics... and project it onto a 3-sphere... </b></blockquote>
+&lt;droool&gt;<br />
+<br />
+I'll check out the preset latter tonight.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">23rd December 2006 21:28 GMT</span></p>
+	<hr />
 
-      <p class="post-content">you broke the framerate independence.. and added some random shit. (t=sin(oldt))<br />
-      <br />
-      effectively you broke my timer which means that it uses a constant time step, which makes my integration much more stable.<br />
-      <br />
-      thanks but no thanks.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">22nd December 2006 00:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+			
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hornet777</span><br />
-      <span class="date small text-muted">24th December 2006 03:21 GMT</span></p>
+		Now it is so very nearly stable, you have to wait a good few seconds for it to flip out. This is good enough for a preset in several ways now. As long as the cube keeps moving there is no instability. I might make a version tomorrow with a cube rolling down a slope.. but now its getting quite late here.<br />
+<br />
+Enjoy.
+		</p>
+</div>
 
-      <p class="post-content"></p>
+	<hr />
 
-      <blockquote>
-        2.) It doesnt draw anything when TomyLobo tries to watch it.
-      </blockquote>Wow jheriko, you were trying to impress us with the 'physics' part of the preset, but this selective ignore of forum members has the be the real star of your preset, not to mention where you <i>hid</i> that code!<br />
-      <br />
-      Seriously though, would it help to perhaps change the 'physical' perspective from one of mechanics to maybe one of electronics? An integrator is after an analogue computer, and in its most basic form, a capacitor. Would this make the maths easier and/or more compreshensible/discernable? Most likely a dead end, but throwing it in for grins.
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JaVS_v2.5</span><br />
+			<span class="date small text-muted">23rd December 2006 03:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">26th December 2006 19:01 GMT</span></p>
+		wOw, pretty cool!
+		</p>
+</div>
 
-      <p class="post-content">srsly... i really outdid myself by making not work for only one person :p<br />
-      <br />
-      the integrator is a bit flaky, but its fast. i might gut it and replace it with rk4, but it is stable enough for a preset for now. at worst i can at least turn it off should an object come to rest, and turn it on again when it has to move again... before it was so unstable that the cube never became slow enough to allow me to effectively cut off the small values.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
-      <span class="date small text-muted">27th December 2006 02:42 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nanakiwurkz</span><br />
+			<span class="date small text-muted">23rd December 2006 20:11 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Here you go</strong><br />
+		
+		
+			
+		
 
-      <p class="post-content">Cube_1 doesnt work for me as you already know :)</p>
-    </div>
-    <hr />
+		I looked into the code and found what was causing the warping.<br />
+<br />
+I've tested the preset like 100 times and waited without closing avs window and the cube remains stable for about 1-5 mins. i'll let you take it from there.<br />
+also as you know i'm not very Inclined in math so please show some mercy if the correction is not what you wanted.<br />
+Chow.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
-      <span class="date small text-muted">28th December 2006 12:49 GMT</span></p>
+	<hr />
 
-      <p class="post-content">I forgot actually. So its two people then.<br />
-      <br />
-      Its still quite amazing. I've never had this kind of 'selective functionality' from avs presets before.. it boggles the mind how it can happen. The only reasonable explanation i can think of is that you have a different triangle/avstrans APE to mine.<br />
-      <br />
-      This preset uses no components or code tricks that haven't already been used. All the physics stuff is just AVStrans code working in the megabuf.</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">23rd December 2006 21:28 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+		you broke the framerate independence.. and added some random shit. (t=sin(oldt))<br />
+<br />
+effectively you broke my timer which means that it uses a constant time step, which makes my integration much more stable.<br />
+<br />
+thanks but no thanks.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hornet777</span><br />
+			<span class="date small text-muted">24th December 2006 03:21 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				2.) It doesnt draw anything when TomyLobo tries to watch it.</blockquote>
+Wow jheriko, you were trying to impress us with the 'physics' part of the preset, but this selective ignore of forum members has the be the real star of your preset, not to mention where you <i>hid</i> that code! <br />
+<br />
+Seriously though, would it help to perhaps change the 'physical' perspective from one of mechanics to maybe one of electronics? An integrator is after an analogue computer, and in its most basic form, a capacitor. Would this make the maths easier and/or more compreshensible/discernable? Most likely a dead end, but throwing it in for grins.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">26th December 2006 19:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		srsly... i really outdid myself by making not work for only one person :p<br />
+<br />
+the integrator is a bit flaky, but its fast. i might gut it and replace it with rk4, but it is stable enough for a preset for now. at worst i can at least turn it off should an object come to rest, and turn it on again when it has to move again... before it was so unstable that the cube never became slow enough to allow me to effectively cut off the small values.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">MaTTFURY</span><br />
+			<span class="date small text-muted">27th December 2006 02:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Cube_1 doesnt work for me as you already know :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jheriko</span><br />
+			<span class="date small text-muted">28th December 2006 12:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I forgot actually. So its two people then.<br />
+<br />
+Its still quite amazing. I've never had this kind of 'selective functionality' from avs presets before.. it boggles the mind how it can happen. The only reasonable explanation i can think of is that you have a different triangle/avstrans APE to mine.<br />
+<br />
+This preset uses no components or code tricks that haven't already been used. All the physics stuff is just AVStrans code working in the megabuf.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

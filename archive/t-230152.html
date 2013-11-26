@@ -1,123 +1,175 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Optimization AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Optimization AVS" />
 
-  <title>Optimization - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> Optimization - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
 
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
-      <li><a href="f-85.html">AVS</a></li>
 
-      <li class="active">Optimization</li>
-    </ol>
 
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=230152">Optimization</a></p><br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
-      <span class="date small text-muted">5th November 2005 03:27 GMT</span></p>
 
-      <p class="post-content"><strong>Optimization</strong><br />
-      I've got some doodoo kaleidescope work. I'm rotating and mirroring and rotating and mirroring and so forth. How can I get it all into one hany dandy movement and save loads of fps?<br />
-      <br />
-      <br />
-      Note: It's a six way kaleido, each rotation is by $pi/3.</p>
-    </div>
-    <hr />
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">Optimization</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=230152">Optimization</a></p>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">StevenRoy</span><br />
-      <span class="date small text-muted">5th November 2005 07:45 GMT</span></p>
 
-      <p class="post-content">A mirror basically does this:</p>
-      <pre>
-<code>x=abs(x);y=abs(y)</code>
-</pre>To rotate something 1/6 (in rectangular coordinates), use something like this:
-      <pre>
-<code>xx=x*cos($pi/3)+y*sin($pi/3);<br />y=y*cos($pi/3)-x*sin($pi/3);<br />x=xx</code>
-</pre>These can easily be combined to achieve the desired effect.<br />
-      <br />
-      Of course, if this is going into a Dynamic Movement, then it may be a good idea to optimize the code afterwards. I'll leave it to others to explain how to do that. (If necessary.)<br />
-      <br />
-      Depending on what kind of effect you're trying to achieve, though, something as simple as a "r=r*3" might be close enough... or, horrors, "r=$pi*sin(r*3)" :D (Now I want to try that one somewhere!)
-    </div>
-    <hr />
+<br />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
-      <span class="date small text-muted">5th November 2005 14:46 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JFASI</span><br />
+			<span class="date small text-muted">5th November 2005 03:27 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>Optimization</strong><br />
+		
+		
 
-      <p class="post-content">Thanks.<br />
-      <br />
-      This raises another issue. Why<br />
-      <br />
-      xx=x*cos($pi/3)+y*sin($pi/3);<br />
-      y=y*cos($pi/3)-x*sin($pi/3);<br />
-      x=xx<br />
-      <br />
-      , and not just<br />
-      <br />
-      x=x*cos($pi/3)+y*sin($pi/3);<br />
-      y=y*cos($pi/3)-x*sin($pi/3);<br />
-      <br />
-      ?<br />
-      <br />
-      What difference can that make??? I see it all over the place and I don't understand it.</p>
-    </div>
-    <hr />
+		I've got some doodoo kaleidescope work. I'm rotating and mirroring and rotating and mirroring and so forth. How can I get it all into one hany dandy movement and save loads of fps?<br />
+<br />
+<br />
+Note: It's a six way kaleido, each rotation is by $pi/3.
+		</p>
+</div>
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">5th November 2005 15:24 GMT</span></p>
+	<hr />
 
-      <p class="post-content">It's because you have to calculate the new x and y basing on the original (="untransformed") x and y.<br />
-      <br />
-      In the y-line of your second example AVS will use "x*cos($pi/3)+y*sin($pi/3)" instead of just "x" because you previously assigned that to x.<br />
-      <br />
-      You could also use this code to avoid that mistake (perhaps it explains it a bit better this way):<br />
-      x1=x; y1=y;<br />
-      x=x1*cos($pi/3)+y1*sin($pi/3);<br />
-      y=y1*cos($pi/3)-x1*sin($pi/3);<br />
-      <br />
-      Hope i could make it somewhat clearer for you...</p>
-    </div>
-    <hr />
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">StevenRoy</span><br />
+			<span class="date small text-muted">5th November 2005 07:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
-      <span class="date small text-muted">5th November 2005 16:46 GMT</span></p>
+		A mirror basically does this:<pre><code>x=abs(x);y=abs(y)</code></pre>To rotate something 1/6 (in rectangular coordinates), use something like this:<pre><code>xx=x*cos($pi/3)+y*sin($pi/3);<br />
+y=y*cos($pi/3)-x*sin($pi/3);<br />
+x=xx</code></pre>These can easily be combined to achieve the desired effect.<br />
+<br />
+Of course, if this is going into a Dynamic Movement, then it may be a good idea to optimize the code afterwards. I'll leave it to others to explain how to do that. (If necessary.)<br />
+<br />
+Depending on what kind of effect you're trying to achieve, though, something as simple as a &quot;r=r*3&quot; might be close enough... or, horrors, &quot;r=$pi*sin(r*3)&quot; :D (Now I want to try that one somewhere!)
+		</p>
+</div>
 
-      <p class="post-content">Aha. I get it.<br />
-      That explains a lot. I had used it without the x1 and y1 and it looked all distorted. Thanks.</p>
-    </div>
-    <hr />
+	<hr />
 
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">^..^</span><br />
-      <span class="date small text-muted">5th November 2005 17:18 GMT</span></p>
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JFASI</span><br />
+			<span class="date small text-muted">5th November 2005 14:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
 
-      <p class="post-content">No Problem! That's what the forums are there for: gaining more insight every day! ;)</p>
-    </div>
-    <hr />
+		Thanks.<br />
+<br />
+This raises another issue. Why<br />
+<br />
+xx=x*cos($pi/3)+y*sin($pi/3);<br />
+y=y*cos($pi/3)-x*sin($pi/3);<br />
+x=xx<br />
+<br />
+, and not just <br />
+<br />
+x=x*cos($pi/3)+y*sin($pi/3);<br />
+y=y*cos($pi/3)-x*sin($pi/3);<br />
+<br />
+?<br />
+<br />
+What difference can that make??? I see it all over the place and I don't understand it.
+		</p>
+</div>
 
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">5th November 2005 15:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It's because you have to calculate the new x and y basing on the original (=&quot;untransformed&quot;) x and y.<br />
+<br />
+In the y-line of your second example AVS will use &quot;x*cos($pi/3)+y*sin($pi/3)&quot; instead of just &quot;x&quot; because you previously assigned that to x.<br />
+<br />
+You could also use this code to avoid that mistake (perhaps it explains it a bit better this way):<br />
+x1=x; y1=y;<br />
+x=x1*cos($pi/3)+y1*sin($pi/3);<br />
+y=y1*cos($pi/3)-x1*sin($pi/3);<br />
+<br />
+Hope i could make it somewhat clearer for you...
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">JFASI</span><br />
+			<span class="date small text-muted">5th November 2005 16:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Aha. I get it.<br />
+That explains a lot. I had used it without the x1 and y1 and it looked all distorted. Thanks.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">^..^</span><br />
+			<span class="date small text-muted">5th November 2005 17:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		No Problem! That's what the forums are there for: gaining more insight every day! ;)
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>

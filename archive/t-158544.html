@@ -1,835 +1,1315 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS 2.8b1! :) AVS" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" AVS 2.8b1! :) AVS" />
 
-  <title>AVS 2.8b1! :) - AVS Forums</title><!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+	<title> AVS 2.8b1! :) - AVS Forums</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
 </head>
-
 <body>
-  <div class="container">
-    <!-- Put navigation bar here -->
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">AVS 2.8b1! :)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=158544">AVS 2.8b1! :)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">4th December 2003 19:13 GMT</span></p>
-
-      <p class="post-content"><strong>AVS 2.8b1! :)</strong><br />
-      OK this version should resolve the loading preset bugs, finally. Hopefully. Also added some new superscope capabilities, including 'skip', 'linesize', and 'drawmode' (chooses points or lines).<br />
-      <br />
-      <a href="http://firehose.net/~deadbeef/avs28b1.zip" target="_blank">http://firehose.net/~deadbeef/avs28b1.zip</a><br />
-      <br />
-      -J</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">4th December 2003 19:17 GMT</span></p>
-
-      <p class="post-content">YAY! got to love skip and linesize...<br />
-      <br />
-      thank you so very much Justin<br />
-      <br />
-      [edit]<br />
-      linesize doesnt look very good, is it supposed to be like this, or is there bug?<br />
-      <br />
-      frame:<br />
-      t=t-0.01;<br />
-      st=sin(t);ct=cos(t);<br />
-      asp=w/h;<br />
-      <br />
-      point:<br />
-      px=i*2-1;<br />
-      py=0;<br />
-      x=px*st+py*ct;<br />
-      y=(-px*ct+py*st)*asp;<br />
-      <br />
-      linesize=100;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">4th December 2003 19:38 GMT</span></p>
-
-      <p class="post-content">100 is pretty big... just make sure your n is set low enough, and then it should be a big fat line.. if you do hundreds of points, you'll have a lot of 1 pixel by 100 pixel line stripes =)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">4th December 2003 19:52 GMT</span></p>
-
-      <p class="post-content">yeah, i was thinking of line width dependent triangel rendering ssc if i read 'linesize' :D, but oh well... skip is very cool ;)<br />
-      <br />
-      <br />
-      and again i must say... no arrays... no vectors... very cool things could be done with arrays, vectors would make coding much more easyer and many ssc/dm codes much more shorter. But I understand, you got work to do with winamp 5.<br />
-      <br />
-      i cant say anything about loading preset bug, this bug hasnt occured to me in previous versions, i just hope its fixed :D</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">4th December 2003 20:00 GMT</span></p>
-
-      <p class="post-content">Nice. Some great changes for now, but I hope that arrays are eventually added - don't have to be added for wa5, but eventually would be nice. Can't wait to see what people can make with all this new stuff. Cool.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">OnionRingOfDoom</span><br />
-      <span class="date small text-muted">4th December 2003 21:22 GMT</span></p>
-
-      <p class="post-content">Nice! UnConeD's gonna have a field day with this stuff!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">4th December 2003 22:18 GMT</span></p>
-
-      <p class="post-content">Linesize is nice :).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">5th December 2003 01:38 GMT</span></p>
-
-      <p class="post-content">YESSSS, linesize kicks ass! thanx a lot:). the skip function is a bit weird, because it still links the skiped part.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">5th December 2003 01:42 GMT</span></p>
-
-      <p class="post-content">This is one hell of a bug:<br />
-      <br />
-      1) Go fullscreen<br />
-      2) Click left mouse button<br />
-      3) When the cursor goes under Winamp/AVS/config window, click in the lower left corner of the config window - well under the config window - where the docking window used to be.<br />
-      AVS docks, but the main AVS window stays where it is and stops updating the portion of the screen under the AVS window (except for the frame).<br />
-      &lt;edit&gt; The AVS window also gives you the Winamp main window popup menu when you right click after you do this.<br />
-      <br />
-      ...What in the fuck, etc.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">horse-fly</span><br />
-      <span class="date small text-muted">5th December 2003 07:56 GMT</span></p>
-
-      <p class="post-content">you come out with updates everyday, eh justin?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">5th December 2003 07:56 GMT</span></p>
-
-      <p class="post-content">Actually i'm unable to give it a test ride so my question:<br />
-      <br />
-      Is the new SSC able to do simple antialiasing? This would be very handy imo because using blur for this purpose ain't the best way.<br />
-      <br />
-      [EDIT]<br />
-      Congrats to UnConeD for beeing a Mod now. YAY!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">5th December 2003 09:49 GMT</span></p>
-
-      <p class="post-content">er... magicX, what do you mean by AA?<br />
-      <br />
-      The superscope works in more detail than pixels anyway, so why would you need it?<br />
-      <br />
-      If a scope looks pixelised, then you need to work in a bigger desktop resolution (or avs fullscreen one), there is no other way around it.<br />
-      <br />
-      Are you sure you meant antialiasing?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">5th December 2003 10:30 GMT</span></p>
-
-      <p class="post-content">Yes i am ;) i talked about this with UCD in another thread, right now, i don't remeber where.<br />
-      <br />
-      But basically it should be able to smooth a line along its vectorial direction (eg vector from point 98 of 800 to point 99 of 800).<br />
-      <br />
-      You could smooth it by bilinear filtering for example.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">5th December 2003 11:22 GMT</span></p>
-
-      <p class="post-content">@Justin:<br />
-      How long have you been breeding on all of this? Everyday (if Horse-Fly is right) you make the people at this forum a bit happier...<br />
-      <br />
-      @UnConeD: Congrats!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">5th December 2003 12:46 GMT</span></p>
-
-      <p class="post-content">first they complain that there is no development..</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">5th December 2003 13:02 GMT</span></p>
-
-      <p class="post-content">well..for a long time, <i>they</i> were right, there was no development. Surely you remember those horrible days when we all feared that the world had forgotten about avs?<br />
-      <br />
-      now look what has happened, bwahahaha!<br />
-      Justin, you are a god among men.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
-      <span class="date small text-muted">5th December 2003 14:49 GMT</span></p>
-
-      <p class="post-content">and with the upcoming WA5 and with that more WA- and therefor AVS-users, I fear the n00bish questions coming our way. :igor:<br />
-      <br />
-      But then... the more the merrier [sp?]</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">5th December 2003 14:52 GMT</span></p>
-
-      <p class="post-content">merrrier has three r's</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">5th December 2003 16:16 GMT</span></p>
-
-      <p class="post-content">;-c ,rattaplan: I have been regularly forwarding stuff to justin that the regulars at #finnish-flash have been discussing over IRC though. That explains of the flood of new AVS ideas. Still kudos to justin for implementing it all of course.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">5th December 2003 16:36 GMT</span></p>
-
-      <p class="post-content">I can't open the editor by doubleclicking the AVS window. Instead it switches to and from fullscreen. And hitting enter for fullscreen doesn't seems to work anymore either, but alt-enter does. :)<br />
-      <br />
-      P.S. Man, things have been happening while I was gone. Congrats Unconed.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">5th December 2003 16:41 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by Jaheckelsafar</i><br />
-        <b>I can't open the editor by doubleclicking the AVS window. Instead it switches to and from fullscreen. And hitting enter for fullscreen doesn't seems to work anymore either, but alt-enter does. :)</b>
-      </blockquote>you can change that in the settings menu
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
-      <span class="date small text-muted">5th December 2003 16:49 GMT</span></p>
-
-      <p class="post-content">Oops :o, didn't see that. But the doubleclick fullscreen thing doesn't work for me. It goes into full screen, then switches out right away.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">zamuz</span><br />
-      <span class="date small text-muted">5th December 2003 17:40 GMT</span></p>
-
-      <p class="post-content">i'm on windows xp but i can't use desktop alpha blending for the avs window... not that i really use this feature, but i noticed this in this beta.<br />
-      <br />
-      and also, when i click a colormap trans, winamp crashes without even being able to open the config dialog.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">5th December 2003 18:00 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by zamuz</i><br />
-        <b>and also, when i click a colormap trans, winamp crashes without even being able to open the config dialog.</b>
-      </blockquote>happened here aswell, until i updated <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=156222" target="_blank">colormap</a>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">zamuz</span><br />
-      <span class="date small text-muted">5th December 2003 18:45 GMT</span></p>
-
-      <p class="post-content">thanks :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">5th December 2003 21:04 GMT</span></p>
-
-      <p class="post-content">but the same happens with channelshift</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">5th December 2003 21:05 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        and again i must say... no arrays
-      </blockquote>I want arrays too.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">6th December 2003 03:24 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by hungryskull</i><br />
-        <b>I want arrays too.</b>
-      </blockquote>OK so would an implementation like:<br />
-      <br />
-      <br />
-      bla=arrayalloc(size);<br />
-      arraysetitem(bla,index,value);<br />
-      poo=arraygetitem(bla,index);<br />
-      arrayfree(bla);<br />
-      <br />
-      be adequate?<br />
-      <br />
-      obviously size, index, and the array pointer itself would still be floating point values, but be rounded to int as necessary to make sense...<br />
-      <br />
-      I can do this fairly easily. Would that meet the needs? If not, what else would be needed?<br />
-      <br />
-      -Justin
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">6th December 2003 03:55 GMT</span></p>
-
-      <p class="post-content">Sounds good to me, although more "traditional" subscripting (bla[index]=value) would be nicer, though (if feasable), although I think it wouldn't add too much as long as the array was dimensioned right away.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th December 2003 07:54 GMT</span></p>
-
-      <p class="post-content">That seems terribly convoluted, and I'd rather you didn't put effort into that because eventually I'm betting it'll get changed, and you'd have to leave it in the evallib for old presets (if you didn't, that would be bad.) Personally I'd prefer that you tried to fuddle with the evallib so you could do different things with the lefthand side of an assignment, e.g. the traditional<br />
-      array[sizex][sizey]...; // array allocation consists of no assignments<br />
-      array[x][y]=borgle;<br />
-      You could then do things like user globals:<br />
-      $global;<br />
-      $global=bangle;<br />
-      Overloading globals ($global != global) would be nice too ;)<br />
-      But in terms of the arrays, I'd like to see the following syntax:<br />
-      <br />
-      array[sizex][sizey]...; // allocates array of size sizexXsizeyXsizez...<br />
-      array[5][3]=bloor; // assigns value bloor to index 5,3<br />
-      array[*][2]=blargh; // assigns value blargh to all indices in y=2<br />
-      array[*]=skaggle; // assigns value skaggle to all indices<br />
-      array=warts; // variable "array" is different from array "array"<br />
-      <br />
-      probably asking for too much here...but it'd be really, really, really nice :D with the code you suggested there's no way to do multidimensional arrays with any ease as far as i can tell.<br />
-      <br />
-      <br />
-      i know you won't let me down, justin... /me winks sexily</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">6th December 2003 08:57 GMT</span></p>
-
-      <p class="post-content">yup, Ateros ideas seem really really nice :), atleast<br />
-      array[x][y]=blabla;<br />
-      would be good... its much more readable<br /></p>
-
-      <blockquote>
-        i know you won't let me down, justin... /me winks sexily
-      </blockquote>O_o how far can one go
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">6th December 2003 09:31 GMT</span></p>
-
-      <p class="post-content">OK well here is my thinking:<br /></p>
-
-      <ul>
-        <li>Making the arrays accessed via a function rather than a new language syntax is a lot easier (I know this ultimately doesnt matter that much to everybody else, but it changes it from a quicky day project to a much larger project that could potentially break a lot of other shit)</li>
-
-        <li>Global variables that have names may be possible, but create a whole host of memory management issues -- i.e. if every preset creates its own global variables, they stay around forever? Garbage collection? See below.</li>
-
-        <li>Arrays are a lot easier to keep local (not global) for the above reason.</li>
-
-        <li>Otherwise, we'd have to do some sophisticated garbage collection-type things. Which takes time to implement, and lots of testing before we could really be serious about putting this in the main distribution.</li>
-      </ul><br />
-      So yes, we could go completely overhaul shit. But ultimately that'll just mean that it'll take tons of time and break shit and be a big pain in the ass. :/ I don't know what the best thing to do is...<br />
-      <br />
-      -J
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">6th December 2003 09:49 GMT</span></p>
-
-      <p class="post-content">That all is true, it would waste a lot of time, but you got work to do with winamp 5, not some stupid 'plugin', uh?<br />
-      thats why would open source avs be good idea, but yea... things will probably get messy like that<br />
-      <br />
-      :\<br />
-      <br />
-      do the arrays way you like them to do, we just gave you ideas :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
-      <span class="date small text-muted">6th December 2003 10:36 GMT</span></p>
-
-      <p class="post-content">i can imagine nemo would be happier, if his presets in the Winamp 5 Newpicks had a different name<br />
-      <br />
-      splendora.avs &gt; NemoOrange - Splendora.avs ?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
-      <span class="date small text-muted">6th December 2003 11:01 GMT</span></p>
-
-      <p class="post-content">It would be great to have arrays. From what I've heard around here, you can do really great things with 'em. Would anybody be so kind to explain shortly and simple what they do? My math aint that good ;).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">6th December 2003 11:08 GMT</span></p>
-
-      <p class="post-content">arrays != math<br />
-      arrays == programming</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">gaekwad2</span><br />
-      <span class="date small text-muted">6th December 2003 13:36 GMT</span></p>
-
-      <p class="post-content">supersimple example: peaks<br />
-      <br />
-      init:<br />
-      n=576;<br />
-      val=arrayalloc(n)//I hope new arrays have value 0 set for all items<br />
-      <br />
-      frame:<br />
-      t=0//or t=1?<br />
-      <br />
-      point:<br />
-      arraysetitem(val,t,max(arraygetitem(val,t)*.99,getspec(i,0,0));<br />
-      x=i*2-1;<br />
-      y=1-arraygetitem(val,t);<br />
-      t=t+1<br />
-      <br />
-      what does arrayfree do?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th December 2003 14:25 GMT</span></p>
-
-      <p class="post-content">Justin:<br />
-      <br />
-      I'm not sure how the evallib handles assignment and variable-address retrieval, but maybe if you could code it like this:<br />
-      <br />
-      arraygetitem(array, 5) = foo;<br />
-      bar = arraygetitem(array, 5);<br />
-      <br />
-      Then you could put a pre-processor step in to convert from array[5] into that. That would rock ;).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">6th December 2003 14:47 GMT</span></p>
-
-      <p class="post-content">arrays will be fantastic. I dont know how many times ive stopped half way through some idea because i needed arrays.<br />
-      <br />
-      BUT!<br />
-      <br />
-      i fear that these betas and pre's are getting buggier and buggier with every release. I really hope that you will have time to iron everything out before the release of wa5.<br />
-      <br />
-      I want arrays just as much as the next person, but i think its more important to have a generally stable avs. Im not griping.. i just hope you have time to fix everything... there have been sooooo many updates and so little time for beta-testing.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">6th December 2003 15:59 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by justin</i><br />
-        <b>Making the arrays accessed via a function rather than a new language syntax is a lot easier (I know this ultimately doesnt matter that much to everybody else, but it changes it from a quicky day project to a much larger project that could potentially break a lot of other shit)</b>
-      </blockquote>That's why I don't know if array's should be worried about now. I think eventually it would be best to wait until it is a bit easier to do the full version and when there is a bit more time to do it. I don't ever really like languages that take the function approach to arrays and such. It is much more of a hassle to first have to use the functions, and then when you find time and switch it over - the old functions will still have to be included in new versions.<br />
-      <br />
-      Just my opinion.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">sidd</span><br />
-      <span class="date small text-muted">6th December 2003 17:30 GMT</span></p>
-
-      <p class="post-content">no, arrays are a very good idea, and would be extremely usefull. They would certainly allow us to do many things that we have been otherwise putting off. Such as propper tentacle effects, and speeding up older presets by making more complicated things into single scopes.<br />
-      <br />
-      I dont think they would scare off the new comers, as they dont need to know about them if they dont understand it.<br />
-      <br />
-      But still, i think its vital that the released version of 2.8 is just as stable as 2.6 is.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
-      <span class="date small text-muted">6th December 2003 18:12 GMT</span></p>
-
-      <p class="post-content">I'd say no arrays for now. They'd only be really useful with proper looping control structures (though you could always use a skip=1 superscope as a for loop ;) ).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
-      <span class="date small text-muted">6th December 2003 18:58 GMT</span></p>
-
-      <p class="post-content">yeah, With no looping it is a real pain and will deminish the usefulness of arrays.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">6th December 2003 19:04 GMT</span></p>
-
-      <p class="post-content">grrr... thats no good :(</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">6th December 2003 19:36 GMT</span></p>
-
-      <p class="post-content">:down:<br />
-      I have a ton of things I could use arrays for, and I'm sure that most of the other advanced programmers here do to. It's not something I'd want to stall the release of WA5 over, but I would *REALLY* like to see some proper array management.<br />
-      I'll be blunt - that arrayalloc() shit sucks major ass. Like I said before, if that gets implemented, people will start using that and then there'll be no way to change it. I know it'd be a lot of major work, and I appreciate that - you're only human (well, to us you're an uberhuman) - but I think trying to use a bad form of array management would be a really bad idea.<br />
-      As for garbage collection, why not create an internal list of every $global created, and then when a preset is turned off, delete all $globals in that list? Or, when the preset is turned off, look through all the variables and delete all the ones that start with $ (or whatever other marking they'll get)?<br />
-      Another thing I'd still like to see is a user-expandable varlib. I don't know if this is possible, and if it's not I'd like to see it expanded again, especially if we're gonna be using arrays. (I'm going to assume for now that array[5][5] will take up 25 variable slots, correct me if I'm wrong).<br />
-      <br />
-      <br />
-      justin is k1ng!!1</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
-      <span class="date small text-muted">7th December 2003 00:40 GMT</span></p>
-
-      <p class="post-content">I think making one global array, like global variables, will be _realy_ good.<br />
-      Global variables are almost ok, they'll be perfect if they could be accessed like this:<br /></p>
-      <pre>
-<code>reg( variable ) = value;  // set value<br />and blahblah = reg( variable );  // read value</code>
-</pre><br />
-      Or, if you'd like to continue using function only on the right side of equation, use this for setting value:<br />
-      <pre>
-<code>value = reg( variable );  // almost same thing</code>
-</pre><br />
-      It's like eval("reg"+number+"=blahblah"); stuff in other languages ;)<br />
-      And to access arrays with standard syntax ( array[ level1 ][ level2 ] ) will be hard (impossabile?) to program in just a few days, I understand.<br />
-      I thing one 1-dimentional array will be enough for the first time.<br />
-      <br />
-      P.S. maybe you don't want to do major stuff with AVS because it's free and doesn't do any good for you - maybe you should make a donation stuff, I'll give you 50$ or more if you do :)
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
-      <span class="date small text-muted">7th December 2003 01:49 GMT</span></p>
-
-      <p class="post-content">Fragmer : Numbers work just fine.<br />
-      For the second part... don't be lazy.<br />
-      1-D array... It *can* be made into a 2D with a little improvisation I guess.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">mikm</span><br />
-      <span class="date small text-muted">7th December 2003 02:03 GMT</span></p>
-
-      <p class="post-content">I searched, but didn't see this mentioned before:<br />
-      When you take the sign of a global variable, it is always 1 or -1, never 0.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">7th December 2003 08:17 GMT</span></p>
-
-      <p class="post-content"></p>
-
-      <blockquote>
-        <i>Originally posted by UnConeD</i><br />
-        <b>I'd say no arrays for now. They'd only be really useful with proper looping control structures (though you could always use a skip=1 superscope as a for loop ;) ).</b>
-      </blockquote>My fear of adding loop capability would be what if a preset does an infinite loop? :)<br />
-      <br />
-      -J
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">7th December 2003 10:07 GMT</span></p>
-
-      <p class="post-content">make limit for times running a loop, or something like that</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">gaekwad2</span><br />
-      <span class="date small text-muted">7th December 2003 13:08 GMT</span></p>
-
-      <p class="post-content">or only implement finite loops (for..next)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
-      <span class="date small text-muted">7th December 2003 17:09 GMT</span></p>
-
-      <p class="post-content">Now that someone mentioned it. I think loops might be much more useful than arrays. As for the infinite loop problem you have two choices, you could trust people not to send presets into an infinite loop. Or do what gaekwad2 said. I think the first would be better.<br />
-      <br />
-      Maybe a harder but overall better solution would be to put in some kind of feature that allows presets made by other people to use loops. But doesn't allow n00bs to use loops unless a checkbox in the display options is checked. That way n00bs who don't need loops simply can't use them unless the checkbox is on. Which would prevent idiots from accidentally sending there presets into infinite loops.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">OnionRingOfDoom</span><br />
-      <span class="date small text-muted">7th December 2003 18:57 GMT</span></p>
-
-      <p class="post-content">Justin, would it be possible to make render/text display more than one line of text?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
-      <span class="date small text-muted">7th December 2003 19:26 GMT</span></p>
-
-      <p class="post-content">In Macromedia Flash, if a loop goes for too long (I think about 10 seconds) a popup comes up asking if you would like to abort the script. This happens every ten seconds if you select not to abort but the script is still looping. Perhaps this can be implemented in AVS.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">justin</span><br />
-      <span class="date small text-muted">7th December 2003 22:33 GMT</span></p>
-
-      <p class="post-content">OK I'll think about loops and arrays, and we'll do it later (post wa5.0).<br />
-      Here is avs 2.8b2, which mainly just fixes the sscope skip bug in b1.<br />
-      <br />
-      <a href="http://www.firehose.net/~deadbeef/avs28b2.zip" target="_blank">http://www.firehose.net/~deadbeef/avs28b2.zip</a><br />
-      <br />
-      Ideally this will be the ver in wa5.0 that launches, well, any day now...<br />
-      <br />
-      -Justin</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
-      <span class="date small text-muted">7th December 2003 23:17 GMT</span></p>
-
-      <p class="post-content">I think arrays will be more useful than loops. I mean, loops are great, but priority of arrays is above loops.<br />
-      Arrays will enable particle engines, complex random-scopes, complex flows etc. What major improvements can loops make? And - preset is recompiled at any change, every time you check a checkbox or type a symbol. Imagine that you're typing code and you didn't finish it and it's already compiled - and does infinite loop. Imagine how much harder it is to build loops (with standart syntax I mean) than arrays? I'm voting for arrays first!</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">8th December 2003 05:22 GMT</span></p>
-
-      <p class="post-content">I'd say they are the same priority. A lot of things that you would want to do with arrays can't be done til loops are implemented.<br />
-      <br />
-      I have a feeling they will both be added at the same time to AVS.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
-      <span class="date small text-muted">8th December 2003 05:41 GMT</span></p>
-
-      <p class="post-content">yuh, arrays are nuffin without loops...<br />
-      <br />
-      but thing i vote for is less buggier avs, this is above everything :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
-      <span class="date small text-muted">8th December 2003 06:38 GMT</span></p>
-
-      <p class="post-content">arrrays aren't nothing without loops - they are just a bit less. You can still use arrays to draw a cube or something much easier - just use array[curr_pixel] to get the predefined vertice for the 3D figure.<br />
-      <br />
-      For example: square<br />
-      INIT:<br />
-      n=6;vertices[6][2]={{-1,-1},{-1,1},{1,1},{1,-1}};<br />
-      FRAME:<br />
-      q=0;<br />
-      PIXEL:<br />
-      x=vertices[q][0];y=vertices[q][1];<br />
-      q=q+1;<br />
-      <br />
-      Then it would be really cool if matrix/array math was added. 3D rotation and just about everything would be a bit easier, although possibly not faster.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
-      <span class="date small text-muted">8th December 2003 07:09 GMT</span></p>
-
-      <p class="post-content">IMO, it's more important to get avs stable and to do some "small" improvementsto avs right now like multiline text and maybe some others to have a proper release ready for WA5.<br />
-      <br />
-      There's been so much progress that it might take me a few <b>months</b> to work all the stuff out i could do with those new features.<br />
-      <br />
-      I agree that arrays, looping and a better assignment structure are valueable but for now they're not nessecary.<br />
-      <br />
-      People have been messing around with avs for about 2 years without any changes, tweaking it to the max of its possibillities.<br />
-      <br />
-      Now, there's a flood of new stuff and peopel keep on asking for more although it's been barely used yet.<br />
-      <br />
-      Let's leave this stuff for coming up releases. :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
-      <span class="date small text-muted">8th December 2003 10:51 GMT</span></p>
-
-      <p class="post-content">that's a good idea anubis, didn't think of that. which is funny cos i've wished for it in cpp for a long time :p<br />
-      <br />
-      (of course if it's there i'd never know about it cos i'm a n00b cpper)<br />
-      <br />
-      <br />
-      btw justin, it's really not that hard to make avs crash (or at least lock up). i've done it several times before. i can never repeat it, but it's entirely possible. all you really have to do is make it do a TON of slow operations all at once. you might even be able to do something like:<br />
-      init: n=pow(w*h,2)<br />
-      point: n=n+1;p=p+1;x=p*n*pow(-1,p)*cos(p);y=p*n*pow(-1,p)*sin(p);red=p/0;<br />
-      <br />
-      at some point i'll make a special "fuck you" preset that just crashes avs just for you justin ;)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WhiteRayven</span><br />
-      <span class="date small text-muted">8th December 2003 17:15 GMT</span></p>
-
-      <p class="post-content">I have a question. Is there a posability that fullscreen on a second monitor feature could be added to the AVS. You can see my specs. I noticed that in the modern skin If I click the full screen button in the video window it goes full screen on whatever monitor the window occupies.<br />
-      <br />
-      I hope that made sense. I'd like to see that same feature added to the AVS if possible.<br />
-      <br />
-      Also I am aware that milkdrop is supposed to do that. But I cant get it to work.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">fsk</span><br />
-      <span class="date small text-muted">8th December 2003 20:20 GMT</span></p>
-
-      <p class="post-content">i didnt think idd ever say this, but...<br />
-      FAQ</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WhiteRayven</span><br />
-      <span class="date small text-muted">8th December 2003 22:00 GMT</span></p>
-
-      <p class="post-content">Um yeah, I just looked at the FAQ and I could not find anything relevant to my post.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">gaekwad2</span><br />
-      <span class="date small text-muted">8th December 2003 22:31 GMT</span></p>
-
-      <p class="post-content">yeah it's in <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=76530" target="_blank">current avs wishlist</a> :p</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">WhiteRayven</span><br />
-      <span class="date small text-muted">8th December 2003 23:03 GMT</span></p>
-
-      <p class="post-content">OK, fine then<br />
-      <br />
-      /me stomps off back to Winamp5 disscusion.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="username text-primary">jmatthews112</span><br />
-      <span class="date small text-muted">9th December 2003 00:19 GMT</span></p>
-
-      <p class="post-content">any mirrors for the new avs 2.8b2?<br />
-      <br />
-      EDIT: Nevermind. However, any mirrors might be good for other users.</p>
-    </div>
-    <hr />
-
-    <div class="footer">
-      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-    </div>
-  </div><!-- Put JavaScript here -->
+	<div class="container">
+	<!-- Put navigation bar here -->
+
+
+
+
+
+
+	<ol class="breadcrumb">
+		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+		<li><a href="f-85.html">AVS</a></li>
+		<li class="active">AVS 2.8b1! :)</li>
+	</ol>
+	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=158544">AVS 2.8b1! :)</a></p>
+
+
+<br />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">4th December 2003 19:13 GMT</span>
+		</p>
+		<p class="post-content">
+		
+			<strong>AVS 2.8b1! :)</strong><br />
+		
+		
+
+		OK this version should resolve the loading preset bugs, finally. Hopefully. Also added some new superscope capabilities, including 'skip', 'linesize', and 'drawmode' (chooses points or lines).<br />
+<br />
+<a href="http://firehose.net/~deadbeef/avs28b1.zip" target="_blank">http://firehose.net/~deadbeef/avs28b1.zip</a><br />
+<br />
+-J
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">4th December 2003 19:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		YAY! got to love skip and linesize...<br />
+<br />
+thank you so very much Justin<br />
+<br />
+[edit]<br />
+linesize doesnt look very good, is it supposed to be like this, or is there bug?<br />
+<br />
+frame:<br />
+t=t-0.01;<br />
+st=sin(t);ct=cos(t);<br />
+asp=w/h;<br />
+<br />
+point:<br />
+px=i*2-1;<br />
+py=0;<br />
+x=px*st+py*ct;<br />
+y=(-px*ct+py*st)*asp;<br />
+<br />
+linesize=100;
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">4th December 2003 19:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		100 is pretty big... just make sure your n is set low enough, and then it should be a big fat line.. if you do hundreds of points, you'll have a lot of 1 pixel by 100 pixel line stripes =)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">4th December 2003 19:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah, i was thinking of line width dependent triangel rendering ssc if i read 'linesize' :D, but oh well... skip is very cool ;)<br />
+<br />
+<br />
+and again i must say... no arrays... no vectors... very cool things could be done with arrays, vectors would make coding much more easyer and many ssc/dm codes much more shorter. But I understand, you got work to do with winamp 5.<br />
+<br />
+i cant say anything about loading preset bug, this bug hasnt occured to me in previous versions, i just hope its fixed :D
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">4th December 2003 20:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice.  Some great changes for now, but I hope that arrays are eventually added - don't have to be added for wa5, but eventually would be nice.  Can't wait to see what people can make with all this new stuff.  Cool.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">OnionRingOfDoom</span><br />
+			<span class="date small text-muted">4th December 2003 21:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Nice! UnConeD's gonna have a field day with this stuff!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">4th December 2003 22:18 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Linesize is nice :).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">5th December 2003 01:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		YESSSS, linesize kicks ass! thanx a lot:). the skip function is a bit weird, because it still links the skiped part.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">5th December 2003 01:42 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		This is one hell of a bug:<br />
+<br />
+1) Go fullscreen<br />
+2) Click left mouse button<br />
+3) When the cursor goes under Winamp/AVS/config window, click in the lower left corner of the config window - well under the config window - where the docking window used to be.<br />
+AVS docks, but the main AVS window stays where it is and stops updating the portion of the screen under the AVS window (except for the frame).<br />
+&lt;edit&gt; The AVS window also gives you the Winamp main window popup menu when you right click after you do this.<br />
+<br />
+...What in the fuck, etc.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">horse-fly</span><br />
+			<span class="date small text-muted">5th December 2003 07:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		you come out with updates everyday, eh justin?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">5th December 2003 07:56 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Actually i'm unable to give it a test ride so my question:<br />
+<br />
+Is the new SSC able to do simple antialiasing? This would be very handy imo because using blur for this purpose ain't the best way.<br />
+<br />
+[EDIT]<br />
+Congrats to UnConeD for beeing a Mod now. YAY!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">5th December 2003 09:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		er... magicX, what do you mean by AA? <br />
+<br />
+The superscope works in more detail than pixels anyway, so why would you need it?<br />
+<br />
+If a scope looks pixelised, then you need to work in a bigger desktop resolution (or avs fullscreen one), there is no other way around it.<br />
+<br />
+Are you sure you meant antialiasing?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">5th December 2003 10:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Yes i am ;) i talked about this with UCD in another thread, right now, i don't remeber where.<br />
+<br />
+But basically it should be able to smooth a line along its vectorial direction (eg vector from point 98 of 800 to point 99 of 800).<br />
+<br />
+You could smooth it by bilinear filtering for example.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">5th December 2003 11:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		@Justin: <br />
+How long have you been breeding on all of this? Everyday (if Horse-Fly is right) you make the people at this forum a bit happier...<br />
+<br />
+@UnConeD: Congrats!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">5th December 2003 12:46 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		first they complain that there is no development..
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">5th December 2003 13:02 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		well..for a long time, <i>they</i> were right, there was no development. Surely you remember those horrible days when we all feared that the world had forgotten about avs?<br />
+<br />
+now look what has happened, bwahahaha!<br />
+Justin, you are a god among men.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Warrior of the Light</span><br />
+			<span class="date small text-muted">5th December 2003 14:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		and with the upcoming WA5 and with that more WA- and therefor AVS-users, I fear the n00bish questions coming our way. :igor:<br />
+<br />
+But then... the more the merrier [sp?]
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">5th December 2003 14:52 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		merrrier has three r's
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">5th December 2003 16:16 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		;-c ,rattaplan: I have been regularly forwarding stuff to justin that the regulars at #finnish-flash have been discussing over IRC though. That explains of the flood of new AVS ideas. Still kudos to justin for implementing it all of course.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">5th December 2003 16:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I can't open the editor by doubleclicking the AVS window. Instead it switches to and from fullscreen. And hitting enter for fullscreen doesn't seems to work anymore either, but alt-enter does. :)<br />
+<br />
+P.S.  Man, things have been happening while I was gone. Congrats Unconed.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">5th December 2003 16:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by Jaheckelsafar </i><br />
+<b>I can't open the editor by doubleclicking the AVS window. Instead it switches to and from fullscreen. And hitting enter for fullscreen doesn't seems to work anymore either, but alt-enter does. :)</b></blockquote>
+you can change that in the settings menu
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaheckelsafar</span><br />
+			<span class="date small text-muted">5th December 2003 16:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Oops :o, didn't see that. But the doubleclick fullscreen thing doesn't work for me. It goes into full screen, then switches out right away.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">zamuz</span><br />
+			<span class="date small text-muted">5th December 2003 17:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i'm on windows xp but i can't use desktop alpha blending for the avs window... not that i really use this feature, but i noticed this in this beta.<br />
+<br />
+and also, when i click a colormap trans, winamp crashes without even being able to open the config dialog.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">5th December 2003 18:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by zamuz </i><br />
+<b>and also, when i click a colormap trans, winamp crashes without even being able to open the config dialog. </b></blockquote>
+happened here aswell, until i updated <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=156222" target="_blank">colormap</a>
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">zamuz</span><br />
+			<span class="date small text-muted">5th December 2003 18:45 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		thanks :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">5th December 2003 21:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		but the same happens with channelshift
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">5th December 2003 21:05 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				and again i must say... no arrays</blockquote>
+I want arrays too.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">6th December 2003 03:24 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by hungryskull </i><br />
+<b>I want arrays too. </b></blockquote>
+OK so would an implementation like:<br />
+<br />
+<br />
+bla=arrayalloc(size);<br />
+arraysetitem(bla,index,value);<br />
+poo=arraygetitem(bla,index);<br />
+arrayfree(bla);<br />
+<br />
+be adequate?<br />
+<br />
+obviously size, index, and the array pointer itself would still be floating point values, but be rounded to int as necessary to make sense...<br />
+<br />
+I can do this fairly easily. Would that meet the needs? If not, what else would be needed?<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">6th December 2003 03:55 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Sounds good to me, although more &quot;traditional&quot; subscripting (bla[index]=value) would be nicer, though (if feasable), although I think it wouldn't add too much as long as the array was dimensioned right away.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th December 2003 07:54 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That seems terribly convoluted, and I'd rather you didn't put effort into that because eventually I'm betting it'll get changed, and you'd have to leave it in the evallib for old presets (if you didn't, that would be bad.)  Personally I'd prefer that you tried to fuddle with the evallib so you could do different things with the lefthand side of an assignment, e.g. the traditional<br />
+array[sizex][sizey]...; // array allocation consists of no assignments<br />
+array[x][y]=borgle;<br />
+You could then do things like user globals: <br />
+$global;<br />
+$global=bangle;<br />
+Overloading globals ($global != global) would be nice too ;)<br />
+But in terms of the arrays, I'd like to see the following syntax:<br />
+<br />
+array[sizex][sizey]...; // allocates array of size sizexXsizeyXsizez...<br />
+array[5][3]=bloor; // assigns value bloor to index 5,3<br />
+array[*][2]=blargh; // assigns value blargh to all indices in y=2<br />
+array[*]=skaggle; // assigns value skaggle to all indices<br />
+array=warts; // variable &quot;array&quot; is different from array &quot;array&quot;<br />
+<br />
+probably asking for too much here...but it'd be really, really, really nice :D with the code you suggested there's no way to do multidimensional arrays with any ease as far as i can tell.<br />
+<br />
+<br />
+i know you won't let me down, justin... /me winks sexily
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">6th December 2003 08:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yup, Ateros ideas seem really really nice :), atleast <br />
+array[x][y]=blabla;<br />
+would be good... its much more readable<br />
+
+	<blockquote>
+			
+				i know you won't let me down, justin... /me winks sexily</blockquote>
+ O_o how far can one go
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">6th December 2003 09:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		OK well here is my thinking:<br />
+<ul><li>Making the arrays accessed via a function rather than a new language syntax is a lot easier (I know this ultimately doesnt matter that much to everybody else, but it changes it from a quicky day project to a much larger project that could potentially break a lot of other shit)</li>
+<li>Global variables that have names may be possible, but create a whole host of memory management issues -- i.e. if every preset creates its own global variables, they stay around forever? Garbage collection? See below.</li>
+<li>Arrays are a lot easier to keep local (not global) for the above reason.</li>
+<li>Otherwise, we'd have to do some sophisticated garbage collection-type things. Which takes time to implement, and lots of testing before we could really be serious about putting this in the main distribution.</li>
+</ul><br />
+So yes, we could go completely overhaul shit. But ultimately that'll just mean that it'll take tons of time and break shit and be a big pain in the ass. :/ I don't know what the best thing to do is...<br />
+<br />
+-J
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">6th December 2003 09:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		That all is true, it would waste a lot of time, but you got work to do with winamp 5, not some stupid 'plugin', uh?<br />
+thats why would open source avs be good idea, but yea... things will probably get messy like that <br />
+<br />
+:\<br />
+<br />
+do the arrays way you like them to do, we just gave you ideas :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Yathosho</span><br />
+			<span class="date small text-muted">6th December 2003 10:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i can imagine nemo would be happier, if his presets in the Winamp 5 Newpicks had a different name<br />
+<br />
+splendora.avs &gt; NemoOrange - Splendora.avs ?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Deamon</span><br />
+			<span class="date small text-muted">6th December 2003 11:01 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		It would be great to have arrays. From what I've heard around here, you can do really great things with 'em. Would anybody be so kind to explain shortly and simple what they do? My math aint that good ;).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">6th December 2003 11:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		arrays != math<br />
+arrays == programming
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">gaekwad2</span><br />
+			<span class="date small text-muted">6th December 2003 13:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		supersimple example: peaks<br />
+<br />
+init:<br />
+n=576;<br />
+val=arrayalloc(n)//I hope new arrays have value 0 set for all items<br />
+<br />
+frame:<br />
+t=0//or t=1?<br />
+<br />
+point:<br />
+arraysetitem(val,t,max(arraygetitem(val,t)*.99,getspec(i,0,0));<br />
+x=i*2-1;<br />
+y=1-arraygetitem(val,t);<br />
+t=t+1<br />
+<br />
+what does arrayfree do?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th December 2003 14:25 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Justin:<br />
+<br />
+I'm not sure how the evallib handles assignment and variable-address retrieval, but maybe if you could code it like this:<br />
+<br />
+arraygetitem(array, 5) = foo;<br />
+bar = arraygetitem(array, 5);<br />
+<br />
+Then you could put a pre-processor step in to convert from array[5] into that. That would rock ;).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">6th December 2003 14:47 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		arrays will be fantastic. I dont know how many times ive stopped half way through some idea because i needed arrays.<br />
+<br />
+BUT!<br />
+<br />
+i fear that these betas and pre's are getting buggier and buggier with every release. I really hope that you will have time to iron everything out before the release of wa5. <br />
+<br />
+I want arrays just as much as the next person, but i think its more important to have a generally stable avs. Im not griping.. i just hope you have time to fix everything... there have been sooooo many updates and so little time for beta-testing.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">6th December 2003 15:59 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by justin </i><br />
+<b>Making the arrays accessed via a function rather than a new language syntax is a lot easier (I know this ultimately doesnt matter that much to everybody else, but it changes it from a quicky day project to a much larger project that could potentially break a lot of other shit)</b></blockquote>
+That's why I don't know if array's should be worried about now.  I think eventually it would be best to wait until it is a bit easier to do the full version and when there is a bit more time to do it.  I don't ever really like languages that take the function approach to arrays and such.  It is much more of a hassle to first have to use the functions, and then when you find time and switch it over - the old functions will still have to be included in new versions.<br />
+<br />
+Just my opinion.
+		</p>
+</div>
+
+	<hr />
+
+
+
+
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">sidd</span><br />
+			<span class="date small text-muted">6th December 2003 17:30 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		no, arrays are a very good idea, and would be extremely usefull. They would certainly allow us to do many things that we have been otherwise putting off. Such as propper tentacle effects, and speeding up older presets by making more complicated things into single scopes.<br />
+<br />
+I dont think they would scare off the new comers, as they dont need to know about them if they dont understand it. <br />
+<br />
+But still, i think its vital that the released version of 2.8 is just as stable as 2.6 is.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">UnConeD</span><br />
+			<span class="date small text-muted">6th December 2003 18:12 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'd say no arrays for now. They'd only be really useful with proper looping control structures (though you could always use a skip=1 superscope as a for loop ;) ).
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Rovastar</span><br />
+			<span class="date small text-muted">6th December 2003 18:58 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah, With no looping it is a real pain and will deminish the usefulness of arrays.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">6th December 2003 19:04 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		grrr... thats no good :(
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">6th December 2003 19:36 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		:down:<br />
+I have a ton of things I could use arrays for, and I'm sure that most of the other advanced programmers here do to.  It's not something I'd want to stall the release of WA5 over, but I would *REALLY* like to see some proper array management.<br />
+I'll be blunt - that arrayalloc() shit sucks major ass.  Like I said before, if that gets implemented, people will start using that and then there'll be no way to change it.  I know it'd be a lot of major work, and I appreciate that - you're only human (well, to us you're an uberhuman) - but I think trying to use a bad form of array management would be a really bad idea.<br />
+As for garbage collection, why not create an internal list of every $global created, and then when a preset is turned off, delete all $globals in that list?  Or, when the preset is turned off, look through all the variables and delete all the ones that start with $ (or whatever other marking they'll get)?<br />
+Another thing I'd still like to see is a user-expandable varlib.  I don't know if this is possible, and if it's not I'd like to see it expanded again, especially if we're gonna be using arrays.  (I'm going to assume for now that array[5][5] will take up 25 variable slots, correct me if I'm wrong).<br />
+<br />
+<br />
+justin is k1ng!!1
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fragmer</span><br />
+			<span class="date small text-muted">7th December 2003 00:40 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think making one global array, like global variables, will be _realy_ good.<br />
+Global variables are almost ok, they'll be perfect if they could be accessed like this:<br />
+<pre><code>reg( variable ) = value;  // set value<br />
+and blahblah = reg( variable );  // read value</code></pre><br />
+Or, if you'd like to continue using function only on the right side of equation, use this for setting value:<br />
+<pre><code>value = reg( variable );  // almost same thing</code></pre><br />
+It's like eval(&quot;reg&quot;+number+&quot;=blahblah&quot;); stuff in other languages ;)<br />
+And to access arrays with standard syntax ( array[ level1 ][ level2 ] ) will be hard (impossabile?) to program in just a few days, I understand.<br />
+I thing one 1-dimentional array will be enough for the first time.<br />
+<br />
+P.S. maybe you don't want to do major stuff with AVS because it's free and doesn't do any good for you - maybe you should make a donation stuff, I'll give you 50$ or more if you do :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Nic01</span><br />
+			<span class="date small text-muted">7th December 2003 01:49 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Fragmer : Numbers work just fine.<br />
+For the second part... don't be lazy.<br />
+1-D array... It *can* be made into a 2D with a little improvisation I guess.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">mikm</span><br />
+			<span class="date small text-muted">7th December 2003 02:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I searched, but didn't see this mentioned before:<br />
+When you take the sign of a global variable, it is always 1 or -1, never 0.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">7th December 2003 08:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		
+	<blockquote>
+			
+				<i>Originally posted by UnConeD </i><br />
+<b>I'd say no arrays for now. They'd only be really useful with proper looping control structures (though you could always use a skip=1 superscope as a for loop ;) ). </b></blockquote>
+My fear of adding loop capability would be what if a preset does an infinite loop? :)<br />
+<br />
+-J
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">7th December 2003 10:07 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		make limit for times running a loop, or something like that
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">gaekwad2</span><br />
+			<span class="date small text-muted">7th December 2003 13:08 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		or only implement finite loops (for..next)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">hungryskull</span><br />
+			<span class="date small text-muted">7th December 2003 17:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Now that someone mentioned it.  I think loops might be much more useful than arrays.  As for the infinite loop problem you have two choices, you could trust people not to send presets into an infinite loop.  Or do what gaekwad2 said.  I think the first would be better.  <br />
+<br />
+Maybe a harder but overall better solution would be to put in some kind of feature that allows presets made by other people to use loops.  But doesn't allow n00bs to use loops unless a checkbox in the display options is checked.  That way n00bs who don't need loops simply can't use them unless the checkbox is on.  Which would prevent idiots from accidentally sending there presets into infinite loops.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">OnionRingOfDoom</span><br />
+			<span class="date small text-muted">7th December 2003 18:57 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Justin, would it be possible to make render/text display more than one line of text?
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Shock Value</span><br />
+			<span class="date small text-muted">7th December 2003 19:26 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		In Macromedia Flash, if a loop goes for too long (I think about 10 seconds) a popup comes up asking if you would like to abort the script. This happens every ten seconds if you select not to abort but the script is still looping. Perhaps this can be implemented in AVS.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">justin</span><br />
+			<span class="date small text-muted">7th December 2003 22:33 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		OK I'll think about loops and arrays, and we'll do it later (post wa5.0).<br />
+Here is avs 2.8b2, which mainly just fixes the sscope skip bug in b1.<br />
+<br />
+<a href="http://www.firehose.net/~deadbeef/avs28b2.zip" target="_blank">http://www.firehose.net/~deadbeef/avs28b2.zip</a><br />
+<br />
+Ideally this will be the ver in wa5.0 that launches, well, any day now...<br />
+<br />
+-Justin
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fragmer</span><br />
+			<span class="date small text-muted">7th December 2003 23:17 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I think arrays will be more useful than loops. I mean, loops are great, but priority of arrays is above loops.<br />
+Arrays will enable particle engines, complex random-scopes, complex flows etc. What major improvements can loops make? And - preset is recompiled at any change, every time you check a checkbox or type a symbol. Imagine that you're typing code and you didn't finish it and it's already compiled - and does infinite loop. Imagine how much harder it is to build loops (with standart syntax I mean) than arrays? I'm voting for arrays first!
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">8th December 2003 05:22 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I'd say they are the same priority.  A lot of things that you would want to do with arrays can't be done til loops are implemented.  <br />
+<br />
+I have a feeling they will both be added at the same time to AVS.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Jaak</span><br />
+			<span class="date small text-muted">8th December 2003 05:41 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yuh, arrays are nuffin without loops...<br />
+<br />
+but thing i vote for is less buggier avs, this is above everything :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">anubis2003</span><br />
+			<span class="date small text-muted">8th December 2003 06:38 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		arrrays aren't nothing without loops - they are just a bit less.  You can still use arrays to draw a cube or something much easier - just use array[curr_pixel] to get the predefined vertice for the 3D figure.<br />
+<br />
+For example: square<br />
+INIT:<br />
+n=6;vertices[6][2]={{-1,-1},{-1,1},{1,1},{1,-1}};<br />
+FRAME:<br />
+q=0;<br />
+PIXEL:<br />
+x=vertices[q][0];y=vertices[q][1];<br />
+q=q+1;<br />
+<br />
+Then it would be really cool if matrix/array math was added.  3D rotation and just about everything would be a bit easier, although possibly not faster.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">Magic.X</span><br />
+			<span class="date small text-muted">8th December 2003 07:09 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		IMO, it's more important to get avs stable and to do some &quot;small&quot; improvementsto avs right now like multiline text and maybe some others to have a proper release ready for WA5.<br />
+<br />
+There's been so much progress that it might take me a few <b>months</b> to work all the stuff out i could do with those new features.<br />
+<br />
+I agree that arrays, looping and a better assignment structure are valueable but for now they're not nessecary.<br />
+<br />
+People have been messing around with avs for about 2 years without any changes, tweaking it to the max of its possibillities.<br />
+<br />
+Now, there's a flood of new stuff and peopel keep on asking for more although it's been barely used yet.<br />
+<br />
+Let's leave this stuff for coming up releases. :)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">dirkdeftly</span><br />
+			<span class="date small text-muted">8th December 2003 10:51 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		that's a good idea anubis, didn't think of that.  which is funny cos i've wished for it in cpp for a long time :p<br />
+<br />
+(of course if it's there i'd never know about it cos i'm a n00b cpper)<br />
+<br />
+<br />
+btw justin, it's really not that hard to make avs crash (or at least lock up).  i've done it several times before.  i can never repeat it, but it's entirely possible.  all you really have to do is make it do a TON of slow operations all at once.  you might even be able to do something like:<br />
+init: n=pow(w*h,2)<br />
+point: n=n+1;p=p+1;x=p*n*pow(-1,p)*cos(p);y=p*n*pow(-1,p)*sin(p);red=p/0;<br />
+<br />
+at some point i'll make a special &quot;fuck you&quot; preset that just crashes avs just for you justin ;)
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WhiteRayven</span><br />
+			<span class="date small text-muted">8th December 2003 17:15 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		I have a question.  Is there a posability that fullscreen on a second monitor feature could be added to the AVS. You can see my specs. I noticed that in the modern skin If I click the full screen button in the video window it goes full screen on whatever monitor the window occupies. <br />
+<br />
+I hope that made sense.  I'd like to see that same feature added to the AVS if possible.<br />
+<br />
+Also I am aware that milkdrop is supposed to do that. But I cant get it to work.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">fsk</span><br />
+			<span class="date small text-muted">8th December 2003 20:20 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		i didnt think idd ever say this, but...<br />
+FAQ
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WhiteRayven</span><br />
+			<span class="date small text-muted">8th December 2003 22:00 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		Um yeah, I just looked at the FAQ and I could not find anything relevant to my post.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">gaekwad2</span><br />
+			<span class="date small text-muted">8th December 2003 22:31 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		yeah it's in <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=76530" target="_blank">current avs wishlist</a> :p
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">WhiteRayven</span><br />
+			<span class="date small text-muted">8th December 2003 23:03 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		OK, fine then<br />
+<br />
+/me stomps off back to Winamp5 disscusion.
+		</p>
+</div>
+
+	<hr />
+
+<div class="post">
+		<p class="post-meta">
+			<span class="username text-primary">jmatthews112</span><br />
+			<span class="date small text-muted">9th December 2003 00:19 GMT</span>
+		</p>
+		<p class="post-content">
+		
+		
+
+		any mirrors for the new avs 2.8b2?<br />
+<br />
+EDIT: Nevermind.  However, any mirrors might be good for other users.
+		</p>
+</div>
+
+	<hr />
+
+
+
+<div class="footer">
+		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+	</div>
+</div>
+
+<!-- Put JavaScript here -->
+
 </body>
 </html>
