@@ -1,97 +1,62 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" beat detection AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="beat detection AVS" />
 
-	<title> beat detection - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>beat detection - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">beat detection</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106254">beat detection</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nixa</span><br />
+      <span class="date small text-muted">20th September 2002 21:34 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">beat detection</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106254">beat detection</a></p>
+      <p class="post-content"><strong>beat detection</strong><br />
+      I know that beat detection in avs sucks and I thought I learned to live whith that but I just got a really great metal album (Symbolic by Death) and avs coldnt detect double bass drumm(it detects only one beat).<br />
+      Does anyone have a good beat detection code for avs (using getosc/getspec)?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">21st September 2002 02:10 GMT</span></p>
 
-<br />
+      <p class="post-content">You might want to check the milkdrop forum for that. They used to have a huge thread on beat detection in there.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">20th September 2002 21:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>beat detection</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">21st September 2002 02:21 GMT</span></p>
 
-		I know that beat detection in avs sucks and I thought I learned to live whith that but I just got a really great metal album (Symbolic by Death) and avs coldnt detect double bass drumm(it detects only one beat). <br />
-Does anyone have a good beat detection code for avs (using getosc/getspec)?
-		</p>
-</div>
+      <p class="post-content">you can always make you avs react to getspec() data rather than using the in built detection. watch your spectrum analyser when you listen to music and you will see that certain bands coincide with beats or move to the baseline. you can also use it to increment a t value. i don't think that getosc can really be used for beat detection though</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">21st September 2002 02:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You might want to check the milkdrop forum for that. They used to have a huge thread on beat detection in there.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">21st September 2002 02:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		you can always make you avs react to getspec() data rather than using the in built detection. watch your spectrum analyser when you listen to music and you will see that certain bands coincide with beats or move to the baseline. you can also use it to increment a t value.  i don't think that getosc can really be used for beat detection though
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

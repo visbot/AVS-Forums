@@ -1,513 +1,330 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Raytracing Space Curves... AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Raytracing Space Curves... AVS" />
 
-	<title> Raytracing Space Curves... - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Raytracing Space Curves... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Raytracing Space Curves...</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=170177">Raytracing Space Curves...</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">20th February 2004 07:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Raytracing Space Curves...</strong><br />
-		
-		
-
-		Ok so I had a few new ideas but I'm not sure if they are even possible.  I was thinking about raytracing space curves (by that I mean tracing the ray until it is a certain distance from the space curve).  I guess this could get really nasty going down with derivatives to find the closest value of t...  But technically you could setup the distance equation and take the derivative and solve for t in terms of x,y,z to find the closest point...  Hmm the more I type this out the more I become aware of how complicated this could get if I use a complex equations...  Any thoughts on this idea?  UnConeD?<br />
-<br />
-<br />
-Ex.  Say I had the following for my curve:<br />
- (cos(t), sin(t), 0)<br />
-<br />
-then the distance for that is:<br />
-f(t)=((x-cos(t))^2+(y-sin(t))^2+z^2)^(1/2)<br />
-<br />
-take the derivative in terms of t and you get:<br />
-f'(t)=(sin(t)x-cos(t)y)/f(t)<br />
-<br />
-if you set that equal to zero and solved for t you'd get:<br />
-t=atan(y/x)<br />
-<br />
-Which makes sense if you think about it.  Then you could plug that back into to get the distance and set a threshold value like raytracing metaballs.  That's a really simple equation and it could get pretty difficult if you try and use complicated space curves but I think it's a plausible idea.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">horse-fly</span><br />
-			<span class="date small text-muted">20th February 2004 17:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		that looks quite nasty... the code, that is, i haven't tried it out in avs...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">20th February 2004 19:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well of course it'd be kinda nasty but if you use Whittaker iteration to solve it then I you could bypass some of that.  I dont think it's been attempted in AVS at all anyways.  I'll work on that and see what happens.  Any other opinions?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">20th February 2004 20:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Here we go.  It's a good old raytraced torus using my method (I've never seen this used anywhere so I dont know this has a name or something). :)<br />
-<br />
-I'll work on some more complex curves and maybe some shading.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">20th February 2004 22:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I don't know anything about the coding part (looks cool though) but here's a better looking alpha code :p<br />
-<pre><code>alpha=2-abs(st-t*1.2)*3;</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">20th February 2004 22:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		oh and replacing */$PI* with a variable *p* where &quot;p=1/$PI&quot; gives a 3fps b00st! :P
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">21st February 2004 03:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No offense to you because I really do appreciate the comments and all, but I know it's not optimized.  I'm just working with the method right now.  Seeing how far I can push this trick.  The current alpha coding just finds out whether the iterations are actually zeroing in on anything or not.  If they aren't then I dont want to see the garbage at that point.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">21st February 2004 04:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Ok so here's an update on the torus.  Figured out a convenient way of implementing some shading which will work for all raytraced space curves (if some more can be solved) ;) So here's what the torus looks like now.  Changed the whittaker constant because this function can be approximated rather quickly with a few iterations.  You'll notice the center is pretty crisp and clean as well.  I tried working with a few other equations but I'm not so sure that's gonna work for most...  I'll keep trying though.  Comments!?  Ideas!?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">21st February 2004 04:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		um....do you speak twice? :p btw, nice preset.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">21st February 2004 04:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Oh just caught what you were saying...  Fixed it.<br />
-<br />
-On a different note, I had another idea I might work on.  If I created a second function to go along to define the radius of the shape about the space curve.  Hmm...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">21st February 2004 05:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i'm not a very <i>techie</i> AVSer but i think its turning out good :up:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">23rd February 2004 04:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The surface equation idea works.  So now the radius of the torus can vary along the ring.  But I cant seem to solve any more space curve equations.  I could numerically approximate them but then I'd be doing that for each iteration of the other approximation and thats just not gonna happen.  I'll see if I can find any more but I dont know...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">25th February 2004 08:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Uhh haven't fixed the normals on this new shape but I think it looks awesome.<br />
-<br />
-<br />
-Had a new idea as well!  Similar direction but different effect.  I'll work on it tomorrow and post it if I get it to work.  I'm thinking I should be able to create some pretty crazy shapes!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">25th February 2004 09:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hey nice work! maybe you can get them to morph between different shapes.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">25th February 2004 12:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I hadn't had time to read up on this. Your explanation is kind of chaotic ;)<br />
-<br />
-What you seem to be doing now is first finding the curve's parameter value whose point comes closest to the current intersection guess. and then constructing a sphere around that point to raytrace with a whittaker iteration.<br />
-<br />
-Indeed, the main problem will be finding out the value of p where df(p)/p = 0 (where p is the curve parameter). Up to now, your shapes haven't in fact been much more than just implicit equations written in a roundabout way. Once you try complicated curves, I think you will run into stability and speed problems.<br />
-<br />
-<br />
-I did have an idea which might help speed up the whittaker iteration. Instead of considering the smallest distance from the curve to the current intersection guess, consider the distance from a curvepoint to the current ray.<br />
-<br />
-The distance from a point P to a ray O + k*D can be found by finding the point along the ray which comes closest to the point P. Then you check the distance between the two. By projecting P-O onto D, you get 'k':<br />
-<br />
-<pre><code><br />
-k  = <u> D * (P - O) </u><br />
-        (D*D)<br />
-</code></pre><br />
-(* is dot product)<br />
-<br />
-In AVS, you can easily normalize D (using invsqrt) once, so then you get (D*D = 1):<br />
-<br />
-<pre><code><br />
-k = D * (P - O)<br />
-</code></pre><br />
-<br />
-In this equation, P will be in parametric form (the curve).<br />
-The calculated 'k' is automatically the value 'k' for the point which is closest to the curvepoint.<br />
-<br />
-This obviously homes in a lot faster, and seems to work well as an accelerating iteration. Of course, this 'k' will try to get as close to the curve as possible, rather than staying a certain radius away from it. So it would seem good to use this to get close to the desired area fast, and then using your current method for respecting the radius.<br />
-<br />
-For your variable-radius donut:<br />
-('k' = t, 'p' = at, 'dx,dy,dz' = rx,ry,rz)<br />
-<br />
-<pre><code>// Normalize once at the beginning<br />
-rn=invsqrt(sqr(rx)+sqr(ry)+sqr(rz));<br />
-rx=rx*rn;ry=ry*rn;rz=rz*rn;</code></pre><br />
-<br />
-<pre><code>// One iteration step<br />
-ex=rx*t+ox; ey=ry*t+oy; ez=rz*t+oz;<br />
-at=atan2(ey,ex);<br />
-t=(cos(at)-ox)*rx+(sin(at)-oy)*ry+(-oz)*rz;</code></pre><br />
-<br />
-This can be optimized:<br />
-<br />
-<pre><code>ex=rx*t+ox; ey=ry*t+oy;<br />
-atd=invsqrt(sqr(ex)+sqr(ey));<br />
-t=(ex*atd-ox)*rx+(ey*atd-oy)*ry-oz*rz;</code></pre><br />
-<br />
-It might be best to multiply 't' by 0.9 or to subtract a small value, in order to keep it from going past the curve (this would make your sphere whittaker iterations diverge).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">25th February 2004 15:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I hadn't thought of that.  Yeah sorry about the chaotic explanation.  I was working out the details as I was typing it more or less...  That idea you is awesome!  I'll put that in later today when I get the chance.<br />
-<br />
-Here maybe I can explain this all a little better to everyone on how this works.<br />
-<br />
-So basically I wrote out a space curve.  If you dont know what that is, more or less every 3D shape you create with SSC's is one.  So what I do is start out my rays (I'm gonna add in UnConeD's idea so read that).  And the object is to find the first point on the ray that is within a certain distance of the space curve.  So you use the distance formula along with the current approximated guess.<br />
-Thats where thist stuff came in.<br />
-<br />
-Ex. Say I had the following for my curve:<br />
-(cos(t2), sin(t2), 0)<br />
-<br />
-then the distance for that is:<br />
-f(t2)=((x-cos(t2))^2+(y-sin(t2))^2+z^2)^(1/2)<br />
-<br />
-take the derivative in terms of t and you get:<br />
-f'(t2)=(sin(t2)x-cos(t2)y)/f(t2)<br />
-<br />
-if you set that equal to zero and solved for t you'd get:<br />
-t2=atan(y/x)<br />
-<br />
-When you take the derivative of the distance formula and solve it for zero, you can find the value of t2 on the space curve that is closest to that point.  Then substitute that back into the equation.  So we have:<br />
-<br />
-r=((rx*t1+ox-cos(t2))^2+(ry*t1+oy-sin(t2))^2+(rz*t1+oz)^2)^(1/2)<br />
-<br />
-That's just the distance from the ray and the closest point on the space curve.  So you subtract r from both sides and you get the equation so it's equal to zero and you use Whittake to approximate your &quot;intersection.&quot;<br />
-<br />
-That should help. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">25th February 2004 17:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nifty.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">26th February 2004 02:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Here's the idea I had in action.  The top and bottom of the sphere were leveled off because the shape gets too dynamic for whittaker iteration making it hard to zero in on a specific solution.  Yeah I know the code isn't optimized.  I just wanted to give out an example.  I can make the surface change with the music.  The shading isn't right yet but it works well enough.  Ideas?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">16th March 2004 04:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm still working with this idea.  Anybody know any nice way of skewing those normals on the lumpy torus shape?  I figure its dependent on the angle from the center and the angle from the closest point on the curve but I haven't really had the time to think it through fully.  Any ideas?  UnConeD?  Jheriko?  Anybody?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">16th March 2004 08:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Skewing? Normals? Why? That torus looks fine as it is.. the edge fading looks okay imo, besides wouldn't better edge fading result in more ugly black 'occlusions' that shouldn't really happen? I assume you want normals for the edge fading since the lighting effect looks like distance fog to me.<br />
-<br />
-If you want more 'space curves' to try here are some parametric surfaces that I like:<br />
-<br />
-f8 klein bottle:<br />
-x=(1+cos(u/2)*sin(v)-sin(u/2)*sin(2*v))*cos(u)<br />
-y=(1+cos(u/2)*sin(v)-sin(u/2)*sin(2*v))*sin(u)<br />
-z=sin(u/2)*sin(v)+cos(u/2)*sin(2*v)<br />
-<br />
-moebius strip:<br />
-x=cos(u)+v*cos(.5*u)*cos(u)<br />
-y=sin(u)+v*cos(.5*u)*sin(u)<br />
-z=v*sin(.5*u)<br />
-<br />
-I made a minipack a while ago containing quite a few different parameteric surfaces, its called 6point5 and can be found in my deviantart gallery, be warned though some of the functions might be messy since I derived a couple of them myself.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">16th March 2004 16:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The normals I'm using on the lumpy torus are exactly the same as the normals on the normal torus, but they dont account for the lumps so the lighting doesn't look quite right.  That's why I wanted to skew the normals.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">D12</span><br />
-			<span class="date small text-muted">10th April 2004 06:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		My experience &amp; my information about advanced method of writing hard DM's &amp; SSc's is very little.<br />
-But I try to learn them in AVS.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">10th April 2004 07:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		D12: Can you please stop digging up old threads and adding absolutely NOTHING to them?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Raytracing Space Curves...</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=170177">Raytracing Space Curves...</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">20th February 2004 07:40 GMT</span></p>
+
+      <p class="post-content"><strong>Raytracing Space Curves...</strong><br />
+      Ok so I had a few new ideas but I'm not sure if they are even possible. I was thinking about raytracing space curves (by that I mean tracing the ray until it is a certain distance from the space curve). I guess this could get really nasty going down with derivatives to find the closest value of t... But technically you could setup the distance equation and take the derivative and solve for t in terms of x,y,z to find the closest point... Hmm the more I type this out the more I become aware of how complicated this could get if I use a complex equations... Any thoughts on this idea? UnConeD?<br />
+      <br />
+      <br />
+      Ex. Say I had the following for my curve:<br />
+      (cos(t), sin(t), 0)<br />
+      <br />
+      then the distance for that is:<br />
+      f(t)=((x-cos(t))^2+(y-sin(t))^2+z^2)^(1/2)<br />
+      <br />
+      take the derivative in terms of t and you get:<br />
+      f'(t)=(sin(t)x-cos(t)y)/f(t)<br />
+      <br />
+      if you set that equal to zero and solved for t you'd get:<br />
+      t=atan(y/x)<br />
+      <br />
+      Which makes sense if you think about it. Then you could plug that back into to get the distance and set a threshold value like raytracing metaballs. That's a really simple equation and it could get pretty difficult if you try and use complicated space curves but I think it's a plausible idea.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">horse-fly</span><br />
+      <span class="date small text-muted">20th February 2004 17:51 GMT</span></p>
+
+      <p class="post-content">that looks quite nasty... the code, that is, i haven't tried it out in avs...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">20th February 2004 19:51 GMT</span></p>
+
+      <p class="post-content">Well of course it'd be kinda nasty but if you use Whittaker iteration to solve it then I you could bypass some of that. I dont think it's been attempted in AVS at all anyways. I'll work on that and see what happens. Any other opinions?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">20th February 2004 20:04 GMT</span></p>
+
+      <p class="post-content">Here we go. It's a good old raytraced torus using my method (I've never seen this used anywhere so I dont know this has a name or something). :)<br />
+      <br />
+      I'll work on some more complex curves and maybe some shading.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">20th February 2004 22:40 GMT</span></p>
+
+      <p class="post-content">I don't know anything about the coding part (looks cool though) but here's a better looking alpha code :p<br /></p>
+      <pre>
+<code>alpha=2-abs(st-t*1.2)*3;</code>
+</pre>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">20th February 2004 22:51 GMT</span></p>
+
+      <p class="post-content">oh and replacing */$PI* with a variable *p* where "p=1/$PI" gives a 3fps b00st! :P</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">21st February 2004 03:55 GMT</span></p>
+
+      <p class="post-content">No offense to you because I really do appreciate the comments and all, but I know it's not optimized. I'm just working with the method right now. Seeing how far I can push this trick. The current alpha coding just finds out whether the iterations are actually zeroing in on anything or not. If they aren't then I dont want to see the garbage at that point.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">21st February 2004 04:11 GMT</span></p>
+
+      <p class="post-content">Ok so here's an update on the torus. Figured out a convenient way of implementing some shading which will work for all raytraced space curves (if some more can be solved) ;) So here's what the torus looks like now. Changed the whittaker constant because this function can be approximated rather quickly with a few iterations. You'll notice the center is pretty crisp and clean as well. I tried working with a few other equations but I'm not so sure that's gonna work for most... I'll keep trying though. Comments!? Ideas!?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
+      <span class="date small text-muted">21st February 2004 04:52 GMT</span></p>
+
+      <p class="post-content">um....do you speak twice? :p btw, nice preset.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">21st February 2004 04:56 GMT</span></p>
+
+      <p class="post-content">Oh just caught what you were saying... Fixed it.<br />
+      <br />
+      On a different note, I had another idea I might work on. If I created a second function to go along to define the radius of the shape about the space curve. Hmm...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
+      <span class="date small text-muted">21st February 2004 05:09 GMT</span></p>
+
+      <p class="post-content">i'm not a very <i>techie</i> AVSer but i think its turning out good :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">23rd February 2004 04:55 GMT</span></p>
+
+      <p class="post-content">The surface equation idea works. So now the radius of the torus can vary along the ring. But I cant seem to solve any more space curve equations. I could numerically approximate them but then I'd be doing that for each iteration of the other approximation and thats just not gonna happen. I'll see if I can find any more but I dont know...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">25th February 2004 08:00 GMT</span></p>
+
+      <p class="post-content">Uhh haven't fixed the normals on this new shape but I think it looks awesome.<br />
+      <br />
+      <br />
+      Had a new idea as well! Similar direction but different effect. I'll work on it tomorrow and post it if I get it to work. I'm thinking I should be able to create some pretty crazy shapes!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
+      <span class="date small text-muted">25th February 2004 09:41 GMT</span></p>
+
+      <p class="post-content">hey nice work! maybe you can get them to morph between different shapes.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">25th February 2004 12:03 GMT</span></p>
+
+      <p class="post-content">I hadn't had time to read up on this. Your explanation is kind of chaotic ;)<br />
+      <br />
+      What you seem to be doing now is first finding the curve's parameter value whose point comes closest to the current intersection guess. and then constructing a sphere around that point to raytrace with a whittaker iteration.<br />
+      <br />
+      Indeed, the main problem will be finding out the value of p where df(p)/p = 0 (where p is the curve parameter). Up to now, your shapes haven't in fact been much more than just implicit equations written in a roundabout way. Once you try complicated curves, I think you will run into stability and speed problems.<br />
+      <br />
+      <br />
+      I did have an idea which might help speed up the whittaker iteration. Instead of considering the smallest distance from the curve to the current intersection guess, consider the distance from a curvepoint to the current ray.<br />
+      <br />
+      The distance from a point P to a ray O + k*D can be found by finding the point along the ray which comes closest to the point P. Then you check the distance between the two. By projecting P-O onto D, you get 'k':<br />
+      <br /></p>
+      <pre>
+<code><br />k  = <u> D * (P - O) </u><br />        (D*D)<br /></code>
+</pre><br />
+      (* is dot product)<br />
+      <br />
+      In AVS, you can easily normalize D (using invsqrt) once, so then you get (D*D = 1):<br />
+      <br />
+      <pre>
+<code><br />k = D * (P - O)<br /></code>
+</pre><br />
+      <br />
+      In this equation, P will be in parametric form (the curve).<br />
+      The calculated 'k' is automatically the value 'k' for the point which is closest to the curvepoint.<br />
+      <br />
+      This obviously homes in a lot faster, and seems to work well as an accelerating iteration. Of course, this 'k' will try to get as close to the curve as possible, rather than staying a certain radius away from it. So it would seem good to use this to get close to the desired area fast, and then using your current method for respecting the radius.<br />
+      <br />
+      For your variable-radius donut:<br />
+      ('k' = t, 'p' = at, 'dx,dy,dz' = rx,ry,rz)<br />
+      <br />
+      <pre>
+<code>// Normalize once at the beginning<br />rn=invsqrt(sqr(rx)+sqr(ry)+sqr(rz));<br />rx=rx*rn;ry=ry*rn;rz=rz*rn;</code>
+</pre><br />
+      <br />
+      <pre>
+<code>// One iteration step<br />ex=rx*t+ox; ey=ry*t+oy; ez=rz*t+oz;<br />at=atan2(ey,ex);<br />t=(cos(at)-ox)*rx+(sin(at)-oy)*ry+(-oz)*rz;</code>
+</pre><br />
+      <br />
+      This can be optimized:<br />
+      <br />
+      <pre>
+<code>ex=rx*t+ox; ey=ry*t+oy;<br />atd=invsqrt(sqr(ex)+sqr(ey));<br />t=(ex*atd-ox)*rx+(ey*atd-oy)*ry-oz*rz;</code>
+</pre><br />
+      <br />
+      It might be best to multiply 't' by 0.9 or to subtract a small value, in order to keep it from going past the curve (this would make your sphere whittaker iterations diverge).
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">25th February 2004 15:14 GMT</span></p>
+
+      <p class="post-content">I hadn't thought of that. Yeah sorry about the chaotic explanation. I was working out the details as I was typing it more or less... That idea you is awesome! I'll put that in later today when I get the chance.<br />
+      <br />
+      Here maybe I can explain this all a little better to everyone on how this works.<br />
+      <br />
+      So basically I wrote out a space curve. If you dont know what that is, more or less every 3D shape you create with SSC's is one. So what I do is start out my rays (I'm gonna add in UnConeD's idea so read that). And the object is to find the first point on the ray that is within a certain distance of the space curve. So you use the distance formula along with the current approximated guess.<br />
+      Thats where thist stuff came in.<br />
+      <br />
+      Ex. Say I had the following for my curve:<br />
+      (cos(t2), sin(t2), 0)<br />
+      <br />
+      then the distance for that is:<br />
+      f(t2)=((x-cos(t2))^2+(y-sin(t2))^2+z^2)^(1/2)<br />
+      <br />
+      take the derivative in terms of t and you get:<br />
+      f'(t2)=(sin(t2)x-cos(t2)y)/f(t2)<br />
+      <br />
+      if you set that equal to zero and solved for t you'd get:<br />
+      t2=atan(y/x)<br />
+      <br />
+      When you take the derivative of the distance formula and solve it for zero, you can find the value of t2 on the space curve that is closest to that point. Then substitute that back into the equation. So we have:<br />
+      <br />
+      r=((rx*t1+ox-cos(t2))^2+(ry*t1+oy-sin(t2))^2+(rz*t1+oz)^2)^(1/2)<br />
+      <br />
+      That's just the distance from the ray and the closest point on the space curve. So you subtract r from both sides and you get the equation so it's equal to zero and you use Whittake to approximate your "intersection."<br />
+      <br />
+      That should help. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">25th February 2004 17:51 GMT</span></p>
+
+      <p class="post-content">Nifty.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">26th February 2004 02:32 GMT</span></p>
+
+      <p class="post-content">Here's the idea I had in action. The top and bottom of the sphere were leveled off because the shape gets too dynamic for whittaker iteration making it hard to zero in on a specific solution. Yeah I know the code isn't optimized. I just wanted to give out an example. I can make the surface change with the music. The shading isn't right yet but it works well enough. Ideas?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">16th March 2004 04:50 GMT</span></p>
+
+      <p class="post-content">I'm still working with this idea. Anybody know any nice way of skewing those normals on the lumpy torus shape? I figure its dependent on the angle from the center and the angle from the closest point on the curve but I haven't really had the time to think it through fully. Any ideas? UnConeD? Jheriko? Anybody?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">16th March 2004 08:57 GMT</span></p>
+
+      <p class="post-content">Skewing? Normals? Why? That torus looks fine as it is.. the edge fading looks okay imo, besides wouldn't better edge fading result in more ugly black 'occlusions' that shouldn't really happen? I assume you want normals for the edge fading since the lighting effect looks like distance fog to me.<br />
+      <br />
+      If you want more 'space curves' to try here are some parametric surfaces that I like:<br />
+      <br />
+      f8 klein bottle:<br />
+      x=(1+cos(u/2)*sin(v)-sin(u/2)*sin(2*v))*cos(u)<br />
+      y=(1+cos(u/2)*sin(v)-sin(u/2)*sin(2*v))*sin(u)<br />
+      z=sin(u/2)*sin(v)+cos(u/2)*sin(2*v)<br />
+      <br />
+      moebius strip:<br />
+      x=cos(u)+v*cos(.5*u)*cos(u)<br />
+      y=sin(u)+v*cos(.5*u)*sin(u)<br />
+      z=v*sin(.5*u)<br />
+      <br />
+      I made a minipack a while ago containing quite a few different parameteric surfaces, its called 6point5 and can be found in my deviantart gallery, be warned though some of the functions might be messy since I derived a couple of them myself.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">16th March 2004 16:46 GMT</span></p>
+
+      <p class="post-content">The normals I'm using on the lumpy torus are exactly the same as the normals on the normal torus, but they dont account for the lumps so the lighting doesn't look quite right. That's why I wanted to skew the normals.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">D12</span><br />
+      <span class="date small text-muted">10th April 2004 06:57 GMT</span></p>
+
+      <p class="post-content">My experience &amp; my information about advanced method of writing hard DM's &amp; SSc's is very little.<br />
+      But I try to learn them in AVS.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">10th April 2004 07:00 GMT</span></p>
+
+      <p class="post-content">D12: Can you please stop digging up old threads and adding absolutely NOTHING to them?</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

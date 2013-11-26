@@ -1,234 +1,162 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" HELP needed!!! AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HELP needed!!! AVS" />
 
-	<title> HELP needed!!! - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>HELP needed!!! - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">HELP needed!!!</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=165137">HELP needed!!!</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">DiZZeL</span><br />
+      <span class="date small text-muted">16th January 2004 12:58 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">HELP needed!!!</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=165137">HELP needed!!!</a></p>
+      <p class="post-content"><strong>HELP needed!!!</strong><br />
+      Tell to me, please, how I can force this effects of "lens" which in the center to move on the screen in different directions? Or how can i make a file of these lenses and to force them to move in various directions? How?????!!! Help!!!!!!!!!!!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">16th January 2004 14:28 GMT</span></p>
 
-<br />
+      <p class="post-content">Am I the only one who is reminded of babies crying when reading posts like this?<br />
+      <br />
+      HELP!!!!!!!!!!! OH MY GOD! HE'S GOING TO DIE! SOMEBODY PLEASE... <b>DO</b> SOMETHING! THIS IS REALLY URGENT! CALL 911!<br />
+      <br />
+      A tip: when posting, please use a descriptive topic title and ask your question in a normal fashion. Don't use multiple punctuation marks in series.<br />
+      <br />
+      Anyway, you'll need to replace the last movement by a dynamic movement and transform between polar coordinates and cartesian coordinates for it to work.<br />
+      <br />
+      For distance-only formulas, you can use:<br />
+      <br />
+      x=x-cx;y=(y-cy)*af;d=sqrt(sqr(x)+sqr(y));<br />
+      nd=0.15-d;<br />
+      d=nd/d;x=x*d+cx;y=y*d*iaf+cy;<br />
+      <br />
+      Where:<br />
+      - af is the aspect-ratio correction factor and iaf is 1/af<br />
+      - cx/cy is the center of your lens</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DiZZeL</span><br />
-			<span class="date small text-muted">16th January 2004 12:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>HELP needed!!!</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">DiZZeL</span><br />
+      <span class="date small text-muted">17th January 2004 18:58 GMT</span></p>
 
-		Tell to me, please, how I can force this effects of &quot;lens&quot; which in the center to move on the screen in different directions? Or how can i make a file of these lenses and to force them to move in various directions? How?????!!! Help!!!!!!!!!!!
-		</p>
-</div>
+      <p class="post-content">I am sorry that somewhere i did something wrong in this topic ;) Thank for formulas. Now imagine, that I the full idiot in this mathematical programming (though actually i am and so it is) and could you explain to me wich formulas should i put in pixel field, which in beat section? I still the beginner in this business (as you see). Anyway I've made some formulas and i want to share it with you. It can possibly give you help on the account of what I want to tell all about it.<br />
+      <br />
+      frame: d=d2 +.02<br />
+      beat: d2 = (rand (50)/1000) + .5;<br />
+      d2=if (above (d2.05), d, d2);<br />
+      d2=if (above (d2.4).001, d2);<br />
+      pixel: d=d2-d<br />
+      <br />
+      I'm about putting this stuff in DM that will replace my old movement.<br />
+      <br />
+      As you see I have made lens by my myself. And now i have only one question. The point of that question is how can i force it to move. Could you help me with that? Yaeh, it is that question still. :) I don't want make you to angry with me but i can't get clear all of that stuff that you wrote to me (it won't be necessary in 911). :) As you can see when the lens gets the maximal size is sharply reduced. How can i make lens smoothly decreased?<br />
+      <br />
+      Also i have badly understood about coordinates. ;)<br />
+      <br />
+      Yeah, yaeh, i know that i'm dump... :) And try not to be so sarcastic in future...:)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">17th January 2004 19:09 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">16th January 2004 14:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">frame: d=d2 +.02<br />
+      WTF?<br />
+      <br />
+      d2=if (above (d2.05), d, d2);<br />
+      d2=if (above (d2.4).001, d2);<br />
+      <br />
+      Even more... err, you know.<br />
+      <br />
+      Anyways, the pixel coding for a makeshift lens, fresh from Lexicon (pack 4)<br />
+      <br />
+      x1=x+sin(tx);y1=y+sin(ty);<br />
+      area=max(1-sqrt(x1*x1+y1*y1),0);<br />
+      d=d/max(1+area*3,1);<br />
+      <br />
+      This is NOT quite correct, however. It gets very yucky around edges... Look for the first Whacko pack by UnConeD, Second Reality for a correct lens. Study yourself.</p>
+    </div>
+    <hr />
 
-		Am I the only one who is reminded of babies crying when reading posts like this?<br />
-<br />
-HELP!!!!!!!!!!! OH MY GOD! HE'S GOING TO DIE! SOMEBODY PLEASE... <b>DO</b> SOMETHING! THIS IS REALLY URGENT! CALL 911!<br />
-<br />
-A tip: when posting, please use a descriptive topic title and ask your question in a normal fashion. Don't use multiple punctuation marks in series.<br />
-<br />
-Anyway, you'll need to replace the last movement by a dynamic movement and transform between polar coordinates and cartesian coordinates for it to work.<br />
-<br />
-For distance-only formulas, you can use:<br />
-<br />
-x=x-cx;y=(y-cy)*af;d=sqrt(sqr(x)+sqr(y));<br />
-nd=0.15-d;<br />
-d=nd/d;x=x*d+cx;y=y*d*iaf+cy;<br />
-<br />
-Where:<br />
-- af is the aspect-ratio correction factor and iaf is 1/af<br />
-- cx/cy is the center of your lens
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">17th January 2004 20:09 GMT</span></p>
 
-	<hr />
+      <p class="post-content">In case you're curious how my lens was derived:<br />
+      <br />
+      Looking at the image sideways, the AVS picture is a line. I put a sphere which sticks a bit above the plane.<br /></p>
+      <pre>
+<code><br />            |<br />            |<br />            |<br />            |<br />     .-&#194;&#175;&#194;&#175;&#194;&#175;&#194;&#175;&#194;&#175;X.<br />    /      /  \<br />---/------/----\--------<br />  |      .      |<br /></code>
+</pre><br />
+      (sorry for the crappy ascii art)<br />
+      <br />
+      The incoming rays are vertical, and I assume an infinitely refractive material (i.e. the refracted ray runs along the surface normal inside the lens).<br />
+      You can determine the intersection of the refracted ray with the surface using trigonometry. If you do it right, you will get a distance-only formula. If you use parameters in your formulas, you can tweak the shape later on.<br />
+      <br />
+      The trick to a good lens is to make sure the curvature is right, and that the lens has no effect at the edge.
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DiZZeL</span><br />
-			<span class="date small text-muted">17th January 2004 18:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">DiZZeL</span><br />
+      <span class="date small text-muted">19th January 2004 05:56 GMT</span></p>
 
-		I am sorry that somewhere i did something wrong in this topic ;) Thank for formulas. Now imagine, that I the full idiot in this mathematical programming (though actually i am and so it is) and could you explain to me wich formulas should i put in pixel field, which in beat section? I still the beginner in this business (as you see). Anyway I've made some formulas and i want to share it with you. It can possibly give you help on the account of what I want to tell all about it.<br />
-<br />
-frame: d=d2 +.02<br />
-beat:  d2 = (rand (50)/1000) + .5;<br />
-       d2=if (above (d2.05), d, d2);<br />
-       d2=if (above (d2.4).001, d2);<br />
-pixel: d=d2-d<br />
-<br />
-I'm about putting this stuff in DM that will replace my old movement.<br />
-<br />
-As you see I have made lens by my myself. And now i have only one question. The point of that question is how can i force it to move. Could you help me with that? Yaeh, it is that question still. :) I don't want make you to angry with me but i can't get clear all of that stuff that you wrote to me (it won't be necessary in 911). :) As you can see when the lens gets the maximal size is sharply reduced. How can i make lens smoothly decreased?<br />
-<br />
-Also i have badly understood about coordinates. ;)<br />
-<br />
-Yeah, yaeh, i know that i'm dump... :) And try not to be so sarcastic in future...:)
-		</p>
-</div>
+      <p class="post-content">My God! I didn't even think that my math-stupidness actually gone so far.:) Anyway, thank you, guys, for correcting my natural defect of enmity to mathematics. I have sat evening and another alone with my preset and understood, that i can get very funny effects by experimenting with DM-formulas and variables, achieving thus of something interesting. Getting many ideas of how to implement lens effect i understood that i understands nothing.;) Yes, these ugly formulas is that what i can do only by myself now. Yeah, that is true. It is terrible even to think about it, but it is my first try. First try never turns out correctly everytime. Right? And i am sure, that all of this has taken place to be with you too, guys (i hope that phrase was correct:)). Probably those formulas which I have written is just a pity attempt to represent how i'm understanding all this programming stuff. And sure, i havn't done everything well, but as you can see I do not apply on an Oskar for it. Therefore I'm asking you for help. I just want to make lens by myself. And now or later i'll make it with your help or without it. BUT!!!!! But... But on this stage of my AVS-experiencing i realize that i'm the guy who needs of your help very much.<br />
+      <br />
+      2 UnConed:<br />
+      Thank for your so detailed explanation and ascii-picture (why you're sorring for it, i found it very informative). All this text that you wrote about what, where and how all of this graphics eye-candy thing should work is very difficult to me by now. But I think that the time when i'll understand it will come and all of it soon or later will be clear to me.<br />
+      <br />
+      2 Nic01:<br />
+      Thank you for formulas that you have written to me. Thank you anyway, but i don't know where should i past them: beat, pixel, frame? You know what i'm talking about. Yes, it is very possible that i'm very big stupid that can't understand even a basic thing. But if not you won't ask, you will not learn. Right?:) Of course, it is very important that there should be a man who will teach you. I agree with it. Well, i'll try. The main thing is who will teach me. Why don't you, guys. Huh? Of course if you want to.:):) I have put your formulas according to my own reasons like this:<br />
+      <br />
+      frame: x1=x+sin(tx);y1=y+sin(ty);<br />
+      beat: area=max(1-sqrt(x1*x1+y1*y1),0);<br />
+      pixel: d=d/max(1+area*3,1);<br />
+      <br />
+      I hope that was correct. Anyway hopeness dies last one :)))) I did everything but lens does not appear with those formulas. Blend and rectangular coordinates fields are unchecked. Wrap, bilinear filtering are checked. I saw cool lens only when i changed grid size to 5x5 and replace pixel formula with this one: d=(2*d)-max(1+area*3,1). But the lens did not move anyway.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">19th January 2004 06:31 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">17th January 2004 19:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Heh, UCD, you're a great ASCII artist! What's the name of that doggy? :D<br />
+      <br />
+      &lt;sorry_I'm_offtopic&gt;</p>
+    </div>
+    <hr />
 
-		frame: d=d2 +.02<br />
-WTF?<br />
-<br />
-d2=if (above (d2.05), d, d2);<br />
-d2=if (above (d2.4).001, d2);<br />
-<br />
-Even more... err, you know.<br />
-<br />
-Anyways, the pixel coding for a makeshift lens, fresh from Lexicon (pack 4)<br />
-<br />
-x1=x+sin(tx);y1=y+sin(ty);<br />
-area=max(1-sqrt(x1*x1+y1*y1),0);<br />
-d=d/max(1+area*3,1);<br />
-<br />
-This is NOT quite correct, however. It gets very yucky around edges... Look for the first Whacko pack by UnConeD, Second Reality for a correct lens. Study yourself.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">17th January 2004 20:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		In case you're curious how my lens was derived:<br />
-<br />
-Looking at the image sideways, the AVS picture is a line. I put a sphere which sticks a bit above the plane.<br />
-<pre><code><br />
-            |<br />
-            |<br />
-            |<br />
-            |<br />
-     .-¯¯¯¯¯X.<br />
-    /      /  \<br />
----/------/----\--------<br />
-  |      .      |<br />
-</code></pre><br />
-(sorry for the crappy ascii art)<br />
-<br />
-The incoming rays are vertical, and I assume an infinitely refractive material (i.e. the refracted ray runs along the surface normal inside the lens).<br />
-You can determine the intersection of the refracted ray with the surface using trigonometry. If you do it right, you will get a distance-only formula. If you use parameters in your formulas, you can tweak the shape later on.<br />
-<br />
-The trick to a good lens is to make sure the curvature is right, and that the lens has no effect at the edge.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DiZZeL</span><br />
-			<span class="date small text-muted">19th January 2004 05:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		My God! I didn't even think that my math-stupidness actually gone so far.:) Anyway, thank you, guys, for correcting my natural defect of enmity to mathematics. I have sat evening and another alone with my preset and understood, that i can get very funny effects by experimenting with DM-formulas and variables, achieving thus of something interesting. Getting many ideas of how to implement lens effect i understood that i understands nothing.;) Yes, these ugly formulas is that what i can do only by myself now. Yeah, that is true. It is terrible even to think about it, but it is my first try. First try never turns out correctly everytime. Right? And i am sure, that all of this has taken place to be with you too, guys (i hope that phrase was correct:)). Probably those formulas which I have written is just a pity attempt to represent how i'm understanding all this programming stuff. And sure, i havn't done everything well, but as you can see I do not apply on an Oskar for it. Therefore I'm asking you for help. I just want to make lens by myself. And now or later i'll make it with your help or without it. BUT!!!!! But... But on this stage of my AVS-experiencing i realize that i'm the guy who needs of your help very much. <br />
-<br />
-2 UnConed:<br />
-Thank for your so detailed explanation and ascii-picture (why you're sorring for it, i found it very informative). All this text that you wrote about what, where and how all of this graphics eye-candy thing should work is very difficult to me by now. But I think that the time when i'll understand it will come and all of it soon or later will be clear to me.<br />
-<br />
-2 Nic01:<br />
-Thank you for formulas that you have written to me. Thank you anyway, but i don't know where should i past them: beat, pixel, frame? You know what i'm talking about. Yes, it is very possible that i'm very big stupid that can't understand even a basic thing. But if not you won't ask, you will not learn. Right?:) Of course, it is very important that there should be a man who will teach you. I agree with it. Well, i'll try. The main thing is who will teach me. Why don't you, guys. Huh? Of course if you want to.:):) I have put your formulas according to my own reasons like this:<br />
-<br />
-frame: x1=x+sin(tx);y1=y+sin(ty);<br />
-beat: area=max(1-sqrt(x1*x1+y1*y1),0);<br />
-pixel: d=d/max(1+area*3,1);<br />
-<br />
-I hope that was correct. Anyway hopeness dies last one :)))) I did everything but lens does not appear with those formulas. Blend and rectangular coordinates fields are unchecked. Wrap, bilinear filtering are checked. I saw cool lens only when i changed grid size to 5x5 and replace pixel formula with this one: d=(2*d)-max(1+area*3,1). But the lens did not move anyway.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">19th January 2004 06:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Heh, UCD, you're a great ASCII artist! What's the name of that doggy? :D<br />
-<br />
-&lt;sorry_I'm_offtopic&gt;
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

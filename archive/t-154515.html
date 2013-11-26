@@ -1,290 +1,171 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" getosc &amp; getspec AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="getosc &amp; getspec AVS" />
 
-	<title> getosc &amp; getspec - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>getosc &amp; getspec - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">getosc &amp; getspec</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=154515">getosc &amp; getspec</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">29th October 2003 22:56 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">getosc &amp; getspec</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=154515">getosc &amp; getspec</a></p>
+      <p class="post-content"><strong>getosc &amp; getspec</strong><br />
+      Ok so I'm assuming you use these to get certain values of v at specified spots on the scope and what not, but what do all the parameters mean?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">29th October 2003 23:48 GMT</span></p>
 
-<br />
+      <p class="post-content">Read the fricking AVS help. Sheesh.<br />
+      <br />
+      getosc(band,width,channel)<br />
+      = returns waveform data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
+      'channel' can be: 0=center, 1=left, 2=right. return value is (-1..1)<br />
+      <br />
+      getspec(band,width,channel)<br />
+      = returns spectrum data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
+      'channel' can be: 0=center, 1=left, 2=right. return value is (0..1)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">29th October 2003 22:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>getosc &amp; getspec</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">30th October 2003 00:55 GMT</span></p>
 
-		Ok so I'm assuming you use these to get certain values of v at specified spots on the scope and what not, but what do all the parameters mean?
-		</p>
-</div>
+      <p class="post-content">I think he was asking for a more in depth about what the different things inside the parenthesis mean.<br />
+      Band=Position along the Waveform or Spectrum Data=0 for lowest frequencies, 1 for highest frequencies.<br />
+      Width=Width of the Waveform of Spectrum Data being used around the set point in band=0 for just the data at band, 1 for the whole set of data<br />
+      channel=channel your listening to=0-center, 1-left, 2-right</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">30th October 2003 01:48 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">29th October 2003 23:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You can just make a <font face="courier new">x=i*2-1;y=getosc(...);</font> scope and experiment with all the options. Last time I checked, AVS didn't explode when I tried out new stuff.</p>
+    </div>
+    <hr />
 
-		Read the fricking AVS help. Sheesh.<br />
-<br />
-getosc(band,width,channel)<br />
-  = returns waveform data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
-    'channel' can be: 0=center, 1=left, 2=right. return value is (-1..1)<br />
-<br />
-getspec(band,width,channel)<br />
-  = returns spectrum data centered at 'band', (0..1), sampled 'width' (0..1) wide.<br />
-    'channel' can be: 0=center, 1=left, 2=right. return value is (0..1)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">30th October 2003 02:17 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Yeah thanks for that unconed, real nice. Anyways, you've been quite helpful Super Toast, thanks.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">30th October 2003 00:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">30th October 2003 03:14 GMT</span></p>
 
-		I think he was asking for a more in depth about what the different things inside the parenthesis mean.<br />
-Band=Position along the Waveform or Spectrum Data=0 for lowest frequencies, 1 for highest frequencies.<br />
-Width=Width of the Waveform of Spectrum Data being used around the set point in band=0 for just the data at band, 1 for the whole set of data<br />
-channel=channel your listening to=0-center, 1-left, 2-right
-		</p>
-</div>
+      <p class="post-content">No problem, but UnConeD does have a point, like for myself I learn better when I do it myself, but that is just me, glad I could help you.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
+      <span class="date small text-muted">30th October 2003 08:48 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">30th October 2003 01:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">does v equal getosc(i,0,i)? I believe it does, since I tried by overlaying them, though some certainty is never wrong ;).</p>
+    </div>
+    <hr />
 
-		You can just make a <font face="courier new">x=i*2-1;y=getosc(...);</font> scope and experiment with all the options. Last time I checked, AVS didn't explode when I tried out new stuff.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">30th October 2003 11:44 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Deamon: the third parameter should only be 0, 1 or 2, nothing else. Using 'i' means it's rounded, and that it uses the center channel for the left half, and the left channel for the right half.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">30th October 2003 02:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
+      <span class="date small text-muted">31st October 2003 22:53 GMT</span></p>
 
-		Yeah thanks for that unconed, real nice.  Anyways, you've been quite helpful Super Toast, thanks.
-		</p>
-</div>
+      <p class="post-content">ok, :) thanks</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">1st November 2003 02:49 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">30th October 2003 03:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">but yes, v is meant to be getspec(i,0,0).<br />
+      <br />
+      (as far as i know)</p>
+    </div>
+    <hr />
 
-		No problem, but UnConeD does have a point, like for myself I learn better when I do it myself, but that is just me, glad I could help you.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
+      <span class="date small text-muted">1st November 2003 10:13 GMT</span></p>
 
-	<hr />
+      <p class="post-content">getspec or getosc depending on which input type (waveform or spectrum) you select, I assume?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">30th October 2003 08:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">1st November 2003 15:53 GMT</span></p>
 
-		does v equal getosc(i,0,i)? I believe it does, since I tried by overlaying them, though some certainty is never wrong ;).
-		</p>
-</div>
+      <p class="post-content">Nope. They're totally independent of the osc/spec selection.... that one is perfectly restricted to v.<br />
+      SSC by default is set to waveform, so v is get<b>osc</b>(i,0,0) by default, get<b>spec</b>(i,0,0) if you choose so.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Deamon</span><br />
+      <span class="date small text-muted">2nd November 2003 12:56 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">30th October 2003 11:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">yeah, I meant that :p. Thanks for clearing it up anyways.</p>
+    </div>
+    <hr />
 
-		Deamon: the third parameter should only be 0, 1 or 2, nothing else. Using 'i' means it's rounded, and that it uses the center channel for the left half, and the left channel for the right half.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">3rd November 2003 00:39 GMT</span></p>
 
-	<hr />
+      <p class="post-content">although if I remember correctly, there is still a difference between v and get***(i,0,0). I believe that they don't work with the exact same part of the spectrum(may be wrong).</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">31st October 2003 22:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">3rd November 2003 01:03 GMT</span></p>
 
-		ok, :) thanks
-		</p>
-</div>
+      <p class="post-content">Your right anubis, I did some equal() tests and they never would equal each other, but the rounded, (ceil or floor or |0 values), would equal each other.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">1st November 2003 02:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		but yes, v is meant to be getspec(i,0,0).<br />
-<br />
-(as far as i know)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">1st November 2003 10:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		getspec or getosc depending on which input type (waveform or spectrum) you select, I assume?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">1st November 2003 15:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nope. They're totally independent of the osc/spec selection.... that one is perfectly restricted to v.<br />
-SSC by default is set to waveform, so v is get<b>osc</b>(i,0,0) by default, get<b>spec</b>(i,0,0) if you choose so.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Deamon</span><br />
-			<span class="date small text-muted">2nd November 2003 12:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yeah, I meant that :p. Thanks for clearing it up anyways.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">3rd November 2003 00:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		although if I remember correctly, there is still a difference between v and get***(i,0,0).  I believe that they don't work with the exact same part of the spectrum(may be wrong).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">3rd November 2003 01:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Your right anubis, I did some equal() tests and they never would equal each other, but the rounded, (ceil or floor or |0 values), would equal each other.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,573 +1,354 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" i needz da math help... AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="i needz da math help... AVS" />
 
-	<title> i needz da math help... - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>i needz da math help... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">i needz da math help...</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=171473">i needz da math help...</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">29th February 2004 07:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>i needz da math help...</strong><br />
-		
-		
-
-		abs(x)^n+abs(y)^n=k^n<br />
-solve for n in terms of k, x, and y.<br />
-<br />
-i think i'm going to cry.  i really want a solution for that but i'm too stupid.  anyone willing to help me out with it?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">29th February 2004 08:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You mihgt just wanna use newton/raphson or whittaker iteration if n is dynamic.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Shock Value</span><br />
-			<span class="date small text-muted">29th February 2004 17:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		n=log(x^n+y^n)/log(k) is as far as I could figure to go, sorry. I'm no math whiz though.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">29th February 2004 18:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		As far as I know, you're not gonna solve that.  You can approximate it though.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">29th February 2004 21:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Like they said - I'm pretty sure that one isn't solvable - check on matlab or mathematica or maple or something, but I don't think it is solvable.  You will have to do numeric approximations.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">1st March 2004 08:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I tried as well. Anyone else thinks is looks a lot like Fermat's Last Theorem. I got Shock Value's formula and also this one:<br />
-<br />
-<pre><code><br />
-n = - log ( k^-n + abs(y)^n * abs(x)^-n * k^-n ) / log (x)<br />
-</code></pre> <br />
-<br />
-Solving for x, y and k is easy though, but I guess you don't need that. I think you need to factor abs(x)^n + abs(y)^n, but I don't know how to do it. I did find a (crappy) method for splitting k^n - abs(y)^n in different parts, but that doesn't help at all. Maybe anyone here finds it interesting.<br />
-<br />
-<pre><code><br />
-k^n - abs(y)^n = ( k^(n-1) - abs(y)^(n-1) )*( k + abs(y) ) - ( k^(n-2) - abs(y)^(n-2) ) * k * abs(y)<br />
-</code></pre><br />
-<br />
-I would be very interested in hearing the solution. Maybe you could post it on a math forum.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">2nd March 2004 04:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		fermat's theorem is only for integers isn't it................<br />
-<br />
-/me is stupid and ignorant and stupid<br />
-<br />
-and yes this is for a preset.  i tried it on my ti-89 but it didn't work - but then again there's a lot of things that the 89 is bad at, like working right...anyone here have mathematica?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">2nd March 2004 07:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yes, but it has a very similar form. x^n + y^n = z^n<br />
-<br />
-Where did you find this problem?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">2nd March 2004 07:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Maybe filling us in on what you plan to do with this equation might help us supply ways of solving the equation more suitably?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">2nd March 2004 14:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Punch it in a cartesian formula simulator thingamajig, you'll find out.<br />
-<br />
-*hinthint* superellipse
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">2nd March 2004 17:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nic01 is right. Take a look at <a href="http://mathworld.wolfram.com/Superellipse.html" target="_blank">this article</a>.<br />
-<br />
-The formula can be rewritten to:<br />
-<br />
-(abs(x)/k)^n + (abs(y)/k)^n -1 = 0<br />
-<br />
-Maybe this helps.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">2nd March 2004 17:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well that's assuming z equals one.  Like I said, if he tells us what he plans on doing with it then maybe we can help a little better.<br />
-<br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=164315" target="_blank">http://forums.winamp.com/showthread....hreadid=164315</a><br />
-<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=164753" target="_blank">http://forums.winamp.com/showthread....hreadid=164753</a>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">3rd March 2004 06:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No, <br />
-<br />
-abs(x)^n + abs(y)^n = k^n<br />
-abs(x)^n/k^n + abs(y)^n/k^n = k^n/k^n<br />
-(abs(x)/k)^n + (abs(y)/k)^n = 1<br />
-(abs(x)/k)^n + (abs(y)/k)^n - 1 = 0<br />
-<br />
-It works except for k=0.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">4th March 2004 08:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		OK, I asked my math teacher and he didn't know a method to solve it. He also said that he didn't know if it was impossible. He did help make the formula easier.<br />
-<br />
-abs(x)^n + abs(y)^n = k^n<br />
-abs(x)^n/k^n + abs(y)^n/k^n = k^n/k^n<br />
-(abs(x)/k)^n + (abs(y)/k)^n = 1<br />
-<br />
-this can be written as the seemingly easier calculation:<br />
-a^n + b^n = 1<br />
-where a = abs(x)/k and b = abs(y)/k<br />
-<br />
-I've attached a plot of the above equation on my graphing calc:<br />
-the x-axis is a from 0 to 1, with a scale of 0.1<br />
-the y-axis is n from 0 to 5, with a scale of 0.5<br />
-the bottom line: b=0.25<br />
-the middle line: b=0.5<br />
-the top line: b=0.75
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">skupers</span><br />
-			<span class="date small text-muted">5th March 2004 18:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		After another long talk with my math teacher, we have concluded this it's probably unsolvable. This theory is supported by <a href="http://mathforum.org/library/drmath/view/52879.html" target="_blank">this Ask Dr. Math article</a>. I haven't found a real proof that it is impossible to solve, but I think it is.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">5th March 2004 19:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		*cough* approximation *cough*<br />
-<br />
-Depending on what he wants to do he could use newton/raphson or whittaker or just good old Euler's method.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">9th March 2004 00:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		This is a very hard problem... the only way i can think of solving it is numerically by using either n-r/whittaker. You can also solve it by using log expansions but this is also an iterative process and is difficult and more expensive in terms of divisions.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">9th March 2004 00:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		well if he's just doing some 2D stuff he could use Euler's method as well to inch along.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">10th March 2004 02:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		BTW what i can tell you is that this is 100% insoluble in a finite fashion due to the use of real powers. The definition of a generic non integer power can be given only in terms of an infinite series... whether its some clever sum of sines and cosines or something based on e or calculus, also the instant you use log you are playing with an iterative solutions whether you realise it or not.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">11th March 2004 23:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		eeps.  sorry guys, i've been busy the past few days and i've forgotten to check this thread...<br />
-<br />
-anyway, basically what i'm looking for is, given a point (x,y), find the superellipse of power n:<br />
-|x|^n+|y|^n=r<br />
-which would intersect that point.<br />
-<br />
-and i'm thinking the more that i look at it that i shouldn't have had k^n at all in the first place, so it should probably be rewritten as:<br />
-|x|^n+|y|^n=1<br />
-i doubt that'd make it possible to solve, but i guess it's worth a try....<br />
-<br />
-thanks guys :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">D12</span><br />
-			<span class="date small text-muted">10th April 2004 07:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think atomic calculator can solve it.<br />
-My math is very dangerous.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Synth-C</span><br />
-			<span class="date small text-muted">10th April 2004 12:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		An atomic calculator in avs, right.....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">10th April 2004 20:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		this thread was let go for a reason...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">10th April 2004 21:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		atomic calculators.. now this rings a bell.. wait.. <br />
-<br />
-ahh.. thats right, that was the <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=1140665#post1140665" target="_blank">thread</a> in which a certain user got banned.<br />
-<br />
-don't i have a good memory.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">11th April 2004 03:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hahahahaha.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">11th April 2004 15:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		laughs out very very very loud.... :D<br />
-<br />
-you said banned?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">11th April 2004 16:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		haha pwnt<br />
-<br />
-pity tho :(
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hboy</span><br />
-			<span class="date small text-muted">28th April 2004 10:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by skupers </i><br />
-<br />
-I think you need to factor abs(x)^n + abs(y)^n, but I don't know how to do it.</blockquote>
-You can find a factor with the Striling-formula:<br />
-<br />
-n! = sqrt(2*pi*n)*(n^n)*(e^(-n))<br />
-<br />
-Don't know if this helps to find a solution but I thought to post it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">28th April 2004 16:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The original thread was posted 2 months ago!  If you look at the dates on posts this thread has been revived twice...  Just let this die already.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">i needz da math help...</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=171473">i needz da math help...</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">29th February 2004 07:17 GMT</span></p>
+
+      <p class="post-content"><strong>i needz da math help...</strong><br />
+      abs(x)^n+abs(y)^n=k^n<br />
+      solve for n in terms of k, x, and y.<br />
+      <br />
+      i think i'm going to cry. i really want a solution for that but i'm too stupid. anyone willing to help me out with it?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">29th February 2004 08:50 GMT</span></p>
+
+      <p class="post-content">You mihgt just wanna use newton/raphson or whittaker iteration if n is dynamic.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
+      <span class="date small text-muted">29th February 2004 17:05 GMT</span></p>
+
+      <p class="post-content">n=log(x^n+y^n)/log(k) is as far as I could figure to go, sorry. I'm no math whiz though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">29th February 2004 18:56 GMT</span></p>
+
+      <p class="post-content">As far as I know, you're not gonna solve that. You can approximate it though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">29th February 2004 21:10 GMT</span></p>
+
+      <p class="post-content">Like they said - I'm pretty sure that one isn't solvable - check on matlab or mathematica or maple or something, but I don't think it is solvable. You will have to do numeric approximations.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">1st March 2004 08:53 GMT</span></p>
+
+      <p class="post-content">I tried as well. Anyone else thinks is looks a lot like Fermat's Last Theorem. I got Shock Value's formula and also this one:<br />
+      <br /></p>
+      <pre>
+<code><br />n = - log ( k^-n + abs(y)^n * abs(x)^-n * k^-n ) / log (x)<br /></code>
+</pre><br />
+      <br />
+      Solving for x, y and k is easy though, but I guess you don't need that. I think you need to factor abs(x)^n + abs(y)^n, but I don't know how to do it. I did find a (crappy) method for splitting k^n - abs(y)^n in different parts, but that doesn't help at all. Maybe anyone here finds it interesting.<br />
+      <br />
+      <pre>
+<code><br />k^n - abs(y)^n = ( k^(n-1) - abs(y)^(n-1) )*( k + abs(y) ) - ( k^(n-2) - abs(y)^(n-2) ) * k * abs(y)<br /></code>
+</pre><br />
+      <br />
+      I would be very interested in hearing the solution. Maybe you could post it on a math forum.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">2nd March 2004 04:47 GMT</span></p>
+
+      <p class="post-content">fermat's theorem is only for integers isn't it................<br />
+      <br />
+      /me is stupid and ignorant and stupid<br />
+      <br />
+      and yes this is for a preset. i tried it on my ti-89 but it didn't work - but then again there's a lot of things that the 89 is bad at, like working right...anyone here have mathematica?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">2nd March 2004 07:03 GMT</span></p>
+
+      <p class="post-content">Yes, but it has a very similar form. x^n + y^n = z^n<br />
+      <br />
+      Where did you find this problem?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">2nd March 2004 07:35 GMT</span></p>
+
+      <p class="post-content">Maybe filling us in on what you plan to do with this equation might help us supply ways of solving the equation more suitably?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">2nd March 2004 14:37 GMT</span></p>
+
+      <p class="post-content">Punch it in a cartesian formula simulator thingamajig, you'll find out.<br />
+      <br />
+      *hinthint* superellipse</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">2nd March 2004 17:01 GMT</span></p>
+
+      <p class="post-content">Nic01 is right. Take a look at <a href="http://mathworld.wolfram.com/Superellipse.html" target="_blank">this article</a>.<br />
+      <br />
+      The formula can be rewritten to:<br />
+      <br />
+      (abs(x)/k)^n + (abs(y)/k)^n -1 = 0<br />
+      <br />
+      Maybe this helps.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">2nd March 2004 17:17 GMT</span></p>
+
+      <p class="post-content">Well that's assuming z equals one. Like I said, if he tells us what he plans on doing with it then maybe we can help a little better.<br />
+      <br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=164315" target="_blank">http://forums.winamp.com/showthread....hreadid=164315</a><br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=164753" target="_blank">http://forums.winamp.com/showthread....hreadid=164753</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">3rd March 2004 06:28 GMT</span></p>
+
+      <p class="post-content">No,<br />
+      <br />
+      abs(x)^n + abs(y)^n = k^n<br />
+      abs(x)^n/k^n + abs(y)^n/k^n = k^n/k^n<br />
+      (abs(x)/k)^n + (abs(y)/k)^n = 1<br />
+      (abs(x)/k)^n + (abs(y)/k)^n - 1 = 0<br />
+      <br />
+      It works except for k=0.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">4th March 2004 08:17 GMT</span></p>
+
+      <p class="post-content">OK, I asked my math teacher and he didn't know a method to solve it. He also said that he didn't know if it was impossible. He did help make the formula easier.<br />
+      <br />
+      abs(x)^n + abs(y)^n = k^n<br />
+      abs(x)^n/k^n + abs(y)^n/k^n = k^n/k^n<br />
+      (abs(x)/k)^n + (abs(y)/k)^n = 1<br />
+      <br />
+      this can be written as the seemingly easier calculation:<br />
+      a^n + b^n = 1<br />
+      where a = abs(x)/k and b = abs(y)/k<br />
+      <br />
+      I've attached a plot of the above equation on my graphing calc:<br />
+      the x-axis is a from 0 to 1, with a scale of 0.1<br />
+      the y-axis is n from 0 to 5, with a scale of 0.5<br />
+      the bottom line: b=0.25<br />
+      the middle line: b=0.5<br />
+      the top line: b=0.75</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">skupers</span><br />
+      <span class="date small text-muted">5th March 2004 18:35 GMT</span></p>
+
+      <p class="post-content">After another long talk with my math teacher, we have concluded this it's probably unsolvable. This theory is supported by <a href="http://mathforum.org/library/drmath/view/52879.html" target="_blank">this Ask Dr. Math article</a>. I haven't found a real proof that it is impossible to solve, but I think it is.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">5th March 2004 19:47 GMT</span></p>
+
+      <p class="post-content">*cough* approximation *cough*<br />
+      <br />
+      Depending on what he wants to do he could use newton/raphson or whittaker or just good old Euler's method.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">9th March 2004 00:40 GMT</span></p>
+
+      <p class="post-content">This is a very hard problem... the only way i can think of solving it is numerically by using either n-r/whittaker. You can also solve it by using log expansions but this is also an iterative process and is difficult and more expensive in terms of divisions.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">9th March 2004 00:48 GMT</span></p>
+
+      <p class="post-content">well if he's just doing some 2D stuff he could use Euler's method as well to inch along.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">10th March 2004 02:04 GMT</span></p>
+
+      <p class="post-content">BTW what i can tell you is that this is 100% insoluble in a finite fashion due to the use of real powers. The definition of a generic non integer power can be given only in terms of an infinite series... whether its some clever sum of sines and cosines or something based on e or calculus, also the instant you use log you are playing with an iterative solutions whether you realise it or not.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">11th March 2004 23:43 GMT</span></p>
+
+      <p class="post-content">eeps. sorry guys, i've been busy the past few days and i've forgotten to check this thread...<br />
+      <br />
+      anyway, basically what i'm looking for is, given a point (x,y), find the superellipse of power n:<br />
+      |x|^n+|y|^n=r<br />
+      which would intersect that point.<br />
+      <br />
+      and i'm thinking the more that i look at it that i shouldn't have had k^n at all in the first place, so it should probably be rewritten as:<br />
+      |x|^n+|y|^n=1<br />
+      i doubt that'd make it possible to solve, but i guess it's worth a try....<br />
+      <br />
+      thanks guys :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">D12</span><br />
+      <span class="date small text-muted">10th April 2004 07:17 GMT</span></p>
+
+      <p class="post-content">I think atomic calculator can solve it.<br />
+      My math is very dangerous.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Synth-C</span><br />
+      <span class="date small text-muted">10th April 2004 12:58 GMT</span></p>
+
+      <p class="post-content">An atomic calculator in avs, right.....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">10th April 2004 20:09 GMT</span></p>
+
+      <p class="post-content">this thread was let go for a reason...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">10th April 2004 21:08 GMT</span></p>
+
+      <p class="post-content">atomic calculators.. now this rings a bell.. wait..<br />
+      <br />
+      ahh.. thats right, that was the <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=1140665#post1140665" target="_blank">thread</a> in which a certain user got banned.<br />
+      <br />
+      don't i have a good memory.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Raz</span><br />
+      <span class="date small text-muted">11th April 2004 03:48 GMT</span></p>
+
+      <p class="post-content">Hahahahaha.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">11th April 2004 15:25 GMT</span></p>
+
+      <p class="post-content">laughs out very very very loud.... :D<br />
+      <br />
+      you said banned?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">11th April 2004 16:33 GMT</span></p>
+
+      <p class="post-content">haha pwnt<br />
+      <br />
+      pity tho :(</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">hboy</span><br />
+      <span class="date small text-muted">28th April 2004 10:39 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by skupers</i><br />
+        <br />
+        I think you need to factor abs(x)^n + abs(y)^n, but I don't know how to do it.
+      </blockquote>You can find a factor with the Striling-formula:<br />
+      <br />
+      n! = sqrt(2*pi*n)*(n^n)*(e^(-n))<br />
+      <br />
+      Don't know if this helps to find a solution but I thought to post it.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">28th April 2004 16:51 GMT</span></p>
+
+      <p class="post-content">The original thread was posted 2 months ago! If you look at the dates on posts this thread has been revived twice... Just let this die already.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

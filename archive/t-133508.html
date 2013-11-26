@@ -1,224 +1,145 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Blur convolution equivalents AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blur convolution equivalents AVS" />
 
-	<title> Blur convolution equivalents - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Blur convolution equivalents - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Blur convolution equivalents</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133508">Blur convolution equivalents</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">28th April 2003 17:10 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Blur convolution equivalents</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=133508">Blur convolution equivalents</a></p>
+      <p class="post-content"><strong>Blur convolution equivalents</strong><br />
+      Here are the convolution matrices that correspond to the standard blur modes. The standard blur is actually pretty bad, with tons of roundoff errors causing a soft fadeout (which convo doesn't have afaik).<br />
+      <br />
+      Each kernel is followed by a simplified, non-fading, faster version. The simplified version is done by rounding each value up to the nearest power of two and dividing until no common divisors exist.<br />
+      <br />
+      You can find these by putting a single white dotscope followed by a blur (with 'clear every frame' on of course) and taking a screenshot. AVS itself probably uses a combination of bitshifts and additions (so it does use powers of two), but because it bitshifts before adding, precision is lost and the image fades.<br />
+      <br />
+      The 3x3 matrix is of course centered in convo-ape's 7x7, with zeroes in the other positions.<br />
+      <br />
+      Light:</p>
+      <pre>
+<code><br />  0  15   0           0   1   0<br /> 15 187  15     -&gt;    1  12   1<br />  0  15   0           0   1   0<br />div: 255             div: 16<br />bias: 0              bias: 0<br /></code>
+</pre><br />
+      <br />
+      Medium:
+      <pre>
+<code><br />  0  31   0           0   1   0<br /> 31 125  31     -&gt;    1   4   1<br />  0  31   0           0   1   0<br />div: 255             div: 8<br />bias: 0              bias: 0<br /></code>
+</pre><br />
+      <br />
+      Heavy:
+      <pre>
+<code><br />  0  62   0           0   1   0<br /> 62   0  62     -&gt;    1   0   1<br />  0  62   0           0   1   0<br />div: 255             div: 4<br />bias: 0              bias: 0<br /></code>
+</pre><br />
+      <br />
+      Example of roundoff error:<br />
+      <br />
+      Blend 50/50 rgb(255,255,255) with itself should logically result in rgb(255,255,255).<br />
+      <br />
+      <u>Bad:</u> Bitshift/divide, then add:<br />
+      255 / 2 = 127 (integer math only!)<br />
+      127 + 127 = 254 (faded out!)<br />
+      <br />
+      <u>Good:</u> Add, then bitshift/divide:<br />
+      <br />
+      255 + 255 = 510<br />
+      510 / 2 = 255<br />
+      <br />
+      <br />
+      The reason AVS does this is probably because the blur doesn't use MMX, and so it works with the entire RGB color rather than unpacking and handling each channel separately (which is unbearably slow without MMX). When you work with the entire channel, you cannot use the good-method, because then the channels' bits would overlap.<br />
+      <br />
+      APE authors: the 'lovely helper functions' inside the APE SDK header also contains bad, non-MMX versions of the blending functions. In this case, using convolution might in fact always be faster.
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">28th April 2003 17:18 GMT</span></p>
 
-<br />
+      <p class="post-content">unconed strikes again ;)<br />
+      /me plans on testing this this afternoon...</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th April 2003 17:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Blur convolution equivalents</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaak</span><br />
+      <span class="date small text-muted">28th April 2003 18:50 GMT</span></p>
 
-		Here are the convolution matrices that correspond to the standard blur modes. The standard blur is actually pretty bad, with tons of roundoff errors causing a soft fadeout (which convo doesn't have afaik).<br />
-<br />
-Each kernel is followed by a simplified, non-fading, faster version. The simplified version is done by rounding each value up to the nearest power of two and dividing until no common divisors exist.<br />
-<br />
-You can find these by putting a single white dotscope followed by a blur (with 'clear every frame' on of course) and taking a screenshot. AVS itself probably uses a combination of bitshifts and additions (so it does use powers of two), but because it bitshifts before adding, precision is lost and the image fades.<br />
-<br />
-The 3x3 matrix is of course centered in convo-ape's 7x7, with zeroes in the other positions.<br />
-<br />
-Light:<pre><code><br />
-  0  15   0           0   1   0<br />
- 15 187  15     -&gt;    1  12   1<br />
-  0  15   0           0   1   0<br />
-div: 255             div: 16<br />
-bias: 0              bias: 0<br />
-</code></pre><br />
-<br />
-Medium:<pre><code><br />
-  0  31   0           0   1   0<br />
- 31 125  31     -&gt;    1   4   1<br />
-  0  31   0           0   1   0<br />
-div: 255             div: 8<br />
-bias: 0              bias: 0<br />
-</code></pre><br />
-<br />
-Heavy:<pre><code><br />
-  0  62   0           0   1   0<br />
- 62   0  62     -&gt;    1   0   1<br />
-  0  62   0           0   1   0<br />
-div: 255             div: 4<br />
-bias: 0              bias: 0<br />
-</code></pre><br />
-<br />
-Example of roundoff error:<br />
-<br />
-Blend 50/50 rgb(255,255,255) with itself should logically result in rgb(255,255,255).<br />
-<br />
-<u>Bad:</u> Bitshift/divide, then add:<br />
-255 / 2 = 127 (integer math only!)<br />
-127 + 127 = 254 (faded out!)<br />
-<br />
-<u>Good:</u> Add, then bitshift/divide:<br />
-<br />
-255 + 255 = 510<br />
-510 / 2 = 255<br />
-<br />
-<br />
-The reason AVS does this is probably because the blur doesn't use MMX, and so it works with the entire RGB color rather than unpacking and handling each channel separately (which is unbearably slow without MMX). When you work with the entire channel, you cannot use the good-method, because then the channels' bits would overlap.<br />
-<br />
-APE authors: the 'lovely helper functions' inside the APE SDK header also contains bad, non-MMX versions of the blending functions. In this case, using convolution might in fact always be faster.
-		</p>
-</div>
+      <p class="post-content">Thanks UnConeD...</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">28th April 2003 19:03 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th April 2003 17:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">31? 125? 255? 62??? Does nullsoft understand the concept of 'power of 2' and how much faster it makes multiplication (i.e. bit shifting).<br />
+      <br />
+      It is possible that in my blind envy of nullsoft's mad coding skillz that I might be ignoring the fact that the blurs probably don't use the actual convolution method....</p>
+    </div>
+    <hr />
 
-		unconed strikes again ;)<br />
-/me plans on testing this this afternoon...
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">28th April 2003 19:55 GMT</span></p>
 
-	<hr />
+      <p class="post-content">i think unconed meant 127 and 63, which are 2^n-1 (because it starts from 0), which works for bitshifting, no?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaak</span><br />
-			<span class="date small text-muted">28th April 2003 18:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">28th April 2003 22:15 GMT</span></p>
 
-		Thanks UnConeD...
-		</p>
-</div>
+      <p class="post-content">I dunno for sure Atero, but those numbers do seem really weird.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">28th April 2003 22:51 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">28th April 2003 19:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Um, did you guys READ the text? These are the resultant values, after round-off. To get the exact same behaviour in convolution, you need to use these values, because convolution does not have roundoff errors.<br />
+      <br />
+      AVS does use the optimized version on the righthand (ie powers of two) internally, but it comes out as the values on the left.</p>
+    </div>
+    <hr />
 
-		31? 125? 255? 62??? Does nullsoft understand the concept of 'power of 2' and how much faster it makes multiplication (i.e. bit shifting).<br />
-<br />
-It is possible that in my blind envy of nullsoft's mad coding skillz that I might be ignoring the fact that the blurs probably don't use the actual convolution method....
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">29th April 2003 10:48 GMT</span></p>
 
-	<hr />
+      <p class="post-content">after long discussions about MMX with UnConeD, i still dont know how to work with it :(, anyway, can you post this in the tips and tricks folder too?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th April 2003 19:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i think unconed meant 127 and 63, which are 2^n-1 (because it starts from 0), which works for bitshifting, no?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">28th April 2003 22:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I dunno for sure Atero, but those numbers do seem really weird.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th April 2003 22:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Um, did you guys READ the text? These are the resultant values, after round-off. To get the exact same behaviour in convolution, you need to use these values, because convolution does not have roundoff errors.<br />
-<br />
-AVS does use the optimized version on the righthand (ie powers of two) internally, but it comes out as the values on the left.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">29th April 2003 10:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		after long discussions about MMX with UnConeD, i still dont know how to work with it :(, anyway, can you post this in the tips and tricks folder too?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

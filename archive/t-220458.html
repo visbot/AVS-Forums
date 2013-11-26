@@ -1,201 +1,143 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Randomising start/end ssc loc's AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Randomising start/end ssc loc's AVS" />
 
-	<title> Randomising start/end ssc loc's - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Randomising start/end ssc loc's - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Randomising start/end ssc loc's</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=220458">Randomising start/end ssc loc's</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nNemethon</span><br />
+      <span class="date small text-muted">2nd July 2005 08:04 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Randomising start/end ssc loc's</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=220458">Randomising start/end ssc loc's</a></p>
+      <p class="post-content"><strong>Randomising start/end ssc loc's</strong><br />
+      Ok, specifically -<br />
+      <br />
+      Trying to do:<br />
+      Have a vertical oscSSC start randomly along x though fixed at y-1 and ending randomly anywhere in the screen, preferably in any given area.<br />
+      <br />
+      Then split a second oscSSC off a random point in the first SSC to another random end locale.<br />
+      <br />
+      As can be guessed, lightning! Boring most will say, Learning sez I. With a lot of nutting, I was able to randomise the positioning of the whole scope while starting it at y-1, but the whole first scope still runs verticall which most lightning doesn't. ;)<br />
+      <br />
+      I'm not after someone to make the nuts n bolts - that achieves me sweet f/a. What I am after is a bit of help in understanding how to utilise a specific point in (i).<br />
+      <br />
+      I understand x=getosc(i,1,0)etc. and that i/3 is the point 33% of the way up the ssc. but how can I implement it into the positioning co-ords to achieve what I am after.<br />
+      <br />
+      I've pulled apart a huge amount of ssc's but havn't found many yet that randomise the start/end and even less that I can understand as it's buried in 30 lines of tan/sin/greek/russian. ;)<br />
+      <br />
+      Have almost every avs doc made on my hd but not really helping - I'm obvious;y missing something.<br />
+      <br />
+      Cheers for any help.<br />
+      <br />
+      nNem</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nNemethon</span><br />
+      <span class="date small text-muted">2nd July 2005 13:50 GMT</span></p>
 
-<br />
+      <p class="post-content">Hooray!<br />
+      <br />
+      Just worked out gmegabuf() so I can now splice the value of any i pos into second SSC for a starting locale.<br />
+      <br />
+      Tho still don't understand how to change the start and end locale of an SSC independantly of each other.<br />
+      <br />
+      Back to all the tute's. If anyone can clear it up so I can really understand it, would be real nice. :)<br />
+      <br />
+      Cheers<br />
+      <br />
+      nNem</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nNemethon</span><br />
-			<span class="date small text-muted">2nd July 2005 08:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Randomising start/end ssc loc's</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">2nd July 2005 22:26 GMT</span></p>
 
-		Ok, specifically -<br />
-<br />
-Trying to do:<br />
-Have a vertical oscSSC start randomly along x though fixed at y-1 and ending randomly anywhere in the screen, preferably in any given area.<br />
-<br />
-Then split a second oscSSC off a random point in the first SSC to another random end locale.<br />
-<br />
-As can be guessed, lightning! Boring most will say, Learning sez I. With a lot of nutting, I was able to randomise the positioning of the whole scope while starting it at y-1, but the whole first scope still runs verticall which most lightning doesn't. ;)<br />
-<br />
-I'm not after someone to make the nuts n bolts - that achieves me sweet f/a. What I am after is a bit of help in understanding how to utilise a specific point in (i).<br />
-<br />
-I understand x=getosc(i,1,0)etc. and that i/3 is the point 33% of the way up the ssc. but how can I implement it into the positioning co-ords to achieve what I am after.<br />
-<br />
-I've pulled apart a huge amount of ssc's but havn't found many yet that randomise the start/end and even less that I can understand as it's buried in 30 lines of tan/sin/greek/russian. ;)<br />
-<br />
-Have almost every avs doc made on my hd but not really helping - I'm obvious;y missing something.<br />
-<br />
-Cheers for any help.<br />
-<br />
-nNem
-		</p>
-</div>
+      <p class="post-content">Well my idea was to derive a transformation matrix to fit a vertical line to two random points, and apply that to vertical osc. But ASD5A pointed out that it can be done easier with some simple vector work (in other words simplify a transfomation matrix)<br />
+      <br />
+      The basic idea is given a point (x1,y1) and another point (x2,y2), a vector between those points may be defined as:<br />
+      <br />
+      vx=x2-x1;<br />
+      vy=y2-y1;<br />
+      <br />
+      Then we can render that line with:<br />
+      <br />
+      x=x1+i*vx;<br />
+      y=y1+i*vy;<br />
+      <br />
+      and add osc values with:<br />
+      <br />
+      x=x1+i*vx+v*0.2*vy;<br />
+      y=y1+i*vy-v*0.2*vx;<br />
+      <br />
+      Then we can add a counter that increments each point, and store the x and y values when it reaches a certain value. We can use these stored values as the start point of another osc. See the attached preset (it is essentially ASD5A's solution not mine)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nNemethon</span><br />
+      <span class="date small text-muted">3rd July 2005 06:24 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nNemethon</span><br />
-			<span class="date small text-muted">2nd July 2005 13:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Ahhh, ty very much. This was initially the sort of thing that I imagined it to be, but then got caught into a getosc() trap. ;)<br />
+      <br />
+      Being a simplified way, I can now probably adapt it to a getosc() as I beleive faster framerate? (correct me if wrong). And at least I can use blah=reg01 now rather than gmegabuf().<br />
+      <br />
+      Thank you again and no wonder I couldn't find an answer, I didn't know what to correctly look for! ^^<br />
+      <br />
+      nNem</p>
+    </div>
+    <hr />
 
-		Hooray!<br />
-<br />
-Just worked out gmegabuf() so I can now splice the value of any i pos into second SSC for a starting locale.<br />
-<br />
-Tho still don't understand how to change the start and end locale of an SSC independantly  of each other.<br />
-<br />
-Back to all the tute's. If anyone can clear it up so I can really understand it, would be real nice. :)<br />
-<br />
-Cheers<br />
-<br />
-nNem
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">3rd July 2005 06:50 GMT</span></p>
 
-	<hr />
+      <p class="post-content">getosc gives you a little more control but it isnt any faster (at a push I'd say its infinitesimally slower because of the function call overhead)<br />
+      <br />
+      If you want to modify the preset for learning purposes I suggest you try finding a way of removing the use of 'i' from the superscopes, using your own point counters is one of the most significant things to learn with superscope usage imo.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">2nd July 2005 22:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nNemethon</span><br />
+      <span class="date small text-muted">3rd July 2005 10:22 GMT</span></p>
 
-		Well my idea was to derive a transformation matrix to fit a vertical line to two random points, and apply that to vertical osc. But ASD5A pointed out that it can be done easier with some simple vector work (in other words simplify a transfomation matrix)<br />
-<br />
-The basic idea is given a point (x1,y1) and another point (x2,y2), a vector between those points may be defined as:<br />
-<br />
-vx=x2-x1;<br />
-vy=y2-y1;<br />
-<br />
-Then we can render that line with:<br />
-<br />
-x=x1+i*vx;<br />
-y=y1+i*vy;<br />
-<br />
-and add osc values with:<br />
-<br />
-x=x1+i*vx+v*0.2*vy;<br />
-y=y1+i*vy-v*0.2*vx;<br />
-<br />
-Then we can add a counter that increments each point, and store the x and y values when it reaches a certain value. We can use these stored values as the start point of another osc. See the attached preset (it is essentially ASD5A's solution not mine)
-		</p>
-</div>
+      <p class="post-content">I've seen threads and comments about removing 'i' from scopes as being an integral part of being able to program SSC's, so when I have it looking the way I want, I'll give it go. :)<br />
+      <br />
+      Cheers<br />
+      <br />
+      nNem</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nNemethon</span><br />
-			<span class="date small text-muted">3rd July 2005 06:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ahhh, ty very much. This was initially the sort of thing that I imagined it to be, but then got caught into a getosc() trap. ;)<br />
-<br />
-Being a simplified way, I can now probably adapt it to a getosc() as I beleive faster framerate? (correct me if wrong). And at least I can use blah=reg01 now rather than gmegabuf().<br />
-<br />
-Thank you again and no wonder I couldn't find an answer, I didn't know what to correctly look for! ^^<br />
-<br />
-nNem
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">3rd July 2005 06:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		getosc gives you a little more control but it isnt any faster (at a push I'd say its infinitesimally slower because of the function call overhead)<br />
-<br />
-If you want to modify the preset for learning purposes I suggest you try finding a way of removing the use of 'i' from the superscopes, using your own point counters is one of the most significant things to learn with superscope usage imo.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nNemethon</span><br />
-			<span class="date small text-muted">3rd July 2005 10:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I've seen threads and comments about removing 'i' from scopes as being an integral part of being able to program SSC's, so when I have it looking the way I want, I'll give it go. :)<br />
-<br />
-Cheers<br />
-<br />
-nNem
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

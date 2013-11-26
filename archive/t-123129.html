@@ -1,110 +1,75 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Ever wanted to make a torus.... AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ever wanted to make a torus.... AVS" />
 
-	<title> Ever wanted to make a torus.... - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Ever wanted to make a torus.... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Ever wanted to make a torus....</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=123129">Ever wanted to make a torus....</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">28th January 2003 23:13 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Ever wanted to make a torus....</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=123129">Ever wanted to make a torus....</a></p>
+      <p class="post-content"><strong>Ever wanted to make a torus....</strong><br />
+      Okay. I have had a lot of requests for a parameterisation for a torus. Here is one complete with explaination:<br />
+      <br />
+      where u and v are the parameters (u from -pi to pi or spread over any 2pi wide interval)<br />
+      <br />
+      x=(r*(cos(v)+1)+R)*cos(u));<br />
+      y=r*sin(v);<br />
+      z=-(r*(sin(v)+R)*sin(u));<br />
+      <br />
+      Where r is the radius of one of the circles from a slice through the torus (the minor radius) and R is the radius of the circle made up from the centres of all of the circles comprising the torus (the major radius). The way that I made this parameterisation is pretty simple. Firstly I defined a circle in the xy plane with x=cos(v),y=sin(v) then offset it in the x axis by R+r. The final step was to rotate the circle parametrically around the y axis using the y-axis rotation matrix with u as the rotation angle to create a helix that would bend round into a torus.<br />
+      <br />
+      Unfrotunately this method can *not* be extended simply for n-tori. To find parameterisations for these shapes you would need to rotate the circle first in the desired way and then shift it around a 3 dimensional path... something that I can't be bothered to work out right how to do right now.<br />
+      <br />
+      NOTE: There may be better/faster parameterisations for the torus, this is just the easiest one to workout.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">29th January 2003 15:07 GMT</span></p>
 
-<br />
+      <p class="post-content">Strange, a torus was one of the things I found easiest to figure out myself... take a circle and swoop it around a point :).<br />
+      <br />
+      Oh and don't forget, if it's a FAQ for you, get it added to the FAQ.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">28th January 2003 23:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Ever wanted to make a torus....</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">29th January 2003 16:43 GMT</span></p>
 
-		Okay. I have had a lot of requests for a parameterisation for a torus. Here is one complete with explaination:<br />
-<br />
-where u and v are the parameters (u from -pi to pi or spread over any 2pi wide interval)<br />
-<br />
-x=(r*(cos(v)+1)+R)*cos(u));<br />
-y=r*sin(v);<br />
-z=-(r*(sin(v)+R)*sin(u));<br />
-<br />
-Where r is the radius of one of the circles from a slice through the torus (the minor radius) and R is the radius of the circle made up from the centres of all of the circles comprising the torus (the major radius). The way that I made this parameterisation is pretty simple. Firstly I defined a circle in the xy plane with x=cos(v),y=sin(v) then offset it in the x axis by R+r. The final step was to rotate the circle parametrically around the y axis using the y-axis rotation matrix with u as the rotation angle to create a helix that would bend round into a torus.<br />
-<br />
-Unfrotunately this method can *not* be extended simply for n-tori. To find parameterisations for these shapes you would need to rotate the circle first in the desired way and then shift it around a 3 dimensional path... something that I can't be bothered to work out right how to do right now.<br />
-<br />
-NOTE: There may be better/faster parameterisations for the torus, this is just the easiest one to workout.
-		</p>
-</div>
+      <p class="post-content">Waaah...no n-tori :( *tear, tear*</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">29th January 2003 15:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Strange, a torus was one of the things I found easiest to figure out myself... take a circle and swoop it around a point :).<br />
-<br />
-Oh and don't forget, if it's a FAQ for you, get it added to the FAQ.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">29th January 2003 16:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Waaah...no n-tori :( *tear, tear*
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

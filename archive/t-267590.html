@@ -1,175 +1,118 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" AVS / Flash Player - Theoretically Possible? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVS / Flash Player - Theoretically Possible? AVS" />
 
-	<title> AVS / Flash Player - Theoretically Possible? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>AVS / Flash Player - Theoretically Possible? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">AVS / Flash Player - Theoretically Possible?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=267590">AVS / Flash Player - Theoretically Possible?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">ciaobox</span><br />
+      <span class="date small text-muted">11th March 2007 22:55 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">AVS / Flash Player - Theoretically Possible?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=267590">AVS / Flash Player - Theoretically Possible?</a></p>
+      <p class="post-content"><strong>AVS / Flash Player - Theoretically Possible?</strong><br />
+      Looking at the AVS architecture, it seems theoretically possible to create a custom C++/Actionscript 3 Bridge for AVS; essentially turning the Winamp AVS into a server-side 3D engine for the Flash 9 player. In this scenario, streaming Shoutcast radio through the Flash player would trigger synchronized AVS plugs from the server.<br />
+      <br />
+      Forgetting for a second obvious major server processor load issues, does anyone who works in this medium know if this is theoretically possible? I am an Actionscript / Flex coder by trade so not extremely familiar with the AVS engine.<br />
+      <br />
+      Any thoughts would be greatly appreciated.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nanakiwurkz</span><br />
+      <span class="date small text-muted">13th March 2007 00:10 GMT</span></p>
 
-<br />
+      <p class="post-content"><strong>hmm</strong><br />
+      sounds interesting.<br />
+      but sadly you would have to completely recode avs to get something like that to happen.<br />
+      <br />
+      servers are my specialty in the hardware area not software.<br />
+      but maybe you should try to fix avs yourself because its pretty much in the wastelands of winamp. hell i didn't even see it remotely mentioned in the change log for winamp.<br />
+      <br />
+      hmph. sorry.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ciaobox</span><br />
-			<span class="date small text-muted">11th March 2007 22:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>AVS / Flash Player - Theoretically Possible?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">MaTTFURY</span><br />
+      <span class="date small text-muted">13th March 2007 01:17 GMT</span></p>
 
-		Looking at the AVS architecture, it seems theoretically possible to create a custom C++/Actionscript 3 Bridge for AVS; essentially turning the Winamp AVS into a server-side 3D engine for the Flash 9 player. In this scenario, streaming Shoutcast radio through the Flash player would trigger synchronized AVS plugs from the server. <br />
-<br />
-Forgetting for a second obvious major server processor load issues, does anyone who works in this medium know if this is theoretically possible? I am an Actionscript / Flex coder by trade so not extremely familiar with the AVS engine. <br />
-<br />
-Any thoughts would be greatly appreciated.
-		</p>
-</div>
+      <p class="post-content">it might work if everything was <i>post-processed</i> as avs is <b>REAL-TIME rendered</b> according to the music thats playing, and because every song is different its basically impossible to not have lag with avs streaming over a server trying to calculate (with the cpu) and stream (via modem/router).<br />
+      <br />
+      you would need to analyse a mp3 file first, hash or mark each individual change in the song (most likely by frequency) compile it into a readable file format, or write some ape for avs, then add some crap post-processing feature to avs, which is strictly real-time.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">CraigF</span><br />
+      <span class="date small text-muted">13th March 2007 11:59 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nanakiwurkz</span><br />
-			<span class="date small text-muted">13th March 2007 00:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>hmm</strong><br />
-		
-		
+      <p class="post-content">you'd basically be looking at real time encoding of avs output to flv. It's plausible I suppose.</p>
+    </div>
+    <hr />
 
-		sounds interesting.<br />
-but sadly you would have to completely recode avs to get something like that to happen.<br />
-<br />
-servers are my specialty in the hardware area not software.<br />
-but maybe you should try to fix avs yourself because its pretty much in the wastelands of winamp. hell i didn't even see it remotely mentioned in the change log for winamp.<br />
-<br />
-hmph. sorry.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">13th March 2007 19:33 GMT</span></p>
 
-	<hr />
+      <p class="post-content">considering how often this kind of question is asked (audio bundled with AVS), it made me think..<br />
+      <br />
+      What ways are there to grab the output from AVS?<br />
+      <br />
+      (1) I believe that AVSGrabber gets it's info before it's rendered (since you need to put it at the bottom of the list), renders the image and stores it.. then AVS itself also renders the image and shows it on the screen.<br />
+      (I'm possibly completely wrong here)<br />
+      <br />
+      (2) Isn't there some way to directly read the buffer where the current frame is stored with either 1) an external application or 2) a plugin (.dll, not .ape)?<br />
+      Possibly you lose info such as the exact framerate, but it sounds like a cheap process to me since the image has already been rendered.<br />
+      <br />
+      After that you can mix it with the audio, encode it and send it to the www</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">MaTTFURY</span><br />
-			<span class="date small text-muted">13th March 2007 01:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">18th March 2007 22:08 GMT</span></p>
 
-		it might work if everything was <i>post-processed</i> as avs is <b>REAL-TIME rendered</b> according to the music thats playing, and because every song is different its basically impossible to not have lag with avs streaming over a server trying to calculate (with the cpu) and stream (via modem/router).<br />
-<br />
-you would need to analyse a mp3 file first, hash or mark each individual change in the song (most likely by frequency) compile it into a readable file format, or write some ape for avs, then add some crap post-processing feature to avs, which is strictly real-time.
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by Warrior of the Light</i><br />
+        <b>(2) Isn't there some way to directly read the buffer where the current frame is stored with either 1) an external application or 2) a plugin (.dll, not .ape)?<br />
+        Possibly you lose info such as the exact framerate, but it sounds like a cheap process to me since the image has already been rendered.</b>
+      </blockquote>I had a similar thought when I saw this post. In order to make a flash based version you would basically need to redo the avs config window in flash and then send the produced .avs file to a server to be rendered.<br />
+      <br />
+      The result would then need to be 'grabbed' on the server side and displayed in flash. Since you have the avs file the easiest approach would probably be an APE (appended to the preset by the server) that would output the framebuffer in some appropriate format to be displayed in flash (essentially what AVSGrabber does for .avi format).<br />
+      <br />
+      However I am not familiar with flash coding so past that point I can't comment. The bottom line is: yes, it is theoretically possible, but I would require a huge amount of work (recreating the avs config alone is a pretty daunting prospect).
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">CraigF</span><br />
-			<span class="date small text-muted">13th March 2007 11:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		you'd basically be looking at real time encoding of avs output to flv. It's plausible I suppose.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">13th March 2007 19:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		considering how often this kind of question is asked (audio bundled with AVS), it made me think..<br />
-<br />
-What ways are there to grab the output from AVS? <br />
-<br />
-(1) I believe that AVSGrabber gets it's info before it's rendered (since you need to put it at the bottom of the list), renders the image and stores it.. then AVS itself also renders the image and shows it on the screen.<br />
-(I'm possibly completely wrong here)<br />
-<br />
-(2) Isn't there some way to directly read the buffer where the current frame is stored with either 1) an external application or 2) a plugin (.dll, not .ape)?<br />
-Possibly you lose info such as the exact framerate, but it sounds like a cheap process to me since the image has already been rendered.<br />
-<br />
-After that you can mix it with the audio, encode it and send it to the www
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">18th March 2007 22:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Warrior of the Light </i><br />
-<b>(2) Isn't there some way to directly read the buffer where the current frame is stored with either 1) an external application or 2) a plugin (.dll, not .ape)?<br />
-Possibly you lose info such as the exact framerate, but it sounds like a cheap process to me since the image has already been rendered.</b></blockquote>
-I had a similar thought when I saw this post. In order to make a flash based version you would basically need to redo the avs config window in flash and then send the produced .avs file to a server to be rendered.<br />
-<br />
-The result would then need to be 'grabbed' on the server side and displayed in flash. Since you have the avs file the easiest approach would probably be an APE (appended to the preset by the server) that would output the framebuffer in some appropriate format to be displayed in flash (essentially what AVSGrabber does for .avi format).<br />
-<br />
-However I am not familiar with flash coding so past that point I can't comment. The bottom line is: yes, it is theoretically possible, but I would require a huge amount of work (recreating the avs config alone is a pretty daunting prospect).
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,101 +1,66 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Flush Global Variables? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flush Global Variables? AVS" />
 
-	<title> Flush Global Variables? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Flush Global Variables? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Flush Global Variables?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=160963">Flush Global Variables?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
+      <span class="date small text-muted">20th December 2003 14:13 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Flush Global Variables?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=160963">Flush Global Variables?</a></p>
+      <p class="post-content"><strong>Flush Global Variables?</strong><br />
+      Hmm... Just a small question, i used global variables in a couple of presets (im updating ED using wa5). But Global vars seemed to work a bit... funky, at startup the scopes &amp; dm's would go berserk detecting some pretty mad values for the 3D rotation for example, im guessing from a previous preset. This seemed to get fixed by setting every reg i used to zero on the "control components" init. eeh what im just basicly asking, am i doing the right thing or is my coding just really bad? :igor:<br />
+      <br />
+      <br />
+      btw. how about a simple function or an APE that would automaticly "flush" every global register from reg00 to reg99 ? Would help enourmosly and i wouldn't have to write long lines in the init like: reg00=0 ; reg01=0 ; reg02=0 and so on...</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">20th December 2003 14:30 GMT</span></p>
 
-<br />
+      <p class="post-content">Moved to wishlist.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">20th December 2003 14:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Flush Global Variables?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fsk</span><br />
+      <span class="date small text-muted">22nd December 2003 04:48 GMT</span></p>
 
-		Hmm... Just a small question, i used global variables in a couple of presets (im updating ED using wa5). But Global vars seemed to work a bit... funky, at startup the scopes &amp; dm's would go berserk detecting some pretty mad values for the 3D rotation for example, im guessing from a previous preset. This seemed to get fixed by setting every reg i used to zero on the &quot;control components&quot; init. eeh what im just basicly asking, am i doing the right thing or is my coding just really bad? :igor:<br />
-<br />
-<br />
-btw. how about a simple function or an APE that would automaticly &quot;flush&quot; every global register from reg00 to reg99 ? Would help enourmosly and i wouldn't have to write long lines in the init like: reg00=0 ; reg01=0 ; reg02=0 and so on...
-		</p>
-</div>
+      <p class="post-content">havent noticed before but this is a change since globals first appeard. In v2.7 every global that was used in the preset was cleard on init i think. This does make preset to preset comunication easyer dough (i cant really imagine what they would want to tell eachother:D). Like you said a clear function would be nice.<br />
+      <br />
+      The other clearing problem is much older but also a bit hard to get over. The picture bufers dont get cleared when the preset loads.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">20th December 2003 14:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Moved to wishlist.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fsk</span><br />
-			<span class="date small text-muted">22nd December 2003 04:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		havent noticed before but this is a change since globals first appeard. In v2.7 every global that was used in the preset was cleard on init i think. This does make preset to preset comunication easyer dough (i cant really imagine what they would want to tell eachother:D). Like you said a clear function would be nice.<br />
-<br />
-The other clearing problem is much older but also a bit hard to get over. The picture bufers dont get cleared when the preset loads.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

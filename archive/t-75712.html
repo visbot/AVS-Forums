@@ -1,123 +1,81 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" help with scopes AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="help with scopes AVS" />
 
-	<title> help with scopes - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>help with scopes - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">help with scopes</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=75712">help with scopes</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">14th February 2002 00:12 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">help with scopes</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=75712">help with scopes</a></p>
+      <p class="post-content"><strong>help with scopes</strong><br />
+      I'm making a rotating cube using one superscope per side. I created the sides but the visualation leaks through so the rear plains can be seen, visually distorting the cube shape. I messed with the set render mode a little and a bunch of other stuff. I want to make the cube solid and not transpartent, and I'm clueless. Please help me.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">geozop</span><br />
+      <span class="date small text-muted">14th February 2002 00:40 GMT</span></p>
 
-<br />
+      <p class="post-content">I think it'll help if you change the color depending on what phase of the rotation each scope is at. I assume you're using a cosine/sine of a certain variable to rotate each side; therefore, use the same sine or cosine (or combo, dependant on how complicated your rotation) of the variable to effect the color.<br />
+      <br />
+      Assuming t is the variable, and it's looping between 0 and 2*pi:<br />
+      <br />
+      red=if(below(sin(t),0),1,0);<br />
+      <br />
+      This will make the scope red if the sin(t) is between 0 and -1, and black when it's 0 to 1. If your rotating is complicated, you will need to find a way to find when (during the loop of t) a scope is "behind" another plane; though, it will always be a certain part of the loop.<br />
+      <br />
+      I think you will have to use an additive set render mode, so that when drawing a black scope (therefore "unseen"), it does not overlap any other scopes.<br />
+      <br />
+      Unfortunately, this is not complete. The entire area of the scope will be switching between red and black, rather than just part of the scope which is supposed to be "seen". I do not do much 3d in AVS, but I know you will need to use the variable i in the "red=" command. Maybe this problem will not even arise... I hope this helps a bit.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">14th February 2002 00:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>help with scopes</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">14th February 2002 04:24 GMT</span></p>
 
-		I'm making a rotating cube using one superscope per side.  I created the sides but the visualation leaks through so the rear plains can be seen, visually distorting the cube shape. I messed with the set render mode a little and a bunch of other stuff.  I want to make the cube solid and not transpartent, and I'm clueless.  Please help me.
-		</p>
-</div>
+      <p class="post-content">To do actual solid 3D superscopes, you need to dynamically colour the lines white or black using a smart situation-dependant culling algorithm. A general solution is (imo) not possible in AVS. I have been able to get Z-buffered 3D scopes, in which each object has different colours (so it's not just a simple maximum filter), but it's slow as hell. Another method is to use a formula that fits the scene you have (e.g. my preset Groovy Saturn in Whacko AVS II).<br />
+      <br />
+      However in your case, there's a *much* easier solution. To realise this, just take a die or something else that's cube-shaped. From any angle, you'll never see more than 3 sides of a cube. In some cases, you can even see just two or one. So you just make 3 superscopes that contain a set of synchronized angles, and wrap these angles so that they're always between -pi/2 and pi/2. If you pick the 3 superscopes so that no 2 form opposite sides of the cube, you'll get the illusion of a cube: when a face 'disappears' by rotating left, it just reappears as the opposite face on the right-hand side.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">14th February 2002 04:39 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">geozop</span><br />
-			<span class="date small text-muted">14th February 2002 00:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Thanks alot guys. What I did was just use 27 (twenty-seven) superscopes for three sides of the cube. What I'm trying to do is simulate a rotating Rubik's cube. I made three superscopes be the center pieces for the viewable cube then remapped the 8 outer "cublets" to match the centers. As for getting it to fully rotate, (simulating 3d), my math skills are weak. As for the colors, I was trying to create the color to move very similar to the twisting of edges of a Rubik's cube, which I am completely lost on, maybe some kind of DM or just more math in the superscopes. Thanks again.</p>
+    </div>
+    <hr />
 
-		I think it'll help if you change the color depending on what phase of the rotation each scope is at. I assume you're using a cosine/sine of a certain variable to rotate each side; therefore, use the same sine or cosine (or combo, dependant on how complicated your rotation) of the variable to effect the color.<br />
-<br />
-   Assuming t is the variable, and it's looping between 0 and 2*pi:<br />
-<br />
-   red=if(below(sin(t),0),1,0);<br />
-<br />
-   This will make the scope red if the sin(t) is between 0 and -1, and black when it's 0 to 1. If your rotating is complicated, you will need to find a way to find when (during the loop of t) a scope is &quot;behind&quot; another plane; though, it will always be a certain part of the loop.<br />
-<br />
-   I think you will have to use an additive set render mode, so that when drawing a black scope (therefore &quot;unseen&quot;), it does not overlap any other scopes.<br />
-<br />
-   Unfortunately, this is not complete. The entire area of the scope will be switching between red and black, rather than just part of the scope which is supposed to be &quot;seen&quot;. I do not do much 3d in AVS, but I know you will need to use the variable i in the &quot;red=&quot; command. Maybe this problem will not even arise... I hope this helps a bit.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th February 2002 04:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		To do actual solid 3D superscopes, you need to dynamically colour the lines white or black using a smart situation-dependant culling algorithm. A general solution is (imo) not possible in AVS. I have been able to get Z-buffered 3D scopes, in which each object has different colours (so it's not just a simple maximum filter), but it's slow as hell. Another method is to use a formula that fits the scene you have (e.g. my preset Groovy Saturn in Whacko AVS II).<br />
-<br />
-However in your case, there's a *much* easier solution. To realise this, just take a die or something else that's cube-shaped. From any angle, you'll never see more than 3 sides of a cube. In some cases, you can even see just two or one. So you just make 3 superscopes that contain a set of synchronized angles, and wrap these angles so that they're always between -pi/2 and pi/2. If you pick the 3 superscopes so that no 2 form opposite sides of the cube, you'll get the illusion of a cube: when a face 'disappears' by rotating left, it just reappears as the opposite face on the right-hand side.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">14th February 2002 04:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks alot guys.  What I did was just use 27 (twenty-seven) superscopes for three sides of the cube.  What I'm trying to do is simulate a rotating Rubik's cube.  I made three superscopes be the center pieces for the viewable cube then remapped the 8 outer &quot;cublets&quot; to match the centers.  As for getting it to fully rotate, (simulating 3d), my math skills are weak.  As for the colors, I was trying to create the color to move very similar to the twisting of edges of a Rubik's cube, which I am completely lost on, maybe some kind of DM or just more math in the superscopes.  Thanks again.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

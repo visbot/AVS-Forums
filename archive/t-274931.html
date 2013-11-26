@@ -1,205 +1,142 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Visualisations cripple themselves AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Visualisations cripple themselves AVS" />
 
-	<title> Visualisations cripple themselves - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Visualisations cripple themselves - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">Visualisations cripple themselves</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=274931">Visualisations cripple themselves</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Raziel-chan</span><br />
+      <span class="date small text-muted">25th July 2007 20:11 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Visualisations cripple themselves</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=274931">Visualisations cripple themselves</a></p>
+      <p class="post-content"><strong>Visualisations cripple themselves</strong><br />
+      I have a problem with the visualizations feature (namingly the visualizations provided with Winamp's install).<br />
+      <br />
+      When I turn them on, everything is fine... But, after a minute or so and few automatic changes of the visualizations, it all goes screwy. Some visualizations show only blank screen, some show blinking colours, some little fragments of what they used to be (like only the middle wheel of few that were there originally), e.t.c. The only way to turn them back to normal is to switch off and then back on Winamp. Still, even then they screw themselves up after a rather short while.<br />
+      <br />
+      What may be causing this?<br />
+      <br />
+      cya<br />
+      Raziel-chan</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">25th July 2007 21:45 GMT</span></p>
 
-<br />
+      <p class="post-content"><a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=224571&amp;highlight=react+to+music" target="_blank">this thread</a> may be useful, if a little old.<br />
+      <br />
+      Some additional questions to help us answer your question better:<br />
+      <br />
+      - Does AVS react to music at all?<br />
+      to test:<br />
+      <br /></p>
+      <pre>
+<code><br />1) open the avs editor<br />2) select Main<br />3) enable Clear every frame<br />4) click [-]<br /><i>--- The list should now be empty</i><br />5) click [+] &gt; Render &gt; Simple<br /><i>--- A spectrum analyzer should appear, displaying your music, <br />like the one in winamp's main window.</i></code>
+</pre><br />
+      If you see a flat line, then AVS doesn't receive sound information.<br />
+      <br />
+      - Are you using any additional plugins?<br />
+      <br />
+      - What type of file are you playing? (MP3, M4A, OGG..)<br />
+      <br />
+      - What version of AVS are you using? Notice that v2.81c (came earlier with winamp 5.31 and 5.32) is broken.<br />
+      Make sure you're running AVS v2.81d.<br />
+      <br />
+      - did you try a <u><a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=161361#clean" target="_blank">clean install</a></u> ?
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raziel-chan</span><br />
-			<span class="date small text-muted">25th July 2007 20:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Visualisations cripple themselves</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Raziel-chan</span><br />
+      <span class="date small text-muted">25th July 2007 23:43 GMT</span></p>
 
-		I have a problem with the visualizations feature (namingly the visualizations provided with Winamp's install).<br />
-<br />
-When I turn them on, everything is fine... But, after a minute or so and few automatic changes of the visualizations, it all goes screwy. Some visualizations show only blank screen, some show blinking colours, some little fragments of what they used to be (like only the middle wheel of few that were there originally), e.t.c. The only way to turn them back to normal is to switch off and then back on Winamp. Still, even then they screw themselves up after a rather short while.<br />
-<br />
-What may be causing this?<br />
-<br />
-cya<br />
-Raziel-chan
-		</p>
-</div>
+      <p class="post-content">Yes, it reacts. I can see that from the visualisations themselves, yet I even checked it as you proposed.<br />
+      <br />
+      I WAS using SnesAMP, but now I use no additional plugins.<br />
+      <br />
+      MP3. Plugin - the default one.<br />
+      <br />
+      I'm using AVS v2.81d<br />
+      <br />
+      Just did a clean install with removing the whole winamp folder before reainstalling.<br />
+      <br />
+      As I said - it looks like some parts of the visualisations (not all of them, mind you) switch off. Somehow I get a perfectly working visualization, sometimes a part of it, sometimes barely anything (i.e. Zero G maze II is reduced to few (depending on the bpm) triangles emanating from the centre), sometimes the screen is just flashing, and sometimes I get nothing.<br />
+      <br />
+      cya<br />
+      Raziel-chan</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">J.Melo</span><br />
+      <span class="date small text-muted">26th July 2007 01:21 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">25th July 2007 21:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">What are the specs of the computer you are running?<br />
+      <br />
+      I'm not sure if this will help, but it did for me once before:<br /></p>
+      <pre>
+<code>1. Open AVS editor<br />2. Click on "settings" in the menu bar at the top, then click "Display"<br />3. Tick the check box labled "Overlay Mode"<br /></code>
+</pre>
+    </div>
+    <hr />
 
-		<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=224571&amp;highlight=react+to+music" target="_blank">this thread</a> may be useful, if a little old.<br />
-<br />
-Some additional questions to help us answer your question better: <br />
-<br />
-- Does AVS react to music at all?<br />
-to test: <br />
-<br />
-<pre><code><br />
-1) open the avs editor<br />
-2) select Main<br />
-3) enable Clear every frame<br />
-4) click [-]<br />
-<i>--- The list should now be empty</i><br />
-5) click [+] &gt; Render &gt; Simple<br />
-<i>--- A spectrum analyzer should appear, displaying your music, <br />
-like the one in winamp's main window.</i></code></pre><br />
-If you see a flat line, then AVS doesn't receive sound information.<br />
-<br />
-- Are you using any additional plugins?<br />
-<br />
-- What type of file are you playing? (MP3, M4A, OGG..)<br />
-<br />
-- What version of AVS are you using? Notice that v2.81c (came earlier with winamp 5.31 and 5.32) is broken. <br />
-Make sure you're running AVS v2.81d.<br />
-<br />
-- did you try a <u><a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=161361#clean" target="_blank">clean install</a></u> ?
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Raziel-chan</span><br />
+      <span class="date small text-muted">26th July 2007 01:27 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Athlon 64 3500+ (2.2 GHZ) AM2 stock<br />
+      Abit KN9 (Nforce 4 Ultra)<br />
+      1x1024MB DDR2 667 Twinmos cl5<br />
+      XFX 7600GT 256 MB/128bit stock<br />
+      80GB Seagate ATA/100 drive<br />
+      A 15'' CRT monitor<br />
+      Windows XP professional SP2 + all patches up do date<br />
+      <br />
+      I'm using overlay mode as I'm using my TV as speakers, sending the visualizations via overlay to prevent burn-ins.<br />
+      <br />
+      They're also set as the desktop colour.<br />
+      <br />
+      cya<br />
+      Raziel-chan</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raziel-chan</span><br />
-			<span class="date small text-muted">25th July 2007 23:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">J.Melo</span><br />
+      <span class="date small text-muted">26th July 2007 02:12 GMT</span></p>
 
-		Yes, it reacts. I can see that from the visualisations themselves, yet I even checked it as you proposed.<br />
-<br />
-I WAS using SnesAMP, but now I use no additional plugins.<br />
-<br />
-MP3. Plugin - the default one.<br />
-<br />
-I'm using AVS v2.81d<br />
-<br />
-Just did a clean install with removing the whole winamp folder before reainstalling.<br />
-<br />
-As I said - it looks like some parts of the visualisations (not all of them, mind you) switch off. Somehow I get a perfectly working visualization, sometimes a part of it, sometimes barely anything (i.e. Zero G maze II is reduced to few (depending on the bpm) triangles emanating from the centre), sometimes the screen is just flashing, and sometimes I get nothing.<br />
-<br />
-cya<br />
-Raziel-chan
-		</p>
-</div>
+      <p class="post-content">Sound's like good stuff you got, I don't know why it would keep screwing around like that. Updating you video card driver sometimes fixes it (sometimes even rolling back), but I'm sure you keep it updated. Tweaking a few settings on your display driver might help. Uh, what else is there... well that's all I can think of. Sorry if it didn't help much.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">J.Melo</span><br />
-			<span class="date small text-muted">26th July 2007 01:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		What are the specs of the computer you are running?<br />
-<br />
-I'm not sure if this will help, but it did for me once before:<br />
-<pre><code>1. Open AVS editor<br />
-2. Click on &quot;settings&quot; in the menu bar at the top, then click &quot;Display&quot;<br />
-3. Tick the check box labled &quot;Overlay Mode&quot;<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raziel-chan</span><br />
-			<span class="date small text-muted">26th July 2007 01:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Athlon 64 3500+ (2.2 GHZ) AM2 stock<br />
-Abit KN9 (Nforce 4 Ultra)<br />
-1x1024MB DDR2 667 Twinmos cl5<br />
-XFX 7600GT 256 MB/128bit stock<br />
-80GB Seagate ATA/100 drive<br />
-A 15'' CRT monitor<br />
-Windows XP professional SP2 + all patches up do date<br />
-<br />
-I'm using overlay mode as I'm using my TV as speakers, sending the visualizations via overlay to prevent burn-ins.<br />
-<br />
-They're also set as the desktop colour.<br />
-<br />
-cya<br />
-Raziel-chan
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">J.Melo</span><br />
-			<span class="date small text-muted">26th July 2007 02:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Sound's like good stuff you got, I don't know why it would keep screwing around like that. Updating you video card driver sometimes fixes it (sometimes even rolling back), but I'm sure you keep it updated. Tweaking a few settings on your display driver might help. Uh, what else is there... well that's all I can think of. Sorry if it didn't help much.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

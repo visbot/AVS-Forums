@@ -1,164 +1,100 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" project 37 AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="project 37 AVS" />
 
-	<title> project 37 - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>project 37 - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">project 37</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=261188">project 37</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Mr_Nudge</span><br />
+      <span class="date small text-muted">6th December 2006 04:45 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">project 37</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=261188">project 37</a></p>
+      <p class="post-content"><strong>project 37</strong><br />
+      just something i made quickly today.<br />
+      most of the code was stolen from my bounce preset, but it still required a lot of work.<br />
+      a nifty thing i discovered while making this is a way to fix the first and last point from overlapping when drawing a circle using;<br />
+      <br />
+      x=cos(i*$PI*2);<br />
+      y=sin(I*$PI*2);<br />
+      <br />
+      instead of using $PI*2, which cases the first and last points to overlap (not very nice when using a texer2 on addative blend and having a single point twice as bright as the rest), i used $PI*(2-2/n)which distances the first and last point the same ammount as all the other points. yay!<br />
+      mm just thought i'd share my discovery.<br />
+      <br />
+      i know the preset's kinda empty, but i suck at backgrounds and such. stil.. let me know what you think!!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">7th December 2006 07:31 GMT</span></p>
 
-<br />
+      <p class="post-content">Great preset.. I can't really think of something that would finish it.. I tried to add some feedback but that sucked</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Mr_Nudge</span><br />
-			<span class="date small text-muted">6th December 2006 04:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>project 37</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Mr_Nudge</span><br />
+      <span class="date small text-muted">7th December 2006 08:46 GMT</span></p>
 
-		just something i made quickly today.<br />
-most of the code was stolen from my bounce preset, but it still required a lot of work.<br />
-a nifty thing i discovered while making this is a way to fix the first and last point from overlapping when drawing a circle using;<br />
-<br />
-x=cos(i*$PI*2);<br />
-y=sin(I*$PI*2);<br />
-<br />
-instead of using $PI*2, which cases the first and last points to overlap (not very nice when using a texer2 on addative blend and having a single point twice as bright as the rest), i used $PI*(2-2/n)which distances the first and last point the same ammount as all the other points. yay!<br />
-mm just thought i'd share my discovery.<br />
-<br />
-i know the preset's kinda empty, but i suck at backgrounds and such. stil.. let me know what you think!!
-		</p>
-</div>
+      <p class="post-content">thanks wotl!<br />
+      i had another shot and got something that worked.. changed the scope so it went inwards and out-wards (turns out you cant say "0utwar" here without it coming up as ******). so yes.. now it's fixed and finished.<br />
+      enjoy!</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Mr_Nudge</span><br />
+      <span class="date small text-muted">9th December 2006 07:04 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">7th December 2006 07:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">another update. improoved reaction.. bit more movement.<br />
+      i think it's totaly done now.</p>
+    </div>
+    <hr />
 
-		Great preset.. I can't really think of something that would finish it.. I tried to add some feedback but that sucked
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Mr_Nudge</span><br />
+      <span class="date small text-muted">18th December 2006 07:26 GMT</span></p>
 
-	<hr />
+      <p class="post-content">mmmmmmmmrrrrrreeeeeeeeeeaaaaaaaaaaarrrrrrggggggggghhhhhh!!!!!<br />
+      and other various meaningless sounds.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Mr_Nudge</span><br />
-			<span class="date small text-muted">7th December 2006 08:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">WildJack77</span><br />
+      <span class="date small text-muted">25th December 2006 07:36 GMT</span></p>
 
-		thanks wotl!<br />
-i had another shot and got something that worked.. changed the scope so it went inwards and out-wards (turns out you cant say &quot;0utwar&quot; here without it coming up as ******). so yes.. now it's fixed and finished.<br />
-enjoy!
-		</p>
-</div>
+      <p class="post-content">What did you say?<br />
+      However that's a cool preset. You are so terrific in texer II!</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Mr_Nudge</span><br />
-			<span class="date small text-muted">9th December 2006 07:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		another update. improoved reaction.. bit more movement.<br />
-i think it's totaly done now.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Mr_Nudge</span><br />
-			<span class="date small text-muted">18th December 2006 07:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		mmmmmmmmrrrrrreeeeeeeeeeaaaaaaaaaaarrrrrrggggggggghhhhhh!!!!!<br />
-and other various meaningless sounds.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">WildJack77</span><br />
-			<span class="date small text-muted">25th December 2006 07:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		What did you say?<br />
-However that's a cool preset. You are so terrific in texer II!
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

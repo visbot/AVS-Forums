@@ -1,320 +1,203 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" 3D help? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="3D help? AVS" />
 
-	<title> 3D help? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>3D help? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">3D help?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=162747">3D help?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">1st January 2004 20:22 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">3D help?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=162747">3D help?</a></p>
+      <p class="post-content"><strong>3D help?</strong><br />
+      Hello everyone!<br />
+      I'll try to make it short:<br />
+      I'm making a 3D grid in Texer-II, and distance between centers of particles is constant (25 pixels).<br />
+      <br />
+      So on ini/beat it calculates vertical and horizontal steps:<br />
+      stepx=25/w;stepy=25/h;<br />
+      <br />
+      Than on point it creates a grid like this:</p>
+      <pre>
+<code>x1=if(above(y1,1),x1+stepx,x1);<br />y1=if(above(y1,1),-1,y1+stepy);</code>
+</pre><br />
+      ...And that transforms to 3D.<br />
+      <br />
+      So my question is: how do I calculate "n" variable based on width and height? I tried using this:
+      <pre>
+<code>n=ceil(2/stepy)*ceil(2/stepx);<br /><br />(number-of-vertical-steps)*(number-of-horisontal steps)</code>
+</pre><br />
+      ...but that doesn't work correctly :(<br />
+      <br />
+      Any ideas?..
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">1st January 2004 23:34 GMT</span></p>
 
-<br />
+      <p class="post-content">The way you would want to do it is base something off the pixel height. I didn't actually look at your code, but my best guess would be to use something like<br /></p>
+      <pre>
+<code><br />n=(h/25)*(w/25)<br /></code>
+</pre><br />
+      I don't know if that works either, but it's worth a try. You should also probably calculate stepx and stepy perframe not just ini/beat. You might be coming up with problems in rounding your numbers, since n works as a whole number, (or something like that), if your number of points comes up as say 23.7, it may not work right, it would depend on the preset.<br />
+      <br />
+      /added/<br />
+      Also, when making a grid you should not only reset you calculated points (x1,y1) to -1 in perframe, but you should set them to<br />
+      <pre>
+<code><br />x1=-1-stepx <br />and <br />y1=-1-stepy<br /></code>
+</pre><br />
+      or you might have to use 1+step, it depends on which way you are drawing your grid.<br />
+      /added/
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">1st January 2004 20:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>3D help?</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">2nd January 2004 02:23 GMT</span></p>
 
-		Hello everyone!<br />
-I'll try to make it short:<br />
-I'm making a 3D grid in Texer-II, and distance between centers of particles is constant (25 pixels).<br />
-<br />
-So on ini/beat it calculates vertical and horizontal steps:<br />
-stepx=25/w;stepy=25/h;<br />
-<br />
-Than on point it creates a grid like this:<pre><code>x1=if(above(y1,1),x1+stepx,x1);<br />
-y1=if(above(y1,1),-1,y1+stepy);</code></pre><br />
-...And that transforms to 3D.<br />
-<br />
-So my question is: how do I calculate &quot;n&quot; variable based on width and height? I tried using this:<pre><code>n=ceil(2/stepy)*ceil(2/stepx);<br />
-<br />
-(number-of-vertical-steps)*(number-of-horisontal steps)</code></pre><br />
-...but that doesn't work correctly :(<br />
-<br />
-Any ideas?..
-		</p>
-</div>
+      <p class="post-content">Look:<br /></p>
+      <pre>
+<code><br /> ____________________ ____________________<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|____________________|____________________| 20 steps, 25 pixels each<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|                    |                    |<br />|____________________|____________________|<br />         20 steps, 25 pixels each<br /></code>
+</pre><br />
+      20x20 = 400 points/particles<br />
+      20x25 = 500 (height/width)<br />
+      SO, how do I convert 500x500 to n=400? :eek:<br />
+      <br />
+      Your variant (yes it is correct as theory): (500/25)*(500/25)=400<br />
+      <br />
+      BUT practicaly it doesn't work :(<br />
+      There should be something wrong with my scope. Can someone look at the code? Pleeease?<br />
+      <br />
+      P.S. yes, it's already got "y1=-1-stepy" and "x1=-1-stepx" stuff :D
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">2nd January 2004 07:31 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">1st January 2004 23:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content"><b>n=floor(w/25)*floor(h/25);</b><br />
+      <br />
+      suppose:<br />
+      w=500<br />
+      h=500<br />
+      gives you 20*20=400</p>
+    </div>
+    <hr />
 
-		The way you would want to do it is base something off the pixel height. I didn't actually look at your code, but my best guess would be to use something like<br />
-<pre><code><br />
-n=(h/25)*(w/25)<br />
-</code></pre><br />
-I don't know if that works either, but it's worth a try. You should also probably calculate stepx and stepy perframe not just ini/beat. You might be coming up with problems in rounding your numbers, since n works as a whole number, (or something like that), if your number of points comes up as say 23.7, it may not work right, it would depend on the preset.<br />
-<br />
-/added/<br />
-Also, when making a grid you should not only reset you calculated points (x1,y1) to -1 in perframe, but you should set them to <br />
-<pre><code><br />
-x1=-1-stepx <br />
-and <br />
-y1=-1-stepy<br />
-</code></pre><br />
-or you might have to use 1+step, it depends on which way you are drawing your grid.<br />
-/added/
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
+      <span class="date small text-muted">2nd January 2004 18:58 GMT</span></p>
 
-	<hr />
+      <p class="post-content">You need to use an image that you know the dimensions of and use that to calculate n. Like this.<br />
+      <br />
+      [edit]<br />
+      UIUC85:I tested your solution,It makes things worse.<br />
+      [/edit]</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">2nd January 2004 02:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">3rd January 2004 05:37 GMT</span></p>
 
-		Look:<br />
-<pre><code><br />
- ____________________ ____________________<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|____________________|____________________| 20 steps, 25 pixels each<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|                    |                    |<br />
-|____________________|____________________|<br />
-         20 steps, 25 pixels each<br />
-</code></pre><br />
-20x20 = 400 points/particles<br />
-20x25 = 500 (height/width)<br />
-SO, how do I convert 500x500 to n=400? :eek:<br />
-<br />
-Your variant (yes it is correct as theory): (500/25)*(500/25)=400<br />
-<br />
-BUT practicaly it doesn't work :(<br />
-There should be something wrong with my scope. Can someone look at the code? Pleeease?<br />
-<br />
-P.S. yes, it's already got &quot;y1=-1-stepy&quot; and &quot;x1=-1-stepx&quot; stuff :D
-		</p>
-</div>
+      <p class="post-content">That's because his logic is wrong. You based your steps assuming that the particles are placed in terms of height and width and not in cartesian coordinates. Honestly I dont know why you are setting it up like this anyways if you are just going to add rotation. If you really feel the need to try and plow through this mess you need to set up your step like this.<br />
+      <br />
+      stepx=(2/w)*25;<br />
+      stepy=(2/h)*25;<br />
+      <br />
+      Then you can use the equation I gave you before to get the correct n value. But with this idea you are using, you are going to have to center it and what not... It's just a hassel if you ask me. If you want my opinion you should just arbitrarily set the dimensions of your grid. That would make a lot more sense and it would mean less work and cleaner code.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
+      <span class="date small text-muted">3rd January 2004 16:55 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">2nd January 2004 07:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">UIUC85:Your n solution doesn't work at all. Try Copy&amp;Pasting it into his preset and removing his logic. It screws the preset up.<br />
+      <br />
+      My n solution and his logic work fine with rotation. Look, here is a rotating version using my n solution.<br />
+      <br />
+      And please try to be specific in who your are talking to. If you have a problem with the grid please don't blame it on me.</p>
+    </div>
+    <hr />
 
-		<b>n=floor(w/25)*floor(h/25);</b><br />
-<br />
-suppose:<br />
-w=500<br />
-h=500<br />
-gives you 20*20=400
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">4th January 2004 01:59 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Here, you want me to explain it for ya? It's not just copy and paste. What he has isn't going to achieve what he wants. He's based his system off width and height instead of using cartesian coordinates. In order to keep the distance 25 pixels you have to know the cartesian equivalent of 1 pixel for both width and height. SO:<br />
+      <br />
+      x pixel = (2/w)<br />
+      y pixel = (2/h)<br />
+      <br />
+      NOW, he wants it move 25 pixels per step so you multiply the value for 1 pixel by 25!<br />
+      <br />
+      stepx=(2/w)*25<br />
+      stepy=(2/h)*25<br />
+      <br />
+      That will give you the cartesian distance for 25 pixels. So the original problem was finding what value of n would fit the maximum particles into the screen right? So in order to find the how many times 25 fits into the screen both on the x and y axes you take w/25 and h/25. Now depending on whether you want to go a little larger or smaller you can use floor or ciel but:<br />
+      <br />
+      n=floor(w/25)*floor(h/25)<br />
+      <br />
+      Now in order to fix his code such that this idea will work he's going to have to go through a lot of it and change stuff and I'm not willing to put in that effort. No thanks. Realistically speaking, this 25 pixel distance idea is just dumb. As soon as you add rotation to this grid the whole concept of distancing them 25 pixels apart really means absolutely nothing to the actual look of the grid. Just arbitrarily set your values for the dimensions of the grid and rid yourself of these ridiculous issues.<br />
+      <br />
+      Hungryskull, mathematically, your solution means absolutely nothing. Why are you dividing 25 by the dimensions of the screen??? That doesn't mean anything in terms of plotting particles. And where did n=ceil(w/11)*ceil(h/11) come from? Did you just pick 11 arbitrarily?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hungryskull</span><br />
-			<span class="date small text-muted">2nd January 2004 18:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+      <span class="date small text-muted">4th January 2004 03:24 GMT</span></p>
 
-		You need to use an image that you know the dimensions of and use that to calculate n.  Like this.<br />
-<br />
-[edit]<br />
-UIUC85:I tested your solution,It makes things worse.<br />
-[/edit]
-		</p>
-</div>
+      <p class="post-content">/me agrees with UIUC85 that it is easier and better to just set an arbitrary number of points for a grid like this.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">4th January 2004 20:57 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">3rd January 2004 05:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Thank you VERY much! Yeah, I re-wrote the preset now it works.</p>
+    </div>
+    <hr />
 
-		That's because his logic is wrong.  You based your steps assuming that the particles are placed in terms of height and width and not in cartesian coordinates.  Honestly I dont know why you are setting it up like this anyways if you are just going to add rotation.  If you really feel the need to try and plow through this mess you need to set up your step like this.  <br />
-<br />
-stepx=(2/w)*25;<br />
-stepy=(2/h)*25;<br />
-<br />
-Then you can use the equation I gave you before to get the correct n value.  But with this idea you are using, you are going to have to center it and what not...  It's just a hassel if you ask me.  If you want my opinion you should just arbitrarily set the dimensions of your grid.  That would make a lot more sense and it would mean less work and cleaner code.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">4th January 2004 21:14 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Anytime :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hungryskull</span><br />
-			<span class="date small text-muted">3rd January 2004 16:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		UIUC85:Your n solution doesn't work at all.  Try Copy&amp;Pasting it into his  preset and removing his logic.  It screws the preset up.<br />
-<br />
-My n solution and his logic work fine with rotation.  Look, here is a rotating version using my n solution.<br />
-<br />
-And please try to be specific in who your are talking to.  If you have a problem with the grid please don't blame it on me.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">4th January 2004 01:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here, you want me to explain it for ya?  It's not just copy and paste.  What he has isn't going to achieve what he wants.  He's based his system off width and height instead of using cartesian coordinates.  In order to keep the distance 25 pixels you have to know the cartesian equivalent of 1 pixel for both width and height.  SO:<br />
-<br />
-x pixel = (2/w)<br />
-y pixel = (2/h)<br />
-<br />
-NOW, he wants it move 25 pixels per step so you multiply the value for 1 pixel by 25!<br />
-<br />
-stepx=(2/w)*25<br />
-stepy=(2/h)*25<br />
-<br />
-That will give you the cartesian distance for 25 pixels.  So the original problem was finding what value of n would fit the maximum particles into the screen right?  So in order to find the how many times 25 fits into the screen both on the x and y axes you take w/25 and h/25.  Now depending on whether you want to go a little larger or smaller you can use floor or ciel but:<br />
-<br />
-n=floor(w/25)*floor(h/25)<br />
-<br />
-Now in order to fix his code such that this idea will work he's going to have to go through a lot of it and change stuff and I'm not willing to put in that effort.  No thanks.  Realistically speaking, this 25 pixel distance idea is just dumb.  As soon as you add rotation to this grid the whole concept of distancing them 25 pixels apart really means absolutely nothing to the actual look of the grid.  Just arbitrarily set your values for the dimensions of the grid and rid yourself of these ridiculous issues.<br />
-<br />
-Hungryskull, mathematically, your solution means absolutely nothing.  Why are you dividing 25 by the dimensions of the screen???  That doesn't mean anything in terms of plotting particles.  And where did n=ceil(w/11)*ceil(h/11) come from?  Did you just pick 11 arbitrarily?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">4th January 2004 03:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		/me agrees with UIUC85 that it is easier and better to just set an arbitrary number of points for a grid like this.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">4th January 2004 20:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thank you VERY much! Yeah, I re-wrote the preset now it works.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">4th January 2004 21:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Anytime :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

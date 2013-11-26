@@ -1,84 +1,63 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Midi manipulation input+reaction output AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Midi manipulation input+reaction output AVS" />
 
-	<title> Midi manipulation input+reaction output - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Midi manipulation input+reaction output - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Midi manipulation input+reaction output</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=319923">Midi manipulation input+reaction output</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">mucks</span><br />
+      <span class="date small text-muted">13th June 2010 18:25 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Midi manipulation input+reaction output</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=319923">Midi manipulation input+reaction output</a></p>
+      <p class="post-content"><strong>Midi manipulation input+reaction output</strong><br />
+      Talked that with goebish soon ago and he had quite a positive sight of the idea. I'd like this thread to be used to discuss the comfort and conveniance that a midi input port + reaction midi output would be best alike before anything has beggun.<br />
+      An asio accelerator could be used too i guess, but i just had the idea. Asio deffenately accelerates visual reaction over accelerating audio.<br />
+      Some ressources: <a href="http://www.steinberg.net/en/company/developer.html" target="_blank">http://www.steinberg.net/en/company/developer.html</a> VST plugin dev kit (might countain some useful informations)<br />
+      Somehow, AVS could even become a VST plugin to have an easier linkage between itself and midi controls. Tne SDK is suppaused to explain midi how-to too.<br />
+      <a href="http://www.google.ca/search?hl=fr&amp;q=midi+signal&amp;aq=f&amp;aqi=g10&amp;aql=&amp;oq=&amp;gs_rfai=" target="_blank">http://www.google.ca/search?hl=fr&amp;q=...=&amp;oq=&amp;gs_rfai=</a><br />
+      <a href="http://www.users.globalnet.co.uk/~bunce/" target="_blank">http://www.users.globalnet.co.uk/~bunce/</a><br />
+      Flstudio and some other digital audio workstations has the ability to transmit midi signals to other applications or midi hardwares. Inside FLstudio, you can create dashboards with emulated midi hardwares, you can use the peak controller to create a midi signal from the input's velocity, or the formula controller to create advanced LFOs from math operators.<br />
+      These signals could be transmitted to AVS inside winamp via REWIRE... I'm much thrusting the idea to use rewire but i'unsure if they share the sdk fully... still here is their link <a href="http://www.propellerheads.se/developer/index.cfm?fuseaction=get_article&amp;article=rewiretechinfo" target="_blank">http://www.propellerheads.se/develop...rewiretechinfo</a><br />
+      Using any midi input inside AVS would allow to have at least 128 controllers assigned to sliders or to variables. Inside something like dynamic distance modifier, one could call CC12 to replace X and change the movement from a LFO or from a hardware midi controller engine live. The steinberg SDK includes the asio sdk. Creating an asio input implies the ability to use a soundcard's own asio drivers, asio4all, or steinberg's asio. Using asio drivers may allow the use of a DSP acceleration card too. <a href="http://www.uaudio.com/" target="_blank">http://www.uaudio.com/</a><br />
+      Such cards precompute the audio process before submitting it to the processor allowing a smoother creative session. And it probably could accelerate AVS's graphics if it would use ASIO.<br />
+      The reaction midi output is to send back the resulting values to the DAW (digital audio workstation) so that it can alter the music from the images resulting from the AVS programmable codes. Say we'd get something X=sin(x/cc12); we could anyhow insert something ______;outCC12; so that the DAW would recieve the new value resulting from the rest of the chew session. Using those controlls will allow hand-manipulated rotations, x-y controlls from mouse, color switching at a chosen time, will also allow to save the DAW's n and the AVS preset's configuratio into sister projects and recall the common project later.<br />
+      Having AVS as a VSTeffect plugin would allow the presets to be saved with the DAW's project files and the linkages to be kept into one single file. There are a few branches of a plan that could be chosen to use. The branches chosen have to be chosen concidering realisability, ease, and investments.<br />
+      This link is the FLstudio SDK <a href="http://forum.image-line.com/viewtopic.php?t=12092" target="_blank">http://forum.image-line.com/viewtopic.php?t=12092</a> Must be a registered user to download it. You may buy FlStudio using this link <a href="http://affiliate.image-line.com/BCJBAFB474" target="_blank">http://affiliate.image-line.com/BCJBAFB474</a> The basic version is about 50$ and allow a forum registeration. The full version is about 150$ and contains most great functions and plugins except the hq plugins that can also be bought from that link. Developping AVS strictly for FlStudio would be the best as it can later be turned VST and that FL has some very innovative ways of controlling and using plugins. Plus, the FL team will make a pleasure to distribute AVS with FL if it is made stable and very compatible! FL has its own Asio input, like most DAW so that would prevent coding an asio input directly inside AVS, or if avs is to be still used inside winamp. So lets see what branches are the most worthy right here!!!<br />
+      <br />
+      So that's the base of imformations i may share currently.<br />
+      <br />
+      Post your ideas about comfortability and workflow below!! :)<br />
+      <br />
+      So done, we all will have a clear sight over the most clever development plan and will get more interrested developpers, that way done, get a new AVS with those abilities sooner!! :)</p>
+    </div>
+    <hr />
 
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mucks</span><br />
-			<span class="date small text-muted">13th June 2010 18:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Midi manipulation input+reaction output</strong><br />
-		
-		
-
-		Talked that with goebish soon ago and he had quite a positive sight of the idea. I'd like this thread to be used to discuss the comfort and conveniance that a midi input port + reaction midi output would be best alike before anything has beggun.<br />
-An asio accelerator could be used too i guess, but i just had the idea. Asio deffenately accelerates visual reaction over accelerating audio.<br />
-Some ressources: <a href="http://www.steinberg.net/en/company/developer.html" target="_blank">http://www.steinberg.net/en/company/developer.html</a> VST plugin dev kit (might countain some useful informations)<br />
-Somehow, AVS could even become a VST plugin to have an easier linkage between itself and midi controls. Tne SDK is suppaused to explain midi how-to too.<br />
-<a href="http://www.google.ca/search?hl=fr&amp;q=midi+signal&amp;aq=f&amp;aqi=g10&amp;aql=&amp;oq=&amp;gs_rfai=" target="_blank">http://www.google.ca/search?hl=fr&amp;q=...=&amp;oq=&amp;gs_rfai=</a><br />
-<a href="http://www.users.globalnet.co.uk/~bunce/" target="_blank">http://www.users.globalnet.co.uk/~bunce/</a><br />
-Flstudio and some other digital audio workstations has the ability to transmit midi signals to other applications or midi hardwares. Inside FLstudio, you can create dashboards with emulated midi hardwares, you can use the peak controller to create a midi signal from the input's velocity, or the formula controller to create advanced LFOs from math operators. <br />
-These signals could be transmitted to AVS inside winamp via REWIRE... I'm much thrusting the idea to use rewire but i'unsure if they share the sdk fully... still here is their link <a href="http://www.propellerheads.se/developer/index.cfm?fuseaction=get_article&amp;article=rewiretechinfo" target="_blank">http://www.propellerheads.se/develop...rewiretechinfo</a><br />
-Using any midi input inside AVS would allow to have at least 128 controllers assigned to sliders or to variables. Inside something like dynamic distance modifier, one could call CC12 to replace X and change the movement from a LFO or from a hardware midi controller engine live. The steinberg SDK includes the asio sdk. Creating an asio input implies the ability to use a soundcard's own asio drivers, asio4all, or steinberg's asio. Using asio drivers may allow the use of a DSP acceleration card too. <a href="http://www.uaudio.com/" target="_blank">http://www.uaudio.com/</a><br />
-Such cards precompute the audio process before submitting it to the processor allowing a smoother creative session. And it probably could accelerate AVS's graphics if it would use ASIO.<br />
-The reaction midi output is to send back the resulting values to the DAW (digital audio workstation) so that it can alter the music from the images resulting from the AVS programmable codes. Say we'd get something X=sin(x/cc12); we could anyhow insert something ______;outCC12; so that the DAW would recieve the new value resulting from the rest of the chew session. Using those controlls will allow hand-manipulated rotations, x-y controlls from mouse, color switching at a chosen time, will also allow to save the DAW's n and the AVS preset's configuratio into sister projects and recall the common project later.<br />
-Having AVS as a VSTeffect plugin would allow the presets to be saved with the DAW's project files and the linkages to be kept into one single file. There are a few branches of a plan that could be chosen to use. The branches chosen have to be chosen concidering realisability, ease, and investments.<br />
-This link is the FLstudio SDK <a href="http://forum.image-line.com/viewtopic.php?t=12092" target="_blank">http://forum.image-line.com/viewtopic.php?t=12092</a> Must be a registered user to download it. You may buy FlStudio using this link <a href="http://affiliate.image-line.com/BCJBAFB474" target="_blank">http://affiliate.image-line.com/BCJBAFB474</a> The basic version is about 50$ and allow a forum registeration. The full version is about 150$ and contains most great functions and plugins except the hq plugins that can also be bought from that link. Developping AVS strictly for FlStudio would be the best as it can later be turned VST and that FL has some very innovative ways of controlling and using plugins. Plus, the FL team will make a pleasure to distribute AVS with FL if it is made stable and very compatible! FL has its own Asio input, like most DAW so that would prevent coding an asio input directly inside AVS, or if avs is to be still used inside winamp. So lets see what branches are the most worthy right here!!!<br />
-<br />
-So that's the base of imformations i may share currently.<br />
-<br />
-Post your ideas about comfortability and workflow below!! :)<br />
-<br />
-So done, we all will have a clear sight over the most clever development plan and will get more interrested developpers, that way done, get a new AVS with those abilities sooner!! :)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

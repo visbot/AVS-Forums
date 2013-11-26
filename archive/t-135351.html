@@ -1,468 +1,269 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Framerate Limiter - Request to UnConeD AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Framerate Limiter - Request to UnConeD AVS" />
 
-	<title> Framerate Limiter - Request to UnConeD - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Framerate Limiter - Request to UnConeD - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Framerate Limiter - Request to UnConeD</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=135351">Framerate Limiter - Request to UnConeD</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">14th May 2003 12:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Framerate Limiter - Request to UnConeD</strong><br />
-		
-		
-
-		I know the Framerate Limiter idea is nothing new,but as i read that UnConeD has already written a FPS Detector ape, i thought that this could easily be transformed into an Framerate Limiter by inserting some delay code.<br />
-<br />
-This would be kinda great as i have a lot of best at xx.x fps presets!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">14th May 2003 21:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		and what if the framerate is below xx.x? what then?<br />
-<br />
-I think the biggest problem with this is that it might cause the framerate to be 'blocky'.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">15th May 2003 12:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		BLOCKY???<br />
-<br />
-Don't know what you mean by this.<br />
-<br />
-It could be done like this:<br />
-<br />
-Check fps<br />
-<br />
-If fps&gt;xx.x increase %loop%<br />
-If fps&lt;xx.x decrease %loop%<br />
-If fps=xx.x do nothing<br />
-<br />
-do some hungry processes for %loop% times (could be a double inversion of the frame for example)<br />
-<br />
-See if your pc is not able to even achieve xx.x fps the loop will be always 0.<br />
-<br />
-Otherways the ape will always adjust it to the desired fps.<br />
-<br />
-Quite simple, i'snt it? I'd do it myself, only prob is that i'm too busy with coding hotlist and my c++ knowledge is not the best.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">15th May 2003 14:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		obviously if the fps is already less than desired, you cant do much abuot it. but thats not the point. i think its a damn nice idea magicX
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">15th May 2003 21:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		what I'm saying is that if you have a FPS slowing APE at the end, it would stop the processing for one frame.  Thus, there would be 'delays' in the updates.  (At least I think...not positive).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">16th May 2003 11:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I cant imageine that it would cause delays ina an other way than desired. But that would have to be tested.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">17th May 2003 07:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hang on, are you saying it will physically limit the fps, or just run code loops so that the preset is running slower.<br />
-<br />
-the second one should have no problems at all, because it is just like puting in heaps of pointless effects to  slow it down.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">18th May 2003 09:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hang on...this one is quite an easy one, i can do it.<br />
-so, should i?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">18th May 2003 12:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<pre><code><br />
-struct apeconfig {<br />
-  int mFrameLimit;<br />
-};<br />
-<br />
-class C_THISCLASS {<br />
-  ...<br />
-private:<br />
-  int mLastTicks;<br />
-  apeconfig config;<br />
-  ...<br />
-}<br />
-<br />
-C_THISCLASS::C_THISCLASS {<br />
-  mLastTicks = GetLastTicks();<br />
-}<br />
-<br />
-C_THISCLASS::render(...) {<br />
-  int vTicks = GetLastTicks();<br />
-  int vDelay = 1000/config.mFrameLimit;<br />
-  int vRenderTime = vTicks - mLastTicks;<br />
-  if (vRenderTime &lt; vDelay) {<br />
-    Sleep(vDelay - vRenderTime);<br />
-  }<br />
-  mLastTicks = GetLastTicks();<br />
-}<br />
-</code></pre><br />
-<br />
-That should do the trick, it measures the rendering time of everything except the APE itself and adjusts framerate accordingly. I don't feel like whipping up an APE project for it.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">18th May 2003 14:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		great, but should i make an ape for it?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th May 2003 02:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Dunno, I still don't see the use of this. If a preset goes too fast, increase the AVS size and be amazed at the miracles of 400x300 or 512x384...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Raz</span><br />
-			<span class="date small text-muted">19th May 2003 03:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Or 1024 x 768, i love teh new processor :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">19th May 2003 03:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Speaking of new processor, I may be getting a dual Intel Xeon 3.06Ghz computer with 4GB(max of 12) PC-2100 RAM this summer.  I'll also have at least 500GB of harddrive space as well.  It's going to be sweet.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">19th May 2003 04:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by anubis2003 </i><br />
-<b>Speaking of new processor, I may be getting a dual Intel Xeon 3.06Ghz computer with 4GB(max of 12) PC-2100 RAM this summer.  I'll also have at least 500GB of harddrive space as well.  It's going to be sweet. </b></blockquote>
-:eek: Fuck me.<br />
-<br />
-Seen the latest PowerMac yet? Dual 1.42GHz G4's with 2MB cache. *drool* (Not that I'm a Mac user or anything...)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">19th May 2003 11:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ahem, back to the Topic.<br />
-<br />
-Shreyas, go for it, will be great.<br />
-<br />
-And UnConed, you can go to higher res of course as the ape should always keep the fps if possible, so it won't limit the resolution you can do with it.<br />
-<br />
-But i recently watched old Presets i did on My Celeron 400 and now they ran on 63 fps and looked all messy unless i reduced the framerate to 20 again. <br />
-<br />
-That should be the purpose of this APE, getting the same effect on each machine no matter which hardware is used.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">20th May 2003 16:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		ok, gimme some time because i am not that free these days :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">22nd May 2003 11:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I know what you mean, i'm messing with nsis2 for hotlist2.2 since 4 days because i never have more than 1 houre per day for this stuff :(<br />
-<br />
-Take your time, but get it done ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Magic.X</span><br />
-			<span class="date small text-muted">23rd June 2003 16:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Erm Shreyas, any progress made?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">[Ishan]</span><br />
-			<span class="date small text-muted">23rd June 2003 17:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yes i'm waiting for it too
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">23rd June 2003 18:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		/sigh.  he will post it when it is ready.  there is no need to revive dead posts
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">24th June 2003 16:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		ehh, so wait a bit, lemme submit my pack. what is over is : couple of well, something is over. sort of buggy though. crashes winamp for no reason at all, will figure out soon
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">blazer1504</span><br />
-			<span class="date small text-muted">25th June 2003 10:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>naah naah</strong><br />
-		
-		
-
-		ooOOh, but I already have a fps limiter.. yup yup, it never gets over 64 fps with this :P You must be jealous as hell ;) ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Shock Value</span><br />
-			<span class="date small text-muted">28th June 2003 07:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Heh Blazer same with me. But try opening up Kazaa and clicking the theater tab. This causes the frame rate to be normal on my machine until I close Kazaa for some reason. Some other programs will do this as well, usually ones that have to do with multimedia type stuff. I don't know why this happens, though, or why the frame rate was stuck in the first place.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-138.html">AVS Wishlist</a></li>
+
+      <li class="active">Framerate Limiter - Request to UnConeD</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=135351">Framerate Limiter - Request to UnConeD</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">14th May 2003 12:09 GMT</span></p>
+
+      <p class="post-content"><strong>Framerate Limiter - Request to UnConeD</strong><br />
+      I know the Framerate Limiter idea is nothing new,but as i read that UnConeD has already written a FPS Detector ape, i thought that this could easily be transformed into an Framerate Limiter by inserting some delay code.<br />
+      <br />
+      This would be kinda great as i have a lot of best at xx.x fps presets!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">mikm</span><br />
+      <span class="date small text-muted">14th May 2003 21:25 GMT</span></p>
+
+      <p class="post-content">and what if the framerate is below xx.x? what then?<br />
+      <br />
+      I think the biggest problem with this is that it might cause the framerate to be 'blocky'.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">15th May 2003 12:09 GMT</span></p>
+
+      <p class="post-content">BLOCKY???<br />
+      <br />
+      Don't know what you mean by this.<br />
+      <br />
+      It could be done like this:<br />
+      <br />
+      Check fps<br />
+      <br />
+      If fps&gt;xx.x increase %loop%<br />
+      If fps&lt;xx.x decrease %loop%<br />
+      If fps=xx.x do nothing<br />
+      <br />
+      do some hungry processes for %loop% times (could be a double inversion of the frame for example)<br />
+      <br />
+      See if your pc is not able to even achieve xx.x fps the loop will be always 0.<br />
+      <br />
+      Otherways the ape will always adjust it to the desired fps.<br />
+      <br />
+      Quite simple, i'snt it? I'd do it myself, only prob is that i'm too busy with coding hotlist and my c++ knowledge is not the best.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">15th May 2003 14:29 GMT</span></p>
+
+      <p class="post-content">obviously if the fps is already less than desired, you cant do much abuot it. but thats not the point. i think its a damn nice idea magicX</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">mikm</span><br />
+      <span class="date small text-muted">15th May 2003 21:27 GMT</span></p>
+
+      <p class="post-content">what I'm saying is that if you have a FPS slowing APE at the end, it would stop the processing for one frame. Thus, there would be 'delays' in the updates. (At least I think...not positive).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">16th May 2003 11:57 GMT</span></p>
+
+      <p class="post-content">I cant imageine that it would cause delays ina an other way than desired. But that would have to be tested.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">17th May 2003 07:06 GMT</span></p>
+
+      <p class="post-content">hang on, are you saying it will physically limit the fps, or just run code loops so that the preset is running slower.<br />
+      <br />
+      the second one should have no problems at all, because it is just like puting in heaps of pointless effects to slow it down.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">18th May 2003 09:30 GMT</span></p>
+
+      <p class="post-content">hang on...this one is quite an easy one, i can do it.<br />
+      so, should i?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">18th May 2003 12:26 GMT</span></p>
+
+      <p class="post-content"></p>
+      <pre>
+<code><br />struct apeconfig {<br />  int mFrameLimit;<br />};<br /><br />class C_THISCLASS {<br />  ...<br />private:<br />  int mLastTicks;<br />  apeconfig config;<br />  ...<br />}<br /><br />C_THISCLASS::C_THISCLASS {<br />  mLastTicks = GetLastTicks();<br />}<br /><br />C_THISCLASS::render(...) {<br />  int vTicks = GetLastTicks();<br />  int vDelay = 1000/config.mFrameLimit;<br />  int vRenderTime = vTicks - mLastTicks;<br />  if (vRenderTime &lt; vDelay) {<br />    Sleep(vDelay - vRenderTime);<br />  }<br />  mLastTicks = GetLastTicks();<br />}<br /></code>
+</pre><br />
+      <br />
+      That should do the trick, it measures the rendering time of everything except the APE itself and adjusts framerate accordingly. I don't feel like whipping up an APE project for it.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">18th May 2003 14:55 GMT</span></p>
+
+      <p class="post-content">great, but should i make an ape for it?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">19th May 2003 02:31 GMT</span></p>
+
+      <p class="post-content">Dunno, I still don't see the use of this. If a preset goes too fast, increase the AVS size and be amazed at the miracles of 400x300 or 512x384...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Raz</span><br />
+      <span class="date small text-muted">19th May 2003 03:18 GMT</span></p>
+
+      <p class="post-content">Or 1024 x 768, i love teh new processor :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">19th May 2003 03:29 GMT</span></p>
+
+      <p class="post-content">Speaking of new processor, I may be getting a dual Intel Xeon 3.06Ghz computer with 4GB(max of 12) PC-2100 RAM this summer. I'll also have at least 500GB of harddrive space as well. It's going to be sweet.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
+      <span class="date small text-muted">19th May 2003 04:47 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by anubis2003</i><br />
+        <b>Speaking of new processor, I may be getting a dual Intel Xeon 3.06Ghz computer with 4GB(max of 12) PC-2100 RAM this summer. I'll also have at least 500GB of harddrive space as well. It's going to be sweet.</b>
+      </blockquote>:eek: Fuck me.<br />
+      <br />
+      Seen the latest PowerMac yet? Dual 1.42GHz G4's with 2MB cache. *drool* (Not that I'm a Mac user or anything...)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">19th May 2003 11:55 GMT</span></p>
+
+      <p class="post-content">Ahem, back to the Topic.<br />
+      <br />
+      Shreyas, go for it, will be great.<br />
+      <br />
+      And UnConed, you can go to higher res of course as the ape should always keep the fps if possible, so it won't limit the resolution you can do with it.<br />
+      <br />
+      But i recently watched old Presets i did on My Celeron 400 and now they ran on 63 fps and looked all messy unless i reduced the framerate to 20 again.<br />
+      <br />
+      That should be the purpose of this APE, getting the same effect on each machine no matter which hardware is used.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">20th May 2003 16:17 GMT</span></p>
+
+      <p class="post-content">ok, gimme some time because i am not that free these days :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">22nd May 2003 11:56 GMT</span></p>
+
+      <p class="post-content">I know what you mean, i'm messing with nsis2 for hotlist2.2 since 4 days because i never have more than 1 houre per day for this stuff :(<br />
+      <br />
+      Take your time, but get it done ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Magic.X</span><br />
+      <span class="date small text-muted">23rd June 2003 16:05 GMT</span></p>
+
+      <p class="post-content">Erm Shreyas, any progress made?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">[Ishan]</span><br />
+      <span class="date small text-muted">23rd June 2003 17:05 GMT</span></p>
+
+      <p class="post-content">Yes i'm waiting for it too</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">mikm</span><br />
+      <span class="date small text-muted">23rd June 2003 18:55 GMT</span></p>
+
+      <p class="post-content">/sigh. he will post it when it is ready. there is no need to revive dead posts</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">24th June 2003 16:35 GMT</span></p>
+
+      <p class="post-content">ehh, so wait a bit, lemme submit my pack. what is over is : couple of well, something is over. sort of buggy though. crashes winamp for no reason at all, will figure out soon</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">blazer1504</span><br />
+      <span class="date small text-muted">25th June 2003 10:12 GMT</span></p>
+
+      <p class="post-content"><strong>naah naah</strong><br />
+      ooOOh, but I already have a fps limiter.. yup yup, it never gets over 64 fps with this :P You must be jealous as hell ;) ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
+      <span class="date small text-muted">28th June 2003 07:02 GMT</span></p>
+
+      <p class="post-content">Heh Blazer same with me. But try opening up Kazaa and clicking the theater tab. This causes the frame rate to be normal on my machine until I close Kazaa for some reason. Some other programs will do this as well, usually ones that have to do with multimedia type stuff. I don't know why this happens, though, or why the frame rate was stuck in the first place.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

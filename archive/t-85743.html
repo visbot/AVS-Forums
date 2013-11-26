@@ -1,423 +1,310 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" where can i find some simple super scope examples?circles and lines simple. AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="where can i find some simple super scope examples?circles and lines simple. AVS" />
 
-	<title> where can i find some simple super scope examples?circles and lines simple. - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>where can i find some simple super scope examples?circles and lines simple. - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">where can i find some simple super scope examples?circles and lines simple.</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=85743">where can i find some simple super scope examples?circles and lines simple.</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">stayin_stoned</span><br />
+      <span class="date small text-muted">24th April 2002 07:17 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">where can i find some simple super scope examples?circles and lines simple.</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=85743">where can i find some simple super scope examples?circles and lines simple.</a></p>
+      <p class="post-content"><strong>where can i find some simple super scope examples?circles and lines simple.</strong><br />
+      im pretty new to avs so any help is appreciated. I dont under stand the super scope very well yet and i learn best by looking at an example, but most examples i find are to complex for me to understand yet.if anyone could provide a few simple examples it would help alot. i have made a few unique but weak ass presets if you want to see them, email me at <a href="mailto:skater348@attbi.com">skater348@attbi.com</a>.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">24th April 2002 09:49 GMT</span></p>
 
-<br />
+      <p class="post-content">Okay, quick superscope.<br />
+      <br />
+      init:<br />
+      n=200;<br />
+      <br />
+      per pixel :<br />
+      x=2*i-1;<br />
+      y=v<br />
+      <br />
+      That makes a horizontal line that reflects what the spectrum data (I think) looks like.<br />
+      <br />
+      i = point on scope, ranges from 0 to 1<br />
+      v = value for any given point, ranges from -1 to 1<br />
+      x = x :)<br />
+      y = y :)<br />
+      <br />
+      After that, it's just messing 'till you come up with something nice.<br />
+      <br />
+      ---------------<br />
+      <br />
+      Zip your presets up and post them in the sub forum. Get critiqued and recieve suggestions.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">stayin_stoned</span><br />
-			<span class="date small text-muted">24th April 2002 07:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>where can i find some simple super scope examples?circles and lines simple.</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">27th April 2002 05:16 GMT</span></p>
 
-		im pretty new to avs so any help is appreciated. I dont under stand the super scope very well yet and i learn best by looking at an example, but most examples i find are to complex for me to understand yet.if anyone could provide a few simple examples it would help alot. i have made a few unique but weak ass presets if you want to see them, email me at <a href="mailto:skater348@attbi.com">skater348@attbi.com</a>.
-		</p>
-</div>
+      <p class="post-content">circle:<br />
+      Init:<br />
+      n=50<br />
+      <br />
+      per point:<br />
+      x=cos(i*6.283);<br />
+      y=sin(i*6.283)<br />
+      <br />
+      this renders a circle with a midpoint of (0,0) and a radius of 1. To scale it down, mutliply the x and y by a decimal...<br />
+      <br />
+      x=cos(i*6.283)*.5;<br />
+      y=sin(i*6.283)*.5<br />
+      <br />
+      then you can change the midpoint by simply adding or subtracting...<br />
+      <br />
+      x=cos(i*6.283)*.5+.15;<br />
+      y=sin(i*6.283)*.5-.5<br />
+      :winamp:</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">27th April 2002 18:32 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">24th April 2002 09:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Another circle :<br />
+      <br />
+      Init : n=500;pi=acos(-1)<br />
+      Point :<br />
+      x=sin(i*pi*2);<br />
+      y=cos(i*pi*2)<br />
+      <br />
+      This makes a circle which touches the edges of the screen.<br />
+      You can add dividing sign at the end of the appropriate line and also put in an appropriate number to make the circle smaller.<br />
+      To change location, simply use + or - sign.<br />
+      Note the "n" value - it is the number of points - you might want to change it into smaller number while the SSC still resembles a circle.<br />
+      <br />
+      How to put a dynamically moving SSC, with the diameter of 1/5 of the screen :<br />
+      <br />
+      PerFrame : t=t+0.1;<br />
+      Perpoint :<br />
+      x=sin(i*pi*2)/5+sin(t);<br />
+      y=cos(i*pi*2)/5+cos(t);<br />
+      <br />
+      Now the SSC moves in circular pattern.<br />
+      <br />
+      How to make solid circle, w/o movement (1/5 size, like the moving one) :<br />
+      <br />
+      Init : pi=acos(-1);n=w*pi/5<br />
+      PerPoint :<br />
+      x=sin(i*pi*2)/5*s;<br />
+      y=sin(i*pi*2)/5*s;<br />
+      s=bnot(s);<br />
+      <br />
+      There! You have a solid circle (Though slows down AVS quite nicely...)<br />
+      <br />
+      You might want to add misc/rendermode to set the line width, in case it isn't solid.<br />
+      <br />
+      You can also do *(s+getosc(0,0.1,0)) in each line instead of *s for a little funky thing =)<br />
+      <br />
+      Good luck in yar SSC making career! (And especially good luck for AVS making career)<br />
+      <br />
+      <br />
+      Artists that I'd recommend to ask for about SSC :<br />
+      <br />
+      Nixa - In his/her :p preset named "Lots of Spirals" (Or something like that) It looks somewhat basic-ish. But if you dig in the preset, you'll realize that all six spirals are drawn using only 1 SSC.<br />
+      I hadn't tried to decode the SSC - Quite dense of a code in it =)<br />
+      But then, I think I can make one using a different way...<br />
+      <br />
+      El-Vis - Need I say more? He made a ton of 3d SSCs!<br />
+      <br />
+      UnConeD - This one don't need an explanation, either. If you do, download his 4th pack, and try the preset "All Neon-Like".<br />
+      Everything in that preset are SSCs (Except for the needed buffer safe...).<br />
+      Even the STARS are SSC! (Synchronicity is essential, ya know - creates realism)<br />
+      <br />
+      The various AVS artist on the board - They're helpful, trust me =)<br />
+      <br />
+      Me! - :p<br />
+      <br />
+      Just PM one of us, and we'll help :D</p>
+    </div>
+    <hr />
 
-		Okay, quick superscope.<br />
-<br />
-init:<br />
-n=200;<br />
-<br />
-per pixel :<br />
-x=2*i-1;<br />
-y=v<br />
-<br />
-That makes a horizontal line that reflects what the spectrum data (I think) looks like.<br />
-<br />
-i = point on scope, ranges from 0 to 1<br />
-v = value for any given point, ranges from -1 to 1<br />
-x = x :)<br />
-y = y :)<br />
-<br />
-After that, it's just messing 'till you come up with something nice.<br />
-<br />
----------------<br />
-<br />
-Zip your presets up and post them in the sub forum. Get critiqued and recieve suggestions.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">27th April 2002 19:42 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Also to make a perfect circle, not oval, I divide x and y by (w*s) and (h*s) where as s invertedly equals the size of the render and w is the width and h is the height.<br />
+      <br />
+      Init:<br />
+      n=400; s=.015<br />
+      Per point:<br />
+      x=(cos(i*6.28)/(w*s));<br />
+      y=(sin(i*6.28)/(h*s))<br />
+      <br />
+      now the shape will stay circular even though the avs box could be rectangular, the only thing is division is slower than muliplication.<br />
+      <br />
+      so use this<br />
+      Init:<br />
+      n=400; s=.015; xa=1/(w*s); ya=1/(h*s);<br />
+      Per point:<br />
+      x=(cos(i*6.28)*xa);<br />
+      y=(sin(i*6.28)*ya);<br />
+      <br />
+      ok I'm going to sleep, dont know if any of this actually does something, but mess with it.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">27th April 2002 05:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">28th April 2002 01:12 GMT</span></p>
 
-		circle:<br />
-Init:<br />
-n=50<br />
-<br />
-per point:<br />
-x=cos(i*6.283);<br />
-y=sin(i*6.283)<br />
-<br />
-this renders a circle with a midpoint of (0,0) and a radius of 1.  To scale it down, mutliply the x and y by a decimal...<br />
-<br />
-x=cos(i*6.283)*.5;<br />
-y=sin(i*6.283)*.5<br />
-<br />
-then you can change the midpoint by simply adding or subtracting...<br />
-<br />
-x=cos(i*6.283)*.5+.15;<br />
-y=sin(i*6.283)*.5-.5<br />
-:winamp:
-		</p>
-</div>
+      <p class="post-content">To correct the aspect ratio, you only need to multiply either x and y by w/h or h/w... saves one multiplication :). Might be useful when you need to squeeze out every frame per second you can get.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">28th April 2002 16:16 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">27th April 2002 18:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">A tip for both you and NoSage :<br />
+      <br />
+      In the init, type "pi=acos(-1)"<br />
+      This way, you can save your mind from remembering those numbers - You can replace 6.28(It's actually longer than that) with pi*2...<br />
+      <br />
+      ____<br />
+      <br />
+      You can make Solid SSC by either using "s=bnot(s)" or linewidth, but the "s=bnot(s)" conforms to any form of SSC... It slows down AVS more tho...</p>
+    </div>
+    <hr />
 
-		Another circle :<br />
-<br />
-Init : n=500;pi=acos(-1)<br />
-Point : <br />
-x=sin(i*pi*2);<br />
-y=cos(i*pi*2)<br />
-<br />
-This makes a circle which touches the edges of the screen.<br />
-You can add dividing sign at the end of the appropriate line and also put in an appropriate number to make the circle smaller.<br />
-To change location, simply use + or - sign.<br />
-Note the &quot;n&quot; value - it is the number of points - you might want to change it into smaller number while the SSC still resembles a circle.<br />
-<br />
-How to put a dynamically moving SSC, with the diameter of 1/5 of the screen :<br />
-<br />
-PerFrame : t=t+0.1;<br />
-Perpoint :<br />
-x=sin(i*pi*2)/5+sin(t);<br />
-y=cos(i*pi*2)/5+cos(t);<br />
-<br />
-Now the SSC moves in circular pattern.<br />
-<br />
-How to make solid circle, w/o movement (1/5 size, like the moving one) :<br />
-<br />
-Init : pi=acos(-1);n=w*pi/5<br />
-PerPoint :<br />
-x=sin(i*pi*2)/5*s;<br />
-y=sin(i*pi*2)/5*s;<br />
-s=bnot(s);<br />
-<br />
-There! You have a solid circle (Though slows down AVS quite nicely...)<br />
-<br />
-You might want to add misc/rendermode to set the line width, in case it isn't solid.<br />
-<br />
-You can also do *(s+getosc(0,0.1,0)) in each line instead of *s for a little funky thing =)<br />
-<br />
-Good luck in yar SSC making career! (And especially good luck for AVS making career)<br />
-<br />
-<br />
-Artists that I'd recommend to ask for about SSC :<br />
-<br />
-Nixa - In his/her :p preset named &quot;Lots of Spirals&quot; (Or something like that) It looks somewhat basic-ish. But if you dig in the preset, you'll realize that all six spirals are drawn using only 1 SSC.<br />
-I hadn't tried to decode the SSC - Quite dense of a code in it =)<br />
-But then, I think I can make one using a different way...<br />
-<br />
-El-Vis - Need I say more? He made a ton of 3d SSCs!<br />
-<br />
-UnConeD - This one don't need an explanation, either. If you do, download his 4th pack, and try the preset &quot;All Neon-Like&quot;.<br />
-Everything in that preset are SSCs (Except for the needed buffer safe...).<br />
-Even the STARS are SSC! (Synchronicity is essential, ya know - creates realism)<br />
-<br />
-The various AVS artist on the board - They're helpful, trust me =)<br />
-<br />
-Me! - :p<br />
-<br />
-Just PM one of us, and we'll help :D
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">28th April 2002 18:20 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Here's a better explanation of the solid superscope principle... Nic01 got the main trick across, but failed to explain the whole idea:<br />
+      <br />
+      A Superscope can only draw lines or dots. So, to draw a solid shape, you need to draw a lot of lines that overlap just enough. The reason you can use something like s=bnot(s), is because it performs a binary 'not' operation. This means 'true' becomes 'false', and 'false' becomes 'true', so the variable s alternates for every point.<br />
+      <br />
+      Knowing that, you can write a superscope that draws a regular line, and add a shift to the 'y' coordinate based on 's'. For example:<br />
+      <br />
+      x=i*2-1;<br />
+      y=if(s,.5,-.5);<br />
+      s=bnot(s);<br />
+      <br />
+      Now you have a solid rectangle (given that 'n' and/or line width is high enough).<br />
+      Another thing that I just thought of, is that AVS draws vertical and horizontal lines much faster than sloped ones. If you look at the above code for low 'n' values (n &lt; 100), you can see that the result consists of sloped lines.<br />
+      If you replace the code with this, half of them become vertical, and it should provide a minor speedup. Not sure exactly how much, but anything is something :). Though optimizing more complex SSC's to draw like this should be *quite* a difficult task.<br />
+      <br />
+      onframe: x=-1;<br />
+      onpoint:<br />
+      xx=i*2-1;<br />
+      x=if(s,xx,x);<br />
+      y=if(s,.5,-.5);<br />
+      s=bnot(s);</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">27th April 2002 19:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">stayin_stoned</span><br />
+      <span class="date small text-muted">29th April 2002 08:44 GMT</span></p>
 
-		Also to make a perfect circle, not oval, I divide x and y by (w*s) and (h*s) where as s invertedly equals the size of the render and w is the width and h is the height.<br />
-<br />
-Init:<br />
-n=400; s=.015<br />
-Per point:<br />
-x=(cos(i*6.28)/(w*s));<br />
-y=(sin(i*6.28)/(h*s))<br />
-<br />
-now the shape will stay circular even though the avs box could be rectangular, the only thing is division is slower than muliplication.<br />
-<br />
-so use this<br />
-Init:<br />
-n=400; s=.015; xa=1/(w*s); ya=1/(h*s);<br />
-Per point:<br />
-x=(cos(i*6.28)*xa);<br />
-y=(sin(i*6.28)*ya);<br />
-<br />
-ok I'm going to sleep, dont know if any of this actually does something, but mess with it.
-		</p>
-</div>
+      <p class="post-content"><strong>thanks,you guys were lots of help</strong><br />
+      I post what came of yuor help in the avs presets forum, check em out! and thanks again, the winamp community is great.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">30th April 2002 18:11 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th April 2002 01:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Actually nic01, i try to stay away from acos(-1) because it equals 3.14159265... which is alot more numbers for avs to calculate than 3.1415 and unless the render needs to be extremely accurate, i think it can speed it up a tad.<br />
+      <br />
+      As for the booleans there is only 'and' 'or' 'not'. what about the four others 'nor' 'nand' 'xor' 'xnor'. and the power of them.<br />
+      nor= 0011 nand= 0011 xor= 0011 xnor= 0011<br />
+      0101 0101 0101 0101<br />
+      ---- ---- ---- ----<br />
+      1000 1110 0110 1001<br />
+      <br />
+      to learn more <a href="http://www.howstuffworks.com/boolean1.htm" target="_blank">click here</a><br />
+      <br />
+      good day my freinds...</p>
+    </div>
+    <hr />
 
-		To correct the aspect ratio, you only need to multiply either x and y by w/h or h/w... saves one multiplication :). Might be useful when you need to squeeze out every frame per second you can get.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">30th April 2002 18:13 GMT</span></p>
 
-	<hr />
+      <p class="post-content">ahhhh glitch, oh well, go to site.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">28th April 2002 16:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">2nd May 2002 21:13 GMT</span></p>
 
-		A tip for both you and NoSage :<br />
-<br />
-In the init, type &quot;pi=acos(-1)&quot;<br />
-This way, you can save your mind from remembering those numbers - You can replace 6.28(It's actually longer than that) with pi*2...<br />
-<br />
-____<br />
-<br />
-You can make Solid SSC by either using &quot;s=bnot(s)&quot; or linewidth, but the &quot;s=bnot(s)&quot; conforms to any form of SSC... It slows down AVS more tho...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">28th April 2002 18:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here's a better explanation of the solid superscope principle... Nic01 got the main trick across, but failed to explain the whole idea:<br />
-<br />
-A Superscope can only draw lines or dots. So, to draw a solid shape, you need to draw a lot of lines that overlap just enough. The reason you can use something like s=bnot(s), is because it performs a binary 'not' operation. This means 'true' becomes 'false', and 'false' becomes 'true', so the variable s alternates for every point.<br />
-<br />
-Knowing that, you can write a superscope that draws a regular line, and add a shift to the 'y' coordinate based on 's'. For example:<br />
-<br />
-x=i*2-1;<br />
-y=if(s,.5,-.5);<br />
-s=bnot(s);<br />
-<br />
-Now you have a solid rectangle (given that 'n' and/or line width is high enough).<br />
-Another thing that I just thought of, is that AVS draws vertical and horizontal lines much faster than sloped ones. If you look at the above code for low 'n' values (n &lt; 100), you can see that the result consists of sloped lines.<br />
-If you replace the code with this, half of them become vertical, and it should provide a minor speedup. Not sure exactly how much, but anything is something :). Though optimizing more complex SSC's to draw like this should be *quite* a difficult task.<br />
-<br />
-onframe: x=-1;<br />
-onpoint:<br />
-xx=i*2-1;<br />
-x=if(s,xx,x);<br />
-y=if(s,.5,-.5);<br />
-s=bnot(s);
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">stayin_stoned</span><br />
-			<span class="date small text-muted">29th April 2002 08:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>thanks,you guys were lots of help</strong><br />
-		
-		
-
-		I post what came of yuor help in the avs presets forum, check em out! and thanks again, the winamp community is great.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">30th April 2002 18:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Actually nic01, i try to stay away from acos(-1) because it equals 3.14159265... which is alot more numbers for avs to calculate than 3.1415 and unless the render needs to be extremely accurate, i think it can speed it up a tad.<br />
-<br />
-As for the booleans there is only 'and' 'or' 'not'. what about the four others 'nor' 'nand' 'xor' 'xnor'. and the power of them.<br />
-nor= 0011    nand= 0011    xor= 0011    xnor= 0011<br />
-     0101          0101         0101          0101<br />
-     ----          ----         ----          ----<br />
-     1000          1110         0110          1001<br />
-<br />
-to learn more <a href="http://www.howstuffworks.com/boolean1.htm" target="_blank">click here</a> <br />
-<br />
-good day my freinds...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">30th April 2002 18:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		ahhhh glitch, oh well, go to site.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">2nd May 2002 21:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nosage: sorry but your theory about 3.14 being faster than 3.1415... is not right, AVS uses the same floating point type for all its data (not sure if it's 32-bit or 64-bit types). And a CPU multiplies (1.5 * 2.5) just as fast as (1.3543411111 * 2.659533).<br />
-<br />
-And of course, a CPU uses binary, so a fraction is made by summing negative powers of 2 (.5, .25, .125, .0625, ...), just like we use negative powers of 10 (.1, .01, .001, ...).<br />
-Just like we can't write 1/3th in decimal (the digits go on and on), other straight-forward fractions can't be represented by a finite number of digits in binary.<br />
-<br />
-Fractions are weird. For example: 0.9999999999... = 1<br />
-<br />
+      <p class="post-content">Nosage: sorry but your theory about 3.14 being faster than 3.1415... is not right, AVS uses the same floating point type for all its data (not sure if it's 32-bit or 64-bit types). And a CPU multiplies (1.5 * 2.5) just as fast as (1.3543411111 * 2.659533).<br />
+      <br />
+      And of course, a CPU uses binary, so a fraction is made by summing negative powers of 2 (.5, .25, .125, .0625, ...), just like we use negative powers of 10 (.1, .01, .001, ...).<br />
+      Just like we can't write 1/3th in decimal (the digits go on and on), other straight-forward fractions can't be represented by a finite number of digits in binary.<br />
+      <br />
+      Fractions are weird. For example: 0.9999999999... = 1<br />
+      <br />
       x = .999999...<br />
-    10x = 9.99999...<br />
-    10x = 9 + x<br />
-10x - x = 9<br />
-     9x = 9<br />
+      10x = 9.99999...<br />
+      10x = 9 + x<br />
+      10x - x = 9<br />
+      9x = 9<br />
       x = 1<br />
-<br />
-:) :D<br />
-<br />
-As far as the boolean operations go, you can construct nand and nor routines by using a combination of AND/OR/NOT, as the article says :).
-		</p>
-</div>
+      <br />
+      :) :D<br />
+      <br />
+      As far as the boolean operations go, you can construct nand and nor routines by using a combination of AND/OR/NOT, as the article says :).</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">NoSage</span><br />
+      <span class="date small text-muted">3rd May 2002 13:59 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">NoSage</span><br />
-			<span class="date small text-muted">3rd May 2002 13:59 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">just wondering, then why would division be slower?</p>
+    </div>
+    <hr />
 
-		just wondering, then why would division be slower?
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">3rd May 2002 16:12 GMT</span></p>
 
-	<hr />
+      <p class="post-content">It's got to do with the number of conversions required to covert it to addition and subtraction (which is all a computer can do really). Multiplication is easy (c=c+a b times), division is significantly more complicated, and I don't feel like digging through my math notes to find it. (heck, I don't feel like fiding my notes)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">3rd May 2002 16:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It's got to do with the number of conversions required to covert it to addition and subtraction (which is all a computer can do really). Multiplication is easy (c=c+a b times), division is significantly more complicated, and I don't feel like digging through my math notes to find it. (heck, I don't feel like fiding my notes)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,135 +1,81 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Good strobe plugin AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Good strobe plugin AVS" />
 
-	<title> Good strobe plugin - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Good strobe plugin - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Good strobe plugin</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=174926">Good strobe plugin</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PhoPho</span><br />
+      <span class="date small text-muted">1st April 2004 04:36 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Good strobe plugin</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=174926">Good strobe plugin</a></p>
+      <p class="post-content"><strong>Good strobe plugin</strong><br />
+      Hey, does anyone know a plugin with a good strobe effect? Essentially something that will make the screen flash with the beat of the music so I can put it on my TV for my upcoming house party and get a nice club effect.<br />
+      <br />
+      R4 has a strobe overlay that should be perfect, but the beat detection with it is terrible and it flashes seemingly randomly. I tried tweaking the settings but it still seems completely random.<br />
+      <br />
+      There's a few strobe light plugins I tried as well, but I'm looking for something more than a simple flashing white screen.<br />
+      <br />
+      Any ideas? Thanks!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">1st April 2004 04:53 GMT</span></p>
 
-<br />
+      <p class="post-content">i made a (very simple) strobe preset for AVS. i think it matched you specifications (flash onBeat)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PhoPho</span><br />
-			<span class="date small text-muted">1st April 2004 04:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Good strobe plugin</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">mikm</span><br />
+      <span class="date small text-muted">2nd April 2004 00:00 GMT</span></p>
 
-		Hey, does anyone know a plugin with a good strobe effect?  Essentially something that will make the screen flash with the beat of the music so I can put it on my TV for my upcoming house party and get a nice club effect.<br />
-<br />
-R4 has a strobe overlay that should be perfect, but the beat detection with it is terrible and it flashes seemingly randomly.  I tried tweaking the settings but it still seems completely random.<br />
-<br />
-There's a few strobe light plugins I tried as well, but I'm looking for something more than a simple flashing white screen.<br />
-<br />
-Any ideas?  Thanks!
-		</p>
-</div>
+      <p class="post-content">Try this (in a Trans / Color Modifier and put it at the end of any preset.<br />
+      <br />
+      It acts like a fastbrite, except only on beats, and it fades out. If a beat occurs while it is still "fading", it will add to the effect.<br />
+      <br /></p>
+      <pre>
+<code><br />Init:<br />FadeSpeed=.6; //Must be less than 1<br />BrightEffect=.5; //How much brightness increases every beat<br /><br />Frame:<br />Val=Val*(1-FadeSpeed)+FadeSpeed;<br /><br />level:<br />red=red*val;<br />green=green*val;<br />blue=blue*val;<br /></code>
+</pre>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PhoPho</span><br />
+      <span class="date small text-muted">2nd April 2004 19:49 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">1st April 2004 04:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+      <p class="post-content">Nice! Thanks! =)</p>
+    </div>
+    <hr />
 
-		i made a (very simple) strobe preset for AVS. i think it matched you specifications (flash onBeat)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">mikm</span><br />
-			<span class="date small text-muted">2nd April 2004 00:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Try this (in a Trans / Color Modifier and put it at the end of any preset.<br />
-<br />
-It acts like a fastbrite, except only on beats, and it fades out.  If a beat occurs while it is still &quot;fading&quot;, it will add to the effect.<br />
-<br />
-<pre><code><br />
-Init:<br />
-FadeSpeed=.6; //Must be less than 1<br />
-BrightEffect=.5; //How much brightness increases every beat<br />
-<br />
-Frame:<br />
-Val=Val*(1-FadeSpeed)+FadeSpeed;<br />
-<br />
-level:<br />
-red=red*val;<br />
-green=green*val;<br />
-blue=blue*val;<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PhoPho</span><br />
-			<span class="date small text-muted">2nd April 2004 19:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice!  Thanks!  =)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

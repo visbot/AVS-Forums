@@ -1,131 +1,95 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" PIMP scripts help ! AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PIMP scripts help ! AVS" />
 
-	<title> PIMP scripts help ! - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>PIMP scripts help ! - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">PIMP scripts help !</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=59760">PIMP scripts help !</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">napolean</span><br />
+      <span class="date small text-muted">11th September 2001 18:50 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">PIMP scripts help !</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=59760">PIMP scripts help !</a></p>
+      <p class="post-content"><strong>PIMP scripts help !</strong><br />
+      I guys... ! :) I've complete my AVS Pack !! its very good, of course its not, Like Wacko or EL-Vis but, its very good, I hope U download it when avaible on Winamp page !<br />
+      <br />
+      I just need help to do 1 thing !<br />
+      I want help doing My PIMP ! I've made all the install stuff and bla bla bla ! Now I want to know how I made the "Licenseagreement" or the "LicenseData" because I've made a txt file with some comments and "thanks" :) and I want to display that information, before start the installation !<br />
+      And wanna know too how to make my 1&#194;&#186; preset start running after, installation complete ! :cool:<br />
+      <br />
+      Hope someone can help me!, and Sorry my bad english :D</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Kaboon</span><br />
+      <span class="date small text-muted">21st September 2001 23:04 GMT</span></p>
 
-<br />
+      <p class="post-content">okay let me try to help you. :)<br />
+      <br />
+      <b><u>First problem</u></b><br />
+      Quite easy, use:<br />
+      <br />
+      LicenseData "Your file with comments and "thanks".txt"<br />
+      <br />
+      before you acctually begin with installing stuff. This means that you'll have to put license &amp; thank's into one file though. But that won't be a problem I think.<br />
+      <br />
+      <br />
+      <b><u>Second problem:</u></b><br />
+      You could try this at the end of the install section.<br />
+      <br />
+      ; prompt user, and if they select no, skip the following 3 instructions.<br />
+      <br />
+      MessageBox MB_YESNO|MB_ICONQUESTION \<br />
+      "The pack was installed. Would you like to run Winamp now with your AVS pack as the default plug-in?" \<br />
+      IDNO NoWinamp<br />
+      <br />
+      WriteINIStr "$INSTDIR\Winamp.ini" "Winamp" "visplugin_name" "vis_avs.dll"<br />
+      WriteINIStr "$INSTDIR\Winamp.ini" "AVS" "last_preset_name" "C:\PROGRAm FILES\WINAMP\PLUGINS\your path to your 1&#194;&#186; preset\1&#194;&#186; preset.avs<br />
+      <br />
+      NoWinamp:<br />
+      <br />
+      <br />
+      If this doesn't solve your problems just let me know and I'll help you again. :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">napolean</span><br />
-			<span class="date small text-muted">11th September 2001 18:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>PIMP scripts help !</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">napolean</span><br />
+      <span class="date small text-muted">23rd September 2001 02:45 GMT</span></p>
 
-		I guys... ! :)  I've complete my AVS Pack !! its very good, of course its not, Like Wacko or EL-Vis but, its very good, I hope U download it when avaible on Winamp page !<br />
-<br />
-I just need help to do 1 thing !<br />
-I want help doing My PIMP ! I've made all the install stuff and bla bla bla ! Now I want to know how  I made the &quot;Licenseagreement&quot; or the &quot;LicenseData&quot; because I've made a txt file with some comments and &quot;thanks&quot; :) and I want to display that information, before start the installation !<br />
-And  wanna know too how to make my 1º preset start running after, installation complete ! :cool: <br />
-<br />
-Hope someone can help me!, and Sorry my bad english :D
-		</p>
-</div>
+      <p class="post-content"><strong>THANKS :)</strong><br />
+      thanks for the help, it comes a litlle bit late, but theres no problem... I will use the things you told me on my future packs, and if I had more question, you can have a sure I will ask you :)<br />
+      <b>Thanks Kaboon</b><br />
+      download or comment my AVS Pack -&gt; <a href="http://web.archive.org/web/*/www.winamp.com/plugins/detail.jhtml?componentId=79361" target="_blank">http://www.winamp.com/plugins/detail...ponentId=79361</a></p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Kaboon</span><br />
-			<span class="date small text-muted">21st September 2001 23:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		okay let me try to help you. :)<br />
-<br />
-<b><u>First problem</u></b><br />
-Quite easy, use: <br />
-<br />
-LicenseData &quot;Your file with comments and &quot;thanks&quot;.txt&quot;<br />
-<br />
-before you acctually begin with installing stuff. This means that you'll have to put license &amp; thank's into one file though. But that won't be a problem I think.<br />
-<br />
-<br />
-<b><u>Second problem:</u></b><br />
-You could try this at the end of the install section.<br />
-<br />
-; prompt user, and if they select no, skip the following 3 instructions.<br />
-<br />
-MessageBox MB_YESNO|MB_ICONQUESTION \<br />
-&quot;The pack was installed. Would you like to run Winamp now with your AVS pack as the default plug-in?&quot; \<br />
-IDNO NoWinamp<br />
-<br />
-    WriteINIStr &quot;$INSTDIR\Winamp.ini&quot; &quot;Winamp&quot; &quot;visplugin_name&quot; &quot;vis_avs.dll&quot;<br />
-WriteINIStr &quot;$INSTDIR\Winamp.ini&quot; &quot;AVS&quot; &quot;last_preset_name&quot; &quot;C:\PROGRAm FILES\WINAMP\PLUGINS\your path to your 1º preset\1º preset.avs<br />
-<br />
-NoWinamp:<br />
-<br />
-<br />
-If this doesn't solve your problems just let me know and I'll help you again. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">napolean</span><br />
-			<span class="date small text-muted">23rd September 2001 02:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>THANKS :)</strong><br />
-		
-		
-
-		thanks for the help, it comes a litlle bit late, but theres no problem... I will use the things you told me on my future packs, and if I had more question, you can have a sure I will ask you :)<br />
-<b>Thanks Kaboon </b> <br />
-download or comment my AVS Pack -&gt; <a href="http://web.archive.org/web/*/www.winamp.com/plugins/detail.jhtml?componentId=79361" target="_blank">http://www.winamp.com/plugins/detail...ponentId=79361</a>
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

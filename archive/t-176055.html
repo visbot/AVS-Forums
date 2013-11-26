@@ -1,1177 +1,518 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Polynomial solvers AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Polynomial solvers AVS" />
 
-	<title> Polynomial solvers - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Polynomial solvers - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Polynomial solvers</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=176055">Polynomial solvers</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">10th April 2004 01:42 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Polynomial solvers</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=176055">Polynomial solvers</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">10th April 2004 01:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Polynomial solvers</strong><br />
-		
-		
-			
-		
-
-		WARNING: Unoptimised messy code ahead!<br />
-<br />
-I finally have *working* cubic and quartic equation solvers. These are faster than Whittaker iteration in many cases where they can be applied. However they extra susceptible to DM glitches when used due to tiny rounding errors. From experimenting most of these errors seem to come from 'a=0' quartics, i.e. 0x^4+bx^3+cx^2+dx+e which is a cubic. This problem crops up mostly with the quartic solver, it comes up with the cubic but very little.<br />
-<br />
-The rest if the problems are all quartic specific. Sometimes the reducing cubic will have a zero leading coefficient as above. Other problems result from filtering out complex roots from the quartic solver, using if(x0i,.. etc doesn't seem to be enough, best to use the discriminant type values used in the solver to determine how many roots are what.<br />
-<br />
-For the cubic I used the actual discriminant to tell if there are one or three real roots. This value is stored in disc in my code. Also note that x0r is always a real root of the cubic and that x0i always = 0. For the quartic there are 3 possiblities, and there is probably a better way to check them then how I have done it. This is the piece of code that deals with the complexity of the quartic roots to make it a bit clearer.<br />
-<br />
-if(below(qz2,0),<br />
-    exec2(<br />
-        exec2(<br />
-	    assign(x0i,.5*qz),<br />
-	    assign(x1i,.5*qz)<br />
-        )<br />
-    ,<br />
-	exec2(<br />
-	    assign(x2i,-.5*qz),<br />
-	    assign(x3i,-.5*qz)<br />
-        )<br />
-    )<br />
-,<br />
-    exec2(<br />
-        exec2(<br />
-	    assign(x0r,.5*qz),<br />
-	    assign(x1r,.5*qz)<br />
-        )<br />
-    ,<br />
-	exec2(<br />
-	    assign(x2r,-.5*qz),<br />
-	    assign(x3r,-.5*qz)<br />
-        )<br />
-    )<br />
-);<br />
-<br />
-if(below(sq1,0),<br />
-    exec2(<br />
-        assign(x0i,x0i+.5*qv1),<br />
-        assign(x1i,x1i-.5*qv1)<br />
-    )<br />
-,<br />
-    exec2(<br />
-        assign(x0r,x0r+.5*qv1),<br />
-        assign(x1r,x1r-.5*qv1)<br />
-    )<br />
-);<br />
-<br />
-if(below(sq2,0),<br />
-    exec2(<br />
-        assign(x2i,x2i+.5*qv2),<br />
-        assign(x3i,x3i-.5*qv2)<br />
-    )<br />
-,<br />
-    exec2(<br />
-        assign(x2r,x2r+.5*qv2),<br />
-        assign(x3r,x3r-.5*qv2)<br />
-    )<br />
-);<br />
-<br />
-qz2&lt;0 = no real roots<br />
-qz2&gt;0 and:<br />
-<br />
-sq1&lt;0,sq2&lt;0 = no real roots<br />
-sq1&gt;0,sq2&lt;0 = two real roots: x0r, x1r<br />
-sq1&lt;0,sq2&gt;0 = two real roots: x2r, x3r<br />
-sq1&gt;0,sq2&gt;0 = four real roots: x0r, x1r, x2r, x3r<br />
-<br />
-That should be enough to clean up any uglies resulting from these solvers. The most stable method of use is to solve as quartic if first coefficient not zero, if it is then solve as cubic, if the first coefficient of cubic = 0 then solve as quadratic etc... then make sure to filter out complex values using the discriminants instead of standard logic.<br />
-<br />
-The attached zip contains an implementation of each solver.<br />
-<br />
-Roots stored as x0r+x0i*sqrt(-1),x1r+x1i*sqrt(-1),x2r+x2i*sqrt(-1),x3r+x3i*sqrt(-1)<br />
-<br />
-Feel free to use anywhere, credit not necessary.<br />
-<br />
-EDIT: you may wish to optimise/modify variable names etc... do this, i wont likely be releasing another version of this code since it is stable.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">D12</span><br />
-			<span class="date small text-muted">10th April 2004 04:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Sorry, my writing codes in SS &amp; DM is not good.<br />
-I wish I could help to you master, but, my knowledge in writing codes is not enough yet.<br />
-Maybe in future I will learn writing codes from AVS masters like you.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">10th April 2004 08:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		use qa0,qb0,qc0,qd0,qe0 as:<br />
-<br />
-qa0x^4+qb0x^3+qc0x^2+qd0x+qe0=0<br />
-<br />
-then the solver will ouput the solutions<br />
-<br />
-x0r,x0i x1r,x1i x2r,x2i x3r,x3i<br />
-<br />
-where xnr is real and xni is imaginary<br />
-<br />
-if qa0=0 then a cubic will be solved, etc and x4r etc will not be present and will be replaced by some suitably large value for raytracing purposes.<br />
-<br />
-exec3(exec3(assign(x0r,1000000),assign(x0i,0),assign(x1r,1000000)), exec3(assign(x1i,0),assign(x2r,1000000),assign(x2i,0)), exec3(assign(x3r,1000000),assign(x3i,0),if(equal(qa0,0), if(equal(qb0,0),if(equal(qc0,0),assign(x0r,-qe0/qd0),exec3( exec3(assign(disc,sqr(qd0)-4*qc0*qe0),exec3(assign(dr,0), assign(di,0),assign(if(below(disc,0),di,dr),sqrt(disc))), assign(invsa,1/(2*qc0))),exec3(assign(x0r,(-qd0+dr)*invsa), assign(x0i,di*invsa),assign(x1r,(-qd0-dr)*invsa)), assign(x1i,-di*invsa))),exec2(exec3(exec3(assign(a2,qc0/qb0), assign(a1,qd0/qb0),assign(a0,qe0/qb0)),exec3( assign(q,(3*a1-sqr(a2))*.11111111111), assign(r,((9*a1-2*sqr(a2))*a2-27*a0)*.0185185185), assign(disc,sqr(q)*q+sqr(r))), exec3(assign(x0r,0),assign(x0i,0),assign(x1r,0))), exec2(exec3(assign(x1i,0),assign(x2r,0),assign(x2i,0)), if(below(disc,0), exec2(exec2(assign(theta,acos(r/sqrt(-sqr(q)*q))), assign(x0r,2*sqrt(-q)*cos(theta*.333333)-a2*.333333333)), exec2(assign(x1r,2*sqrt(-q)*cos((theta+2*$PI)*.333333333) -a2*.333333),assign(x2r,2*sqrt(-q)*cos((theta+4*$PI)*.333333333) -a2*.333333))), exec2(exec2(assign(s,sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)), .333333333)),assign(t,sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)), .333333333))), exec3(assign(x0r,-a2*.333333333+s+t),assign(x1r,-a2*.333333333 -(s+t)*.5),exec3(assign(x2r,-a2*.333333333-(s+t)*.5),assign(x1i,abs(.8660254*(s-t))), assign(x2i,-x1i)))))))),exec2(exec3(exec3(exec3(assign(inv,1/qa0),assign(qa,qb0*inv), assign(qb,qc0*inv)),exec3(assign(qc,qd0*inv),assign(qd,qe0*inv), assign(a2,-qb)),exec3(assign(a1,qa*qc-4*qd),assign(a0,qd*(4*qb-sqr(qa))-sqr(qc)), assign(q,(3*a1-sqr(a2))*.11111111111))), exec3(exec3(assign(r,((9*a1-2*sqr(a2))*a2-27*a0)*.0185185185), assign(disc,sqr(q)*q+sqr(r)),assign(x0r,0)),exec3(assign(x0i,0), assign(x1r,0),assign(x1i,0)), exec3(assign(x2r,0),assign(x2i,0),if(below(disc,0),exec2(exec2( assign(theta,acos(r/sqrt(-sqr(q)*q))),assign(x0r,2*sqrt(-q)*cos(theta*.333333)-a2*.333333333)), exec2(assign(x1r,2*sqrt(-q)*cos((theta+2*$PI)*.333333333)-a2*.333333),assign(x2r, 2*sqrt(-q)*cos((theta+4*$PI)*.333333333)-a2*.333333))), exec2(exec2(assign(s,sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)),.333333333)),assign(t, sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)),.333333333))), exec3(assign(x0r,-a2*.333333333+s+t),assign(x1r,-a2*.333333333 -(s+t)*.5),exec3(assign(x2r,-a2*.333333333-(s+t)*.5),assign(x1i, abs(.8660254*(s-t))), assign(x2i,-x1i))))))), exec3(exec3(assign(qz1, if(below(disc,0),max(x0r,max(x1r,x2r)),x0r)),assign(qz2,qz1+sqr(qa)*.25-qb), assign(qz,sqrt(abs(qz2)))), exec3(if(equal(qz,0),exec2(assign(sq1,.75*sqr(qa)-2*qb+2*sqrt(sqr(qz1)-4*qd)), assign(sq2,.75*sqr(qa)-2*qb-2*sqrt(sqr(qz1)-4*qd))),exec2( assign(sq1,.75*sqr(qa)-qz2-2*qb+(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz)), assign(sq2,.75*sqr(qa)-qz2-2*qb-(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz)))), assign(qv1,sqrt(abs(sq1))),assign(qv2,sqrt(abs(sq2)))),exec3( assign(x0r,0),assign(x1r,0),assign(x2r,0)))),exec2(exec3(exec3( assign(x3r,0),assign(x0i,0),assign(x1i,0)),exec3(assign(x2i,0), assign(x3i,0),if(below(qz2,0),exec2(exec2(assign(x0i,.5*qz), assign(x1i,.5*qz)),exec2(assign(x2i,-.5*qz),assign(x3i,-.5*qz))), exec2(exec2(assign(x0r,.5*qz),assign(x1r,.5*qz)), exec2(assign(x2r,-.5*qz),assign(x3r,-.5*qz))))),exec3(if(below(sq1,0), exec2(assign(x0i,x0i+.5*qv1),assign(x1i,x1i-.5*qv1)), exec2(assign(x0r,x0r+.5*qv1),assign(x1r,x1r-.5*qv1))),if(below(sq2,0), exec2(assign(x2i,x2i+.5*qv2),assign(x3i,x3i-.5*qv2)), exec2(assign(x2r,x2r+.5*qv2),assign(x3r,x3r-.5*qv2))),assign(x0r,x0r-.25*qa))), exec3(assign(x1r,x1r-.25*qa), assign(x2r,x2r-.25*qa),assign(x3r,x3r-.25*qa)))))));<br />
-<br />
-fully condensed into one line of code with tomylobo's avstrans thingy.<br />
-<br />
-edit: i can get rid of the bad linespaces here... i think its windows fault. this code displays as 4 line in an avs code box and also in notepad with word wrap *off*<br />
-<br />
-[removed stretchy code, added spaces --unconed]
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hungryskull</span><br />
-			<span class="date small text-muted">10th April 2004 17:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		/me is confused<br />
-*scratches head*<br />
-<br />
-Too bad I don't know anything about this kind of math.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">10th April 2004 17:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		argh i wrote my tool so people can provide human-readable code for others (or oneself :) to understand, while still being able to translate it automatically. :eek:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">10th April 2004 20:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Next time, just attach it okay? :P
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">11th April 2004 20:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	Quote:
-	<table cellpadding="6" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td class="alt2">
-			<hr />
-			
-				<i>Originally posted by UnConeD </i><br />
-<b>Next time, just attach it okay? :P </b>
-			
-			<hr />
-			</p>
-</div>
-
-	<hr />
-
-
-I never remember that advice. Its been given too many times to ever sink in. :P<br />
-<br />
-I'll try to remember next time I have such a huge thing to post.<br />
-<br />
-Thanks for cleaning up my mess too.
-	</td>
-</tr>
-</table>
-<br /><div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">S-uper_T-oast</span><br />
-			<span class="date small text-muted">13th April 2004 03:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice, now I can use it to make some totally useless cool things after a little experimenting. Very nice job, I don't see any errors as far as I know. You must have had a lot of free time or something.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">OnionRingOfDoom</span><br />
-			<span class="date small text-muted">13th April 2004 15:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Whoa, good work J!<br />
-...Not that I have any idea as to what all that does, but nice work anyway!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">14th April 2004 01:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Basically this is for solving a polynomial equation, this is extremely useful in certain situations, like creating 3D raytraced DMs for instance.<br />
-<br />
-it means that if  a*t + b =0 and you know a and b then we can find t, it also means that if a*t^2+b*t+c=0 and we know a b and c then we can find t, thsi code works up to at^4+bt^3+ct^2+dt+e=0<br />
-which are fed in as qa0,qb0,qc0,qd0,qe0 etc<br />
-then the maximum of four possible ts are spat out in x0r,x0i,x1r,x1i..etc which are the real and imaginary components of the t's. I would explain what the code does but its way to tedious and complicated and would take up a lot more space than the code.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">14th April 2004 04:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You know all those fancy raytraced dm's with all complicated looking shapes that have been showing up recintly? Well many of those shapes are expressed with Polynomial equasions, and are gererally very hard to solve. <br />
-<br />
-Untill this thing, the only way to draw those shapes was to use itterative methods, which are basically a loop that guesses for the right number, and gets closer each time you run it. <br />
-<br />
-A natural solver (what this is) on the other hand, solves the equasions numerically, so it is both faster and more accurate than an average iterator. Plus, this one can find all the roots, not just one, and that includes imaginary ones!<br />
-<br />
-Well done J!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">18th April 2004 18:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Very good job Jheriko, but, may be it can be improved :<br />
-* Solving cubic :<br />
- - the reset of x0r,x1r, and so on seems to be unuseful (xni were already set, and xnr will be changed).<br />
- - I hope there's a little mistake when assigning x1i : no abs()<br />
-<br />
-* Solving quartic :<br />
- - one more time the resets seems to be unuseful (see below).<br />
- - I think you only need one root of the cubic equation, then it can always be the x0r, in both cases, that can directly be assigned to qz1.<br />
-<br />
-I let you see this in details.<br />
-<br />
-BTW, can someone give a simple example to explain how this can be used in a DM ?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">22nd April 2004 00:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I have worked again on the formula.<br />
-I have made a mistake in my last message. In quartic solve, the xnr must be set. But instead of being reset to 0, they can be initialise with -.25*qa.<br />
-The new algorithm is now :<br />
-(==&gt; /* old version */)<br />
-<pre><code><br />
-// these constants helped me to understand<br />
-C1S2=1/2;        // .5<br />
-C1S4=1/4;        // .25<br />
-C3S4=3/4;        // .75<br />
-C1S3=1/3;        // .3333333<br />
-C1S9=1/9;        // .1111111<br />
-C1S54=1/54;      // .0185185<br />
-CR3S2=sqrt(3)/2; // .8660254<br />
-<br />
-x0r = 1000000;<br />
-x0i = 0;<br />
-x1r = 1000000;<br />
-x1i = 0;<br />
-x2r = 1000000;<br />
-x2i = 0;<br />
-x3r = 1000000;<br />
-x3i = 0;<br />
-if ( qa0 == 0 )<br />
-{<br />
-  if ( qb0 == 0 )<br />
-  {<br />
-    if ( qc0 == 0 )<br />
-    { // solving : qd0.x + qe0 = 0<br />
-      x0r = -qe0/qd0;<br />
-    }<br />
-    else<br />
-    { // solving : qc0.x^2 + qd0.x + qe0 = 0<br />
-      disc = sqr(qd0)-4*qc0*qe0;<br />
-      dr = 0;<br />
-      di = 0;<br />
-      if ( disc &lt; 0 )<br />
-	di = sqrt(-disc);<br />
-      else<br />
-	dr = sqrt(disc);<br />
-      invsa = 1/(2*qc0);<br />
-      x0r = (-qd0+dr)*invsa;<br />
-      x0i = di*invsa;<br />
-      x1r = (-qd0-dr)*invsa;<br />
-      x1i = -di*invsa;<br />
-    }<br />
-  }<br />
-  else // qb0 != 0<br />
-  { // solving : qb0.x^3 + qc0.x^2 + qd0.x + qe0 = 0<br />
-    inv = 1/qb0;<br />
-    a2 = qc0*inv;<br />
-    a1 = qd0*inv;<br />
-    a0 = qe0*inv;<br />
-    q = (3*a1-sqr(a2))*C1S9;<br />
-    r = ((9*a1-2*sqr(a2))*a2-27*a0)*C1S54;<br />
-    disc = sqr(q)*q+sqr(r);<br />
-    /* x0r = 0; */<br />
-    /* x0i = 0; */<br />
-    /* x1r = 0; */<br />
-    /* x1i = 0; */<br />
-    /* x2r = 0; */<br />
-    /* x2i = 0; */<br />
-    if ( disc &lt; 0 )<br />
-    {<br />
-      theta = acos(r/sqrt(-sqr(q)*q));<br />
-      x0r = 2 * sqrt(-q) * cos(theta*C1S3) - a2*C1S3;<br />
-      x1r = 2 * sqrt(-q) * cos((theta+2*$PI)*C1S3) - a2*C1S3;<br />
-      x2r = 2 * sqrt(-q) * cos((theta+4*$PI)*C1S3) - a2*C1S3;<br />
-    }<br />
-    else // disc &gt;= 0<br />
-    {<br />
-      s = sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)), C1S3);<br />
-      t = sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)), C1S3);<br />
-      x0r = -a2*C1S3 + (s+t);<br />
-      x1r = -a2*C1S3 - (s+t)*C1S2;<br />
-      x2r = -a2*C1S3 - (s+t)*C1S2;<br />
-      x1i = CR3S2*(s-t);  /* abs(CR3S2*(s-t)) ?? */<br />
-      x2i = -x1i;<br />
-    }<br />
-  }<br />
-}<br />
-else // qa0 != 0<br />
-{ // solving : qa0.x^4 + qb0.x^3 + qc0.x^2 + qd0.x + qe0 = 0<br />
-  inv = 1/qa0;<br />
-  qa = qb0*inv;<br />
-  qb = qc0*inv;<br />
-  qc = qd0*inv;<br />
-  qd = qe0*inv;<br />
-  a2 = -qb;<br />
-  a1 = qa*qc-4*qd;<br />
-  a0 = qd*(4*qb-sqr(qa))-sqr(qc);<br />
-  q = (3*a1-sqr(a2))*C1S9;<br />
-  r = ((9*a1-2*sqr(a2))*a2-27*a0)*C1S54;<br />
-  disc = sqr(q)*q+sqr(r);<br />
-  /* x0r = 0; */<br />
-  /* x0i = 0; */<br />
-  /* x1r = 0; */<br />
-  /* x1i = 0; */<br />
-  /* x2r = 0; */<br />
-  /* x2i = 0; */<br />
-  if ( disc &lt; 0 )<br />
-  {<br />
-    theta = acos(r/sqrt(-sqr(q)*q));<br />
-    /* x0r = 2*sqrt(-q)*cos(theta*C1S3)-a2*C1S3; */<br />
-    /* x1r = 2*sqrt(-q)*cos((theta+2*$PI)*C1S3)-a2*C1S3; */<br />
-    /* x2r = 2*sqrt(-q)*cos((theta+4*$PI)*C1S3)-a2*C1S3; */<br />
-    qz1 = 2 * sqrt(-q) * cos(theta*C1S3) - a2*C1S3; /* max(x0r,max(x1r,x2r)); */<br />
-  }<br />
-  else // disc &gt;= 0<br />
-  {<br />
-    s = sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)),C1S3);<br />
-    t = sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)),C1S3);<br />
-    /* x0r = -a2*C1S3+s+t; */<br />
-    /* x1r = -a2*C1S3 -(s+t)*C1S2; */<br />
-    /* x2r = -a2*C1S3-(s+t)*C1S2; */<br />
-    /* x1i = abs(CR3S2*(s-t)); */<br />
-    /* x2i = -x1i; */<br />
-    qz1 = -a2*C1S3+s+t; /* x0r; */<br />
-  }<br />
-  qz2 = qz1+sqr(qa)*C1S4-qb;<br />
-  qz = sqrt(abs(qz2));<br />
-  if ( qz == 0 )<br />
-  {<br />
-    sq1 = C3S4*sqr(qa)-2*qb+2*sqrt(sqr(qz1)-4*qd);<br />
-    sq2 = C3S4*sqr(qa)-2*qb-2*sqrt(sqr(qz1)-4*qd);<br />
-  }<br />
-  else // qz != 0<br />
-  {<br />
-    sq1 = C3S4*sqr(qa)-qz2-2*qb+(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />
-    sq2 = C3S4*sqr(qa)-qz2-2*qb-(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />
-  }<br />
-  qv1 = sqrt(abs(sq1));<br />
-  qv2 = sqrt(abs(sq2));<br />
-  x0r = -C1S4*qa; /* x0r = 0; */<br />
-  x1r = -C1S4*qa; /* x1r = 0; */<br />
-  x2r = -C1S4*qa; /* x2r = 0; */<br />
-  x3r = -C1S4*qa; /* x3r = 0; */<br />
-  /* x0i = 0; */<br />
-  /* x1i = 0; */<br />
-  /* x2i = 0; */<br />
-  /* x3i = 0; */<br />
-  if ( qz2 &lt; 0 )<br />
-  {<br />
-    x0i = C1S2*qz;<br />
-    x1i = C1S2*qz;<br />
-    x2i = -C1S2*qz;<br />
-    x3i = -C1S2*qz;<br />
-  }<br />
-  else // qz2 &gt;= 0<br />
-  {<br />
-    x0r = x0r + C1S2*qz; /* x0r = C1S2*qz; */<br />
-    x1r = x1r + C1S2*qz; /* x1r = C1S2*qz; */<br />
-    x2r = x2r - C1S2*qz; /* x2r = -C1S2*qz; */<br />
-    x3r = x3r - C1S2*qz; /* x3r = -C1S2*qz; */<br />
-  }<br />
-  if ( sq1 &lt; 0 )<br />
-  {<br />
-    x0i = x0i+C1S2*qv1;<br />
-    x1i = x1i-C1S2*qv1;<br />
-  }<br />
-  else // sq1 &gt;= 0<br />
-  {<br />
-    x0r = x0r+C1S2*qv1;<br />
-    x1r = x1r-C1S2*qv1;<br />
-  }<br />
-  if ( sq2 &lt; 0 )<br />
-  {<br />
-    x2i = x2i+C1S2*qv2;<br />
-    x3i = x3i-C1S2*qv2;<br />
-  }<br />
-  else // sq2 &gt;= 0<br />
-  {<br />
-    x2r = x2r+C1S2*qv2;<br />
-    x3r = x3r-C1S2*qv2;<br />
-  }<br />
-}<br />
-</code></pre><br />
-<br />
-I'm sorry, I do not have tomylobo's avstrans ...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">22nd April 2004 06:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		hmm nice :) so someone understood these solvers actually ;)<br />
-problem is: this is C/Perl/PHP/Java code, not AVSTrans compatible code<br />
----<br />
-if syntax:<br />
-if (condition,<br />
-  if-branch<br />
-,<br />
-  else-branch<br />
-);<br />
----<br />
-condition syntaxes:<br />
-C: a==b  AVS: equal(a,b)<br />
-C: a&lt;b  AVS: below(a,b)<br />
-C: a&gt;b  AVS: above(a,b)<br />
----<br />
-btw this thingy can be optimised:<br />
-<pre><code><br />
-dr = 0;<br />
-di = 0;<br />
-if (below(disc, 0),<br />
-  di = sqrt(-disc);<br />
-,<br />
-  dr = sqrt(disc);<br />
-);<br />
-</code></pre><br />
-to<br />
-<pre><code><br />
-if (below(disc, 0),<br />
-  dr = 0;<br />
-  di = sqrt(-disc);<br />
-,<br />
-  dr = sqrt(disc);<br />
-  di = 0;<br />
-);<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">22nd April 2004 07:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		i attached the AVSTrans compatible code<br />
-just copy the whole .txt file to <a href="http://www.geocities.com/tomyloboavs" target="_blank">AVSTrans</a> and copy the output to wherever you want it
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">22nd April 2004 12:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice job TomyLobo ! (I'm talking about the conversion from C to AVSTrans :))<br />
-Thanks.<br />
-<br />
-I promise I'll download all this tonight (currently, I'm at work).<br />
-<br />
-About optimizations, as Jheriko said, there are still a lot to do. All that I proposed was a simplification (if I can say so) of the algorithm. The next step will be a real optimization ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Pixelcraft</span><br />
-			<span class="date small text-muted">23rd April 2004 00:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Wow.  I don't read these kind of threads to learn anything, I just read them to gaze at the hardcore mathematical spectacle that is AVS. <br />
-<br />
-You guys are all nuts. :p <br />
-<br />
-Anyway, continue your conversation....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">23rd April 2004 16:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Here is the optimized and final version :<br />
-<pre><code><br />
-//$AVSTrans_TransFirst=0<br />
-//allow &quot;else&quot; instead of &quot;,&quot; (for if()s)<br />
-//$AVSTrans_Replacement=else-&gt;,<br />
-//remove spaces<br />
-//$AVSTrans_Replacement= -&gt;<br />
-//remove tabs<br />
-//$AVSTrans_Replacement=	-&gt;<br />
-//------------------------------------------------------------------<br />
-x0r = 1000000;<br />
-x0i = 0;<br />
-x1r = 1000000;<br />
-x1i = 0;<br />
-x2r = 1000000;<br />
-x2i = 0;<br />
-x3r = 1000000;<br />
-x3i = 0;<br />
-if (equal(qa0, 0),<br />
-  if (equal(qb0, 0),<br />
-    if (equal(qc0, 0),<br />
-      x0r = -qe0/qd0;<br />
-    else<br />
-      disc = sqr(qd0)-4*qc0*qe0;<br />
-      if (below(disc, 0),<br />
-        dr = 0;<br />
-        di = sqrt(-disc);<br />
-      else<br />
-        dr = sqrt(disc);<br />
-        di = 0;<br />
+      <p class="post-content"><strong>Polynomial solvers</strong><br />
+      WARNING: Unoptimised messy code ahead!<br />
+      <br />
+      I finally have *working* cubic and quartic equation solvers. These are faster than Whittaker iteration in many cases where they can be applied. However they extra susceptible to DM glitches when used due to tiny rounding errors. From experimenting most of these errors seem to come from 'a=0' quartics, i.e. 0x^4+bx^3+cx^2+dx+e which is a cubic. This problem crops up mostly with the quartic solver, it comes up with the cubic but very little.<br />
+      <br />
+      The rest if the problems are all quartic specific. Sometimes the reducing cubic will have a zero leading coefficient as above. Other problems result from filtering out complex roots from the quartic solver, using if(x0i,.. etc doesn't seem to be enough, best to use the discriminant type values used in the solver to determine how many roots are what.<br />
+      <br />
+      For the cubic I used the actual discriminant to tell if there are one or three real roots. This value is stored in disc in my code. Also note that x0r is always a real root of the cubic and that x0i always = 0. For the quartic there are 3 possiblities, and there is probably a better way to check them then how I have done it. This is the piece of code that deals with the complexity of the quartic roots to make it a bit clearer.<br />
+      <br />
+      if(below(qz2,0),<br />
+      exec2(<br />
+      exec2(<br />
+      assign(x0i,.5*qz),<br />
+      assign(x1i,.5*qz)<br />
+      )<br />
+      ,<br />
+      exec2(<br />
+      assign(x2i,-.5*qz),<br />
+      assign(x3i,-.5*qz)<br />
+      )<br />
+      )<br />
+      ,<br />
+      exec2(<br />
+      exec2(<br />
+      assign(x0r,.5*qz),<br />
+      assign(x1r,.5*qz)<br />
+      )<br />
+      ,<br />
+      exec2(<br />
+      assign(x2r,-.5*qz),<br />
+      assign(x3r,-.5*qz)<br />
+      )<br />
+      )<br />
       );<br />
-      invsa = 1/(2*qc0);<br />
-      x0r = (-qd0+dr)*invsa;<br />
-      x0i = di*invsa;<br />
-      x1r = (-qd0-dr)*invsa;<br />
-      x1i = -di*invsa;<br />
-    );<br />
-  else<br />
-    inv = 1/qb0;<br />
-    a2 = qc0*inv;<br />
-    a1 = qd0*inv;<br />
-    a0 = qe0*inv;<br />
-    q = (3*a1-sqr(a2))*.1111111;<br />
-    r = ((9*a1-2*sqr(a2))*a2-27*a0)*.0185185;<br />
-    disc = sqr(q)*q+sqr(r);<br />
-    a2b3 = a2*.3333333;<br />
-    if (below(disc, 0),<br />
-      theta = acos(r/sqrt(-sqr(q)*q));<br />
-      sqb2 = 2 * sqrt(-q);<br />
-      x0r = sqb2 * cos(theta*.3333333) - a2b3;<br />
-      x1r = sqb2 * cos((theta+2*$PI)*.3333333) - a2b3;<br />
-      x2r = sqb2 * cos((theta+4*$PI)*.3333333) - a2b3;<br />
-    else<br />
-      sqd=sqrt(disc);<br />
-      s = sign(r+sqd)*pow(abs(r+sqd), .3333333);<br />
-      t = sign(r-sqd)*pow(abs(r-sqd), .3333333);<br />
-      x0r = -a2b3 + (s+t);<br />
-      x1r = -a2b3 - (s+t)*.5;<br />
-      x2r = x1r;<br />
-      x1i = .8660254*(s-t);<br />
-      x2i = -x1i;<br />
-    );<br />
-  );<br />
-else<br />
-  inv = 1/qa0;<br />
-  qa = qb0*inv;<br />
-  qb = qc0*inv;<br />
-  qc = qd0*inv;<br />
-  qd = qe0*inv;<br />
-  a2 = -qb;<br />
-  a1 = qa*qc-4*qd;<br />
-  a0 = qd*(4*qb-sqr(qa))-sqr(qc);<br />
-  q = (3*a1-sqr(a2))*.1111111;<br />
-  r = ((9*a1-2*sqr(a2))*a2-27*a0)*.0185185;<br />
-  disc = sqr(q)*q+sqr(r);<br />
-  if (below(disc, 0),<br />
-    theta = acos(r/sqrt(-sqr(q)*q));<br />
-    qz1 = 2 * sqrt(-q) * cos(theta*.3333333) - a2*.3333333;<br />
-  else<br />
-    sqd=sqrt(disc);<br />
-    s = sign(r+sqd)*pow(abs(r+sqd),.3333333);<br />
-    t = sign(r-sqd)*pow(abs(r-sqd),.3333333);<br />
-    qz1 = -a2*.3333333+s+t;<br />
-  );<br />
-  qz2 = qz1+sqr(qa)*.25-qb;<br />
-  qz = sqrt(abs(qz2));<br />
-  sqab34 = .75*sqr(qa);<br />
-  if (equal(qz, 0),<br />
-    sq0 = 2*sqrt(sqr(qz1)-4*qd);<br />
-    sq1 = sqab34-2*qb+sq0;<br />
-    sq2 = sqab34-2*qb-sq0;<br />
-  else<br />
-    sq0 = (4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />
-    sq1 = sqab34-qz2-2*qb+sq0;<br />
-    sq2 = sqab34-qz2-2*qb-sq0;<br />
-  );<br />
-  qv1 = sqrt(abs(sq1));<br />
-  qv2 = sqrt(abs(sq2));<br />
-  x0r = -.25*qa;<br />
-  x1r = x0r;<br />
-  x2r = x0r;<br />
-  x3r = x0r;<br />
-  qzb2 = .5*qz;<br />
-  if (below(qz2, 0),<br />
-    x0i = qzb2;<br />
-    x1i = qzb2;<br />
-    x2i = -qzb2;<br />
-    x3i = -qzb2;<br />
-  else<br />
-    x0r = x0r + qzb2;<br />
-    x1r = x1r + qzb2;<br />
-    x2r = x2r - qzb2;<br />
-    x3r = x3r - qzb2;<br />
-  );<br />
-  qv1b2 = .5*qv1;<br />
-  if (below(sq1, 0),<br />
-    x0i = x0i+qv1b2;<br />
-    x1i = x1i-qv1b2;<br />
-  else<br />
-    x0r = x0r+qv1b2;<br />
-    x1r = x1r-qv1b2;<br />
-  );<br />
-  qv2b2 = .5*qv2;<br />
-  if (below(sq2, 0),<br />
-    x2i = x2i+qv2b2;<br />
-    x3i = x3i-qv2b2;<br />
-  else<br />
-    x2r = x2r+qv2b2;<br />
-    x3r = x3r-qv2b2;<br />
-  );<br />
-);<br />
-</code></pre><br />
-<br />
-Pixelcraft, you're right ! :D<br />
-<br />
-BTW, I still don't know what can be done with this :igor:<br />
-<br />
-TomyLobo, your AVSTrans is really :up:
-		</p>
-</div>
+      <br />
+      if(below(sq1,0),<br />
+      exec2(<br />
+      assign(x0i,x0i+.5*qv1),<br />
+      assign(x1i,x1i-.5*qv1)<br />
+      )<br />
+      ,<br />
+      exec2(<br />
+      assign(x0r,x0r+.5*qv1),<br />
+      assign(x1r,x1r-.5*qv1)<br />
+      )<br />
+      );<br />
+      <br />
+      if(below(sq2,0),<br />
+      exec2(<br />
+      assign(x2i,x2i+.5*qv2),<br />
+      assign(x3i,x3i-.5*qv2)<br />
+      )<br />
+      ,<br />
+      exec2(<br />
+      assign(x2r,x2r+.5*qv2),<br />
+      assign(x3r,x3r-.5*qv2)<br />
+      )<br />
+      );<br />
+      <br />
+      qz2&lt;0 = no real roots<br />
+      qz2&gt;0 and:<br />
+      <br />
+      sq1&lt;0,sq2&lt;0 = no real roots<br />
+      sq1&gt;0,sq2&lt;0 = two real roots: x0r, x1r<br />
+      sq1&lt;0,sq2&gt;0 = two real roots: x2r, x3r<br />
+      sq1&gt;0,sq2&gt;0 = four real roots: x0r, x1r, x2r, x3r<br />
+      <br />
+      That should be enough to clean up any uglies resulting from these solvers. The most stable method of use is to solve as quartic if first coefficient not zero, if it is then solve as cubic, if the first coefficient of cubic = 0 then solve as quadratic etc... then make sure to filter out complex values using the discriminants instead of standard logic.<br />
+      <br />
+      The attached zip contains an implementation of each solver.<br />
+      <br />
+      Roots stored as x0r+x0i*sqrt(-1),x1r+x1i*sqrt(-1),x2r+x2i*sqrt(-1),x3r+x3i*sqrt(-1)<br />
+      <br />
+      Feel free to use anywhere, credit not necessary.<br />
+      <br />
+      EDIT: you may wish to optimise/modify variable names etc... do this, i wont likely be releasing another version of this code since it is stable.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">D12</span><br />
+      <span class="date small text-muted">10th April 2004 04:44 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">30th April 2004 17:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Sorry, my writing codes in SS &amp; DM is not good.<br />
+      I wish I could help to you master, but, my knowledge in writing codes is not enough yet.<br />
+      Maybe in future I will learn writing codes from AVS masters like you.</p>
+    </div>
+    <hr />
 
-		Cool, nice work.<br />
-<br />
-I'll show you what can be done with this.<br />
-<br />
-The main use for this is raytraced dms. For instance, if you which to raytrace a sphere you substitute the ray equation into the sphere equation and solve for 't' (or k or whatever you want to call it):<br />
-<br />
-x^2+y^2+z^2=r^2<br />
-(x1*t+ox)^2+(y1*t+oy)^2+(z1*t+oz)^2=r^2<br />
-<br />
-expanding this gives a <b>quadratic</b> in t<br />
-which we solve using the quadratic equation:<br />
-<br />
-(x1^2+y1^2+z1^2)*t^2 + 2*(x1*ox+y1*oy+z1*oz)*t + ox^2+oy^2+oz^2-r^2 = 0<br />
-<br />
-avs code (this can be optimised by playing with constants but i'll leave it like this so that the quadratic equation is more obvious):<br />
-<br />
-// set-up quadratic coefficients (ax^2+bx+c=0)<br />
-a=sqr(x1)+sqr(y1)+sqr(z1);<br />
-b=2*(x1*ox+y1*oy+z1*oz);<br />
-c=sqr(ox)+sqr(oy)+sqr(oz)-sqr(r);<br />
-// calculate discriminant<br />
-disc=sqr(b)-4*a*c;<br />
-// ignore complex roots (disc &lt; 0)<br />
-t=if(below(disc,0),10000,sqrt(disc)/(2*a));<br />
-// ignore negative roots (t &lt; 0)<br />
-t=if(below(t,0),10000,t);<br />
-<br />
-Now using quadratic we have access to all of the shapes which we call quadric surfaces. These are spheres, cylinders, paraboloids, one sheet hyperboloids, two sheet hyperboloids, parabolic cylinders, hyberbolic cylinders, cones or a degenerate (a plane, line, parabola, hyperbola, circle or a singular point). If we want to generate more shapes we need to be able to solve more complex equations. Using cubics we can create a few more shapes, but nothing of major interest. Most cubic surfaces are ugly things with numerous singular points and horrible degenrate sections. Quartics however are much more interesting, there are tens of thousands of different distinct quartics but there are a few of particular interest like, the torus, chumtov surface, cylindrical parabola or the varying trench surfaces. Quartic surface equations are generally several times more complex that quadratics when it comes to expanding the raytracing equation and making mistakes is pretty easy. I won't bother expanding these fully since they are quite long but here is an example:<br />
-<br />
-Torus:<br />
-z^2 + (sqrt(x^2+y^2) - R)^2 = r^2<br />
-x^4 + y^4 + z^4 + 2*(x^2*y^2 + x^2*z^2 + y^2*z^2) - 2*(R^2 + r^2)*(x^2 + y^2) + 2*(R^2 - r^2)*(1 + z^2) = 0<br />
-<br />
-// unsimplified and probably wrong raytracing equation coefficients<br />
-qa0 = sqr(sqr(x1)) + sqr(sqr(y1)) + sqr(sqr(z1)) + 2*(sqr(x1)*sqr(y1) + sqr(x1)*sqr(z1) + sqr(y1)*sqr(z1));<br />
-qb0 = 4*sqr(x1)*x1*ox + 4*sqr(y1)*y1*oy + 4*sqr(z1)*z1*oz + 2*(sqr(x1)*2*y1*oy + 2*x1*ox*sqr(y1) + sqr(x1)*2*z1*oz + 2*x1*ox*sqr(z1) + sqr(y1)*2*z1*oz + 2*y1*oy*sqr(z1));<br />
-qc0 = 6*sqr(x1)*sqr(ox) + 6*sqr(y1)*sqr(oy) + 6*sqr(z1)*sqr(oz) + 2*(sqr(x1)*sqr(oy) + 4*x1*ox*y1*oy + sqr(ox)*sqr(y1) + sqr(x1)*sqr(oz) + sqr(ox)*sqr(z1) + 4*x1*ox*z1*oz + sqr(y1)*sqr(oz) + sqr(oy)*sqr(z1) + 4*y1*oy*z1*oz) - 2*(sqr(R)+sqr(r))*(sqr(x1)+sqr(y1)) + 4*(sqr(R)-sqr(r))*sqr(z1);<br />
-qd0 = 4*x1*sqr(ox)*ox + 4*y1*sqr(oy)*oy + 4*z1*sqr(oz)*oz + 2*(2*x1*ox*sqr(oy) + sqr(ox)*2*oy*y1 + 2*x1*ox*sqr(oz) + sqr(oy)*2*oz*z1 + 2*y1*oy*sqr(oz) + sqr(oy)*2*oz*z1) - 4*(sqr(R)+sqr(r))*(x1*ox+y1*oy) + 4*(sqr(R)-sqr(r))*oz*z1;<br />
-qe0 = sqr(sqr(ox)) + sqr(sqr(oy)) + sqr(sqr(oz)) + 2*(sqr(ox)*sqr(oy) + sqr(ox)*sqr(oz) + sqr(oy)*sqr(oz)) - 2*(sqr(R)+sqr(r))*(sqr(ox)+sqr(oy)) + 2*(sqr(R)-sqr(r))*(1+sqr(oz));<br />
-<br />
-A quartic is used in VJ Chmutov, but it is solved with whittaker iterations, you could use the quartic solver in place of this. You just have to be careful about complex roots since they can cause little glitches to pop up in certain places.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">10th April 2004 08:01 GMT</span></p>
 
-	<hr />
+      <p class="post-content">use qa0,qb0,qc0,qd0,qe0 as:<br />
+      <br />
+      qa0x^4+qb0x^3+qc0x^2+qd0x+qe0=0<br />
+      <br />
+      then the solver will ouput the solutions<br />
+      <br />
+      x0r,x0i x1r,x1i x2r,x2i x3r,x3i<br />
+      <br />
+      where xnr is real and xni is imaginary<br />
+      <br />
+      if qa0=0 then a cubic will be solved, etc and x4r etc will not be present and will be replaced by some suitably large value for raytracing purposes.<br />
+      <br />
+      exec3(exec3(assign(x0r,1000000),assign(x0i,0),assign(x1r,1000000)), exec3(assign(x1i,0),assign(x2r,1000000),assign(x2i,0)), exec3(assign(x3r,1000000),assign(x3i,0),if(equal(qa0,0), if(equal(qb0,0),if(equal(qc0,0),assign(x0r,-qe0/qd0),exec3( exec3(assign(disc,sqr(qd0)-4*qc0*qe0),exec3(assign(dr,0), assign(di,0),assign(if(below(disc,0),di,dr),sqrt(disc))), assign(invsa,1/(2*qc0))),exec3(assign(x0r,(-qd0+dr)*invsa), assign(x0i,di*invsa),assign(x1r,(-qd0-dr)*invsa)), assign(x1i,-di*invsa))),exec2(exec3(exec3(assign(a2,qc0/qb0), assign(a1,qd0/qb0),assign(a0,qe0/qb0)),exec3( assign(q,(3*a1-sqr(a2))*.11111111111), assign(r,((9*a1-2*sqr(a2))*a2-27*a0)*.0185185185), assign(disc,sqr(q)*q+sqr(r))), exec3(assign(x0r,0),assign(x0i,0),assign(x1r,0))), exec2(exec3(assign(x1i,0),assign(x2r,0),assign(x2i,0)), if(below(disc,0), exec2(exec2(assign(theta,acos(r/sqrt(-sqr(q)*q))), assign(x0r,2*sqrt(-q)*cos(theta*.333333)-a2*.333333333)), exec2(assign(x1r,2*sqrt(-q)*cos((theta+2*$PI)*.333333333) -a2*.333333),assign(x2r,2*sqrt(-q)*cos((theta+4*$PI)*.333333333) -a2*.333333))), exec2(exec2(assign(s,sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)), .333333333)),assign(t,sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)), .333333333))), exec3(assign(x0r,-a2*.333333333+s+t),assign(x1r,-a2*.333333333 -(s+t)*.5),exec3(assign(x2r,-a2*.333333333-(s+t)*.5),assign(x1i,abs(.8660254*(s-t))), assign(x2i,-x1i)))))))),exec2(exec3(exec3(exec3(assign(inv,1/qa0),assign(qa,qb0*inv), assign(qb,qc0*inv)),exec3(assign(qc,qd0*inv),assign(qd,qe0*inv), assign(a2,-qb)),exec3(assign(a1,qa*qc-4*qd),assign(a0,qd*(4*qb-sqr(qa))-sqr(qc)), assign(q,(3*a1-sqr(a2))*.11111111111))), exec3(exec3(assign(r,((9*a1-2*sqr(a2))*a2-27*a0)*.0185185185), assign(disc,sqr(q)*q+sqr(r)),assign(x0r,0)),exec3(assign(x0i,0), assign(x1r,0),assign(x1i,0)), exec3(assign(x2r,0),assign(x2i,0),if(below(disc,0),exec2(exec2( assign(theta,acos(r/sqrt(-sqr(q)*q))),assign(x0r,2*sqrt(-q)*cos(theta*.333333)-a2*.333333333)), exec2(assign(x1r,2*sqrt(-q)*cos((theta+2*$PI)*.333333333)-a2*.333333),assign(x2r, 2*sqrt(-q)*cos((theta+4*$PI)*.333333333)-a2*.333333))), exec2(exec2(assign(s,sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)),.333333333)),assign(t, sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)),.333333333))), exec3(assign(x0r,-a2*.333333333+s+t),assign(x1r,-a2*.333333333 -(s+t)*.5),exec3(assign(x2r,-a2*.333333333-(s+t)*.5),assign(x1i, abs(.8660254*(s-t))), assign(x2i,-x1i))))))), exec3(exec3(assign(qz1, if(below(disc,0),max(x0r,max(x1r,x2r)),x0r)),assign(qz2,qz1+sqr(qa)*.25-qb), assign(qz,sqrt(abs(qz2)))), exec3(if(equal(qz,0),exec2(assign(sq1,.75*sqr(qa)-2*qb+2*sqrt(sqr(qz1)-4*qd)), assign(sq2,.75*sqr(qa)-2*qb-2*sqrt(sqr(qz1)-4*qd))),exec2( assign(sq1,.75*sqr(qa)-qz2-2*qb+(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz)), assign(sq2,.75*sqr(qa)-qz2-2*qb-(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz)))), assign(qv1,sqrt(abs(sq1))),assign(qv2,sqrt(abs(sq2)))),exec3( assign(x0r,0),assign(x1r,0),assign(x2r,0)))),exec2(exec3(exec3( assign(x3r,0),assign(x0i,0),assign(x1i,0)),exec3(assign(x2i,0), assign(x3i,0),if(below(qz2,0),exec2(exec2(assign(x0i,.5*qz), assign(x1i,.5*qz)),exec2(assign(x2i,-.5*qz),assign(x3i,-.5*qz))), exec2(exec2(assign(x0r,.5*qz),assign(x1r,.5*qz)), exec2(assign(x2r,-.5*qz),assign(x3r,-.5*qz))))),exec3(if(below(sq1,0), exec2(assign(x0i,x0i+.5*qv1),assign(x1i,x1i-.5*qv1)), exec2(assign(x0r,x0r+.5*qv1),assign(x1r,x1r-.5*qv1))),if(below(sq2,0), exec2(assign(x2i,x2i+.5*qv2),assign(x3i,x3i-.5*qv2)), exec2(assign(x2r,x2r+.5*qv2),assign(x3r,x3r-.5*qv2))),assign(x0r,x0r-.25*qa))), exec3(assign(x1r,x1r-.25*qa), assign(x2r,x2r-.25*qa),assign(x3r,x3r-.25*qa)))))));<br />
+      <br />
+      fully condensed into one line of code with tomylobo's avstrans thingy.<br />
+      <br />
+      edit: i can get rid of the bad linespaces here... i think its windows fault. this code displays as 4 line in an avs code box and also in notepad with word wrap *off*<br />
+      <br />
+      [removed stretchy code, added spaces --unconed]</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">2nd May 2004 17:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
+      <span class="date small text-muted">10th April 2004 17:09 GMT</span></p>
 
-		pir, better put these equations into a .txt, zip it and attach it... this preserves tabulators and stuff in all browsers :)<br />
-anyway: good work jheriko for working out the equations and pir for optimizing them :)<br />
-so we'll get some more dynamic tori  from now on *g*<br />
-btw:<br />
-...2*(sqr(R)-sqr(r))*...<br />
-you sure that's correct? :)
-		</p>
-</div>
+      <p class="post-content">/me is confused<br />
+      *scratches head*<br />
+      <br />
+      Too bad I don't know anything about this kind of math.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">10th April 2004 17:55 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">6th May 2004 06:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">argh i wrote my tool so people can provide human-readable code for others (or oneself :) to understand, while still being able to translate it automatically. :eek:</p>
+    </div>
+    <hr />
 
-		I just worked that out as I typed it, so there are probably tons of mistakes. I'm lazy like that.<br />
-<br />
-In theory it should be possible to make pretty much any imaginable DM geometry from quartics, cubics, quadrics and planes. Hopefully we will get a lot more than just dynamic torii in the future. The theory of working the DM has pretty much reached its limits I feel, so now we have to concentrate on producing some really creative geometry to generate unique visuals. The solver isn't perfect though, it falls apart when faced with some really awkward quartics with tiny complex components in the roots for instance. Some shapes can be handled perfectly though, I tried a cylindical parabola but there were seams where glitches would occur, however I also tried the Chmutov surface with perfect results.<br />
-<br />
-It might be a good idea to go through this code and fully optimise it specifically for raytracing so that it deals with complex roots in a better fashion. Perhaps even sorting the roots into a specific order, i.e. x0&gt;x1&gt;x2&gt;x3 .<br />
-I might do this later... but I have things to do this morning.<br />
-<br />
-We should definately make some presets with this though, even though it is slower than a good whittaker it can handle some other problems a lot more easily, such as ZGM style surface combinations. I made a torus intersection with a cylinder using whittaker, it was pretty awkward to say the least, using this though you can use the standard methods rather than having to hack some ugly fix.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">10th April 2004 20:01 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Next time, just attach it okay? :P</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">6th May 2004 09:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">11th April 2004 20:22 GMT</span></p>
 
-		your formula has definitely one big advantage over whittaker: you can do transparent parts with it!<br />
-whittaker always zeros in on the part that is closest to your starting value. you'd have to do the iteration twice to get &quot;through a wall&quot; :)<br />
-with your formula, one simply takes solution number 0 1 2 3 to get through walls :)
-		</p>
-</div>
+      <p class="post-content">Quote:</p>
+      <hr />
+      I never remember that advice. Its been given too many times to ever sink in. :P<br />
+      <br />
+      I'll try to remember next time I have such a huge thing to post.<br />
+      <br />
+      Thanks for cleaning up my mess too.
 
-	<hr />
+      <table cellpadding="6" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td class="alt2">
+            <hr />
+            <i>Originally posted by UnConeD</i><br />
+            <b>Next time, just attach it okay? :P</b>
+            <hr />
+          </td>
+        </tr>
+      </table><br />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">9th May 2004 02:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">S-uper_T-oast</span><br />
+        <span class="date small text-muted">13th April 2004 03:10 GMT</span></p>
 
-		I need to add some more stuff to this to remove all of the errors. After some extensive testing it seems like a lot of the glitches occur from the raytrace parameter being small and positive from rounding errors from e=0 polynomials (which always have a root x=0) and a few other special cases such as squared quadratics which occasionally seem to cause problems. This solution is fairly complex mathematically and so it might take ages to make sure that it really solves every quartic.<br />
-<br />
-The problem with transparent objects is that to do any decent objects you end up with something really slow.
-		</p>
-</div>
+        <p class="post-content">Nice, now I can use it to make some totally useless cool things after a little experimenting. Very nice job, I don't see any errors as far as I know. You must have had a lot of free time or something.</p>
+      </div>
+      <hr />
 
-	<hr />
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">OnionRingOfDoom</span><br />
+        <span class="date small text-muted">13th April 2004 15:00 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">9th May 2004 11:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+        <p class="post-content">Whoa, good work J!<br />
+        ...Not that I have any idea as to what all that does, but nice work anyway!</p>
+      </div>
+      <hr />
 
-		the squared quadratics problem could be fixed by another check... if e!=0 and d=0 then it's a squared quartic, right?<br />
-you can simply substitute x²... you sure know this ;)
-		</p>
-</div>
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">14th April 2004 01:55 GMT</span></p>
 
-	<hr />
+        <p class="post-content">Basically this is for solving a polynomial equation, this is extremely useful in certain situations, like creating 3D raytraced DMs for instance.<br />
+        <br />
+        it means that if a*t + b =0 and you know a and b then we can find t, it also means that if a*t^2+b*t+c=0 and we know a b and c then we can find t, thsi code works up to at^4+bt^3+ct^2+dt+e=0<br />
+        which are fed in as qa0,qb0,qc0,qd0,qe0 etc<br />
+        then the maximum of four possible ts are spat out in x0r,x0i,x1r,x1i..etc which are the real and imaginary components of the t's. I would explain what the code does but its way to tedious and complicated and would take up a lot more space than the code.</p>
+      </div>
+      <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">13th May 2004 01:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">sidd</span><br />
+        <span class="date small text-muted">14th April 2004 04:19 GMT</span></p>
 
-		I know how to deal with these problems.. i just can't be bothered to do anything :P<br />
-<br />
-for it to all work properly what need to be done is:<br />
-<br />
-<pre><code><br />
-if a=0<br />
-  if b=0<br />
-    if c=0<br />
-      if d=0<br />
-        if e=0<br />
-          no roots<br />
-        endif<br />
-      else<br />
-        if e=0<br />
-          roots all zero<br />
-        else<br />
-          root is -e/d<br />
-        endif<br />
-      endif<br />
-    else<br />
-      if e=0<br />
-        if d=0<br />
-          roots all zero<br />
-        else<br />
-          one root is zero<br />
-          the other is -d/c<br />
-        endif<br />
-      else<br />
-        if d=0<br />
-          roots are +-sqrt(-e/c)<br />
-        else<br />
-          solve cx^2+dx+e=0<br />
-        endif<br />
-      endif<br />
-    endif<br />
-  else<br />
-    if e=0<br />
-      if d=0<br />
-        if c=0<br />
-          all roots zero<br />
-        else<br />
-          two roots are zero<br />
-          the other is -c/b<br />
-        endif<br />
-      else<br />
-        if c=0<br />
-          one root is zero<br />
-          the other two are +-sqrt(-d/b)<br />
-        else<br />
-          one root is zero<br />
-          solve bx^2+cx+d=0<br />
-        endif<br />
-      endif<br />
-    else<br />
-      if d=0<br />
-        if c=0<br />
-          roots are the cbrts of -e/b<br />
-        else<br />
-          solve bx^3+cx^2+e=0<br />
-        endif<br />
-      else<br />
-        if c=0<br />
-          solve bx^3+dx+e=0<br />
-        else<br />
-          solve bx^2+cx^2+dx+e=0<br />
-        endif<br />
-      endif<br />
-    endif<br />
-  endif<br />
-else<br />
-  if e=0 <br />
-    if d=0<br />
-      if c=0<br />
-        if b=0<br />
-          all roots are zero<br />
-        else<br />
-          three roots are zero<br />
-          other is -b/a<br />
-        endif<br />
-      else<br />
-        if b=0<br />
-          two roots are zero<br />
-          others are +/-sqrt(-c/a)<br />
-        else<br />
-          two roots are zero<br />
-          solve ax^2+bx+c=0<br />
-        endif<br />
-      endif<br />
-    else<br />
-      if c=0<br />
-        if b=0<br />
-          one root is zero<br />
-          others are cbrts of -d/a<br />
-        else<br />
-          solve ax^3+bx^2+d=0<br />
-        endif<br />
-      else<br />
-        if b=0<br />
-          one root is zero<br />
-          others are solutions to ax^3+cx+d=0<br />
-        else<br />
-          one root is zero<br />
-          others are solutions to ax^3+bx^2+cx+d=0<br />
-        endif<br />
-      endif    <br />
-    endif<br />
-  else<br />
-    if d=0<br />
-      if c=0<br />
-        if b=0<br />
-          roots are the 4rts of -e/a<br />
-        else<br />
-          solve ax^4+bx^3+e=0<br />
-        endif<br />
-      else<br />
-        if b=0<br />
-          solve ax^2+cx+e=0<br />
-        else<br />
-          two roots are zero<br />
-          solve ax^4+bx^3+cx^2+e=0<br />
-        endif<br />
-      endif<br />
-    else<br />
-      if c=0<br />
-        if b=0<br />
-          solve ax^4+dx+e=0<br />
-        else<br />
-          solve ax^4+bx^3+dx+e=0<br />
-        endif<br />
-      else<br />
-        if b=0<br />
-          solve ax^4+cx^2+dx+e=0<br />
-        else<br />
-          solve ax^4+bx^3+cx^2+dx+e=0<br />
-        endif<br />
-      endif    <br />
-    endif<br />
-  endif<br />
-endif      <br />
-</code></pre><br />
-<br />
-i might just rework it from scratch since there are little tricks for solving some cases like:<br />
-<br />
-bx^3+dx+e=0, ax^4+cx^2+dx+e=0, ax^4+dx+e=0
-		</p>
-</div>
+        <p class="post-content">You know all those fancy raytraced dm's with all complicated looking shapes that have been showing up recintly? Well many of those shapes are expressed with Polynomial equasions, and are gererally very hard to solve.<br />
+        <br />
+        Untill this thing, the only way to draw those shapes was to use itterative methods, which are basically a loop that guesses for the right number, and gets closer each time you run it.<br />
+        <br />
+        A natural solver (what this is) on the other hand, solves the equasions numerically, so it is both faster and more accurate than an average iterator. Plus, this one can find all the roots, not just one, and that includes imaginary ones!<br />
+        <br />
+        Well done J!</p>
+      </div>
+      <hr />
 
-	<hr />
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">piR</span><br />
+        <span class="date small text-muted">18th April 2004 18:08 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">AvsManDan</span><br />
-			<span class="date small text-muted">5th June 2004 21:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+        <p class="post-content">Very good job Jheriko, but, may be it can be improved :<br />
+        * Solving cubic :<br />
+        - the reset of x0r,x1r, and so on seems to be unuseful (xni were already set, and xnr will be changed).<br />
+        - I hope there's a little mistake when assigning x1i : no abs()<br />
+        <br />
+        * Solving quartic :<br />
+        - one more time the resets seems to be unuseful (see below).<br />
+        - I think you only need one root of the cubic equation, then it can always be the x0r, in both cases, that can directly be assigned to qz1.<br />
+        <br />
+        I let you see this in details.<br />
+        <br />
+        BTW, can someone give a simple example to explain how this can be used in a DM ?</p>
+      </div>
+      <hr />
 
-		Very cool! I know what it does but too complicated for me right now. Endless summer days should get me to make something cool to show.<br />
-<br />
-If anyone is discuraged or angry because of the solvers speed, deleteall of the Render/Text. You will be happy.:)
-		</p>
-</div>
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">piR</span><br />
+        <span class="date small text-muted">22nd April 2004 00:41 GMT</span></p>
 
-	<hr />
+        <p class="post-content">I have worked again on the formula.<br />
+        I have made a mistake in my last message. In quartic solve, the xnr must be set. But instead of being reset to 0, they can be initialise with -.25*qa.<br />
+        The new algorithm is now :<br />
+        (==&gt; /* old version */)<br /></p>
+        <pre>
+<code><br />// these constants helped me to understand<br />C1S2=1/2;        // .5<br />C1S4=1/4;        // .25<br />C3S4=3/4;        // .75<br />C1S3=1/3;        // .3333333<br />C1S9=1/9;        // .1111111<br />C1S54=1/54;      // .0185185<br />CR3S2=sqrt(3)/2; // .8660254<br /><br />x0r = 1000000;<br />x0i = 0;<br />x1r = 1000000;<br />x1i = 0;<br />x2r = 1000000;<br />x2i = 0;<br />x3r = 1000000;<br />x3i = 0;<br />if ( qa0 == 0 )<br />{<br />  if ( qb0 == 0 )<br />  {<br />    if ( qc0 == 0 )<br />    { // solving : qd0.x + qe0 = 0<br />      x0r = -qe0/qd0;<br />    }<br />    else<br />    { // solving : qc0.x^2 + qd0.x + qe0 = 0<br />      disc = sqr(qd0)-4*qc0*qe0;<br />      dr = 0;<br />      di = 0;<br />      if ( disc &lt; 0 )<br />        di = sqrt(-disc);<br />      else<br />        dr = sqrt(disc);<br />      invsa = 1/(2*qc0);<br />      x0r = (-qd0+dr)*invsa;<br />      x0i = di*invsa;<br />      x1r = (-qd0-dr)*invsa;<br />      x1i = -di*invsa;<br />    }<br />  }<br />  else // qb0 != 0<br />  { // solving : qb0.x^3 + qc0.x^2 + qd0.x + qe0 = 0<br />    inv = 1/qb0;<br />    a2 = qc0*inv;<br />    a1 = qd0*inv;<br />    a0 = qe0*inv;<br />    q = (3*a1-sqr(a2))*C1S9;<br />    r = ((9*a1-2*sqr(a2))*a2-27*a0)*C1S54;<br />    disc = sqr(q)*q+sqr(r);<br />    /* x0r = 0; */<br />    /* x0i = 0; */<br />    /* x1r = 0; */<br />    /* x1i = 0; */<br />    /* x2r = 0; */<br />    /* x2i = 0; */<br />    if ( disc &lt; 0 )<br />    {<br />      theta = acos(r/sqrt(-sqr(q)*q));<br />      x0r = 2 * sqrt(-q) * cos(theta*C1S3) - a2*C1S3;<br />      x1r = 2 * sqrt(-q) * cos((theta+2*$PI)*C1S3) - a2*C1S3;<br />      x2r = 2 * sqrt(-q) * cos((theta+4*$PI)*C1S3) - a2*C1S3;<br />    }<br />    else // disc &gt;= 0<br />    {<br />      s = sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)), C1S3);<br />      t = sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)), C1S3);<br />      x0r = -a2*C1S3 + (s+t);<br />      x1r = -a2*C1S3 - (s+t)*C1S2;<br />      x2r = -a2*C1S3 - (s+t)*C1S2;<br />      x1i = CR3S2*(s-t);  /* abs(CR3S2*(s-t)) ?? */<br />      x2i = -x1i;<br />    }<br />  }<br />}<br />else // qa0 != 0<br />{ // solving : qa0.x^4 + qb0.x^3 + qc0.x^2 + qd0.x + qe0 = 0<br />  inv = 1/qa0;<br />  qa = qb0*inv;<br />  qb = qc0*inv;<br />  qc = qd0*inv;<br />  qd = qe0*inv;<br />  a2 = -qb;<br />  a1 = qa*qc-4*qd;<br />  a0 = qd*(4*qb-sqr(qa))-sqr(qc);<br />  q = (3*a1-sqr(a2))*C1S9;<br />  r = ((9*a1-2*sqr(a2))*a2-27*a0)*C1S54;<br />  disc = sqr(q)*q+sqr(r);<br />  /* x0r = 0; */<br />  /* x0i = 0; */<br />  /* x1r = 0; */<br />  /* x1i = 0; */<br />  /* x2r = 0; */<br />  /* x2i = 0; */<br />  if ( disc &lt; 0 )<br />  {<br />    theta = acos(r/sqrt(-sqr(q)*q));<br />    /* x0r = 2*sqrt(-q)*cos(theta*C1S3)-a2*C1S3; */<br />    /* x1r = 2*sqrt(-q)*cos((theta+2*$PI)*C1S3)-a2*C1S3; */<br />    /* x2r = 2*sqrt(-q)*cos((theta+4*$PI)*C1S3)-a2*C1S3; */<br />    qz1 = 2 * sqrt(-q) * cos(theta*C1S3) - a2*C1S3; /* max(x0r,max(x1r,x2r)); */<br />  }<br />  else // disc &gt;= 0<br />  {<br />    s = sign(r+sqrt(disc))*pow(abs(r+sqrt(disc)),C1S3);<br />    t = sign(r-sqrt(disc))*pow(abs(r-sqrt(disc)),C1S3);<br />    /* x0r = -a2*C1S3+s+t; */<br />    /* x1r = -a2*C1S3 -(s+t)*C1S2; */<br />    /* x2r = -a2*C1S3-(s+t)*C1S2; */<br />    /* x1i = abs(CR3S2*(s-t)); */<br />    /* x2i = -x1i; */<br />    qz1 = -a2*C1S3+s+t; /* x0r; */<br />  }<br />  qz2 = qz1+sqr(qa)*C1S4-qb;<br />  qz = sqrt(abs(qz2));<br />  if ( qz == 0 )<br />  {<br />    sq1 = C3S4*sqr(qa)-2*qb+2*sqrt(sqr(qz1)-4*qd);<br />    sq2 = C3S4*sqr(qa)-2*qb-2*sqrt(sqr(qz1)-4*qd);<br />  }<br />  else // qz != 0<br />  {<br />    sq1 = C3S4*sqr(qa)-qz2-2*qb+(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />    sq2 = C3S4*sqr(qa)-qz2-2*qb-(4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />  }<br />  qv1 = sqrt(abs(sq1));<br />  qv2 = sqrt(abs(sq2));<br />  x0r = -C1S4*qa; /* x0r = 0; */<br />  x1r = -C1S4*qa; /* x1r = 0; */<br />  x2r = -C1S4*qa; /* x2r = 0; */<br />  x3r = -C1S4*qa; /* x3r = 0; */<br />  /* x0i = 0; */<br />  /* x1i = 0; */<br />  /* x2i = 0; */<br />  /* x3i = 0; */<br />  if ( qz2 &lt; 0 )<br />  {<br />    x0i = C1S2*qz;<br />    x1i = C1S2*qz;<br />    x2i = -C1S2*qz;<br />    x3i = -C1S2*qz;<br />  }<br />  else // qz2 &gt;= 0<br />  {<br />    x0r = x0r + C1S2*qz; /* x0r = C1S2*qz; */<br />    x1r = x1r + C1S2*qz; /* x1r = C1S2*qz; */<br />    x2r = x2r - C1S2*qz; /* x2r = -C1S2*qz; */<br />    x3r = x3r - C1S2*qz; /* x3r = -C1S2*qz; */<br />  }<br />  if ( sq1 &lt; 0 )<br />  {<br />    x0i = x0i+C1S2*qv1;<br />    x1i = x1i-C1S2*qv1;<br />  }<br />  else // sq1 &gt;= 0<br />  {<br />    x0r = x0r+C1S2*qv1;<br />    x1r = x1r-C1S2*qv1;<br />  }<br />  if ( sq2 &lt; 0 )<br />  {<br />    x2i = x2i+C1S2*qv2;<br />    x3i = x3i-C1S2*qv2;<br />  }<br />  else // sq2 &gt;= 0<br />  {<br />    x2r = x2r+C1S2*qv2;<br />    x3r = x3r-C1S2*qv2;<br />  }<br />}<br /></code>
+</pre><br />
+        <br />
+        I'm sorry, I do not have tomylobo's avstrans ...
+      </div>
+      <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">7th June 2004 03:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+        <span class="date small text-muted">22nd April 2004 06:56 GMT</span></p>
 
-		Every time you revive a dead thread with a meaningless and irrelevant post, God kills a kitten.<br />
-<br />
-Please, shut up for the kittens.
-		</p>
-</div>
+        <p class="post-content">hmm nice :) so someone understood these solvers actually ;)<br />
+        problem is: this is C/Perl/PHP/Java code, not AVSTrans compatible code<br />
+        ---<br />
+        if syntax:<br />
+        if (condition,<br />
+        if-branch<br />
+        ,<br />
+        else-branch<br />
+        );<br />
+        ---<br />
+        condition syntaxes:<br />
+        C: a==b AVS: equal(a,b)<br />
+        C: a&lt;b AVS: below(a,b)<br />
+        C: a&gt;b AVS: above(a,b)<br />
+        ---<br />
+        btw this thingy can be optimised:<br /></p>
+        <pre>
+<code><br />dr = 0;<br />di = 0;<br />if (below(disc, 0),<br />  di = sqrt(-disc);<br />,<br />  dr = sqrt(disc);<br />);<br /></code>
+</pre><br />
+        to<br />
+        <pre>
+<code><br />if (below(disc, 0),<br />  dr = 0;<br />  di = sqrt(-disc);<br />,<br />  dr = sqrt(disc);<br />  di = 0;<br />);<br /></code>
+</pre>
+      </div>
+      <hr />
 
-	<hr />
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+        <span class="date small text-muted">22nd April 2004 07:18 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">26th June 2004 15:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+        <p class="post-content">i attached the AVSTrans compatible code<br />
+        just copy the whole .txt file to <a href="http://www.geocities.com/tomyloboavs" target="_blank">AVSTrans</a> and copy the output to wherever you want it</p>
+      </div>
+      <hr />
 
-		Maybe this thread can be locked and placed in the FAQ? Its pretty useful, people != me might actually want to use this code at some point.<br />
-<br />
-And 'lol' at god killing kittens. :)
-		</p>
-</div>
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">piR</span><br />
+        <span class="date small text-muted">22nd April 2004 12:49 GMT</span></p>
 
-	<hr />
+        <p class="post-content">Nice job TomyLobo ! (I'm talking about the conversion from C to AVSTrans :))<br />
+        Thanks.<br />
+        <br />
+        I promise I'll download all this tonight (currently, I'm at work).<br />
+        <br />
+        About optimizations, as Jheriko said, there are still a lot to do. All that I proposed was a simplification (if I can say so) of the algorithm. The next step will be a real optimization ;)</p>
+      </div>
+      <hr />
 
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">Pixelcraft</span><br />
+        <span class="date small text-muted">23rd April 2004 00:33 GMT</span></p>
 
+        <p class="post-content">Wow. I don't read these kind of threads to learn anything, I just read them to gaze at the hardcore mathematical spectacle that is AVS.<br />
+        <br />
+        You guys are all nuts. :p<br />
+        <br />
+        Anyway, continue your conversation....</p>
+      </div>
+      <hr />
 
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">piR</span><br />
+        <span class="date small text-muted">23rd April 2004 16:04 GMT</span></p>
 
-<!-- Put JavaScript here -->
+        <p class="post-content">Here is the optimized and final version :<br /></p>
+        <pre>
+<code><br />//$AVSTrans_TransFirst=0<br />//allow "else" instead of "," (for if()s)<br />//$AVSTrans_Replacement=else-&gt;,<br />//remove spaces<br />//$AVSTrans_Replacement= -&gt;<br />//remove tabs<br />//$AVSTrans_Replacement=        -&gt;<br />//------------------------------------------------------------------<br />x0r = 1000000;<br />x0i = 0;<br />x1r = 1000000;<br />x1i = 0;<br />x2r = 1000000;<br />x2i = 0;<br />x3r = 1000000;<br />x3i = 0;<br />if (equal(qa0, 0),<br />  if (equal(qb0, 0),<br />    if (equal(qc0, 0),<br />      x0r = -qe0/qd0;<br />    else<br />      disc = sqr(qd0)-4*qc0*qe0;<br />      if (below(disc, 0),<br />        dr = 0;<br />        di = sqrt(-disc);<br />      else<br />        dr = sqrt(disc);<br />        di = 0;<br />      );<br />      invsa = 1/(2*qc0);<br />      x0r = (-qd0+dr)*invsa;<br />      x0i = di*invsa;<br />      x1r = (-qd0-dr)*invsa;<br />      x1i = -di*invsa;<br />    );<br />  else<br />    inv = 1/qb0;<br />    a2 = qc0*inv;<br />    a1 = qd0*inv;<br />    a0 = qe0*inv;<br />    q = (3*a1-sqr(a2))*.1111111;<br />    r = ((9*a1-2*sqr(a2))*a2-27*a0)*.0185185;<br />    disc = sqr(q)*q+sqr(r);<br />    a2b3 = a2*.3333333;<br />    if (below(disc, 0),<br />      theta = acos(r/sqrt(-sqr(q)*q));<br />      sqb2 = 2 * sqrt(-q);<br />      x0r = sqb2 * cos(theta*.3333333) - a2b3;<br />      x1r = sqb2 * cos((theta+2*$PI)*.3333333) - a2b3;<br />      x2r = sqb2 * cos((theta+4*$PI)*.3333333) - a2b3;<br />    else<br />      sqd=sqrt(disc);<br />      s = sign(r+sqd)*pow(abs(r+sqd), .3333333);<br />      t = sign(r-sqd)*pow(abs(r-sqd), .3333333);<br />      x0r = -a2b3 + (s+t);<br />      x1r = -a2b3 - (s+t)*.5;<br />      x2r = x1r;<br />      x1i = .8660254*(s-t);<br />      x2i = -x1i;<br />    );<br />  );<br />else<br />  inv = 1/qa0;<br />  qa = qb0*inv;<br />  qb = qc0*inv;<br />  qc = qd0*inv;<br />  qd = qe0*inv;<br />  a2 = -qb;<br />  a1 = qa*qc-4*qd;<br />  a0 = qd*(4*qb-sqr(qa))-sqr(qc);<br />  q = (3*a1-sqr(a2))*.1111111;<br />  r = ((9*a1-2*sqr(a2))*a2-27*a0)*.0185185;<br />  disc = sqr(q)*q+sqr(r);<br />  if (below(disc, 0),<br />    theta = acos(r/sqrt(-sqr(q)*q));<br />    qz1 = 2 * sqrt(-q) * cos(theta*.3333333) - a2*.3333333;<br />  else<br />    sqd=sqrt(disc);<br />    s = sign(r+sqd)*pow(abs(r+sqd),.3333333);<br />    t = sign(r-sqd)*pow(abs(r-sqd),.3333333);<br />    qz1 = -a2*.3333333+s+t;<br />  );<br />  qz2 = qz1+sqr(qa)*.25-qb;<br />  qz = sqrt(abs(qz2));<br />  sqab34 = .75*sqr(qa);<br />  if (equal(qz, 0),<br />    sq0 = 2*sqrt(sqr(qz1)-4*qd);<br />    sq1 = sqab34-2*qb+sq0;<br />    sq2 = sqab34-2*qb-sq0;<br />  else<br />    sq0 = (4*qa*qb-8*qc-sqr(qa)*qa)/(4*qz);<br />    sq1 = sqab34-qz2-2*qb+sq0;<br />    sq2 = sqab34-qz2-2*qb-sq0;<br />  );<br />  qv1 = sqrt(abs(sq1));<br />  qv2 = sqrt(abs(sq2));<br />  x0r = -.25*qa;<br />  x1r = x0r;<br />  x2r = x0r;<br />  x3r = x0r;<br />  qzb2 = .5*qz;<br />  if (below(qz2, 0),<br />    x0i = qzb2;<br />    x1i = qzb2;<br />    x2i = -qzb2;<br />    x3i = -qzb2;<br />  else<br />    x0r = x0r + qzb2;<br />    x1r = x1r + qzb2;<br />    x2r = x2r - qzb2;<br />    x3r = x3r - qzb2;<br />  );<br />  qv1b2 = .5*qv1;<br />  if (below(sq1, 0),<br />    x0i = x0i+qv1b2;<br />    x1i = x1i-qv1b2;<br />  else<br />    x0r = x0r+qv1b2;<br />    x1r = x1r-qv1b2;<br />  );<br />  qv2b2 = .5*qv2;<br />  if (below(sq2, 0),<br />    x2i = x2i+qv2b2;<br />    x3i = x3i-qv2b2;<br />  else<br />    x2r = x2r+qv2b2;<br />    x3r = x3r-qv2b2;<br />  );<br />);<br /></code>
+</pre><br />
+        <br />
+        Pixelcraft, you're right ! :D<br />
+        <br />
+        BTW, I still don't know what can be done with this :igor:<br />
+        <br />
+        TomyLobo, your AVSTrans is really :up:
+      </div>
+      <hr />
 
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">30th April 2004 17:51 GMT</span></p>
+
+        <p class="post-content">Cool, nice work.<br />
+        <br />
+        I'll show you what can be done with this.<br />
+        <br />
+        The main use for this is raytraced dms. For instance, if you which to raytrace a sphere you substitute the ray equation into the sphere equation and solve for 't' (or k or whatever you want to call it):<br />
+        <br />
+        x^2+y^2+z^2=r^2<br />
+        (x1*t+ox)^2+(y1*t+oy)^2+(z1*t+oz)^2=r^2<br />
+        <br />
+        expanding this gives a <b>quadratic</b> in t<br />
+        which we solve using the quadratic equation:<br />
+        <br />
+        (x1^2+y1^2+z1^2)*t^2 + 2*(x1*ox+y1*oy+z1*oz)*t + ox^2+oy^2+oz^2-r^2 = 0<br />
+        <br />
+        avs code (this can be optimised by playing with constants but i'll leave it like this so that the quadratic equation is more obvious):<br />
+        <br />
+        // set-up quadratic coefficients (ax^2+bx+c=0)<br />
+        a=sqr(x1)+sqr(y1)+sqr(z1);<br />
+        b=2*(x1*ox+y1*oy+z1*oz);<br />
+        c=sqr(ox)+sqr(oy)+sqr(oz)-sqr(r);<br />
+        // calculate discriminant<br />
+        disc=sqr(b)-4*a*c;<br />
+        // ignore complex roots (disc &lt; 0)<br />
+        t=if(below(disc,0),10000,sqrt(disc)/(2*a));<br />
+        // ignore negative roots (t &lt; 0)<br />
+        t=if(below(t,0),10000,t);<br />
+        <br />
+        Now using quadratic we have access to all of the shapes which we call quadric surfaces. These are spheres, cylinders, paraboloids, one sheet hyperboloids, two sheet hyperboloids, parabolic cylinders, hyberbolic cylinders, cones or a degenerate (a plane, line, parabola, hyperbola, circle or a singular point). If we want to generate more shapes we need to be able to solve more complex equations. Using cubics we can create a few more shapes, but nothing of major interest. Most cubic surfaces are ugly things with numerous singular points and horrible degenrate sections. Quartics however are much more interesting, there are tens of thousands of different distinct quartics but there are a few of particular interest like, the torus, chumtov surface, cylindrical parabola or the varying trench surfaces. Quartic surface equations are generally several times more complex that quadratics when it comes to expanding the raytracing equation and making mistakes is pretty easy. I won't bother expanding these fully since they are quite long but here is an example:<br />
+        <br />
+        Torus:<br />
+        z^2 + (sqrt(x^2+y^2) - R)^2 = r^2<br />
+        x^4 + y^4 + z^4 + 2*(x^2*y^2 + x^2*z^2 + y^2*z^2) - 2*(R^2 + r^2)*(x^2 + y^2) + 2*(R^2 - r^2)*(1 + z^2) = 0<br />
+        <br />
+        // unsimplified and probably wrong raytracing equation coefficients<br />
+        qa0 = sqr(sqr(x1)) + sqr(sqr(y1)) + sqr(sqr(z1)) + 2*(sqr(x1)*sqr(y1) + sqr(x1)*sqr(z1) + sqr(y1)*sqr(z1));<br />
+        qb0 = 4*sqr(x1)*x1*ox + 4*sqr(y1)*y1*oy + 4*sqr(z1)*z1*oz + 2*(sqr(x1)*2*y1*oy + 2*x1*ox*sqr(y1) + sqr(x1)*2*z1*oz + 2*x1*ox*sqr(z1) + sqr(y1)*2*z1*oz + 2*y1*oy*sqr(z1));<br />
+        qc0 = 6*sqr(x1)*sqr(ox) + 6*sqr(y1)*sqr(oy) + 6*sqr(z1)*sqr(oz) + 2*(sqr(x1)*sqr(oy) + 4*x1*ox*y1*oy + sqr(ox)*sqr(y1) + sqr(x1)*sqr(oz) + sqr(ox)*sqr(z1) + 4*x1*ox*z1*oz + sqr(y1)*sqr(oz) + sqr(oy)*sqr(z1) + 4*y1*oy*z1*oz) - 2*(sqr(R)+sqr(r))*(sqr(x1)+sqr(y1)) + 4*(sqr(R)-sqr(r))*sqr(z1);<br />
+        qd0 = 4*x1*sqr(ox)*ox + 4*y1*sqr(oy)*oy + 4*z1*sqr(oz)*oz + 2*(2*x1*ox*sqr(oy) + sqr(ox)*2*oy*y1 + 2*x1*ox*sqr(oz) + sqr(oy)*2*oz*z1 + 2*y1*oy*sqr(oz) + sqr(oy)*2*oz*z1) - 4*(sqr(R)+sqr(r))*(x1*ox+y1*oy) + 4*(sqr(R)-sqr(r))*oz*z1;<br />
+        qe0 = sqr(sqr(ox)) + sqr(sqr(oy)) + sqr(sqr(oz)) + 2*(sqr(ox)*sqr(oy) + sqr(ox)*sqr(oz) + sqr(oy)*sqr(oz)) - 2*(sqr(R)+sqr(r))*(sqr(ox)+sqr(oy)) + 2*(sqr(R)-sqr(r))*(1+sqr(oz));<br />
+        <br />
+        A quartic is used in VJ Chmutov, but it is solved with whittaker iterations, you could use the quartic solver in place of this. You just have to be careful about complex roots since they can cause little glitches to pop up in certain places.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+        <span class="date small text-muted">2nd May 2004 17:22 GMT</span></p>
+
+        <p class="post-content">pir, better put these equations into a .txt, zip it and attach it... this preserves tabulators and stuff in all browsers :)<br />
+        anyway: good work jheriko for working out the equations and pir for optimizing them :)<br />
+        so we'll get some more dynamic tori from now on *g*<br />
+        btw:<br />
+        ...2*(sqr(R)-sqr(r))*...<br />
+        you sure that's correct? :)</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">6th May 2004 06:33 GMT</span></p>
+
+        <p class="post-content">I just worked that out as I typed it, so there are probably tons of mistakes. I'm lazy like that.<br />
+        <br />
+        In theory it should be possible to make pretty much any imaginable DM geometry from quartics, cubics, quadrics and planes. Hopefully we will get a lot more than just dynamic torii in the future. The theory of working the DM has pretty much reached its limits I feel, so now we have to concentrate on producing some really creative geometry to generate unique visuals. The solver isn't perfect though, it falls apart when faced with some really awkward quartics with tiny complex components in the roots for instance. Some shapes can be handled perfectly though, I tried a cylindical parabola but there were seams where glitches would occur, however I also tried the Chmutov surface with perfect results.<br />
+        <br />
+        It might be a good idea to go through this code and fully optimise it specifically for raytracing so that it deals with complex roots in a better fashion. Perhaps even sorting the roots into a specific order, i.e. x0&gt;x1&gt;x2&gt;x3 .<br />
+        I might do this later... but I have things to do this morning.<br />
+        <br />
+        We should definately make some presets with this though, even though it is slower than a good whittaker it can handle some other problems a lot more easily, such as ZGM style surface combinations. I made a torus intersection with a cylinder using whittaker, it was pretty awkward to say the least, using this though you can use the standard methods rather than having to hack some ugly fix.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+        <span class="date small text-muted">6th May 2004 09:05 GMT</span></p>
+
+        <p class="post-content">your formula has definitely one big advantage over whittaker: you can do transparent parts with it!<br />
+        whittaker always zeros in on the part that is closest to your starting value. you'd have to do the iteration twice to get "through a wall" :)<br />
+        with your formula, one simply takes solution number 0 1 2 3 to get through walls :)</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">9th May 2004 02:08 GMT</span></p>
+
+        <p class="post-content">I need to add some more stuff to this to remove all of the errors. After some extensive testing it seems like a lot of the glitches occur from the raytrace parameter being small and positive from rounding errors from e=0 polynomials (which always have a root x=0) and a few other special cases such as squared quadratics which occasionally seem to cause problems. This solution is fairly complex mathematically and so it might take ages to make sure that it really solves every quartic.<br />
+        <br />
+        The problem with transparent objects is that to do any decent objects you end up with something really slow.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+        <span class="date small text-muted">9th May 2004 11:45 GMT</span></p>
+
+        <p class="post-content">the squared quadratics problem could be fixed by another check... if e!=0 and d=0 then it's a squared quartic, right?<br />
+        you can simply substitute x&#194;&#178;... you sure know this ;)</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">13th May 2004 01:46 GMT</span></p>
+
+        <p class="post-content">I know how to deal with these problems.. i just can't be bothered to do anything :P<br />
+        <br />
+        for it to all work properly what need to be done is:<br />
+        <br /></p>
+        <pre>
+<code><br />if a=0<br />  if b=0<br />    if c=0<br />      if d=0<br />        if e=0<br />          no roots<br />        endif<br />      else<br />        if e=0<br />          roots all zero<br />        else<br />          root is -e/d<br />        endif<br />      endif<br />    else<br />      if e=0<br />        if d=0<br />          roots all zero<br />        else<br />          one root is zero<br />          the other is -d/c<br />        endif<br />      else<br />        if d=0<br />          roots are +-sqrt(-e/c)<br />        else<br />          solve cx^2+dx+e=0<br />        endif<br />      endif<br />    endif<br />  else<br />    if e=0<br />      if d=0<br />        if c=0<br />          all roots zero<br />        else<br />          two roots are zero<br />          the other is -c/b<br />        endif<br />      else<br />        if c=0<br />          one root is zero<br />          the other two are +-sqrt(-d/b)<br />        else<br />          one root is zero<br />          solve bx^2+cx+d=0<br />        endif<br />      endif<br />    else<br />      if d=0<br />        if c=0<br />          roots are the cbrts of -e/b<br />        else<br />          solve bx^3+cx^2+e=0<br />        endif<br />      else<br />        if c=0<br />          solve bx^3+dx+e=0<br />        else<br />          solve bx^2+cx^2+dx+e=0<br />        endif<br />      endif<br />    endif<br />  endif<br />else<br />  if e=0 <br />    if d=0<br />      if c=0<br />        if b=0<br />          all roots are zero<br />        else<br />          three roots are zero<br />          other is -b/a<br />        endif<br />      else<br />        if b=0<br />          two roots are zero<br />          others are +/-sqrt(-c/a)<br />        else<br />          two roots are zero<br />          solve ax^2+bx+c=0<br />        endif<br />      endif<br />    else<br />      if c=0<br />        if b=0<br />          one root is zero<br />          others are cbrts of -d/a<br />        else<br />          solve ax^3+bx^2+d=0<br />        endif<br />      else<br />        if b=0<br />          one root is zero<br />          others are solutions to ax^3+cx+d=0<br />        else<br />          one root is zero<br />          others are solutions to ax^3+bx^2+cx+d=0<br />        endif<br />      endif    <br />    endif<br />  else<br />    if d=0<br />      if c=0<br />        if b=0<br />          roots are the 4rts of -e/a<br />        else<br />          solve ax^4+bx^3+e=0<br />        endif<br />      else<br />        if b=0<br />          solve ax^2+cx+e=0<br />        else<br />          two roots are zero<br />          solve ax^4+bx^3+cx^2+e=0<br />        endif<br />      endif<br />    else<br />      if c=0<br />        if b=0<br />          solve ax^4+dx+e=0<br />        else<br />          solve ax^4+bx^3+dx+e=0<br />        endif<br />      else<br />        if b=0<br />          solve ax^4+cx^2+dx+e=0<br />        else<br />          solve ax^4+bx^3+cx^2+dx+e=0<br />        endif<br />      endif    <br />    endif<br />  endif<br />endif      <br /></code>
+</pre><br />
+        <br />
+        i might just rework it from scratch since there are little tricks for solving some cases like:<br />
+        <br />
+        bx^3+dx+e=0, ax^4+cx^2+dx+e=0, ax^4+dx+e=0
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">AvsManDan</span><br />
+        <span class="date small text-muted">5th June 2004 21:25 GMT</span></p>
+
+        <p class="post-content">Very cool! I know what it does but too complicated for me right now. Endless summer days should get me to make something cool to show.<br />
+        <br />
+        If anyone is discuraged or angry because of the solvers speed, deleteall of the Render/Text. You will be happy.:)</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+        <span class="date small text-muted">7th June 2004 03:24 GMT</span></p>
+
+        <p class="post-content">Every time you revive a dead thread with a meaningless and irrelevant post, God kills a kitten.<br />
+        <br />
+        Please, shut up for the kittens.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">26th June 2004 15:15 GMT</span></p>
+
+        <p class="post-content">Maybe this thread can be locked and placed in the FAQ? Its pretty useful, people != me might actually want to use this code at some point.<br />
+        <br />
+        And 'lol' at god killing kittens. :)</p>
+      </div>
+      <hr />
+
+      <div class="footer">
+        <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+      </div>
+    </div><!-- Put JavaScript here -->
+  </div>
 </body>
 </html>

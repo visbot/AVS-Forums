@@ -1,347 +1,194 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" difficulty with keyboard/mouse input AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="difficulty with keyboard/mouse input AVS" />
 
-	<title> difficulty with keyboard/mouse input - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>difficulty with keyboard/mouse input - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">difficulty with keyboard/mouse input</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=165159">difficulty with keyboard/mouse input</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">16th January 2004 17:15 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">difficulty with keyboard/mouse input</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=165159">difficulty with keyboard/mouse input</a></p>
+      <p class="post-content"><strong>difficulty with keyboard/mouse input</strong><br />
+      I'm working on a preset called AvsCAD and I want to be able to set the linewidth from 1 to 2 .. to 5 and back to 1. This is not a problem, it's just that if you hold the key for multiple frames, the counter keeps adding on. I thought I had a solution, but it doesn't seem to work.<br />
+      <br />
+      Could anyone tell me what I'm doing wrong?<br />
+      I've attached a tryout instead of the preset itself to prevent people from making remixes before final release.<br />
+      <br />
+      Edit: general idea of what it does:<br /></p>
+      <pre>
+<code><br /><br />qpulse=<br /> if qold=qnew<br />    then<br />        0<br />    else<br />        if qold=0<br />           then<br />               1<br />           else<br />               0<br /> <br /><br />--So:-----<br /><br />keyold|keynew|goal<br />------|------|----<br />     0|0    =|0   <br />     0|1    =|1   <br />     1|0    =|0   <br />     1|1    =|0   <br /><br /></code>
+</pre>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">16th January 2004 18:23 GMT</span></p>
 
-<br />
+      <p class="post-content">Well, I've attached the fixed file. It seems to work now. If you would add a counter such as reg01=reg01+reg27; then you would see that it is really working. Coz' on high FPS you wont able to see the 0 changing to 1, of course, I slowed my FPS to minimum and tested. The first line of text really changes from 0 to 1 and then quickly back to 0</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">16th January 2004 17:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>difficulty with keyboard/mouse input</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">16th January 2004 19:01 GMT</span></p>
 
-		I'm working on a preset called AvsCAD and I want to be able to set the linewidth from 1 to 2 .. to 5 and back to 1. This is not a problem, it's just that if you hold the key for multiple frames, the counter keeps adding on. I thought I had a solution, but it doesn't seem to work.<br />
-<br />
-Could anyone tell me what I'm doing wrong?<br />
-I've attached a tryout instead of the preset itself to prevent people from making remixes before final release.<br />
-<br />
-Edit: general idea of what it does:<br />
-<pre><code><br />
-<br />
-qpulse=<br />
- if qold=qnew<br />
-    then<br />
-        0<br />
-    else<br />
-        if qold=0<br />
-           then<br />
-               1<br />
-           else<br />
-               0<br />
- <br />
-<br />
---So:-----<br />
-<br />
-keyold|keynew|goal<br />
-------|------|----<br />
-     0|0    =|0   <br />
-     0|1    =|1   <br />
-     1|0    =|0   <br />
-     1|1    =|0   <br />
-<br />
-</code></pre>
-		</p>
-</div>
+      <p class="post-content">Thanks a lot for fixing that. I had been staring at it 'til I didn't understand my own code anymore :igor:</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">16th January 2004 20:06 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">16th January 2004 18:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+      <p class="post-content">No problem. Keep up the work. Do you have any AVS packs, I would like to see some?</p>
+    </div>
+    <hr />
 
-		Well, I've attached the fixed file. It seems to work now. If you would add a counter such as reg01=reg01+reg27; then you would see that it is really working. Coz' on high FPS you wont able to see the 0 changing to 1, of course, I slowed my FPS to minimum and tested. The first line of text really changes from 0 to 1 and then quickly back to 0
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">16th January 2004 23:03 GMT</span></p>
 
-	<hr />
+      <p class="post-content">You can check out my website, but all that is at least 1.5 years old (EyeCandy minipack being the newest, (don't bother looking at the so called 'new' presets on the site))<br />
+      <br />
+      I've been neglecting my packs since to do tests and master SSC's.<br />
+      <br />
+      But a few days ago I decided to start with my second pack, and here's an underway preview of the preset I needed your help for. It leakes out my new nickname and it will be in my new pack (if I get it all done).<br />
+      <br />
+      (wow, I've been working on this all night from 18:30 to now, 00:05) :eek:</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">16th January 2004 19:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">piR</span><br />
+      <span class="date small text-muted">17th January 2004 00:47 GMT</span></p>
 
-		Thanks a lot for fixing that. I had been staring at it 'til I didn't understand my own code anymore :igor:
-		</p>
-</div>
+      <p class="post-content">You can have also a more concise code replacing:<br />
+      <br />
+      qpulse=if(equal(qold,qnew),0,if(equal(qold,0),1,0));<br />
+      <br />
+      by:<br />
+      <br />
+      qpulse=qnew*bnot(qold)<br />
+      <br />
+      It may be also faster ...</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">17th January 2004 20:09 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">16th January 2004 20:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">@piR:<br />
+      Thanks, I'll use that.<br />
+      <br />
+      Just wondering: What are the opinions on this kind of presets (and this one in special :) ), do you like it or is it too far off from 'music visualization'?</p>
+    </div>
+    <hr />
 
-		No problem. Keep up the work. Do you have any AVS packs, I would like to see some?
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Shock Value</span><br />
+      <span class="date small text-muted">18th January 2004 05:42 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Well personally I think these kinds of presets are great if you can do something origional. You're off to a great start with this preset, but keep adding features to make it more interesting. Right now I'm working on an architectual design preset where you can design your own buildings floor-by-floor, for example.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">16th January 2004 23:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">18th January 2004 11:57 GMT</span></p>
 
-		You can check out my website, but all that is at least 1.5 years old (EyeCandy minipack being the newest, (don't bother looking at the so called 'new' presets on the site))<br />
-<br />
-I've been neglecting my packs since to do tests and master SSC's.<br />
-<br />
-But a few days ago I decided to start with my second pack, and here's an underway preview of the preset I needed your help for. It leakes out my new nickname and it will be in my new pack (if I get it all done).<br />
-<br />
-(wow, I've been working on this all night from 18:30 to now, 00:05) :eek:
-		</p>
-</div>
+      <p class="post-content">I don't see the point in releasing this as part of a preset-pack with visualisations.<br />
+      <br />
+      I'll take fsk's digital artist preset over this any time.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">19th January 2004 10:55 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">17th January 2004 00:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">As the comment says, there'll be at least a line option and there is a bonus in already... try to find it ;)</p>
+    </div>
+    <hr />
 
-		You can have also a more concise code replacing:<br />
-<br />
-  qpulse=if(equal(qold,qnew),0,if(equal(qold,0),1,0));<br />
-<br />
-by:<br />
-<br />
-  qpulse=qnew*bnot(qold)<br />
-<br />
-It may be also faster ...
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">19th January 2004 11:31 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Found It. It is a rect-coords disabled movement. Enable rect coords to get paintbrush effect. Got any cookies for finding that?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">17th January 2004 20:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">19th January 2004 14:12 GMT</span></p>
 
-		@piR:<br />
-Thanks, I'll use that.<br />
-<br />
-Just wondering: What are the opinions on this kind of presets (and this one in special :) ), do you like it or is it too far off from 'music visualization'?
-		</p>
-</div>
+      <p class="post-content">nope, as I said, it's a bonus for now - In the fianl version, it'll probably be just an option</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">19th January 2004 16:33 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Shock Value</span><br />
-			<span class="date small text-muted">18th January 2004 05:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You'll have to find a way to combine both paintbrush and normal modes. Then you can do cool drawings.</p>
+    </div>
+    <hr />
 
-		Well personally I think these kinds of presets are great if you can do something origional. You're off to a great start with this preset, but keep adding features to make it more interesting. Right now I'm working on an architectual design preset where you can design your own buildings floor-by-floor, for example.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">19th January 2004 20:32 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Hey how did you read my mind? I'm working on the MSPaint simulator right now :P</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">18th January 2004 11:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">19th January 2004 21:53 GMT</span></p>
 
-		I don't see the point in releasing this as part of a preset-pack with visualisations.<br />
-<br />
-I'll take fsk's digital artist preset over this any time.
-		</p>
-</div>
+      <p class="post-content">Please leave out the MS-part - unless you want to include the systemcrashes of course ;)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">fragmer</span><br />
+      <span class="date small text-muted">20th January 2004 03:48 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">19th January 2004 10:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Oh wait! I have an idea! AVS-OS!<br />
+      Complete shell emulator done in AVS :)<br />
+      Noone touch this idea! I'm making it already :F</p>
+    </div>
+    <hr />
 
-		As the comment says, there'll be at least a line option and there is a bonus in already... try to find it ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">19th January 2004 11:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Found It. It is a rect-coords disabled movement. Enable rect coords to get paintbrush effect. Got any cookies for finding that?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">19th January 2004 14:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		nope, as I said, it's a bonus for now - In the fianl version, it'll probably be just an option
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">19th January 2004 16:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		You'll have to find a way to combine both paintbrush and normal modes. Then you can do cool drawings.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">19th January 2004 20:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hey how did you read my mind? I'm working on the MSPaint simulator right now :P
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">19th January 2004 21:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Please leave out the MS-part - unless you want to include the systemcrashes of course ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">fragmer</span><br />
-			<span class="date small text-muted">20th January 2004 03:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Oh wait! I have an idea! AVS-OS!<br />
-Complete shell emulator done in AVS :)<br />
-Noone touch this idea! I'm making it already :F
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

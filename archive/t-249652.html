@@ -1,151 +1,95 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" [APE development] SMP question AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[APE development] SMP question AVS" />
 
-	<title> [APE development] SMP question - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>[APE development] SMP question - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">[APE development] SMP question</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=249652">[APE development] SMP question</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">25th June 2006 23:46 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">[APE development] SMP question</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=249652">[APE development] SMP question</a></p>
+      <p class="post-content"><strong>[APE development] SMP question</strong><br />
+      did anyone ever try to make an APE that uses AVS's "Experimental multiprocessor support"?<br />
+      i tried and did everything as described in avs_ape.h<br />
+      the new RetrFunc gets called fine, but AVS still calls the render() method instead of smp_begin()/smp_render()/smp_finish()<br />
+      <br />
+      i already looked at avs's source for help... it <i>seems</i> to call everything fine and the way i expect it, but it still does not work<br />
+      <br />
+      any insight? :)</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nanakiwurkz</span><br />
+      <span class="date small text-muted">28th June 2006 21:55 GMT</span></p>
 
-<br />
+      <p class="post-content">yeah i have one for you man. don't compile using a gnu based compilation program. and one question for you is . what is the compiler you use, i must know i'm going nuts here.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">25th June 2006 23:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>[APE development] SMP question</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">29th June 2006 10:15 GMT</span></p>
 
-		did anyone ever try to make an APE that uses AVS's &quot;Experimental multiprocessor support&quot;?<br />
-i tried and did everything as described in avs_ape.h<br />
-the new RetrFunc gets called fine, but AVS still calls the render() method instead of smp_begin()/smp_render()/smp_finish()<br />
-<br />
-i already looked at avs's source for help... it <i>seems</i> to call everything fine and the way i expect it, but it still does not work<br />
-<br />
-any insight? :)
-		</p>
-</div>
+      <p class="post-content">Nanakiwurkz: Save yourself a major headache by using Visual C++ 6</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">30th June 2006 03:46 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nanakiwurkz</span><br />
-			<span class="date small text-muted">28th June 2006 21:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">VC7 works fine too<br />
+      there is just one problem with that: vc6 cant open vc7 projects, so you might wanna keep the old vc6 project file for compatibility<br />
+      <br />
+      btw, off-topic...</p>
+    </div>
+    <hr />
 
-		yeah i have one for you man. don't compile using a gnu based compilation program. and one question for you is . what is the compiler you use, i must know i'm going nuts here.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">30th June 2006 10:36 GMT</span></p>
 
-	<hr />
+      <p class="post-content">iirc the debugging doesnt work with 7</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">29th June 2006 10:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">7th July 2006 17:03 GMT</span></p>
 
-		Nanakiwurkz: Save yourself a major headache by using Visual C++ 6
-		</p>
-</div>
+      <p class="post-content">debugging APEs works fine with vc7, just one thing:<br />
+      you cant debug vc6 APEs with vc7 and vice versa</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">30th June 2006 03:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		VC7 works fine too<br />
-there is just one problem with that: vc6 cant open vc7 projects, so you might wanna keep the old vc6 project file for compatibility<br />
-<br />
-btw, off-topic...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">30th June 2006 10:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		iirc the debugging doesnt work with 7
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">7th July 2006 17:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		debugging APEs works fine with vc7, just one thing:<br />
-you cant debug vc6 APEs with vc7 and vice versa
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

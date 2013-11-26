@@ -1,190 +1,139 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Duration of effects? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Duration of effects? AVS" />
 
-	<title> Duration of effects? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Duration of effects? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Duration of effects?</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=86840">Duration of effects?</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">thirtyone</span><br />
+      <span class="date small text-muted">6th May 2002 05:47 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Duration of effects?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=86840">Duration of effects?</a></p>
+      <p class="post-content"><strong>Duration of effects?</strong><br />
+      Hi everyone... I just starting making presets today, and I have a question. Is it possible to make an effect only last for a certion amount of time? Like let's say everything is going along and just for a little while I want the interleave to come in, and then everthing goes back to normal for a while. Can I do that? :weird:</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">6th May 2002 06:18 GMT</span></p>
 
-<br />
+      <p class="post-content">Here's a possible setup:<br />
+      <br />
+      + Effectlist: Input-Replace, Output-Ignore<br />
+      - Interleave<br />
+      - Buffer Save -&gt; Save to Buffer 1<br />
+      (outside effect list):<br />
+      Dynamic movement: gridsize 1x1, check 'no movement (blend only)', specify Buffer 1 as source, and then write code that gives the variable 'alpha' a value between 0 and 1.<br />
+      <br />
+      What happens is that AVS will make a copy of the current image before the preset, move into the effect list, apply the Interleave, and store the result in Buffer 1. Then, the dynamic movement (which we'll only be using as a dynamic blend) will blend between the normal image and the one in buffer 1. Alpha will specify how much buffer 1 is blended onto the original.<br />
+      <br />
+      You'll need to learn how to write AVS code though. If you've done any kind of programming, it should be easy, and even without that, it shouldn't be too hard. Good knowledge of maths is a plus, because that's the basis for all the effects.<br />
+      <br />
+      Here's an example piece of code for the blend (just paste these pieces of code in the appropriate box):<br />
+      <br />
+      Init:<br /></p>
+      <pre>
+<code>bv=0; bt=0;</code>
+</pre><br />
+      Frame:<br />
+      <pre>
+<code>bv=bv * 0.9 + bt * 0.1;</code>
+</pre><br />
+      OnBeat:<br />
+      <pre>
+<code>bt=1 - bt;</code>
+</pre><br />
+      Point:<br />
+      <pre>
+<code>alpha=bv</code>
+</pre><br />
+      <br />
+      This'll probably look weird at first. First, we set the custom variables (i.e. AVS doesn't assign any meaning to them) bv and bt, blend-value and blend-target, both to zero.<br />
+      For every point, we use bv's value and use it as alpha-value.<br />
+      Every beat, bt is given the value (1 - bt) instead. So if bt starts out zero, that means it'll alternate between one and zero every beat.<br />
+      Now, every frame, we apply the formula above. This means that we assign 'bv' 90% of the original value, and 10% of the bt value. That's just a nice way of doing a transition from one value to a target value. So, every beat, the target value bt changes, and bv will change slowly to adjust, giving you a nice blend from non-interleaved to interleaved.<br />
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">thirtyone</span><br />
-			<span class="date small text-muted">6th May 2002 05:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Duration of effects?</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">thirtyone</span><br />
+      <span class="date small text-muted">6th May 2002 07:00 GMT</span></p>
 
-		Hi everyone... I just starting making presets today, and I have a question. Is it possible to make an effect only last for a certion amount of time? Like let's say everything is going along and just for a little while I want the interleave to come in, and then everthing goes back to normal for a while. Can I do that? :weird:
-		</p>
-</div>
+      <p class="post-content">:eek:<br />
+      <br />
+      you just flew over my head, maybe if i go through it one step at a time i'll get there. :confused:</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">6th May 2002 07:51 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">6th May 2002 06:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You can alternate between two affects like I did here...it comes with an explanation of where to put the effects and how it works.</p>
+    </div>
+    <hr />
 
-		Here's a possible setup:<br />
-<br />
-+ Effectlist: Input-Replace, Output-Ignore<br />
-  - Interleave<br />
-  - Buffer Save -&gt; Save to Buffer 1<br />
-(outside effect list):<br />
-Dynamic movement: gridsize 1x1, check 'no movement (blend only)', specify Buffer 1 as source, and then write code that gives the variable 'alpha' a value between 0 and 1.<br />
-<br />
-What happens is that AVS will make a copy of the current image before the preset, move into the effect list, apply the Interleave, and store the result in Buffer 1. Then, the dynamic movement (which we'll only be using as a dynamic blend) will blend between the normal image and the one in buffer 1. Alpha will specify how much buffer 1 is blended onto the original.<br />
-<br />
-You'll need to learn how to write AVS code though. If you've done any kind of programming, it should be easy, and even without that, it shouldn't be too hard. Good knowledge of maths is a plus, because that's the basis for all the effects.<br />
-<br />
-Here's an example piece of code for the blend (just paste these pieces of code in the appropriate box):<br />
-<br />
-Init:<br />
-<pre><code>bv=0; bt=0;</code></pre><br />
-Frame:<br />
-<pre><code>bv=bv * 0.9 + bt * 0.1;</code></pre><br />
-OnBeat:<br />
-<pre><code>bt=1 - bt;</code></pre><br />
-Point:<br />
-<pre><code>alpha=bv</code></pre><br />
-<br />
-This'll probably look weird at first. First, we set the custom variables (i.e. AVS doesn't assign any meaning to them) bv and bt, blend-value and blend-target, both to zero.<br />
-For every point, we use bv's value and use it as alpha-value.<br />
-Every beat, bt is given the value (1 - bt) instead. So if bt starts out zero, that means it'll alternate between one and zero every beat.<br />
-Now, every frame, we apply the formula above. This means that we assign 'bv' 90% of the original value, and 10% of the bt value. That's just a nice way of doing a transition from one value to a target value. So, every beat, the target value bt changes, and bv will change slowly to adjust, giving you a nice blend from non-interleaved to interleaved.<br />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">8th May 2002 09:57 GMT</span></p>
 
-		</p>
-</div>
+      <p class="post-content">On beat active effectlists together with custom BPM does effects on beat for a certain amount of frames:<br />
+      <br />
+      ...main<br />
+      ...-some permanent stuff<br />
+      ...+effectlist<br />
+      .....-custom bpm ( i.e. skip 3 frames )<br />
+      .....+effectlist active x frames<br />
+      .......-your effects<br />
+      ...+effectlist<br />
+      .....-custom bpm (i.e skip 7 frames)<br />
+      .....+effectlist active y frames<br />
+      .......-your effects<br />
+      <br />
+      experiment with this also together with unconeds setup so you should get the desired results.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">8th May 2002 10:54 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">thirtyone</span><br />
-			<span class="date small text-muted">6th May 2002 07:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Well I know this will all look very complicated, but you'll get the hang of it sooner or later. Here's a better explanation of some of the components:<br />
+      <br />
+      - Effect List: this is essentially a preset-inside-a-preset. You can set it to receive the input image from outside the effect list, and it can output its result as well.<br />
+      <br />
+      - Dynamic Movement: this is a cool effect that allows you to move the image around according to an ever-changing formula. Now because evaluating an expression for every single pixel on the screen is waaay to slow, AVS uses only a grid of points. Then, it uses interpolation to find the position of the points in between the grid.<br />
+      However, a dynamic movement also allows you to specify the transparency of every grid point, and if you check the "no movement" box, you specifically specify that you only want to use it as a "dynamic blender", without any movement. I use a 1x1 grid size (i.E. no grid) to use it to blend between the non-interleaved and interleaved version.</p>
+    </div>
+    <hr />
 
-		:eek: <br />
-<br />
-you just flew over my head, maybe if i go through it one step at a time i'll get there. :confused:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">6th May 2002 07:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		You can alternate between two affects like I did here...it comes with an explanation of where to put the effects and how it works.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">8th May 2002 09:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		On beat active effectlists together with custom BPM does effects on beat for a certain amount of frames:<br />
-<br />
-...main<br />
-...-some permanent stuff<br />
-...+effectlist<br />
-.....-custom bpm ( i.e. skip 3 frames )<br />
-.....+effectlist active x frames<br />
-.......-your effects<br />
-...+effectlist<br />
-.....-custom bpm (i.e skip 7 frames)<br />
-.....+effectlist active y frames<br />
-.......-your effects<br />
-<br />
-experiment with this also together with unconeds setup so you should get the desired results.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">8th May 2002 10:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well I know this will all look very complicated, but you'll get the hang of it sooner or later. Here's a better explanation of some of the components:<br />
-<br />
-- Effect List: this is essentially a preset-inside-a-preset. You can set it to receive the input image from outside the effect list, and it can output its result as well.<br />
-<br />
-- Dynamic Movement: this is a cool effect that allows you to move the image around according to an ever-changing formula. Now because evaluating an expression for every single pixel on the screen is waaay to slow, AVS uses only a grid of points. Then, it uses interpolation to find the position of the points in between the grid.<br />
-However, a dynamic movement also allows you to specify the transparency of every grid point, and if you check the &quot;no movement&quot; box, you specifically specify that you only want to use it as a &quot;dynamic blender&quot;, without any movement. I use a 1x1 grid size (i.E. no grid) to use it to blend between the non-interleaved and interleaved version.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

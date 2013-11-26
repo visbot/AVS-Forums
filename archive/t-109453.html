@@ -1,533 +1,337 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Z axis? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Z axis? AVS" />
 
-	<title> Z axis? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Z axis? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Z axis?</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=109453">Z axis?</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">12th October 2002 01:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Z axis?</strong><br />
-		
-		
-
-		Can anyone explain to me what the variable for it is like z = ??<br />
-<br />
-I know its user defined but I dont know what it is or how to use it. So can anyone help me out her
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">12th October 2002 06:13 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Usually z is used for the z axis. It just makes sence. :p<br />
-<br />
-It's used to make things shrink or grow depending on how close they are to the viewing plane.<br />
-<br />
-Because it's a user defined variable you have to reset it for each point.<br />
-<br />
-Help any?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">12th October 2002 06:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yes, But whats the variable?<br />
-ex<br />
---<br />
-&quot;t=t+.05&quot;;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">12th October 2002 08:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It's anything you want it to be.  The z-axis thing is used like this:<br />
-x1=...;<br />
-y1=...;<br />
-z1=...;<br />
-z=z1+dst;<br />
-x=x1/z;<br />
-y=y1/z;<br />
-<br />
-That'll give you the proper projection for most any shape you want to do (unless it diverges).  dst is the distance from the center to the point farthest away from the center.  For example, in a cube the farthest point is going to be &lt;1,1,1&gt; (the corner where x=1, y=1, and z=1).  So the distance is sqrt(1^2+1^2+1^2)=sqrt(1+1+1)=sqrt(3).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">12th October 2002 08:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=108222" target="_blank">http://forums.winamp.com/showthread....hreadid=108222</a><br />
-<br />
-there is a huge description of defining z and rotating in 3d
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">12th October 2002 10:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		z is not a preassigned variable like x and y,<br />
-and just for clearing, t is also not a preassigned variable
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">12th October 2002 15:27 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Montana </i><br />
-<b>z is not a preassigned variable like x and y,<br />
-and just for clearing, t is also not a preassigned variable </b>
-			
-			<hr />
-			</p>
-</div>
-
-	<hr />
-
-
-I  never said they were.
-	</td>
-</tr>
-</table>
-<br /><div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">12th October 2002 20:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm sure there's stff in the FAQ that'll help too.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">12th October 2002 23:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	Quote:
-	<table cellpadding="6" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td class="alt2">
-			<hr />
-			
-				<i>Originally posted by idiot24-7 </i><br />
-<b>I  never said they were.</b></blockquote>
-You made it sound very much like they were. <br />
-<br />
-
-	<blockquote>
-			
-				<i>Originally posted by idiot24-7 </i><br />
-<b>I know its user defined but I dont know what it is or how to use it. So can anyone help me out her</b></blockquote>
-How can you not know how to use a user defined variable or what it is? The whole point of a user defined variable is that you decide how to use it and you decide what it is and what it does. (Sorry I couldn't find a way to say that without it sounding a bit harsh...) That makes it sound like you think they are predefined to some extent, otherwise your question makes no sense.<br />
-<br />
-I assume that you understand that t=t+0.05; just increases t by 0.05 every frame (if it is in the frame box). With z, you just have to define it for all of the points, either by making it the same across the frame or by setting it to be different for each point by using 'i' in someway or by using a different method. <br />
-<br />
-Don't forget that you can define (almost) any number of variables and do practically whatever you want with them.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">13th October 2002 01:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		A user-defined variable that is nevertheless consistently used across presets from different authors (like 'z') means that it's used in a well known technique. Read about it by simply searching the web (Google is your friend).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">13th October 2002 05:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Once again I make some usless post :)<br />
-<br />
-Although I was wondering, Does Z change the same for Dynamic Movments By that I mean do I have to define it for certain movements?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">13th October 2002 07:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		It's a user defined variable. You always have to define it if you're going to use it. If not, don't bother.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">13th October 2002 07:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok let me rephrase this again.<br />
-<br />
-Say Im going to use it, What would I use to make a simple 3D dynamic movment.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">13th October 2002 13:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		idiot: you're completely asking the wrong question. It's not about the variable 'z', it's about understanding 3D projection techniques. If you don't know how to do that, using 'z' won't help you one bit.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">14th October 2002 01:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Idiot, you have already been shown how to make a simple 3D DM in this thread.<br />
-<br />
-As well as that I think that you are trying to apply too much milkdrop logic to AVS. You have to learn it from scratch.. they are very different things and you can't transfer very much from one to the other.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">14th October 2002 02:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				A user-defined variable that is nevertheless consistently used across presets from different authors (like 'z') means that it's used in a well known technique. Read about it by simply searching the web (Google is your friend).
-			
-			<hr />
-			</p>
-</div>
-
-	<hr />
-
-
-no,no<br />
-<br />
-Google is your <b>god!</b><br />
-<br />
-<br />
-<br />
-<br />
-(wow, i am such a corporate whore)(but you really <i>do</i> have to respect google for their innovation and ability to make everyone <i>want</i> to only use their system)
-	</td>
-</tr>
-</table>
-<br /><div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zylot</span><br />
-			<span class="date small text-muted">14th October 2002 19:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ok, idiot, I'll try to put it into Milkdrop terms for you:<br />
-<br />
-z variables, usually more then 1, are simply placeholders for values later put into large equations to generate 3d movements...  such as shrinking the wave when it gets &quot;further away&quot; (it just gets smaller).<br />
-<br />
-No one can five you the equations cause they'll always be different.. if you want the conversion equations.. well.. you have them already as you sent them to me.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th October 2002 20:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hmm funny, it seems everyone is being extremely offensive here..<br />
-<br />
-&quot;Look you IDIOT...!&quot;<br />
-<br />
-:)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">14th October 2002 21:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	Quote:
-	<table cellpadding="6" cellspacing="0" border="0" width="100%">
-	<tr>
-		<td class="alt2">
-			<hr />
-			
-				<i>Originally posted by UnConeD </i><br />
-<b>&quot;Look you IDIOT...!&quot;:) </b></blockquote>
-the guy chose his nick and now he faces the conseqences, but he can always change, if he want to, to change your nick, then just pm sawg and tell him that you wanna change your nick to (whatever you want), just make sure that the nick is not taken, if not then consider it almost done
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">14th October 2002 21:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I dont wanna change my nick :) Its my callsign (or what most people I know in real life call me) well they call me idiot or a idiot or you dumba$$ mother ****ing idiot or somthing along those lines.<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-[quote]<i>Originally typoed by Zylot</i>No one can five you the equations cause they'll always be different.[quote]<br />
-<br />
-Took me a second to realize that was a typo, I though it was one of those geek terms your always using :D :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zylot</span><br />
-			<span class="date small text-muted">15th October 2002 00:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nothing wrong with being a little L337 now and then, but yeah, that was a typo
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ryan</span><br />
-			<span class="date small text-muted">15th October 2002 02:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		N080Dy 15 L33t3r +H4n mE
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">15th October 2002 04:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		<font face="courier new">3y3 u5u411y u53 4 +r4n5|_4+0r, 8|_|T |\/|1|\|3 ])13]) 4|\|]) 3y3'm +00 |_4zy +00 ]=1|\|]) 4 |\|3\/\/ 1.</font>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">15th October 2002 08:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		}|-|3|^!|&lt;0 == |_337/\/355<br />
-<br />
-0\/\//\/7
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">15th October 2002 09:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		oh knock it off, that takes several minutes to write and several minutes to translate, especially when everyone has his/her own version of the teh 1337 5p34k
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Z axis?</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=109453">Z axis?</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">ryan</span><br />
+      <span class="date small text-muted">12th October 2002 01:45 GMT</span></p>
+
+      <p class="post-content"><strong>Z axis?</strong><br />
+      Can anyone explain to me what the variable for it is like z = ??<br />
+      <br />
+      I know its user defined but I dont know what it is or how to use it. So can anyone help me out her</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">12th October 2002 06:13 GMT</span></p>
+
+      <p class="post-content">Usually z is used for the z axis. It just makes sence. :p<br />
+      <br />
+      It's used to make things shrink or grow depending on how close they are to the viewing plane.<br />
+      <br />
+      Because it's a user defined variable you have to reset it for each point.<br />
+      <br />
+      Help any?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">ryan</span><br />
+      <span class="date small text-muted">12th October 2002 06:16 GMT</span></p>
+
+      <p class="post-content">Yes, But whats the variable?<br />
+      ex<br />
+      --<br />
+      "t=t+.05";</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">12th October 2002 08:21 GMT</span></p>
+
+      <p class="post-content">It's anything you want it to be. The z-axis thing is used like this:<br />
+      x1=...;<br />
+      y1=...;<br />
+      z1=...;<br />
+      z=z1+dst;<br />
+      x=x1/z;<br />
+      y=y1/z;<br />
+      <br />
+      That'll give you the proper projection for most any shape you want to do (unless it diverges). dst is the distance from the center to the point farthest away from the center. For example, in a cube the farthest point is going to be &lt;1,1,1&gt; (the corner where x=1, y=1, and z=1). So the distance is sqrt(1^2+1^2+1^2)=sqrt(1+1+1)=sqrt(3).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">12th October 2002 08:22 GMT</span></p>
+
+      <p class="post-content"><a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=108222" target="_blank">http://forums.winamp.com/showthread....hreadid=108222</a><br />
+      <br />
+      there is a huge description of defining z and rotating in 3d</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">12th October 2002 10:22 GMT</span></p>
+
+      <p class="post-content">z is not a preassigned variable like x and y,<br />
+      and just for clearing, t is also not a preassigned variable</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">ryan</span><br />
+      <span class="date small text-muted">12th October 2002 15:27 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Montana</i><br />
+        <b>z is not a preassigned variable like x and y,<br />
+        and just for clearing, t is also not a preassigned variable</b>
+        <hr />
+      </blockquote>
+    </div>
+    <hr />
+    I never said they were.<br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">12th October 2002 20:23 GMT</span></p>
+
+      <p class="post-content">I'm sure there's stff in the FAQ that'll help too.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">12th October 2002 23:01 GMT</span></p>
+
+      <p class="post-content">Quote:</p>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+        <span class="date small text-muted">13th October 2002 01:58 GMT</span></p>
+
+        <p class="post-content">A user-defined variable that is nevertheless consistently used across presets from different authors (like 'z') means that it's used in a well known technique. Read about it by simply searching the web (Google is your friend).</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">ryan</span><br />
+        <span class="date small text-muted">13th October 2002 05:10 GMT</span></p>
+
+        <p class="post-content">Once again I make some usless post :)<br />
+        <br />
+        Although I was wondering, Does Z change the same for Dynamic Movments By that I mean do I have to define it for certain movements?</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+        <span class="date small text-muted">13th October 2002 07:15 GMT</span></p>
+
+        <p class="post-content">It's a user defined variable. You always have to define it if you're going to use it. If not, don't bother.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">ryan</span><br />
+        <span class="date small text-muted">13th October 2002 07:38 GMT</span></p>
+
+        <p class="post-content">Ok let me rephrase this again.<br />
+        <br />
+        Say Im going to use it, What would I use to make a simple 3D dynamic movment.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+        <span class="date small text-muted">13th October 2002 13:12 GMT</span></p>
+
+        <p class="post-content">idiot: you're completely asking the wrong question. It's not about the variable 'z', it's about understanding 3D projection techniques. If you don't know how to do that, using 'z' won't help you one bit.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+        <span class="date small text-muted">14th October 2002 01:56 GMT</span></p>
+
+        <p class="post-content">Idiot, you have already been shown how to make a simple 3D DM in this thread.<br />
+        <br />
+        As well as that I think that you are trying to apply too much milkdrop logic to AVS. You have to learn it from scratch.. they are very different things and you can't transfer very much from one to the other.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+        <span class="date small text-muted">14th October 2002 02:25 GMT</span></p>
+
+        <p class="post-content"></p>
+
+        <blockquote>
+          A user-defined variable that is nevertheless consistently used across presets from different authors (like 'z') means that it's used in a well known technique. Read about it by simply searching the web (Google is your friend).
+          <hr />
+        </blockquote>
+      </div>
+      <hr />
+      no,no<br />
+      <br />
+      Google is your <b>god!</b><br />
+      <br />
+      <br />
+      <br />
+      <br />
+      (wow, i am such a corporate whore)(but you really <i>do</i>have to respect google for their innovation and ability to make everyone <i>want</i>to only use their system)
+
+      <table cellpadding="6" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td class="alt2">
+            <hr />
+            <i>Originally posted by idiot24-7</i><br />
+            <b>I never said they were.</b> You made it sound very much like they were.<br />
+            <br />
+
+            <blockquote>
+              <i>Originally posted by idiot24-7</i><br />
+              <b>I know its user defined but I dont know what it is or how to use it. So can anyone help me out her</b>
+            </blockquote>How can you not know how to use a user defined variable or what it is? The whole point of a user defined variable is that you decide how to use it and you decide what it is and what it does. (Sorry I couldn't find a way to say that without it sounding a bit harsh...) That makes it sound like you think they are predefined to some extent, otherwise your question makes no sense.<br />
+            <br />
+            I assume that you understand that t=t+0.05; just increases t by 0.05 every frame (if it is in the frame box). With z, you just have to define it for all of the points, either by making it the same across the frame or by setting it to be different for each point by using 'i' in someway or by using a different method.<br />
+            <br />
+            Don't forget that you can define (almost) any number of variables and do practically whatever you want with them.
+          </td>
+        </tr>
+      </table><br />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">Zylot</span><br />
+        <span class="date small text-muted">14th October 2002 19:55 GMT</span></p>
+
+        <p class="post-content">Ok, idiot, I'll try to put it into Milkdrop terms for you:<br />
+        <br />
+        z variables, usually more then 1, are simply placeholders for values later put into large equations to generate 3d movements... such as shrinking the wave when it gets "further away" (it just gets smaller).<br />
+        <br />
+        No one can five you the equations cause they'll always be different.. if you want the conversion equations.. well.. you have them already as you sent them to me.</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+        <span class="date small text-muted">14th October 2002 20:04 GMT</span></p>
+
+        <p class="post-content">Hmm funny, it seems everyone is being extremely offensive here..<br />
+        <br />
+        "Look you IDIOT...!"<br />
+        <br />
+        :)</p>
+      </div>
+      <hr />
+
+      <div class="post">
+        <p class="post-meta"><span class="username text-primary">Montana</span><br />
+        <span class="date small text-muted">14th October 2002 21:39 GMT</span></p>
+
+        <p class="post-content">Quote:</p>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">ryan</span><br />
+          <span class="date small text-muted">14th October 2002 21:43 GMT</span></p>
+
+          <p class="post-content">I dont wanna change my nick :) Its my callsign (or what most people I know in real life call me) well they call me idiot or a idiot or you dumba$$ mother ****ing idiot or somthing along those lines.<br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          [quote]<i>Originally typoed by Zylot</i>No one can five you the equations cause they'll always be different.[quote]<br />
+          <br />
+          Took me a second to realize that was a typo, I though it was one of those geek terms your always using :D :D</p>
+        </div>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">Zylot</span><br />
+          <span class="date small text-muted">15th October 2002 00:23 GMT</span></p>
+
+          <p class="post-content">Nothing wrong with being a little L337 now and then, but yeah, that was a typo</p>
+        </div>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">ryan</span><br />
+          <span class="date small text-muted">15th October 2002 02:24 GMT</span></p>
+
+          <p class="post-content">N080Dy 15 L33t3r +H4n mE</p>
+        </div>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+          <span class="date small text-muted">15th October 2002 04:24 GMT</span></p>
+
+          <p class="post-content"><font face="courier new">3y3 u5u411y u53 4 +r4n5|_4+0r, 8|_|T |\/|1|\|3 ])13]) 4|\|]) 3y3'm +00 |_4zy +00 ]=1|\|]) 4 |\|3\/\/ 1.</font></p>
+        </div>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+          <span class="date small text-muted">15th October 2002 08:29 GMT</span></p>
+
+          <p class="post-content">}|-|3|^!|&lt;0 == |_337/\/355<br />
+          <br />
+          0\/\//\/7</p>
+        </div>
+        <hr />
+
+        <div class="post">
+          <p class="post-meta"><span class="username text-primary">Montana</span><br />
+          <span class="date small text-muted">15th October 2002 09:51 GMT</span></p>
+
+          <p class="post-content">oh knock it off, that takes several minutes to write and several minutes to translate, especially when everyone has his/her own version of the teh 1337 5p34k</p>
+        </div>
+        <hr />
+
+        <div class="footer">
+          <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+        </div>
+
+        <table cellpadding="6" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td class="alt2">
+              <hr />
+              <i>Originally posted by UnConeD</i><br />
+              <b>"Look you IDIOT...!":)</b> the guy chose his nick and now he faces the conseqences, but he can always change, if he want to, to change your nick, then just pm sawg and tell him that you wanna change your nick to (whatever you want), just make sure that the nick is not taken, if not then consider it almost done
+            </td><!-- Put JavaScript here -->
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

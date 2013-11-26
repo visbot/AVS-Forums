@@ -1,1008 +1,840 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" NSIS Script Example?? (WA2.*, WA3) AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NSIS Script Example?? (WA2.*, WA3) AVS" />
 
-	<title> NSIS Script Example?? (WA2.*, WA3) - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>NSIS Script Example?? (WA2.*, WA3) - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">NSIS Script Example?? (WA2.*, WA3)</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=98454">NSIS Script Example?? (WA2.*, WA3)</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">greatWho</span><br />
+      <span class="date small text-muted">11th August 2002 21:34 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">NSIS Script Example?? (WA2.*, WA3)</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=98454">NSIS Script Example?? (WA2.*, WA3)</a></p>
+      <p class="post-content"><strong>NSIS Script Example?? (WA2.*, WA3)</strong><br />
+      Looks that Winamp 3 will be the main for now... so there are many diffrent things:<br />
+      WA2.*:<br />
+      -AVS is in the Folder Winamp\Plugins\AVS\<br />
+      -AVS Config is in the Winamp.ini<br />
+      <br />
+      WA3 :<br />
+      -AVS is in the folder Winamp3\Wacs\data\avs<br />
+      -AVS Config is in the Studio.ini<br />
+      <br />
+      has anyone already a script, that will check if WA2.* or WA* is installed (if both versions are installed, the user will be asked where he wants to install:WA2.*, WA3 or both) and so the presets will be installed to the right place?<br />
+      maybe a Close and Open WA2.* or WA3??<br />
+      <br />
+      if you have, it would be nice, if you would post it here..<br />
+      <br />
+      <br />
+      thanx<br />
+      <br />
+      GreatWho</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">11th August 2002 23:09 GMT</span></p>
 
-<br />
+      <p class="post-content">i tried this and it's quite complex. i'm already at 3k of code just to check for winamp and it doesnt yet work.<br />
+      <br />
+      the yet most efficient solution seems to be writing a function (which i work on atm) or a message-dialog at the very beginning of the installer.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">greatWho</span><br />
-			<span class="date small text-muted">11th August 2002 21:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>NSIS Script Example?? (WA2.*, WA3)</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">12th August 2002 09:55 GMT</span></p>
 
-		Looks that Winamp 3 will be the main for now... so there are many diffrent things:<br />
-WA2.*:<br />
--AVS is in the Folder Winamp\Plugins\AVS\<br />
--AVS Config is in the Winamp.ini<br />
-<br />
-WA3 :<br />
--AVS is in the folder Winamp3\Wacs\data\avs<br />
--AVS Config is in the Studio.ini<br />
-<br />
-has anyone already a script, that will check if WA2.* or WA* is installed (if both versions are installed, the user will be asked where he wants to install:WA2.*, WA3 or both) and so the presets will be installed to the right place?<br />
-maybe a Close and Open WA2.* or WA3??<br />
-<br />
-if you have, it would be nice, if you would post it here..<br />
-<br />
-<br />
-thanx <br />
-<br />
-GreatWho
-		</p>
-</div>
+      <p class="post-content">i posted this in the <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=651132#post651132" target="_blank">nsis forums</a></p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">12th August 2002 11:39 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">11th August 2002 23:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i tried this and it's quite complex. i'm already at 3k of code just to check for winamp and it doesnt yet work.<br />
-<br />
-the yet most efficient solution seems to be writing a function (which i work on atm) or a message-dialog at the very beginning of the installer.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">12th August 2002 09:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i posted this in the <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;postid=651132#post651132" target="_blank">nsis forums</a>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">12th August 2002 11:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Using uninstall Reg Key!</strong><br />
-		
-		
-
-		The following is just a first try on this and not tested completely since I don't have winamp3 installed yet. It seems to work with my winamp2 installation. I do not know if I've got the correct regkey for winamp3. It is just a guess. Perhaps anybody knows if right!<br />
-<br />
-----------------------------------------<br />
-<br />
-<br />
-InstallDir $PROGRAMFILES\WINAMP<br />
-<br />
-Function .onInit<br />
-<br />
-StrCpy $4 &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp&quot;  ;UninstallRegKey for winamp2<br />
-StrCpy $5 &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3&quot; ;UninstallRegKey for winamp3 (just a guess)<br />
-<br />
-; loading regkey of winamp2 into $1<br />
-ReadRegStr $1 HKLM \<br />
-              $4 \<br />
-              &quot;UninstallString&quot;<br />
-<br />
-;loading regkey of winamp3 into $2<br />
-ReadRegStr $2 HKLM \<br />
-              $5 \<br />
-              &quot;UninstallString&quot;<br />
-<br />
-<br />
-StrCmp $1 &quot;&quot; nowa2 wa2 ; ckecking for winamp2<br />
- nowa2: ; no winamp2 found<br />
-  StrCmp $2 &quot;&quot; nowa30 wa30 ; ckecking for winamp3<br />
-    nowa30: ; no regkey found at all<br />
-      StrCpy $3 &quot;&quot;       <br />
+      <p class="post-content"><strong>Using uninstall Reg Key!</strong><br />
+      The following is just a first try on this and not tested completely since I don't have winamp3 installed yet. It seems to work with my winamp2 installation. I do not know if I've got the correct regkey for winamp3. It is just a guess. Perhaps anybody knows if right!<br />
+      <br />
+      ----------------------------------------<br />
+      <br />
+      <br />
+      InstallDir $PROGRAMFILES\WINAMP<br />
+      <br />
+      Function .onInit<br />
+      <br />
+      StrCpy $4 "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" ;UninstallRegKey for winamp2<br />
+      StrCpy $5 "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3" ;UninstallRegKey for winamp3 (just a guess)<br />
+      <br />
+      ; loading regkey of winamp2 into $1<br />
+      ReadRegStr $1 HKLM \<br />
+      $4 \<br />
+      "UninstallString"<br />
+      <br />
+      ;loading regkey of winamp3 into $2<br />
+      ReadRegStr $2 HKLM \<br />
+      $5 \<br />
+      "UninstallString"<br />
+      <br />
+      <br />
+      StrCmp $1 "" nowa2 wa2 ; ckecking for winamp2<br />
+      nowa2: ; no winamp2 found<br />
+      StrCmp $2 "" nowa30 wa30 ; ckecking for winamp3<br />
+      nowa30: ; no regkey found at all<br />
+      StrCpy $3 ""<br />
       Goto ready<br />
-    wa30: ; winamp3 found <br />
+      wa30: ; winamp3 found<br />
       StrCpy $3 $5<br />
       Goto ready<br />
- wa2: ; winamp2 found<br />
-  StrCmp $2 &quot;&quot; nowa31 wa31 ; checking for winamp3<br />
-     nowa31: ; no winamp3 found<br />
+      wa2: ; winamp2 found<br />
+      StrCmp $2 "" nowa31 wa31 ; checking for winamp3<br />
+      nowa31: ; no winamp3 found<br />
       StrCpy $3 $4<br />
       Goto ready<br />
-     wa31: ; both versions found<br />
-      MessageBox MB_YESNO &quot;It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)&quot; IDYES winamp2<br />
-         StrCpy $3 $5<br />
-         Goto ready   <br />
-      winamp2:<br />
-         StrCpy $3 $4<br />
-         Goto ready<br />
- ready:<br />
-FunctionEND<br />
-<br />
-InstallDirRegKey  HKLM \<br />
-                  $3 \<br />
-                  &quot;UninstallString&quot;<br />
-<br />
-Function .onVerifyInstDir<br />
-  IfFileExists $INSTDIR\winamp.exe Good<br />
-  IfFileExists $INSTDIR\studio.exe Good<br />
-    MessageBox MB_YESNO &quot;It seems that the current directory does not contain winamp. Continue installing?&quot; IDYES Good<br />
-    Abort   <br />
-  Good:<br />
-FunctionEnd
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">12th August 2002 12:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i put together something similiar, querying the registry. it's the safest way to check that winamp is installed (or not). since the code is quite long and complex (goto-commands are way old-fashioned and should be avoided).<br />
-<br />
-i got the following idea how to solve this. i'm sharing myself, so if someone else is faster than me, he/she can build it upon my idea.<br />
-<br />
-querying the registry on both versions seems to unavoidable, although unelegant. once the version(s) is (are) determined, one can write a string that defines the name of the .ini file (winamp.ini / studio.ini). the plugins directory can still be determined using GetPluginsDir.<br />
-<br />
-most certainly i'll come with a solution within the next two days.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">12th August 2002 12:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>More complete now</strong><br />
-		
-		
-
-		Worked out a setup for the different install paths of winmap2 and winamp3 and if no winamp is found:<br />
-<br />
-<br />
-<br />
-Function .onVerifyInstDir<br />
-  IfFileExists $INSTDIR\winamp.exe winamp2<br />
-  IfFileExists $INSTDIR\studio.exe winamp3<br />
-    MessageBox MB_YESNO &quot;It seems that the current directory does not contain winamp. Continue installing?&quot; IDYES nowinamp<br />
-    Abort   <br />
-  nowinamp:<br />
-    StrCpy $6 &quot;AVS&quot;<br />
-    Goto install<br />
-  winamp2:<br />
-    StrCpy $6 &quot;PLUGINS\AVS&quot;<br />
-    Goto install<br />
-  winamp3:<br />
-    StrCpy $6 &quot;WACS\DATA\AVS&quot;<br />
-    Goto install<br />
-  install:<br />
-FunctionEnd<br />
-<br />
-<br />
-SetOverwrite on<br />
-<br />
-Section &quot;Install MYAVS&quot;<br />
-  SetOutPath &quot;$INSTDIR\$6\MYAVS&quot;<br />
-  File &quot;C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.avs&quot;<br />
-SectionEnd
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">12th August 2002 13:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>FORGET IT</strong><br />
-		
-		
-
-		Forget my first try. Now tested it but it doesn't work since InstallDirRegKey seems to be called before oninit function :(
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">12th August 2002 14:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		good work, elvis
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">12th August 2002 14:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Now working</strong><br />
-		
-		
-
-		Now this should work with the latest NSIS version. I've tested it with winamp3 and winamp2 and it worked fine. Any suggestions for improvements?<br />
-<br />
-InstallDir &quot;$PROGRAMFILES\WINAMP\&quot;<br />
-<br />
-Function .onInit<br />
-<br />
-; loading regkey of winamp2 into $1<br />
-ReadRegStr $1 HKLM \<br />
-              &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp&quot; \<br />
-              &quot;UninstallString&quot;<br />
-<br />
-;loading regkey of winamp3 into $2<br />
-ReadRegStr $2 HKLM \<br />
-              &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3&quot; \<br />
-              &quot;UninstallString&quot;<br />
-<br />
-<br />
-StrCmp $1 &quot;&quot; nowa2 wa2 ; ckecking for winamp2<br />
- nowa2: ; no winamp2 found<br />
-  StrCmp $2 &quot;&quot; nowa30 wa30 ; ckecking for winamp3<br />
-    nowa30: ; no regkey found at all<br />
-      ;DO NOTHING       <br />
+      wa31: ; both versions found<br />
+      MessageBox MB_YESNO "It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)" IDYES winamp2<br />
+      StrCpy $3 $5<br />
       Goto ready<br />
-    wa30: ; winamp3 found <br />
+      winamp2:<br />
+      StrCpy $3 $4<br />
+      Goto ready<br />
+      ready:<br />
+      FunctionEND<br />
+      <br />
+      InstallDirRegKey HKLM \<br />
+      $3 \<br />
+      "UninstallString"<br />
+      <br />
+      Function .onVerifyInstDir<br />
+      IfFileExists $INSTDIR\winamp.exe Good<br />
+      IfFileExists $INSTDIR\studio.exe Good<br />
+      MessageBox MB_YESNO "It seems that the current directory does not contain winamp. Continue installing?" IDYES Good<br />
+      Abort<br />
+      Good:<br />
+      FunctionEnd</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">12th August 2002 12:29 GMT</span></p>
+
+      <p class="post-content">i put together something similiar, querying the registry. it's the safest way to check that winamp is installed (or not). since the code is quite long and complex (goto-commands are way old-fashioned and should be avoided).<br />
+      <br />
+      i got the following idea how to solve this. i'm sharing myself, so if someone else is faster than me, he/she can build it upon my idea.<br />
+      <br />
+      querying the registry on both versions seems to unavoidable, although unelegant. once the version(s) is (are) determined, one can write a string that defines the name of the .ini file (winamp.ini / studio.ini). the plugins directory can still be determined using GetPluginsDir.<br />
+      <br />
+      most certainly i'll come with a solution within the next two days.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">12th August 2002 12:36 GMT</span></p>
+
+      <p class="post-content"><strong>More complete now</strong><br />
+      Worked out a setup for the different install paths of winmap2 and winamp3 and if no winamp is found:<br />
+      <br />
+      <br />
+      <br />
+      Function .onVerifyInstDir<br />
+      IfFileExists $INSTDIR\winamp.exe winamp2<br />
+      IfFileExists $INSTDIR\studio.exe winamp3<br />
+      MessageBox MB_YESNO "It seems that the current directory does not contain winamp. Continue installing?" IDYES nowinamp<br />
+      Abort<br />
+      nowinamp:<br />
+      StrCpy $6 "AVS"<br />
+      Goto install<br />
+      winamp2:<br />
+      StrCpy $6 "PLUGINS\AVS"<br />
+      Goto install<br />
+      winamp3:<br />
+      StrCpy $6 "WACS\DATA\AVS"<br />
+      Goto install<br />
+      install:<br />
+      FunctionEnd<br />
+      <br />
+      <br />
+      SetOverwrite on<br />
+      <br />
+      Section "Install MYAVS"<br />
+      SetOutPath "$INSTDIR\$6\MYAVS"<br />
+      File "C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.avs"<br />
+      SectionEnd</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">12th August 2002 13:15 GMT</span></p>
+
+      <p class="post-content"><strong>FORGET IT</strong><br />
+      Forget my first try. Now tested it but it doesn't work since InstallDirRegKey seems to be called before oninit function :(</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">12th August 2002 14:19 GMT</span></p>
+
+      <p class="post-content">good work, elvis</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">12th August 2002 14:40 GMT</span></p>
+
+      <p class="post-content"><strong>Now working</strong><br />
+      Now this should work with the latest NSIS version. I've tested it with winamp3 and winamp2 and it worked fine. Any suggestions for improvements?<br />
+      <br />
+      InstallDir "$PROGRAMFILES\WINAMP\"<br />
+      <br />
+      Function .onInit<br />
+      <br />
+      ; loading regkey of winamp2 into $1<br />
+      ReadRegStr $1 HKLM \<br />
+      "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" \<br />
+      "UninstallString"<br />
+      <br />
+      ;loading regkey of winamp3 into $2<br />
+      ReadRegStr $2 HKLM \<br />
+      "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3" \<br />
+      "UninstallString"<br />
+      <br />
+      <br />
+      StrCmp $1 "" nowa2 wa2 ; ckecking for winamp2<br />
+      nowa2: ; no winamp2 found<br />
+      StrCmp $2 "" nowa30 wa30 ; ckecking for winamp3<br />
+      nowa30: ; no regkey found at all<br />
+      ;DO NOTHING<br />
+      Goto ready<br />
+      wa30: ; winamp3 found<br />
       StrCpy $INSTDIR $2<br />
       Call StripPath<br />
       Goto ready<br />
- wa2: ; winamp2 found<br />
-  StrCmp $2 &quot;&quot; nowa31 wa31 ; checking for winamp3<br />
-     nowa31: ; no winamp3 found<br />
+      wa2: ; winamp2 found<br />
+      StrCmp $2 "" nowa31 wa31 ; checking for winamp3<br />
+      nowa31: ; no winamp3 found<br />
       StrCpy $INSTDIR $1<br />
       Call StripPath<br />
       Goto ready<br />
-     wa31: ; both versions found<br />
-      MessageBox MB_YESNO &quot;It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)&quot; IDNO winamp2<br />
-         StrCpy $INSTDIR $2<br />
-         Call StripPath<br />
-         Goto ready   <br />
+      wa31: ; both versions found<br />
+      MessageBox MB_YESNO "It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)" IDNO winamp2<br />
+      StrCpy $INSTDIR $2<br />
+      Call StripPath<br />
+      Goto ready<br />
       winamp2:<br />
-         StrCpy $INSTDIR $1<br />
-         Call StripPath<br />
-         Goto ready<br />
- ready:<br />
-FunctionEND<br />
-<br />
-<br />
-Function StripPath<br />
-  Push $1<br />
-  Push $2<br />
-  StrCmp $INSTDIR &quot;&quot; fin<br />
-<br />
-    StrCpy $1 $INSTDIR 1 0 ; get firstchar<br />
-    StrCmp $1 '&quot;' &quot;&quot; getparent <br />
-      ; if first char is &quot;, let's remove &quot;'s first.<br />
-      StrCpy $INSTDIR $INSTDIR &quot;&quot; 1<br />
+      StrCpy $INSTDIR $1<br />
+      Call StripPath<br />
+      Goto ready<br />
+      ready:<br />
+      FunctionEND<br />
+      <br />
+      <br />
+      Function StripPath<br />
+      Push $1<br />
+      Push $2<br />
+      StrCmp $INSTDIR "" fin<br />
+      <br />
+      StrCpy $1 $INSTDIR 1 0 ; get firstchar<br />
+      StrCmp $1 '"' "" getparent<br />
+      ; if first char is ", let's remove "'s first.<br />
+      StrCpy $INSTDIR $INSTDIR "" 1<br />
       StrCpy $1 0<br />
       rqloop:<br />
-        StrCpy $2 $INSTDIR 1 $1<br />
-        StrCmp $2 '&quot;' rqdone<br />
-        StrCmp $2 &quot;&quot; rqdone<br />
-        IntOp $1 $1 + 1<br />
-        Goto rqloop<br />
+      StrCpy $2 $INSTDIR 1 $1<br />
+      StrCmp $2 '"' rqdone<br />
+      StrCmp $2 "" rqdone<br />
+      IntOp $1 $1 + 1<br />
+      Goto rqloop<br />
       rqdone:<br />
       StrCpy $INSTDIR $INSTDIR $1<br />
-    getparent:<br />
-    ; the uninstall string goes to an EXE, let's get the directory.<br />
-    StrCpy $1 -1<br />
-    gploop:<br />
+      getparent:<br />
+      ; the uninstall string goes to an EXE, let's get the directory.<br />
+      StrCpy $1 -1<br />
+      gploop:<br />
       StrCpy $2 $INSTDIR 1 $1<br />
-      StrCmp $2 &quot;&quot; gpexit<br />
-      StrCmp $2 &quot;\&quot; gpexit<br />
+      StrCmp $2 "" gpexit<br />
+      StrCmp $2 "\" gpexit<br />
       IntOp $1 $1 - 1<br />
       Goto gploop<br />
-    gpexit:<br />
-    StrCpy $INSTDIR $INSTDIR $1<br />
-<br />
-    <br />
-  fin:<br />
-  Pop $2<br />
-  Pop $1<br />
-FunctionEnd<br />
-<br />
-<br />
-Function .onVerifyInstDir<br />
-  IfFileExists $INSTDIR\Winamp.exe winamp2<br />
-  IfFileExists $INSTDIR\Studio.exe winamp3<br />
-    MessageBox MB_YESNO &quot;It seems that the current directory does not contain winamp. Continue installing?&quot; IDYES nowinamp<br />
-    Abort   <br />
-  nowinamp:<br />
-    StrCpy $6 &quot;AVS&quot;<br />
-    Goto install<br />
-  winamp2:<br />
-    StrCpy $6 &quot;PLUGINS\AVS&quot;<br />
-    Goto install<br />
-  winamp3:<br />
-    StrCpy $6 &quot;WACS\DATA\AVS&quot;<br />
-    Goto install<br />
-  install:<br />
-FunctionEnd<br />
-<br />
-<br />
-SetOverwrite on<br />
-<br />
-Section &quot;Install MYAVS&quot;<br />
-  SetOutPath &quot;$INSTDIR\$6\MYAVS&quot;<br />
-  File &quot;C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.avs&quot;<br />
-SectionEnd
-		</p>
-</div>
+      gpexit:<br />
+      StrCpy $INSTDIR $INSTDIR $1<br />
+      <br />
+      <br />
+      fin:<br />
+      Pop $2<br />
+      Pop $1<br />
+      FunctionEnd<br />
+      <br />
+      <br />
+      Function .onVerifyInstDir<br />
+      IfFileExists $INSTDIR\Winamp.exe winamp2<br />
+      IfFileExists $INSTDIR\Studio.exe winamp3<br />
+      MessageBox MB_YESNO "It seems that the current directory does not contain winamp. Continue installing?" IDYES nowinamp<br />
+      Abort<br />
+      nowinamp:<br />
+      StrCpy $6 "AVS"<br />
+      Goto install<br />
+      winamp2:<br />
+      StrCpy $6 "PLUGINS\AVS"<br />
+      Goto install<br />
+      winamp3:<br />
+      StrCpy $6 "WACS\DATA\AVS"<br />
+      Goto install<br />
+      install:<br />
+      FunctionEnd<br />
+      <br />
+      <br />
+      SetOverwrite on<br />
+      <br />
+      Section "Install MYAVS"<br />
+      SetOutPath "$INSTDIR\$6\MYAVS"<br />
+      File "C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.avs"<br />
+      SectionEnd</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">greatWho</span><br />
+      <span class="date small text-muted">12th August 2002 19:58 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">greatWho</span><br />
-			<span class="date small text-muted">12th August 2002 19:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>thanx for script</strong><br />
-		
-		
+      <p class="post-content"><strong>thanx for script</strong><br />
+      it works fine....<br />
+      <br />
+      surprised to read from you after your goodbye @ deviantart<br />
+      <br />
+      how have you made the "Autostart AVS on Play" in your History-Pack?<br />
+      <br />
+      and how can i make that the install-prog close automaticaly?<br />
+      <br />
+      thanx<br />
+      <br />
+      GreatWho</p>
+    </div>
+    <hr />
 
-		it works fine....<br />
-<br />
-surprised to read from you after your goodbye @ deviantart<br />
-<br />
-how have you made the &quot;Autostart AVS on Play&quot; in your History-Pack?<br />
-<br />
-and how can i make that the install-prog close automaticaly?<br />
-<br />
-thanx<br />
-<br />
-GreatWho
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">greatWho</span><br />
+      <span class="date small text-muted">12th August 2002 21:12 GMT</span></p>
 
-	<hr />
+      <p class="post-content"><strong>entry in *.ini</strong><br />
+      how can i write configs in the ini?<br />
+      <br />
+      example:<br />
+      if winamp2.*:<br />
+      $INSTDIR\winamp.ini AVS cfg_fs_rnd 1<br />
+      <br />
+      if Winamp3 :<br />
+      $INSTDIR\studio.ini cfg_fs_rnd 1<br />
+      <br />
+      Winamp3 has no winamp.ini... is it Winampa.ini??<br />
+      ----<br />
+      <br />
+      how to autostart on play?<br />
+      <br />
+      and how can i restart winamp? (the one where the pack is installed)<br />
+      <br />
+      thanx<br />
+      <br />
+      GreatWho</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">greatWho</span><br />
-			<span class="date small text-muted">12th August 2002 21:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>entry in *.ini</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">greatWho</span><br />
+      <span class="date small text-muted">12th August 2002 22:03 GMT</span></p>
 
-		how can i write configs in the ini?<br />
-<br />
-example:<br />
-if winamp2.*: <br />
-$INSTDIR\winamp.ini AVS cfg_fs_rnd 1<br />
-<br />
-if Winamp3 :<br />
-$INSTDIR\studio.ini cfg_fs_rnd 1<br />
-<br />
-Winamp3 has no winamp.ini... is it Winampa.ini??<br />
-----<br />
-<br />
-how to autostart on play?<br />
-<br />
-and how can i restart winamp? (the one where the pack is installed)<br />
-<br />
-thanx<br />
-<br />
-GreatWho
-		</p>
-</div>
+      <p class="post-content">ok, i found the solution to restart Winamp<br />
+      Winamp2:<br />
+      Exec "$INSTDIR\winamp.exe"<br />
+      Winamp3:<br />
+      Exec "$INSTDIR\studio.exe"<br />
+      <br />
+      because Winamp2 is installed in ..\Programfiles\Winamp\ and Winamp3 in ..\programfiles\Winamp3\ there is only one version in $INSTDIR, and so the right Winamp will restart<br />
+      <br />
+      but how can i configure the ini? if it would not exist, it would create and the ini wouldn't be used...</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">greatWho</span><br />
+      <span class="date small text-muted">12th August 2002 22:29 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">greatWho</span><br />
-			<span class="date small text-muted">12th August 2002 22:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content"><strong>i also found the solution for config *.ini</strong><br />
+      like the $6 in the script from el-vis, i made<br />
+      <br />
+      nowinamp:<br />
+      STRCPY $7 "AVS"<br />
+      Goto install<br />
+      winamp2:<br />
+      StrCpy $7 "$INSTDIR\Winamp.ini"<br />
+      Goto install<br />
+      winamp3:<br />
+      StrCpy $7 "$INSTDIR\Studio.ini"<br />
+      <br />
+      and configure:<br />
+      WriteINIStr $7 AVS cfg_fs_rnd 1<br />
+      <br />
+      <br />
+      look my full script:<br />
+      <br />
+      ; The name of the installer<br />
+      Name "MYAVS"<br />
+      <br />
+      ; The file to write<br />
+      OutFile "MYAVS.exe"<br />
+      ;-----------------------------------------------<br />
+      ; CloseWinamp<br />
+      ; Closes all running instances of Winamp 1.x/2.x<br />
+      ; modifies no other variables<br />
+      ;<br />
+      Section -CloseWinamp<br />
+      Call CloseWinamp<br />
+      SectionEnd<br />
+      Function CloseWinamp<br />
+      Push $0<br />
+      loop:<br />
+      FindWindow $0 "Winamp v1.x"<br />
+      IntCmp $0 0 done<br />
+      SendMessage $0 16 0 0<br />
+      Sleep 100<br />
+      Goto loop<br />
+      done:<br />
+      Pop $0<br />
+      FunctionEnd<br />
+      ;<br />
+      ; Close running Winamp 3<br />
+      ;<br />
+      Section -CloseWinamp3<br />
+      Call CloseWinamp3<br />
+      SectionEnd<br />
+      Function CloseWinamp3<br />
+      Push $0<br />
+      loop:<br />
+      FindWindow $0 "STUDIO"<br />
+      IntCmp $0 0 done<br />
+      SendMessage $0 16 0 0<br />
+      Sleep 100<br />
+      Goto loop<br />
+      done:<br />
+      Pop $0<br />
+      FunctionEnd<br />
+      ;<br />
+      ;--------------------------------------------------<br />
+      ;<br />
+      ;<br />
+      ; Version check<br />
+      ;<br />
+      ;<br />
+      InstallDir "$PROGRAMFILES\WINAMP\"<br />
+      <br />
+      Function .onInit<br />
+      <br />
+      ; loading regkey of winamp2 into $1<br />
+      ReadRegStr $1 HKLM \<br />
+      "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" \<br />
+      "UninstallString"<br />
+      <br />
+      ;loading regkey of winamp3 into $2<br />
+      ReadRegStr $2 HKLM \<br />
+      "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3" \<br />
+      "UninstallString"<br />
+      <br />
+      <br />
+      StrCmp $1 "" nowa2 wa2 ; ckecking for winamp2<br />
+      nowa2: ; no winamp2 found<br />
+      StrCmp $2 "" nowa30 wa30 ; ckecking for winamp3<br />
+      nowa30: ; no regkey found at all<br />
+      ;DO NOTHING<br />
+      Goto ready<br />
+      wa30: ; winamp3 found<br />
+      StrCpy $INSTDIR $2<br />
+      Call StripPath<br />
+      Goto ready<br />
+      wa2: ; winamp2 found<br />
+      StrCmp $2 "" nowa31 wa31 ; checking for winamp3<br />
+      nowa31: ; no winamp3 found<br />
+      StrCpy $INSTDIR $1<br />
+      Call StripPath<br />
+      Goto ready<br />
+      wa31: ; both versions found<br />
+      MessageBox MB_YESNO "It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)" IDNO winamp2<br />
+      StrCpy $INSTDIR $2<br />
+      Call StripPath<br />
+      Goto ready<br />
+      winamp2:<br />
+      StrCpy $INSTDIR $1<br />
+      Call StripPath<br />
+      Goto ready<br />
+      ready:<br />
+      FunctionEND<br />
+      <br />
+      <br />
+      Function StripPath<br />
+      Push $1<br />
+      Push $2<br />
+      StrCmp $INSTDIR "" fin<br />
+      <br />
+      StrCpy $1 $INSTDIR 1 0 ; get firstchar<br />
+      StrCmp $1 '"' "" getparent<br />
+      ; if first char is ", let's remove "'s first.<br />
+      StrCpy $INSTDIR $INSTDIR "" 1<br />
+      StrCpy $1 0<br />
+      rqloop:<br />
+      StrCpy $2 $INSTDIR 1 $1<br />
+      StrCmp $2 '"' rqdone<br />
+      StrCmp $2 "" rqdone<br />
+      IntOp $1 $1 + 1<br />
+      Goto rqloop<br />
+      rqdone:<br />
+      StrCpy $INSTDIR $INSTDIR $1<br />
+      getparent:<br />
+      ; the uninstall string goes to an EXE, let's get the directory.<br />
+      StrCpy $1 -1<br />
+      gploop:<br />
+      StrCpy $2 $INSTDIR 1 $1<br />
+      StrCmp $2 "" gpexit<br />
+      StrCmp $2 "\" gpexit<br />
+      IntOp $1 $1 - 1<br />
+      Goto gploop<br />
+      gpexit:<br />
+      StrCpy $INSTDIR $INSTDIR $1<br />
+      <br />
+      <br />
+      fin:<br />
+      Pop $2<br />
+      Pop $1<br />
+      FunctionEnd<br />
+      <br />
+      <br />
+      Function .onVerifyInstDir<br />
+      IfFileExists $INSTDIR\Winamp.exe winamp2<br />
+      IfFileExists $INSTDIR\Studio.exe winamp3<br />
+      MessageBox MB_YESNO "It seems that the current directory does not contain winamp. Continue installing?" IDYES nowinamp<br />
+      Abort<br />
+      nowinamp:<br />
+      StrCpy $6 "AVS"<br />
+      STRCPY $7 "AVS"<br />
+      Goto install<br />
+      winamp2:<br />
+      StrCpy $6 "PLUGINS\AVS"<br />
+      StrCpy $7 "$INSTDIR\Winamp.ini"<br />
+      Goto install<br />
+      winamp3:<br />
+      StrCpy $6 "WACS\DATA\AVS"<br />
+      StrCpy $7 "$INSTDIR\Studio.ini"<br />
+      Goto install<br />
+      install:<br />
+      FunctionEnd<br />
+      ;<br />
+      ;----------------------------------------------------------------------------<br />
+      ;<br />
+      SetOverwrite on<br />
+      ;<br />
+      ;<br />
+      ;------------------------------------------------------------------------------<br />
+      ;<br />
+      ;MessageBox<br />
+      ;<br />
+      Section "Message"<br />
+      MessageBox MB_OK "'TITEL ' (c) Copyright by Patrik Neunteufel aka GreatWho for comments or questions contact me @ <a href="mailto:Great.Who@gmx.ch">Great.Who@gmx.ch</a> i would like to read your opinion if you want to use something for your own preset, pleas ask and send me your preset thanx...... Have a viewing pleasure"<br />
+      SectionEnd<br />
+      ;<br />
+      ;------------------------------------------------------------------------------<br />
+      ;<br />
+      ; Registry key to check for directory (so if you install again, it will<br />
+      ; overwrite the old one automatically)<br />
+      ;<br />
+      InstallDirRegKey HKLM SOFTWARE\MYAVS "Install_Dir"<br />
+      ;<br />
+      ;------------------------------------------------------------------------------<br />
+      ;<br />
+      ;install part<br />
+      ;<br />
+      ;------------------------------------------------------------------------------<br />
+      ;<br />
+      ;<br />
+      ; The text to prompt the user to enter a directory<br />
+      ;<br />
+      ComponentText "This will install MYAVS on your computer. Select which optional things you want installed."<br />
+      ;<br />
+      ; The text to prompt the user to enter a directory<br />
+      DirText "Choose a directory to install in to:"<br />
+      ;<br />
+      ;********* the stuff to install *************<br />
+      ;****first section (the presetpack)******<br />
+      ;<br />
+      Section "Install MYAVS"<br />
+      ;<br />
+      ;----Set Out Dir<br />
+      ;<br />
+      SetOutPath "$INSTDIR\$6\MYAVS"<br />
+      ;<br />
+      ;----put files there<br />
+      ;<br />
+      File "C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.*"<br />
+      ;<br />
+      ;----Write the installation path into the registry<br />
+      ;<br />
+      WriteRegStr HKLM SOFTWARE\MYAVS "Install_Dir" "$INSTDIR"<br />
+      ;<br />
+      ;----Write the uninstall keys for Windows<br />
+      ;<br />
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS" "DisplayName" "MYAVS (remove only)"<br />
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS" "UninstallString" '"$INSTDIR\uninstallMYAVS.exe"'<br />
+      WriteUninstaller "uninstallMYAVS.exe"<br />
+      ;<br />
+      SectionEnd<br />
+      ;<br />
+      ;*****second section (APE Install)******<br />
+      ;<br />
+      ;<br />
+      Section "Various APE (any Presets may require)"<br />
+      ;<br />
+      ;----set out Dir<br />
+      ;<br />
+      SetOutPath "$INSTDIR\$6\"<br />
+      ;<br />
+      ;---.put files there<br />
+      ;<br />
+      File "C:\Programme\winamp\plugins\avs\*.ape"<br />
+      ;<br />
+      ;----Write the uninstall keys for Windows<br />
+      <br />
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\APE" "DisplayName" "APE (remove only)"<br />
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\APE" "UninstallString" '"$INSTDIR\uninstallAPE.exe"'<br />
+      WriteUninstaller "uninstallAPE.exe"<br />
+      ;<br />
+      SectionEnd<br />
+      ;<br />
+      ;******third section (start menue shortcut)**********<br />
+      ;<br />
+      Section "Start Menu Shortcuts"<br />
+      ;<br />
+      CreateDirectory "$SMPROGRAMS\MYAVS"<br />
+      CreateShortCut "$SMPROGRAMS\MYAVS\UninstallMYAVS.lnk" "$INSTDIR\uninstallMYAVS.exe" "" "$INSTDIR\uninstallMYAVS.exe" 0<br />
+      ;<br />
+      SectionEnd<br />
+      ;<br />
+      ;******fourth section (exclulive part) *************<br />
+      ;<br />
+      Section "Exclusive"<br />
+      ;<br />
+      SetOutPath "c:\GreatWho_exclusive"<br />
+      ;<br />
+      ;---.put files there<br />
+      ;<br />
+      File "C:\Programme\winamp\plugins\avs\ex\*.*"<br />
+      ;<br />
+      SectionEnd<br />
+      ;<br />
+      ;******set AVS as actual Vis_Plugin*******<br />
+      ;<br />
+      Section "Set AVS as actual PlugIn"<br />
+      WriteINIStr $7 Winamp visplugin_name vis_avs.dll<br />
+      SectionEnd<br />
+      ;<br />
+      ;<br />
+      ;******set actual presetPack******<br />
+      ;<br />
+      Section "Set MYAVS as actual Presetpack"<br />
+      WriteINIStr $7 AVS config_pres_subdir "MYAVS"<br />
+      SectionEnd<br />
+      ;<br />
+      ;<br />
+      ;*******set random******<br />
+      ;<br />
+      Section "Set Random-mode"<br />
+      WriteINIStr $7 AVS cfg_fs_rnd 1<br />
+      WriteINIStr $7 AVS cfg_fs_rnd_time 25<br />
+      SectionEnd<br />
+      ;<br />
+      ;*******set Fullscreen******<br />
+      ;<br />
+      Section "Fullscreen settings"<br />
+      WriteINIStr $7 AVS cfg_fs_w 320<br />
+      WriteINIStr $7 AVS cfg_fs_h 200<br />
+      WriteINIStr $7 AVS cfg_fs_use_overlay 1<br />
+      SectionEnd<br />
+      ;<br />
+      ;****autostart AVS******<br />
+      ;<br />
+      Section "Autostart AVS on play"<br />
+      WriteINIStr $7 Winamp visplugin_autoexec 1<br />
+      SectionEnd<br />
+      ;<br />
+      ;******Exclusive Play*****<br />
+      ;<br />
+      Section "ExclusivePlay"<br />
+      Exec '"$INSTDIR\winamp.exe" c:\GreatWho_exclusive\ex.m3u'<br />
+      Exec '"$INSTDIR\studio.exe" c:\GreatWho_exclusive\ex.m3u'<br />
+      SectionEnd<br />
+      ;<br />
+      ;<br />
+      ;************uninstall stuff****************<br />
+      ;<br />
+      UninstallText "This will uninstall MYAVS. Hit next to continue."<br />
+      ;<br />
+      ;----special uninstall section.<br />
+      ;<br />
+      Section "Uninstall"<br />
+      ;<br />
+      ;---remove registry keys<br />
+      ;<br />
+      DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS"<br />
+      DeleteRegKey HKLM SOFTWARE\MYAVS<br />
+      ;<br />
+      ;---remove files<br />
+      ;<br />
+      Delete $INSTDIR\$6\MYAVS\*.*<br />
+      ;<br />
+      ;---MUST REMOVE UNINSTALLER, too<br />
+      ;<br />
+      Delete $INSTDIR\uninstallMYAVS.exe<br />
+      ;<br />
+      ;---remove shortcuts, if any.<br />
+      ;<br />
+      Delete "$SMPROGRAMS\MYAVS\*.*"<br />
+      ;<br />
+      ;---remove directories used.<br />
+      ;<br />
+      RMDir "$SMPROGRAMS\MYAVS"<br />
+      RMDir "$INSTDIR\$6\MYAVS"<br />
+      SectionEnd<br />
+      ;<br />
+      ;<br />
+      <br />
+      <br />
+      <br />
+      u can use if u want<br />
+      <br />
+      GreatWho<br /></p>
+    </div>
+    <hr />
 
-		ok, i found the solution to restart Winamp<br />
-Winamp2:<br />
-Exec &quot;$INSTDIR\winamp.exe&quot;<br />
-Winamp3:<br />
-Exec &quot;$INSTDIR\studio.exe&quot;<br />
-<br />
-because Winamp2 is installed in ..\Programfiles\Winamp\ and Winamp3 in ..\programfiles\Winamp3\ there is only one version in $INSTDIR, and so the right Winamp will restart<br />
-<br />
-but how can i configure the ini? if it would not exist, it would create and the ini wouldn't be used...
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">13th August 2002 10:14 GMT</span></p>
 
-	<hr />
+      <p class="post-content"><strong>Basic Script</strong><br />
+      Here's my basic AVS-NSIS script:<br />
+      <br />
+      - checking for winamp verions and giving choice if both are found<br />
+      - verifying install path and giving warning if no winamp is found<br />
+      - uninstaller<br />
+      - link to uninstall exe<br />
+      - running winamp<br />
+      <br />
+      I did no reg-entries and no ini-changes. If you need to refer to GreatWhos' scripting.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">greatWho</span><br />
-			<span class="date small text-muted">12th August 2002 22:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>i also found the solution for config *.ini</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
+      <span class="date small text-muted">13th August 2002 17:54 GMT</span></p>
 
-		like the $6 in the script from el-vis, i made<br />
-<br />
-nowinamp: <br />
-STRCPY $7 &quot;AVS&quot;<br />
-Goto install <br />
-winamp2: <br />
-StrCpy $7 &quot;$INSTDIR\Winamp.ini&quot;<br />
-Goto install <br />
-winamp3: <br />
-StrCpy $7 &quot;$INSTDIR\Studio.ini&quot;<br />
-<br />
-and configure:<br />
-WriteINIStr $7 AVS cfg_fs_rnd 1<br />
-<br />
-<br />
-look my full script:<br />
-<br />
-; The name of the installer<br />
-Name &quot;MYAVS&quot;<br />
-<br />
-; The file to write<br />
-OutFile &quot;MYAVS.exe&quot;<br />
-;-----------------------------------------------<br />
-; CloseWinamp<br />
-; Closes all running instances of Winamp 1.x/2.x<br />
-; modifies no other variables<br />
-;<br />
-Section -CloseWinamp<br />
-Call CloseWinamp<br />
-SectionEnd<br />
-Function CloseWinamp<br />
-  Push $0<br />
-  loop:<br />
-    FindWindow $0 &quot;Winamp v1.x&quot;<br />
-    IntCmp $0 0 done<br />
-     SendMessage $0 16 0 0<br />
-     Sleep 100<br />
-     Goto loop<br />
-  done:<br />
-  Pop $0<br />
-FunctionEnd<br />
-;<br />
-; Close running Winamp 3<br />
-;<br />
-Section -CloseWinamp3<br />
-Call CloseWinamp3<br />
-SectionEnd<br />
-Function CloseWinamp3<br />
-Push $0<br />
-loop:<br />
-FindWindow $0 &quot;STUDIO&quot;<br />
-IntCmp $0 0 done<br />
-SendMessage $0 16 0 0<br />
-Sleep 100<br />
-Goto loop<br />
-done:<br />
-Pop $0<br />
-FunctionEnd<br />
-;<br />
-;--------------------------------------------------<br />
-;<br />
-;<br />
-; Version check<br />
-;<br />
-;<br />
-InstallDir &quot;$PROGRAMFILES\WINAMP\&quot; <br />
-<br />
-Function .onInit <br />
-<br />
-; loading regkey of winamp2 into $1 <br />
-ReadRegStr $1 HKLM \ <br />
-&quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp&quot; \ <br />
-&quot;UninstallString&quot; <br />
-<br />
-;loading regkey of winamp3 into $2 <br />
-ReadRegStr $2 HKLM \ <br />
-&quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp3&quot; \ <br />
-&quot;UninstallString&quot; <br />
-<br />
-<br />
-StrCmp $1 &quot;&quot; nowa2 wa2 ; ckecking for winamp2 <br />
-nowa2: ; no winamp2 found <br />
-StrCmp $2 &quot;&quot; nowa30 wa30 ; ckecking for winamp3 <br />
-nowa30: ; no regkey found at all <br />
-;DO NOTHING <br />
-Goto ready <br />
-wa30: ; winamp3 found <br />
-StrCpy $INSTDIR $2 <br />
-Call StripPath <br />
-Goto ready <br />
-wa2: ; winamp2 found <br />
-StrCmp $2 &quot;&quot; nowa31 wa31 ; checking for winamp3 <br />
-nowa31: ; no winamp3 found <br />
-StrCpy $INSTDIR $1 <br />
-Call StripPath <br />
-Goto ready <br />
-wa31: ; both versions found <br />
-MessageBox MB_YESNO &quot;It seems you've got Winamp2 AND Winamp3 on your system. Install into Winamp3?. (NO will install into Winamp2)&quot; IDNO winamp2 <br />
-StrCpy $INSTDIR $2 <br />
-Call StripPath <br />
-Goto ready <br />
-winamp2: <br />
-StrCpy $INSTDIR $1 <br />
-Call StripPath <br />
-Goto ready <br />
-ready: <br />
-FunctionEND <br />
-<br />
-<br />
-Function StripPath <br />
-Push $1 <br />
-Push $2 <br />
-StrCmp $INSTDIR &quot;&quot; fin <br />
-<br />
-StrCpy $1 $INSTDIR 1 0 ; get firstchar <br />
-StrCmp $1 '&quot;' &quot;&quot; getparent <br />
-; if first char is &quot;, let's remove &quot;'s first. <br />
-StrCpy $INSTDIR $INSTDIR &quot;&quot; 1 <br />
-StrCpy $1 0 <br />
-rqloop: <br />
-StrCpy $2 $INSTDIR 1 $1 <br />
-StrCmp $2 '&quot;' rqdone <br />
-StrCmp $2 &quot;&quot; rqdone <br />
-IntOp $1 $1 + 1 <br />
-Goto rqloop <br />
-rqdone: <br />
-StrCpy $INSTDIR $INSTDIR $1 <br />
-getparent: <br />
-; the uninstall string goes to an EXE, let's get the directory. <br />
-StrCpy $1 -1 <br />
-gploop: <br />
-StrCpy $2 $INSTDIR 1 $1 <br />
-StrCmp $2 &quot;&quot; gpexit <br />
-StrCmp $2 &quot;\&quot; gpexit <br />
-IntOp $1 $1 - 1 <br />
-Goto gploop <br />
-gpexit: <br />
-StrCpy $INSTDIR $INSTDIR $1 <br />
-<br />
-<br />
-fin: <br />
-Pop $2 <br />
-Pop $1 <br />
-FunctionEnd <br />
-<br />
-<br />
-Function .onVerifyInstDir <br />
-IfFileExists $INSTDIR\Winamp.exe winamp2 <br />
-IfFileExists $INSTDIR\Studio.exe winamp3 <br />
-MessageBox MB_YESNO &quot;It seems that the current directory does not contain winamp. Continue installing?&quot; IDYES nowinamp <br />
-Abort <br />
-nowinamp: <br />
-StrCpy $6 &quot;AVS&quot; <br />
-STRCPY $7 &quot;AVS&quot;<br />
-Goto install <br />
-winamp2: <br />
-StrCpy $6 &quot;PLUGINS\AVS&quot; <br />
-StrCpy $7 &quot;$INSTDIR\Winamp.ini&quot;<br />
-Goto install <br />
-winamp3: <br />
-StrCpy $6 &quot;WACS\DATA\AVS&quot; <br />
-StrCpy $7 &quot;$INSTDIR\Studio.ini&quot;<br />
-Goto install <br />
-install: <br />
-FunctionEnd <br />
-;<br />
-;----------------------------------------------------------------------------<br />
-;<br />
-SetOverwrite on <br />
-;<br />
-;<br />
-;------------------------------------------------------------------------------<br />
-;<br />
-;MessageBox<br />
-;<br />
-Section &quot;Message&quot;    <br />
-MessageBox MB_OK &quot;'TITEL               '                                                                                                                                                                  (c) Copyright by Patrik Neunteufel aka GreatWho                                                                                                                           for comments or questions contact me @ <a href="mailto:Great.Who@gmx.ch">Great.Who@gmx.ch</a>                                                                                                          i would like to read your opinion                                                                                                                                                         if you want to use something for your own preset, pleas ask and send me your preset                                                                  thanx......  Have a viewing pleasure&quot;<br />
-SectionEnd<br />
-;<br />
-;------------------------------------------------------------------------------<br />
-;<br />
-; Registry key to check for directory (so if you install again, it will <br />
-; overwrite the old one automatically)<br />
-;<br />
-InstallDirRegKey HKLM SOFTWARE\MYAVS &quot;Install_Dir&quot;<br />
-;<br />
-;------------------------------------------------------------------------------<br />
-;<br />
-;install part<br />
-;<br />
-;------------------------------------------------------------------------------<br />
-;<br />
-;<br />
-; The text to prompt the user to enter a directory<br />
-;<br />
-ComponentText &quot;This will install MYAVS on your computer. Select which optional things you want installed.&quot;<br />
-;<br />
-; The text to prompt the user to enter a directory<br />
-DirText &quot;Choose a directory to install in to:&quot;<br />
-;<br />
-;********* the stuff to install *************<br />
-;****first section (the presetpack)******<br />
-;<br />
-Section &quot;Install MYAVS&quot; <br />
-;<br />
-;----Set Out Dir<br />
-;<br />
-SetOutPath &quot;$INSTDIR\$6\MYAVS&quot; <br />
-;<br />
-;----put files there<br />
-;<br />
-File &quot;C:\PROGRAMME\WINAMP\PLUGINS\AVS\MYAVS\*.*&quot; <br />
-;<br />
-;----Write the installation path into the registry<br />
-;<br />
-WriteRegStr HKLM SOFTWARE\MYAVS &quot;Install_Dir&quot; &quot;$INSTDIR&quot;<br />
-;<br />
-;----Write the uninstall keys for Windows<br />
-;<br />
-WriteRegStr HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS&quot; &quot;DisplayName&quot; &quot;MYAVS (remove only)&quot;<br />
-WriteRegStr HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS&quot; &quot;UninstallString&quot; '&quot;$INSTDIR\uninstallMYAVS.exe&quot;'<br />
-WriteUninstaller &quot;uninstallMYAVS.exe&quot;<br />
-;<br />
-SectionEnd<br />
-;<br />
-;*****second section (APE Install)******<br />
-;<br />
-;<br />
-Section &quot;Various APE (any Presets may require)&quot;<br />
-;<br />
-;----set out Dir<br />
-;<br />
-SetOutPath &quot;$INSTDIR\$6\&quot;<br />
-;<br />
-;---.put files there<br />
-;<br />
-File &quot;C:\Programme\winamp\plugins\avs\*.ape&quot;<br />
-;<br />
-;----Write the uninstall keys for Windows<br />
-<br />
-WriteRegStr HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\APE&quot; &quot;DisplayName&quot; &quot;APE (remove only)&quot;<br />
-WriteRegStr HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\APE&quot; &quot;UninstallString&quot; '&quot;$INSTDIR\uninstallAPE.exe&quot;'<br />
-WriteUninstaller &quot;uninstallAPE.exe&quot;<br />
-;<br />
-SectionEnd<br />
-;<br />
-;******third section (start menue shortcut)**********<br />
-;<br />
-Section &quot;Start Menu Shortcuts&quot;<br />
-;<br />
-CreateDirectory &quot;$SMPROGRAMS\MYAVS&quot;<br />
-CreateShortCut &quot;$SMPROGRAMS\MYAVS\UninstallMYAVS.lnk&quot; &quot;$INSTDIR\uninstallMYAVS.exe&quot; &quot;&quot; &quot;$INSTDIR\uninstallMYAVS.exe&quot; 0<br />
-;<br />
-SectionEnd<br />
-;<br />
-;******fourth section (exclulive part) *************<br />
-;<br />
-Section &quot;Exclusive&quot;<br />
-;<br />
-SetOutPath &quot;c:\GreatWho_exclusive&quot;<br />
-;<br />
-;---.put files there<br />
-;<br />
-File &quot;C:\Programme\winamp\plugins\avs\ex\*.*&quot;<br />
-;<br />
-SectionEnd<br />
-;<br />
-;******set AVS as actual Vis_Plugin*******<br />
-;<br />
-Section &quot;Set AVS as actual PlugIn&quot;<br />
-WriteINIStr $7 Winamp visplugin_name vis_avs.dll<br />
-SectionEnd<br />
-;<br />
-;<br />
-;******set actual presetPack******<br />
-;<br />
-Section &quot;Set MYAVS as actual Presetpack&quot;<br />
-WriteINIStr $7 AVS config_pres_subdir &quot;MYAVS&quot;<br />
-SectionEnd<br />
-;<br />
-;<br />
-;*******set random******<br />
-;<br />
-Section &quot;Set Random-mode&quot;<br />
-WriteINIStr $7 AVS cfg_fs_rnd 1<br />
-WriteINIStr $7 AVS cfg_fs_rnd_time 25<br />
-SectionEnd<br />
-;<br />
-;*******set Fullscreen******<br />
-;<br />
-Section &quot;Fullscreen settings&quot;<br />
-WriteINIStr $7 AVS cfg_fs_w 320<br />
-WriteINIStr $7 AVS cfg_fs_h 200<br />
-WriteINIStr $7 AVS cfg_fs_use_overlay 1<br />
-SectionEnd<br />
-;<br />
-;****autostart AVS******<br />
-;<br />
-Section &quot;Autostart AVS on play&quot;<br />
-WriteINIStr $7 Winamp visplugin_autoexec 1<br />
-SectionEnd<br />
-;<br />
-;******Exclusive Play*****<br />
-;<br />
-Section &quot;ExclusivePlay&quot;<br />
-Exec '&quot;$INSTDIR\winamp.exe&quot; c:\GreatWho_exclusive\ex.m3u'<br />
-Exec '&quot;$INSTDIR\studio.exe&quot; c:\GreatWho_exclusive\ex.m3u'<br />
-SectionEnd<br />
-;<br />
-;<br />
-;************uninstall stuff****************<br />
-;<br />
-UninstallText &quot;This will uninstall MYAVS. Hit next to continue.&quot;<br />
-;<br />
-;----special uninstall section.<br />
-;<br />
-Section &quot;Uninstall&quot;<br />
-;<br />
-;---remove registry keys<br />
-;<br />
-DeleteRegKey HKLM &quot;Software\Microsoft\Windows\CurrentVersion\Uninstall\MYAVS&quot;<br />
-DeleteRegKey HKLM SOFTWARE\MYAVS<br />
-;<br />
-;---remove files<br />
-;<br />
-Delete $INSTDIR\$6\MYAVS\*.*<br />
-;<br />
-;---MUST REMOVE UNINSTALLER, too<br />
-;<br />
-Delete $INSTDIR\uninstallMYAVS.exe<br />
-;<br />
-;---remove shortcuts, if any.<br />
-;<br />
-Delete &quot;$SMPROGRAMS\MYAVS\*.*&quot;<br />
-;<br />
-;---remove directories used.<br />
-;<br />
-RMDir &quot;$SMPROGRAMS\MYAVS&quot;<br />
-RMDir &quot;$INSTDIR\$6\MYAVS&quot;<br />
-SectionEnd<br />
-;<br />
-;<br />
-<br />
-<br />
-<br />
-u can use if u want<br />
-<br />
-GreatWho<br />
+      <p class="post-content">Personally I beleive that it is 'bad form' to force the NSIS installer to have autoexec plug-in on play there.<br />
+      <br />
+      The are loads of tech support question saying how do I stop the visuals playing every single play and some plug-in/avs pack writers as adding to this problem with this.<br />
+      <br />
+      I like my visuals as much as the next man but on playing every file.:eek:</p>
+    </div>
+    <hr />
 
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">14th August 2002 13:12 GMT</span></p>
 
-	<hr />
+      <p class="post-content"><strong>AVS-INI-Changes</strong><br />
+      I also don't like to mess with AVS-INI entries. And I don't like anyone to mess with mine. I know some people don't know how to run AVS-presets and to force AVS to run may be helpful for them but I think a better and safer way is to display a text- or html-file with some instructions...</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">13th August 2002 10:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Basic Script</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">14th August 2002 13:32 GMT</span></p>
 
-		Here's my basic AVS-NSIS script:<br />
-<br />
-- checking for winamp verions and giving choice if both are found<br />
-- verifying install path and giving warning if no winamp is found<br />
-- uninstaller<br />
-- link to uninstall exe<br />
-- running winamp<br />
-<br />
-I did no reg-entries and no ini-changes. If you need to refer to GreatWhos' scripting.
-		</p>
-</div>
+      <p class="post-content">I think the best way is to allow the user to choose everything himself.<br />
+      <br />
+      The only thing I do in my installer is:<br />
+      <br />
+      - Set currently loaded preset to my Intro preset (replace the 'vis_avs.dat' file in the same dir as the AVS DLL with the preset you want).<br />
+      <br />
+      - Set AVS as default plug-in (can be turned off).<br />
+      <br />
+      The first doesn't really do any harm, because it's just a temporary file from AVS anyway.<br />
+      <br />
+      The second makes it easier for people to watch the presets, if they use many plug-ins. They just installed AVS presets, so it's safe to assume they'll want to open AVS now.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">14th August 2002 19:56 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">13th August 2002 17:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">greatWho: i take that copyright message as a joke. :down:</p>
+    </div>
+    <hr />
 
-		Personally I beleive that it is 'bad form' to force the NSIS installer to have autoexec plug-in on play there.<br />
-<br />
-The are loads of tech support question saying how do I stop the visuals playing every single play and some plug-in/avs pack writers as adding to this problem with this.<br />
-<br />
-I like my visuals as much as the next man but on playing every file.:eek:
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">EL-VIS2</span><br />
+      <span class="date small text-muted">15th August 2002 09:52 GMT</span></p>
 
-	<hr />
+      <p class="post-content"><strong>VIS_AVS.DAT</strong><br />
+      The problem with changing vis_avs.dat is, that if the presets does not work allright and crashes avs/winamp the user will be unable to start avs or even winmap again until vis_avs.dat is removed manually.<br />
+      <br />
+      This happened to some users with my PLASMA pack where I used an AVI in vis_avs.dat which crashes avs/winamp on some systems....<br />
+      <br />
+      So make shure the preset you put into vis_avs.dat is a "simple" one which will run for shure everywhere....<br />
+      <br />
+      Also your vis_avs.dat perhaps will not work correct with future versions of AVS....</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">14th August 2002 13:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>AVS-INI-Changes</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">4th September 2002 04:30 GMT</span></p>
 
-		I also don't like to mess with AVS-INI entries. And I don't like anyone to mess with mine. I know some people don't know how to run AVS-presets and to force AVS to run may be helpful for them but I think a better and safer way is to display a text- or html-file with some instructions...
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by UnConeD</i><br />
+        <b>I think the best way is to allow the user to choose everything himself.<br /></b>
+      </blockquote>Like the install directory? I have 4 installs of winamp for varying purposes, your installers for whacko iv and v always install to the wrong one :(<br />
+      <br />
+      besides am i the only one who thinks that the message box approach to choosing winamp 2 and 3 looks really unprofessional and well... sort of like a skatchy hack?
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th August 2002 13:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I think the best way is to allow the user to choose everything himself.<br />
-<br />
-The only thing I do in my installer is:<br />
-<br />
-- Set currently loaded preset to my Intro preset (replace the 'vis_avs.dat' file in the same dir as the AVS DLL with the preset you want).<br />
-<br />
-- Set AVS as default plug-in (can be turned off).<br />
-<br />
-The first doesn't really do any harm, because it's just a temporary file from AVS anyway.<br />
-<br />
-The second makes it easier for people to watch the presets, if they use many plug-ins. They just installed AVS presets, so it's safe to assume they'll want to open AVS now.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">14th August 2002 19:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		greatWho: i take that copyright message as a joke. :down:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">EL-VIS2</span><br />
-			<span class="date small text-muted">15th August 2002 09:52 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>VIS_AVS.DAT</strong><br />
-		
-		
-
-		The problem with changing vis_avs.dat is, that if the presets does not work allright and crashes avs/winamp the user will be unable to start avs or even winmap again until vis_avs.dat is removed manually.<br />
-<br />
-This happened to some users with my PLASMA pack where I used an AVI in vis_avs.dat which crashes avs/winamp on some systems....<br />
-<br />
-So make shure the preset you put into vis_avs.dat is a &quot;simple&quot; one which will run for shure everywhere....<br />
-<br />
-Also your vis_avs.dat perhaps will not work correct with future versions of AVS....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">4th September 2002 04:30 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by UnConeD </i><br />
-<b>I think the best way is to allow the user to choose everything himself.<br />
-</b></blockquote>
-Like the install directory? I have 4 installs of winamp for varying purposes, your installers for whacko iv and v always install to the wrong one :(<br />
-<br />
-besides am i the only one who thinks that the message box approach to choosing winamp 2 and 3 looks really unprofessional and well... sort of like a skatchy hack?
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

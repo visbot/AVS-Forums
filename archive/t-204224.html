@@ -1,242 +1,165 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Qnan??? AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Qnan??? AVS" />
 
-	<title> Qnan??? - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Qnan??? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">Qnan???</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=204224">Qnan???</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Utne Wire Man</span><br />
+      <span class="date small text-muted">8th January 2005 01:34 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Qnan???</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=204224">Qnan???</a></p>
+      <p class="post-content"><strong>Qnan???</strong><br />
+      I have a problem.<br />
+      I use a DM in a preset, and the screen randomly goes blank... for good. This is either a compile error, a divide by zero, or an imaginary number. The debug window shows 1.#QNAN000000000 etc. What the?<br />
+      Only when I change something in the offending DM does it go back to normal.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">8th January 2005 02:11 GMT</span></p>
 
-<br />
+      <p class="post-content">1.#QNAN000000000 is 'not a number'... I guess the 'q' stands for quantity or something.<br />
+      <br />
+      Its not a divide by zero cos that results in infinity (#INF000...) and AVS can handle imaginary numbers, it just chops off the i I think, try the square root of -1 and you'll just get 1. As for the error, its probably just a bug in your DM, I'm not sure what tho, post the code.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Utne Wire Man</span><br />
-			<span class="date small text-muted">8th January 2005 01:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Qnan???</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Utne Wire Man</span><br />
+      <span class="date small text-muted">8th January 2005 14:41 GMT</span></p>
 
-		I have a problem. <br />
-I use a DM in a preset, and the screen randomly goes blank... for good. This is either a compile error, a divide by zero, or an imaginary number. The debug window shows 1.#QNAN000000000 etc. What the?<br />
-Only when I change something in the offending DM does it go back to normal.
-		</p>
-</div>
+      <p class="post-content">OK, here is the code. It isn't specific to just this one DM, but to many that I make.<br />
+      <br />
+      r=10<br />
+      <br />
+      t1=t1+abs((ti1*ra2));<br />
+      t2=t2+abs((ti2*ra4));<br />
+      <br />
+      ra1=rand(100);<br />
+      ra2=(ra1-50)/abs(ra1-50);<br />
+      ti1=rand(200)/3500;<br />
+      ra3=rand(100);<br />
+      ra4=(ra1-50)/abs(ra1-50);<br />
+      ti2=rand(200)/3500;<br />
+      <br />
+      r=sin(r-sin(r)+t1/3);<br />
+      r=sin(d*r+cos(t1)/3*d-cos(t1)*sin(t1)*x)+t1;<br />
+      d=2*sin(sin(t2)*(x+y))*atan(sin(r)-y*sqrt(d)-sqrt(d)-x)/3+(sin(d*acos(sin(x)*sin(y)))*x);<br />
+      <br />
+      One possible problem might be the random -1 or 1 generator that I use...it does give a zero once every rare occasion...<br />
+      What does AVS do what confronted with a divide by zero?<br />
+      does it ditch the computation, or ignore it? If it <u>does</u>, then I might need a more efficient generator, or some if =&gt; then code.<br />
+      <br />
+      P.S. Would it speed up framerate to split the final d value into variables, not a bulky equation like this?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">jheriko</span><br />
+      <span class="date small text-muted">9th January 2005 06:22 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">8th January 2005 02:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">if you want some optimisation tips:<br />
+      <br />
+      x/abs(x) = sign(x) although its only onbeat... still...<br />
+      <br />
+      <br />
+      also calculate sin(t1) and cos(t1) per frame and store them in buffer varibles for use per pixel as sin and cos are slow and t1 doesn't change per pixel<br />
+      <br />
+      *.333333 is faster than /3 because / is slower than *</p>
+    </div>
+    <hr />
 
-		1.#QNAN000000000 is 'not a number'... I guess the 'q' stands for quantity or something.<br />
-<br />
-Its not a divide by zero cos that results in infinity (#INF000...) and AVS can handle imaginary numbers, it just chops off the i I think, try the square root of -1 and you'll just get 1. As for the error, its probably just a bug in your DM, I'm not sure what tho, post the code.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
+      <span class="date small text-muted">9th January 2005 14:12 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Ooops...<br />
+      I feel really stupid because my friend came to my house and signed in a Utne Wire Man... And didn't sign out. I accidentally used his account twice...<br />
+      <br />
+      Anyway, my true identity is JFASI.<br />
+      <br />
+      I tried looking into the possible divde by zero in the -1,1 algorithm...Didn't work. The d and r values die, and the algorithm continues calculating.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Utne Wire Man</span><br />
-			<span class="date small text-muted">8th January 2005 14:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">9th January 2005 16:43 GMT</span></p>
 
-		OK, here is the code. It isn't specific to just this  one DM, but to many that I make.<br />
-<br />
-r=10<br />
-<br />
-t1=t1+abs((ti1*ra2));<br />
-t2=t2+abs((ti2*ra4));<br />
-<br />
-ra1=rand(100);<br />
-ra2=(ra1-50)/abs(ra1-50);<br />
-ti1=rand(200)/3500;<br />
-ra3=rand(100);<br />
-ra4=(ra1-50)/abs(ra1-50);<br />
-ti2=rand(200)/3500;<br />
-<br />
-r=sin(r-sin(r)+t1/3);<br />
-r=sin(d*r+cos(t1)/3*d-cos(t1)*sin(t1)*x)+t1;<br />
-d=2*sin(sin(t2)*(x+y))*atan(sin(r)-y*sqrt(d)-sqrt(d)-x)/3+(sin(d*acos(sin(x)*sin(y)))*x);<br />
-<br />
-One possible problem might be the random -1 or 1 generator that I use...it does give a zero once every rare occasion...<br />
-What does AVS do what confronted with a divide by zero?<br />
-does it ditch the computation, or ignore it? If it <u>does</u>, then I might need a more efficient generator, or some if =&gt; then code.<br />
-<br />
-P.S. Would it speed up framerate to split the final d value into variables, not a bulky equation like this?
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by PAK-9</i><br />
+        <b>...Its not a divide by zero cos that results in infinity (#INF000...) ...</b>
+      </blockquote>When people take the trouble to reply to your posts you could at least make the effort to read them.
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">jheriko</span><br />
-			<span class="date small text-muted">9th January 2005 06:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
+      <span class="date small text-muted">9th January 2005 20:42 GMT</span></p>
 
-		if you want some optimisation tips:<br />
-<br />
-x/abs(x) = sign(x) although its only onbeat... still...<br />
-<br />
-<br />
-also calculate sin(t1) and cos(t1) per frame and store them in buffer varibles for use per pixel as sin and cos are slow and t1 doesn't change per pixel<br />
-<br />
-*.333333 is faster than /3 because / is slower than *
-		</p>
-</div>
+      <p class="post-content">I'm sorry...<br />
+      <br />
+      When I bebug, The d and r value fry.<br />
+      No idea as to why, but I do my best.<br />
+      <br />
+      I'm pretty sure its in the pos/neg algorithm, as the same problem arises in presets where I use it. Could you please give me a list of errors that show up, like QNAN or INF?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">10th January 2005 22:25 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JFASI</span><br />
-			<span class="date small text-muted">9th January 2005 14:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">The only thing that I can think of in that statement is the acos... acos doesn't have a value for an input outside of -1..1. But your code is acos(sin(x)*sin(y)) and sin is bounded by -1..1, so so should sin*sin.<br />
+      <br />
+      Other ideas other than input domain errors could be overflow, although that's very unlikely. Also, while floating point functions can return infinity, I think that passing them to a function could well result in NaN. E.g. sin(INF).<br />
+      <br />
+      Splitting up your equation into separate statements will slow down your code, but it might help you locate the error. Just remove each of the lines one by one until it works. Or it might be caused by something somewhere else.</p>
+    </div>
+    <hr />
 
-		Ooops...<br />
-I feel really stupid because my friend came to my house and signed in a Utne Wire Man... And didn't sign out. I accidentally used his account twice...<br />
-<br />
-Anyway, my true identity is JFASI.<br />
-<br />
-I tried looking into the possible divde by zero in the -1,1 algorithm...Didn't work. The d and r values die, and the algorithm continues calculating.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">JFASI</span><br />
+      <span class="date small text-muted">10th January 2005 22:37 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Thanks for the advice.<br />
+      I think, however, that the problem lies somewhere in the<br />
+      -1, +1 algorithm, as other presets that I have used it in crash in the same way.<br />
+      <br />
+      How high does overflow set in, because if its like 50 factorial or something, then it isn't the case. It only get up to 150 or so, then the DM crashes.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">9th January 2005 16:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by PAK-9 </i><br />
-<b>...Its not a divide by zero cos that results in infinity (#INF000...) ...</b></blockquote>
-When people take the trouble to reply to your posts you could at least make the effort to read them.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JFASI</span><br />
-			<span class="date small text-muted">9th January 2005 20:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm sorry...<br />
-<br />
-When I bebug, The d and r value fry.<br />
-No idea as to why, but I do my best.<br />
-<br />
-I'm pretty sure its in the pos/neg algorithm, as the same problem arises in presets where I use it. Could you please give me a list of errors that show up, like QNAN or INF?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">10th January 2005 22:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The only thing that I can think of in that statement is the acos... acos doesn't have a value for an input outside of -1..1. But your code is acos(sin(x)*sin(y)) and sin is bounded by -1..1, so so should sin*sin.<br />
-<br />
-Other ideas other than input domain errors could be overflow, although that's very unlikely. Also, while floating point functions can return infinity, I think that passing them to a function could well result in NaN. E.g. sin(INF).<br />
-<br />
-Splitting up your equation into separate statements will slow down your code, but it might help you locate the error. Just remove each of the lines one by one until it works. Or it might be caused by something somewhere else.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">JFASI</span><br />
-			<span class="date small text-muted">10th January 2005 22:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanks for the advice.<br />
-I think, however, that the problem lies somewhere in the <br />
--1, +1 algorithm, as other presets that I have used it in crash in the same way.<br />
-<br />
-How high does overflow set in, because if its like 50 factorial or something, then it isn't the case. It only get up to 150 or so, then the DM crashes.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

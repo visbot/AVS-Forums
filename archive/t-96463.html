@@ -1,185 +1,128 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Rotating Stars problem AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rotating Stars problem AVS" />
 
-	<title> Rotating Stars problem - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Rotating Stars problem - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">Rotating Stars problem</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=96463">Rotating Stars problem</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Clashman</span><br />
+      <span class="date small text-muted">1st August 2002 19:50 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">Rotating Stars problem</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=96463">Rotating Stars problem</a></p>
+      <p class="post-content"><strong>Rotating Stars problem</strong><br />
+      All right, here's my problem:<br />
+      <br />
+      I create an AVS that uses Blitter Feedback, Roto Blitter, a Simple, and four pairs of rotating stars in four different colors.<br />
+      <br />
+      THey show up as I create the AVS, but when I save it and reload it, only one set of stars appears!<br />
+      <br />
+      Does anyone know why this is happening?</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">1st August 2002 20:36 GMT</span></p>
 
-<br />
+      <p class="post-content">Rotating stars start at the same place every time. Since it's set on "replace" and nothing else, Only the last Rotating Stars appear (Try Set Render Blend - Additive, and see if it turns to white).<br />
+      <br />
+      A good way around this is to make an SSC that mimics rotating stars... Not that it's easy...<br />
+      <br />
+      Til then, you're stuck with being able to use 1 rotating stars.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Clashman</span><br />
-			<span class="date small text-muted">1st August 2002 19:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Rotating Stars problem</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">1st August 2002 20:48 GMT</span></p>
 
-		All right, here's my problem:<br />
-<br />
-I create an AVS that uses Blitter Feedback, Roto Blitter, a Simple, and four pairs of rotating stars in four different colors.<br />
-<br />
-THey show up as I create the AVS, but when I save it and reload it, only one set of stars appears!<br />
-<br />
-Does anyone know why this is happening?
-		</p>
-</div>
+      <p class="post-content">Here's a superscope replacement:<br />
+      <br />
+      Init:<br /></p>
+      <pre>
+<code>offset=0;direction=-1;starsize=.2;pathsize=.5;&#194;&#169;&#194;&#169;&#194;&#169;&#194;&#169;&#194;&#169;&#194;&#169;&#194;&#169;&#194;&#169;;n=6;tpi=acos(-1)*2;t=offset*tpi</code>
+</pre><br />
+      <br />
+      Beat: (empty)<br />
+      <br />
+      Frame:<br />
+      <pre>
+<code>t=t-0.05*direction;af=w/h</code>
+</pre><br />
+      <br />
+      Point:<br />
+      <pre>
+<code>r=i*tpi*2;x=cos(r-t)*starsize+cos(t)*pathsize;y=sin(r-t)*af*starsize+sin(t)*pathsize;</code>
+</pre><br />
+      <br />
+      This only does one star, but you can copy the superscope. Offset specifies the initial position, in fractions of 2*pi. Direction specifies the direction of rotating (1 or -1). Starsize specifies the size of the star, pathsize the size of the circle they rotate on.<br />
+      <br />
+      To have 3 stars in a circle, use offsets 0, 0.33333 and 0.66666. For 5, use offsets 0 0.2 0.4 0.6 0.8. Make sure you save and reload the preset to see their real positions.
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Clashman</span><br />
+      <span class="date small text-muted">1st August 2002 20:58 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">1st August 2002 20:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Thanks...I appreciate your help!</p>
+    </div>
+    <hr />
 
-		Rotating stars start at the same place every time. Since it's set on &quot;replace&quot; and nothing else, Only the last Rotating Stars appear (Try Set Render Blend - Additive, and see if it turns to white).<br />
-<br />
-A good way around this is to make an SSC that mimics rotating stars... Not that it's easy...<br />
-<br />
-Til then, you're stuck with being able to use 1 rotating stars.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Clashman</span><br />
+      <span class="date small text-muted">22nd August 2002 15:35 GMT</span></p>
 
-	<hr />
+      <p class="post-content">...now if I could figure out how to get the stars to react to the music...</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">1st August 2002 20:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">22nd August 2002 20:07 GMT</span></p>
 
-		Here's a superscope replacement:<br />
-<br />
-Init:<br />
-<pre><code>offset=0;direction=-1;starsize=.2;pathsize=.5;©©©©©©©©;n=6;tpi=acos(-1)*2;t=offset*tpi</code></pre><br />
-<br />
-Beat: (empty)<br />
-<br />
-Frame:<br />
-<pre><code>t=t-0.05*direction;af=w/h</code></pre><br />
-<br />
-Point:<br />
-<pre><code>r=i*tpi*2;x=cos(r-t)*starsize+cos(t)*pathsize;y=sin(r-t)*af*starsize+sin(t)*pathsize;</code></pre><br />
-<br />
-This only does one star, but you can copy the superscope. Offset specifies the initial position, in fractions of 2*pi. Direction specifies the direction of rotating (1 or -1). Starsize specifies the size of the star, pathsize the size of the circle they rotate on.<br />
-<br />
-To have 3 stars in a circle, use offsets 0, 0.33333 and 0.66666. For 5, use offsets 0 0.2 0.4 0.6 0.8. Make sure you save and reload the preset to see their real positions.
-		</p>
-</div>
+      <p class="post-content">add "starsize=.2+abs(getosc(0,.1,0))*.2;" to the per frame</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Clashman</span><br />
+      <span class="date small text-muted">22nd August 2002 21:48 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Clashman</span><br />
-			<span class="date small text-muted">1st August 2002 20:58 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">:igor:<br />
+      <br />
+      Of course!<br />
+      <br />
+      :igor:</p>
+    </div>
+    <hr />
 
-		Thanks...I appreciate your help!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Clashman</span><br />
-			<span class="date small text-muted">22nd August 2002 15:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		...now if I could figure out how to get the stars to react to the music...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">22nd August 2002 20:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		add &quot;starsize=.2+abs(getosc(0,.1,0))*.2;&quot; to the per frame
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Clashman</span><br />
-			<span class="date small text-muted">22nd August 2002 21:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:igor: <br />
-<br />
-Of course!<br />
-<br />
-:igor:
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,191 +1,127 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" I need to make the DM stop. AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="I need to make the DM stop. AVS" />
 
-	<title> I need to make the DM stop. - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>I need to make the DM stop. - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">I need to make the DM stop.</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=104714">I need to make the DM stop.</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">djcoolman</span><br />
+      <span class="date small text-muted">11th September 2002 13:55 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">I need to make the DM stop.</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=104714">I need to make the DM stop.</a></p>
+      <p class="post-content"><strong>I need to make the DM stop.</strong><br />
+      But I dont want it to be at the moment.<br />
+      I want it to be like car breck.<br />
+      Any codes?<br />
+      <br />
+      P.S.<br />
+      Sorry 4 the spelling!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Rovastar</span><br />
+      <span class="date small text-muted">11th September 2002 14:46 GMT</span></p>
 
-<br />
+      <p class="post-content">I don't understand at all what you are after.<br />
+      <br />
+      Could you post more details/ exmaples of presets and hopefully someone can help you.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">djcoolman</span><br />
-			<span class="date small text-muted">11th September 2002 13:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>I need to make the DM stop.</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">11th September 2002 16:25 GMT</span></p>
 
-		But I dont want it to be at the moment.<br />
-I want it to be like car breck.<br />
-Any codes?<br />
-<br />
-P.S.<br />
-Sorry 4 the spelling!
-		</p>
-</div>
+      <p class="post-content">You could try something like this:<br />
+      <br />
+      frame:<br />
+      a=a*.97;<br />
+      <br />
+      beat:<br />
+      a=1;<br />
+      <br />
+      per pixel:<br />
+      x=x+whatever*a;<br />
+      y=y+whatever*a;</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">nixa</span><br />
+      <span class="date small text-muted">11th September 2002 21:17 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Rovastar</span><br />
-			<span class="date small text-muted">11th September 2002 14:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">this will turn the dm on/off on beat<br />
+      <br />
+      beat: t=1-t;<br />
+      frame: k1=if(t,k1,k1+0.05);k2=if(t,k2,k2+0.01);<br />
+      point: x=x+k1;y=y+k2;</p>
+    </div>
+    <hr />
 
-		I don't understand at all what you are after. <br />
-<br />
-Could you post more details/ exmaples of presets and hopefully someone can help you.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">djcoolman</span><br />
+      <span class="date small text-muted">12th September 2002 13:09 GMT</span></p>
 
-	<hr />
+      <p class="post-content"><strong>not onbeat turn off/on</strong><br />
+      I meen like frame stop.<br />
+      Like this:<br />
+      Init:<br />
+      a=30;fc=0;<br />
+      Frame:<br />
+      fc=fc+1;<br />
+      s=if(above(fc,framestop),a-1&amp;if(equal(a,0),s,a),a);<br />
+      <br />
+      But i think there is somthing wrong in this.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">11th September 2002 16:25 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">12th September 2002 16:08 GMT</span></p>
 
-		You could try something like this:<br />
-<br />
-frame:<br />
-a=a*.97;<br />
-<br />
-beat:<br />
-a=1;<br />
-<br />
-per pixel:<br />
-x=x+whatever*a;<br />
-y=y+whatever*a;
-		</p>
-</div>
+      <p class="post-content">Are you trying for a gradual slow down?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">djcoolman</span><br />
+      <span class="date small text-muted">13th September 2002 15:00 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">nixa</span><br />
-			<span class="date small text-muted">11th September 2002 21:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Yep I want to slow down until the dm stops and then count 85 Frames 'til the speed inscreted.<br />
+      <br />
+      <br />
+      P.S.<br />
+      Still sorry 4 the spelling erorrs.</p>
+    </div>
+    <hr />
 
-		this will turn the dm on/off on beat<br />
-<br />
-beat: t=1-t;<br />
-frame: k1=if(t,k1,k1+0.05);k2=if(t,k2,k2+0.01);<br />
-point: x=x+k1;y=y+k2;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">djcoolman</span><br />
-			<span class="date small text-muted">12th September 2002 13:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>not onbeat turn off/on</strong><br />
-		
-		
-
-		I meen like frame stop.<br />
-Like this:<br />
-Init:<br />
-a=30;fc=0;<br />
-Frame:<br />
-fc=fc+1;<br />
-s=if(above(fc,framestop),a-1&amp;if(equal(a,0),s,a),a);<br />
-<br />
-But i think there is somthing wrong in this.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">12th September 2002 16:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Are you trying for a gradual slow down?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">djcoolman</span><br />
-			<span class="date small text-muted">13th September 2002 15:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Yep I want to slow down until the dm stops and then count 85 Frames 'til the speed inscreted.<br />
-<br />
-<br />
-P.S.<br />
-Still sorry 4 the spelling erorrs.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

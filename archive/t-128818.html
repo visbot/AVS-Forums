@@ -1,204 +1,132 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" 3D Collisions...again AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="3D Collisions...again AVS" />
 
-	<title> 3D Collisions...again - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>3D Collisions...again - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">3D Collisions...again</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128818">3D Collisions...again</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">17th March 2003 22:41 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">3D Collisions...again</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128818">3D Collisions...again</a></p>
+      <p class="post-content"><strong>3D Collisions...again</strong><br />
+      I thought that I had a way to do collisions in 3D, but it doesn't seem to work. No conservation of momentum whatsoever. To help explain my code, here's a brief explanation of what I've done:<br />
+      <br />
+      I figured out the normal x, y, and z components. I split the 3-D collision into 3 two dimensional collisions(xy, xz, yz). Then I added the resulting velocities of these collisions.<br />
+      <br />
+      The first mistake that I thought that I made was that I was still using the 3-dimensional normal in my two dimensional equations, but when I tried using three normals seperately(for each plane) I still got the same results.<br />
+      <br />
+      Any help is greatly appreciated. Thanks.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Nic01</span><br />
+      <span class="date small text-muted">17th March 2003 23:51 GMT</span></p>
 
-<br />
+      <p class="post-content">The balls are going maaaaad, I tell you....<br />
+      ..Well, only in the first try. The rest of the time, they're goddamned anemic. Heck, I checked off clear every frame and they're not moving a single bit. I have to put them into an effect list, disable it, and reenable it (Jump-starts the balls)<br />
+      <br />
+      I don't know what you have in the code so far, but I'll just tell you what I believe are needed for 3d collisions :<br />
+      <br />
+      1. They're spheres, so to detect collisions you only need distance between the two spheres' centerpoint. The distance for collision is R1+R2 where r is the radius, and since you can't get exactly into the amount needed, use below(r1+r2+n) where n is some small number for when collision occurs.<br />
+      <br />
+      2a. Direction of collision. Dunno :p mathworld.wolfram.com perhaps?<br />
+      2b. Speed of the balls. Please, conservation of energy! I don't want the balls to go from the speed of a snail into lightspeed, it just doesn't make sense. I think you'll need to use individual variables for speed in x,y, and z direction for correct speeds...<br />
+      <br />
+      2c. Direction/speed relation. Change in speed in a collision depends of the direction - head on or barely scratching. The direction also depend on speed difference. The more speed from the other ball, the more change in that direction... remember to compensate for the ball's own speed too.<br />
+      <br />
+      3. Sense of depth. Otherwise it looks weeeerd.<br />
+      <br />
+      Anyways, you're getting there, but it's currently hard to see if the balls bounced off correctly...<br />
+      That and you might want to cheat the 3d rotation since they're just spheres. Rotation of the individual spheres aren't exactly necessary for now - You can fake that.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">17th March 2003 22:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>3D Collisions...again</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">18th March 2003 01:34 GMT</span></p>
 
-		I thought that I had a way to do collisions in 3D, but it doesn't seem to work.  No conservation of momentum whatsoever.  To help explain my code, here's a brief explanation of what I've done:<br />
-<br />
-I figured out the normal x, y, and z components.  I split the 3-D collision into 3 two dimensional collisions(xy, xz, yz).  Then I added the resulting velocities of these collisions.<br />
-<br />
-The first mistake that I thought that I made was that I was still using the 3-dimensional normal in my two dimensional equations, but when I tried using three normals seperately(for each plane) I still got the same results.<br />
-<br />
-Any help is greatly appreciated.  Thanks.
-		</p>
-</div>
+      <p class="post-content">1. Yeah, collision detection is easy. Got that done.<br />
+      2a. I'm dealing solely with components. Both with velocities, positions, and the normals. Mathworld has nothing on collisions(that I can use).<br />
+      2b. I think something is messed up with my collision logic(or I made a stupid mistake).<br />
+      2c. That's what I use the normals for. I can do the 2-D collisions(I've put it up on the forums already).<br />
+      3. What do you mean? I used the standard 3D-2D conversion. I will be adding a wireframe box that is inclosing the area that they can bounce in, I'm just lazy.<br />
+      <br />
+      Oh, and my rotation is "faked". I want to include actual rotation in with the collisions, but that is difficult.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Pixelcraft</span><br />
+      <span class="date small text-muted">18th March 2003 03:17 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Nic01</span><br />
-			<span class="date small text-muted">17th March 2003 23:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Yes this is weird, about 20 seconds into the preset, it looked like the balls got into a catfight! Then they "strobed on my screen for a few seconds and disappeared.<br />
+      <br />
+      And another thing, I was going to cut and paste the preset into the folder, but I accidentaly left clicked on it. Instead of the "open with" box coming up, a notepad came up with a giant load of math in it. I closed out the notepad and clicked on the preset again, and the "open with" box came up like usual. That's never happened before....</p>
+    </div>
+    <hr />
 
-		The balls are going maaaaad, I tell you....<br />
-..Well, only in the first try. The rest of the time, they're goddamned anemic. Heck, I checked off clear every frame and they're not moving a single bit. I have to put them into an effect list, disable it, and reenable it (Jump-starts the balls)<br />
-<br />
-I don't know what you have in the code so far, but I'll just tell you what I believe are needed for 3d collisions :<br />
-<br />
-1. They're spheres, so to detect collisions you only need distance between the two spheres' centerpoint. The distance for collision is R1+R2 where r is the radius, and since you can't get exactly into the amount needed, use below(r1+r2+n) where n is some small number for when collision occurs.<br />
-<br />
-2a. Direction of collision. Dunno :p mathworld.wolfram.com perhaps?<br />
-2b. Speed of the balls. Please, conservation of energy! I don't want the balls to go from the speed of a snail into lightspeed, it just doesn't make sense. I think you'll need to use individual variables for speed in x,y, and z direction for correct speeds...<br />
-<br />
-2c. Direction/speed relation. Change in speed in a collision depends of the direction - head on or barely scratching. The direction also depend on speed difference. The more speed from the other ball, the more change in that direction... remember to compensate for the ball's own speed too.<br />
-<br />
-3. Sense of depth. Otherwise it looks weeeerd.<br />
-<br />
-Anyways, you're getting there, but it's currently hard to see if the balls bounced off correctly...<br />
-That and you might want to cheat the 3d rotation since they're just spheres. Rotation of the individual spheres aren't exactly necessary for now - You can fake that.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">18th March 2003 03:43 GMT</span></p>
 
-	<hr />
+      <p class="post-content">The reason they do that is because momentum isn't being conserved(I don't know why) and the velocities are increasing exponentially.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">18th March 2003 01:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">19th March 2003 05:49 GMT</span></p>
 
-		1.  Yeah, collision detection is easy.  Got that done.<br />
-2a. I'm dealing solely with components.  Both with velocities, positions, and the normals.  Mathworld has nothing on collisions(that I can use).<br />
-2b. I think something is messed up with my collision logic(or I made a stupid mistake).<br />
-2c. That's what I use the normals for.  I can do the 2-D collisions(I've put it up on the forums already).<br />
-3. What do you mean?  I used the standard 3D-2D conversion.  I will be adding a wireframe box that is inclosing the area that they can bounce in, I'm just lazy.<br />
-<br />
-Oh, and my rotation is &quot;faked&quot;.  I want to include actual rotation in with the collisions, but that is difficult.
-		</p>
-</div>
+      <p class="post-content">every action has an equal and opposite reaction...<br />
+      in the absense of any external unbalanced force, when two bodies collide with each other, their total momentum after collosion is equal to their total momentum before collision...<br />
+      is there any other external unbalanced force present? :)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">anubis2003</span><br />
+      <span class="date small text-muted">19th March 2003 12:01 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Pixelcraft</span><br />
-			<span class="date small text-muted">18th March 2003 03:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">No. Just a perfectly elastic collision.</p>
+    </div>
+    <hr />
 
-		Yes this is weird, about 20 seconds into the preset, it looked like the balls got into a catfight!  Then they &quot;strobed on my screen for a few seconds and disappeared.  <br />
-<br />
-And another thing, I was going to cut and paste the preset into the folder, but I accidentaly left clicked on it.  Instead of the &quot;open with&quot; box coming up, a notepad came up with a giant load of math in it.  I closed out the notepad and clicked on the preset again, and the &quot;open with&quot; box came up like usual.  That's never happened before....
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">shreyas_potnis</span><br />
+      <span class="date small text-muted">20th March 2003 10:31 GMT</span></p>
 
-	<hr />
+      <p class="post-content">i was just joking ;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">18th March 2003 03:43 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		The reason they do that is because momentum isn't being conserved(I don't know why) and the velocities are increasing exponentially.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">19th March 2003 05:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		every action has an equal and opposite reaction...<br />
-in the absense of any external unbalanced force, when two bodies collide with each other, their total momentum after collosion is equal to their total momentum before collision...<br />
-is there any other external unbalanced force present? :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">anubis2003</span><br />
-			<span class="date small text-muted">19th March 2003 12:01 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		No.  Just a perfectly elastic collision.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">shreyas_potnis</span><br />
-			<span class="date small text-muted">20th March 2003 10:31 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		i was just joking ;)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

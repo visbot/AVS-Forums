@@ -1,197 +1,120 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" (p)Reset button AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="(p)Reset button AVS" />
 
-	<title> (p)Reset button - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>(p)Reset button - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">(p)Reset button</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=174079">(p)Reset button</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">25th March 2004 15:33 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">(p)Reset button</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=174079">(p)Reset button</a></p>
+      <p class="post-content"><strong>(p)Reset button</strong><br />
+      While creating synchnonized stuff, say 2 SSC's, I often need to close/open AVS because the scope I'm working on gets reset everytime I change something in it and the other SSC does not reset. You know what I'm talking about.<br />
+      <br />
+      Now wouldn't it be an idea to have some sort of button that resets the preset? This prevents much irritation on my side because double clicking on the classic vis also toggles oscilloscope/spectrum/off.<br />
+      <br />
+      Downside: closing the AVS window saves the current preset (preset00.avs?) This has prevented quite some preset-losses due to WAcrashes, (although WA5 hardly crashes anymore on my PC) or perhaps this could be included in the function of the button...</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">hungryskull</span><br />
+      <span class="date small text-muted">25th March 2004 17:19 GMT</span></p>
 
-<br />
+      <p class="post-content">I could use that too.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">25th March 2004 15:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>(p)Reset button</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">25th March 2004 19:28 GMT</span></p>
 
-		While creating synchnonized stuff, say 2 SSC's, I often need to close/open AVS because the scope I'm working on gets reset everytime I change something in it and the other SSC does not reset. You know what I'm talking about.<br />
-<br />
-Now wouldn't it be an idea to have some sort of button that resets the preset? This prevents much irritation on my side because double clicking on the classic vis also toggles oscilloscope/spectrum/off. <br />
-<br />
-Downside: closing the AVS window saves the current preset (preset00.avs?) This has prevented quite some preset-losses due to WAcrashes, (although WA5 hardly crashes anymore on my PC) or perhaps this could be included in the function of the button...
-		</p>
-</div>
+      <p class="post-content">Just use global variables instead, and all your synchronization problems will be gone.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UIUC85</span><br />
+      <span class="date small text-muted">25th March 2004 19:49 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">hungryskull</span><br />
-			<span class="date small text-muted">25th March 2004 17:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">or ctrl+shift+k but global variables are the best idea.</p>
+    </div>
+    <hr />
 
-		I could use that too.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">D12</span><br />
+      <span class="date small text-muted">8th April 2004 20:11 GMT</span></p>
 
-	<hr />
+      <p class="post-content">I did write SS, but I had problem same as you.<br />
+      If next release of AVS will have this button it's pretty cool.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">25th March 2004 19:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Warrior of the Light</span><br />
+      <span class="date small text-muted">8th April 2004 20:33 GMT</span></p>
 
-		Just use global variables instead, and all your synchronization problems will be gone.
-		</p>
-</div>
+      <p class="post-content">There won't, Unconed is right. At first I thought there would be situations apart from DM's and SSC's that relied on it, but for as far as I can see there aren't, so just drop this. Globvars are the best solution.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">13th April 2004 13:28 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UIUC85</span><br />
-			<span class="date small text-muted">25th March 2004 19:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I have an addon to this. Open the AVS Debug window, then enable "Clear all local variables on all code recompiles". This also clears the global values too.</p>
+    </div>
+    <hr />
 
-		or ctrl+shift+k but global variables are the best idea.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">13th April 2004 13:48 GMT</span></p>
 
-	<hr />
+      <p class="post-content">neo: Activating this option is the cause of the problem, not the solution.<br />
+      If you activate this option this happens:<br />
+      You change a code block, it is recompiled and the variables of that one component are reset.<br />
+      variables of other components and global vars are left untouched.<br />
+      <br />
+      Deactivating it could help keeping your scopes in sync when editing, except if you change your whatever-you-want-to-sync code.<br />
+      solution: as UnConeD said, use the registers to store those whatever-you-want-to-sync values :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">D12</span><br />
-			<span class="date small text-muted">8th April 2004 20:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Neoavs</span><br />
+      <span class="date small text-muted">13th April 2004 15:02 GMT</span></p>
 
-		I did write SS, but I had problem same as you.<br />
-If next release of AVS will have this button it's pretty cool.
-		</p>
-</div>
+      <p class="post-content">o_O.... sorry for that, my mistake...</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Warrior of the Light</span><br />
-			<span class="date small text-muted">8th April 2004 20:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		There won't, Unconed is right. At first I thought there would be situations apart from DM's and SSC's that relied on it, but for as far as I can see there aren't, so just drop this. Globvars are the best solution.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">13th April 2004 13:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I have an addon to this. Open the AVS Debug window, then enable &quot;Clear all local variables on all code recompiles&quot;. This also clears the global values too.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">13th April 2004 13:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		neo: Activating this option is the cause of the problem, not the solution.<br />
-If you activate this option this happens:<br />
-You change a code block, it is recompiled and the variables of that one component are reset.<br />
-variables of other components and global vars are left untouched.<br />
-<br />
-Deactivating it could help keeping your scopes in sync when editing, except if you change your whatever-you-want-to-sync code.<br />
-solution: as UnConeD said, use the registers to store those whatever-you-want-to-sync values :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Neoavs</span><br />
-			<span class="date small text-muted">13th April 2004 15:02 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		o_O.... sorry for that, my mistake...
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

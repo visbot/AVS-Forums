@@ -1,318 +1,203 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" AVS Primer AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVS Primer AVS" />
 
-	<title> AVS Primer - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>AVS Primer - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">AVS Primer</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=88135">AVS Primer</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">19th May 2002 01:28 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">AVS Primer</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=88135">AVS Primer</a></p>
+      <p class="post-content"><strong>AVS Primer</strong><br />
+      IT'S HERE!!!<br />
+      <br />
+      Be sure to read the readme, I couldn't PiMP it out.<br />
+      <br />
+      This is by no means complete. If you know something I don't know, tell me (therealatero@hotmail.com)</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">cmountford</span><br />
+      <span class="date small text-muted">19th May 2002 06:37 GMT</span></p>
 
-<br />
+      <p class="post-content"><strong>wow</strong><br />
+      All I have to say is, how much time did you spend making this!?!<br />
+      <br />
+      I mean, seeing this almost made me stop writing my book! I'm in high school, and I don't have much free time to work on my book. Your method is a little different than mine, but yours probably is more effective. It's is almost depressing. :D<br />
+      <br />
+      Good job! I'll check them out.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">19th May 2002 01:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>AVS Primer</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">19th May 2002 11:55 GMT</span></p>
 
-		IT'S HERE!!!<br />
-<br />
-Be sure to read the readme, I couldn't PiMP it out.<br />
-<br />
-This is by no means complete.  If you know something I don't know, tell me (therealatero@hotmail.com)
-		</p>
-</div>
+      <p class="post-content">Some additions/corrections:<br />
+      <br />
+      - Trans/Movement: Source map.<br />
+      Normally you specify a source set of coordinates that a certain pixel will use for its colour (and thus creating a shift or movement).<br />
+      When Source Map is active, AVS will try to reverse the movement, by using the source as destination and vice-versa. However, because there is usually no 1-to-1 relationship the other way around, there will usually be gaps in the image.<br />
+      This checkbox also has a third state: when active, AVS will switch between 'normal' and 'source map' every beat.<br />
+      <br />
+      - Bilinear filtering: the AVS display is an image, and so it's composed of a grid of pixels. So when you wish to do a rotation or distortion, you can't do it perfectly, because the new grid doesn't match the original one perfectly. To get around this, AVS supports Bilinear Filtering.<br />
+      I'll explain through an example: suppose a movement specifies that a certain pixel needs to have the value at coordinates (10.4 , 15.8). Without Bilinear Filtering, we would have to settle for (10, 16), the closest alternative. But this would cancel out subtle movements and introduce obvious artifacts. With Bilinear Filtering, AVS will take the 4 surrounding pixels (10, 15), (11, 15), (10, 16) and (11, 16), and blend them together using weights calculated off the fractional part of the coordinates (0.4, 0.8). Of course this is a little bit slower, but you get a much cleaner picture. Note that, because of the blending and rounding errors, Bilinear Filtering tends to fade out your image a tiny little bit.<br />
+      <br />
+      - Trans / Unique Tone: your description is a bit weird IMO, because it's not really a fade-out. How about this:<br />
+      The Unique Tone-filter internally reduces your image to a gray-scale first, and then gives it the colour you specified.<br />
+      <br />
+      - The comment for Render / Starfield is the one for Render / Simple<br />
+      <br />
+      <br />
+      Great work!</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">19th May 2002 22:16 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">cmountford</span><br />
-			<span class="date small text-muted">19th May 2002 06:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>wow</strong><br />
-		
-		
+      <p class="post-content">Thanx, UnConeD. I'll update it right away!</p>
+    </div>
+    <hr />
 
-		All I have to say is, how much time did you spend making this!?!<br />
-<br />
-I mean, seeing this almost made me stop writing my book!  I'm in high school, and I don't have much free time to work on my book.  Your method is a little different than mine, but yours probably is more effective.  It's is almost depressing. :D<br />
-<br />
-Good job!  I'll check them out.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Serenyddion</span><br />
+      <span class="date small text-muted">20th May 2002 03:09 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Well you left out one little thing in the readme so i figured i'd clarify it: arc functions, an arc-function can be thought of as the un-function of whatever function you&#226;&#8364;&#8482;re working with. For example, the sine of 55 is about .8192, and the arcsine of .8192 is about 55. A problem people probably encounter a lot with these is that there is no arc sine/cosine/secant/cosecant for any number above 1 (I&#226;&#8364;&#8482;m not sure what Winamp returns for this value.. it isn&#226;&#8364;&#8482;t defined you get some number / 0, despite this Winamp usually still makes a line.) This doesn&#226;&#8364;&#8482;t hold true for the tangent or cotangent, I think they become undefined at infinity, and of course 90. So mathematically, asin(x) = sin^-1(x) the thing you have to notice here is that it is the function itself that is to the -1, not the result. sin(x)^-1, is the cosecant which is the opposite of the sine. Which is one other thing you may want to include, secants (sec), cosecants (csc), and cotangents (cot) even though they aren&#226;&#8364;&#8482;t actual functions in AVS they still can be useful and/or helpful for understanding the other functions.<br />
+      <br />
+      sec=cos(x)^-1 or sec=1/cos(x)<br />
+      csc=sin(x)^-1 or csc=1/sin(x)<br />
+      cot=tan(x)^-1 or cot=1/tan(x) or cot=cos(x)/sin(x)<br />
+      <br />
+      and this can be helpful because you can make things like big teeth :rolleyes: :<br />
+      x=i*2-1;<br />
+      y=1/sin(x*10)/20+getosc(0,1,0)<br />
+      <br />
+      although one thing, for a lot of these you should only use dots instead of lines, because if you use lines winamp graphs it all wonrg. This happens because the functions are at sometimes undefined, for example: tan(90) = sin(90)/cos(90) = 1/0, hence division by 0.. this doesn&#226;&#8364;&#8482;t work in conventional mathematics. So, the tangent line in this should be drawn out to infinity.. but that doesn&#226;&#8364;&#8482;t really work for Winamp so it makes the connecting lines.<br />
+      <br />
+      <br />
+      Oh and great work! never knew what interleave and timescope did ;)<br />
+      <br />
+      <br />
+      (edit)<br />
+      <br />
+      okay i got determined to find an actual use for these, the big teeth didn't really cut it hence i present you this thing that really isn't much better.. but hey, i tried :p<br />
+      <br />
+      init:n=w+h;t=3.1415<br />
+      frame:u=u+0.05<br />
+      point:x=(sin(i*t*2));y=(cos(i*t*2)*1/asin(x)*0.1)+1/atan(x*sin(u+x))/6<br />
+      <br />
+      (it's suspossed to look like smiles.. sort of)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th May 2002 11:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">20th May 2002 14:39 GMT</span></p>
 
-		Some additions/corrections:<br />
-<br />
-- Trans/Movement: Source map.<br />
-Normally you specify a source set of coordinates that a certain pixel will use for its colour (and thus creating a shift or movement).<br />
-When Source Map is active, AVS will try to reverse the movement, by using the source as destination and vice-versa. However, because there is usually no 1-to-1 relationship the other way around, there will usually be gaps in the image.<br />
-This checkbox also has a third state: when active, AVS will switch between 'normal' and 'source map' every beat.<br />
-<br />
-- Bilinear filtering: the AVS display is an image, and so it's composed of a grid of pixels. So when you wish to do a rotation or distortion, you can't do it perfectly, because the new grid doesn't match the original one perfectly. To get around this, AVS supports Bilinear Filtering.<br />
-I'll explain through an example: suppose a movement specifies that a certain pixel needs to have the value at coordinates (10.4 , 15.8). Without Bilinear Filtering, we would have to settle for (10, 16), the closest alternative. But this would cancel out subtle movements and introduce obvious artifacts. With Bilinear Filtering, AVS will take the 4 surrounding pixels (10, 15), (11, 15), (10, 16) and (11, 16), and blend them together using weights calculated off the fractional part of the coordinates (0.4, 0.8). Of course this is a little bit slower, but you get a much cleaner picture. Note that, because of the blending and rounding errors, Bilinear Filtering tends to fade out your image a tiny little bit.<br />
-<br />
-- Trans / Unique Tone: your description is a bit weird IMO, because it's not really a fade-out. How about this:<br />
-The Unique Tone-filter internally reduces your image to a gray-scale first, and then gives it the colour you specified.<br />
-<br />
-- The comment for Render / Starfield is the one for Render / Simple<br />
-<br />
-<br />
-Great work!
-		</p>
-</div>
+      <p class="post-content">good job atero, (/me tries to find the add to favourite button, oh wait, this isn't deviantart.com), why don't you do a guide, like you got almost all the info, do a basic guide/faq and build it up</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">21st May 2002 00:33 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">19th May 2002 22:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I did. Language and Applications.</p>
+    </div>
+    <hr />
 
-		Thanx, UnConeD.  I'll update it right away!
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">21st May 2002 16:34 GMT</span></p>
 
-	<hr />
+      <p class="post-content">do it on the web</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Serenyddion</span><br />
-			<span class="date small text-muted">20th May 2002 03:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">21st May 2002 19:11 GMT</span></p>
 
-		Well you left out one little thing in the readme so i figured i'd clarify it: arc functions, an arc-function can be thought of as the un-function of whatever function you’re working with.  For example, the sine of 55 is about .8192, and the arcsine of .8192 is about 55.  A problem people probably encounter a lot with these is that  there is no arc sine/cosine/secant/cosecant for any number above 1 (I’m not sure what Winamp returns for this value.. it isn’t defined you get some number / 0, despite this Winamp usually still makes a line.)  This doesn’t hold true for the tangent or cotangent, I think they become undefined at infinity, and of course 90.  So mathematically, asin(x) = sin^-1(x)   the thing you have to notice here is that it is the function itself that is to the -1, not the result.  sin(x)^-1, is the cosecant which is the opposite of the sine.  Which is one other thing you may want to include, secants (sec), cosecants (csc), and cotangents (cot) even though they aren’t actual functions in AVS they still can be useful and/or helpful for understanding the other functions.<br />
-<br />
-sec=cos(x)^-1 or sec=1/cos(x)<br />
-csc=sin(x)^-1 or csc=1/sin(x)<br />
-cot=tan(x)^-1 or cot=1/tan(x) or cot=cos(x)/sin(x)<br />
-<br />
-and this can be helpful because you can make things like big teeth :rolleyes:  :<br />
-x=i*2-1;<br />
-y=1/sin(x*10)/20+getosc(0,1,0)<br />
-<br />
-although one thing, for a lot of these you should only use dots instead of lines, because if you use lines winamp graphs it all wonrg.  This happens because the functions are at sometimes undefined, for example: tan(90) = sin(90)/cos(90) = 1/0, hence division by 0.. this doesn’t work in conventional mathematics.  So, the tangent line in this should be drawn out to infinity.. but that doesn’t really work for Winamp so it makes the connecting lines.<br />
-<br />
-<br />
-Oh and great work!  never knew what interleave and timescope did ;)<br />
-<br />
-<br />
-(edit)<br />
-<br />
-okay i got determined to find an actual use for these, the big teeth didn't really cut it hence i present you this thing that really isn't much better.. but hey, i tried :p<br />
-<br />
-init:n=w+h;t=3.1415<br />
-frame:u=u+0.05<br />
-point:x=(sin(i*t*2));y=(cos(i*t*2)*1/asin(x)*0.1)+1/atan(x*sin(u+x))/6<br />
-<br />
-(it's suspossed to look like smiles.. sort of)
-		</p>
-</div>
+      <p class="post-content">...wdym, 'do it on the web?'</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">21st May 2002 20:03 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">20th May 2002 14:39 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">do a avs tutorial website</p>
+    </div>
+    <hr />
 
-		good job atero, (/me tries to find the add to favourite button, oh wait, this isn't deviantart.com), why don't you do a guide, like you got almost all the info, do a basic guide/faq and build it up
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">goebish</span><br />
+      <span class="date small text-muted">24th May 2002 09:45 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Great work, really !!! Is there another place to get the last updated version ?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">21st May 2002 00:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">darrentheturkey</span><br />
+      <span class="date small text-muted">24th May 2002 20:12 GMT</span></p>
 
-		I did.  Language and Applications.
-		</p>
-</div>
+      <p class="post-content">This is great I learned a lot from the primer.<br />
+      What is the purpose of effects lists? Is it just to organize your effects?</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">25th May 2002 07:44 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">21st May 2002 16:34 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Like Unconed in fond of saying "It's like a preset inside a preset".<br />
+      <br />
+      You can give it a background image to work with. (whatever's showing before the effect list), and decide how it gets added to what is already there.</p>
+    </div>
+    <hr />
 
-		do it on the web
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">30th May 2002 02:49 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Thanx, I forgot about the effect lists! I'll make a file on those right away!<br />
+      <br />
+      And the final version will be posted here at some point - the only revisions thus far are minor (except for the starfield and effect list)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">21st May 2002 19:11 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		...wdym, 'do it on the web?'
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">21st May 2002 20:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		do a avs tutorial website
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">goebish</span><br />
-			<span class="date small text-muted">24th May 2002 09:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Great work, really !!! Is there another place to get the last updated version ?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">darrentheturkey</span><br />
-			<span class="date small text-muted">24th May 2002 20:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		This is great I learned a lot from the primer.<br />
-What is the purpose of effects lists?  Is it just to organize your effects?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">25th May 2002 07:44 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Like Unconed in fond of saying &quot;It's like a preset inside a preset&quot;.<br />
-<br />
-You can give it a background image to work with. (whatever's showing before the effect list), and decide how it gets added to what is already there.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">30th May 2002 02:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Thanx, I forgot about the effect lists!  I'll make a file on those right away!<br />
-<br />
-And the final version will be posted here at some point - the only revisions thus far are minor (except for the starfield and effect list)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

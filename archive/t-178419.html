@@ -1,226 +1,148 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Some ideas ... AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Some ideas ... AVS" />
 
-	<title> Some ideas ... - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Some ideas ... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Some ideas ...</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=178419">Some ideas ...</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">piR</span><br />
+      <span class="date small text-muted">29th April 2004 22:23 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Some ideas ...</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=178419">Some ideas ...</a></p>
+      <p class="post-content"><strong>Some ideas ...</strong><br />
+      <u>About evallib :</u><br />
+      <br />
+      The assign() function is used to move a value in a given variable, returning this same value. May be some other functions like this one can be added :<br />
+      <br />
+      - add(a,b) for a = a + b<br />
+      - sub(a,b) for a = a - b<br />
+      - mul(a,b) for a = a * b<br />
+      - div(a,b) for a = a / b<br />
+      <br />
+      and, by extension :<br />
+      <br />
+      - inc(a) for a = a + 1<br />
+      - dec(a) for a = a - 1<br />
+      <br />
+      These will be very useful in loop(), exec2() or exec3() ...<br />
+      <br />
+      <u>About AVS interface</u><br />
+      <br />
+      I don't know if I am the only one who tried to make a translation of AVS screens, but, if it's quite easy as long it is in the resources, it's almost impossible when strings are melted in binary (for example, all the online help !).<br />
+      Please, in the next version, can we have ALL STRINGS in resource's ... string.<br />
+      <br />
+      About resources, I read in the current wishlist something about missing version string. There is a version string. Its value is currently 2.7.9.2 :(</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">29th April 2004 22:48 GMT</span></p>
 
-<br />
+      <p class="post-content">Couldn't you just use assign(a,a+b), assign(a,a-b), etc for that?<br />
+      <br />
+      Anyway, check out Tomylobo's AVSTrans code tool for making readable code.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">29th April 2004 22:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Some ideas ...</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">piR</span><br />
+      <span class="date small text-muted">30th April 2004 11:05 GMT</span></p>
 
-		<u>About evallib :</u><br />
-<br />
-The assign() function is used to move a value in a given variable, returning this same value. May be some other functions like this one can be added :<br />
-<br />
-- add(a,b)  for a = a + b<br />
-- sub(a,b)  for a = a - b<br />
-- mul(a,b)  for a = a * b<br />
-- div(a,b)  for a = a / b<br />
-<br />
-and, by extension :<br />
-<br />
-- inc(a)    for a = a + 1<br />
-- dec(a)    for a = a - 1<br />
-<br />
-These will be very useful in loop(), exec2() or exec3() ...<br />
-<br />
-<u>About AVS interface</u><br />
-<br />
-I don't know if I am the only one who tried to make a translation of AVS screens, but, if it's quite easy as long it is in the resources, it's almost impossible when strings are melted in binary (for example, all the online help !).<br />
-Please, in the next version, can we have ALL STRINGS in resource's ... string.<br />
-<br />
-About resources, I read in the current wishlist something about missing version string. There is a version string. Its value is currently 2.7.9.2 :(
-		</p>
-</div>
+      <p class="post-content">Of course, I can ! But I can also simulate arrays without megabuf() ;)<br />
+      I suggested these functions for two reasons : I think it's more concise, so more readable, and functions like these are closer to machine code and may generate a more efficient code ...</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">30th April 2004 12:15 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">29th April 2004 22:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">that's what i would write in ASM for a=b+c:<br /></p>
+      <pre>
+<code><br />ffree st(7)  // empty lower register to make room for c<br />fld c        // load c<br />ffree st(7)  // empty lower register to make room for b<br />fld b        // load b<br />fadd st,st(1)// add the 2 values<br />fst a        // store result in a<br /></code>
+</pre><br />
+      <br />
+      and here's what i would do for add(a,b):<br />
+      <pre>
+<code><br />ffree st(7)  // empty lower register to make room for b<br />fld b        // load b<br />ffree st(7)  // empty lower register to make room for a<br />fld a        // load a<br />fadd st,st(1)// add the 2 values<br />fst a        // store result in a<br /></code>
+</pre><br />
+      That's nearly the same code, you see?<br />
+      unlike integer values, floating point values <u>have</u> to be loaded to the fpu's registers to manipulate them<br />
+      <br />
+      for integers that'd be true and you could write<br />
+      <pre>
+<code><br />mov eax,b<br />add a,eax<br /></code>
+</pre><br />
+      for add(a,b) and<br />
+      <pre>
+<code><br />mov eax,c<br />add eax,b<br />mov a,eax<br /></code>
+</pre><br />
+      for a=b+c<br />
+      in this case it is a bit more efficient but as all variables in AVS are floating point variables, your suggestion wouldn't make it faster
+    </div>
+    <hr />
 
-		Couldn't you just use assign(a,a+b), assign(a,a-b), etc for that?<br />
-<br />
-Anyway, check out Tomylobo's AVSTrans code tool for making readable code.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">piR</span><br />
+      <span class="date small text-muted">30th April 2004 13:36 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Ooops ... I become too old :)<br />
+      I always thought about integers only ( see inc() and dec() ;) ).<br />
+      In both cases, the binary code will be exactly the same (with a good compiler, of course).<br />
+      <br />
+      So, forget this part of my wish ...</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">30th April 2004 11:05 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">TomyLobo</span><br />
+      <span class="date small text-muted">1st May 2004 09:46 GMT</span></p>
 
-		Of course, I can ! But I can also simulate arrays without megabuf() ;)<br />
-I suggested these functions for two reasons : I think it's more concise, so more readable, and functions like these are closer to machine code and may generate a more efficient code ...
-		</p>
-</div>
+      <p class="post-content">btw add these lines to your code and let AVSTrans translate it and you can use add/sub/mul/div/divr(var,value) and inc/dec(var)<br /></p>
+      <pre>
+<code><br />//$AVSTrans_Replacement_Pattern=add\(([^,]+),([^\)]+)\)-&gt;assign($1,$1+$2)<br />//$AVSTrans_Replacement_Pattern=sub\(([^,]+),([^\)]+)\)-&gt;assign($1,$1-$2)<br />//$AVSTrans_Replacement_Pattern=subr\(([^,]+),([^\)]+)\)-&gt;assign($1,$2-$1)<br />//$AVSTrans_Replacement_Pattern=mul\(([^,]+),([^\)]+)\)-&gt;assign($1,$1*$2)<br />//$AVSTrans_Replacement_Pattern=div\(([^,]+),([^\)]+)\)-&gt;assign($1,$1/$2)<br />//$AVSTrans_Replacement_Pattern=divr\(([^,]+),([^\)]+)\)-&gt;assign($1,$2/$1)<br /><br />//$AVSTrans_Replacement_Pattern=inc\(([^\)]+)\)-&gt;assign($1,$1+1)<br />//$AVSTrans_Replacement_Pattern=dec\(([^\)]+)\)-&gt;assign($1,$1-1)<br /></code>
+</pre><br />
+      the only problem is: these add/sub/mul/div/divr here don't support commas in the first parameter and don't support brackets in the second parameter :( if you need to use them , try square brackets... AVSTrans automatically converts these to round brackets <u>after</u> the translation.<br />
+      <br />
+      some examples:<br />
+      <pre>
+<code><br />add(x,0.3);       =&gt; assign(x,x+0.3);<br />subr(iy,[1-i]*5); =&gt; assign(iy,(1-i)*5-iy);<br /></code>
+</pre><br />
+      subr/divr are backwards subtraction/division<br />
+      this means subr(a,b) is the same as<br />
+      a=b-a<br />
+      while sub(a,b) means<br />
+      a=a-b
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">30th April 2004 12:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		that's what i would write in ASM for a=b+c:<br />
-<pre><code><br />
-ffree st(7)  // empty lower register to make room for c<br />
-fld c        // load c<br />
-ffree st(7)  // empty lower register to make room for b<br />
-fld b        // load b<br />
-fadd st,st(1)// add the 2 values<br />
-fst a        // store result in a<br />
-</code></pre><br />
-<br />
-and here's what i would do for add(a,b):<br />
-<pre><code><br />
-ffree st(7)  // empty lower register to make room for b<br />
-fld b        // load b<br />
-ffree st(7)  // empty lower register to make room for a<br />
-fld a        // load a<br />
-fadd st,st(1)// add the 2 values<br />
-fst a        // store result in a<br />
-</code></pre><br />
-That's nearly the same code, you see?<br />
-unlike integer values, floating point values <u>have</u> to be loaded to the fpu's registers to manipulate them<br />
-<br />
-for integers that'd be true and  you could write<br />
-<pre><code><br />
-mov eax,b<br />
-add a,eax<br />
-</code></pre><br />
-for add(a,b) and <br />
-<pre><code><br />
-mov eax,c<br />
-add eax,b<br />
-mov a,eax<br />
-</code></pre><br />
-for a=b+c<br />
-in this case it is a bit more efficient but as all variables in AVS are floating point variables, your suggestion wouldn't make it faster
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">piR</span><br />
-			<span class="date small text-muted">30th April 2004 13:36 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ooops ... I become too old :)<br />
-I always thought about integers only ( see inc() and dec() ;) ).<br />
-In both cases, the binary code will be exactly the same (with a good compiler, of course).<br />
-<br />
-So, forget this part of my wish ...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">TomyLobo</span><br />
-			<span class="date small text-muted">1st May 2004 09:46 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		btw add these lines to your code and let AVSTrans translate it and you can use add/sub/mul/div/divr(var,value) and inc/dec(var)<br />
-<pre><code><br />
-//$AVSTrans_Replacement_Pattern=add\(([^,]+),([^\)]+)\)-&gt;assign($1,$1+$2)<br />
-//$AVSTrans_Replacement_Pattern=sub\(([^,]+),([^\)]+)\)-&gt;assign($1,$1-$2)<br />
-//$AVSTrans_Replacement_Pattern=subr\(([^,]+),([^\)]+)\)-&gt;assign($1,$2-$1)<br />
-//$AVSTrans_Replacement_Pattern=mul\(([^,]+),([^\)]+)\)-&gt;assign($1,$1*$2)<br />
-//$AVSTrans_Replacement_Pattern=div\(([^,]+),([^\)]+)\)-&gt;assign($1,$1/$2)<br />
-//$AVSTrans_Replacement_Pattern=divr\(([^,]+),([^\)]+)\)-&gt;assign($1,$2/$1)<br />
-<br />
-//$AVSTrans_Replacement_Pattern=inc\(([^\)]+)\)-&gt;assign($1,$1+1)<br />
-//$AVSTrans_Replacement_Pattern=dec\(([^\)]+)\)-&gt;assign($1,$1-1)<br />
-</code></pre><br />
-the only problem is: these add/sub/mul/div/divr here don't support commas in the first parameter and don't support brackets in the second parameter :( if you need to use them , try square brackets... AVSTrans automatically converts these to round brackets <u>after</u> the translation.<br />
-<br />
-some examples:<br />
-<pre><code><br />
-add(x,0.3);       =&gt; assign(x,x+0.3);<br />
-subr(iy,[1-i]*5); =&gt; assign(iy,(1-i)*5-iy);<br />
-</code></pre><br />
-subr/divr are backwards subtraction/division<br />
-this means subr(a,b) is the same as<br />
-a=b-a<br />
-while sub(a,b) means<br />
-a=a-b
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,252 +1,163 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" getspec() Pixel Values AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="getspec() Pixel Values AVS" />
 
-	<title> getspec() Pixel Values - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>getspec() Pixel Values - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">getspec() Pixel Values</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=110806">getspec() Pixel Values</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">python_boot</span><br />
+      <span class="date small text-muted">21st October 2002 16:51 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">getspec() Pixel Values</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=110806">getspec() Pixel Values</a></p>
+      <p class="post-content"><strong>getspec() Pixel Values</strong><br />
+      Is there any way I can assign individual colors to specific value ranges returned by getspec? Like make all values below a certain threshold dark blue, the values in a range above that lighter blue, and the strongest values really light blue or white?<br />
+      <br />
+      I want to apply colors along the lines of Nullsoft Tiny Fullscreen - Voiceprint. I've fooled around with the red, green, blue values and gotten a smooth color shift, but it is the color is not tied to the strength of a given point in the sample.<br />
+      <br />
+      Here's my code, and I'm attaching a screenshot of what I have.<br />
+      <br />
+      Init:<br />
+      ..... t=-1; n=1024; p=2/1024;<br />
+      Frame:<br />
+      ..... t=if(equal(t,1),-1,t+p);<br />
+      Point:<br />
+      ..... x=t;<br />
+      ..... y=-i;<br />
+      ..... col=getspec(i/1.37,0,1);<br />
+      ..... red=col; green=col*col; blue=col*i*2;<br />
+      <br />
+      Thanks,<br />
+      python_boot</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">21st October 2002 18:26 GMT</span></p>
 
-<br />
+      <p class="post-content">You're doing the right thing. The only thing that seems odd is using 'i' in your color code. 'i' is not related to the getspec value. Just play around some more. Try something like:<br />
+      <br /></p>
+      <pre>
+<code><br />col=sqrt(getspec(i*.5,0,1)); <br />blue=-cos(col*3.14)*.5+.5;<br />green=sqr(col)*3-1;<br />red=col*2-1;<br /></code>
+</pre>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">python_boot</span><br />
-			<span class="date small text-muted">21st October 2002 16:51 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>getspec() Pixel Values</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Alsee</span><br />
+      <span class="date small text-muted">19th November 2002 12:20 GMT</span></p>
 
-		Is there any way I can assign individual colors to specific value ranges returned by getspec? Like make all values below a certain threshold dark blue, the values in a range above that lighter blue, and the strongest values really light blue or white?<br />
-<br />
-I want to apply colors along the lines of Nullsoft Tiny Fullscreen - Voiceprint. I've fooled around with the red, green, blue values and gotten a smooth color shift, but it is the color is not tied to the strength of a given point in the sample.<br />
-<br />
-Here's my code, and I'm attaching a screenshot of what I have.<br />
-<br />
-Init:<br />
-..... t=-1; n=1024; p=2/1024;<br />
-Frame:<br />
-..... t=if(equal(t,1),-1,t+p);<br />
-Point:<br />
-..... x=t;<br />
-..... y=-i;<br />
-..... col=getspec(i/1.37,0,1);<br />
-..... red=col; green=col*col; blue=col*i*2;<br />
-<br />
-Thanks,<br />
-python_boot
-		</p>
-</div>
+      <p class="post-content"><i>Is there any way I can assign individual colors to specific value ranges returned by getspec? Like make all values below a certain threshold dark blue</i><br />
+      <br />
+      Yep, use an ABOVE() or BELOW() test inside an IF like this:<br />
+      <br />
+      blue=IF( BELOW(col,lowthreshold) ,0.3,0.6);<br />
+      <br />
+      Then you can do more IF's like this...<br />
+      <br />
+      blue=IF( BELOW(col,highthreshold) ,blue,1.0);<br />
+      <br />
+      If col small then the first IF gives you dark blue, otherwise it sets it to medium blue. If col is big then the second test changes it to bright blue, but if col is medium then the second IF says blue = blue which leaves it unchanged. You can set as many ranges as you like by adding more IF's.<br />
+      <br />
+      Then you use the same method to set red and again to set green.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">19th November 2002 17:40 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">21st October 2002 18:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">I think he's looking for a smooth scaling, which would not be achieved with various IF statements. You could also try built-in chroming (I love chroming :D ):<br />
+      <br />
+      a=1-a; v=getspec(i/2,0.03,0);<br />
+      x=i*2-1; y=-if(a,v,0)+0.5;<br />
+      col=(1-max(v,1-v))*2; col2=(1-max(col,1-col))*2;<br />
+      red=col; blue=col2; green=(1-max(col2,1-col2))*2;</p>
+    </div>
+    <hr />
 
-		You're doing the right thing. The only thing that seems odd is using 'i' in your color code. 'i' is not related to the getspec value. Just play around some more. Try something like:<br />
-<br />
-<pre><code><br />
-col=sqrt(getspec(i*.5,0,1)); <br />
-blue=-cos(col*3.14)*.5+.5;<br />
-green=sqr(col)*3-1;<br />
-red=col*2-1;<br />
-</code></pre>
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
+      <span class="date small text-muted">20th November 2002 05:23 GMT</span></p>
 
-	<hr />
+      <p class="post-content">You release what chroming means (in terms of an action), don't you?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Alsee</span><br />
-			<span class="date small text-muted">19th November 2002 12:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">uNDefineD</span><br />
+      <span class="date small text-muted">20th November 2002 09:12 GMT</span></p>
 
-		<i>Is there any way I can assign individual colors to specific value ranges returned by getspec? Like make all values below a certain threshold dark blue</i><br />
-<br />
-Yep, use an ABOVE() or BELOW() test inside an IF like this:<br />
-<br />
-blue=IF( BELOW(col,lowthreshold) ,0.3,0.6);<br />
-<br />
-Then you can do more IF's like this...<br />
-<br />
-blue=IF( BELOW(col,highthreshold) ,blue,1.0);<br />
-<br />
-If col small then the first IF gives you dark blue, otherwise it sets it to medium blue. If col is big then the second test changes it to bright blue, but if col is medium then the second IF says blue = blue which leaves it unchanged. You can set as many ranges as you like by adding more IF's.<br />
-<br />
-Then you use the same method to set red and again to set green.
-		</p>
-</div>
+      <p class="post-content">Nice SSC there Atero. YOu truly are the master of experimentation. :)</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">20th November 2002 18:33 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">19th November 2002 17:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">...whosajiggawhaaa? That was just something absolutely random...<br />
+      <br />
+      'Chroming' aka 'solarizing' is the process of making bright pixels dark, and medium-brightness pixels bright. Imagine an area with a white point in the middle, then darkening going ******d. Viewed from the 'side' it would look like this (where higher=brighter):<br />
+      <font face="courier new">./\<br />
+      /..\</font><br />
+      We want to make it look like this:<br />
+      <font face="courier new">/\/\</font><br />
+      Basically that means any values that are above 0.5 need to be inverted. To do that, we need to take the minimum value of both the original and it's inverted value, so any pixels equal to 0.5 stay the same, pixels below 0.5 stay the same (because their inverted value is greater than their original), and pixels above 0.5 get inverted (because their inverted value is less than their original). However, the end result has values only between 0 and 0.5, so we need to double any of the values so it doesn't look muddy.<br />
+      BTW, the code I used doesn't work quite as efficiently, I was thinking of effect-list chroming where you don't get to use minimum blend. Here's the better code:<br />
+      <br />
+      color=min(color,1-color)*2;<br />
+      <br />
+      <br />
+      &lt;edit&gt; oops, i suck at doing the php-quotes thing...oh well, i'll just use courier...&lt;/edit&gt;</p>
+    </div>
+    <hr />
 
-		I think he's looking for a smooth scaling, which would not be achieved with various IF statements.  You could also try built-in chroming (I love chroming :D ):<br />
-<br />
-a=1-a; v=getspec(i/2,0.03,0);<br />
-x=i*2-1; y=-if(a,v,0)+0.5;<br />
-col=(1-max(v,1-v))*2; col2=(1-max(col,1-col))*2;<br />
-red=col; blue=col2; green=(1-max(col2,1-col2))*2;
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Zevensoft</span><br />
+      <span class="date small text-muted">21st November 2002 07:45 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Chrome Effect List:<br /></p>
+      <pre>
+<code><br />EL (replace|replace) {<br />--EL (replace|maximum) {<br />----Trans/Invert<br />--}<br />--Trans/Invert<br />--Trans/FastBrightness<br />}<br /></code>
+</pre>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">20th November 2002 05:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Montana</span><br />
+      <span class="date small text-muted">21st November 2002 14:12 GMT</span></p>
 
-		You release what chroming means (in terms of an action), don't you?
-		</p>
-</div>
+      <p class="post-content">thanks, zevensoft, i like that solution, it gave a better effect than the normal solution<br /></p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">uNDefineD</span><br />
-			<span class="date small text-muted">20th November 2002 09:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Nice SSC there Atero. YOu truly are the master of experimentation. :)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">20th November 2002 18:33 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		...whosajiggawhaaa?  That was just something absolutely random...<br />
-<br />
-'Chroming' aka 'solarizing' is the process of making bright pixels dark, and medium-brightness pixels bright.  Imagine an area with a white point in the middle, then darkening going ******d.  Viewed from the 'side' it would look like this (where higher=brighter):<br />
-<font face="courier new">./\<br />
-/..\</font><br />
-We want to make it look like this:<br />
-<font face="courier new">/\/\</font><br />
-Basically that means any values that are above 0.5 need to be inverted.  To do that, we need to take the minimum value of both the original and it's inverted value, so any pixels equal to 0.5 stay the same, pixels below 0.5 stay the same (because their inverted value is greater than their original), and pixels above 0.5 get inverted (because their inverted value is less than their original).  However, the end result has values only between 0 and 0.5, so we need to double any of the values so it doesn't look muddy.<br />
-BTW, the code I used doesn't work quite as efficiently, I was thinking of effect-list chroming where you don't get to use minimum blend.  Here's the better code:<br />
-<br />
-color=min(color,1-color)*2;<br />
-<br />
-<br />
-&lt;edit&gt; oops, i suck at doing the php-quotes thing...oh well, i'll just use courier...&lt;/edit&gt;
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Zevensoft</span><br />
-			<span class="date small text-muted">21st November 2002 07:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Chrome Effect List:<br />
-<pre><code><br />
-EL (replace|replace) {<br />
---EL (replace|maximum) {<br />
-----Trans/Invert<br />
---}<br />
---Trans/Invert<br />
---Trans/FastBrightness<br />
-}<br />
-</code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Montana</span><br />
-			<span class="date small text-muted">21st November 2002 14:12 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thanks, zevensoft, i like that solution, it gave a better effect than the normal solution<br />
-
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

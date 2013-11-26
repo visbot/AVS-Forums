@@ -1,116 +1,79 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Analysis scope could help a lot AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Analysis scope could help a lot AVS" />
 
-	<title> Analysis scope could help a lot - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Analysis scope could help a lot - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Analysis scope could help a lot</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=235452">Analysis scope could help a lot</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Steps</span><br />
+      <span class="date small text-muted">14th January 2006 11:09 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Analysis scope could help a lot</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=235452">Analysis scope could help a lot</a></p>
+      <p class="post-content"><strong>Analysis scope could help a lot</strong><br />
+      Hello,<br />
+      an analysis tools for noise could help everybody who has a noise problem. A common example is some squeaking or rattling noise in a new car. If you had a problem with your new car, be sure its gone when you claim it a your car dealer and it will come back when you leave the yard.<br />
+      Making the sound reproducable by playing it back with WinAmp together with a Visualization makes it easier for the customer and the mechanics.<br />
+      Noise aquisition:<br />
+      To record the disturbing noise, you can use mp3-players with a recording function or a soundcard in a laptop.<br />
+      Noise evaluation:<br />
+      The easiest way to make noises visible ist to plot Frequencies versus Time (a sonogramm). The intesity of the sound pressure level, the third axis, is indicated by color. Black means 0dB silence, bright red means maximum. The problem could be detected by small bright areas.<br />
+      I would be very glad if somebody would be interested in this wish.<br />
+      Steps</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">ASD5A</span><br />
+      <span class="date small text-muted">14th January 2006 11:40 GMT</span></p>
 
-<br />
+      <p class="post-content">is that what youre looking for?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Steps</span><br />
-			<span class="date small text-muted">14th January 2006 11:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Analysis scope could help a lot</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Steps</span><br />
+      <span class="date small text-muted">15th January 2006 09:41 GMT</span></p>
 
-		Hello,<br />
-an analysis tools for noise could help everybody who has a noise problem. A common example is some squeaking or rattling noise in a new car. If you had a problem with your new car, be sure its gone when you claim it a your car dealer and it will come back when you leave the yard.<br />
-Making the sound reproducable by playing it back with WinAmp together with a Visualization makes it easier for the customer and the mechanics.<br />
-Noise aquisition:<br />
-To record the disturbing noise, you can use mp3-players with a recording function or a soundcard in a laptop.<br />
-Noise evaluation:<br />
-The easiest way to make noises visible ist to plot Frequencies versus Time (a sonogramm). The intesity of the sound pressure level, the third axis, is indicated by color. Black means 0dB silence, bright red means maximum. The problem could be detected by small bright areas.<br />
-I would be very glad if somebody would be interested in this wish.<br />
-Steps
-		</p>
-</div>
+      <p class="post-content">Hello ASD5A,<br />
+      many thanks for the example, its indicating the possibilities.<br />
+      The movement of the x-axis should be changed:<br />
+      Start printing points at x=0 for time t=0, then plot on x=x+delta_x with delta_x=Time_to_next_fftdata/Time_to_Analyze<br />
+      until x=1 then reset x=0 for the next analyzing loop.<br />
+      y should be 1 for frequency f_min=20Hz,<br />
+      y should be 0 for frequency f_max=10kHz (with a logarythmical scaling).<br />
+      The color of the plotted point comes out of a color function to increase dynamic.<br />
+      I'll work on more exact functions for color and y-scaling, but I don't know which values are coming from the avs system exactly.<br />
+      best regards,<br />
+      Steps.</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">ASD5A</span><br />
-			<span class="date small text-muted">14th January 2006 11:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		is that what youre looking for?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Steps</span><br />
-			<span class="date small text-muted">15th January 2006 09:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Hello ASD5A,<br />
-many thanks for the example, its indicating the possibilities.<br />
-The movement of the x-axis should be changed: <br />
-Start printing points at x=0 for time t=0, then plot on x=x+delta_x with delta_x=Time_to_next_fftdata/Time_to_Analyze <br />
-until x=1 then reset x=0 for the next analyzing loop.<br />
-y should be 1 for frequency f_min=20Hz,<br />
-y should be 0 for frequency f_max=10kHz (with a logarythmical scaling).<br />
-The color of the plotted point comes out of a color function to increase dynamic.<br />
-I'll work on more exact functions for color and y-scaling, but I don't know which values are coming from the avs system exactly.<br />
-best regards,<br />
-Steps.
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

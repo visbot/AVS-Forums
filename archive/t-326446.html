@@ -1,145 +1,94 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Presets using Global Variables which I have fixed AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Presets using Global Variables which I have fixed AVS" />
 
-	<title> Presets using Global Variables which I have fixed - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Presets using Global Variables which I have fixed - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-137.html">AVS Presets</a></li>
 
+      <li class="active">Presets using Global Variables which I have fixed</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=326446">Presets using Global Variables which I have fixed</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">AMT1970</span><br />
+      <span class="date small text-muted">25th January 2011 02:45 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-137.html">AVS Presets</a></li>
-		<li class="active">Presets using Global Variables which I have fixed</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=326446">Presets using Global Variables which I have fixed</a></p>
+      <p class="post-content"><strong>Presets using Global Variables which I have fixed</strong><br />
+      As many of you may know, presets using global variables are known to instantly crash Winamp when switching to a new preset. This occurs on all pcs running Windows 7. I have read that this phenomena only affects 64 bit operating systems but mine is a 32 bit os and I suffer the same problem. I have searched my hard drive for as many presets that I could find, that use global variables. On the advice of WoTl, I copied and pasted the code from the global variables into a superscope, and then disabled the ape plugin "globmgr.ape". This wasn't as easy as it sounds, because in the process I would have to close Winamp twice and disable and re-enable globmgr.ape for every preset. If I didn't do things in the right order, Winamp would crash instantly. Fixing each preset took me several minutes.<br />
+      <br />
+      None of these presets are my work. I take no credit for the time and effort put forth by the original artists.<br />
+      <br />
+      I post these presets knowing that they now work fine on my Windows 7 pc. I hope they work on yours. Please let me know.<br />
+      <br />
+      I have included 3<u>unfixed</u> but renamed-to-make-inert copies of the following presets - synth-c - fallbot, synth-c - cool down in hell, and synth-c - dancebot, with the hope that somebody who knows what they're doing can fix them. If there are any more presets out there that I have missed, let me know, I'd like to try to fix them!<br />
+      <br />
+      One last thing - you either need to delete or disable the plugin globmgr.ape in order to not crash Winamp.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">micro.D</span><br />
+      <span class="date small text-muted">2nd April 2011 08:49 GMT</span></p>
 
-<br />
+      <p class="post-content">don't forget gvm is able to read from .gvm files. usually a load of assign(gmegabuf(index),something); if a preset uses a .gvm file (i.e. for a 3d model) paste that in a separate ssc's init part. that has a character limit though so if the .gvm is too long the gmegabuf assigments can be separated through as many ssc's as you want.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">AMT1970</span><br />
-			<span class="date small text-muted">25th January 2011 02:45 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Presets using Global Variables which I have fixed</strong><br />
-		
-		
-			
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">4th April 2011 12:50 GMT</span></p>
 
-		As many of you may know, presets using global variables are known to instantly crash Winamp when switching to a new preset. This occurs on all pcs running Windows 7. I have read that this phenomena only affects 64 bit operating systems but mine is a 32 bit os and I suffer the same problem. I have searched my hard drive for as many presets that I could find, that use global variables. On the advice of WoTl, I copied and pasted the code from the global variables into a superscope, and then disabled the ape plugin &quot;globmgr.ape&quot;. This wasn't as easy as it sounds, because in the process I would have to close Winamp twice and disable and re-enable globmgr.ape for every preset. If I didn't do things in the right order, Winamp would crash instantly. Fixing each preset took me several minutes.<br />
-<br />
-None of these presets are my work. I take no credit for the time and effort put forth by the original artists.<br />
-<br />
-I post these presets knowing that they now work fine on my Windows 7 pc. I hope they work on yours. Please let me know.<br />
-<br />
-I have included 3<u>unfixed</u> but renamed-to-make-inert copies of the following presets - synth-c - fallbot, synth-c - cool down in hell, and  synth-c - dancebot, with the hope that somebody who knows what they're doing can fix them. If there are any more presets out there that I have missed, let me know, I'd like to try to fix them!<br />
-<br />
-One last thing - you either need to delete or disable the plugin globmgr.ape in order to not crash Winamp.
-		</p>
-</div>
+      <p class="post-content">cool, finally i can watch those brilliant presets</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Yathosho</span><br />
+      <span class="date small text-muted">4th April 2011 17:57 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">micro.D</span><br />
-			<span class="date small text-muted">2nd April 2011 08:49 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">still crashing my winamp:<br />
+      <br />
+      relaxplosion<br />
+      cymatics<br />
+      garden (synth-c rmx)<br />
+      mealstorm [finale]<br />
+      vispuddle<br />
+      ...<br />
+      <br />
+      i'm gonna stop now, because it's getting annoying</p>
+    </div>
+    <hr />
 
-		don't forget gvm is able to read from .gvm files. usually a load of assign(gmegabuf(index),something); if a preset uses a .gvm file (i.e. for a 3d model) paste that in a separate ssc's init part. that has a character limit though so if the .gvm is too long the gmegabuf assigments can be separated through as many ssc's as you want.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Synth-C</span><br />
+      <span class="date small text-muted">20th February 2012 19:28 GMT</span></p>
 
-	<hr />
+      <p class="post-content">holy crap, i haven't visited this place in 6 years, i'm honored that people are still watching my stuff! Thanks for fixing my presets AMT1970!</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">4th April 2011 12:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		cool, finally i can watch those brilliant presets
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Yathosho</span><br />
-			<span class="date small text-muted">4th April 2011 17:57 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		still crashing my winamp:<br />
-<br />
-relaxplosion <br />
-cymatics<br />
-garden (synth-c rmx)<br />
-mealstorm [finale]<br />
-vispuddle<br />
-...<br />
-<br />
-i'm gonna stop now, because it's getting annoying
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Synth-C</span><br />
-			<span class="date small text-muted">20th February 2012 19:28 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		holy crap, i haven't visited this place in 6 years, i'm honored that people are still watching my stuff! Thanks for fixing my presets AMT1970!
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,394 +1,274 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" making a small 2-d ball AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="making a small 2-d ball AVS" />
 
-	<title> making a small 2-d ball - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>making a small 2-d ball - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">making a small 2-d ball</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100591">making a small 2-d ball</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">20th August 2002 04:03 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">making a small 2-d ball</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100591">making a small 2-d ball</a></p>
+      <p class="post-content"><strong>making a small 2-d ball</strong><br />
+      id like to make a small circle that follows a superscope's bottom position<br />
+      <br />
+      here is my SS as is<br />
+      <br />
+      Code:<br />
+      -------------------------<br />
+      init: n=1500<br />
+      on beat:<br />
+      per frame: t=t-0.05<br />
+      per point: d=i+v*0.2; r=t+i*3.14159*4; x=v; y=-i*60<br />
+      -------------------------<br />
+      <br />
+      and id like a little circle that follows the bottom end of this "worm"<br />
+      <br />
+      (if at all possible; please just offer "hints" or a "guide" to doing it; instead of the raw code; that is no fun y i dont learn anything</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">20th August 2002 05:08 GMT</span></p>
 
-<br />
+      <p class="post-content"><strong>here is an example in avs form</strong><br />
+      (btw; i havent gotten permission to use the lame curve yet; but i hope unconed wont mind?? :( )<br />
+      <br />
+      here; i want the middle SS (the one in the middle; the small one) to be a ball; but i cannot figure out how to do that without manipulating the x variable<br />
+      if manipulate the x variable it will not follow the two lines!<br />
+      i really need help here<br />
+      <br />
+      <br />
+      ok; i am going to bed<br />
+      i hope the AVS fairy instills an idea in either my or your head to solve the problem<br />
+      thanks everyone<br />
+      <br />
+      damn<br />
+      there should be a sleepy smilie :)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">20th August 2002 04:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>making a small 2-d ball</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">20th August 2002 10:48 GMT</span></p>
 
-		id like to make a small circle that follows a superscope's bottom position<br />
-<br />
-here is my SS as is<br />
-<br />
-Code:<br />
--------------------------<br />
-init: n=1500<br />
-on beat:<br />
-per frame: t=t-0.05<br />
-per point: d=i+v*0.2; r=t+i*3.14159*4; x=v; y=-i*60<br />
--------------------------<br />
-<br />
-and id like a little circle that follows the bottom end of this &quot;worm&quot;<br />
-<br />
-(if at all possible; please just offer &quot;hints&quot; or a &quot;guide&quot; to doing it; instead of the raw code; that is no fun y i dont learn anything
-		</p>
-</div>
+      <p class="post-content">1) A Replace/Replace effect list does nothing. Move everything outside it.<br />
+      <br />
+      2) The verticallish superscopes have 4000 points??? The code contains:<br />
+      y=-i*60<br />
+      <br />
+      And as 'i' ranges from 0 to 1, it means you're drawing points in the y range -60 to 0. The AVS window only goes from -1 to 1 in both x and y. So 98.3% of those 4000 points are invisible.<br />
+      <br />
+      3) I don't mind you using the Lam&#195;&#169; curves, but you should at least change the sound-response. I just whipped up a quick decaying radius based on volume... (m variable)<br />
+      <br />
+      4) My code is not optimized. The 'a' and 'b' are used to control the shape theoretically, but practically you can just modify the end coordinates with a constant.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">20th August 2002 16:42 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">20th August 2002 05:08 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>here is an example in avs form</strong><br />
-		
-		
-			
-		
+      <p class="post-content">thanks for all the help; i appreciate it; although i am not sure how to optimize (i understand what you are saying; but i do not understand which constant to use)<br />
+      <br />
+      (i use replace/replace to sort things (i am pretty anal retentive) and it makes it easy to just disable that effectlist if i only want to work on a particular portion of my AVS</p>
+    </div>
+    <hr />
 
-		(btw; i havent gotten permission to use the lame curve yet; but i hope unconed wont mind?? :( )<br />
-<br />
-here; i want the middle SS (the one in the middle; the small one) to be a ball; but i cannot figure out how to do that without manipulating the x variable<br />
-if manipulate the x variable it will not follow the two lines!<br />
-i really need help here<br />
-<br />
-<br />
-ok; i am going to bed<br />
-i hope the AVS fairy instills an idea in either my or your head to solve the problem<br />
-thanks everyone <br />
-<br />
-damn<br />
-there should be a sleepy smilie :)
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">20th August 2002 17:03 GMT</span></p>
 
-	<hr />
+      <p class="post-content">An alternative to effect lists for grouping effects (though not so handy) is using "misc/comment" to separate them.<br />
+      You can also use AVS comments to label some components:<br />
+      <br />
+      Any character with ASCII code &gt;127 will mark the beginning of a comment. All comments end when a ';' is encountered (so comments can span multiple lines). E.g.<br />
+      <br />
+      a=cos(b);<br />
+      &#194;&#164; This is a comment;<br />
+      c=atan2(d,e);<br />
+      <br />
+      To type a character with code xxx, hold down ALT and type the number "0xxx" out on the numerical keypad:<br />
+      <br />
+      hold ALT - 0 - 1 - 6 - 4 - release alt<br />
+      <br />
+      will give you '&#194;&#164;'. Two digit numbers only need one leading 0 too: ALT-065 is an 'A'.<br />
+      <br />
+      <br />
+      Btw I think you misunderstood my "cache constant expressions" code.<br />
+      <br />
+      Suppose 'angle' is a constant, and you're using its sin, you don't need to actuall enter the since of angle as a numerical value, but just calculate "sin(angle)" in AVS once.<br />
+      <br />
+      For example instead of using acos(-1) for 'pi' in your scope-point code, just declare "pi=acos(-1)" once in the Init section.</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">20th August 2002 10:48 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">21st August 2002 02:09 GMT</span></p>
 
-		1) A Replace/Replace effect list does nothing. Move everything outside it.<br />
-<br />
-2) The verticallish superscopes have 4000 points??? The code contains:<br />
-y=-i*60<br />
-<br />
-And as 'i' ranges from 0 to 1, it means you're drawing points in the y range -60 to 0. The AVS window only goes from -1 to 1 in both x and y. So 98.3% of those 4000 points are invisible.<br />
-<br />
-3) I don't mind you using the Lamé curves, but you should at least change the sound-response. I just whipped up a quick decaying radius based on volume... (m variable)<br />
-<br />
-4) My code is not optimized. The 'a' and 'b' are used to control the shape theoretically, but practically you can just modify the end coordinates with a constant.
-		</p>
-</div>
+      <p class="post-content">ok; i think i understand what you are saying; for the most part anyways :)<br />
+      <br />
+      however; i cannot figure out this:<br />
+      <br />
+      how can i manipulate the sound-response of the lame curve? i cannot figure out how to manipulate the 'm' var w/out making the cirlce incomplete at all times<br />
+      <br />
+      i am a totally n00b AVSer and i still cannot figure out how to draw a circle with one(1) superscope<br />
+      i know it is possible<br />
+      but i cant figure it out<br />
+      not enough math classes<br />
+      not enough mad logic skillz<br />
+      and i feel so dumb not being able to draw a freaking circle; plz help</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">21st August 2002 04:09 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">20th August 2002 16:42 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">You need to use one 'm' value and use that across all 8 superscopes. The curve is not drawn optimally though, it could easily be packed in one large scope.. like this:<br />
+      <br />
+      init:<br /></p>
+      <pre>
+<code>n=100;tpi=acos(-1)*2</code>
+</pre><br />
+      frame:<br />
+      <pre>
+<code>m=getspec(0,0,0)*.15+m*.85;p=2/(m*3+.1)</code>
+</pre><br />
+      point:<br />
+      <pre>
+<code><br />r=i*tpi;x=cos(r);y=sin(r);<br />x=pow(abs(x),p)*sign(x)*.9;<br />y=pow(abs(y),p)*sign(y)*.9;<br /></code>
+</pre><br />
+      <br />
+      m is now like before... it's converted into p to adapt to this method of drawing. Watch out you don't get a division by zero in 'p' though.
+    </div>
+    <hr />
 
-		thanks for all the help; i appreciate it; although i am not sure how to optimize (i understand what you are saying; but i do not understand which constant to use)<br />
-<br />
-(i use replace/replace to sort things (i am pretty anal retentive) and it makes it easy to just disable that effectlist if i only want to work on a particular portion of my AVS
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">21st August 2002 18:55 GMT</span></p>
 
-	<hr />
+      <p class="post-content">ok; that makes a lot more sense to me than 8 seperate superscopes<br />
+      <br />
+      thank you; i hope this preset will eventually be cool<br />
+      <br />
+      <br />
+      but; if you download it you will see that the small circle doesnt move<br />
+      <br />
+      and therefore looks stupid<br />
+      <br />
+      could u please tell me how to make it move along with the bottom of the 2 long superscopes<br />
+      <br />
+      (im guessing i use the perframe and the 'v' variable; but i cannot figure it out)<br />
+      <br />
+      (oh and unconed; thx for the kickass tutorial on superscopes and all the help you have been giving me)<br />
+      <br />
+      (oh yeah;(i like paraensythsis:)) how do you like the name :))</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">20th August 2002 17:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">21st August 2002 19:21 GMT</span></p>
 
-		An alternative to effect lists for grouping effects (though not so handy) is using &quot;misc/comment&quot; to separate them.<br />
-You can also use AVS comments to label some components:<br />
-<br />
-Any character with ASCII code &gt;127 will mark the beginning of a comment. All comments end when a ';' is encountered (so comments can span multiple lines). E.g.<br />
-<br />
-a=cos(b);<br />
-¤ This is a comment;<br />
-c=atan2(d,e);<br />
-<br />
-To type a character with code xxx, hold down ALT and type the number &quot;0xxx&quot; out on the numerical keypad:<br />
-<br />
-hold ALT - 0 - 1 - 6 - 4 - release alt<br />
-<br />
-will give you '¤'. Two digit numbers only need one leading 0 too: ALT-065 is an 'A'.<br />
-<br />
-<br />
-Btw I think you misunderstood my &quot;cache constant expressions&quot; code.<br />
-<br />
-Suppose 'angle' is a constant, and you're using its sin, you don't need to actuall enter the since of angle as a numerical value, but just calculate &quot;sin(angle)&quot; in AVS once.<br />
-<br />
-For example instead of using acos(-1) for 'pi' in your scope-point code, just declare &quot;pi=acos(-1)&quot; once in the Init section.
-		</p>
-</div>
+      <p class="post-content"><strong>here is the avs</strong><br />
+      here</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">27th August 2002 03:53 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">21st August 2002 02:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">man; ive been toying with this for almost a week<br />
+      <br />
+      i can NOT get it to work;<br />
+      the ball just wont bounce to the beat and still be a ball :(<br />
+      it is very frustrating:mad: :mad: :mad:<br />
+      i really need someone to help me out here<br />
+      <br />
+      thank you a lot:up:</p>
+    </div>
+    <hr />
 
-		ok; i think i understand what you are saying; for the most part anyways :)<br />
-<br />
-however; i cannot figure out this:<br />
-<br />
-how can i manipulate the sound-response of the lame curve? i cannot figure out how to manipulate the 'm' var w/out making the cirlce incomplete at all times<br />
-<br />
-i am a totally n00b AVSer and i still cannot figure out how to draw a circle with one(1) superscope<br />
-i know it is possible<br />
-but i cant figure it out<br />
-not enough math classes<br />
-not enough mad logic skillz<br />
-and i feel so dumb not being able to draw a freaking circle; plz help
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">27th August 2002 04:19 GMT</span></p>
 
-	<hr />
+      <p class="post-content">Quick, dirty, and probably not right, but it it close?</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">21st August 2002 04:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">27th August 2002 22:10 GMT</span></p>
 
-		You need to use one 'm' value and use that across all 8 superscopes. The curve is not drawn optimally though, it could easily be packed in one large scope.. like this:<br />
-<br />
-init:<br />
-<pre><code>n=100;tpi=acos(-1)*2</code></pre><br />
-frame:<br />
-<pre><code>m=getspec(0,0,0)*.15+m*.85;p=2/(m*3+.1)</code></pre><br />
-point:<br />
-<pre><code><br />
-r=i*tpi;x=cos(r);y=sin(r);<br />
-x=pow(abs(x),p)*sign(x)*.9;<br />
-y=pow(abs(y),p)*sign(y)*.9;<br />
-</code></pre><br />
-<br />
-m is now like before... it's converted into p to adapt to this method of drawing. Watch out you don't get a division by zero in 'p' though.
-		</p>
-</div>
+      <p class="post-content">THANK YOU!!<br />
+      <br />
+      damn<br />
+      <br />
+      i cant believe u can do that in only one SS<br />
+      <br />
+      damn<br />
+      <br />
+      damn<br />
+      <br />
+      thank you and good job<br />
+      <br />
+      <br />
+      <br />
+      thanks:up: :up: :up: :up: :) :) :) :up: :up: :up:</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">28th August 2002 05:16 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">21st August 2002 18:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">Umm... no prob? :)<br />
+      <br />
+      You understand how it works alright, or are you good with that?</p>
+    </div>
+    <hr />
 
-		ok; that makes a lot more sense to me than 8 seperate superscopes<br />
-<br />
-thank you; i hope this preset will eventually be cool<br />
-<br />
-<br />
-but; if you download it you will see that the small circle doesnt move<br />
-<br />
-and therefore looks stupid<br />
-<br />
-could u please tell me how to make it move along with the bottom of the 2 long superscopes<br />
-<br />
-(im guessing i use the perframe and the 'v' variable; but i cannot figure it out)<br />
-<br />
-(oh and unconed; thx for the kickass tutorial on superscopes and all the help you have been giving me)<br />
-<br />
-(oh yeah;(i like paraensythsis:)) how do you like the name :))
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Karnov</span><br />
+      <span class="date small text-muted">28th August 2002 22:17 GMT</span></p>
 
-	<hr />
+      <p class="post-content">thank you; it makes sense now; im surprised how easy it was<br />
+      <br />
+      thank you</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">21st August 2002 19:21 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>here is the avs</strong><br />
-		
-		
-			
-		
-
-		here
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">27th August 2002 03:53 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		man; ive been toying with this for almost a week<br />
-<br />
-i can NOT get it to work;<br />
-the ball just wont bounce to the beat and still be a ball :( <br />
-it is very frustrating:mad: :mad: :mad: <br />
-i really need someone to help me out here<br />
-<br />
-thank you a lot:up:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">27th August 2002 04:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Quick, dirty, and probably not right, but it it close?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">27th August 2002 22:10 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		THANK YOU!!<br />
-<br />
-damn<br />
-<br />
-i cant believe u can do that in only one SS<br />
-<br />
-damn<br />
-<br />
-damn<br />
-<br />
-thank you and good job<br />
-<br />
-<br />
-<br />
-thanks:up: :up: :up: :up: :) :) :) :up: :up: :up:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">28th August 2002 05:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Umm... no prob? :)<br />
-<br />
-You understand how it works alright, or are you good with that?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Karnov</span><br />
-			<span class="date small text-muted">28th August 2002 22:17 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		thank you; it makes sense now; im surprised how easy it was<br />
-<br />
-thank you
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

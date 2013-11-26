@@ -1,163 +1,107 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Performance normaliser AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Performance normaliser AVS" />
 
-	<title> Performance normaliser - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Performance normaliser - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-138.html">AVS Wishlist</a></li>
 
+      <li class="active">Performance normaliser</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=119250">Performance normaliser</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">DigitAl56K</span><br />
+      <span class="date small text-muted">28th December 2002 03:00 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-138.html">AVS Wishlist</a></li>
-		<li class="active">Performance normaliser</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=119250">Performance normaliser</a></p>
+      <p class="post-content"><strong>Performance normaliser</strong><br />
+      Pixeldoubling = Bleh<br />
+      <br />
+      But, could AVS monitor either per-frame or per vertical line what framerate it was achieving and switch automatically between pixel doubling and normal mode to attempt to achieve a predefined frame rate?<br />
+      <br />
+      And does AVS implement a framebuffer so it can render n frames ahead? Obviously this involves introducing audio lag but WinAMP could compensate for this, and it would mean smoother vis overall and in combination with the above suggestion less pixel doubling required.</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">28th December 2002 06:38 GMT</span></p>
 
-<br />
+      <p class="post-content">Hit "Wait for retrace" in the options-&gt;display window.<br />
+      <br />
+      And pre-buffering would either a) slow down the computer, b) freeze the computer, or c) only speed up the avs for a certain amount of time. The reason for this is AVS would still be calculating at the same FPS, but the rendering would be going much faster than AVS's calculating speed.<br />
+      The best way to get a good framerate would be to slow down the music by 100s/f% where s is the desired framerate, and f is the current rendering framerate, then use UnConeD's AVS grabber to save the render to an AVI; then speed up the AVI by the same r/f%, and splice in the audio. For example, if your AVS is rendering at 32 FPS and you want it to be 128 FPS, slow the MP3 down by 400% and then use AVS grabber to save the render - then speed up the AVI by 400% and add the audio.<br />
+      Granted, this is only truly useful in parties where you know what you're going to play before you play it, and what presets you're going to use with those songs, but it'd work anyway ;)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DigitAl56K</span><br />
-			<span class="date small text-muted">28th December 2002 03:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Performance normaliser</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">DigitAl56K</span><br />
+      <span class="date small text-muted">28th December 2002 09:56 GMT</span></p>
 
-		Pixeldoubling = Bleh<br />
-<br />
-But, could AVS monitor either per-frame or per vertical line what framerate it was achieving and switch automatically between pixel doubling and normal mode to attempt to achieve a predefined frame rate?<br />
-<br />
-And does AVS implement a framebuffer so it can render n frames ahead? Obviously this involves introducing audio lag but WinAMP could compensate for this, and it would mean smoother vis overall and in combination with the above suggestion less pixel doubling required.
-		</p>
-</div>
+      <p class="post-content"></p>
 
-	<hr />
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>Hit "Wait for retrace" in the options-&gt;display window.<br />
+        <br />
+        And pre-buffering would either a) slow down the computer, b) freeze the computer, or c) only speed up the avs for a certain amount of time.</b>
+      </blockquote>a) Not true if you use a frame queue<br />
+      <br />
+      b) Not true at all<br />
+      <br />
+      c) Ok this I agree with you on, but in combination with the pixel doubling method you can create a buffer controlled quality system where by pixel doubling is enabled where the buffer falls below a given number of advanced frames. This could work wonders on preset transitions.<br />
+      <br />
+      What would also be nice might be an option in AVS to always force pixel doubling during preset transitions. That way if you're normally running with pixel doubling off then your framerate doesn't drop by half during the transition.
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th December 2002 06:38 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">28th December 2002 20:29 GMT</span></p>
 
-		Hit &quot;Wait for retrace&quot; in the options-&gt;display window.<br />
-<br />
-And pre-buffering would either a) slow down the computer, b) freeze the computer, or c) only speed up the avs for a certain amount of time.  The reason for this is AVS would still be calculating at the same FPS, but the rendering would be going much faster than AVS's calculating speed.<br />
-The best way to get a good framerate would be to slow down the music by 100s/f% where s is the desired framerate,  and f is the current rendering framerate, then use UnConeD's AVS grabber to save the render to an AVI; then speed up the AVI by the same r/f%, and splice in the audio.  For example, if your AVS is rendering at 32 FPS and you want it to be 128 FPS, slow the MP3 down by 400% and then use AVS grabber to save the render - then speed up the AVI by 400% and add the audio.<br />
-Granted, this is only truly useful in parties where you know what you're going to play before you play it, and what presets you're going to use with those songs, but it'd work anyway ;)
-		</p>
-</div>
+      <p class="post-content">a) is true if you don't have enough RAM, b) is a quite plausable outcome, and c) pretty much renders this useless since you're going to have to be using pixel doubling anyway. Changes in framerate are extremely annoying, abrupt changes in resolution would be utterly horrible (i.e. forcing pixel doubling with preset transitions). The transitions last only a short time, and most of the time the framerate jump isn't even noticeable.</p>
+    </div>
+    <hr />
 
-	<hr />
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Infinity0</span><br />
+      <span class="date small text-muted">19th January 2003 20:29 GMT</span></p>
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">DigitAl56K</span><br />
-			<span class="date small text-muted">28th December 2002 09:56 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
+      <p class="post-content">why can't they just get hardware video drivers for avs, that seems like an easier method.<br />
+      it speeds up 3X 5X the speed with a good video card</p>
+    </div>
+    <hr />
 
-		
-	<blockquote>
-			
-				<i>Originally posted by Atero </i><br />
-<b>Hit &quot;Wait for retrace&quot; in the options-&gt;display window.<br />
-<br />
-And pre-buffering would either a) slow down the computer, b) freeze the computer, or c) only speed up the avs for a certain amount of time.</b></blockquote>
-a) Not true if you use a frame queue<br />
-<br />
-b) Not true at all<br />
-<br />
-c) Ok this I agree with you on, but in combination with the pixel doubling method you can create a buffer controlled quality system where by pixel doubling is enabled where the buffer falls below a given number of advanced frames. This could work wonders on preset transitions.<br />
-<br />
-What would also be nice might be an option in AVS to always force pixel doubling during preset transitions. That way if you're normally running with pixel doubling off then your framerate doesn't drop by half during the transition.
-		</p>
-</div>
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">dirkdeftly</span><br />
+      <span class="date small text-muted">20th January 2003 08:22 GMT</span></p>
 
-	<hr />
+      <p class="post-content">If you're saying what I think you're saying, it's been talked about, and it's somewhere in the wishlist somewhere, probably reduntantly in the forum again. (wonderful grammar, isn't it)</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">28th December 2002 20:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		a) is true if you don't have enough RAM, b) is a quite plausable outcome, and c) pretty much renders this useless since you're going to have to be using pixel doubling anyway.  Changes in framerate are extremely annoying, abrupt changes in resolution would be utterly horrible (i.e. forcing pixel doubling with preset transitions).  The transitions last only a short time, and most of the time the framerate jump isn't even noticeable.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Infinity0</span><br />
-			<span class="date small text-muted">19th January 2003 20:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		why can't they just get hardware video drivers for avs, that seems like an easier method.<br />
-it speeds up 3X 5X the speed with a good video card
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">dirkdeftly</span><br />
-			<span class="date small text-muted">20th January 2003 08:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		If you're saying what I think you're saying, it's been talked about, and it's somewhere in the wishlist somewhere, probably reduntantly in the forum again.  (wonderful grammar, isn't it)
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

@@ -1,562 +1,334 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Water &amp; Blur AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Water &amp; Blur AVS" />
 
-	<title> Water &amp; Blur - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Water &amp; Blur - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
-
-
-
-
-
-
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Water &amp; Blur</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=199196">Water &amp; Blur</a></p>
-
-
-<br />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">14th November 2004 00:15 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Water &amp; Blur</strong><br />
-		
-		
-
-		I ever wanted to know, why you get this strange grey veil, when you combine trans/water with heavy blur. And why does this combination work with medium or light blur?
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">14th November 2004 04:06 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Because the water filter is a 2D diamond-shaped convolution combined with a time-dependant subtraction which is simulating the surface of a very thin layer of water when you iterate it. Adding a heavy blur upsets the convolution because its mask is also diamond shaped, and alters the whole feedback loop.<br />
-<br />
-Maybe that wasn't the answer you were looking for.<br />
-<br />
-Dynamic systems are often unstable, messing around with trans/water gets you unstable stuff, which is sometimes ugly, sometimes pretty.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">14th November 2004 10:22 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Ah, i understand! So if you could convert the diamond-shaped convolution into 3D and make it a octohedron then perhaps the two convolutions sum up in the gaps of their grid so that you would have constructive interference, but only if you add a phase-shift about h/pi*2 (for h = Planck constant).<br />
-<br />
-Joking apart, thanks for the explanation! I got the simple one and will think about the first part for the next days... ;)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">14th November 2004 22:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well while were at it, what is the convo setting for water then? I think UnConeD was coughing at the other thread about that :rolleyes:
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">14th November 2004 23:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		dunno..<br />
-was playing with some diamond shapes in the trans/convolution filter but it only gave me this grey veil i talked about but nothing like water. So the convo settings that imitate a water-effect must be more difficult than just a diamond shape, (if its possible anyways).
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">15th November 2004 17:29 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by Tuggummi </i><br />
-<b>Well while were at it, what is the convo setting for water then? I think UnConeD was coughing at the other thread about that :rolleyes: </b></blockquote>
-There is no 'setting' for water in the convo filter, as coned just said if you had bothered to read his post &quot;...combined with a time-dependant subtraction&quot;.<br />
-<br />
-I sometimes wonder why the convo filter is called a convo filter because it doesnt actually convolve two signals in any domain... at least it doesnt appear to.<br />
-<br />
-Most people just use it as a 'controlled blur' anyway
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">15th November 2004 17:55 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				Most people just use it as a 'controlled blur' anyway</blockquote>
-Amen to convo glow! :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">15th November 2004 21:24 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Would it be possible to make a &quot;tweakable&quot; water ape in any way? Sometimes it would be nice if you could set the direction the waves spread out, for example.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">16th November 2004 15:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I had the idea of making a propper convolution filter, that is a codable ape that you enter a 2D signal to be convolved with the framebuffer... but I think 99% of AVS'rs wouldnt know what to do with it. To most people it would just be a <b>dynamic</b> controlled blur :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">16th November 2004 18:20 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				<i>Originally posted by PAK-9 </i><br />
-<b>but I think 99% of AVS'rs wouldnt know what to do with it.</b></blockquote>
-including me ;)<br />
-<br />
-But probably this isn't what i was looking for. I had a ape in mind which offers control about the &quot;water&quot; in the form of sliders. So that you are able to set the &quot;amplitude of the waves&quot;, the directions they spread on the screen, the amount of color-splitting or something like that (like water-bumb does for example). Hope you get what i mean...
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Tuggummi</span><br />
-			<span class="date small text-muted">16th November 2004 20:09 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		
-	<blockquote>
-			
-				To most people it would just be a dynamic controlled blur :p</blockquote>
-Convo-glow that pulsates on beat!? OMG! I WANT THAT! :D
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">16th November 2004 23:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Um. Convolution does convolve two signals: the 2D signal of the picture, and the 2D signal of the convolution mask.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">17th November 2004 00:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Could someone please explain what Convolution and/or to convolve/convolute means. (excuse me, i'm not a native speaker but i haven't found the words in any dictionary yet :( ). I'd like to know what a convolution effect actually does when it &quot;convolves two signals&quot;. I've got a very vague idea about the meaning; it seems to be something like &quot;twisting the data around&quot;, but im not sure :confused: ? All i know is, that it's not a simple addition or multiplication, like:<br />
-<br />
-pointA + pointB = pointC<br />
-or:<br />
-Pa * Pb = Pc<br />
-<br />
-I'd be grateful for any explanaition!
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">18th November 2004 12:32 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		A convulation function is the amount that two data sources overlap. Avs's convulation filter takes the values RGB (0..1) of the pixels surrounding each pixel on the screen, compares them to the values you put in the convo map, and replaces what is on the avs screen with the resulting convulation.<br />
-<br />
-i think....
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">18th November 2004 17:50 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Well it depends on the context a little... In this case I would say we have 2 2D signals which are convolved together to form an output (another 2D signal) where...<br />
-<br />
-output[x,y]= (a=sum from 0 to width of ( b=sum from 0 to height of ( input1(a,b) times input2(x-a,y-b) ) ))<br />
-<br />
-(I say it depends on the context because for example another use is determining the operation of a system from its impulse response... where y(n) is the system ,h(n) is the impulse response and x(n) is the output... (this is all discrete so n is the sample number)<br />
-<br />
-y(n)= k=sum from -inf to inf of (x(k) times h(n-k))<br />
-<br />
-or y(n)=x(n) convolved with h(n)<br />
-)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">18th November 2004 19:14 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:confused:  Thanks for the explanations, its getting a bit clearer now. unfortunately i find your formula a bit confusing, PAK. It would have been easier to read if you had explained the variables seperately (not inside of the formula) but never mind..
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">sidd</span><br />
-			<span class="date small text-muted">18th November 2004 21:16 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		boggling at pak's reply
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">18th November 2004 22:35 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yeah, i wonder where i can get this book.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">19th November 2004 09:18 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		yea sorry but I can't type epsilon with limits so its a bit confusing
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">19th November 2004 21:07 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		What a convolution does:<br />
-<br />
-Given two data signals (let's say u[k] and v[k] where k is an index 0,1,2,3,...).<br />
-<br />
-The convolution of u[k] with v[k] = y[k] = sum(i=-inf..+inf,u[k]*v[i-k]). What this means is, you flip one of the two signals around (set k = -k), you overlap it with the other signal and a certain offset 'i'. Then you multiply the corresponding values, and sum the result. This gives you /one/ value of y[k].<br />
-<br />
-You can see this visually if you convolve u[k] = [1 2 1] with v[k] = [3 2]:<br />
-<br />
-<pre><code><br />
-u[k]   = [0 1 2 1 0] (extra zeros for padding)<br />
-flipped v[k]:<br />
-v[0-k] = [2 3 0 0 0]<br />
-multiply corresponding elements:<br />
-    *  = [0 3 0 0 0]<br />
- sum = 3<br />
-=&gt; y[0] = 3<br />
-<br />
-u[k]   = [0 1 2 1 0] <br />
-flipped v[k]:<br />
-v[1-k] = [0 2 3 0 0] (note difference with previous i)<br />
-multiply corresponding elements:<br />
-    *  = [0 2 6 0 0]<br />
- sum = 8<br />
-=&gt; y[1] = 8<br />
-<br />
-u[k]   = [0 1 2 1 0] <br />
-flipped v[k]:<br />
-v[2-k] = [0 0 2 3 0]<br />
-multiply corresponding elements:<br />
-    *  = [0 0 4 3 0]<br />
- sum = 7<br />
-=&gt; y[2] = 7<br />
-<br />
-u[k]   = [0 1 2 1 0] <br />
-flipped v[k]:<br />
-v[3-k] = [0 0 0 2 3]<br />
-multiply corresponding elements:<br />
-    *  = [0 0 0 2 0]<br />
- sum = 2<br />
-=&gt; y[3] = 2<br />
-</code></pre><br />
-<br />
-For other values of i, u[k] and v[i-k] do not overlap with non-zero values.<br />
-<br />
-So the convolution of [1 2 1] and [3 2] is [3 8 7 2].<br />
-<br />
-You can see a convolution as taking multiple copies of one signal and weighting it with the values of the other. For example, convolving with [0 1 0] has no effect, because only a single copy of the signal is used.<br />
-Convolving with [0 2 0] multiplies the signal by 2.<br />
-<br />
-If you convolve by [0.5 0.5], then you effectively take a copy of the signal, shift it one position, and average it with the unshifted signal. This has the effect of blurring the signal, and removing sharp points and edges. In other words, this is a &quot;low pass&quot; filter. A convolution with [0.5 -0.5] enhances sharp points and edges and fades away slow variations. This is a &quot;high pass&quot; filter.<br />
-<br />
-You can do convolutions in 2D, where the input can be seen as 2 images. A convolution with<br />
-[1 1]<br />
-[1 1], has the effect of blurring the image in both the x and y directions.<br />
-<br />
-Convolutions are essentially linear time-invariant systems or filters. These are simplified elements used in the description of electronics, such as in audio equipment and synthesisers. Using frequency analysis and fourier/z transforms, you can find out exactly how a certain filter affects the frequency spectrum. Or in reverse, you can design a filter that has a specified result on the frequency spectrum. In electronics, the signals are voltages and are continuous, in computers, we use digital signals and the signal is discrete in time and quantization. This is digital signal processing.<br />
-<br />
-This falls under system theory, signal processing and such, which you can learn about when you study engineering.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">21st November 2004 13:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		:eek: <br />
-<br />
-I really understood that! Thanks very much UnConeD!!! Your Explanations are great :up: <br />
-<br />
-And sorry PAK, i should have know what you wrote; you meant this:<br />
- __<br />
-|  '<br />
- &gt;<br />
-|__,    right?<br />
-<br />
-(Sorry, but it seemed O.K in the preview, should be a capital Greek epsilon)
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">UnConeD</span><br />
-			<span class="date small text-muted">21st November 2004 14:19 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Capital greek epsilon: Î•<br />
-Capital greek sigma: Î£<br />
-<br />
-It's not an E.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">21st November 2004 14:40 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-			
-		
-
-		Oh yes, sorry. :D<br />
-Different letters, but we all meant the same: the mathematical symbol for a sum.
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">23rd November 2004 13:54 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		oops, I meant sigma, knowledge of greek letters is not one of my fortés
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">^..^</span><br />
-			<span class="date small text-muted">23rd November 2004 21:03 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		as long as we know to use them correctly; who cares how they're called or spelled! :p
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">PAK-9</span><br />
-			<span class="date small text-muted">26th November 2004 07:23 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		UnConeD... that pedantic zebra lover
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+  <div class="container">
+    <!-- Put navigation bar here -->
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Water &amp; Blur</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=199196">Water &amp; Blur</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">14th November 2004 00:15 GMT</span></p>
+
+      <p class="post-content"><strong>Water &amp; Blur</strong><br />
+      I ever wanted to know, why you get this strange grey veil, when you combine trans/water with heavy blur. And why does this combination work with medium or light blur?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">14th November 2004 04:06 GMT</span></p>
+
+      <p class="post-content">Because the water filter is a 2D diamond-shaped convolution combined with a time-dependant subtraction which is simulating the surface of a very thin layer of water when you iterate it. Adding a heavy blur upsets the convolution because its mask is also diamond shaped, and alters the whole feedback loop.<br />
+      <br />
+      Maybe that wasn't the answer you were looking for.<br />
+      <br />
+      Dynamic systems are often unstable, messing around with trans/water gets you unstable stuff, which is sometimes ugly, sometimes pretty.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">14th November 2004 10:22 GMT</span></p>
+
+      <p class="post-content">Ah, i understand! So if you could convert the diamond-shaped convolution into 3D and make it a octohedron then perhaps the two convolutions sum up in the gaps of their grid so that you would have constructive interference, but only if you add a phase-shift about h/pi*2 (for h = Planck constant).<br />
+      <br />
+      Joking apart, thanks for the explanation! I got the simple one and will think about the first part for the next days... ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
+      <span class="date small text-muted">14th November 2004 22:55 GMT</span></p>
+
+      <p class="post-content">Well while were at it, what is the convo setting for water then? I think UnConeD was coughing at the other thread about that :rolleyes:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">14th November 2004 23:37 GMT</span></p>
+
+      <p class="post-content">dunno..<br />
+      was playing with some diamond shapes in the trans/convolution filter but it only gave me this grey veil i talked about but nothing like water. So the convo settings that imitate a water-effect must be more difficult than just a diamond shape, (if its possible anyways).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">15th November 2004 17:29 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Tuggummi</i><br />
+        <b>Well while were at it, what is the convo setting for water then? I think UnConeD was coughing at the other thread about that :rolleyes:</b>
+      </blockquote>There is no 'setting' for water in the convo filter, as coned just said if you had bothered to read his post "...combined with a time-dependant subtraction".<br />
+      <br />
+      I sometimes wonder why the convo filter is called a convo filter because it doesnt actually convolve two signals in any domain... at least it doesnt appear to.<br />
+      <br />
+      Most people just use it as a 'controlled blur' anyway
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
+      <span class="date small text-muted">15th November 2004 17:55 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Most people just use it as a 'controlled blur' anyway
+      </blockquote>Amen to convo glow! :D
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">15th November 2004 21:24 GMT</span></p>
+
+      <p class="post-content">Would it be possible to make a "tweakable" water ape in any way? Sometimes it would be nice if you could set the direction the waves spread out, for example.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">16th November 2004 15:47 GMT</span></p>
+
+      <p class="post-content">I had the idea of making a propper convolution filter, that is a codable ape that you enter a 2D signal to be convolved with the framebuffer... but I think 99% of AVS'rs wouldnt know what to do with it. To most people it would just be a <b>dynamic</b> controlled blur :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">16th November 2004 18:20 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by PAK-9</i><br />
+        <b>but I think 99% of AVS'rs wouldnt know what to do with it.</b>
+      </blockquote>including me ;)<br />
+      <br />
+      But probably this isn't what i was looking for. I had a ape in mind which offers control about the "water" in the form of sliders. So that you are able to set the "amplitude of the waves", the directions they spread on the screen, the amount of color-splitting or something like that (like water-bumb does for example). Hope you get what i mean...
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Tuggummi</span><br />
+      <span class="date small text-muted">16th November 2004 20:09 GMT</span></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        To most people it would just be a dynamic controlled blur :p
+      </blockquote>Convo-glow that pulsates on beat!? OMG! I WANT THAT! :D
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">16th November 2004 23:19 GMT</span></p>
+
+      <p class="post-content">Um. Convolution does convolve two signals: the 2D signal of the picture, and the 2D signal of the convolution mask.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">17th November 2004 00:07 GMT</span></p>
+
+      <p class="post-content">Could someone please explain what Convolution and/or to convolve/convolute means. (excuse me, i'm not a native speaker but i haven't found the words in any dictionary yet :( ). I'd like to know what a convolution effect actually does when it "convolves two signals". I've got a very vague idea about the meaning; it seems to be something like "twisting the data around", but im not sure :confused: ? All i know is, that it's not a simple addition or multiplication, like:<br />
+      <br />
+      pointA + pointB = pointC<br />
+      or:<br />
+      Pa * Pb = Pc<br />
+      <br />
+      I'd be grateful for any explanaition!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">18th November 2004 12:32 GMT</span></p>
+
+      <p class="post-content">A convulation function is the amount that two data sources overlap. Avs's convulation filter takes the values RGB (0..1) of the pixels surrounding each pixel on the screen, compares them to the values you put in the convo map, and replaces what is on the avs screen with the resulting convulation.<br />
+      <br />
+      i think....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">18th November 2004 17:50 GMT</span></p>
+
+      <p class="post-content">Well it depends on the context a little... In this case I would say we have 2 2D signals which are convolved together to form an output (another 2D signal) where...<br />
+      <br />
+      output[x,y]= (a=sum from 0 to width of ( b=sum from 0 to height of ( input1(a,b) times input2(x-a,y-b) ) ))<br />
+      <br />
+      (I say it depends on the context because for example another use is determining the operation of a system from its impulse response... where y(n) is the system ,h(n) is the impulse response and x(n) is the output... (this is all discrete so n is the sample number)<br />
+      <br />
+      y(n)= k=sum from -inf to inf of (x(k) times h(n-k))<br />
+      <br />
+      or y(n)=x(n) convolved with h(n)<br />
+      )</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">18th November 2004 19:14 GMT</span></p>
+
+      <p class="post-content">:confused: Thanks for the explanations, its getting a bit clearer now. unfortunately i find your formula a bit confusing, PAK. It would have been easier to read if you had explained the variables seperately (not inside of the formula) but never mind..</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">sidd</span><br />
+      <span class="date small text-muted">18th November 2004 21:16 GMT</span></p>
+
+      <p class="post-content">boggling at pak's reply</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">18th November 2004 22:35 GMT</span></p>
+
+      <p class="post-content">yeah, i wonder where i can get this book.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">19th November 2004 09:18 GMT</span></p>
+
+      <p class="post-content">yea sorry but I can't type epsilon with limits so its a bit confusing</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">19th November 2004 21:07 GMT</span></p>
+
+      <p class="post-content">What a convolution does:<br />
+      <br />
+      Given two data signals (let's say u[k] and v[k] where k is an index 0,1,2,3,...).<br />
+      <br />
+      The convolution of u[k] with v[k] = y[k] = sum(i=-inf..+inf,u[k]*v[i-k]). What this means is, you flip one of the two signals around (set k = -k), you overlap it with the other signal and a certain offset 'i'. Then you multiply the corresponding values, and sum the result. This gives you /one/ value of y[k].<br />
+      <br />
+      You can see this visually if you convolve u[k] = [1 2 1] with v[k] = [3 2]:<br />
+      <br /></p>
+      <pre>
+<code><br />u[k]   = [0 1 2 1 0] (extra zeros for padding)<br />flipped v[k]:<br />v[0-k] = [2 3 0 0 0]<br />multiply corresponding elements:<br />    *  = [0 3 0 0 0]<br /> sum = 3<br />=&gt; y[0] = 3<br /><br />u[k]   = [0 1 2 1 0] <br />flipped v[k]:<br />v[1-k] = [0 2 3 0 0] (note difference with previous i)<br />multiply corresponding elements:<br />    *  = [0 2 6 0 0]<br /> sum = 8<br />=&gt; y[1] = 8<br /><br />u[k]   = [0 1 2 1 0] <br />flipped v[k]:<br />v[2-k] = [0 0 2 3 0]<br />multiply corresponding elements:<br />    *  = [0 0 4 3 0]<br /> sum = 7<br />=&gt; y[2] = 7<br /><br />u[k]   = [0 1 2 1 0] <br />flipped v[k]:<br />v[3-k] = [0 0 0 2 3]<br />multiply corresponding elements:<br />    *  = [0 0 0 2 0]<br /> sum = 2<br />=&gt; y[3] = 2<br /></code>
+</pre><br />
+      <br />
+      For other values of i, u[k] and v[i-k] do not overlap with non-zero values.<br />
+      <br />
+      So the convolution of [1 2 1] and [3 2] is [3 8 7 2].<br />
+      <br />
+      You can see a convolution as taking multiple copies of one signal and weighting it with the values of the other. For example, convolving with [0 1 0] has no effect, because only a single copy of the signal is used.<br />
+      Convolving with [0 2 0] multiplies the signal by 2.<br />
+      <br />
+      If you convolve by [0.5 0.5], then you effectively take a copy of the signal, shift it one position, and average it with the unshifted signal. This has the effect of blurring the signal, and removing sharp points and edges. In other words, this is a "low pass" filter. A convolution with [0.5 -0.5] enhances sharp points and edges and fades away slow variations. This is a "high pass" filter.<br />
+      <br />
+      You can do convolutions in 2D, where the input can be seen as 2 images. A convolution with<br />
+      [1 1]<br />
+      [1 1], has the effect of blurring the image in both the x and y directions.<br />
+      <br />
+      Convolutions are essentially linear time-invariant systems or filters. These are simplified elements used in the description of electronics, such as in audio equipment and synthesisers. Using frequency analysis and fourier/z transforms, you can find out exactly how a certain filter affects the frequency spectrum. Or in reverse, you can design a filter that has a specified result on the frequency spectrum. In electronics, the signals are voltages and are continuous, in computers, we use digital signals and the signal is discrete in time and quantization. This is digital signal processing.<br />
+      <br />
+      This falls under system theory, signal processing and such, which you can learn about when you study engineering.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">21st November 2004 13:23 GMT</span></p>
+
+      <p class="post-content">:eek:<br />
+      <br />
+      I really understood that! Thanks very much UnConeD!!! Your Explanations are great :up:<br />
+      <br />
+      And sorry PAK, i should have know what you wrote; you meant this:<br />
+      __<br />
+      | '<br />
+      &gt;<br />
+      |__, right?<br />
+      <br />
+      (Sorry, but it seemed O.K in the preview, should be a capital Greek epsilon)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">UnConeD</span><br />
+      <span class="date small text-muted">21st November 2004 14:19 GMT</span></p>
+
+      <p class="post-content">Capital greek epsilon: &#195;&#381;&#226;&#8364;&#162;<br />
+      Capital greek sigma: &#195;&#381;&#194;&#163;<br />
+      <br />
+      It's not an E.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">21st November 2004 14:40 GMT</span></p>
+
+      <p class="post-content">Oh yes, sorry. :D<br />
+      Different letters, but we all meant the same: the mathematical symbol for a sum.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">23rd November 2004 13:54 GMT</span></p>
+
+      <p class="post-content">oops, I meant sigma, knowledge of greek letters is not one of my fort&#195;&#169;s</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">^..^</span><br />
+      <span class="date small text-muted">23rd November 2004 21:03 GMT</span></p>
+
+      <p class="post-content">as long as we know to use them correctly; who cares how they're called or spelled! :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">PAK-9</span><br />
+      <span class="date small text-muted">26th November 2004 07:23 GMT</span></p>
+
+      <p class="post-content">UnConeD... that pedantic zebra lover</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

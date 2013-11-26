@@ -1,112 +1,73 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" superscope problem AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="superscope problem AVS" />
 
-	<title> superscope problem - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>superscope problem - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-85.html">AVS</a></li>
 
+      <li class="active">superscope problem</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=276882">superscope problem</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">gelo</span><br />
+      <span class="date small text-muted">3rd September 2007 23:00 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-85.html">AVS</a></li>
-		<li class="active">superscope problem</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=276882">superscope problem</a></p>
+      <p class="post-content"><strong>superscope problem</strong><br />
+      hello, im sorta new to the superscope system but i do kn ow my maths (lol) im trying to simulate an x by y oscilloscope system with superscope, the type of thing where the left channel will move a dot left and right and the right channel will move the dot up and down. combining those two move the dot to a certain position. has anyone coded this before? im in dire need of somthing like this since im making a laser display which will do it litterally but i need a display on screen to compare the movements if anyone can supply equations for this id be most greatfull!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">J.Melo</span><br />
+      <span class="date small text-muted">3rd September 2007 23:37 GMT</span></p>
 
-<br />
+      <p class="post-content">I'm not quite sure if this is what your looking for, but I made something simple</p>
+      <pre>
+<code>init:<br />n=1000;<br /><br />point:<br />x=i*2-1+getosc(i,0,1)*0.2;<br />y=-i*2+1+getosc(i,0,2)*0.2 </code>
+</pre>Or is it more like this:
+      <pre>
+<code> init:<br />n=1;<br /><br />point:<br />x=getosc(0,0,1);<br />y=getosc(0,0,2); </code>
+</pre>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gelo</span><br />
-			<span class="date small text-muted">3rd September 2007 23:00 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>superscope problem</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">gelo</span><br />
+      <span class="date small text-muted">3rd September 2007 23:47 GMT</span></p>
 
-		hello, im sorta new to the superscope system but i do kn ow my maths (lol) im trying to simulate an x by y oscilloscope system with superscope, the type of thing where the left channel will move a dot left and right and the right channel will move the dot up and down. combining those two move the dot to a certain position. has anyone coded this before? im in dire need of somthing like this since im making a laser display which will do it litterally but i need a display on screen to compare the movements if anyone can supply equations for this id be most greatfull!
-		</p>
-</div>
+      <p class="post-content">this is sorta what i aim, not the effects shown but what the oscilloscope is actually presenting from the audio signal.<br />
+      <br />
+      <a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
+      <br />
+      its a vector based audio to 2 tone image converter...<br />
+      <br />
+      and that oscillo was drawing that image from a wav sound file...</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">J.Melo</span><br />
-			<span class="date small text-muted">3rd September 2007 23:37 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		I'm not quite sure if this is what your looking for, but I made something simple <pre><code>init:<br />
-n=1000;<br />
-<br />
-point:<br />
-x=i*2-1+getosc(i,0,1)*0.2;<br />
-y=-i*2+1+getosc(i,0,2)*0.2 </code></pre> Or is it more like this: <pre><code> init:<br />
-n=1;<br />
-<br />
-point:<br />
-x=getosc(0,0,1);<br />
-y=getosc(0,0,2); </code></pre>
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">gelo</span><br />
-			<span class="date small text-muted">3rd September 2007 23:47 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		this is sorta what i aim, not the effects shown but what the oscilloscope is actually presenting from the audio signal.<br />
-<br />
-<a href="http://www.youtube.com/watch?v=s1eNjUgaB-g" target="_blank">http://www.youtube.com/watch?v=s1eNjUgaB-g</a><br />
-<br />
-its a vector based audio to 2 tone image converter...<br />
-<br />
-and that oscillo was drawing that image from a wav sound file...
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>

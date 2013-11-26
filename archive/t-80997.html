@@ -1,100 +1,64 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content=" Problem using avs AVS" />
+  <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Problem using avs AVS" />
 
-	<title> Problem using avs - AVS Forums</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" />
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <title>Problem using avs - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
-	<div class="container">
-	<!-- Put navigation bar here -->
+  <div class="container">
+    <!-- Put navigation bar here -->
 
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
 
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
 
+      <li class="active">Problem using avs</li>
+    </ol>
 
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=80997">Problem using avs</a></p><br />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">memphisto26</span><br />
+      <span class="date small text-muted">23rd March 2002 22:41 GMT</span></p>
 
-	<ol class="breadcrumb">
-		<li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-		<li><a href="f-139.html">AVS Troubleshooting</a></li>
-		<li class="active">Problem using avs</li>
-	</ol>
-	<p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=80997">Problem using avs</a></p>
+      <p class="post-content"><strong>Problem using avs</strong><br />
+      I recently began having problems avs2.5. It constantly stops and starts along with the music in fullscreen and windowed. Also the 848x480 fullscreen mode displays diagonal lines flowing across the screen, nothing resembling an a preset. I know the avs is the problem because when I disable it, winamp works fine. This began when I changed my video card to geforce2 mx400. Initially, the avs worked fine, but after awhile I began to run into the problem. I installed my original video card, ATI all-in-wonder radeon, but the problem still doesn't go away. Is this my video card or the AVS. Please help!!</p>
+    </div>
+    <hr />
 
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">Jaheckelsafar</span><br />
+      <span class="date small text-muted">24th March 2002 00:26 GMT</span></p>
 
-<br />
+      <p class="post-content">Just cause the problem presists after installign your old card on which it used to work perfectly, I'd hazard a guess at eithe AVS or a system setting somewhere.<br />
+      <br />
+      Sometimes I hate computers:hang:</p>
+    </div>
+    <hr />
 
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">memphisto26</span><br />
-			<span class="date small text-muted">23rd March 2002 22:41 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Problem using avs</strong><br />
-		
-		
+    <div class="post">
+      <p class="post-meta"><span class="username text-primary">memphisto26</span><br />
+      <span class="date small text-muted">28th March 2002 09:04 GMT</span></p>
 
-		I recently began having problems avs2.5. It constantly stops and starts along with the music in fullscreen and windowed. Also the 848x480 fullscreen mode displays diagonal lines flowing across the screen, nothing resembling an a preset. I know the avs is the problem because when I disable it, winamp works fine. This began when I changed my video card to geforce2 mx400. Initially, the avs worked fine, but after awhile I began to run into the problem. I installed my original video card, ATI all-in-wonder radeon, but the problem still doesn't go away. Is this my video card or the AVS. Please help!!
-		</p>
-</div>
+      <p class="post-content"><strong>Found the problem!</strong><br />
+      If anybody else has this problem, the problem is with the mp3pro plugin I installed. I don't know why this plugin was causing the music to constantly start and stop when the AVS was on. All you have to do is delete the in_mp3pro.dll file from your plugin directory. Everything should work after that at least for me anyways! :p</p>
+    </div>
+    <hr />
 
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">Jaheckelsafar</span><br />
-			<span class="date small text-muted">24th March 2002 00:26 GMT</span>
-		</p>
-		<p class="post-content">
-		
-		
-
-		Just cause the problem presists after installign your old card on which it used to work perfectly, I'd hazard a guess at eithe AVS or a system setting somewhere.<br />
-<br />
-Sometimes I hate computers:hang: 
-		</p>
-</div>
-
-	<hr />
-
-<div class="post">
-		<p class="post-meta">
-			<span class="username text-primary">memphisto26</span><br />
-			<span class="date small text-muted">28th March 2002 09:04 GMT</span>
-		</p>
-		<p class="post-content">
-		
-			<strong>Found the problem!</strong><br />
-		
-		
-
-		If anybody else has this problem, the problem is with the mp3pro plugin I installed. I don't know why this plugin was causing the music to constantly start and stop when the AVS was on. All you have to do is delete the in_mp3pro.dll file from your plugin directory. Everything should work after that at least for me anyways! :p
-		</p>
-</div>
-
-	<hr />
-
-
-
-<div class="footer">
-		<p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
-	</div>
-</div>
-
-<!-- Put JavaScript here -->
-
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
 </body>
 </html>
