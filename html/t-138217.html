@@ -1,0 +1,299 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pong preset" />
+
+  <title>Pong preset - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">Pong preset</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138217">Pong preset</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br /></p>
+
+      <p class="post-time small text-muted">7th June 2003 21:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Pong preset</strong><br />
+      I am trying to make a preset that is like pong with the paddles and the ball and the ball will bounce off the paddles.<br />
+      <br />
+      The ball is moving OK but it sometimes it goes off the screen. Is there a way to make the ball go off one side of the screen and come back on the other with a SSC?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">7th June 2003 23:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">That is the simplest of your problems, there is no way you're making a working pong preset without collisions, otherwise it will lose it's novelty and just be a big shit. I'm working on something similar but i'm nowhere close. Fucking collisions, crappy variables.<br />
+      <br />
+      Edit: (yes someone on this damned forum can use the fucking edit button), This would make a simple line come on and start again when it leaves:<br />
+      <br />
+      Init:<br />
+      n=2:<br />
+      Frame:<br />
+      t=if(above(t,2),-1,t+speed);<br />
+      Pixel:<br />
+      x=i-t;<br />
+      y=0;<br />
+      <br />
+      That does what you want, i think you can figure out how to use it somehow.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 01:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">...honestly i don't see what the big deal is. i could code a pong sim in 15 mins if i wanted...keeping score would be easy, you'd just need a variable tracker (search the forums, a couple of people have made them...but i don't see what the big deal about those are either...)<br />
+      no offense meant, it just doesn't seem that much of a challenge to me...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 04:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">i see how it would be easy, although coding in for "mistakes" would be harder</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 04:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You mean like this?<br />
+      <br />
+      Just keep track of the ball's direction of movement and bounce it off the edges... with some extra game logic to make it skew off if you hit it off-center and such ;).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 10:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Shit UnconeD that's great. :D<br />
+      <br />
+      lol, here's a dos based game I made some time ago. Pretty screwed game I agree and runs fast as hell if you have a reasonably fast pc, but I have included the source in case anybody wants to modify.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 13:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Uuuuuu! :) UnConeD does it again !</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 14:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Oh fine, just crap all over my skills then ;) Bugger it i'll work on something else.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 19:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yeah, pong is easy to do. The collisions aren't difficult to simulate at all.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br /></p>
+
+      <p class="post-time small text-muted">8th June 2003 19:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The pong preset I am making doesn't keep score right now.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">zamuz</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 01:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">nice pong sim, unconed :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 02:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You couldn't believe the enormous smile on my face when I saw that. Good job UnConeD!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 04:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Great job using only one superscope UnConeD, really nice.<br />
+      Only thing I can see wrong with it is that the ball sometimes goes through the paddle, it's good enough for me though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 07:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">UnConeD, i bet that per frame code is even longer than Atero's :D<br />
+      Nice pong, but i guess it would be a bitch to turn it into a real music visualization preset...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 09:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">lol. Nice work Unconed, how long did it took you to make it?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">9th June 2003 19:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Tuggummi</i><br />
+        <b>UnConeD, i bet that per frame code is even longer than Atero's :D</b>
+      </blockquote>Fuck no, my flocks scope frame section is a helluvalot longer than that.<br />
+      I don't see why you did the ball AND the paddles in the same scope tho. Would've been much easier to do them seperately and texer the ball imo...
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 03:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I took up Atero's challenge actually:<br /></p>
+
+      <blockquote>
+        ..honestly i don't see what the big deal is. i could code a pong sim in 15 mins if i wanted...
+      </blockquote>Which is why there are still a couple of bugs in it (sometimes the ball will pass through the pad when it's close to the side and moving very steeply).
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 04:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It took about half an hour for me to code the actual logic behind the game. was quite easy actually.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 05:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">A man by the humble name of Magic.X once said.<br />
+      <br /></p>
+
+      <blockquote>
+        Whatever you try, UCD has done it before or is telling you it aint possible. Somehow its just depressing
+      </blockquote>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 08:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yes, sometimes when you get a new idea and think its so cool, you just realize someone has already done it before and then it's not an "original" idea anymore:(<br />
+      that's why i'm naming my next pack "unoriginal"</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 15:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">"unoriginal", how original :D So many things have been done that you have to admit that you're unoriginal to be original.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 17:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Actually i was going to name it "out of ideas" but since zxe had already taken up the name i decided to name it unorigrinal.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

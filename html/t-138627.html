@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="do NOT overwrite APEs" />
+
+  <title>do NOT overwrite APEs - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">do NOT overwrite APEs</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138627">do NOT overwrite APEs</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 11:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>nsis: avoid overwriting</strong><br />
+      i recently figured somebody overwrote my colormap.ape with and older version. please add a check to your script.<br />
+      <br />
+      example with multiplier ape:<br />
+      <b>Section "Multiplier"<br />
+      SetOutPath "$INSTDIR\Plugins\avs\"<br />
+      SectionIn 1<br />
+      IfFileExists "$INSTDIR\Plugins\avs\multiplier.ape" ExistMessage CopyAPE<br />
+      ExistMessage:<br />
+      MessageBox MB_YESNO|MB_ICONEXCLAMATION "Setup detected the Multiplier APE in your Plugins directory.$\n$\nOverwrite anyway?" IDNO End<br />
+      CopyAPE:<br />
+      File "multiplier.ape"<br />
+      End:<br />
+      SectionEnd</b><br />
+      <br />
+      if you dont want the ExistMessage, just change the GOTO of IfFileExists to End. additionally you check for the version of the installed ape. read <a href="http://nsis.sourceforge.net/archive/viewpage.php?pageid=5" target="_blank">this</a> for details.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 11:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">just <i>insert</i> something like this to the script above to check for the version. i did this a while ago, i'm sure it'd be more clever to use StrCmp on "0" instead of "1.1".<br />
+      <br />
+      ..<br />
+      <b>IfFileExists "$INSTDIR\$1\colormap.ape" VersionCheck CopyAPE<br />
+      VersionCheck:<br />
+      GetDllVersion "$INSTDIR\$1\colormap.ape" $R4 $R9<br />
+      IntOp $R7 $R4 / 0x00010000<br />
+      IntOp $R8 $R4 &amp; 0x0000FFFF<br />
+      StrCpy $0 "$R7.$R8"<br />
+      StrCmp $0 "1.1" ExistMessage<br />
+      MessageBox MB_YESNO|MB_ICONEXCLAMATION "Setup detected an old Color Map APE in your Plugins directory.$\n$\nDo you want to update?" IDNO End</b><br />
+      ..<br />
+      <br />
+      you might want to change the variables ($0, $R4 etc.) to fit your script!<br />
+      <br />
+      ps: i intentionally did not use the <font color="red">edit</font> button :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 11:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">ah, your a big dude now eh ? ... :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 11:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">There is a reason why i put them on a separate section :weird: Do i really need to add this script also? It's friggin huge for one file...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 13:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yathosho: you can use GetDllVersionLocal (or whatever it's called) to check the version of colormap on *your* PC as well. So that way you never have to update your script if you use a newer APE.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

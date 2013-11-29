@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVS 2.83 is killing me" />
+
+  <title>AVS 2.83 is killing me - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">AVS 2.83 is killing me</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=323880">AVS 2.83 is killing me</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">8th November 2010 13:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>AVS 2.83 is killing me</strong><br />
+      i just noticed that avs 2.83 (is this the latest version?) no longer comes with version resource (2.81b did), which puts me into a horror scenario. pimpbot installers (and maybe others) rely on that version resource in order to check which plugins (APEs) to install and to avoid duplicates.<br />
+      <br />
+      avs 2.7 (and older) had no version resource included either, but they also didn't have any APEs integrated (channelshift, colorreduction, multiplier, videodelay). i have never upgraded from 2.81b (and don't plan to do so) and i did expected some consistency in the avs sources.<br />
+      <br />
+      <b>please fix this in an upcoming version AND please stick to that</b>! i'm not willing to add a workaround to pimpbot everytime the winamp-devs make a mistake! while you're at it, add a version resource to milkdrop and maybe all other plugins, it's a good common practice to do that - and it might be needed in the future.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">8th November 2010 14:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">ps: cockos happy is labeled 2.9, but the version resource is set to 2.7.9.2. this mistake is still better than having no version - it won't break installers</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+
+      <p class="post-time small text-muted">8th November 2010 14:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">there's no point as 2.8.whatever should really be removed. as for there being the 2.9 from justin, it's just adding to the confusion as now there's too many versions floating about without any standardisation - should just be one version with related fixes, etc and have it done like that or did i miss something with open sourcing most of the source code (only difference with the officially shipped version is localisation and incompatibility with unsupported apes).<br />
+      <br />
+      if the one officially bundled could be fixed to work ok without having to do weird VC6 compiles (ideally VS2008) then maybe someone would add a version resource back (though only the main .exe and a few ml plug-ins inconsistently do it with later 5.5x builds).<br />
+      <br />
+      also the resource was removed since no one remembered to update it with the later 2.8x builds and the build system kept mangling the resource so it was simpler to just remove the resource than have it reporting it was the same version as winamp.exe (which i'm sure you'd find even more annoying). that's what i remember being the reason for the removal 3+ years ago.<br />
+      <br />
+      really AVS should be made an optional download from the installer for legacy purposes due to the issues and lack of support of it but that's just my view. either way i'm sure you're not going to be happy with this response but no one else bothers with AVS now (was tempted to not bother replying in all honesty).<br />
+      <br />
+      -daz</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">8th November 2010 16:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ideally, the default version would be the update <a href="http://web.archive.org/web/*/forums.winamp.com/showpost.php?p=2687627&amp;postcount=6" target="_blank">Justin promised</a> with a fixed rand() function (and perhaps more?)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+
+      <p class="post-time small text-muted">8th November 2010 16:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">the ideal would be AVS using ns-eel2 (as 2.9 does i believe) with all required bug fixes (and the guarantee that it doesn't break support with existing apes so people don't moan about their presets not working or it crashing all the time) and being correctly localised (so it's consistant with the rest of the Winamp support).<br />
+      <br />
+      -daz</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">GuiTwo</span><br /></p>
+
+      <p class="post-time small text-muted">28th January 2011 20:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I had the avs 2.81d<br />
+      now I downloaded the new winamp that comes with 2.83<br />
+      and I'm having some problems with eeltrans.ape (trans/autonomation), and conv.filter doesn't work<br />
+      okay, I have the 2.81d saved, so let's replace...<br />
+      but winamp crashes always when I start avs<br />
+      c'mon, I won't use milkdrop!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">29th January 2011 09:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <small>Originally posted by GuiTwo</small><br />
+        I had the avs 2.81d<br />
+        now I downloaded the new winamp that comes with 2.83<br />
+        and I'm having some problems with eeltrans.ape (trans/autonomation), and conv.filter doesn't work
+      </blockquote>no news here, 2.82 and 2.83 are unusable. stick with 2.81b or give 2.9 a try
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">GuiTwo</span><br /></p>
+
+      <p class="post-time small text-muted">29th January 2011 17:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I tryed the 2.9 but still crashing<br />
+      if 2.83 are unusable why the guys of winamp still using it?<br />
+      oh, programming a dll is so hard... why they don't fix it?<br />
+      lazyness, better things to do, lazyness</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+
+      <p class="post-time small text-muted">29th January 2011 17:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">because no one has a compiler setup that builds it properly anymore as reading existing posts would have shown. if you know so much if 'oh, programming a dll is so hard' doesn't apply to you (why else say something like that) then get the source code and fix things yourself. simple enough really.<br />
+      <br />
+      either way, AVS is just a complete mess especially if there's a forked v2.9 based on ns-eel2 (which most likely can be built with newer MS compilers than 2.8x which requires MSVC6) and that there's no source code for most of the apes which cause the crashes.<br />
+      <br />
+      personally, i think it should just be removed from the distro and provided as an external download as there's no interest to work on it and obviously my attempts in the past haven't worked out leading to more issues *shrugs*<br />
+      <br />
+      -daz</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">GuiTwo</span><br /></p>
+
+      <p class="post-time small text-muted">29th January 2011 17:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">regrettable situation<br />
+      now I don't have enough knowledge but maybe I will, I want<br />
+      sorry I haven't read existing posts, I have 56K connection</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

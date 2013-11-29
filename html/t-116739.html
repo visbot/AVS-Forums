@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="sign(var) function" />
+
+  <title>sign(var) function - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">sign(var) function</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=116739">sign(var) function</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>sign(var) function</strong><br />
+      Is there any way to define sign(var) function using only mathematical expressions like +, -, *, /, ^ ?<br />
+      Something like abs(var)=sqrt(sqr(var)). Yes - I know this isnt really correct.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 17:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I don't really see why a definition using +-*/^ would be better than another definition.<br />
+      <br />
+      Logically it's defined as:<br />
+      x&gt;0: f(x) = 1<br />
+      x&lt;0: f(x) = -1<br />
+      x=0: f(x) = 0<br />
+      <br />
+      First of all, I don't see what's incorrect about abs(x) = sqrt(sqr(x)). It fits all real numbers.<br />
+      <br />
+      You could define sign() as the derivative of abs(), in which case:<br />
+      <br />
+      abs(x) = sqrt(sqr(x))<br />
+      <br />
+      D(abs(x)) = (1/(2*sqrt(sqr(x)))) * (2*x)<br />
+      simplifying:<br />
+      D(abs(x)) = x/sqrt(sqr(x)) = x/abs(x)<br />
+      <br />
+      <br />
+      If you want to know how AVS 'calculates' it, it probably just checks the sign bit of the floating point number, like this (for a 32-bit float):<br /></p>
+      <pre>
+return((*(int*)(float*)&amp;number)&amp;0x80000000)?1.0f:-1.0f<span style="color: #007700">;
+</span>
+</pre>Doing an actual division would take ages. Note that this would have 0 return + or -, because there are two internal representations of 0 in an IEEE float: +0.0 and -0.0.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 18:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanx :)<br />
+      I need to solve a recursive function for fps reasons - its faster to calculate F(n)=phi^n/sqrt(5)and round it up than to count 1500th Fibonaccy number. Only this function uses if(),below(),max() and stuff like that so I needed sign to define them.<br />
+      sqrt(sqr(x)) isnt really correct becouse of the negative root.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th December 2002 20:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I understand how you might need it, but:<br />
+      <br />
+      sqrt(sqr(x))<br />
+      <br />
+      Always exists... sqr makes 'x' positive regardless of its sign, so it always has a real sqrt.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

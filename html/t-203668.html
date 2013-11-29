@@ -1,0 +1,161 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="preset" />
+
+  <title>preset - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">preset</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=203668">preset</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">varun_mark</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 06:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>preset</strong><br />
+      i tried to co-ordinate the texer ii and the ssc but alas!failed miserably.could someone hellp me out here?<br />
+      anyway it worked 2 my advantage in the second one.Would make a pretty good base for a preset or so i think;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 09:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">umm change the rotation values to the same maybe?.......</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hboy</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 09:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">To mattfury:<br />
+      shut the fuck up, you cannot make anything yourself, this was no help you have offered. he asked for syncing rotation, he will get the help for it cause we do know that is his problem.<br />
+      <br />
+      To varun-mark:<br />
+      the solution is dead easy. so is the cause why it doesn't work.<br />
+      <br />
+      you assigned random values to "p" in each renders. what you don't know (i assume you don't because you made the mistake), is that every render generates its values independantly. so there are two values generated randomly. thats why there can be 1 and 2 and 1 and 1 and so on.<br />
+      <br />
+      solutions for the problem:<br />
+      1. easiest is to use possibilities of the regXX features of avs. you store the rotation of one scope (or texer2) in regXX (this can be reg00-reg99 and is used in scopes, texer2s, DMs and movements), and then recall the value in other scopes.<br />
+      <br />
+      Don't change anything else, just type this into the first render's per frame section:<br /></p>
+      <pre>
+<code><br />t=t+.03;<br />p=(p-pp);<br />reg01=t;<br />reg02=p;<br /></code>
+</pre><br />
+      <br />
+      and then in the other render into per frame:<br />
+      <pre>
+<code><br />t=reg01;<br />p=reg02;<br /></code>
+</pre><br />
+      <br />
+      it should work like a charm. the other solution is to assign not random values, but music values to variables, because they have the same value in every effect. write this into both render's onbeat section:<br />
+      <pre>
+<code><br />pp=0.1*getspec(0.1,0.1,0)<br /></code>
+</pre><br />
+      <br />
+      hope this helped.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">varun_mark</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 16:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks hboy.it worked out pretty well,also gave me the idea for this one.what do you think?<br />
+      <br /></p>
+
+      <blockquote>
+        he who knows no fear,basically knows no fear
+      </blockquote>:eek:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">hboy</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 17:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">no fear of what? anyways, not bad preset, nice pseudo-3D you have made. boring after 20 seconds, but a nice try :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StoneyMahoney</span><br /></p>
+
+      <p class="post-time small text-muted">2nd January 2005 20:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ditch the text and you've got a very nice component. Drop a load more stuff in there with it, and it'll rule. Maybe throw a sphere in the middle, like a rings of Saturn kinda thing maybe?<br />
+      <br />
+      Shall I shut up now? ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">varun_mark</span><br /></p>
+
+      <p class="post-time small text-muted">3rd January 2005 01:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">yes.bit i couldn't make any great looking combo for it'stoney,so i put it up with some trash text.anyway,working on it though,hope 2 put it up soon for your visual pleasure:cool:</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Make Texer size fit to screen width/height" />
+
+  <title>Make Texer size fit to screen width/height - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Make Texer size fit to screen width/height</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=215133">Make Texer size fit to screen width/height</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 14:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Make Texer size fit to screen width/height</strong><br />
+      I know this is just a rather stupid and small problem, but i just can't think of how to solve it. :cry:<br />
+      <br />
+      In texerII i want to have lets say 10 elements (n=10) in a row (eg. along the x-axis). Now i want each one to be adjacent to the next one however the screenwidht is. I know that i can avoid those nasty gaps by aspect-ratio-correcting the 'sizex'-value. But i just can't think of the code... :mad:<br />
+      <br />
+      Thanks in advance!!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">ASD5A</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 18:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">this should solve your prob:<br />
+      in init:n=32;bmpb=63.7;<br />
+      in frame:t=t-0.01;n0=(n-1)/n;<br />
+      //bmpb=breite des genutzten texer2 bitmaps in pixel-ca.0.3 wegen rundungsfehler;<br />
+      //bmpb=width of the used texer2 bitmaps in pixel-~0.3 because of rounding failures;<br />
+      in point:<br />
+      x=(2*i-1)*n0;y=sin(i*3.14159*5+t)*0.1;<br />
+      sizex=w/n*1/bmpb;<br />
+      sizey=0.5-0.5*sin(i*3.14159*5+t*1.2);</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">eheiney</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 18:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, let's see here:<br />
+      <br />
+      So, if the window's dimensions are, let's say, 200x200, you'd want the row of texers to be the same in size, and have the same amount of distance in between each texer, as if the window were, let's say, 16784x200?<br />
+      <br />
+      I don't know if I read that right or not. If not, just ignore my stupidity. :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 19:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">For particle size fix on resolution you simply use the w &amp; h variables. You can just use sizex=w*verysmallnumber ; sizey=h*verysmallnumber, but this way you'll end up with "squished" non-aspect-ratio corrected particles (your squares will be rectangles and your circles ellipses). Also you could use sizex=w*h*veryfuckingsmallnumber ; sizey=sizex ; this way it compares to the whole resolution and resizes your particles accordingly, but it's a tricky business and it might not work in "quirky" resolutions.<br />
+      <br />
+      In any case, you need to use w and/or h, how you do it is up to you :p<br />
+      My method is simply to "compare" the viewers resolution to my own and adjust the size based on that value.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 19:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks a lot guys! haven't had a chance to look at your ideas cause im just about going out... will have a closer look later!<br />
+      <br />
+      vielen dank! Bin grad auf dem Sprung, konnte mir das also noch nich genau durchlesen. Werd's aber später nachholen!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 21:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">read the expression help ;)<br />
+      iw, ih - texer bitmap size<br />
+      w, h - avs window size<br />
+      <br />
+      if you dont care about squished pixels you just do this:<br />
+      frame: szx=w/iw*&lt;constant&gt;; szy=h/ih*&lt;constant&gt;;<br />
+      point: sizex=szx; sizey=szy;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+
+      <p class="post-time small text-muted">6th May 2005 22:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by TomyLobo</i><br />
+        <b>iw, ih - texer bitmap size</b>
+      </blockquote>ouch! that hurts! But thanks, problem solved!!!! :)<br />
+      <br />
+      I was bothering about that for quite some time, and it turned out to be so disgracing simple...<br />
+      <br />
+      Thanks you all for your input! :up:
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Backface Culling" />
+
+  <title>Backface Culling - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Backface Culling</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=198175">Backface Culling</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">2nd November 2004 23:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Backface Culling</strong><br />
+      This is a technical backface culling question so noobs can hit the ol' back button now.<br />
+      <br />
+      While helping wotl with his 'house' preset (<a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=197874" target="_blank">http://forums.winamp.com/showthread....hreadid=197874</a>) I used backface culling, but I was reminded that my method is a little flawed.<br />
+      <br />
+      Essentially I take the normal to the face I want to cull, for example<br />
+      <br />
+      x1=0;<br />
+      y1=0;<br />
+      z1=1;<br />
+      <br />
+      Then I pass that through my rotation matrices given the current angles of rotation to retrieve a final 'z' value, so that I have the rotated normal. Now currently I simply compare this to an arbitrary number, say 0.2, to test if the normal faces "away" from the camera enough to cull the face. But 0.2 is just a magic number I have stuck in through trial and error... to be correct should I be comparing the camera vector against the rotated normal? If so how do I do this?<br />
+      <br />
+      The vector of the camera is 0,0,-1 (well, -x depending on my camera)? So do i need to compare the angle between this and the rotated normal to see if it is above 90 degrees?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Xerol</span><br /></p>
+
+      <p class="post-time small text-muted">3rd November 2004 01:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, I'm not sure how you'd go about doing this, but assume you're looking top-down at the face. For sake of simplicity, let's just say it's vertical. Now, with the post-rotated normal vector, you should be able to calculate the angle it's pointing in.<br />
+      <br />
+      Assume this is a top-down view of something post-camera.<br /></p>
+      <pre>
+<code><br />     ^ y<br />     |  /<br />     |*/<br />     |/   <br />&lt;----+----&gt;<br />     |    x<br />     |<br />     |<br />     v<br /></code>
+</pre><br />
+      The slashes represent a face, and the * indicates the direction it's pointing. So the x,y values of the vector should be something like &lt;-.7072, .7072&gt;(or &lt;-1,1&gt;, unnormalised). You can then reverse-calculate this angle as being 3*Pi/4 radians. Basically, from this top-down perspecitve, the face is pointing away if the angle represented by the normal is between 0 and 180 degrees or 0-Pi radians. At least this is how I figured it when working in QBasic.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">3rd November 2004 19:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">But thats a 2D example so it doesnt account for perspective...I'm not sure I really understand your explanation. Are you saying you take the angle of the rotated normal (of the face) and check if it is between 0 and 180 degrees? That makes sense, but we surely need to specify the angle of the normal *with relation* to the camera (as a vector?). Thats the part I dont know how to do.<br />
+      <br />
+      Here's an example...<br />
+      <br />
+      AVS Frame Code<br />
+      <br />
+      xn1=0; //normal x<br />
+      yn1=0; //normal y<br />
+      zn1=-1; //normal z<br />
+      <br />
+      //put thru rotation matrices<br />
+      <br />
+      xn2=xn1*cz-yn1*sz;<br />
+      yn2=yn1*cz+xn1*sz;<br />
+      zn2=zn1;<br />
+      <br />
+      xn3=zn2*sy+xn2*cy;<br />
+      yn3=yn2;<br />
+      zn3=zn2*cy-xn2*sy;<br />
+      <br />
+      xn4=xn3;<br />
+      yn4=yn3*cx-zn3*sx;<br />
+      zn4=yn3*sx+zn3*cx;<br />
+      <br />
+      cull=below(zn4,0.25); //This is a hack, what should go here?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">4th November 2004 08:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Say you have the normal vector of the face you want to cull, you don't need to account for camera rotation. Just the object's own rotation in space.<br />
+      <br />
+      After that, take vector from the camera to any point on that face (by subtracting the camera coords from a vertex's coords. You have a difference value for each axis, that makes up your vector because the direction is implicit). And compare the two vectors to see if they point the same way. (Compare them with a dot product for example, which gives you the length of a projection of one vector onto the other. If that resulting length is positive, then they point in the same direction. If its negative, then the face points towards you.<br />
+      <br />
+      the rotation of the camera doesnt matter at all. For example, backface culling a shape that is <b>behind</b> the camera would use exactly the same method (but useless).<br />
+      <br />
+      Imagine that the camera is the center of a spherical space. your vectors to the faces you want to cull are like spokes in that sphere. So the direction of the camera doesnt matter. All that matters is the direction to the shape you are culling, and the direction of the normal from each face.<br />
+      <br />
+      i hope that made sense.. or at least was slightly relevant :/<br />
+      <br />
+      [edit]Arg. i get you now. I thought you were rotation that normal vector with your camera. But you were just rotating the shape in space (right?). Oh well, the rest of what i said still stands.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">4th November 2004 17:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Okay yea I see your point, the rotation of the camera doesnt matter at all.<br />
+      <br />
+      So if I get you... I need to take a vector from the camera to the face (A) (centre of the face would be logical I guess) and compare this to the rotated normal (B). Then I can say if A dot B is less than zero the face is visible... got it.<br />
+      <br />
+      Thanks for teh help, I'll try it out (when I'm not so busy coding huffman algorithms in matlab)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br /></p>
+
+      <p class="post-time small text-muted">6th November 2004 18:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">just do culling before rotation<br />
+      <br />
+      N(nx,ny,nz); &lt;- normal vector<br />
+      E(ox-px, oy-py, oz-pz) &lt;- eye-point vector<br />
+      if E.N &lt; 0 cull (you can cut 3 subtractions using px-ox, etc. and cull if greater than zero)<br />
+      now px=px-ox, py=py-oy, pz=pz-oz and rotate the (px,py,pz)<br />
+      <br />
+      i suck at explaining, but this is how i do bf culling, and it works for me. (i think its culling in object space, not camera space).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">17th November 2004 08:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I always tend to work with the vector from a vertex to the camera so that if it's positive then you draw it. And then it works well with doing reflections and specular highlights etc.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

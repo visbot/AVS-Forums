@@ -1,0 +1,139 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brightness by Resolution?" />
+
+  <title>Brightness by Resolution? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Brightness by Resolution?</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=156899">Brightness by Resolution?</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 12:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Brightness by Resolution?</strong><br />
+      Just wondering, i have this background flow &amp; pattern that uses additive blending scope and very small values for color (24 for each channel). The problem is that it looks correct &amp; "full" in my screen size and some small fullscreen sizes (320x240), but higher resolutions tend to be a bit emptier looking, now this can be fixed if i change the brightness of the scope a bit larger.<br />
+      <br />
+      What i just need to know is that would there be any point at trying to make the brightness of the scope depend on the screen size with W &amp; H. Could there be any problems? Should i just use Width or just Height, or both of them? What about if the resolution the user is using is smaller than mine?<br />
+      <br />
+      Is there any point at it at all, or should i just stick to the static value and pray that the viewer uses a correct res?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">well, ive never done it to control brightness, but ive used similar ideas before. Just multiplying everything by w*h*0.001 or somthing.<br />
+      <br />
+      If you were afraid of people using too big or too small res's then just cap the result with min and max's.<br />
+      <br />
+      eg: brightness=min(max(brightness*w*h*0.001,0.2),0.8)<br />
+      <br />
+      of course you would do as much as you can of that in /frame.<br />
+      <br />
+      i hope this is at all what you were talking about.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">20th November 2003 15:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yeah, that's basicly what i mean. Im just wondering will it work on every setting...<br />
+      <br />
+      I was thinking about 5 minutes later when i posted this a method like this:<br />
+      bright=(w/mywidth+h/myheight)*halfofthecurrentbrightness<br />
+      <br />
+      Im guessing this would compare the the users height to my height and same with the width then just multiply that with half-of-the-current-brightness.<br />
+      <br />
+      hmm... i'll have to test this.<br />
+      <br />
+      But if there is something utterly wrong with this whole idea, please let me know.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The brightness is affected by the area, so you need to multiply w and h, not sum them.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Try min(h,w)? The reason for this is to keep the aspect correct, so that if you change the aspect you dont get problems.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st November 2003 01:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Then it'd be sqr(min(h,w))..</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

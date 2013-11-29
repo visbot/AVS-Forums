@@ -1,0 +1,188 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="metablobs- but different" />
+
+  <title>metablobs- but different - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">metablobs- but different</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138560">metablobs- but different</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 17:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>metablobs- but different</strong><br />
+      another metablobs preset, but I wanted it to be different, so I have two sets of blobs- one positive and one negative so its more dynamic (Read the comment). btw- if this crashes try downloading the new colormap.<a href="http://www.deviantart.com/deviation/1646190" target="_blank">http://www.deviantart.com/deviation/1646190</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 22:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">They don't seem to be very meta :P. Except for maybe around the very edges.<br />
+      <br />
+      For metaballs you need a concave falloff function for the color. Suppose your falloff function is f(x). Take the sum of f(x)+f(t-x) as you move t towards zero (start so that f(x) and f(t-x) don't overlap) and draw the graphs (e.g. using a ssc x=i*2-1;y=f(i)+f(t-i); where f is your expression for the falloff function.<br />
+      First we try a linear function f(x)=max(0,1-d); It starts at 1, goes down to 0 and stays at 0 from x&gt;1. Start t at about 2.5 and decrease it very slowly. Notice how the 'shared' area becomes flat between the two.<br />
+      We'll now try a convex function, which bulges upward: f(x)=if(below(x,1),cos(x*pi/2),0);. It's a part of the cosine function. Notice how now the shared area has a bump in the middle. This is even worse!<br />
+      Now instead, use f(x)= if(below(x,1),1-sin(x*pi/2),0);<br />
+      This function is concave (it hangs downward). Now if you move the two functions closer together, you'll get a nice metaballish effect between the two.<br />
+      <br />
+      The attached preset shows two metaballs approaching eachother, with the slice running through the gray line represented at the bottom. The red lines contain the result after colormapping. It switches between 4 shapes of functions: the 3 above + the mixcurve 1-(3x^2-2x^3).<br />
+      <br />
+      The mixcurve actually is quite good, because it is convex at one end and concave at the other. So you get both decent blobbing at the edges, but without tiny spheres in the middle.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+
+      <p class="post-time small text-muted">10th June 2003 22:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">nice <i>educational</i> preset, ucd :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 01:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks for the explanation...will work on it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 04:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I understand that UnConeD, I'm going to work on making my own metablobs now.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 09:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yes your preset helped a lot to understand thanks UCD.:up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 14:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">wow M^2k, that preset is fucking nice. Even if it isnt real metablobings.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 14:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">LOL! Anyone else seeing any humour in the fact that UnConeD's educational preset has been downloaded more times than M^2k's own preset :blah: :p<br />
+      <br />
+      Nice preset M, looks a bit like a preset i did for my next back (which has nothing to do with metablobs though), but grain/scatter/fuzzify effects don't quite fit with solid shapes i think... but that's just me.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 14:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">geez, thats what i liekd about it tugg</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 14:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        but that's just me.
+      </blockquote>:rolleyes:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 16:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">so maybe i will leave it like this and tone down the scatter or remove it...then I just need to rename it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">11th June 2003 17:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">how about fizzy-o-therapist???(jus popped in mind:D )</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

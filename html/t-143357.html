@@ -1,0 +1,329 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Help with Code! on/off detection" />
+
+  <title>Help with Code! on/off detection - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Help with Code! on/off detection</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=143357">Help with Code! on/off detection</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">spyduck</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 01:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Help with Code! on/off detection</strong><br />
+      Let me first say that Ive been studying AVS through Jheriko's Hi-RES, AVS pack and the things I am learning are incredible!<br />
+      <br />
+      Anyways, I was attempting a remix of "Jheriko - HiRES - Warped"<br />
+      AVS preset, and I wanted a way to stop certain renders when the music stopped, so this is my code to get a 0 (meaning music is stopped)<br />
+      or 1(music is still going). Please tell me if im being incredibly foolish and oversighting something.<br />
+      --------------<br />
+      In superscope<br />
+      <br />
+      Per Frame: on=above(abs(v),0);<br />
+      --------------<br />
+      <br />
+      I am sure this is somewhat wasteful as its im doing one assignment, a comparison, and an absolute value operation more than 30 times a second.<br />
+      <br />
+      attached is my Remix of the amazing jheriko's "Warped" from his Hi-Res pack. Try stopping and playing the music. Am i doing this on/off thing correctly?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 04:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, v is a point variable. It's the level at acertain point on the spectrum or osciliscope. Your best bet would probably to get the data using getosc() or getspec(). Just make sure you grab data from a wide enough spectrum.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 04:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Or you could put it in the POINT box, depending on how high the n value is - that may be better than using many getosc's.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 07:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">something like<br />
+      on=if(getosc(0,1,0),1,0)<br />
+      you can use the getosc and getspec commands in perframe, as they dont operate using point data.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 09:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">this won't work because of a very small bug in avs that causes *any* signal to raise getosc very slightly. (or lower it, i actually don't know the exact amount.) so if anything is playing - and thus any signal being sent to avs - then your switch will be on. point being that if anything it should be getspec(0.5,1,0), and that might not even work. however, i don't really think that it should be a straight on/off switch because it would do the same thing for very quiet as very loud...which isn't exactly reactive. *unless* you're turning a scope off when there's no music. the only problem with this is that you get fps spikes when you turn a song off; you'll have to decide for yourself if that's acceptable in your preset or not.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 10:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">ok, how about on=above(getspec(0,1,0),0.01)<br />
+      <br />
+      im not sure what you meant excactly, but i cant see how getspec(0.5,1,0) would do anyhting of use, seeing as the bands are between 0 and 1 only, and this looks for 0.5 -&gt; 1.5<br />
+      <br />
+      And i think he is looking for a way to turn the scope off completely , only when there is no sound, not necessairly no mp3 playing, if you follow. Its just meant to be a switch, not a thing to make a scope more reactive.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">spyduck</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 11:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">As of right now, the above(abs(v),0) is doing the job in my per frame box, if you care to look at the preset i included the scopes have a reaction, but then sometimes during a techno song when if for some reason the music gets all quiet (like, say the interlude or whatever u call it part) then all of sudden the abs(v) is 0 and then the on code triggers so you have a moment of inactivity.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 12:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yeah. Actually, it should work. It's taking the v value for the last pixel drawn during the last frame. It will have a little [unnoticable] lag, but above(abs(v),0) should work.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        I am sure this is somewhat wasteful as its im doing one assignment, a comparison, and an absolute value operation more than 30 times a second.
+      </blockquote>You're kidding right? 30 times a second... as opposed to a 100 point scope's code which gets executed 3000 times per second, or a 20x20 DM which is executed 12000 times per second?<br />
+      <br />
+      If you really want to and you don't need the beat-detection (or have your own), you could set up a custom BPM and use the onbeat code instead (it's only executed as often as you set it).
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 13:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Why dont you do this:<br />
+      <br />
+      <font face="courier new"><br />
+      init<br />
+      n=600; val=0.05;<br />
+      <br />
+      per frame:<br />
+      m=if(below(val,Abs(Ev/n)),2,0); Ev=0;<br />
+      <br />
+      per point:<br />
+      x=i*2-1;<br />
+      y=v/2+m;<br />
+      Ev=Ev+v;<br /></font><br />
+      <br />
+      This will sum up all v's for one frame. If this is below a certain tolerance value then the scope is drawn outside the visible area (no fps spikes);<br />
+      <br />
+      Just alter this to your needs.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">spyduck</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 14:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by UnConeD</i><br />
+        <b>You're kidding right? 30 times a second... as opposed to a 100 point scope's code which gets executed 3000 times per second, or a 20x20 DM which is executed 12000 times per second?<br />
+        <br />
+        If you really want to and you don't need the beat-detection (or have your own), you could set up a custom BPM and use the onbeat code instead (it's only executed as often as you set it).</b>
+      </blockquote>I was also thinking of that too, by putting in the on selector<br />
+      in the onbeat code, but the details of making that worked escaped me.<br />
+      <br />
+      the way i concieved of the onbeat code was this<br />
+      <br />
+      init: on=0;<br />
+      on beat :adjust on value on v<br />
+      <br />
+      so starting the preset will synch with the music, but then if you stop the song, the on beat detection code won't trigger..unless you mean the arbitrary custom bpm, which yea, that would work, but then i would have to add in a custom bpm to run, im not so sure im better off now since i have no idea how many cycles the custom bpm is.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 14:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You could get avs to do the summing for you internally per frame (or beat) with a getspec(0,0,0) checking if this is below a small value would be a good way to see if the music is 'playing' or not.<br />
+      <br />
+      e.g.<br />
+      <br />
+      on=above(getspec(0,0,0),0.02);<br />
+      <br />
+      <br />
+      Its nice to see that someone enjoys my HiRes bonus pack and has learned something from my usually incomprehensible code.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Getspec'ing one point in spectrum won't get a good result.<br />
+      <br />
+      You could set getspec(0.5,1,0) to get a broadband value of the music actually playing.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 15:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">i heard that getspec(0,0,0) is the volume. can't remember where... i've been using it as if it were for ages.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">24th July 2003 18:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">getspec(0,1,0) is volume.<br />
+      It takes an average of all the available bands.<br />
+      <br />
+      and why does everyone keep using getspec(0.5,1,0)?<br />
+      ^means that 0.5 is the start of a sample with width 1.<br />
+      in otherwords, its getting data from 0.5 -&gt; 1.5.<br />
+      trying to get band data from outside 0-&gt;1 returns nothing.<br />
+      the code should be getspec(0.5,0.5,0) (pretty much useless) or getspec(0,1,0)<br />
+      <br />
+      unless im missing something, in which case i humbly appologise.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th July 2003 02:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">umm<br />
+      since when does getspec(a,b,c) average a..a+b? i'm damned sure it's a-b/2..a+b/2.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">25th July 2003 06:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">hmm.. damned if i can think of a sure way to check this.<br />
+      You could well be right, it does make sense.<br />
+      Ive been using the other way since i started, and ive never run into a problem with it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">25th July 2003 06:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">This is because you take a range from -0.5 to +0.5 then. But as the major sound generated is within this range (bass and middle range) it works as well although its not really perfect.<br />
+      <br />
+      Btw, i got this explanation out by searching the Forums. I think UCD told this once.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">25th July 2003 17:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">:) thanks</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br /></p>
+
+      <p class="post-time small text-muted">25th July 2003 18:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Personally, I usually do something like this:<br />
+      <br />
+      Per Frame:<br />
+      gg=gg*.925+abs(getosc(.5,1,0))*.075;<br />
+      on=above(gg,.005)<br />
+      <br />
+      This way you get some time to make sure that the music is really stopped if there happens to be some momentary silence during a song. Otherwise, the render will stop even if there is a period of silence in the milliseconds, which would make the scope look like it's blinking.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVS wait for refresh/CPU usage bug" />
+
+  <title>AVS wait for refresh/CPU usage bug - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">AVS wait for refresh/CPU usage bug</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=267146">AVS wait for refresh/CPU usage bug</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jon_joy_1999</span><br /></p>
+
+      <p class="post-time small text-muted">5th March 2007 00:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>AVS wait for refresh/CPU usage bug</strong><br />
+      hello.<br />
+      when running the attached preset at 128x96 (<b>Pixel doubling</b> enabled) with <b>Wait for retrace</b> disabled, I get a frame rate of ~370 FPS and a CPU usage of ~12% with no song playing<br />
+      with <b>Wait for retrace</b> enabled, I get a frame rate of ~60 FPS, with a CPU usage of ~43%<br />
+      I've got a P4 2.59 GHz<br />
+      that's an increase of ~2110% work per frame<br />
+      how does that happen?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nanakiwurkz</span><br /></p>
+
+      <p class="post-time small text-muted">13th March 2007 23:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>yikes!!!</strong><br />
+      I've noticed the same thing happening on my pc.<br />
+      but sadly my computer is crap anyway.<br />
+      another interesting bug i found was that when i ran on a resolution and bit depth of 1204,768,24<br />
+      it caused a crash in the gdi.exe module of my computer and then after a battle of program crashes it finally sends a bsod saying that windows is currently unstable.<br />
+      <br />
+      might be based on same problem.<br />
+      <br />
+      also there is something i noticed.<br />
+      I've heard there is a bug in all pentium processors called the fDIV bug that cause divisional errors within the processor itself. that might cause avs to go haywire no?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jon_joy_1999</span><br /></p>
+
+      <p class="post-time small text-muted">14th March 2007 02:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Re: yikes!!!</strong><br /></p>
+
+      <blockquote>
+        <i>Originally posted by Nanakiwurkz</i><br />
+        <b>I've heard there is a bug in all pentium processors called the fDIV bug that cause divisional errors within the processor itself. that might cause avs to go haywire no?</b>
+      </blockquote>The Pentium FDIV bug was a bug in Intel's original Pentium floating point unit. Certain floating point division operations performed with these processors would produce incorrect results.<br />
+      According to Intel, there were a few missing entries in the lookup table used by the divide operation algorithm.<br />
+      Publicly, Intel acknowledged the floating point flaw but claimed that it was not serious and would not affect most users. Intel offered to replace processors to users who could prove that they were affected. However, although most independent estimates found the bug to be of little importance and have negligible effect on most users, it has caused a great public outcry.<br />
+      On December 20, 1994 Intel offered to replace all flawed Pentium processors on the basis of request, in response to mounting public pressure. This had a huge potential cost to the company, although it turned out that only a small fraction of Pentium owners bothered to get their chips replaced.<br />
+      This problem occurred only on some models of the original Pentium processor. <b>Any Pentium family processor with a clock speed of at least 120 MHz is new enough not to have this bug.</b><br />
+      On appropriate models, the Intel Processor Frequency ID Utility checks for the presence of this bug.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+
+      <p class="post-time small text-muted">14th March 2007 13:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        I get a frame rate of ~370 FPS and a CPU usage of ~12% with no song playing
+      </blockquote>simply because nothing is being processed, its processing blank frames. obviously pixel doubling does something to the performance.. but for me i got 120 - 140 fps with wait for retrace disabled, and 75fps with it enabled.. and im running a 2.5ghz intel celeron processor.<br />
+      just a blank screen!
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">14th March 2007 18:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">read <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=253109" target="_blank">this</a> thread about what WFR does.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jon_joy_1999</span><br /></p>
+
+      <p class="post-time small text-muted">16th March 2007 19:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by MaTTFURY</i><br />
+        <b>simply because nothing is being processed, its processing blank frames. obviously pixel doubling does something to the performance.. but for me i got 120 - 140 fps with wait for retrace disabled, and 75fps with it enabled.. and im running a 2.5ghz intel celeron processor.<br />
+        just a blank screen!</b>
+      </blockquote>yeah, it's me jacking around with superscopes. it's simply three SSCs, two take left-right audio channels, and are spectrograms, with colors that are opposites, then the colors are "added" together (so white is where the audio channels are the same), and the third is a simple center channel waveform
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+
+      <p class="post-time small text-muted">18th March 2007 15:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It's not a bug, its just when stop playing a song, avs stops processing musical data therefore giving you a incomprehendable framerate...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jon_joy_1999</span><br /></p>
+
+      <p class="post-time small text-muted">20th March 2007 12:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">even playing a song, with the above settings, without wait for retrace I get 340 FPS with CPU utilization of 20%, and with wait for retrace I get 60 FPS with ~48% CPU utilization, an increase of 1360% work per frame</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">20th March 2007 18:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Sorry but I don't see the problem and/or bug here.<br />
+      <br />
+      This is just the expected behaviour, no?<br />
+      WFR is more expensive than the raw mode. nothing new there..</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+
+      <p class="post-time small text-muted">21st March 2007 14:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thats strange. when i have no music playing, i get a framerate of either &lt;32, exactly 32 or exactly 64fps no matter what preset i have loaded, running a p4 2.8 at 500x350 with wait for retrace and pixel doubling disabled. a blank avs screen will run at a solid 64fps with no music and ~100fps when there is music playing. kinda the opposite of what's going on here.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

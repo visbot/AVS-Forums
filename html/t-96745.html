@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My additions to UnConeD's wishlist" />
+
+  <title>My additions to UnConeD's wishlist - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-138.html">AVS Wishlist</a></li>
+
+      <li class="active">My additions to UnConeD's wishlist</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=96745">My additions to UnConeD's wishlist</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br /></p>
+
+      <p class="post-time small text-muted">4th August 2002 11:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>My additions to UnConeD's wishlist</strong><br />
+      I think UnConeD's list is pretty complete, but I've some small additions. Take a look and see if you like them:<br /></p>
+
+      <ul>
+        <li>Allow you to use and define the red, green and blue variables in movement, dynamic movement, and dynamic distance modifier. This will be able to replace the brightness, fast brightness, multiplier and unique tone (well, they'll still be there for compatibility, but not used much anymore). You could also shift the pixels depending on for example their green value: x=x+green; or d=d+green; The possibilities are great. What about this one (t is in frame with formula t=t+0.05): red=abs(sin(red*2+t));</li>
+
+        <li>Imaginairy numbers: not only support for a+bi, but also the polar variant re^(theta*i), which would be de^(ri) in avs.</li>
+
+        <li>New rnd function. Syntax rnd(input,amount) It would round the input value, with the amount you specify. I think the amount would be best specified like this: 0 = round on 1, 1 = round on 10, -1 round on 0.1, and so on. For example rnd(4.5653,-3) would make 4.565.</li>
+
+        <li>Now the most difficult one to program: lists. This would allow you to store and recall values in a list. You could make particle engines! The functions would be store(value,indexvalue) and recall(value,indexvalue). The indexvalue is a bit difficult to explain, so I'll give an example code (in pixel):<br />
+        list=recall(x,i);<br />
+        x=sin(x) or any other function;<br />
+        list=store(x,i);<br />
+        You can choose the name of the list yourself, ofcourse. The first line recalls the value x with indexnumber i. This gives x the value that's in the list and is stored under the indexnumber with the value of i. You then do whatever function you like. Then you store the new x with indexnummer i (which would, in this case be the same).</li>
+
+        <li>Different forms of mosiac. Now it's just rectangles, but circles or triangles would also be cool.</li>
+      </ul>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">4th August 2002 20:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Re: My additions to UnConeD's wishlist</strong><br /></p>
+
+      <blockquote>
+        <i>Originally posted by skupers</i><br />
+        <b>I think UnConeD's list is pretty complete, but I've some small additions. Take a look and see if you like them:<br /></b>
+
+        <ul>
+          <li><b>Different forms of mosiac. Now it's just rectangles, but circles or triangles would also be cool.</b></li>
+        </ul>
+      </blockquote>I think only Squares, Rectangles, Triangles, and Hexagons are possible... others would leave space...<br />
+      <br />
+      Being able to change the width and length separately would be nice...<br />
+      <br />
+      -----<br />
+      <br />
+      About the colors... I don't know... It should be an entirely new trans - Colored DM? Doing so will need to take the image from the previous frame and sort it between the colors... it's going to eat up precious FPS...
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th August 2002 10:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        Allow you to use and define the red, green and blue variables in movement, dynamic movement, and dynamic distance modifier. This will be able to replace the brightness, fast brightness, multiplier and unique tone (well, they'll still be there for compatibility, but not used much anymore). You could also shift the pixels depending on for example their green value: x=x+green; or d=d+green; The possibilities are great. What about this one (t is in frame with formula t=t+0.05): red=abs(sin(red*2+t));
+      </blockquote>I can see how a 'dynamic colourfade' could work which adjusts values with parameters defined by a grid similar to a DM, but not how you could have movement indicated by colour: the DM uses a very low-resolution grid so either it would need to calculate the average colour for an area every frame (slow!) or use the exact value under a grid point, which causes noise and jitter.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">4th September 2002 05:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">why would you want support for imaginary numbers, you can code x and y individually to create a complex plane, would it actually be faster to have in built support than to expand the math out on paper first and then code it? im sure you could draw the mandelbrot set using a ssc if you really wanted to (i base this on having done it in qbasic and i've found very few things i haven't been able to work from qb into ssc i just haven't done mandelbrot yet cos im too lazy) or even create any function of complex numbers into reals and draw it out into 3 dimensions.<br />
+      <br />
+      another thing, don't take this insultingly but e^itheta = cos(theta)+isin(theta) (you can prove this easily by replacing e sin and cos with their infinite series, and thats also where e^i*pi = -1 comes from)so it wouldn't be hard to convert just like doing polars in ssc at the moment with x=dcos(r);y=dsin(r) if there was imaginary number support.<br />
+      <br />
+      i guess complex number support would make it easier to make a 3d slice thorugh a 4d julia set or something tho i guess..</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">cfp</span><br /></p>
+
+      <p class="post-time small text-muted">22nd September 2002 23:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">my wee addition to the wish list:<br />
+      <br />
+      a video delay ape. just like audio delays output whatever came in however many milliseconds/beats ago, this would output whatever screen came in however many milliseconds/beats ago.<br />
+      <br />
+      it would also have the standard feedback control for looping a proportion of the output back to the input.<br />
+      <br />
+      this would enable you to do the avs equivalent of that scene in ghost dog if anyone's seen that film.<br />
+      <br />
+      if i get really bored this christmass, i'll do it myself, but i'd rather someone else did first (^_^)<br />
+      <br />
+      tom</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

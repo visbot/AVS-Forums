@@ -1,0 +1,155 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="help with camera rotation" />
+
+  <title>help with camera rotation - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">help with camera rotation</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=184452">help with camera rotation</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Adasha</span><br /></p>
+
+      <p class="post-time small text-muted">24th June 2004 22:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>help with camera rotation</strong><br />
+      Hey all, a request for help if I may<br />
+      <br />
+      I've got a camera following an arbitrary path around a SSC object, which is centered on the origin. I'd like to have the camera orientate itself towards the scope's centre.<br />
+      <br />
+      I can do it easily enough in 2d with atan2 and I assumed I'd just need to extend that into 3d, maybe with a bit of Pythagoras, but I'm not making any headway<br />
+      <br />
+      &lt;edit&gt; Does it matter which order I'm rotating the axes? It's x,y,z right now &lt;/edit&gt;<br />
+      <br />
+      Tell me straight... am I missing the obvious?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">24th June 2004 23:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">3D SuperScope (incl. rotation) <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?postid=782793#post782793" target="_blank">link</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Adasha</span><br /></p>
+
+      <p class="post-time small text-muted">25th June 2004 00:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks m2k but the 3d part I'm more or less comfortable with. I was looking more for a way to make the camera point to the origin (i.e. calculate rx, ry and maybe rz, based on the camera coordinates), as it will be following various paths blended together randomly and I always want the scope in view<br />
+      <br />
+      might not help, but here's the preset. feel free to point out any other corrections ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th June 2004 09:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">there's a method for that that's pretty simple once you know its derivation. unconed uses it in his energy ball preset and other similar endeavours of his, if you want to take a look at that code. it's kind of dodgy code if you don't know raytracing in avs, but that's the best advice i can give you for the moment...i'm far to tired to be trying to derive those formulas right now ;)<br />
+      good luck</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">26th June 2004 06:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">nice preset btw:)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">26th June 2004 17:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">ry=atan2(-ox,-oz);<br />
+      rx=atan2(oy,sqrt(sqr(oz)+sqr(ox)));<br />
+      rz=0;<br />
+      <br />
+      this is for zxy rotated superscopes for zyx just swap appropriate vars.<br />
+      <br />
+      it comes from pythagoras theorem and some trig, draw a 3d diagram to see how it works.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">27th June 2004 19:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">This formula depends on the order of your rotations. The most natural is z,x,y (or reverse for camerabased scopes).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Adasha</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2004 01:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">took a little experimenting, but got it!<br />
+      <br />
+      appreciate the help, thanks!</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,948 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lamé curve" />
+
+  <title>Lamé curve - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Lamé curve</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100001">Lamé curve</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">17th August 2002 00:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Lamé curve</strong><br />
+      My newest mathematical project: Figuring out how to make an arbitrary Lamé curve in SSC. Lamé curves, for those who aren't UnConeD, are curves defined by the equation:<br />
+      |x^n|/a+|y^n|/b=1<br />
+      Initially I wanted to create the curve voted as the most aesthetically pleasing, where n=e and a/b=golden ratio. But then I realized I'd probably have to have some sort of base equation for it.<br />
+      The problem is, the base equation I have uses x or y=i, and it gets all the points jumbled up in one place. Ideally I would create it with polar coordinates, but I don't know how...Any ideas?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">17th August 2002 15:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Actually I didn't know about Lamé curves either :). In any case there are TONS of 'blablah curve's in math anyway, it's impossible to know them all.<br />
+      <br />
+      A few observations, correct me if I'm wrong:<br />
+      <br />
+      1) Since only the absolute value of x and y is used, the curve is symmetrical with respect to both the x and y axis (and the origin). So you only need to draw one quadrant and mirror it to the others.<br />
+      <br />
+      2) The equation can be rewritten in the form y=f(x) for the first quadrant (where |x^n|=x^n and |y^n|=y^n):<br /></p>
+      <pre>
+<code><br />    |x^n|/a+|y^n|/b = 1<br />&lt;=&gt; (x^n)/a+(y^n)/b = 1<br />&lt;=&gt;         (y^n)/b = 1 - (x^n)/a<br />&lt;=&gt;         (y^n)   = b*(1 - (x^n)/a)<br />&lt;=&gt;          y      = (b*(1 - (x^n)/a))^(1/n)<br /></code>
+</pre><br />
+      So you can draw it parametrically for an interval 'x'. You can also isolate 'x', and draw it parametrically for an interval 'y'. This is what I've done in the attached preset, but it looks more like a SuperEllipse to me: I'm not sure what a lamé curve is supposed to look like.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">17th August 2002 17:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I'm not sure why you want Lamé curves, but if you want something with a similar shape, you can cheat:<br />
+      <br />
+      x=(cos(a))^n; y=(sin(a))^n;<br />
+      <br />
+      should give you a similar, but less complicatedd to calculate, result.<br />
+      <br />
+      You should experiment with regular polynomial shapes as well. Take for example the silhouette of the mushrooms in Whacko AVS II.<br />
+      <br />
+      Once you've developed a little 'feeling' of how functions combine when multiplied and added, you can make really cool things (like Tie Fighters and X-Wings ;)).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
+
+      <p class="post-time small text-muted">17th August 2002 18:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Is that a hint for Whacko AVS V?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">17th August 2002 19:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Eh? V is already out ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Karnov</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 03:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>concerning the lame' curve</strong><br />
+      yeah yeah i dunno that damn ascii<br />
+      <br />
+      would anyone (i.e. unconed y atero) mind if i used above code in an AVS?<br />
+      <br />
+      <br />
+      oh yeah<br />
+      <br />
+      i am starting a movement to correct the only beef i have w/ the english language<br />
+      <br />
+      the word "and" is too long<br />
+      we should adopt the spanish "y"<br />
+      it is 66% more effiecent :)<br />
+      plus "and" _almost_ takes up 2 syllabes<br />
+      "y" (pronounced "ee") only takes up, like, a half of syllable ;p<br />
+      reply if you think i have a badass logic train going here</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 10:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Oh yeah while we're at it, we should start using abbreviations:<br />
+      <br />
+      u = you<br />
+      y = why<br />
+      n = and<br />
+      <br />
+      We can compress double letters into one, and skip ending vowels. I mean, everyone will understand what we're talking about right? Oh and replacing weird spellings with phonetical ones is really the way to go too:<br />
+      <br />
+      so m shur ev1 wl undasta wh im tkin bout, n it rely s a gr8 id to sav sum tim bi typn lik diz.<br />
+      <br />
+      <br />
+      NOT.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 13:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It's similar to Video Compression, the more compressed, the less bits required, but more CPU power required too, less compressed, the more bits required, but less CPU power. (Which is leveraged by the more bits required to up the required CPU power)<br />
+      <br />
+      And back to the subject of non-circular curves, you can use a beizer, they are VERY fast.<br />
+      <br /></p>
+      <pre>
+<code><br />Init:<br />pi=acos(-1);fov=pi*2/3;flv=tan(fov/2);n=100<br /><br />Per Frame:<br />xp1=1;xp2=1;xp3=0;yp1=0;yp2=1;yp3=1;zp1=0;zp2=0;zp3=0;<br /><br />Per Point:<br />z=(sqr(t)*zp1+2*(1-t)*t*zp2+sqr(1-t)*zp3);<br />x=(sqr(t)*xp1+2*(1-t)*t*xp2+sqr(1-t)*xp3)/(z+flv);<br />y=(sqr(t)*yp1+2*(1-t)*t*yp2+sqr(1-t)*yp3)/(z+flv);<br /><br /></code>
+</pre><br />
+      <br />
+      There's a quarter-circle, just change the values for the (xp'n,yp'n,zp'n) to change the shape (first co-ord is one end, third co-ord is other end, and second co-ord is the apex of the containing triangle.)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 14:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Zeven: there are of course a lot better methods for curves ;). As I said, I don't really know why Atero wanted a Lamé/SuperEllipse, because they're kind of boring. But anyway sometimes it's fun to do something totally useless ;)<br />
+      <br />
+      I just made a nice double cubic bezier scope... it's a single cubic bezier segment closed on itself. I also made the controlling lines visible. The only problem I see using beziers in AVS is the large amount of variables you need to store all the control points.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 20:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I've been playing with the Béziérs a bit... I guess I didn't realise how well they work in AVS.<br />
+      <br />
+      Here's a nice, anti-aliased bezier. Not very fast, but looks great and smooth. The sub-pixel sampling is done by additively drawing the scope with half-pixel offsets, and a final blur'n'multiply smoothens out the long stretches. If you compare it to the non-aa version you can clearly see the difference.<br />
+      <br />
+      I also made a new avatar based on a filled in, looping bezier.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 22:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">What're the odds that Whacko VI will have one of these?<br />
+      Very, very high, I think...<br />
+      :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">20th August 2002 23:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Next on the list: bicubic béziér patches ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 04:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">When can we expect enviroment maps and photorealitisc organic models? :p<br />
+      <br />
+      You gonna go back and mess with that "professional renderer" scope you made before? (I lost my copy in a format a while ago, but it was pretty cool)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 11:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You mean the superscope ray tracer? Nah, that was waaaaaaaaaaay too slow.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 12:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I suppose one of these days one of us is going to hafta write an OpenGL or Direct3D AVS type thing... I'd do it... except I've got no idea how to write a code parser.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 12:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I tried making an AVS code parser a while ago... I got the basics runningn, but my code was sloppy (first time I tried a compiler) and there were a few critical bugs.<br />
+      <br />
+      I'm going to try a flex-based compiler once I have time.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Scar Da Kookee</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 16:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">mind if i took a look at it?<br />
+      <br />
+      one thing i can do is look at code ^_^<br />
+      <br />
+      and as for anything lame... :(</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">21st August 2002 18:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Lol I'm not going to paste 700 lines of C code in here. ;)<br />
+      The code is buggy and messy... I doubt you'd have any use for it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">23rd August 2002 04:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">GYAH!<br />
+      <br />
+      Umm...BACK ON TOPIC...I didn't really necessarily want to use this in a preset, but it would be cool to figure out if I could do a superegg. And I guess I should've clarified, is there any way to program it this way:<br />
+      r=sin(i*tpi); (tpi=2*pi)<br />
+      d=???<br />
+      <br />
+      I know the conversion between polar and rectangular coordinates, but I don't know how I would make rectangular equations polar. The idea I had in mind was to have the points spread out equally (except for the fact that it's not a circle, but you know what I mean). That's easy - R is the same as a circle. But finding D is difficult. All I know is that when n=2, D=1. Then there's the shapes for n=0, a unit cross, and n=infinity, a unit square.<br />
+      <br />
+      I'm too lazy to figure those out right now, cos I haven't been to the forums for a while and I'm catching up :P<br />
+      <br />
+      --Atero</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 04:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">WEE!! Dead post revival<br />
+      <br />
+      So, does anyone have an answer? IS THERE NO END TO THE MADNESS?????<br />
+      <br />
+      BTW, here is the code for a general superegg and a superegg lens (a 'glass' superegg placed upon a given texture) using movements:<br />
+      <br />
+      d=(pow(abs(x),n)+pow(abs(y),n));<br />
+      z=if(below(d,1),sqrt(1-d),0);<br />
+      x=x/z; y=y/z;<br />
+      <br />
+      For the lens you simply take the reciprocal of z (or reverse the projection):<br />
+      <br />
+      x=x*z; y=y*z;<br />
+      <br />
+      For integral powers, you do not need to take the absolute values of x and y for d.<br />
+      <br />
+      n=&lt;0 does not work. I'm also fairly sure there's a way to simplify n=2^a where a is integral. Have fun!<br />
+      <br />
+      Edit:<br />
+      Forgot to say, the movement has to be in rectangular coordinates, and cannot be made square unless you make it a dynamov (which will make it uberslow and ugly). Also, here's the code for the above mentioned 'most beautiful lame curve' as a superegg lens when viewed in a square window:<br />
+      <br />
+      power=exp(1); phi=(1+sqrt(5))/2;<br />
+      d=(pow(abs(x),power)+pow(abs(y*phi),power));<br />
+      z=if(below(d,1),sqrt(1-d),0)*7;<br />
+      x=x*z; y=y*z*phi;<br />
+      <br />
+      I also fixed the general code so it's not fuxx0red no more ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 12:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Okay... I know that this is an old thread and you may have solved some of the problems but Lamé curves (which are also called Fermat curves if a=b) are of the form (x/a)^n+(y/b)^n=1, I dunno where your modulus came from, anyway, this is a locus equation and is therefore difficult to draw using a superscope, you just have to cheat by drawing the curve in each quadrant (like UnConeD said way up at the top). Anyway, Lamé curves are meant to look like curved rectangles when n is even and integral, as n tends to even infinity the curve tends towards a rectangle, for odd values of n the curve tends to infinity in the second and fourth quadrants and is undefined in the third.<br />
+      <br />
+      What is a superegg? Is it another word for a super-ellipse (n=5/2).<br />
+      <br />
+      The other thing I wanted to mention is finding polar co-ordinates for Lamé curves. I don't think that it is possible to create a general rational parameterisation of a Lamé curve, mainly due to the close link with Fermat's last theorem. Although you may still be able to find specific parameterisations for specific cases, or curves which are very close to Lamé curves.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 19:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Superellipses are 2-lame' curves of n&gt;2. Supereggs are 3-lame' surfaces of n&gt;2. And there's no modulus in that formula, but there is the absolute value sign, which you left out:<br />
+      |x/a|^n+|y/b|^n=c<br />
+      And whether N is even, odd, or integral doesn't really matter. When n=inf., the shape is a rectangle, when n=0, it is a cross, when n2, it's a circle, and when n=1, it's a diamond. When 2&gt;n&gt;1, the shape is several circular arcs curving ******d that don't smooth at the corners. When 1&gt;n&gt;0.5, it is several circular arcs curving inward that 'spike' at the corners, and when n&gt;0.5, it is several non-circular arcs curving inward that spike at the corners. Finally, when n&gt;2, it is several non-circular arcs that smooth out at the corners.<br />
+      <br />
+      What do you mean, 'mainly due to the close link with Fermat's last theorem?' You're being extremely vague, Jheriko</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 20:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Okay. Modulus x in maths = |x| = absolute value in computers.. I forgot about that for a moment, sorry for the confusion. BTW it is good practice in maths to avoid |x|, it is a nasty function, it has no inverse, isn't continuitous and has a point singularity, it also is wrong in this situation, it ruins the 'n=odd' case Lamé curves.<br />
+      <br />
+      As for my vague statement.. a curve is called rational if it can be expressed by some parameterisation x=x(t), y=y(t) where x(t) and y(t) are rational functions of t. So if you wanted to parameterise a general Lamé curve, even for natural n, you would have trouble because you'd need to solve things involving x^n+y^n, that is very hard (likely impossible due to the difficulty in solving higher degree equations in a finite number of steps). All I meant by my Fermat reference is that Lamé curves and FLT are closely related (for obvious reasons and less obvious reasons) and so it is likely that finding a general rational parameterisation could well be a similar process to finding a Fermat triple.<br />
+      <br />
+      There is one specific example which can illustrate this:<br />
+      <br />
+      x^2+y^2=1<br />
+      <br />
+      We can parameterise this by finding intersection points with a line, an easy example is y=t(x+1) which goes through (0,1). You can cram this into the original equation to give:<br />
+      <br />
+      x^2+(x+1)^2 * t^2=1<br />
+      <br />
+      which can be solved for x to give x=-1 or x=(1-t^2)/(1+t^2), since y=t(x+1) we substitute x(t) into that to give y=2t/(1+t^2).<br />
+      <br />
+      (Note also that if you wanted to do this with x^3+y^3=1 you would need to solve a cubic expression rather than a quadratic one. Which may result in a complex parameterisation.)<br />
+      <br />
+      Anyway... the point is that this parameterisation can be used to find pythagorean triples and you can find the parameterisation from a formula for pythagorean triples.<br />
+      <br />
+      If a^2+b^2=c^2 for some natural numbers a,b and c then x=a/c and y=b/c are rational numbers and (x,y) is a point on the circle x^2+y^2=1 (just a simple substitution can verify this). We can get pythagorean triples from this by multiplying x and y by any common denominator (=c). So using our parameterisation. t=y/(x+1) is rational if x and y are rational (which they are) and vice versa, so we can express t as p/q. Plug this into the circle parameterisation and we get:<br />
+      <br />
+      x=(p^2-q^2)/(p^2+q^2)<br />
+      y=2pq/(p^2+q^2)<br />
+      <br />
+      The lowest common denominator is p^2+q^2 so this is our expression for c, so, pythagorean triples are numbers (and multiples of numbers) of the form:<br />
+      <br />
+      a=p^2-q^2, b=2pq and c=p^2+q^2<br />
+      <br />
+      for integers p and q.<br />
+      <br />
+      This suggests to me that in order to find a parameterisation of the general Lamé curve you would need to do something which can equate to finding Fermat triples.<br />
+      <br />
+      Wow, that was long. Hope it helps to clarify what I meant.<br />
+      <br />
+      EDIT: Perhaps you now understand why I was so vague.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 21:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Sorry Atero I dont think its possible to find polar coordinates. If you look at the polar equlation for a simple circle and do...(ill just write the math not describe):<br />
+      x=sin(t);<br />
+      y=cos(t);<br />
+      -------<br />
+      x^2=sin(t)^2;<br />
+      y^2=cos(t)^2; }+<br />
+      -------<br />
+      x^2+y^2=sin(t)^2+cos(t)^2<br />
+      -------<br />
+      x^2+y^2=1;<br />
+      -------<br />
+      So my point is x^2=sin(t)^2;y^2=cos(t)^2 does mean that x^2+y^2=1 and x^2+y^2=1 doesnt mean that x^2=sin(t)^2;y^2=cos(t)^2 becouse you cant invers the }+ thing. So if you cant get polar coordinates for a circle you cant get them for a more complex function eather.<br />
+      <br />
+      Damn my English sucks!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">23rd October 2002 22:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Myabe I'm not understanding you correctly but sin(x)^2+cos(x)^2 = 1 always. You can prove this by drawing a right angled triangle with hypontenuse 1 and an angle x and using the basic trig rules for sin and cos combined with pythagoras theorem. Since they always add up to a constant stuffing that into an SSC should just draw a straight line.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 02:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You can also prove that sin^2 x + cos^2 x =1 by putting it in terms of a, b, and c:<br />
+      (a/c)^2+(b/c)^2=1<br />
+      a^2/c^2+b^2/c^2=1<br />
+      (a^2+b^2)/c^2=1<br />
+      a^2+b^2=c^2 (pythagorean theorem) which can be proved in a number of ways<br />
+      <br />
+      Me and Jheriko had a chat on mIRC. Basically he's wrong and I'm right. :p<br />
+      <br />
+      Actually I think we got the lame' formula business straightened out, and I'm right about it (I am, as usual), but he kind of squashed my hopes about making this into an evenly spaced scope, the bastard. ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 02:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Actually you don't need to prove cos^2(x) + sin^2(x) = 1. By definition they are the x and y coordinates of a point lying at angle 'x' on a unit circle (radius one).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 14:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">My point was that you can get normal formula of a curve from its polar formula but you cant get the polar one from a normal one becouse polar formula is actualy 2 formulas x=d*sin(r) y=d*cos(r) and the other one is y=f(x).<br />
+      But if you got the effect you wanted it doesnt really mater.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 15:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>You can also prove that sin^2 x + cos^2 x =1 by putting it in terms of a, b, and c:<br />
+        (a/c)^2+(b/c)^2=1<br />
+        a^2/c^2+b^2/c^2=1<br />
+        (a^2+b^2)/c^2=1<br />
+        a^2+b^2=c^2 (pythagorean theorem) which can be proved in a number of ways</b>
+      </blockquote>Thats the same proof as mine in different words, but a clever way to do it none the less.<br />
+      <br />
+      There probably are parameterisations of Lamé curves. Just not rational ones, and definately not simple ones to derive (like the circle example I gave), you may be able to find some on the net though.<br />
+      <br />
+      I still disagree with your usage of the absolute value. You don't use it for a circle, or a conic or anything, especially since it ruins the curves if they are undefined in a quadrant or if they are off-centre. Assuming that something is always postive can ruin things, example:<br />
+      <br />
+      4-6=1-3<br />
+      4-6+9/4=1-3+9/2<br />
+      (2-3/2)^2=(1-3/2)^2<br />
+      2-3/2=1-3/2<br />
+      2=1<br />
+      <br />
+      This problem happens when you assume that the square root is always positive, which seems to be the right thing to do. i.e. |x^a| can not always be used in an equality in place of x^a since x^a can be multi-valued.<br />
+      <br />
+      Also we were discussing n/0, heres a proof that you may like to find the flaw in (it has to do with n/0)<br />
+      <br />
+      a=1,b=1<br />
+      a=b<br />
+      a^2=b^2<br />
+      a^2-b^2=0<br />
+      (a-b)(a+b)=0<br />
+      (a+b)=0/(a-b)<br />
+      a+b=0<br />
+      1+1=0<br />
+      <br />
+      There are loads of examples of division by zero not behaving as a defined value, and even behaving as though it were finite, lots of bizzare proofs, like this one, and lots of calculus and limiting functions that give bizarre results due to divisions by zero.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 18:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        4-6=1-3<br />
+        4-6+9/4=1-3+9/2<br />
+        (2-3/2)^2=(1-3/2)^2<br />
+        2-3/2=1-3/2<br />
+        2=1
+      </blockquote>Hmm I don't see the equality in the second line.. :)<br />
+      <br />
+
+      <blockquote>
+        a=1,b=1<br />
+        a=b<br />
+        a^2=b^2<br />
+        a^2-b^2=0<br />
+        (a-b)(a+b)=0<br />
+        (a+b)=0/(a-b)<br />
+        a+b=0<br />
+        1+1=0
+      </blockquote>This is easy... because a=b, a-b = 0. So 0/(a-b) is undefined.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 19:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yes...Most, if not all, of those examples are flawed in that way.<br />
+      And you CAN use absolute value in ellipses, without changing the end result at all:<br />
+      |x/a|^2+|y/b|^2=c^2<br />
+      The reason being that x^2 is always positive if x is a real number, whether x is positive or negative. So making x positive before squaring it does nothing at all. If x is not a real number, then it's not an ellipse (right? please correct me if I'm wrong...) In fact, I'm fairly sure this is one of those things that's taught 50/50 in schools (with absolute value and without).<br />
+      You HAVE to use absolute value for Lame' curves or else they become open curves, as you were saying (undefined in the third quadrant). Because when n is not integral, and is not a multiple of the reciprocal of an odd number, then if x or y is negative, x^n or y^n is imaginary.<br />
+      <br />
+      (Another thing wrong with your trying to prove to me that n/0 is undefined: I never said 0/0 was a defined value. Your proof demonstrates that 0/0 is not defined, but not that n/0 where n!=0 is undefined :) )</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 21:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">hmmmm... Im lost in all this math.<br />
+      Some questions:<br />
+      Jheriko: Isnt elipse defined by apsolute value |Z|=1 whith<br />
+      Z=x/a+(y/b)*i?<br />
+      Atero: How can n!=0?????And what has the ! thing have to do whith deviation by 0???</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">24th October 2002 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">!= is the not-equal-to operator.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 00:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by nixa</i><br />
+        <b>Jheriko: Isnt elipse defined by apsolute value |Z|=1 whith<br />
+        Z=x/a+(y/b)*i?</b>
+      </blockquote>x^2/a^2+y^2/b^2=1<br />
+      <br />
+      EDIT: I just thought of a rough proof by contradiction:<br />
+      <br />
+      if 1/x is a continuous function than it is defined for all points (including x=0). as x tends towards zero 1/x tends towards +/- infinity, therefore at x=0 there is a vertical line x=0 which joins the y = +/- infinity. As a result 1/x can be any number on this line, therefore it can not be defined. This logically applies to n/x which always has a discontinuity at x=0.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 03:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Still flawed. The 'vertical line' at n=0 is an asymptote, not an actual line, just a line there to clarify where a curve is tending to. You ought to know that by know, Jheriko ;)<br />
+      And who said that 1/0 is +/- infinity? Personally I feel there is a difference between 'the reciprocal of x' and '1/x' in this respect: n/0=positive infinity and -n/0=negative infinity (where n is any positive real number). The tangent of multiples of pi/2 (90) is natural infinity. The reciprocal of 0 is also natural infinity. (natural meaning it has no polarity/sign).<br />
+      <br />
+      Or at least that's MY view on infinity and it's related definitions....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 11:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Atero: you're right to differentiate between 1/(0+), 1/(0-) and 1/(0) but you're wrong to distinguish between n/x and tan(n): they both have asymptotes.<br />
+      <br />
+      And note that an asymptote can be 1/(0+) instead of 1/0, for example 1/(x^2).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 13:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>Still flawed. The 'vertical line' at n=0 is an asymptote, not an actual line, just a line there to clarify where a curve is tending to. You ought to know that by know, Jheriko ;)</b>
+      </blockquote>That was the key point of the rough proof. If the function is continuous then 1/x where x=0 can not be multi-valued, but, if it is continuous then the asymptote IS a part of the curve and it is multi-valued. You can't define 1/x because if you could it could be any number on the line x=0. Its a proof by contradiction.<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Jheriko</i><br />
+        <b>as x tends towards zero 1/x tends towards +/- infinity<br /></b>
+      </blockquote>I never mentioned the sign of x, I was being lazy and rather than saying 'as +x tends to zero 1/x tends to +infinity and as -x tends to zero 1/x tends to -infinity' I said what I did, sorry for the confusion.<br />
+      <br />
+      Taking 1/x as infinite isn't something which can be relied on always. Sometimes it is useful and at other times it can just screw things up.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 19:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Erm...my differentiation was that n/0 can equal +/-/natural infinity, but that tan(90n) equals natural infinity. Not that one had asymptotes and the other didn't...I don't know where you got that from :)<br />
+      <br />
+      Whoever said that the curve(s) had to be continuous?<br />
+      <br />
+      And look, all I'm saying is that I feel that today's ideas of basic mathematic principles are severely flawed; especially those ideas which are taught in basic math classes.<br />
+      But you've sort of gotten off track with this...weren't you trying to tell me that the absolute value sign is evil incarnate?<br />
+      <br />
+      (btw, nixa, if n == 0, then n! == 0, doesn't it?)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">25th October 2002 19:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>Whoever said that the curve(s) had to be continuous?<br /></b>
+      </blockquote>You implied it by saying n/0=something. if n/0=something, then since every other point on the curve y=n/x is defined then the curve is continuous.<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>But you've sort of gotten off track with this...weren't you trying to tell me that the absolute value sign is evil incarnate?<br /></b>
+      </blockquote>Because it has a point singularity (and isn't differentiable) at x=0, because 0/0 is undefined. Also because you don't always want the positive value in geometry (although I think you understand this).<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>(btw, nixa, if n == 0, then n! == 0, doesn't it?)</b>
+      </blockquote>0! = 1 (as in 'factorial 0' = 1)<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>And look, all I'm saying is that I feel that today's ideas of basic mathematic principles are severely flawed; especially those ideas which are taught in basic math classes.</b>
+      </blockquote>I think that they teach things in the wrong way too. If I had it my way schools would use Euclid's style of textbook as a basis for teaching, where by every piece of knowledge is derived from basic axioms, since even a very young child can understand the basic axioms and definitions of a mathematical system.<br />
+      <br />
+      Anyway, I'm going to drop this whole thing, your Lamé curve formula generates something more useful for AVS than the real one anyway.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2002 05:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I said n/0 equals something. I didn't say it was a real number, though. Just like y=(x+1)^2 has imaginary roots; but the curve never touches the x-axis, y=1/x has a surreal y-intercept, even though it never touches the y-axis.<br />
+      <br />
+      General mathematical question: What is the (psuedo-)exact definition of a factorial? Cus I thought it was just n*(n-1)*(n-2)...*1=n!, which means that if n=0, it's 0*1=n!, right?<br />
+      Another general mathematical question: Is there a real mathematical definition of the absolute value function, or is it just |x| = +x? And if I'm not mistaken it does have an inverse funciton: f(x)=|x|; f^-1(x)=+-x (the plus-or-minus sign which I can't write in arial). Which is why conics and Lame' curves are <i>usually</i> written with absolute value signs - when inverted, you use the positive-or-negative square root, instead of just the square root (which is always negative when written by itself).<br />
+      <br />
+      What do you mean by 'the real thing?' If you're talking about the real formula, that IS the real formula, just re-arranged to fit scripting :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2002 13:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>I said n/0 equals something.</b>
+      </blockquote>i.e. n/0 is defined, therefore 1/x is continuous.<br />
+      <br />
+      Also, +infinity and -infinity are real numbers (Sup(<b>R</b>) and Inf(<b>R</b>)). I'm not sure about 'natural infinity' since it seems not to fit in anywhere, or even to make sense in terms of real numbers.<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>General mathematical question: What is the (psuedo-)exact definition of a factorial? Cus I thought it was just n*(n-1)*(n-2)...*1=n!, which means that if n=0, it's 0*1=n!, right?<br /></b>
+      </blockquote>If that definition went down to zero then every factorial would be zero right? Anyway, what you are looking for is the gamma function. It is defined to be the extension of the factorial function into the field of complex numbers (and therefore reals, rationals and (the ring of) integers too). There are several ways to define and evaluate the function, for real numbers there are some fairly straightforward methods (especially for x&gt;0) mostly integrals and infinite products if I can remember correctly. Here are a couple that I can remember:<br />
+      <br />
+      I even bothered to make it look correct for you (shame that there is no subscript and superscript).<br />
+      <br />
+      <pre>
+<code><br /><br />for x&gt;0.<br />        1<br /><font face="Symbol">G</font>(x) = <font face="Symbol"><font size="6">ò</font></font> (-log t)^(x-1) dt<br />        0<br /><br />        <font face="Symbol">¥</font><br /><font face="Symbol">G</font>(x) = <font face="Symbol"><font size="6">ò</font></font> t^(x-1) e^-t dt<br />        0<br /></code>
+</pre><br />
+      <br />
+      Those two are actually the same thing just in a different form, the bottom one can often be easier to evaluate even though it involves infinity. (i'll explain integrals if you want but preferably not on the forums, it would require a colossal post)<br />
+      <br />
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>Another general mathematical question: Is there a real mathematical definition of the absolute value function, or is it just |x| = +x?<br /></b>
+        <hr />
+      </blockquote>
+    </div>
+    <hr />
+    z=a+ib<br />
+    |z|=sqrt(a*a+b*b)<br />
+    <br />
+    The modulus function is mainly for complex numbers. If b=0 then z is real, so |z| is real.<br />
+    <br />
+    Quote:
+
+    <table cellpadding="6" cellspacing="0" border="0" width="100%">
+      <tr>
+        <td class="alt2">
+          <hr />
+          <i>Originally posted by Atero</i><br />
+          <b>And if I'm not mistaken it does have an inverse funciton: f(x)=|x|; f^-1(x)=+-x<br /></b> No single valued inverse, that isn't really what I would call an inverse function, multi-valued functions like that are useless since you will never know which value you need without already knowing it.<br />
+          <br />
+
+          <blockquote>
+            <i>Originally posted by Atero</i><br />
+            <b>Which is why conics and Lame' curves are <i>usually</i> written with absolute value signs - when inverted, you use the positive-or-negative square root, instead of just the square root (which is always negative when written by itself).</b>
+          </blockquote>I'd never seen a conic or any curve using |x| until we had this discussion. Its probably just convention, but it would definately cause problems when dealing with a general conic, for instance, where the curve is off centre and rotated, which is probably why I've never seen it since I was introduced to conics in the general form and then shown the simpler (specific) equations as a consequence of the general form.<br />
+          <br />
+
+          <blockquote>
+            <i>Originally posted by Atero</i><br />
+            <b>What do you mean by 'the real thing?' If you're talking about the real formula, that IS the real formula, just re-arranged to fit scripting :)</b>
+          </blockquote>I'm just assuming (like you are) that I am correct. :p
+        </td>
+      </tr>
+    </table><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2002 13:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The definition of n! is:<br />
+      <br />
+      n! = n*((n-1)!)<br />
+      0! = 1<br />
+      <br />
+      The reason 0! = 1, is because it's useful in statistical analysis. Related to the factorial is the binomial coefficient (A B) (vertical notation).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2002 20:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Erm, Jheriko, what I meant was is the series 0! <b>starts</b> with 0, therefore it will equal 0, riiiiight? :p<br />
+      <br />
+      Also, x^n where n is even (and integral) has no single-valued inverse function. But I know for a fact that's not a 'shunned' function in mathematics.<br />
+      <br />
+      +/-/natural infinity are <b>not</b> real numbers, or else they could be graphed. Infinity (and so on) is a surreal number. Natural infinity is infinity without a sign, like zero has no sign (and is a 'natural' number).<br />
+      Just because infinity equals something doesn't mean that the curve n/x is continuous. Think of curves using imaginary numbers. I can't think of an example right now, but my point is that the curve isn't necessarily continuous, but every value on the curve (or off, as the case may be) has a value - it just can't be graphed.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">26th October 2002 20:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>+/-/natural infinity are</b> not real numbers, or else they could be graphed.
+      </blockquote>That has nothing to do with whether or not they are real. Natural infinity is definately not real, +/- infinity are, they are the first and last members of the field of real numbers. How else would you define them?
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 01:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">As I said before, they're surreal numbers...I'll dig up some information on them for you if you'd like.<br />
+      <br />
+      I also found an absolutely excellent little way to disprove your ideas today:<br />
+      <br />
+      y=1/x is algebraically equivalent, and therefore graphically equivalent, to x=1/y. In x=1/y, at y=0, as you have said there is a line upon the x-axis where any value could be defined. However there is not a line at y=infinity to y=-infinity, but there is in y=1/x. But they are graphically equivalent.<br />
+      Let's assume there is a line on both axes in this graph. Then you are saying that infinity must equal -infinity if the function is continuous. Algebraically: x=-x, then 0=-0, which means that infinity=0, which is absurd; you said yourself that +/-infinity are the ends of the field of real numbers.<br />
+      <br />
+      And a proof that 1/0 must equal infinity: Divide 1 into an infinite number of parts. Each part must be infinitely small. Mathematically speaking, 1/infinity=0. Thus, 1/0=infinity.<br />
+      <br />
+      <br />
+      <br />
+      /me does a victory dance</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 09:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Umm, here's what I think:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 12:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Did you miss the point of my 'proof'. The whole point of it was that this exact sort of thing results from assuming that 1/x is a defined value. The other problem with this is that I never said that infinity=-infinity all i said was that the curve tends towards them at x=0.<br />
+      <br /></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>And a proof that 1/0 must equal infinity: Divide 1 into an infinite number of parts. Each part must be infinitely small. Mathematically speaking, 1/infinity=0. Thus, 1/0=infinity.<br /></b>
+      </blockquote>What you have proved is not 1/infinity=0 or 1/0=infinity, but rather you have just shown that 1/infinity tends towards 0 and 1/0 tends towards infinity.<br />
+      <br />
+      <br />
+      I'm going to give up on this discussion right now with the hopes that one day you will find out for yourself that 1/0 is not always going to behave how you expect it to.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 15:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Just give it a rest... Atero: I thought once like you too, trying to think of a 'unified theory of infinity'. It works nicely as long as you stick to asymptotes... for example, suppose you think of R as a ring (at one end, it meets at x=0, at the other end it meets at x=+/- infinity). Instead of graphing on a plane, you could graph on a cilinder of infinite size. You could use something like atan(x) to map R to a finite interval. Then the function would look like a spiral around the cilinder.<br />
+      <br />
+      However, if it was this easy, don't you think mathematicians would've formalised this thinking into a common set of rules? Fact is, infinity is not as easy as you think it is. Once you delve into advanced maths (integrals and such) you'll encounter much more difficult situations with infinity which cannot be solved by stating infinity is something concrete.<br />
+      <br />
+      By the way, one big error:<br />
+      <br /></p>
+
+      <blockquote>
+        And if I'm not mistaken it does have an inverse funciton: f(x)=|x|; f^-1(x)=+-x
+      </blockquote>A function is only a function if and only if there is only one image for every point in its domain.<br />
+      <br />
+      For every x, there is a |x|. But for every |x| there are 2 x's. Thus, any description of the relationship between |x| and x would not be a function, unless it covers only R- or R+.<br />
+      <br />
+      So for the domain R, |x| has no inverse function, just an inverse relationship.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Two final notes:<br />
+      I didn't say you said infinity=-infinity, I merely said that what you were arguing implied that infinity=-infinity.<br />
+      Also, if what UnConeD pointed out is true (not that I'm saying it isn't), then x^n where n is even (and integral) doesn't have an inverse function either, which was my point in my earlier post.<br />
+      <br />
+      Anyway, I hereby declare this discussion closed :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">27th October 2002 18:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yup Atero... the function sqrt(x) is not the inverse function of x^2 for R, only for R+. Similarly -sqrt(x) is the inverse function x^2 for R-.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">28th October 2002 04:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Same way (x) is the inverse function for |x| only in R+, and -(x) is the inverse function of |x| in R-, which was what I said before - I thought I made that clear, guess I didn't, sry<br />
+      <br />
+      Geez this thread is LAME<br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      Geez that pun was LAME</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

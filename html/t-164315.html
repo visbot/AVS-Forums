@@ -1,0 +1,331 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Super Ellipsoid" />
+
+  <title>Super Ellipsoid - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Super Ellipsoid</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=164315">Super Ellipsoid</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">11th January 2004 10:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Super Ellipsoid</strong><br />
+      I was trying to raytrace a super ellipsoid using whittaker iteration but these are the only parameters that I can get to work. Not sure if it's just the limited abilities of the Whittaker method or something wrong with my code. Anybody have any ideas or comments? I was hoping to make the shape morph according to the music but it doesn't look like thats gonna happen... If you want to mess around with the parameters, go to the bottom of the frame block and change e1 and e2.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br /></p>
+
+      <p class="post-time small text-muted">11th January 2004 11:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hmm... I think its impossible to make it morph on beat, coz you have to recode whittaker iteration for every shape. But I might be wrong.<br />
+      <br />
+      But this one could look very ok, needs some work.<br />
+      oh yea, use alpha=-1/t; for blending, looks better</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br /></p>
+
+      <p class="post-time small text-muted">11th January 2004 12:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I just had to toy around with it... killed your spooky rotation what nobody else uses around here and messed around with whittakers...<br />
+      you still cant modify the disance, but its better now</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">11th January 2004 19:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The great thing about a super ellipsoid is that the shape relies on two constants. If you change them then the shape changes.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">11th January 2004 19:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">this is what I was trying to send you jaak.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">12th January 2004 22:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Anybody care to help??? maybe? any ideas on how to make to make it work for other variables of e1 and e2???</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">12th January 2004 23:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The problem you're having is signs. pow(x,y) is not defined for x &lt; 0 afaik. Replacing your iteration with the following fixes it here.<br />
+      <br />
+      t=t - (pow(pow(abs(rx*t+ox)/a1,2/e2) + pow(abs(ry*t+oy)/b1,2/e2),e2/e1) + pow(abs(rz*t+oz)/c1,2/e1) - 1)*wh;<br />
+      <br />
+      To raytrace every superellipsoid you will need tweaking though, because of the two extremes (cubish vs star).<br />
+      <br />
+      Maybe you could start with a sphere or cube which encompasses the ellipsoid. You could pick the appropriate starting shape based on e1 and e2 and try various whittaker parameters. If you have some time you could determine the best parameters for a couple of values of e1 and e2, and then fit an analytical function through them to determine semi-optimal parameters for every value of e1 and e2.<br />
+      <br />
+      Oh and you should replace a1/b1/c1 and e1/e2 by their reciprocals. Repeated divisions by constants are simply a waste of time.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 00:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">yeah that'd probably work, but when e1 approaches 0 the shape becames more and more unstable. Even if I do adjust the values of the whittaker constant, at e1=.2 parts end up disappearing at certain angles.<br />
+      <br />
+      Crap. This is gonna be a lot harder to morph fluidly than I thought...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 01:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Oh just to attract some people's interest... Here's a superellipsoid that's almost a cube. Sorry about the crappy texture and PLEASE don't bring up optimization crap. I know it's not optimized. That's because it barely works as is and I dont see the point in optimizing if it's easier for me to read and adjust this way. Thank you.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 01:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">errr forgot the file... I wish you could add files when you edit a message. Did two extra posts because of it... sorry!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 01:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">The main problem with e1 ~ 0 is that the potential/field values become very large.<br />
+      <br />
+      Here's an image that can give you some insight into how Whittaker works (attachment).<br />
+      <br />
+      Graph A shows regular operation. Initially, fixed steps are used to close in on the root. The parameter a in Whittaker determines the steepness of the diagonal lines, which is appropriate in this case.<br />
+      Graph A also shows how a good initial guess can drastically reduce the amount of iterations: the first 6 iterations all have nearly the same step size. This why starting with a sphere enclosing the ellipsoid is a good idea.<br />
+      Note also that if the curve were vertically inverted, then the slope would have to be opposite for it to converge on the root on the positive horizontal axis.<br />
+      <br />
+      Graph B has much larger values, and the slope of the lines is not steep enough. The iterations skip over the root and end up in the last part, which would probably keep getting larger and larger. If this were raytracing, the shape would have become invisible.<br />
+      <br />
+      Graph C shows a possible fix: by limiting the values and/or step size, you can prevent it from skipping over the hole.<br />
+      However, it is still best to simply figure the right value for the Whittaker parameter which needs to match the order of size of 1/e1. Try figuring out the relationship between your found whittaker parameters and e1 and see if you can't come up with a formula.<br />
+      <br />
+      <br />
+      If you're curious about how Newton-Raphson works, instead of a fixed slope, it uses the slope of the tangent to the curve at a specific point. If you apply this to my example curve, you'll notice its behaviour will be erratic unless the initial guess is already close to the root, which is why it's no good for most AVS applications.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 02:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">hmmm... That's pretty helpful. thanks again unconed. I'll see what I can work out.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 04:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I worked out equations that work as long as e1=e2. I attached the file to this reply if you want to watch the superellipsoid morph to the music. Yeah I know the equations I came up with are pretty screwy but they work. If anyone can find some equations that work and are faster let me know. These are the numbers I was working with so have at if you care so please.<br />
+      <br />
+      e1 | e2 || wh1 | wh2 | wh3 |<br />
+      .2 | .2 ||.0004| .01 |.125 |<br />
+      .5 | .5 || .01 | .1 |.333 |<br />
+      1 | 1 || .1 | .1 | .5 |<br />
+      1-2| 1-2|| .2 | .5 | .5 |<br />
+      <br />
+      If e1 is close to zero and e2 goes close to 2 then the nice pattern is thrown off. I couldn't get e1=.2; e2=2; to stay very stable... .000066, .0005, .01 is about as stable as I could get it but it doesn't really stay a consistant shape... I dont know how I'd make equations so they'd fit the difference in e1 and e2... Any ideas?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 11:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Just a thought: maybe you could first do a couple of iterations and converge on the symmetric superellipsoid which has the fattest of the two parameters. Then once you get close, switch to more specific parameters depending on the difference or ratio between e1/e2.<br />
+      The advantage will be that because you'll already be quite close for e.g. e1, then you have more freedom in picking the whittaker constants for the later iterations to make the rest of the shape fit.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well the problem is some of those shapes just dont stay stable no matter what constants I seem to pick. Try finding constants for e1=.2; e2=2; The shape just doesn't work out too well...<br />
+      <br />
+      I was also thinking about using the gmegabuf to save the values of t each frame and then using those as the starting values for the next frame. That way it'll be a more accurate guess than 0. That might help with the strict constant problem as well.<br />
+      <br />
+      Since I had e1=e2, I took out that extra power since e2/e1=1, added some real shading, and fixed the texture mapping a bit. The shading (evaluated the partial derivative of the function) gets rid of most off the ugly edges except when the function changes drastically like the edges of the cubes. This should make the shape look more realistic.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 17:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Not bad at all. The only real issue is the ugly wrapping due to atan2. If you don't mind symmetrical textures you should asin(sin()) it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 17:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hmmm I never knew that trick. That realy helps get rid of that stupid hack line. I think I'll keep working on being able to change e1 and e2 separately, but I like being able to have the shading and I'm not so sure taking the derivative with that extra power is gonna be quite so easy or nearly as efficient as this one was.<br />
+      <br />
+      The symmetric line seems to be rather wide though... this is how you use that trick right? x=asin(sin(iz/ix));</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 18:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">No, you use asin(sin(atan2())).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 18:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Whoa that helps out quite a bit. Any other ideas to add in that might help?<br />
+      <br />
+      -Fixed the shading (forgot to normalize the vectors) so it looks better especially as in cube form.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2004 19:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You might want to look at other raytracing presets. Mine, Jheriko's, Zevensoft, etc are probably the most technical.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">14th January 2004 00:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I posted a version in the presets subforum. I like how it turned out a lot. I gave you two credit in the comment. Also added contact information/website :) I'll keep working on the getting different values of e1 and e2. Thanks again.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">26th January 2004 03:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by UIUC85</i><br />
+        <b>I was also thinking about using the gmegabuf to save the values of t each frame and then using those as the starting values for the next frame. That way it'll be a more accurate guess than 0. That might help with the strict constant problem as well.<br /></b>
+      </blockquote>Since Whittaker 'goes one way' using previous parameters as guesses will actually break your code. Maybe using a value slightly 'nearer' than the previous one might work though. It sounds like a good idea in theory since you could probably reduce the number of iterations required to something tiny like 2 or 3 and still get really nice results. I'll have to play with this idea when I get home tomorrow. :)<br />
+      One problem would be that if someone changed the DM gridsize it would all go to pot.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">26th January 2004 03:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Let me know if you come up with anything useful. I've tinkered around a bit with it but haven't gotten anything yet.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">26th January 2004 12:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Jheriko: actually it might work... Whittaker still depends on the sign of the function, which flips around for single roots. If the shape doesn't change much between frames, it could be a good starting point (but multiplied by 0.9 or with a slight negative offset is a good idea).</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

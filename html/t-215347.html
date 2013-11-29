@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A &quot;larger&quot; in time oscilloscope" />
+
+  <title>A "larger" in time oscilloscope - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">A "larger" in time oscilloscope</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=215347">A "larger" in time oscilloscope</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">bodisan</span><br /></p>
+
+      <p class="post-time small text-muted">8th May 2005 13:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>A "larger" in time oscilloscope</strong><br />
+      I want my oscilloscope to display the audio information from 1 or 2 seconds ago, or even more. I don't know what I'm doing wrong... It works a little bit, but there are errors. Could you help me?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">8th May 2005 14:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You'll need to store the information yourself in megabuf. But there is no continuity guarantee in AVS.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">bodisan</span><br /></p>
+
+      <p class="post-time small text-muted">8th May 2005 14:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Take a look at the avs, because that's exactly what I'm doing, I'm storing the information in megabuf. But it doesn't work as it should, there is no continuity, because of me OR because of the megabuf??</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+
+      <p class="post-time small text-muted">9th May 2005 03:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">trying to do something like this? :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">bodisan</span><br /></p>
+
+      <p class="post-time small text-muted">9th May 2005 10:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yes and No... I'm just trying to do a simple superscope. But something like you did, to be able to see the audio data from the actual moment back to a few seconds. To make you understand better, I'll tell you what I need it for: i am ocassionally using winamp as an oscilloscope (a real one) with help from the linein input. And if, for example I input a 50Hz sine, I can only see aboute half a sine on the screen, due to the size of the default buffer... i think. Hope you understand.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+
+      <p class="post-time small text-muted">10th May 2005 02:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">professional software :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th May 2005 04:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">AVS always gives you the last available time samples. How often this is updated depends on the frames per second, so you have no way of ensuring continuity, save for doing cross correlations or something (expensive!).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">10th May 2005 11:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">So what you want is hardrealtime. AVS is the softiest softrealtime that I know of.<br />
+      <br />
+      Why don't you simply create a little tool for that in VB or something like that? on the other hand, there must be several tools just for that available over the internet.<br />
+      <br />
+      Google is your friend.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

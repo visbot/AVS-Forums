@@ -1,0 +1,205 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="superscope queries" />
+
+  <title>superscope queries - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">superscope queries</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115293">superscope queries</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">23rd November 2002 15:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>superscope queries</strong><br />
+      Okay, I've got 2 questions regarding the superscope (the answer to the first one I know for a fact I read on here somewhere, but I can't seem to find it now... isn't that always how it goes?).<br />
+      1. What is the code to make the SSC stay the same shape no matter what shape the AVS window is? (i.e. when I have the editor window open the AVS window is square, and it looks okay, but when I go fullscreen it stretches the scope out; how do I prevent this?)<br />
+      2. If you follow the lines of my scope, you'll see that the two endpoints of the line don't meet, and there is an ugly-looking gap. I don't have anywhere near the level of math required to fix this (that, and I pretty much plugged in semi-random numbers :P ), so could one of you math geniuses please give it a shot? Here's the code:<br /></p>
+
+      <blockquote>
+        Init:<br />
+        n=100;t=0;pi=3.1415926535897932384626433832795;<br />
+        <br />
+        On Beat:<br />
+        n=64+rand(128)<br />
+        <br />
+        Per Frame:<br />
+        t=t-pow((1/pi),2);<br />
+        <br />
+        Per Point:<br />
+        r=(i*pi)*(pow(2,10))+t;<br />
+        x=cos(r/64)*0.7+sin(r*(1/pi))*0.3;<br />
+        y=sin(r/64)*0.7+cos(r*(1/pi))*0.3
+      </blockquote>In case you're wondering, yes, I did just take one of the example scopes and change it around a bit. :o<br />
+      <br />
+      Any help would be greatly appreciated.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">23rd November 2002 18:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">firstly to stop the stretching do x=x*h/w; at the end of alll of your code.<br />
+      <br />
+      secondly i can't see anything wrong with your code except for inefficient code. like pow(2,10) just replace that with 1024 and 1/pi could be calculated at the beginning like pi is. the reason that the ends of the lines don't meet is simply the code that you've used.<br />
+      <br />
+      x=cos(r/64)*0.7+sin(r*(1/pi))*0.3;<br />
+      y=sin(r/64)*0.7+cos(r*(1/pi))*0.3;<br />
+      <br />
+      think about what this code is actually doing... it doesn't draw a closed loop because of the 1/pi which means that the two ends will never meet exactly.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">23rd November 2002 21:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by jheriko</i><br />
+        <b>firstly to stop the stretching do x=x*h/w; at the end of alll of your code.</b>
+      </blockquote>Cool, thanks.
+
+      <blockquote>
+        <b>secondly i can't see anything wrong with your code except for inefficient code. like pow(2,10) just replace that with 1024 and 1/pi could be calculated at the beginning like pi is.</b>
+      </blockquote>Thanks for the tip... the 'pow(2,10) is there because when I was tweaking it, I was seeing what different exponents did. I settled on 10, so I guess I should replace it with 1024.
+
+      <blockquote>
+        <b>the reason that the ends of the lines don't meet is simply the code that you've used.<br />
+        <br />
+        x=cos(r/64)*0.7+sin(r*(1/pi))*0.3;<br />
+        y=sin(r/64)*0.7+cos(r*(1/pi))*0.3;<br />
+        <br />
+        think about what this code is actually doing... it doesn't draw a closed loop because of the 1/pi which means that the two ends will never meet exactly.</b>
+      </blockquote>See, I can't really 'think' about what the code is doing, because it is beyond the scope of my feeble brain. :p So is there, in fact, something I could replace 1/pi with that would produce a similar look, but close up the loop?<br />
+      <br />
+      Thanks a lot for the help! :D
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">23rd November 2002 22:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Faster and more correct shape fix:<br />
+      <br />
+      init:<br />
+      xscale=min(h/w,1); yscale=min(w/h,1);<br />
+      <br />
+      frame:<br />
+      <br />
+      ...<br />
+      x=x*xscale; y=y*yscale;</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">24th November 2002 01:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">BTW, you can use pi=acos(-1) instead of 3.14159...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">24th November 2002 01:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">try replacing your beat and point with:<br />
+      <br />
+      beat:<br />
+      n=4*(16+rand(32))<br />
+      <br />
+      frame:<br />
+      r=(200*i*pi);<br />
+      x=cos(r*4+4*t/n)*0.7+sin(r*n)*0.3;<br />
+      y=sin(r*4+4*t/n)*0.7+cos(r*n)*0.3<br />
+      <br />
+      play with the 200, but make sure it is divisible by 4 to keep the ends meeting.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+
+      <p class="post-time small text-muted">24th November 2002 03:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thank you so much for the help, everyone! :D<br />
+      <br />
+      Jheriko, I don't know if I'll use your 'frame' expression... I kinda like the shapes mine produces better, despite the break in the line. But I might use that for a different preset (I already have a preset built around my current superscope... maybe if I ever make enough of 'em I'll post my pack on here).<br />
+      <br />
+      Thanks again!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">25th November 2002 07:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I think he meant point :igor:</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

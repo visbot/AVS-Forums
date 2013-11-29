@@ -1,0 +1,180 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Superscope won't initialize" />
+
+  <title>Superscope won't initialize - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Superscope won't initialize</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=271325">Superscope won't initialize</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Dries</span><br /></p>
+
+      <p class="post-time small text-muted">17th May 2007 17:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Superscope won't initialize</strong><br />
+      Hi all! I'm having a little bit of trouble with AVS. It's a simple problem, really (at least that's what I hope ;)), but I can't seem to find anything about it in the FAQs or by searching.<br />
+      <br />
+      I have a problem where I have a preset with two superscopes. The first one initializes fine and does what it's supposed to do. However, the second one (which uses two global vars - reg00 and reg01 - from the first preset) doesn't initialize until I edit something in it. The code seems to be okay, because after I initialize it manually by deleting and retyping an ";", it works fine.<br />
+      <br />
+      I tried all kinds of stuff to solve this problem, like changing the order of the superscopes, adding virtually every used variable to the 'init' sections of the superscopes, restarting WinAmp, but nothing seems to work.<br />
+      <br />
+      I attached the preset (with comments in the AVS editor) if you want to take a look yourself.<br />
+      <br />
+      Any help is appreciated. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Dries</span><br /></p>
+
+      <p class="post-time small text-muted">17th May 2007 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ow, and I forgot to add. If you're checking out the preset, please know that it relies on beat detection for most of the movement. So make sure to have some music playing. ;)<br />
+      <br />
+      Also, when you duplicate the second superscope, the copied version <i>does</i> initalize. Try duplicating it ten times to see the effect that I was aiming for in the first place. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Dries</span><br /></p>
+
+      <p class="post-time small text-muted">29th May 2007 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Sorry for bumping, but.. anyone? :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br /></p>
+
+      <p class="post-time small text-muted">30th May 2007 13:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">the problem:<br /></p>
+      <pre>
+<code>dist=sqrt(sqr(x_dist)+sqr(y_dist));</code>
+</pre><br />
+      fixed:<br />
+      <pre>
+<code>dist=sqrt(sqr(x_dist)+sqr(y_dist)+c);</code>
+</pre><br />
+      <br />
+      you should add a value inside the function "sqr". i don't know why, but it works :)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Dries</span><br /></p>
+
+      <p class="post-time small text-muted">30th May 2007 17:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Whee!<br />
+      Thanks a million! You're the best. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nanakiwurkz</span><br /></p>
+
+      <p class="post-time small text-muted">3rd June 2007 00:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>sup</strong><br />
+      I noticed your preset.<br />
+      I'm currently working on a remix for you to congratulate the success!<br />
+      <br />
+      congrats on the successful help.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br /></p>
+
+      <p class="post-time small text-muted">3rd June 2007 12:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><font size="1">i have to admit - one of the people here is certainly a little weird...</font></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nanakiwurkz</span><br /></p>
+
+      <p class="post-time small text-muted">7th June 2007 00:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">haha very funny GC.<br />
+      Well anywho i did deserve that.<br />
+      Heh. I look for your remix on Nudges V10 soon.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Dries</span><br /></p>
+
+      <p class="post-time small text-muted">7th June 2007 20:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanks Nanaki, I'll try and check back here every now and then. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Pakistan</span><br /></p>
+
+      <p class="post-time small text-muted">12th June 2007 13:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">*crap removed*</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

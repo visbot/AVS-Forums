@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="rotation matricies for triangle ape" />
+
+  <title>rotation matricies for triangle ape - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">rotation matricies for triangle ape</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=269900">rotation matricies for triangle ape</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+
+      <p class="post-time small text-muted">21st April 2007 09:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>rotation matricies for triangle ape</strong><br />
+      okay i need help with projecting a 2d square made with tl's triangle ape into 3d. i have the code for the square but i can't figure out how to 3d it.<br />
+      anyone care to explain it/post up some code?<br />
+      cheers.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">24th April 2007 18:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Assuming you already know how to describe a point in 3 dimensions, you simply need to extend that idea to describing the vertices of a triangle. That is, you need to define the three vertices of a triangle, then rotate and project each vertex independantly to get your final x1,y1 etc..<br />
+      <br />
+      A simple framework for 3D triangles looks something like this:<br />
+      <br /></p>
+      <pre>
+<code><br />xs1=0;<br />xs2=0;<br />xs3=0;<br />ys1=0;<br />ys2=0;<br />ys3=0;<br />zs1=0;<br />zs2=0;<br />zs3=0;<br /><br />xf2=xs1*crotz-ys1*srotz;<br />yf2=xs1*srotz+ys1*crotz;<br /><br />xf3=xf2*croty+zs1*sroty;<br />zf3=-xf2*sroty+zs1*croty;<br /><br />yf1=yf2*crotx-zf3*srotx;<br />zf1=yf2*srotx+zf3*crotx;<br /><br />zf2=1/(zf1+d);<br />x1=xf3*zf2*asp;<br />y1=yf1*zf2;<br /><br />xf2=xs2*crotz-ys2*srotz;<br />yf2=xs2*srotz+ys2*crotz;<br /><br />xf3=xf2*croty+zs2*sroty;<br />zf3=-xf2*sroty+zs2*croty;<br /><br />yf1=yf2*crotx-zf3*srotx;<br />zf1=yf2*srotx+zf3*crotx;<br /><br />zf2=1/(zf1+d);<br />x2=xf3*zf2*asp;<br />y2=yf1*zf2;<br /><br />xf2=xs3*crotz-ys3*srotz;<br />yf2=xs3*srotz+ys3*crotz;<br /><br />xf3=xf2*croty+zs3*sroty;<br />zf3=-xf2*sroty+zs3*croty;<br /><br />yf1=yf2*crotx-zf3*srotx;<br />zf1=yf2*srotx+zf3*crotx;<br /><br />zf2=1/(zf1+d);<br />x3=xf3*zf2*asp;<br />y3=yf1*zf2;<br /></code>
+</pre><br />
+      <br />
+      (xs1,ys1,zs1) and the like are vertices<br />
+      srot# = sin of rotation about # axis<br />
+      crot# = cos of rotation about # axis<br />
+      d = projection z offset (1 is fine)<br />
+      asp = aspect ratio (h/w or whatever)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+
+      <p class="post-time small text-muted">25th April 2007 08:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">so you do have to do the transformations for all three? i ended up doing that too i just wasn't sure if it was the most efficient way.<br />
+      i came up with this<br />
+      <br /></p>
+      <pre>
+<code><br />s=(s+1)%2;<br /><br />ix1=-1+s*2;<br />iy1=-1;<br />iz1=0;<br /><br />x2a=ix1*reg05+iz1*reg04;<br />y2a=ix1*reg04-iz1*reg05;<br />z2a=x2a*reg02+iy1*reg03;<br />x3b=x2a*reg03-iy1*reg02;<br />y3b=y2a*reg01+z2a*reg00;<br />z3b=y2a*reg00-z2a*reg01;<br />z1=1/(z3b+6);<br /><br />ix2=1;<br />iy2=-1+s*2;<br />iz2=0;<br /><br />x2a2=ix2*reg05+iz2*reg04;<br />y2a2=ix2*reg04-iz2*reg05;<br />z2a2=x2a2*reg02+iy2*reg03;<br />x3b2=x2a2*reg03-iy2*reg02;<br />y3b2=y2a2*reg01+z2a2*reg00;<br />z3b2=y2a2*reg00-z2a2*reg01;<br />z2=1/(z3b2+6);<br /><br />ix3=-1;<br />iy3=1;<br />iz3=0;<br /><br />x2a3=ix3*reg05+iz3*reg04;<br />y2a3=ix3*reg04-iz3*reg05;<br />z2a3=x2a3*reg02+iy3*reg03;<br />x3b3=x2a3*reg03-iy3*reg02;<br />y3b3=y2a3*reg01+z2a3*reg00;<br />z3b3=y2a3*reg00-z2a3*reg01;<br />z3=1/(z3b3+6);<br /><br />x1=x3b*z1;<br />y1=y3b*z1*reg06;<br />x2=x3b2*z2;<br />y2=y3b2*z2*reg06;<br />x3=x3b3*z3;<br />y3=y3b3*z3*reg06;<br /></code>
+</pre><br />
+      <br />
+      were reg00-05 are cos/sin stuff and reg06 is aspect correction.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">25th April 2007 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Mr_Nudge</i><br />
+        <b>so you do have to do the transformations for all three? i ended up doing that too i just wasn't sure if it was the most efficient way.</b>
+      </blockquote>Superficially the code you have looks fine. Yes you have to rotate and project all three since they are different points in 3D space, the fact that they happen to be the vertices of a triangle is incidental. There arent any more efficient ways that I know of unless you are dealing with special cases.<br />
+      <br />
+      Often with complicated triangle presets I have a loop somewhere which calculates all the vertices for the model or shape, rotates and projects them then stores the final x,y for each vertex in the gmegabuf. That way in the triangle APE I can just loop through the gmegabuf spitting out vertices. For a simple square thats obviously a bit excessive but I imagine you had grander preset visions for the future.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+
+      <p class="post-time small text-muted">26th April 2007 14:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks pak. the square was actually the last thing i added to a preset thats pretty much finished now. it'll be in v10 when thats released, which shouldn't be too far away cause i only need an intro preset and re-mixes. i'm bundling all the presets together into a zip tonight. if you want to see what i've been up to or even make a remix or two i can mail you the zip.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">27th April 2007 12:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Sure, mail it to me and I'll take a look (pak.nine on gmail)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Split screen multiprocessing?" />
+
+  <title>Split screen multiprocessing? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-138.html">AVS Wishlist</a></li>
+
+      <li class="active">Split screen multiprocessing?</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=234836">Split screen multiprocessing?</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Babylon-warp</span><br /></p>
+
+      <p class="post-time small text-muted">6th January 2006 01:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Split screen multiprocessing?</strong><br />
+      Is it a good idea to implement a multiprocessing of avs in Winamp by splitting the display into two halves and sending each half to one of the processors ? wouldn't it be easier to program than the current multiprocessor model?<br />
+      <br />
+      This would be great, at least for full-screen display.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">6th January 2006 03:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hm...That is a very good idea.<br />
+      <br />
+      I think that that might be tad tricky to implement, but that is really a cool thought.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+
+      <p class="post-time small text-muted">6th January 2006 18:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">but then between the two halves you'd need to make all of the effects blend over/interact/etc which would really over complicate things i believe. nice idea though<br />
+      <br />
+      -daz</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">6th January 2006 19:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">aka Scan Line Interleaving, its an idea they first introduced with the 3DFX cards. For AVS it probably would be quite effective, but only on dual processor (or dual core) machines... and most computers aren't. There wouldnt be any particular benefit on a single core hyperthreaded cpu.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+
+      <p class="post-time small text-muted">6th January 2006 22:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">PAK, it could be an option like SMP support is now</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">7th January 2006 04:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by PAK-9</i><br />
+        <b>dual processor (or dual core) machines... and most computers aren't.</b>
+      </blockquote>But isn't your favourite CPU manufacturer "blowing the horn" for the next big thing to be multiple processors? Might as well jump into the bandwagon early :hang:
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">7th January 2006 15:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, Intel announced a four core CPU by 2007. That look decent.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">13th January 2006 00:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">WotL: SMP support just passes a flag to apes saying they can use the SMP entry point. mostly APE developers dont use it<br />
+      since the apes predated that feature, and rewriting afterwards is a pain. or, globmgr.ape for instance, there is no easy way to speed it up with multiprocessing since all it does is run evallib code.<br />
+      <br />
+      evallib code infact pretty much rules out converting most of the existing components too, like superscope for instance, since each point can be depedent on the last through code, although it could speed up the renderer, the bottleneck is really the evallib stuff written in the preset so it wouldnt help.<br />
+      <br />
+      on the other hand, convolution is a pretty obvious candidate for multiprocessing. its pretty trivial to split up the work for that one...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Babylon-warp</span><br /></p>
+
+      <p class="post-time small text-muted">17th January 2006 14:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">In any case, you would want to have 2 exactly the same versions of the avs running on either processor, it's just that on one instance it only processes x=0-0.5 and the other instance processes x=0.5-1. all it has to do is map a function over half the area.<br />
+      <br />
+      The other option is to have two different versions of avs working from the same algorithm, on either processor, just that the frames are alternated and merge on the way to the graphics card.<br />
+      <br />
+      It's normally really easy to send information 2 ways at one end of a program and to merge it at the other end.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">4th February 2006 11:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Don't let me stop you from making it... just don't come back crying when you realise the ACTUAL implications of what I said. I wansn't particularly clear last time so I will rephrase it into simple short statements.<br />
+      <br />
+      AVS isn't slow because of its software rendering. (from experience and testing)<br />
+      <br />
+      AVS is slow from evallib evaluation. (from experience and testing)<br />
+      <br />
+      Evallib evaluation is roughly equivalent to running byte code. (easily inferred from viewing source code)<br />
+      <br />
+      There is no general solution for splitting up byte code into chunks for running in parallel if you want a speed increase (experience, + heavily supported on internet)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

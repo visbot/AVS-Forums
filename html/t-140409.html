@@ -1,0 +1,178 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Planes?" />
+
+  <title>Planes? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Planes?</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140409">Planes?</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">unripeLemon</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 16:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Planes?</strong><br />
+      I want to make 3D planes. Can someone explane it to me using comparisons (i find it easier that way).</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 16:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Search the forums.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">unripeLemon</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 16:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">But they are all so complicated. I need it explained in ENGLISH!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 19:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Here's the simplest of 2 plane dms ever, alpha blended as well.<br />
+      x1=x+1;<br />
+      z1=y-x;<br />
+      y1=y+x;<br />
+      x=sign(z1)*y1/z1;<br />
+      y=x1/z1-sign(z1);<br />
+      alpha=sqr(z1);<br />
+      <br />
+      Oooooh the immense difficulty.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 20:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        I want to make 3D planes. Can someone explane it to me using comparisons
+      </blockquote>A 3D plane is like a giant orange hippo wearing a tutu.<br />
+      There's no such thing.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 21:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><a href="http://www.pabuk.com/munity/uploads/post-25-1056830726.jpg" target="_blank">http://www.pabuk.com/munity/uploads/...1056830726.jpg</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 21:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I'd hardly call that giant. Unless you have a huge monitor and a puny resolution...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 22:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Oh i'd like to see you find a better match :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">28th June 2003 23:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><a href="http://umns.umc.org/99/jan/2.htm" target="_blank">...</a><br />
+      <br />
+      In a way, god is the biggest orange hippo of all...<br />
+      <br />
+      and when god walks with tutu, he is "wearing" tutu out...<br />
+      <br />
+      Sorry, but that's the best I could do.<br />
+      <br /></p>
+
+      <blockquote>
+        "We, without God, cannot; God without us, will not," Tutu said, quoting St. Augustine of Hippo.
+      </blockquote>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">unripeLemon</span><br /></p>
+
+      <p class="post-time small text-muted">29th June 2003 11:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Right, thanx Raz. But i want to learn more complicated planes, like tunnles for instance (it might not be a plane but it has something to do with it):)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

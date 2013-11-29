@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My lens problem" />
+
+  <title>My lens problem - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">My lens problem</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=107344">My lens problem</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br /></p>
+
+      <p class="post-time small text-muted">27th September 2002 21:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>My lens problem</strong><br />
+      Some of you might know this from DA, but nobody actually solved the problem there, and since all you math geniuses appear to be here, I decided to post my problem here. The idea to create what you when you hold a orb-like lens above a material (the background here).<br />
+      <br />
+      I wanted to make a physically correct lens with the formula:<br />
+      <br />
+      sin(entry angle)<br />
+      ----------------- = constant<br />
+      sin(output angle)<br />
+      <br />
+      This is the formula for light going trough different translucent materials.<br />
+      <br />
+      I created a dynmov with the following code:<br />
+      <br />
+      init:<br />
+      bi=1.3;dt=1;df=1;si=1;<br />
+      <br />
+      frame and beat don't mather, they just change the x1 and y1 values.<br />
+      <br />
+      pixel:<br />
+      x=x*dt+sin(x1);y=y*dt+sin(y1);<br />
+      l=max(si-sqrt(x*x+y*y),0);<br />
+      r=atan2(y,x);<br />
+      xdti=cos(r)*-l*pi/2;xdtu=asin(sin(xdti)/bi);x2=tan(xdtu)*(l*2);<br />
+      ydti=sin(r)*-l*pi/2;ydtu=asin(sin(ydti)/bi);y2=tan(ydtu)*(l*2);<br />
+      rx=atan2(x2,l*2);ry=atan2(y2,l*2);<br />
+      xdti2=rx*l-xdtu;xdtu2=asin(sin(xdti2)/bi);<br />
+      ydti2=ry*l-ydtu;ydtu2=asin(sin(ydti2)/bi);<br />
+      x=x-tan(xdtu2)*(0.5-l+df)-sin(x1);<br />
+      y=y-tan(ydtu2)*(0.5-l+df)-sin(y1);<br />
+      <br />
+      Anyway the problem is that when you change either the si (size of lens) or bi (abb******on for dutch word brekingsindex, fraction index) in the init, the lens go weird.<br />
+      <br />
+      The si-problem is seen the best: If you change it to two, it gets totally weird.<br />
+      The bi-problem is more subtle: The fraction of the light passing the lens should get larger if you enlarge bi, but it gets smaller!<br />
+      <br />
+      I hope you understand what I'm saying and if don't know what I did with a certain piece of code, you can ask. Actually, I <b>encourage</b> you to ask.<br />
+      <br />
+      I also attached a preset, where an advanced version of the (bad) lens is used. It requires the convoltion ape. It''s actually a quite cool preset, it contains in text the first ten article of the Human Rights Declaration.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">27th September 2002 22:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Remember that Movements/DM's work backwards: you specify source coordinates for a certain target point.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">28th September 2002 14:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Look like you hitting a limit with si and it started to lop back on itself. Something you're doing with l somewhere.<br />
+      <br />
+      I hate reading other peoples' code. Never can really figure it out.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">1st October 2002 23:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Since this a light effect wouldn't it be best to do some raytracing.<br />
+      You use your background as if it were a plane then raytrace through the space holding the orb, if it doesn't intersect the orb we do nothing, otherwise we do a sphere intersection test and setup a new ray using your lens forumla which then goes on to hit the background to find what point you would see through the lens. (if that makes sense)<br />
+      <br />
+      I'm only starting to mess around with implementing raytracing in a dm but when I get a bit more comfortable with it (I'm still just screwing with planes and spheres) I'll probably give it ago for you. :)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Look what I made!" />
+
+  <title>Look what I made! - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">Look what I made!</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=89890">Look what I made!</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 02:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Look what I made!</strong><br />
+      Muahahaha...3D rotating psuedo-random particle generator.<br />
+      So whaddyathink?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 03:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Shite ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">geozop</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 05:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>mm</strong><br />
+      mm... trails</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 06:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">i'm not sure whether "shite" means good or bad, but i'm leaning toward bad, considering the recent harrassment. Would you just knock it off? You don't even do this to Montana...at least not that I've seen. I'm just wondering why you always put smileys at the end of your 'insults.'<br />
+      <br />
+      Anyway, Geozop: Just turn off "clear every frame."<br />
+      <br />
+      I've been trying to create a spherical field, but I can't figure out how to distort it correctly. You'd think you could make it like a 3D superscope and set z to something like sin(d(=sqrt(x*x+y*y))), but that doesn't work. The closest I've gotten to looking right is z=cos(d). The reason it looks wierd is that everything slows down when it moves through the middle, which (I think) is the opposite of what should be happening: things should be getting farther apart in the center, closer at the edges, and they should be moving faster in the center. Of course I use the word "center" in the projectional context. I realize that every point on the edge of the actual sphere is equadistant and moves at the same speed, but projection-wise they don't.<br />
+      ...Right?<br />
+      <br />
+      UnConeD, I need your brain!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 06:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Nice. I'm working on something similar but you move through it. :)<br />
+      <br />
+      It's comming along pretty well, but I'm hitting my head against a wall with the movement, or the rotation, or the rotation of the movement vector. I'm not sure which. :(<br />
+      <br />
+      Watch the corners of your box. If you turn off the clear screen, sometime you'll see a point go the wrong way when z3 is less than 0. d should be set as sqrt(sqrt(2)+1). You didn't account for the height of your box.<br />
+      <br />
+      <br />
+      BTW: the points in you sphere should move faster through the middle and slower at the edges. You might want to look into spherical coordinates for that.<br />
+      <br />
+      <a href="http://www.math.montana.edu/frankw/ccp/multiworld/multipleIVP/spherical/body.htm" target="_blank">http://www.math.montana.edu/frankw/c...rical/body.htm</a><br />
+      <br />
+      Used that site for reference before.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 11:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by Atero</i><br />
+        <b>I'm just wondering why you always put smileys at the end of your 'insults.'<br /></b>
+      </blockquote>because your a di---ead [edit] :P [/edit]<br />
+      <br />
+      i suppose some explanation is needed here, well, for one, the ******* incident has no bearing outside of *******, so dont drag that in here, my current negetivity towards you is a direct reaction to the way youve been treating others around these forums, and i quote<br />
+      <br />
+
+      <blockquote>
+        [i]Since it seems that everybody who's ever seen any of his presets disagrees with you, I think it'd be a good idea to fuck off before the fire hits your ass.<br />
+        [/B]
+      </blockquote>-quoted from<br />
+      <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=89642" target="_blank">here</a> -<br />
+      <br />
+      every user, is entitled to his or her opinion, and its my honest beleif that your avs pack is shite., if i wanted to see white dots floating around, id install sonique, theres little to no beat reaction, and in fullscreen mode, even at 1600x1200 it looks like DOS
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 13:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">raydream: with all due respect, you're the shithead here.<br />
+      <br />
+      Atero's insulting post that you quoted was obviously taken out of context. Read the whole thread please? He was replying to someone who had nothing better to say than "this sucks dick dick dick dick dick dick dick! you suck!" (repeat that 4 posts). I don't call that an honest voicing of an opinion, I call that mindless nonsense and flaming. And heck, the insults were directed at ME, not HIM. The fact that he defended me shows that he's not an 'egocentrical bastard', but a very nice person.<br />
+      <br />
+      Oh and I think you misunderstood Atero's preset. He wanted to show that he had managed to program his own pseudo-random number generator to make particles. It's not intended to be a finished product (most things posted here aren't).<br />
+      <br />
+      Do you always barge in on forums, insulting the members without knowing what's going on?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 13:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">To return to the topic:<br />
+      <br />
+      The relationship between sin and cos is: sin(a)^2 + cos(a)^2 = 1<br />
+      So if you have one coordinate of a circle and you want the other, you simply use:<br />
+      <br /></p>
+      <pre>
+<code>b = sqrt(1-sqr(a));</code>
+</pre><br />
+      (rearrange the formula above)<br />
+      <br />
+      However if you want to generate a sphere, you're probably best off using spherical coordinates. Given 2 angles 'a' and 'b':<br />
+      <br />
+      <pre>
+<code><br />x=cos(a)*sin(b);<br />y=sin(a)*sin(b);<br />z=       cos(b);<br /></code>
+</pre><br />
+      <br />
+      First, 'a' defines a point on a circle in the x,y plane, then you rotate it onto the z-axis using the angle 'b'.<br />
+      <br />
+      For a point with radius 'c', simply multiply each coordinate by 'c'.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 13:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">yeah i always do this, because i honestly couldnt give a shit about anyones opinion anymore, i'm here purely to piss you all off, and its fun :)<br />
+      <br />
+      i eagarly await a PM from one of the moderators informing me that i am now banned from these forums, because i honeslty dont care, for a long long time ive bowed fown to everyones crap and said what i beleived would make them happy, even if that meant lying in order not to offend people, i say that the preset above is shit, and as far as i beleive, it is,dont get me wrong however, atero is a good avs'er, i just dislike this preset, the "its shite" comment was to tease him after last night, if i wanted to be nice i could have said that i disliked it and that to improve it he should halve the amount of particles and have a secondary set that rotate in the oposite direct closer to the screen for effect, and in due time i would have done.<br />
+      <br />
+      if i really wanted to do some damage with my comments, i would have said something stronger then "it looks like dos, and its utter shite", now get of your high horse, nobody is better then anyone, were all the sime, we just have our bad days and our good :)<br />
+      <br />
+      on a purely artistic front, i suggest, atero, that you dont leave all the particles the same colour, you could easilly code the color to be as random as the positioning.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 13:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">If you don't like someone's work, don't lie, just tell them in a polite way. Instead of "it's shite" try "It's boring and unresponsive... is this supposed to be a finished preset?". That'll get you better results, while still saying exactly the same thing.<br />
+      A while ago, uNDefineD gave someone's presets here a 1.5/5 rating. Was the author pissed? No, because uNDefineD posted a long description of exactly *why* he felt they weren't good.<br />
+      <br />
+      I'm amazed that, after more than 600 posts here, you still haven't figured out the netiquette of online forums.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 14:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">your lucky i'm working or's i'd flame you SO bad ^__^<br />
+      i dont think you understand why im so bitter, and explaining to you, someone whome has known me for 2 posts, would be pointless, you havent an idea of my personal life, or my personaility, yes, by simply see'ing the few posts in this thread, i'll come accross as an asshole, but meh, i dont care :), so a few people dislike me, its not the end of the world.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 16:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">What has happened to thase forums recently?:confused: :(<br />
+      <br />
+      People calm it down. Place you petrol bombs and flamethrowers down on ground and step back.:)<br />
+      <br />
+      Raydream<br />
+      <br />
+      No PM from me but in the thread that Atero made these comments the other person was blantent flaming and out of order. (though admittedly Atero was a bit too harsh to help the situation)<br />
+      <br />
+      I am sorry if things are not working out in your personal life but please try not to let that effect your postings here. I probably is more acceptable to do flaming in forums where you are a regualar rather than forums where you have been for 5 minutes.<br />
+      <br />
+      Sometimes it is just better to say nothing at all. :)<br />
+      <br />
+      Oh and<br />
+      <br /></p>
+
+      <blockquote>
+        the ******* incident has no bearing outside of *******, so dont drag that in here,
+      </blockquote>True<br />
+
+      <blockquote>
+        the "its shite" comment was to tease him after last night
+      </blockquote>OK :)<br />
+      <br />
+      BAck to the preset.<br />
+      <br />
+      ANyway I don't really like this preset it sort of dull pseduo-3d what about making the particles 'nearer' you bigger. Like 4 times the size for the closest they get as well as moving (you may have to add some DM to this to simulate this effect), add this to colour code dependant on the nearer they are to you and then we might be getting somewhere.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 17:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">just say no :P</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 17:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">How did I just know you were going to say that. :):D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2002 18:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hmm... Making them bigger as they get closer would require making each point into an actual 3D object. :igor: I wouldn't want to try it. (not yet anyway)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 03:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It's not psuedo-3D, it's psuedo-random. It's an actual 3D object, just translated into 2D.<br />
+      And the points aren't going the "wrong way." When z3&lt;0, the particles are going the other way, because they are behind the axis from the camera. Again, it's real 3D.<br />
+      I do see something happening when z3&lt;sqrt(2), and that's easily fixed by setting d to sqrt(3) (but IF a point somehow gets to z3=-sqrt(3) it'll get division by zero...which is never a good thing. fortunately the possibility of a point getting to the very corner of the box AND having the box get rotated so that the corner touches the camera at the same time is very, very low).<br />
+      And unless you're talking about making the actual POINTS bigger, that'd be near impossible. You would have to make each point a superscope. But if you're talking about making them more spaced as they come closer (giving the illusion of depth), they do (because technically they have depth, before they're translated, at least).<br />
+      What exactly did you mean by "d should be set to sqrt(sqrt(2)+1)...you didn't account to the height of the box"? D is the shifting value of the 3D room, set at sqrt(2) so that a sphere of radius 1 is translated correctly in the window. The height, width, or length of the box have nothing to do with it.<br />
+      <br />
+      And I don't know exactly what UnConeD's talking about...but I don't want to make a *real* sphere. I want to do a fake dome...I'm wondering how I would do that. As much as I hate to say this, right now it's mostly experimentation.<br />
+      <br />
+      <br />
+      As for rd, that makes me feel a little bit better, that you're not singling me out because of something i didn't do a while ago :confused: (or are you?). lemme just say i know how you feel, i've had to bow down to people a number of times just to get their attention for a minute. :hang: I support you in your effort to get banned :up: :p<br />
+      <br />
+      <br />
+      <br /></p>
+
+      <blockquote>
+        <i>Originally posted by N e m e s s i s</i><br />
+        <b>rotflmfao @ netiquette.</b>
+      </blockquote>rotflmfao @ the letter q. :rolleyes:<br />
+      wtf is so funny about netiquette? :wierd: actually, on second thought, i'd rather not know
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 03:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">For all its aesthetic simplicity, this preset just clicked with me. Pretty damn nice Atero.<br />
+      <br />
+      BTW: hearing UC mention my name made me giggle for some reason. :D<br />
+      <br />
+      One more thing: raydream, please piss off. :mad:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 06:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">By wrong way I meant travelling in the opposite direction. It's the right way if you multiply by a negative number like z3 can sometimes be if the number are generated right.<br />
+      <br />
+      I assumed you made d sqrt(2) because the gives you the distance of a corner, but that corner is a line. The fact of the matter is that you have a box, not a sphere. To get the point corner, take the hypotenuse of the hypotenuse of x and y, and z. Your box goes from -1..1 in x, y, and z, so sqrt(2) in the hypotenuse of a plane. Toss in the third axis and it put the corner at it closest equal to the plane of the camera. No negative z3. Add something like .001 to d and there's no division by zero, and no crashes. (which is always a plus) :up:<br />
+      <br />
+      If my assumption was wrong, sorry. You know how the saying goes. :)<br />
+      <br />
+      You gonna fake the dome with a movement, or do it in the superscope? If it's a superscope, it'd probably be easier to make a real dome.<br />
+      <br />
+      Good luck experimenting. :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 08:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by uNDefineD</i><br />
+        <b>One more thing: raydream, please piss off. :mad:</b>
+      </blockquote>Well fuck you too punk :)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 11:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You want me to fuck myself? No thanks. And I prefer to think of myself as a homey more than a punk. :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Neko</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 12:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">lmao @ homey :P</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Matt_W74656</span><br /></p>
+
+      <p class="post-time small text-muted">5th June 2002 20:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>This preset is ok....</strong><br />
+      This preset is ok for a template to design defrent avs. It doesn't have enough color, beat changes, and other effects. But like i said before this is a great thing to put in a preset along with some other things.:)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">6th June 2002 01:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">GAH! Why is everyone thinking this is a final product? It's something in the making...i kinda posted it for suggestions, not comments.<br />
+      <br />
+      And I've made a second version, with color changes, and you're actually inside the field. It's really slow, but deal with it, it's the best I could do ;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">6th June 2002 03:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I guess we'll have to start including "Tech Demo Preset" in big, flashy letters when posting something like this to prevent others from complaining about details :p.<br />
+      <br />
+      Oh and I still don't see what's wrong about the word "netiquette". Got a better replacement? "General politeness rules applied to a global, text-only medium"?<br />
+      <br />
+      Atero: you might not want to generate a whole sphere, but if you use 2 random numbers for the 2 angles, you get particles distributed along (or inside if you add radius variation) a sphere. Just like random x,y,z from -1 to 1 gives you a filled cube of particles.<br />
+      <br />
+      Oh and Jaheckelsafar is right about the negative z coordinates: those points should always be clipped (i.e. left out). Rotations of those points will seem to go around a different point. The easiest way to clip them is to either set the color to black, or place them outside the AVS-window: abs(x) &gt; 1 and abs(y) &gt; 1.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">6th June 2002 06:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">There there, I didn't think it was finished. It doesn't have the polish of your other finished stuff.<br />
+      <br />
+      The colour change is nice. I personally would prefer more subtle, fixed colours, and a distance fade.<br />
+      <br />
+      If you're worried about speed, You could stick this in the per point section and halve n. It picked up about 20 fps for me.<br />
+      <br />
+      x3=if(above(z3,0),x3,-x3);<br />
+      y3=if(above(z3,0),y3,-y3);<br />
+      z3=if(above(z3,0),z3,-z3);<br />
+      <br />
+      It'll repeat sooner, but depending on the finished product nobody'll notice. :up:</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

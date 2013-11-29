@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="on type enable disable effect list" />
+
+  <title>on type enable disable effect list - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-138.html">AVS Wishlist</a></li>
+
+      <li class="active">on type enable disable effect list</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=159099">on type enable disable effect list</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dsl52</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2003 16:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>on type enable disable effect list</strong><br />
+      It will be very cool expecialy for live performace have the possibility to definite keyboard key to meke enable disable effect list. Like have in effect list the options "Enable on Type :" q (for example) and "disable on type:" a (for example). It will be cool have checkbox in preset/hotkey that you can definite a directory to play and play if alfabetic-numeric order (fist 1-intro, 2-blabla, 3-blablabla ....) not only in random mode have 2 ways load another preset: number of second automatic(every xx second) and for example on type "+" manual.<br />
+      Another very cool thing for vj it can be have an option in superscope, dinamic moviment ecc. have a string "on type"<br />
+      keyboard-key(event). for example "on type": d(n=rand(50));f(alpha=1):g(alpha=0);q(vel=vel+1) ecc.<br />
+      <br />
+      tanks for all</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 05:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Familiarize yourself with the acronym "rtfm" and get back to us.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 08:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Atero: it's not that obvious. To process one keystroke you need to track when the key transitions from up to down.<br />
+      <br />
+      If you have the latest AVS (check at the bottom of the 2.8b1 thread for AVS2.8b2), you can something like this in the effect list coding (don't forget to check the override box):<br />
+      <br />
+      init:</p>
+      <pre>
+<code>last</code>=0;en=1<span style="color: #007700">;
+</span>
+</pre>frame:
+      <pre>
+<code>key</code>=getkbmouse(16);en=if(band(key,bnot(last)),bnot(en),en);last=key;enabled=en<span style="color: #007700">;
+</span>
+</pre>This will make the effect list toggle when you press the shift key.<br />
+      <br />
+      For a different key, change the number 16 into something else. There's a keylist <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?postid=1181151&amp;highlight=ascii#post1181151" target="_blank">here</a>, though it contains values in hexadecimal (you can convert to decimal with windows calculator).
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dsl52</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 09:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">thanks a lot i will download new avs and take a try<br />
+      that'so great<br />
+      :-)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 12:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Some tips &amp; tricks for you in advance:<br />
+      <br />
+      Keep in mind that the AVS window needs to be focused to make this work.<br />
+      <br />
+      Furthermore should you use keys that won't execute standard avs/winamp functions or your vj-set will get messed immediately.<br />
+      <br />
+      Using Overhead VJ-Tools makes things even more complicated. Hotlist has a keystroke passtrough function. I guess Playlister hasn't I can't tell for sure.<br />
+      <br />
+      Hope this will help.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 13:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Magic: actually it works even if AVS (or Winamp for that matter) is focused. That's because we do the keystroke checking ourselves, all AVS says is "that key is down/up" which is always available.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2003 13:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hmm, yes of course.<br />
+      /me bangs head against wall<br />
+      *ouch*<br />
+      <br />
+      It <b>has</b> to be on-code checking, otherwise AVS had to capture the keystroke if one occurs and insert it into the next frame.<br />
+      <br />
+      This would reduce cpu usage, but coding this would be a pain in the ass ... an probably buggier than the current method.<br />
+      <br />
+      Nevertheless, I don't like the idea of simultaneously executing undesired operations.<br />
+      This gotta be fixed somehow otherwise we'll have a lot of crying n00bs "when I play my avs game winamp stops playback on fire!"</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

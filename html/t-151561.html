@@ -1,0 +1,182 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blur preset calculation?" />
+
+  <title>Blur preset calculation? - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Blur preset calculation?</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=151561">Blur preset calculation?</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">polishhammer9</span><br /></p>
+
+      <p class="post-time small text-muted">5th October 2003 06:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Blur preset calculation?</strong><br />
+      Hi,<br />
+      <br />
+      I was wondering how the blur preset function works? Is it using a Gaussian filter, and if so, why not approximate the Gaussian using a combination of Box filters? Box filters have a run time of O(height) instead of O(width*height) and a heavy blur filter would have the same run time as a light blur filter.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">5th October 2003 07:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">No - It just takes a portion of the original pixel and 4 more portions for the pixels directly touching it for the whole screen.<br />
+      If you want Gaussian, get convolution filter (search for it or get it over at <a href="http://visualization.deviantart.com" target="_blank">http://visualization.deviantart.com</a> and to AVS APE.<br />
+      As for box filters... I have no knowledge in programming, so I'll leave that for the coding junkies.<br />
+      <br />
+      EDIT : To think about it, I have a very strong feeling that you're wrong...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">5th October 2003 13:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">so do I, though I don't know what it is exactly.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">polishhammer9</span><br /></p>
+
+      <p class="post-time small text-muted">5th October 2003 19:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yeah...I realized that the run time was off about 5 minutes after I posted that message. I believe that the real run time is constant per pixel no matter what sigma is used for the filter. With a Gaussian blur, the run time per pixel is dependent on sigma. If I understand Nic01 right, the preset blur uses a convolution of:<br />
+      <br />
+      [0 i 0<br />
+      i j i<br />
+      0 i 0]<br />
+      <br />
+      where the i and j are differnt for each level of blur. If this was the case, then using box filters would be about the same run time.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">5th October 2003 21:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">For as far as I am concerned, It just takes every pixel, compares it with the ones around it, and smudges colors out according to the level of blurring that is set.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br /></p>
+
+      <p class="post-time small text-muted">10th October 2003 18:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Heavy blur uses something like<br />
+      00i00<br />
+      00000<br />
+      i0j0i<br />
+      00000<br />
+      00i00<br />
+      which is why it looks kinda grainy.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">10th October 2003 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">(these are semiapproximations; this isn't exactly what they are but it's close)<br />
+      <br />
+      light blur<br />
+      0.1..0<br />
+      1.12.1 /16<br />
+      0.1..0<br />
+      <br />
+      medium<br />
+      010<br />
+      141 /8<br />
+      010<br />
+      <br />
+      heavy<br />
+      010<br />
+      101 /4<br />
+      010</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">11th October 2003 01:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I put a thread about this, you might find it by searching. The ones atero posted are the intended ones, but due to dividing-before-adding, precision is lost and a different result occurs.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 04:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">as they are now, all of the blur are almost exactly the same in fps cost.<br />
+      <br />
+      Tho heavy is by far the most efficient.<br />
+      <br />
+      and there is no gaussianness.. its all just omni stuff..</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

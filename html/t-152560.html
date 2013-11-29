@@ -1,0 +1,199 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interpolation scheme" />
+
+  <title>Interpolation scheme - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Interpolation scheme</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=152560">Interpolation scheme</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 05:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Interpolation scheme</strong><br />
+      I discovered a nice interpolation scheme. It allows you to switch between one of N targets smoothly.<br />
+      <br />
+      First, the interpolation values:<br />
+      i1=1;i2=0;i3=0;i4=0;<br />
+      <br />
+      We're starting with the first shape, i1 = 1, the rest is 0.<br />
+      <br />
+      The result from 4 sources v1-v4 is:<br />
+      v = v1*i1 + v2*i2 + v3*i3 + v4*i4;<br />
+      <br />
+      To modify the interpolation values, we define a shape to morph towards. For example on beat:<br />
+      tgt=rand(4);<br />
+      <br />
+      We can then evaluate per frame:<br />
+      i1=i1*.9+equal(tgt,0)*.1;<br />
+      i2=i2*.9+equal(tgt,1)*.1;<br />
+      i3=i3*.9+equal(tgt,2)*.1;<br />
+      i4=i4*.9+equal(tgt,3)*.1;<br />
+      <br />
+      The interpolation values i1-i4 change to reflect a new intermediate position, but always sum to 1. The result v will always be in the range between the highest and lowest v1-v4 value.<br />
+      <br />
+      The attached spreadsheet shows an example situation where it targets different values.<br />
+      <br />
+      This method of defininig i1-i4 is fast and extendable...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 06:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">like my morpher, just logarithmic instead of linear...<br />
+      and a lot faster :(</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 07:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Looks nice. Now for a good example...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 08:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">UnConeD's is half logarithmic, half linear. In that the linear coefficient is logarithmic :igor:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 09:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">argh.. zev.. dont confuse me so when im drunk...<br />
+      <br />
+      That was the prolly the most confusing sentance ive ever encountered. XS<br />
+      <br />
+      I like the idea tho ucd.<br />
+      <br />
+      A while ago i was trying to come up with some smooth targetting ideas. I cant seem to find the final product tho.. but it was really only an extended linear targetting plot. Much much simpler than yours.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">horse-fly</span><br /></p>
+
+      <p class="post-time small text-muted">14th October 2003 19:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">you should include a preset to show us what it does exactly....</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">15th October 2003 14:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">yeah an example preset would be nice especially for people like us who are weak at maths :rolleyes:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br /></p>
+
+      <p class="post-time small text-muted">15th October 2003 21:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I have used interpolation like that to make a variable in the frame section smoothly change to a value from the beat section.<br />
+      <br /></p>
+      <pre>
+<code><br />Frame:<br />v1=v1*0.9+v1c*0.1;<br /><br />Beat:<br />v1c=rand(100)/100;<br /></code>
+</pre><br />
+      <br />
+      But I never saw that used in the way you did, to morph between different codes.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">horse-fly</span><br /></p>
+
+      <p class="post-time small text-muted">15th October 2003 22:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">skupers: isn't that a onbeat code from one of the ssc examples... bouncing vertical scope or something to the tune of that?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">15th October 2003 22:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Lol I use that old trick all the time skupers... I just realized that if you use 4 of them, always target 1 with one value and 0 with the rest, that it would always stay 1 summed.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">horse-fly</span><br /></p>
+
+      <p class="post-time small text-muted">15th October 2003 23:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">so can you post an example preset that uses this?</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

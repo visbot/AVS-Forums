@@ -1,0 +1,379 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Effect list and buffers" />
+
+  <title>Effect list and buffers - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Effect list and buffers</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=147246">Effect list and buffers</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">27th August 2003 13:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Effect list and buffers</strong><br />
+      Hellow world !<br />
+      <br />
+      Just a little question :<br />
+      <br />
+      Can anybody explain how works buffers in input and output of an effect list ?<br />
+      And about the reverse (or inverse, I can't remember) option ?<br />
+      <br />
+      AFAIK, using a buffer as Input seems to be identical to a Buffer in restore mode at the top of the effect list, but I can't see what exactly happens with a buffer in Output of the effect list.<br />
+      <br />
+      Help me !!!!!!!!!!!!!!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">27th August 2003 17:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?threadid=121697" target="_blank">http://forums.winamp.com/showthread.php?threadid=121697</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">28th August 2003 00:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ooops ! I haven't search enough in the forums. :-(<br />
+      <br />
+      To answer my question :<br />
+      <br />
+      When buffers are used in input of an effect list, the existing image is blended to the image of the effect list accordingly to the luminosity of the image contained in that buffer (the more the image is clear, the more the existing image is visible). The "Inverse" option just inverse this image, that means, inverse its luminosity.<br />
+      And of course, the same principle is used in output to blend the result of the effect list.<br />
+      <br />
+      Thanks Atero.<br />
+      <br />
+      [ in other words, that means that the tutorial in my website - still only in french, but if someone want to translate it :-) - got a big mistake ... I have some work to do ;-) ]</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">28th August 2003 06:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">why don't you translate it? you're english is pretty good, there will be spelling/grammar errors in there but it's not like nobody understands what you're saying :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">28th August 2003 12:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well.<br />
+      <br />
+      1st : It's a big work (screen captures must be done with english version) and I have so many things to do ...<br />
+      <br />
+      2nd : My english is not good enough (I think) to make a tutorial. By definition, a tutorial is the first guide of a beginner, so it must be very clear and easy to understand.<br />
+      <br />
+      Conclusion : May be I'll do it, one day ... except if someone do it for me ;-)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">28th August 2003 14:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You seem to be able to speak english better than many of the people on these forums.:p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">29th August 2003 08:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yes! You speak english good good! Why you not speak english on you homepage? :p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">29th August 2003 13:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I can speak good english! I learn it, from a book!<br />
+      <br />
+      --<br />
+      Fawlty towers</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">2nd September 2003 12:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, you win !<br />
+      <br />
+      I've put all my tutorial in a Word document (72 pages !) to make a PDF file I'll put soon on my web site.<br />
+      <br />
+      So, I made a copy of this document and tried to translate the first pages ... and it seems not to be so difficult I thought.<br />
+      I have decided to translate all the text (and images :) ), and to publish it in a PDF file (at winamp.com, for example). I'll keep you informed ...<br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      66 pages left to translate ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">3rd September 2003 09:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">good luck! :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">17th September 2003 10:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">P L E A S E W A I T . . .<br />
+      20 pages left to translate ...<br />
+      <br />
+      BTW, is there any volunteer to read this doc and to signal me English errors ?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">17th September 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I could help with some of it. 20 pages is a lot... I could do like 5.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">17th September 2003 22:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanks Anubis,<br />
+      <br />
+      But I think I was not very clear. I'm looking for someone to read the English version and tell me what's wrong. The document will have probably 70 pages, with screen shots and other images.<br />
+      <br />
+      Your offer is very pleasing, but as I wrote the French version, I feel free to change some sentences during the translation. I think it's more difficult to someone else to do this in the same way. At least, it can gives weird differences for same sentences in the final document.<br />
+      <br />
+      Thanks anyway.<br />
+      <br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      16 pages left to translate ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">18th September 2003 07:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I volunteer for checking out a few pages :) English isn't my original langunage, but i have a translator to help me out and i have been "talking" english for many many years now :) (if we count highschool, but i think the internet &amp; more precisly: these forums, teaches more in a year than highschool in 3 years ;))<br />
+      <br />
+      So i can look into a few pages, sure :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">18th September 2003 14:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">pIR: I can proofread as well, but you'll need to send me an editable version (not a PDF) so I can mark errors.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">18th September 2003 14:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        langunage
+      </blockquote>lol, what a typing error :D Well i promise you it won't happen when/if you want me to check for any errors for you :) And also no PDF for me either as UnConeD already stated.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">18th September 2003 15:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Like they said, I would help with some - Every little bit counts, right?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">18th September 2003 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">That's great !<br />
+      <br />
+      For those who are interested (Tuggummi, UnConeD, anubis2003, and may be others) just send me a email (you'll find my adress somewhere in my website) and I will send you back the document (WinWord file of about 800 Ko) with instructions (pages to proofread, how to make corrections, remarks, and so on).<br />
+      <br />
+      Thanks to all.<br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      10 pages left to translate ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">19th September 2003 01:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">i'll do some as well :) in fact i could probably do them all...well, how big is it (plaintext, in kb)? if it's on the order of 50 book pages (regular novel page/fontsize etc.) then that's fine...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">20th September 2003 14:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">That's done. The translation is ended.<br />
+      Now, it needs a proofread (by English speaker would be the best) and it will be OK.<br />
+      <br />
+      At this date, I have only one volunteer to do this last work ... :(<br />
+      (Tuggummi, you'll have some works :) ).<br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      69 pages left to check ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">20th September 2003 15:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">/me raises my hand<br />
+      <br />
+      I can volunteer!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">20th September 2003 16:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I sent you a PM - couldn't find your email on your site. Feel free to send them whenever you want to - I'll try to proof them as quickly as I can.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">21st September 2003 18:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanks Ishan_Rocky but it's too late :(<br />
+      Proofread is in process.<br />
+      <br />
+      <br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      69 pages left to check ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+
+      <p class="post-time small text-muted">21st September 2003 18:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I've checked a couple. Shouldn't take too long.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">piR</span><br /></p>
+
+      <p class="post-time small text-muted">8th October 2003 09:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">That's on a good way ... I just wait for the last results of the proofread and you'll get it.<br />
+      <br />
+      Don't forget me !<br />
+      <br />
+      P L E A S E W A I T . . .<br />
+      45 pages left to check ...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+
+      <p class="post-time small text-muted">9th October 2003 11:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">We won't forget you :)</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

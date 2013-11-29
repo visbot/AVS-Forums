@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sphere Intersection prob" />
+
+  <title>Sphere Intersection prob - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-139.html">AVS Troubleshooting</a></li>
+
+      <li class="active">Sphere Intersection prob</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=141119">Sphere Intersection prob</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">4th July 2003 19:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Sphere Intersection prob</strong><br />
+      Sphere Intersection Problem:<br />
+      <br />
+      Ok, I have been playing a lot with dm's these days and I have treied to make multiple cylinders and spheres in one dm. Found that it was much easier to play around with cylinders and sphere's than planes. But, there is a problem here about the sphere intersection.<br />
+      <br />
+      <b>The ugly edges are too much, is there any way we can use alpha blending to blacken out the edges?<br />
+      And then is there any way to enter the cylinders?</b><br />
+      Here's what is required:<br />
+      <br />
+      (ox,oy,oz) origin<br />
+      (rx,ry,rz) rotation angles<br />
+      sx,sy,sz,cx,cy,cz sines and cosines of rx,ry and rz<br />
+      <br />
+      a,b,c - co-efficient of the three terms of the quadratic equation of the cylinder/sphere<br />
+      <br />
+      k1,k2 - for cylinder<br />
+      k3 - inner sphere<br />
+      k4 - outer sphere<br />
+      <br />
+      to solve a quadratic equaltion ax^2+bx+c=0<br />
+      x = (-b +/- sqrt( sqr ( b )- 4 ac ) / 2a is used.<br />
+      <br />
+      there are a lot of temperory vars used.<br />
+      <br /></p>
+      <pre>
+<code><br />Init:<br />pi=acos(-1)<br /><br />Frame:<br />t=t+.001+ti*.1;ti=ti*.9;<br />ox=sin(t)*.1;<br />oy=sin(t)*cos(t)*.15;<br />oz=cos(t)*.1;<br />rx=atan2(ox,sqr(oy)+sqr(oz));<br />ry=-atan2(ox,oz);<br />rz=rx*ry*ox*oy*oz+sin(t*.3)*pi;<br />sx=sin(rx);sy=sin(ry);sz=sin(rz);<br />cx=cos(rx);cy=cos(ry);cz=cos(rz);<br />af=max(h,w)/min(h,w);<br /><br />Beat:<br />ti=(abs(getosc(0,0,0)*400)%10)*.2<br /><br />Point:<br />y=if(above(h,w),y*af,y);<br />x=if(above(w,h),x*af,x);<br /><br />¤ Rotate ray;<br />dx1=x*cz-y*sz;<br />dy1=x*sz+y*cz;<br />dy2=dy1*cx-sx;<br />dz2=dy1*sx+cx;<br />dx3=dx1*cy-dz2*sy;<br />dz2=dx1*sy+dz2*cy;<br /><br />¤temp variables, save time;<br />dx1=sqr(dx3);dy1=sqr(dy2);dz1=sqr(dz2);<br /><br />¤calculate cylinfer 1, equation sqr(x)+sqr(y)=0.7*0.7;<br />a=dx1+dy1;<br />b=2*(dx3*ox+dy2*oy);<br />c=sqr(ox)+sqr(oy)+.49;<br />D=sqr(b)-4*a*c;<br />k1=(-b+sqrt(d))/(2*a);<br /><br /><br />¤calculate cylinfer 2, equation sqr(x)+sqr(z)=0.7*0.7;<br />a=dx1+dz1;<br />b=2*(dx3*ox+dz2*oy);<br />c=sqr(ox)+sqr(oz)+.49;<br />D=sqr(b)-4*a*c;<br />k2=(-b+sqrt(d))/(2*a);<br /><br />¤calculate inner sphere, equation: sqr(x)+sqr(y)+sqr(z)=sqr(0.9);<br /><br />a=dx1+dy1+dz1;<br />b=2*(dx3*ox+dy2*oy+dz2*oz);<br />c=sqr(oz)+sqr(oy)+sqr(oz)-.9;<br />D=sqr(b)-4*a*c;<br />k3=(-b+sqrt(d))/(2*a);<br /><br />¤calculate outer sphere, equation: sqr(x)+sqr(y)+sqr(z)=sqr(2);<br />a=dx1+dy1+dz1;<br />b=2*(dx3*ox+dy2*oy+dz2*oz);<br />c=sqr(oz)+sqr(oy)+sqr(oz)-4;<br />D=sqr(b)-4*a*c;<br />k4=(-b+sqrt(d))/(2*a);<br /><br />k1=if(below(k1,0),1000,k1);<br />k2=if(below(k2,0),1000,k2);<br />k3=if(below(k3,0),1000,k3);<br />k4=if(below(k4,0),1000,k4);<br /><br />¤ order - inner sphere - cylinders - outer sphere;<br />¤ k1, k2 - cylinders, k3 - inner sphere, k4 - outer sphere;<br />k=min(max(max(k1,k2),k3),k4);<br /><br />ix=k*dx3+ox;<br />iy=if(equal(k,k1)+equal(k,k3)+equal(k,k4),dy2*k+oy,dz2*k+oz);<br />iz=if(equal(k,k1)+equal(k,k3)+equal(k,k4),dz2*k+oz,dy2*k+oy);<br /><br />rad=if(equal(k,k3),.9,2);<br />r=if(equal(k,k3),1,.5);<br /><br />¤problem zone;<br />x=if(equal(k,k3)+equal(k,k4),atan2(iz,ix)/pi*1.4,asin(sin(atan2(ix,iy)))*.954);<br />y=if(equal(k,k3)+equal(k,k4),asin(iy/rad)*4/pi,iz);<br />¤end of problem zone;<br /><br />¤ cool wrap by UnConeD;<br />x=asin(sin(x*pi*.5))*2/pi; <br />y=asin(sin(y*pi*.5))*2/pi;<br /><br />---------------------------------<br />rectangular coords on, blend off, wrap OFF<br /></code>
+</pre><br />
+      <br />
+      Ohh...and use any kind of a picture as a texture, as I havent made any.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+
+      <p class="post-time small text-muted">5th July 2003 02:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">for alpha blending it's fairly simple... I'm not going to actually do this for you, but say you want a sphere to black out just before it hits the edge of a cylinder that's on the z axis... sqrt(ix*ix+iy*iy) = distance from the z axis, so if k=ksphere then alpha = dist_z_axis * 5 - cylinderradius. This should create a nice fade to darkness around the cylinder, if it doesn't fade out all the way when it gets to the ugly edge then use slightly more than the cylinder radius...<br />
+      <br />
+      Then after you do that, to fade the cylinder, use the distance from the origin instead of the distance from the z axis and use sphereradius instead of cylinderradius, and check that k=kcylinder instead of ksphere...<br />
+      <br />
+      I hope I've been clear enough and that I haven't said anything stupid...<br />
+      <br /></p>
+
+      <blockquote>
+        And then is there any way to enter the cylinders?
+      </blockquote>Try changing ox, oy, and oz :)<br />
+      That maze that UnConeD did might be helpful to look at also...<br />
+      <br />
+      edit: blargh, I think I did do something stupid... it should be (dist_z_axis - cylinderradius)*5
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">5th July 2003 05:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">but, I think there is some problem with the raytracing, as when I bring the camera ver close to the walls, the walls seem to be squashed<br />
+      :igor:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">5th July 2003 15:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">sheryas: could also be a consequence of not having perspective correction. Don't forget the whole raytracing thing is just a big ugly hack in AVS...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">7th July 2003 12:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">well, I didnt get you...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">8th July 2003 23:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Okay try this. Imagine a wall with alternating white/black panels of same size. If you look at it from the front, all the panels have equal width.<br />
+      Now if you stand up to the wall and look along its length, the panels in the distance will of course look less wide than the ones up front. This is regular 3D.<br />
+      Now suppose that the panels were drawn using a texture instead. The projection of the wall is a trapezoid shape (if you're looking straight ahead), but you can't simply take the alternating white/black bands and squish them into a trapezoid-shape: you have to distort it so the panels in the distance look less wide than the ones in the front (check attachment... on the left is stretched, on the right is perspective corrected).<br />
+      <br />
+      This is what perspective correction does. Because DM's are simple 2D movements, there is no depth information and no perspective correction.<br />
+      <br />
+      Older 3D cards (and for example playstation 1 consoles) didn't have perspective correction either as a speedup. It's not noticable except for stuff that's up close and/or almost tangent to the viewer (floors and ceilings). And most software engines simply perform perspective correction every 8 pixels or so, and do linear interpolation in between (e.g. Quake1 did this).</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

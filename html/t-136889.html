@@ -1,0 +1,270 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Variable Tracker For AVS!!!" />
+
+  <title>Variable Tracker For AVS!!! - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Variable Tracker For AVS!!!</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=136889">Variable Tracker For AVS!!!</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 10:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Variable Tracker For AVS!!!</strong><br />
+      w00t<br />
+      roll-up roll-up<br />
+      <br />
+      Thanks to nic01, magicX, jaheck and Unconed.<br />
+      this whole thing was done in less than a day, those people have managed to help me out with some coding in the last few hours!<br />
+      :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 11:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Here's a li'l remix, no big deal.<br />
+      <br />
+      Cool idea Sid, just hardly usable. Dont have a clue where i'd need this except for a scorecounter within an avs game :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 12:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Why not improve it by floating the floating point? Use ex=log10(val)-.499999;ex=(abs(ex)%(abs(ex)+1))*sign(ex); to get the floating-point-shift. Though you might still want to leave the original behaviour in so that you can switch between 'fix' and 'sci' (like a real calculator).<br />
+      <br />
+      Oh and I don't like the 9's with missing bottom stripe ;), change:<br />
+      six=(equal(pval,0)+equal(pval,2)+equal(pval,3)+equal(pval,5)+equal(pval,6)+equal(pval,8)+equal(pval,9));<br />
+      (though you should now invert it to speed it up)<br />
+      <br />
+      Also, 'val=abs(val);' is run per-point, this can be put at the end of per-frame.<br />
+      And finally, for that fancy LED-look, set line width to 2...<br />
+      <br />
+      Anyway, it's very cool and compact, but is it useful? :rolleyes: :)<br />
+      <br />
+      <br />
+      It has turned up one thing though: AVS uses <i>banker's rounding</i>, which rounds N.5 to the nearest even number, rather than just all up/down. So 4.5 -&gt; 4, but 5.5 -&gt; 6. That proves by you have to use .4999 to force it to round down.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 12:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">eh. its not meant to be good for presets and finished products..<br />
+      <br />
+      its just useful when you have a crazy complicated code and you want to keep track of a variable.<br />
+      nice remix.. you did that pretty quick :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 12:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Sorry, I edited after you replied ;). Read again...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 12:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Lol, i do that all the time..<br />
+      <br />
+      The floating point thing: i was going to do that, but got sick of fucking around. Thanks for the code, but i dont get it, so i dont know how to implement it. I had at one point started doing what you mentioned, i had flt=-1 as a floating float.<br />
+      <br />
+      Thanks for the thing about the nine, i forgot about that.. btw, you managed to pick apart my coding prety quickely, even knowing the inverting thingo. fix of your fix:<br />
+      six=1-(equal(pval,1)+equal(pval,4)+equal(pval,7));<br />
+      <br />
+      I was going to ask you about that rounding thing, i got really confused by it.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 12:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well in any case, you shouldn't expect any decent accuracy from AVS, as you can see from the readout itself ;). It seems the .49999 thing doesn't fix much for fractions, but only helps for integers.<br />
+      <br />
+      Here's a version with dynamic point, but you can still toggle the old behaviour by setting fix=1 in init.<br />
+      <br />
+      <i>ex</i> is the adjusting exponent (basically log10(abs(val)) rounded, but with signs and AVS-freaky rounding taken into account). flp is the dynamic point position, but wrapped so it never goes too far.<br />
+      <br />
+      If you want to go extreme, you could program it for scientific notation 1.245e+10, but that's left as an exercise for the reader :P<br />
+      <br />
+      PS: MagicX, you mean for e.g. an AVS pinball game?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 13:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">a <b>PINBALL GAME!</b> *drooooooooooooool*<br />
+      <br />
+      Thats it! And possible too!!!<br />
+      <br />
+      We need: an input field that grabs keyboard input prog<br />
+      <br />
+      An ape that renders the paddles and requests the keystate from the input prog. And it renders the ball based on physics of a table and that scans for borders. If there is a border, the color defines the amount of bounce (like texer does point scanning)!<br />
+      <br />
+      The rest can be done through scopes!<br />
+      <br />
+      Unfortunately this is 2 sizes too big for my programming skills and would take a looong time to work out.<br />
+      <br />
+      But it WILL work!<br />
+      <br />
+      *droooooool* :D :D :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 13:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Damn cool idea. I like the font of the numbers :D</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 13:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">nice work, i came back on to post my fix, but it had already been done!<br />
+      <br />
+      my version works like this. You set the number of decimals with 'dec' in init. Or, you set 'dec' to -1, which activates the dynamic floater, which works from the left.<br />
+      i fixed up the nine aswell, and made the decimals easyer to read.<br />
+      <br />
+      you can really see how bad that rounding glitch is, considering this example is just adding integers!.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 17:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Nice. I could have used this when making Goo Cube. I would have cleaned up soo many problems alto quicker than I did.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">28th May 2003 21:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Magic.X: who said anything about APEs?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">18th June 2003 12:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">[sorry for reviving but i have to]<br />
+      <br />
+      UnConeD, you think this would work without any APE?<br />
+      <br />
+      How would you realize the intput then?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
+
+      <p class="post-time small text-muted">18th June 2003 16:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">he's saying that there would be no user input</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">18th June 2003 22:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well no, an ape would be required for the input, but that's basically it. All the stuff you talk about (flippers, collisions) is perfectly done in AVS...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+
+      <p class="post-time small text-muted">19th June 2003 07:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ok, maybe i just don't get it. How would you code a Ball SSC without knowledge of the sourceframe which is needed to render a collission?<br />
+      <br />
+      The only thing i could imagine is that the SSC already contains the table layout. Then again, how would that go with the flippers?</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Polehedra..." />
+
+  <title>Polehedra... - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">Polehedra...</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=232444">Polehedra...</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">3rd December 2005 17:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Polehedra...</strong><br />
+      I'm trying to find an algorithm to model three dimensional regular to semiregular polyhedra using the <a href="http://mathworld.wolfram.com/WythoffSymbol.html" target="_blank">Wythoff symbol</a> . I've seen it done manually on Mathematica, but I use Maple and, well, Mathematica pales in comparison...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">QuadHeliX</span><br /></p>
+
+      <p class="post-time small text-muted">4th December 2005 08:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">cant wait to see it!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">4th December 2005 17:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I'm trying to find out what Maple does to do it, but that's kind of a stretch. I't going to be tough to actually fill the the faces and all...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2005 07:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">filling faces is easy with triangle ape. for the trivial (triangle fan) way to draw any polygon just use two adjacent vertices for two of the triangle vertices, and the centre point of the polygon for the third (average of all vertices). breaks on concave polys tho... since there is no way to reverse get them from points...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2005 19:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I must admit, I never did triangle APE before...<br />
+      <br />
+      I need a rundown, it sounds like a possibility.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2005 21:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It's more or less like superscope, but instead of having just one point, you assign 3. So in a ssc we have (x,y) to define but with the triangle ape we have (x1,y1) (x2,y2) (x3,y3). If you can do a ssc, this isn't much different.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2005 21:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">It's not that different from Superscope; you mainly just set x1, y1, x2, y2, x3, and y3, instead of just the one point (x and y) with the Superscope.<br />
+      <br />
+      Also, to change the color, set "red1", "green1", and "blue1", instead of just "red", "green" and "blue". I think it's this way because there might (fat chance) be a later version which will let you use different colours for each point, and it will shade. (This would be cool, but probably too slow to be practical.)<br />
+      <br />
+      There is also a "zbuf" variable you can set to 1 to enable a simple form of Z-buffering. With this enabled, you can set the z1 variable to the distance to control the "Z-order" of the triangles. This is often quicker and easier than doing full depth-sorting for 3d scenes.<br />
+      <br />
+      Am I forgetting anything?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+
+      <p class="post-time small text-muted">9th December 2005 22:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">/Points to the guide</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2005 14:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ok, does it draw just a triangle or fill it in?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2005 17:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">it fills it in, that's the thrill to it!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">10th December 2005 22:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Tres nice.<br />
+      <br />
+      What about 3D? Or is Z-Buffering 3D...Bear with me...<br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      Hahaha...trivial (triangle fan)...Get it? <i>tri</i> Hahahaha! That's so funny! Hahahaha!</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2005 14:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">There is a more efficient, and less trivial way. Which is to make a triangle fan from one vertex... it reduces the number of triangles by 1, but its not as easy to see how to implement, and looks ugly when subdivided/tesselated.<br />
+      <br />
+      You can use 'z' to implement a flat z-buffer. i.e. one z value gets drawn per triangle.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2005 14:43 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">So it'd be tricky for polyhedra...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2005 14:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">not really. its long winded to write, but you can prove that for any convex solid, back face culling is enough to correctly occlude the faces. its basically common sense, imagine holding out a polyhedron. the only faces you can see are the ones pointing within 90 degrees the opposite of your view direction, the ones you cant see are all facing away in the remaining 180 degrees.<br />
+      <br />
+      you can do this test with a dot product and checking its sign... its in lots of presets, look at 'starfighter redux' in wfc2 i would recommend 'jet wash', but the code is in huge avstrans-ed blocks. in fact any of the model presets i have ever made probably contain it.<br />
+      <br />
+      you need to introduce 'occlusion' before z buffer is really necessary. e.g. convex objects that can have two triangles overlapping in 2d projection, both facing the viewer. or multiple objects, where one passes infront of the other.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2005 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Ok, that's an idea, but still, I need to figure out how to get the Wythoff symbol or even the Schalffi symbol to yeild a polyhedron. Tough stuff...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br /></p>
+
+      <p class="post-time small text-muted">11th December 2005 23:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Yeah, all this is well and good, but how do we figure out where to put the freakin' points in the first place!?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2005 00:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Exactly. I'm still thinking...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2005 00:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Forget those symbols and things... too elaborate.<br />
+      <br />
+      Here are a couple of simple examples using a dodecahedron... I will add a couple more tomorrow, but I am tired right now.<br />
+      <br />
+      <a href="ftp://jheriko.kicks-ass.net:69/AVS/Jheriko/examples/" target="_blank">ftp://jheriko.kicks-ass.net:69/AVS/Jheriko/examples/</a><br />
+      <br />
+      The platonic solids are all pretty easy to construct, and using some more geometry you can truncate them and stellate them into lots of other stuff. Also there are some other special cases that are interesting... check out these old packs of mine, feel free to steal the vertices:<br />
+      <br />
+      <a href="http://www.deviantart.com/deviation/720677/" target="_blank">http://www.deviantart.com/deviation/720677/</a><br />
+      <a href="http://www.deviantart.com/deviation/743266/" target="_blank">http://www.deviantart.com/deviation/743266/</a><br />
+      <a href="http://www.deviantart.com/deviation/911279/" target="_blank">http://www.deviantart.com/deviation/911279/</a></p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">12th December 2005 21:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Cool thanks. There is a bit of fun math that turns symbols into polydehra, but I don't quite get it...<br />
+      I'm a junior in high school, you see...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">13th December 2005 01:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">well.. the way the symbol works is by defining vertices on the inside of a sphere. but its not particularly useful unless you have a method of finding a convex hull... etc... its long winded. easier to work out a specific polyhedron that you want, and use it...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+
+      <p class="post-time small text-muted">13th December 2005 02:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, I cound use the brute ofrce method, where it just screws around for a while, but that would be no good for a visualization. Besides, for simple coding, AVS syntax is just ugly.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">14th December 2005 00:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You only need to generate a polyhedron once. Brute force it and stick it in the megabuf. Why make it so hard tho? Every specific polyhedron has a simple construction method.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+
+      <p class="post-time small text-muted">14th December 2005 03:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">not quite perfect, but i did the dm example. i can't be bothered to fix it right now... i can't work out why its broken... probably from looking at it for too long:<br />
+      <br />
+      <a href="ftp://jheriko.kicks-ass.net:69/AVS/Jheriko/examples/Dodecahedron%20Example%203%20-%20Raytracer%20DM%203D.avs" target="_blank">ftp://jheriko.kicks-ass.net:69/AVS/J...%20DM%203D.avs</a><br />
+      <br />
+      it gets the k correctly, but the texturing is messed up, and i had to make the camera face backwards in the dm for some reason... i will work it out later...</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="3D movement" />
+
+  <title>3D movement - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">3D movement</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=91742">3D movement</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">20th June 2002 12:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>3D movement</strong><br />
+      After wracking my brains over EL-VIS's DMs, I finally figured out how he does it. Here is my venture into the 3D AVS world. Along with a quick trial at solid SSCs. Please give feedback, I need to know if I'm on the right track.<br />
+      <br />
+      Keep in mind I'm new at this...</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">20th June 2002 15:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hmm... not very dynamic. Not bad for a first try at 3D, but you can do better. Work with it. Make the movement respond to the beat somehow. Maybe make it tilt on the x axis as well. THere's loads you can do. You got a good start though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+
+      <p class="post-time small text-muted">20th June 2002 16:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Oh and you're doing a quite important thing wrong:<br />
+      instead of rotating around the Y axis, you skew it only in the Z direction. So the distance between your squares increases as the tilt grows larger.<br />
+      <br /></p>
+      <pre>
+<code><br />horizontal .----.----.----.----.<br /><br />rotated    .<br />            \<br />             .<br />              \<br />               .<br />                \<br />                 .<br /><br />skewed<br />           .<br />            \<br />             \<br />              \<br />               \<br />                .<br />                 \<br />                  \ <br />                   \<br />                    .<br /></code>
+</pre>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">21st June 2002 08:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"></p>
+
+      <blockquote>
+        <i>Originally posted by UnConeD</i><br />
+        <b>Oh and you're doing a quite important thing wrong:<br />
+        instead of rotating around the Y axis, you skew it only in the Z direction. So the distance between your squares increases as the tilt grows larger.</b>
+      </blockquote>Well I thought that looked okay from a certain POV, but here's another go. With some dynamics for Jaheckelsafar. :)
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+
+      <p class="post-time small text-muted">21st June 2002 19:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Hey. Much more interesting now. :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">21st June 2002 19:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I didn't see much change... fix the stretching prob will ya?<br />
+      The reason that the preset doesn't <b>look</b> dynamic is because it only allows speed change in 1 direction.<br />
+      <br />
+      Attached is my remix which have "some" changes from the origina; version.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">22nd June 2002 01:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Nic: You are looking at the second one right? UNDER UnConeD's post?<br />
+      <br />
+      EDIT: Yes you are. Never mind. :o</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+
+      <p class="post-time small text-muted">22nd June 2002 02:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Anyway, I have no idea why the thing was stretching like that, neither do I know why separating the DMs fixed it. But here's the next version.<br />
+      <br />
+      BTW Nic, I don't think blending one of those DMs was necessary. It just made it look a bit ugly IMO.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+
+      <p class="post-time small text-muted">22nd June 2002 05:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I blended another DM because I was bored :p<br />
+      <br />
+      My preference for your preset :<br />
+      <br />
+      First DM OnBeat :<br />
+      <br />
+      bfrx=rand(21)/50-0.2;<br />
+      bfry=rand(21)/50-0.2;<br />
+      <br />
+      Second DM OnBeat :<br />
+      <br />
+      bfrz1=rand(21)/50-0.2;<br />
+      bfrz2=rand(21)/50-0.2;<br />
+      <br />
+      Pixel :<br />
+      <br />
+      x1=x; y1=y;<br />
+      z1=(x*sin(frz1)*2)+(y*sin(frz2)*2)+1.2;<br />
+      x=x1/(1+z1);<br />
+      y=y1/(1+z1);<br />
+      alpha=z1+0.5;<br />
+      <br />
+      Blend on.<br />
+      <br />
+      Add a buffer save, a clear screen before the 2nd DM. Set 2nd DM to 1st buffer.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

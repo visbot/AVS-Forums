@@ -1,0 +1,254 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Multi_DM" />
+
+  <title>Multi_DM - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-137.html">AVS Presets</a></li>
+
+      <li class="active">Multi_DM</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=137248">Multi_DM</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">31st May 2003 07:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>Multi_DM</strong><br />
+      Just this new multi functional DM i created, was the easiest i ever did.<br />
+      Would like to have your sugggestions to make it better.<br />
+      Requires colormap.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">31st May 2003 15:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Well, yeah, the dm can be optimized to a great extent, especially the pixel part. What have you done here is:<br />
+      x1=...<br />
+      y1=...<br />
+      x2=...<br />
+      y2=...<br />
+      ...<br />
+      and then<br />
+      x=if(..,x1,x);<br />
+      y=if(..,y1,y);<br />
+      <br />
+      now suppose x1=sin(t)*x, suppose...<br />
+      so directly you can write:<br />
+      x=if(..,sin(t)*x,x); instead of calculating this and storing it in one variable. In this way only one out of 7 x's and y's are calculated.<br />
+      and then instead of calculating above(bt,change)... per pixel, you can calculate it per-frame and then save it to one variable.<br />
+      <br />
+      Here' the multi-flow dm base I created:<br />
+      <br />
+      Init:<br />
+      ¤ Change this var : ;BEATSKIP=20; ¤Dont change this;NFEFFECTS=7;cb=rand(100)%NFEFFECTS;<br />
+      <br />
+      Frame:<br />
+      c0=equal(cb,0);c1=equal(cb,1);<br />
+      c2=equal(cb,2);c3=equal(cb,3);<br />
+      c4=equal(cb,4);c5=equal(cb,5);<br />
+      c6=equal(cb,6);....go on adding this till the no. of flows you have<br />
+      <br />
+      Beat:<br />
+      cb1=(cb1+1)%BEATSKIP;<br />
+      cb=if(bnot(cb1),(cb+1)%NFEFFECTS,cb);<br />
+      <br />
+      Pixel:<br />
+      ¤ Flow 1;<br />
+      r=if(c0,ADD STUFF HERE,r);d=if(c0,ADD STUFF HERE,d);<br />
+      ¤ Flow 2;<br />
+      r=if(c1,ADD STUFF HERE,r);d=if(c1,ADD STUFF HERE,d);<br />
+      ¤ Flow 3;<br />
+      r=if(c2,ADD STUFF HERE,r);d=if(c2,ADD STUFF HERE,d);<br />
+      ¤ Flow 4;<br />
+      r=if(c3,ADD STUFF HERE,r);d=if(c3,ADD STUFF HERE,d);<br />
+      ¤ Flow 5;<br />
+      r=if(c4,ADD STUFF HERE,r);d=if(c4,ADD STUFF HERE,d);<br />
+      ¤ Flow 6;<br />
+      r=if(c5,ADD STUFF HERE,r);d=if(c5,ADD STUFF HERE,d);<br />
+      ¤ Flow 7;<br />
+      r=if(c6,ADD STUFF HERE,r);d=if(c6,ADD STUFF HERE,d);<br />
+      <br />
+      NEFFECTS stands for the number of flow patterns you are having.<br />
+      Instead of r,d you can use x,y also. I know this can be reduced to just a couple of statements using nested if's, but that would be too confusing. If the no. of flow patterns are too large then you need'nt use c1,c2,c3...just use equal(cb,...) in the pixel part. Otherwise, there are changes that winamp would crash if the no. of variables is too large.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">unripeLemon</span><br /></p>
+
+      <p class="post-time small text-muted">31st May 2003 15:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">OOOOOOOOOOOOOOOOOOOH! (mouth watering) Thats realy nice:D a bit on the slow side though;)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">31st May 2003 15:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanks unripelemon for the comments but i get around 20-30 fps on my comp, and shreyas must say your DM base is really good! I'l try and use it next time:up:<br />
+      (but i really do find my DM very easy to use)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">1st June 2003 05:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">undefined: alledgedly the if(a,b,c) statement calculates b and c regardless of a. so in all honesty i doubt there's much optimization you can do with those psuedoif statements. however there is something to be said about saving variables, which i believe decreases ram useage and is somewhat of a speedup (but what do i know)<br />
+      <br />
+      as for the dm, multifunctional dm's (and scopes) have been around for a while - but it's still cool to get one to work yourself :)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">1st June 2003 06:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">yeah i guess it has been done many times before but i just wanted to make one myself that's it:)</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">S-uper_T-oast</span><br /></p>
+
+      <p class="post-time small text-muted">2nd June 2003 04:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I really like the way the dynamic move looks with those colors put over, but I like this more for the colors then the movements, some of the movements you get in this are good, but I still don't like how this worked out, I prefer fluid dynamic movements, not these "jittery" ones that change from preset movement to preset movement every N-beats, just a personal taste. Nice job with the all around coding though.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">2nd June 2003 09:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">So you say you dont like Multi DM's that change movement every N beats ??<br />
+      Perhaps you like Dm's which change movements every M beats:p</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+
+      <p class="post-time small text-muted">2nd June 2003 13:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Pretty sweet preset, the code could be optimized a bit yes, but i doubt there is much you can do there, other than what shreyas already suggested.<br />
+      btw. Using notepad to code multimovement dm's helps <b>a lot</b> ;)<br />
+      <br />
+      Besides the multimovement, i really like the color trick here, it's pretty sweet :) Great work :up:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">3rd June 2003 07:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Thanks i'm working on it to make it more customizable and nice, i post it here when it is done.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2003 09:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">Just one question - in if(a,b,c) why is b calculated if a=0?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2003 10:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I thought that if(a,b,c) c is calculated if a=0,:eek:</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2003 11:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">if(a,b,c) <b>performs</b> b if a&lt;&gt;0 and c if a==0<br />
+      <br />
+      BUT, apparantly, (and i cant remember where this first came up) both b and c are <b>calculated</b> no matter what a is. This is because its not actually compiled language, its just text that is examined in and then used as instructions for the program.<br />
+      <br />
+      Calculated does not mean performed, it just means that the code is run through even if it is not used.<br />
+      <br />
+      Atero's comment meant that it doesnt save you any fps because avs still has to run through all of the code.<br />
+      <br />
+      (btw, i dont actually know if this is the truth, i had heard of it vaguely before, and atero seems to have heard it aswell, but i dont know if its true.</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+
+      <p class="post-time small text-muted">4th June 2003 16:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">You can reduce n=0 on SSC's per frame for optimizing.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>

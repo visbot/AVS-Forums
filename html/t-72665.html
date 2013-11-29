@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="forgetfulness, confusion, fantasy, query" />
+
+  <title>forgetfulness, confusion, fantasy, query - AVS Forums</title><!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css" /><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="dropdown pull-right">
+          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            Change style
+            <span class="caret"></span>
+          </button>
+          <ul id="css-select" class="dropdown-menu" role="menu">
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Default</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Bootswatch</li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/amelia/bootstrap.min.css">Amelia</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cerulean/bootstrap.min.css">Cerulean</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css">Cosmo</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cyborg/bootstrap.min.css">Cyborg</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/flatly/bootstrap.min.css">Flatly</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/journal/bootstrap.min.css">Journal</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/readable/bootstrap.min.css">Readable</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/simplex/bootstrap.min.css">Simplex</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css">Slate</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/spacelab/bootstrap.min.css">Spacelab</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css">United</a></li>
+            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css">Yeti</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
+
+      <li><a href="f-85.html">AVS</a></li>
+
+      <li class="active">forgetfulness, confusion, fantasy, query</li>
+    </ol>
+
+    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=72665">forgetfulness, confusion, fantasy, query</a></p><br />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+
+      <p class="post-time small text-muted">21st January 2002 03:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content"><strong>forgetfulness, confusion, fantasy, query</strong><br />
+      I think I found a glitch in AVS, but I can't remember what it was...Anyway, I was wondering why the Dynamic Movement in AVS has to work as a grid? It doesn't make sense, because the Movement function doesn't, and even though you're working with 3 more functions, those other 3 aren't calculating everything per pixel. So basically, in theory all you're adding in the Dynamic Movement is the ability to change variables per frame and beat. So why make it a grid? I also noticed that in the "tiny fullscreen" the movements are gridded. There must be a reason...nah, this is Nullsoft here, right? :D<br />
+      And can a color control be added to AVS? Not like the colorfade/clip, but something like the dynamic movement, where you can change the RGB values the way you want.<br />
+      Lastly, I am depraived of VisFrac. Where can I get it?</p>
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">solamon</span><br /></p>
+
+      <p class="post-time small text-muted">21st January 2002 03:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">From UnConeD:<br /></p>
+
+      <blockquote>
+        * The dynamic movement is a dynamic version of the movement that behaves almost exactly the same except that it's calculated over and over again every frame. While the dynamic movement is much more powerful (it can change every frame), it's also very intensive to calculate. That's why, instead of every pixel, only a limited grid of pixels is calculated. The pixels in between are averaged from the neighbouring gridpoints. If you make very fine-grained dynmovs, you'll start to notice distortions: crank up the grid-size to counter this. More grid-size means slower preset though!
+      </blockquote>As for the RGB idea, I think it's pretty solid. I wonder if something like that could be made into an APE.
+    </div>
+    <hr />
+
+    <div class="post">
+      <p class="post-meta"><span class="post-author text-primary">Tonest@r Deluxe</span><br /></p>
+
+      <p class="post-time small text-muted">21st January 2002 06:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
+
+      <p class="post-content">I can help you with Vis Frac - this one was created by Peter Pawlowski and I found it on his site. Vis Frac creates fractals for you - it is very much worth having. You will find Vis Frac (as well as several other Peter Pawlowski plugins) on his site: <a href="http://www.blorp.com/~peter" target="_blank">http://www.blorp.com/~peter</a><br />
+      <br />
+      If you are unsure the 4P pack has it.<br />
+      Hope this helps.</p>
+    </div>
+    <hr />
+
+    <div class="footer">
+      <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
+    </div>
+  </div><!-- Put JavaScript here -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="../js/scripts.js"></script>
+</body>
+</html>
