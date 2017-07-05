@@ -1,195 +1,129 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="new method of doing 3d rotation" />
-
-  <title>new method of doing 3d rotation - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">new method of doing 3d rotation</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140322">new method of doing 3d rotation</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
-
-      <p class="post-time small text-muted">27th June 2003 18:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>new method of doing 3d rotation</strong><br />
-      As far as I know this hasn't been discovered before. I found a new way to do 3d rotation that runs a little faster than the usual method. I attatched two SSCs, one that uses old method and one that uses new method, and both are the same otherwise i think. n=10000. The new one runs 5 fps faster on my comp than the old one. This should work for DMs as well. This is how it works:<br />
-      <br /></p>
-      <pre>
-<code><br />per Frame:<br /><br />sx=-sin(xa);<br />cxcz=cos(xa)*cos(za);<br />cxsz=cos(xa)*sin(za);<br />cxcy=cos(xa)*cos(ya);<br />cxsy=cos(xa)*sin(ya);<br />sysxczmcysz=sin(ya)*sin(xa)*cos(za)-cos(ya)*sin(za);<br />sysxszpcycz=sin(ya)*sin(xa)*sin(za)+cos(ya)*cos(za);<br />cysxczpsysz=cos(ya)*sin(xa)*cos(za)+sin(xa)*sin(za);<br />cysxszmsycz=cos(ya)*sin(xa)*sin(za)-sin(ya)*cos(za);<br /><br />Per Point:<br /><br />x1=what you want x coord to be;<br />y1=what you want y coord to be;<br />z1=what you want z coord to be;<br />x3=x1*cxcz+y1*cxsz+z1*sx;<br />y3=x1*sysxczmcysz+y1*sysxszpcycz+z1*cxsy;<br />z3=x1*cysxczpsysz+y1*cysxszmsycz+z1*cxcy;<br /><br />    xa is the angle that x is rotated by<br />    ya is the angle that y is rotated by<br />    za is the angle that z is rotated by<br /></code>
-</pre><br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="new method of doing 3d rotation"><title>new method of doing 3d rotation - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">new method of doing 3d rotation</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=140322">new method of doing 3d rotation</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">13373571</span><br></p><p class="post-time small text-muted">27th June 2003 18:03 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>new method of doing 3d rotation</strong><br>As far as I know this hasn't been discovered before. I found a new way to do 3d rotation that runs a little faster than the usual method. I attatched two SSCs, one that uses old method and one that uses new method, and both are the same otherwise i think. n=10000. The new one runs 5 fps faster on my comp than the old one. This should work for DMs as well. This is how it works:<br><br></p><pre>
+<code><br>per Frame:<br><br>sx=-sin(xa);<br>cxcz=cos(xa)*cos(za);<br>cxsz=cos(xa)*sin(za);<br>cxcy=cos(xa)*cos(ya);<br>cxsy=cos(xa)*sin(ya);<br>sysxczmcysz=sin(ya)*sin(xa)*cos(za)-cos(ya)*sin(za);<br>sysxszpcycz=sin(ya)*sin(xa)*sin(za)+cos(ya)*cos(za);<br>cysxczpsysz=cos(ya)*sin(xa)*cos(za)+sin(xa)*sin(za);<br>cysxszmsycz=cos(ya)*sin(xa)*sin(za)-sin(ya)*cos(za);<br><br>Per Point:<br><br>x1=what you want x coord to be;<br>y1=what you want y coord to be;<br>z1=what you want z coord to be;<br>x3=x1*cxcz+y1*cxsz+z1*sx;<br>y3=x1*sysxczmcysz+y1*sysxszpcycz+z1*cxsy;<br>z3=x1*cysxczpsysz+y1*cysxszmsycz+z1*cxcy;<br><br>    xa is the angle that x is rotated by<br>    ya is the angle that y is rotated by<br>    za is the angle that z is rotated by<br></code>
+</pre><br>
+      <br>
       I know it's only a small performance boost, but 3d rotation is used in so many presets that I think it's worthwhile. There may be more ways to optimize this method, but I'm too happy about my neat new method to care right now.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 18:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">afaik that's just a slightly compiled version of the normal rotation matrices w/calculations done in per frame - but i don't like it for two reasons: it's hard to read/understand by eyeballing it, and it's much harder to tweak than regular rotation matrices. good job with it tho, never thought of trying to compile rotation matrices :igor:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">yeah, that's exactly what it is.<br />
-      <br />
-      Look <a href="http://mathworld.wolfram.com/EulerAngles.html" target="_blank">here</a> to see the math.<br />
-      <br />
-      Why would you ever want to tweak rotation matrices? They do what they're supposed to do already.<br />
-      <br />
-      And also, most people couldn't "read/understand by eyeballing" the other way either, so there's no real difference.<br />
-      <br />
+      <p class="post-content">yeah, that's exactly what it is.<br>
+      <br>
+      Look <a href="http://mathworld.wolfram.com/EulerAngles.html" target="_blank">here</a> to see the math.<br>
+      <br>
+      Why would you ever want to tweak rotation matrices? They do what they're supposed to do already.<br>
+      <br>
+      And also, most people couldn't "read/understand by eyeballing" the other way either, so there's no real difference.<br>
+      <br>
       But I guess that nobody cares about my wonderful new method :( :cry:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 18:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Just a slight optimisation<br />
-      <br /></p>
+      <p class="post-content">Just a slight optimisation<br>
+      <br></p>
       <pre>
-<code>per Frame:<br /><br />sx=sin(xa); sy=sin(ya); sz=sin(za);<br />cx=cos(xa); cy=cos(ya); cz=cos(za); sax=-sx;<br />cxcz=cx*cz; cxsz=cx*sa;<br />cxcy=cx*cy; cxsy=cx*sy;<br />sysxczmcysz=sy*sx*cz-cy*sz;<br />sysxszpcycz=sy*sx*sz+cy*cz;<br />cysxczpsysz=cy*sx*cz+sx*sz;<br />cysxszmsycz=cy*sx*sz-sy*cz;<br /><br />Per Point:<br /><br />x1=what you want x coord to be;<br />y1=what you want y coord to be;<br />z1=what you want z coord to be;<br />x3=x1*cxcz+y1*cxsz+z1*sax;<br />y3=x1*sysxczmcysz+y1*sysxszpcycz+z1*cxsy;<br />z3=x1*cysxczpsysz+y1*cysxszmsycz+z1*cxcy;<br /><br />    xa is the angle that x is rotated by<br />    ya is the angle that y is rotated by<br />    za is the angle that z is rotated by</code>
+<code>per Frame:<br><br>sx=sin(xa); sy=sin(ya); sz=sin(za);<br>cx=cos(xa); cy=cos(ya); cz=cos(za); sax=-sx;<br>cxcz=cx*cz; cxsz=cx*sa;<br>cxcy=cx*cy; cxsy=cx*sy;<br>sysxczmcysz=sy*sx*cz-cy*sz;<br>sysxszpcycz=sy*sx*sz+cy*cz;<br>cysxczpsysz=cy*sx*cz+sx*sz;<br>cysxszmsycz=cy*sx*sz-sy*cz;<br><br>Per Point:<br><br>x1=what you want x coord to be;<br>y1=what you want y coord to be;<br>z1=what you want z coord to be;<br>x3=x1*cxcz+y1*cxsz+z1*sax;<br>y3=x1*sysxczmcysz+y1*sysxszpcycz+z1*cxsy;<br>z3=x1*cysxczpsysz+y1*cysxszmsycz+z1*cxcy;<br><br>    xa is the angle that x is rotated by<br>    ya is the angle that y is rotated by<br>    za is the angle that z is rotated by</code>
 </pre>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 18:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yes, I thought of that, but isn't it too many variables for too little improvement? 6 variables used and just 23 sin() or cos() operations less per frame. But waaaiiit a minute...<br />
-      <br /></p>
+      <p class="post-content">Yes, I thought of that, but isn't it too many variables for too little improvement? 6 variables used and just 23 sin() or cos() operations less per frame. But waaaiiit a minute...<br>
+      <br></p>
       <pre>
-<code><br />per Frame:<br /><br />sx=sin(xa); sy=sin(ya); sz=sin(za);<br />cx=cos(xa); cy=cos(ya); cz=cos(za);<br />sysxczmcysz=sy*sx*cz-cy*sz;<br />sysxszpcycz=sy*sx*sz+cy*cz;<br />cysxczpsysz=cy*sx*cz+sx*sz;<br />cxsxszmsycz=cy*sx*sz-sy*cz;<br />cz=cx*cz; <br />sz=cx*sz;<br />cy=cx*cy; <br />cx=cx*sy;<br />sx=-sx;<br /><br />Per Point:<br /><br />x1=what you want x coord to be;<br />y1=what you want y coord to be;<br />z3=what you want z coord to be;<br />x3=x1*cz+y1*sz+z3*sx;<br />y3=x1*sysxczmcysz+y1*sysxszpcycz+z3*cx;<br />z3=x1*cysxczpsysz+y1*cysxszmsycz+z3*cy;<br /><br />    xa is the angle that x is rotated by<br />    ya is the angle that y is rotated by<br />    za is the angle that z is rotated by<br /></code>
-</pre><br />
-      <br />
-      Now there's the same number of variables as we began with. We make a great team raz.<br />
-      <br />
+<code><br>per Frame:<br><br>sx=sin(xa); sy=sin(ya); sz=sin(za);<br>cx=cos(xa); cy=cos(ya); cz=cos(za);<br>sysxczmcysz=sy*sx*cz-cy*sz;<br>sysxszpcycz=sy*sx*sz+cy*cz;<br>cysxczpsysz=cy*sx*cz+sx*sz;<br>cxsxszmsycz=cy*sx*sz-sy*cz;<br>cz=cx*cz; <br>sz=cx*sz;<br>cy=cx*cy; <br>cx=cx*sy;<br>sx=-sx;<br><br>Per Point:<br><br>x1=what you want x coord to be;<br>y1=what you want y coord to be;<br>z3=what you want z coord to be;<br>x3=x1*cz+y1*sz+z3*sx;<br>y3=x1*sysxczmcysz+y1*sysxszpcycz+z3*cx;<br>z3=x1*cysxczpsysz+y1*cysxszmsycz+z3*cy;<br><br>    xa is the angle that x is rotated by<br>    ya is the angle that y is rotated by<br>    za is the angle that z is rotated by<br></code>
+</pre><br>
+      <br>
+      Now there's the same number of variables as we began with. We make a great team raz.<br>
+      <br>
       edit: one small mistake...
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">skupers</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">skupers</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 19:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Very interesting technique, especially after Raz's tweaks.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 19:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Too bad we don't have the AVS source code. Then we could just replace the sin and cos functions with matrices that, although less accurate, would be much quicker. It wouldn't be difficult either. Just something like this:<br />
-      <br />
-      float sin[360];<br />
-      float cos[360];<br />
-      <br />
-      for(int x=0;x&lt;360;x++)<br />
-      {<br />
-      sin[x]=sin(x);<br />
-      cos[x]=cos(x);<br />
-      }<br />
-      <br />
+      <p class="post-content">Too bad we don't have the AVS source code. Then we could just replace the sin and cos functions with matrices that, although less accurate, would be much quicker. It wouldn't be difficult either. Just something like this:<br>
+      <br>
+      float sin[360];<br>
+      float cos[360];<br>
+      <br>
+      for(int x=0;x&lt;360;x++)<br>
+      {<br>
+      sin[x]=sin(x);<br>
+      cos[x]=cos(x);<br>
+      }<br>
+      <br>
       and then when you say sin(1) it would actually multiply 1 by pi/180 to convert radians to degrees and then convert to an int an use that number as the matrix index. This would be much much quicker than the actual sin() and cos() are. Especially when there are 23 sin() and cos() calls per frame in an optimized version of that.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">13373571</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">13373571</span><br></p>
 
       <p class="post-time small text-muted">27th June 2003 19:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">lol... take a look at <a href="http://mathworld.wolfram.com/EulerParameters.html" target="_blank">this</a>... I do all that work programming the new method, and now I find that there's another, newer method that is slightly more optimized :p<br />
-      <br />
-      Here it is:<br />
-      <br /></p>
+      <p class="post-content">lol... take a look at <a href="http://mathworld.wolfram.com/EulerParameters.html" target="_blank">this</a>... I do all that work programming the new method, and now I find that there's another, newer method that is slightly more optimized :p<br>
+      <br>
+      Here it is:<br>
+      <br></p>
       <pre>
-<code><br />Frame:<br />xa=xa+cxa;<br />ya=ya+cya;<br />za=za+cza;<br />cx=cos(xa*.5);<br />zapya=(za+ya)*.5;<br />e0=cos(zapya)*cx;<br />e3=sin(zapya)*cx;<br />cx=sin(xa*.5);<br />zapya=(za-ya)*.5;<br />e1=sin(zapya)*cx;<br />e2=cos(zapya)*cx;<br />zoom=e0*e0;<br />cx=e1*e1;<br />zapya=e2*e2;<br />e3sqr=e3*e3;<br />a11=zoom+cx-zapya-e3sqr;<br />a22=zoom-cx+zapya-e3sqr;<br />e3sqr=zoom-cx-zapya+e3sqr;<br />zoom=2*e1*e2;<br />cx=2*e0*e3;<br />zapya=2*e1*e3;<br />a12=zoom+cx;<br />a21=zoom-cx;<br />zoom=2*e0*e2;<br />a13=zapya-zoom;<br />zapya=zapya+zoom;<br />zoom=2*e2*e3;<br />cx=2*e0*e1;<br />a23=zoom+cx;<br />zoom=zoom-cx;<br /><br />Point:<br /><br />cx=x coord;<br />y1=y coord;<br />z3=z coord;<br />x3=cx*a11+y1*a12+z3*a13;<br />y3=cx*a21+y1*a22+z3*a23;<br />z3=cx*zapya+y1*zoom+z3*e3sqr;<br /></code>
-</pre><br />
-      <br />
-      Unfortunately, it actually turned out a tiny bit slower than the method posted earlier, and it's a lot more complicated. But if anyone can find more ways to optimize though then it might end up being better.<br />
-      <br />
+<code><br>Frame:<br>xa=xa+cxa;<br>ya=ya+cya;<br>za=za+cza;<br>cx=cos(xa*.5);<br>zapya=(za+ya)*.5;<br>e0=cos(zapya)*cx;<br>e3=sin(zapya)*cx;<br>cx=sin(xa*.5);<br>zapya=(za-ya)*.5;<br>e1=sin(zapya)*cx;<br>e2=cos(zapya)*cx;<br>zoom=e0*e0;<br>cx=e1*e1;<br>zapya=e2*e2;<br>e3sqr=e3*e3;<br>a11=zoom+cx-zapya-e3sqr;<br>a22=zoom-cx+zapya-e3sqr;<br>e3sqr=zoom-cx-zapya+e3sqr;<br>zoom=2*e1*e2;<br>cx=2*e0*e3;<br>zapya=2*e1*e3;<br>a12=zoom+cx;<br>a21=zoom-cx;<br>zoom=2*e0*e2;<br>a13=zapya-zoom;<br>zapya=zapya+zoom;<br>zoom=2*e2*e3;<br>cx=2*e0*e1;<br>a23=zoom+cx;<br>zoom=zoom-cx;<br><br>Point:<br><br>cx=x coord;<br>y1=y coord;<br>z3=z coord;<br>x3=cx*a11+y1*a12+z3*a13;<br>y3=cx*a21+y1*a22+z3*a23;<br>z3=cx*zapya+y1*zoom+z3*e3sqr;<br></code>
+</pre><br>
+      <br>
+      Unfortunately, it actually turned out a tiny bit slower than the method posted earlier, and it's a lot more complicated. But if anyone can find more ways to optimize though then it might end up being better.<br>
+      <br>
       anubis: I think it would be better to keep the real sin and cos and then provide sin2 and cos2 that do what you say. Then people could pick and choose weather they want accuracy or speed. But this belongs in wishlist, not in this topic. And there aren't 26 sin and cos calls in the optimized version, there's 26 less than in the original... I didn't know that sin and cos were big hits on the performance.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">28th June 2003 00:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">sin and cos both take a lot of processing power to compute. I'm not sure exactly how much that optimization would work, but I know it does help a good bit as I've seen it done in many open-source video games.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

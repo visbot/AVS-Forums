@@ -1,110 +1,43 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS Wish" />
-
-  <title>AVS Wish - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-138.html">AVS Wishlist</a></li>
-
-      <li class="active">AVS Wish</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106489">AVS Wish</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
-
-      <p class="post-time small text-muted">22nd September 2002 15:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Structure Info Request</strong><br />
-      My suggestion for the next version of AVS is for Nullsoft to release data structure information for the .avs format. I'm currently trying to decypher the format (Using a String/Integer Dumper proggie I made) so I can make a, umm, better preset builder :)<br />
-      <br />
-      Here's my current progress:<br /></p>
-      <pre>
-<code><br />[] Byte Value, () KeyID, "" String, {} Object<br />Most numbers are of d-word long integer type.<br /><br />**********************&lt;Generics&gt;**********************<br />[0] = Null Character, 0<br />[10] = New Line<br />[36] = "$", Seperator<br /><br />**********************&lt;Headers&gt;**********************<br />Main Header = "Nullsoft AVS Preset 0.2" [26] [ClearEveryFrame]<br />EL Header = (-1) [254][255][255][255]<br />Comment Header = (21,28,24) [21][0][0][0]-[28][0][0][0]-[24][0][0][0]<br /><br />All Objects Closed by Null [0] (Except EL, for some odd reason)<br /><br />**********************&lt;Input Blend Modes&gt;**********************<br />Ignore = 0<br />Replace = 1<br />50/50 = 2<br />Maximum = 3<br />Additive = 4<br />Subtractive 1 (Dst-Src) = 5<br />Subtractive 2 (Src-Dst) = 6<br />Every Other Line = 6<br />Every Other Pixel = 8<br />XOR = 9<br />Adjustable = 10<br />Multiply = 11<br />Buffer Blend = 12<br /><br />**********************&lt;Output Blend Modes&gt;**********************<br />Replace = 0<br />Ignore = 1<br />Maximum = 2<br />50/50 = 3<br />Subtractive 1 (Dst-Src) = 4<br />Additive = 5<br />Every Other Line = 6<br />Subtractive 2 (Src-Dst) = 7<br />XOR = 8<br />Every Other Pixel = 9<br />Multiply = 10<br />Adjustable = 11<br /><br />Buffer Blend = 13<br /><br />**********************&lt;Structure&gt;**********************<br />{ Main Header<br /><br />        { EL Header<br />                [37+35*NumberOfNonELObjects+8*NumberOfSubELs+TotalOfSubEL,LongInt] - Still not quite sure on the formula for this one, seems very complex.<br />                [(NOT Enabled)*2+ClearEveryFrame+128][(NOT Enabled)*2+ClearEveryFrame][InputBlend][OutputBlend]<br />                [36]<br />                [InputAdjustBlend,LongInt]<br />                [OutputAdjustBlend,LongInt]<br />                [InputBufferNumber-1,LongInt]<br />                [OutputBufferNumber-1,LongInt]<br />                [InputBufferInvert,LongInt]<br />                [OutputBufferInvert,LongInt]<br />                [EnableOnBeat,LongInt]<br />                [OnBeatFrames,LongInt]<br />        } *THERE'S NO CLOSE!*<br /><br />        { Comment Header<br />                Comment Text - "Line 1" [10] "Line 2" [10] "Line 3"<br />        } Close<br /><br />} Close<br /></code>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AVS Wish"><title>AVS Wish - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-138.html">AVS Wishlist</a></li><li class="active">AVS Wish</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=106489">AVS Wish</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p><p class="post-time small text-muted">22nd September 2002 15:33 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Structure Info Request</strong><br>My suggestion for the next version of AVS is for Nullsoft to release data structure information for the .avs format. I'm currently trying to decypher the format (Using a String/Integer Dumper proggie I made) so I can make a, umm, better preset builder :)<br><br>Here's my current progress:<br></p><pre>
+<code><br>[] Byte Value, () KeyID, "" String, {} Object<br>Most numbers are of d-word long integer type.<br><br>**********************&lt;Generics&gt;**********************<br>[0] = Null Character, 0<br>[10] = New Line<br>[36] = "$", Seperator<br><br>**********************&lt;Headers&gt;**********************<br>Main Header = "Nullsoft AVS Preset 0.2" [26] [ClearEveryFrame]<br>EL Header = (-1) [254][255][255][255]<br>Comment Header = (21,28,24) [21][0][0][0]-[28][0][0][0]-[24][0][0][0]<br><br>All Objects Closed by Null [0] (Except EL, for some odd reason)<br><br>**********************&lt;Input Blend Modes&gt;**********************<br>Ignore = 0<br>Replace = 1<br>50/50 = 2<br>Maximum = 3<br>Additive = 4<br>Subtractive 1 (Dst-Src) = 5<br>Subtractive 2 (Src-Dst) = 6<br>Every Other Line = 6<br>Every Other Pixel = 8<br>XOR = 9<br>Adjustable = 10<br>Multiply = 11<br>Buffer Blend = 12<br><br>**********************&lt;Output Blend Modes&gt;**********************<br>Replace = 0<br>Ignore = 1<br>Maximum = 2<br>50/50 = 3<br>Subtractive 1 (Dst-Src) = 4<br>Additive = 5<br>Every Other Line = 6<br>Subtractive 2 (Src-Dst) = 7<br>XOR = 8<br>Every Other Pixel = 9<br>Multiply = 10<br>Adjustable = 11<br><br>Buffer Blend = 13<br><br>**********************&lt;Structure&gt;**********************<br>{ Main Header<br><br>        { EL Header<br>                [37+35*NumberOfNonELObjects+8*NumberOfSubELs+TotalOfSubEL,LongInt] - Still not quite sure on the formula for this one, seems very complex.<br>                [(NOT Enabled)*2+ClearEveryFrame+128][(NOT Enabled)*2+ClearEveryFrame][InputBlend][OutputBlend]<br>                [36]<br>                [InputAdjustBlend,LongInt]<br>                [OutputAdjustBlend,LongInt]<br>                [InputBufferNumber-1,LongInt]<br>                [OutputBufferNumber-1,LongInt]<br>                [InputBufferInvert,LongInt]<br>                [OutputBufferInvert,LongInt]<br>                [EnableOnBeat,LongInt]<br>                [OnBeatFrames,LongInt]<br>        } *THERE'S NO CLOSE!*<br><br>        { Comment Header<br>                Comment Text - "Line 1" [10] "Line 2" [10] "Line 3"<br>        } Close<br><br>} Close<br></code>
 </pre>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p>
 
       <p class="post-time small text-muted">22nd September 2002 19:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Latest update, contains structure info for:<br />
-      <br />
-      Main<br />
-      Effect List<br />
-      Misc/Set Render Mode<br />
-      Misc/Comment<br />
-      Misc/Buffer Save<br />
-      Misc/Custom BPM<br />
-      Render/SuperScope<br />
-      Trans/Dynamic Movement<br />
-      <br />
+      <p class="post-content">Latest update, contains structure info for:<br>
+      <br>
+      Main<br>
+      Effect List<br>
+      Misc/Set Render Mode<br>
+      Misc/Comment<br>
+      Misc/Buffer Save<br>
+      Misc/Custom BPM<br>
+      Render/SuperScope<br>
+      Trans/Dynamic Movement<br>
+      <br>
       Stay tuned, more to come!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">23rd September 2002 17:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I'll collect the info on my APEs if you wish, but I suppose you can simply use their configuration dialog.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

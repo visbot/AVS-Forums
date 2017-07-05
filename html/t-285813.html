@@ -1,184 +1,85 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="code bug?" />
-
-  <title>code bug? - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">code bug?</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=285813">code bug?</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
-
-      <p class="post-time small text-muted">28th January 2008 13:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>code bug?</strong><br />
-      i've run into a problem that causes winamp to crash 100% of the time.<br />
-      it's a simple enough texer and as far as i can see there's nothing wrong with the code so i'm hoping one of you senior codemonkeys can tell me what the hell's going on.<br />
-      here it is;<br />
-      <br />
-      init/<br />
-      n=1;<br />
-      <br />
-      frame/<br />
-      nx=w/ix;<br />
-      ny=h/iy;<br />
-      xsc=2/nx;<br />
-      ysc=2/ny;<br />
-      x1=rand(nx)*xsc-1;<br />
-      y1=rand(ny)*ysc-1;<br />
-      <br />
-      /point<br />
-      x=x1;<br />
-      y=y1;<br />
-      <br />
-      basically, it divides the screen height/width by the texer height/width to find the number of particles it can fit on screen dynamically. for some reason though, the division process causes winamp to crash. the strange thing is, i had it working at one stage.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br /></p>
-
-      <p class="post-time small text-muted">28th January 2008 16:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">that is dangerous stuff! o_O<br />
-      <br />
-      but if i remeber correctly the image width/height ist iw/ih respectively, not ix/iy. let me check that...<br />
-      <br />
-      yup, solves it :)<br />
-      seems division by 0 is evil anywhere ;)<br />
-      <br /></p>
-      <pre>
-<code>/frame/<br />nx=w/iw;<br />ny=h/ih;<br />xsc=2/nx;<br />ysc=2/ny;<br />x1=rand(nx)*xsc-1;<br />y1=rand(ny)*ysc-1;</code>
-</pre><br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="code bug?"><title>code bug? - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">code bug?</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=285813">code bug?</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p><p class="post-time small text-muted">28th January 2008 13:40 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>code bug?</strong><br>i've run into a problem that causes winamp to crash 100% of the time.<br>it's a simple enough texer and as far as i can see there's nothing wrong with the code so i'm hoping one of you senior codemonkeys can tell me what the hell's going on.<br>here it is;<br><br>init/<br>n=1;<br><br>frame/<br>nx=w/ix;<br>ny=h/iy;<br>xsc=2/nx;<br>ysc=2/ny;<br>x1=rand(nx)*xsc-1;<br>y1=rand(ny)*ysc-1;<br><br>/point<br>x=x1;<br>y=y1;<br><br>basically, it divides the screen height/width by the texer height/width to find the number of particles it can fit on screen dynamically. for some reason though, the division process causes winamp to crash. the strange thing is, i had it working at one stage.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Grandchild</span><br></p><p class="post-time small text-muted">28th January 2008 16:12 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">that is dangerous stuff! o_O<br><br>but if i remeber correctly the image width/height ist iw/ih respectively, not ix/iy. let me check that...<br><br>yup, solves it :)<br>seems division by 0 is evil anywhere ;)<br><br></p><pre>
+<code>/frame/<br>nx=w/iw;<br>ny=h/ih;<br>xsc=2/nx;<br>ysc=2/ny;<br>x1=rand(nx)*xsc-1;<br>y1=rand(ny)*ysc-1;</code>
+</pre><br>
+      <br>
       gc
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">28th January 2008 16:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">/me throws in some bananas</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">29th January 2008 02:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">cheers gc.<br />
+      <p class="post-content">cheers gc.<br>
       it's so frustrating how much one letter can fuck things up -_-</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">29th January 2008 12:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">re-written and refined.<br />
-      i'm sure someone else can find it useful.<br />
-      and also a quick disco-ball preset i made with it.<br />
+      <p class="post-content">re-written and refined.<br>
+      i'm sure someone else can find it useful.<br>
+      and also a quick disco-ball preset i made with it.<br>
       comments?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br></p>
 
       <p class="post-time small text-muted">30th January 2008 01:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">first one is somewhat nice, don't like the disco ball too much though..<br />
-      but here's mine :)<br />
-      movement largely drawn on fsk's newer stuff [thanks heaps for these jan! :D]<br />
-      disable the convo-EL if you like...<br />
-      <br />
+      <p class="post-content">first one is somewhat nice, don't like the disco ball too much though..<br>
+      but here's mine :)<br>
+      movement largely drawn on fsk's newer stuff [thanks heaps for these jan! :D]<br>
+      disable the convo-EL if you like...<br>
+      <br>
       who dares an improvement, huh?? come on...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">30th January 2008 02:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">cheers gc. the first one was not really a preset, more just a "here's this scope i wrote" thing.<br />
-      nice remix but the movement kinda takes away from the whole perfectly shaped grid look imo.<br />
+      <p class="post-content">cheers gc. the first one was not really a preset, more just a "here's this scope i wrote" thing.<br>
+      nice remix but the movement kinda takes away from the whole perfectly shaped grid look imo.<br>
       one of my submissions for wfc7 uses the grid for a background so keep an eye out for it.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">11th February 2008 13:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">just to explain, division by zero does whats called "throwing a floating point exception". the cpu handles it in one of two ways depending on how it is set... it either carries on with a #NAN or #INF value and silently ignores it, or it catches the exception and "gracefully" stops execution.<br />
-      <br />
-      I've yet to see a gracefully caught exception... probably because its so graceful I don't see it. :)<br />
-      <br />
+      <p class="post-content">just to explain, division by zero does whats called "throwing a floating point exception". the cpu handles it in one of two ways depending on how it is set... it either carries on with a #NAN or #INF value and silently ignores it, or it catches the exception and "gracefully" stops execution.<br>
+      <br>
+      I've yet to see a gracefully caught exception... probably because its so graceful I don't see it. :)<br>
+      <br>
       When you get a crash like this, look up the exception code (you can get it from the error box), e.g. 0xC0000005 is an invalid memory read/write (the most common one). Looking these up can actually help with debugging. e.g. I would assume you got a 0xC000008E, which if you google, pops up with some web pages about floating point divide by zero.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

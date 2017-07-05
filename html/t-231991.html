@@ -1,225 +1,145 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Argh!!!" />
-
-  <title>Argh!!! - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Argh!!!</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=231991">Argh!!!</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
-
-      <p class="post-time small text-muted">26th November 2005 21:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Argh!!!</strong><br />
-      This wacky zoom out effect, I see this all the time, and I can't figure out what makes the effect. Its so cool, and I have at least two deas for it.<br />
-      <br />
-      P.S. Thanks to Deskmod...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br /></p>
-
-      <p class="post-time small text-muted">26th November 2005 22:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Oooh. It's simple, but cool.<br />
-      <br />
-      It's obviously the Trans / Dynamic Movement that makes that preset. Try turning on "Wrap" for a different effect!<br />
-      <br />
-      Anyway, let's take a look at some of the DM code and see if I can help you figure out how it works:</p>
-      <pre>
-<code>x=(x+xt) ;<br />y=(y+yt)*asp2 ;<br />d=sqrt(sqr(x)+sqr(y)) ; r=atan2(x,y) ;<br />d=d*z ; r=r+rt ;<br />x=sin(r)*d-xt ; y=cos(r)*d*asp1-yt</code>
-</pre>Most of the magic is in the fourth line, which multiplies "d" by a constant (z=1.1) to create the zoom effect, and adds a random value "rt" to "r" to create the rotation.<br />
-      <br />
-      The third line is what gets the "d" and "r" values from the "x" and "y" coordinates. The fifth line converts the modified "d" and "r" values (also known as "Polar coordinates") back into the rectangular coordinates "x" and "y".<br />
-      <br />
-      Now, you may be wondering why "xt" and "yt" are added to "x" and "y" at the beginning of the code, and then subtracted at the very end. This serves to change the center of rotation.<br />
-      <br />
-      The multiplication by "asp1" and "asp2" are a form of aspect ratio correction. This prevents the rotation from skewing the image a little bit when your visualization window isn't perfectly square.<br />
-      <br />
-      The "Frame" code basically causes "xt", "yt" and "rt" to gently slide towards the random values set in the on-beat code. This is also where the "z" constant is set for some reason.<br />
-      <br />
-      Hope this helps.<br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Argh!!!"><title>Argh!!! - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">Argh!!!</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=231991">Argh!!!</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p><p class="post-time small text-muted">26th November 2005 21:28 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Argh!!!</strong><br>This wacky zoom out effect, I see this all the time, and I can't figure out what makes the effect. Its so cool, and I have at least two deas for it.<br><br>P.S. Thanks to Deskmod...</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br></p><p class="post-time small text-muted">26th November 2005 22:53 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Oooh. It's simple, but cool.<br><br>It's obviously the Trans / Dynamic Movement that makes that preset. Try turning on "Wrap" for a different effect!<br><br>Anyway, let's take a look at some of the DM code and see if I can help you figure out how it works:</p><pre>
+<code>x=(x+xt) ;<br>y=(y+yt)*asp2 ;<br>d=sqrt(sqr(x)+sqr(y)) ; r=atan2(x,y) ;<br>d=d*z ; r=r+rt ;<br>x=sin(r)*d-xt ; y=cos(r)*d*asp1-yt</code>
+</pre>Most of the magic is in the fourth line, which multiplies "d" by a constant (z=1.1) to create the zoom effect, and adds a random value "rt" to "r" to create the rotation.<br>
+      <br>
+      The third line is what gets the "d" and "r" values from the "x" and "y" coordinates. The fifth line converts the modified "d" and "r" values (also known as "Polar coordinates") back into the rectangular coordinates "x" and "y".<br>
+      <br>
+      Now, you may be wondering why "xt" and "yt" are added to "x" and "y" at the beginning of the code, and then subtracted at the very end. This serves to change the center of rotation.<br>
+      <br>
+      The multiplication by "asp1" and "asp2" are a form of aspect ratio correction. This prevents the rotation from skewing the image a little bit when your visualization window isn't perfectly square.<br>
+      <br>
+      The "Frame" code basically causes "xt", "yt" and "rt" to gently slide towards the random values set in the on-beat code. This is also where the "z" constant is set for some reason.<br>
+      <br>
+      Hope this helps.<br>
+      <br>
       By the way, I dare you to try adding a Trans / Mirror right after the DM. Make it a four-way mirror (top to bottom and left to right). Oooooh, wacky.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 00:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>Re: Argh!!!</strong><br /></p>
+      <p class="post-content"><strong>Re: Argh!!!</strong><br></p>
 
       <blockquote>
-        <i>Originally posted by JFASI</i><br />
+        <i>Originally posted by JFASI</i><br>
         <b>I can't figure out what makes the effect</b>
-      </blockquote>Do you understand how Movement/DM work? This is a 'textbook' example of what they are for. Try expermenting with them a bit more and you might be able to come up with some similar effects from scratch.<br />
-      <br />
+      </blockquote>Do you understand how Movement/DM work? This is a 'textbook' example of what they are for. Try expermenting with them a bit more and you might be able to come up with some similar effects from scratch.<br>
+      <br>
       Btw StevenRoy, nice description of how the code works.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">eheiney</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">eheiney</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 01:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Hehe, this is my favorite type of dm to work with. My latest and greatest work with it being "The Convicts" which was released in WFC3.<br />
-      <br />
-      JFASI, let this one fuck with your head for a while. Try and figure out why it's so strange, not just observing the code, but why does the code make it look that way? Ignore the black stuff that appears, and if you're in for a real trip, turn on wrap. :D<br />
-      <br />
+      <p class="post-content">Hehe, this is my favorite type of dm to work with. My latest and greatest work with it being "The Convicts" which was released in WFC3.<br>
+      <br>
+      JFASI, let this one fuck with your head for a while. Try and figure out why it's so strange, not just observing the code, but why does the code make it look that way? Ignore the black stuff that appears, and if you're in for a real trip, turn on wrap. :D<br>
+      <br>
       edit: updated preset slightly</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 09:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Wrap are kool for these whacky preset, JFASI.<br />
-      <br />
+      <p class="post-content">Wrap are kool for these whacky preset, JFASI.<br>
+      <br>
       <font size="3">who voting for wrap say: 'LOL'</font> :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 12:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">dASn00b is cool, i really like him.<br />
-      <br />
-      For more dASn00b goodness, go to <a href="http://dasn00b.deviantart.com/" target="_blank">http://dasn00b.deviantart.com/</a><br />
-      <br />
-      [edit]Oh and stevenroy, maybe the author had in mind to make the z variable, you know variable :p But thought it was a bad idea or simply forgot about it.<br />
-      <br />
+      <p class="post-content">dASn00b is cool, i really like him.<br>
+      <br>
+      For more dASn00b goodness, go to <a href="http://dasn00b.deviantart.com/" target="_blank">http://dasn00b.deviantart.com/</a><br>
+      <br>
+      [edit]Oh and stevenroy, maybe the author had in mind to make the z variable, you know variable :p But thought it was a bad idea or simply forgot about it.<br>
+      <br>
       Just taking a wild guess.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 18:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I'm still kinda stumped why sometimes the DM gives a "barber's mirrors" effect, and sometimes just zooms out a tad. This all lies in the z variable, I know, but sometimes, even if I turn off clear every frame and everything, It still doesn't give that effect. It might be somewhere outside the DM, but I still can't find it...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UIUC85</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 19:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Well the reason it does the tunnel effect is due to feedback. Basically you're doing the zoom out over and over and over again on the same image. If it's just zooming then odds are you need to turn of any sort of clearing so as not to disrupt the image from feeding back into the DM again.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">27th November 2005 23:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Hmmm....<br />
-      <br />
-      But how does one initiate such...a...feedback...loop.....<br />
-      <br />
-      BUFFER SAVE!!!<br />
-      <br />
+      <p class="post-content">Hmmm....<br>
+      <br>
+      But how does one initiate such...a...feedback...loop.....<br>
+      <br>
+      BUFFER SAVE!!!<br>
+      <br>
       No? Didn't think so...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Grandchild</span><br></p>
 
       <p class="post-time small text-muted">28th November 2005 03:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Buffer Save is an idea but it is made simpler [and thus faster!] in this case.<br />
-      the "main" component says: "clear screen" y or n. if disabled, avs will render the new image directly on top of the old one, thus resulting in processing the Dynamic Movement over and over and the SSC rendering a new frame on top of the resulting image each time again.<br />
-      Disabling clear every frame results, of course, in a black screen each time a new frame processing is started.<br />
-      <br />
+      <p class="post-content">Buffer Save is an idea but it is made simpler [and thus faster!] in this case.<br>
+      the "main" component says: "clear screen" y or n. if disabled, avs will render the new image directly on top of the old one, thus resulting in processing the Dynamic Movement over and over and the SSC rendering a new frame on top of the resulting image each time again.<br>
+      Disabling clear every frame results, of course, in a black screen each time a new frame processing is started.<br>
+      <br>
       GC</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">28th November 2005 10:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Nonetheless, buffer save can be useful since you can change the source of the DM from current to Buffer 1 for instance, and then use the alpha blending to do some leet stuff :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">28th November 2005 22:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Exactly. This is a start because I made a preset that would have worked in theory. It did, but also drop the FPS to about 10... Not good at all...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

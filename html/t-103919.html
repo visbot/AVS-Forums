@@ -1,138 +1,23 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="could you help me out whith this scope" />
-
-  <title>could you help me out whith this scope - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">could you help me out whith this scope</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=103919">could you help me out whith this scope</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
-
-      <p class="post-time small text-muted">6th September 2002 12:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>could you help me out whith this scope</strong><br />
-      This was an experiment on making 3D objects whith coordinates off all points being known. I thought i'll make a simple piramide first for test.<br />
-      This is how it schould work:<br />
-      whith points being:<br />
-      A(0,0,0);<br />
-      B(1,0,0);<br />
-      C(0.5,0,sqrt(3)/2);<br />
-      D(0.5,sqrt(6)/3,sqrt(3)/6);<br />
-      to drow a piramid lines schould go:<br />
-      A-&gt;B-&gt;C-&gt;A-&gt;D-&gt;B-&gt;C-&gt;D<br />
-      So I made x1,y1 and z1 do this for each of 8 values of i the rest is just 3D-&gt;2D code.<br />
-      The problem is it doesnt work.<br />
-      Could someone help me out.<br />
-      init:<br />
-      n=8;sp=0.1<br />
-      on beat:<br />
-      tx=rand(201)/100-1;ty=rand(201)/100-1;tz=rand(201)/100-1;<br />
-      per frame :<br />
-      kx=kx+tx*sp;ky=ky+ty*sp;kz=kz+tz*sp; sx=sin(kx);<br />
-      sy=sin(ky);sz=sin(kz);<br />
-      cx=cos(kx);cy=cos(ky);cz=cos(kz);<br />
-      per point:<br />
-      i=i*8+1;<br />
-      x1=equal(i,1)*0+equal(i,2)*1+equal(i,3)/2+equal(i,4)*0+equal(i,5)/2+equal(i,6)*1+equal(i,7)/2+equal(i,8)/2;<br />
-      y1=equal(i,1)*0+equal(i,2)*0+equal(i,3)*0+equal(i,4)*0+equal(i,5)*sqrt(6)/3+equal(i,6)*0+equal(i,7)*0+equal(i,8)*sqrt(6)/3;<br />
-      z1=equal(i,1)*0+equal(i,2)*0+equal(i,3)*sqrt(3)/2+equal(i,4)*0+equal(i,5)*sqrt(3)/6+equal(i,6)*0+equal(i,7)*sqrt(3)/2+equal(i,8)*sqrt(3)/6;<br />
-      x1=x1*2-1;y1=y1*2-1;z1=z1*2-1;<br />
-      x2=x1*cz-y1*sz;y1=x1*sz+y1*cz;<br />
-      y3=y2*cx-z1*sx;z3=y2*sx+z1*cx;<br />
-      x=x2*cy-z3*sy;y=x2*sy+z3*cy;</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
-
-      <p class="post-time small text-muted">8th September 2002 05:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">I think a cube would be easier to make. All you do is make a square and extrude it. It's probably also easier to make you 3D shape with an equation thsn manually setting the points like you did.<br />
-      <br />
-      Your rotation stuff looks good, but I don't think you can change the value of i like you do in the beginning of the per point section..</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
-
-      <p class="post-time small text-muted">20th September 2002 06:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>solution</strong><br />
-      here is some code to draw a pentagon though specific points (its taken from one of my presets) you can modify this scope quite easily to make a pyramid. (i've highlighted the most important bits).<br />
-      <br /></p>
-      <pre>
-<code><br />init: <br /><b>n=6</b>;phi=(sqrt(5)+1)*0.5;iphi=phi-1;rx=0;ry=0;rz=0;<br /><br />on beat:<br />t=if(equal(move,1),if(equal(rand(12),1),0,t),t);dt=if(equal(move,1),(rand(50)+25)/500,dt);<br /><br />frame:<br />t=t+dt;move=if(below(t,3.141593),1+0.5*sin(t),1);rx=rx+0.01;ry=ry-0.01;<b>q=-1</b>;crz=cos(rz);srz=sin(rz);cry=cos(ry);sry=sin(ry);crx=cos(rx);srx=sin(rx)<br /><br />pixel: <br /><b>q=q+1;<br /><br />x1=if(equal(q,0),1,x1);<br />y1=if(equal(q,0),1,y1);<br />z1=if(equal(q,0),1,z1);<br /><br />x1=if(equal(q,1),phi,x1);<br />y1=if(equal(q,1),0,y1);<br />z1=if(equal(q,1),iphi,z1);<br /><br />x1=if(equal(q,2),1,x1);<br />y1=if(equal(q,2),-1,y1);<br />z1=if(equal(q,2),1,z1);<br /><br />x1=if(equal(q,3),0,x1);<br />y1=if(equal(q,3),-iphi,y1);<br />z1=if(equal(q,3),phi,z1);<br /><br />x1=if(equal(q,4),0,x1);<br />y1=if(equal(q,4),iphi,y1);<br />z1=if(equal(q,4),phi,z1);<br /><br />x1=if(equal(q,5),1,x1);<br />y1=if(equal(q,5),1,y1);<br />z1=if(equal(q,5),1,z1);<br /><br /></b><br /><br />x1=x1*move;<br />y1=y1*move;<br />z1=z1*move;<br /><br />x2=x1*crz-y1*srz;<br />y2=x1*srz+y1*crz;<br />z2=z1;<br /><br />x3=x2*cry+z2*sry;<br />y3=y2;<br />z3=-x2*sry+z2*cry;<br /><br />x1=x3;<br />y1=y3*crx-z3*srx;<br />z1=y3*srx+z3*crx;<br /><br />x=x1/(3+z1);<br />y=y1/(3+z1);<br /><br />x=x*h/w;<br /></code>
-</pre><br />
-      <br />
-      i notice that your pyramid is infact a tetrahedron. these presets might interest you too (you can draw a solid tetrahedron if you adapt the code from the last one).<br />
-      <br />
-      <a href="http://www.deviantart.com/deviation/708523" target="_blank">http://www.deviantart.com/deviation/708523</a><br />
-      <br />
-      <a href="http://www.deviantart.com/deviation/719927" target="_blank">http://www.deviantart.com/deviation/719927</a><br />
-      <br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="could you help me out whith this scope"><title>could you help me out whith this scope - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">could you help me out whith this scope</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=103919">could you help me out whith this scope</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">nixa</span><br></p><p class="post-time small text-muted">6th September 2002 12:29 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>could you help me out whith this scope</strong><br>This was an experiment on making 3D objects whith coordinates off all points being known. I thought i'll make a simple piramide first for test.<br>This is how it schould work:<br>whith points being:<br>A(0,0,0);<br>B(1,0,0);<br>C(0.5,0,sqrt(3)/2);<br>D(0.5,sqrt(6)/3,sqrt(3)/6);<br>to drow a piramid lines schould go:<br>A-&gt;B-&gt;C-&gt;A-&gt;D-&gt;B-&gt;C-&gt;D<br>So I made x1,y1 and z1 do this for each of 8 values of i the rest is just 3D-&gt;2D code.<br>The problem is it doesnt work.<br>Could someone help me out.<br>init:<br>n=8;sp=0.1<br>on beat:<br>tx=rand(201)/100-1;ty=rand(201)/100-1;tz=rand(201)/100-1;<br>per frame :<br>kx=kx+tx*sp;ky=ky+ty*sp;kz=kz+tz*sp; sx=sin(kx);<br>sy=sin(ky);sz=sin(kz);<br>cx=cos(kx);cy=cos(ky);cz=cos(kz);<br>per point:<br>i=i*8+1;<br>x1=equal(i,1)*0+equal(i,2)*1+equal(i,3)/2+equal(i,4)*0+equal(i,5)/2+equal(i,6)*1+equal(i,7)/2+equal(i,8)/2;<br>y1=equal(i,1)*0+equal(i,2)*0+equal(i,3)*0+equal(i,4)*0+equal(i,5)*sqrt(6)/3+equal(i,6)*0+equal(i,7)*0+equal(i,8)*sqrt(6)/3;<br>z1=equal(i,1)*0+equal(i,2)*0+equal(i,3)*sqrt(3)/2+equal(i,4)*0+equal(i,5)*sqrt(3)/6+equal(i,6)*0+equal(i,7)*sqrt(3)/2+equal(i,8)*sqrt(3)/6;<br>x1=x1*2-1;y1=y1*2-1;z1=z1*2-1;<br>x2=x1*cz-y1*sz;y1=x1*sz+y1*cz;<br>y3=y2*cx-z1*sx;z3=y2*sx+z1*cx;<br>x=x2*cy-z3*sy;y=x2*sy+z3*cy;</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br></p><p class="post-time small text-muted">8th September 2002 05:13 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">I think a cube would be easier to make. All you do is make a square and extrude it. It's probably also easier to make you 3D shape with an equation thsn manually setting the points like you did.<br><br>Your rotation stuff looks good, but I don't think you can change the value of i like you do in the beginning of the per point section..</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p><p class="post-time small text-muted">20th September 2002 06:00 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>solution</strong><br>here is some code to draw a pentagon though specific points (its taken from one of my presets) you can modify this scope quite easily to make a pyramid. (i've highlighted the most important bits).<br><br></p><pre>
+<code><br>init: <br><b>n=6</b>;phi=(sqrt(5)+1)*0.5;iphi=phi-1;rx=0;ry=0;rz=0;<br><br>on beat:<br>t=if(equal(move,1),if(equal(rand(12),1),0,t),t);dt=if(equal(move,1),(rand(50)+25)/500,dt);<br><br>frame:<br>t=t+dt;move=if(below(t,3.141593),1+0.5*sin(t),1);rx=rx+0.01;ry=ry-0.01;<b>q=-1</b>;crz=cos(rz);srz=sin(rz);cry=cos(ry);sry=sin(ry);crx=cos(rx);srx=sin(rx)<br><br>pixel: <br><b>q=q+1;<br><br>x1=if(equal(q,0),1,x1);<br>y1=if(equal(q,0),1,y1);<br>z1=if(equal(q,0),1,z1);<br><br>x1=if(equal(q,1),phi,x1);<br>y1=if(equal(q,1),0,y1);<br>z1=if(equal(q,1),iphi,z1);<br><br>x1=if(equal(q,2),1,x1);<br>y1=if(equal(q,2),-1,y1);<br>z1=if(equal(q,2),1,z1);<br><br>x1=if(equal(q,3),0,x1);<br>y1=if(equal(q,3),-iphi,y1);<br>z1=if(equal(q,3),phi,z1);<br><br>x1=if(equal(q,4),0,x1);<br>y1=if(equal(q,4),iphi,y1);<br>z1=if(equal(q,4),phi,z1);<br><br>x1=if(equal(q,5),1,x1);<br>y1=if(equal(q,5),1,y1);<br>z1=if(equal(q,5),1,z1);<br><br></b><br><br>x1=x1*move;<br>y1=y1*move;<br>z1=z1*move;<br><br>x2=x1*crz-y1*srz;<br>y2=x1*srz+y1*crz;<br>z2=z1;<br><br>x3=x2*cry+z2*sry;<br>y3=y2;<br>z3=-x2*sry+z2*cry;<br><br>x1=x3;<br>y1=y3*crx-z3*srx;<br>z1=y3*srx+z3*crx;<br><br>x=x1/(3+z1);<br>y=y1/(3+z1);<br><br>x=x*h/w;<br></code>
+</pre><br>
+      <br>
+      i notice that your pyramid is infact a tetrahedron. these presets might interest you too (you can draw a solid tetrahedron if you adapt the code from the last one).<br>
+      <br>
+      <a href="http://www.deviantart.com/deviation/708523" target="_blank">http://www.deviantart.com/deviation/708523</a><br>
+      <br>
+      <a href="http://www.deviantart.com/deviation/719927" target="_blank">http://www.deviantart.com/deviation/719927</a><br>
+      <br>
+      <br>
       hope this all helped!
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

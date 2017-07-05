@@ -1,262 +1,195 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Figure this one out..." />
-
-  <title>Figure this one out... - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">Figure this one out...</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128849">Figure this one out...</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
-
-      <p class="post-time small text-muted">18th March 2003 03:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Figure this one out...</strong><br />
-      Okay, I have two different versions of a dynamic movement. One of them works fine, the other doesn't work when you first load it; you have to cut and re-paste the contents of the "pixel" box. The problem is that I don't like the way that the one that works looks. :cry: Can somebody spot why the other one's not working?<br />
-      <br />
-      The one that works:</p>
-      <pre>
-<code>Init:<br />int=acos(-1)/4096;t=0;fs=1;fc=1<br /><br />Frame:<br />t=t+int;<br />st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br />cs=st*sy;cc=ct*cx;<br />fs=fs*.7+cs*.3;fc=fc*.7+cc*.3<br /><br />Pixel:<br />x=x/fc;<br />y=y/fs<br /><br />blend off, wrap on, rect coords on, BF on, grid 1x1</code>
-</pre><br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Figure this one out..."><title>Figure this one out... - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">Figure this one out...</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128849">Figure this one out...</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Clinical</span><br></p><p class="post-time small text-muted">18th March 2003 03:00 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Figure this one out...</strong><br>Okay, I have two different versions of a dynamic movement. One of them works fine, the other doesn't work when you first load it; you have to cut and re-paste the contents of the "pixel" box. The problem is that I don't like the way that the one that works looks. :cry: Can somebody spot why the other one's not working?<br><br>The one that works:</p><pre>
+<code>Init:<br>int=acos(-1)/4096;t=0;fs=1;fc=1<br><br>Frame:<br>t=t+int;<br>st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br>cs=st*sy;cc=ct*cx;<br>fs=fs*.7+cs*.3;fc=fc*.7+cc*.3<br><br>Pixel:<br>x=x/fc;<br>y=y/fs<br><br>blend off, wrap on, rect coords on, BF on, grid 1x1</code>
+</pre><br>
       The one that doesn't work:
       <pre>
-<code>Init:<br />int=acos(-1)/4096;t=0;cs=1;cc=1;sy=1;cx=1;st=1;ct=1;<br /><br />Frame:<br />t=t+int;<br />st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br />cs=st*sy;cc=ct*cx;<br /><br />Pixel:<br />x=x/cc;<br />y=y/cs;<br /><br />all other options same as previous</code>
-</pre><br />
-      If you're wondering why all those "xxx=1"s are in the init in the second one, it's because I was trying to make sure that it wasn't trying to divide by zero.<br />
+<code>Init:<br>int=acos(-1)/4096;t=0;cs=1;cc=1;sy=1;cx=1;st=1;ct=1;<br><br>Frame:<br>t=t+int;<br>st=sin(t);sy=sin(y);ct=cos(t);cx=cos(x);<br>cs=st*sy;cc=ct*cx;<br><br>Pixel:<br>x=x/cc;<br>y=y/cs;<br><br>all other options same as previous</code>
+</pre><br>
+      If you're wondering why all those "xxx=1"s are in the init in the second one, it's because I was trying to make sure that it wasn't trying to divide by zero.<br>
       <font size="1">By the way, I don't care if you don't like how this DM looks. I'm not asking for your opinion, I'm asking why it doesn't work. Thank you very much.</font>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 03:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">What's with having sin(y) and cos(x) in the FRAME: area? That will always be the same(just the sine of the last y value and cosine of the last x value). Also, you don't need to do that "xxx=1" stuff, because AVS will just ignore divide by zero's. One possible error is because the second one multiplies 2 trig functions, which can fairly often result in a very low number.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 03:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">-I figured that calculating the sin and cos of y and x in the "frame" box would recalculate the values every frame (because wouldn't x and y be different for every frame?)... or maybe I'm just a dimwit... :p<br />
-      -I didn't know AVS ignored "divide by zero"s... thanks for the tip.<br />
-      -A resulting very low number still wouldn't explain why it works if you cut (i.e. remove) the stuff in "pixel" and then put it back in...<br />
-      <br />
+      <p class="post-content">-I figured that calculating the sin and cos of y and x in the "frame" box would recalculate the values every frame (because wouldn't x and y be different for every frame?)... or maybe I'm just a dimwit... :p<br>
+      -I didn't know AVS ignored "divide by zero"s... thanks for the tip.<br>
+      -A resulting very low number still wouldn't explain why it works if you cut (i.e. remove) the stuff in "pixel" and then put it back in...<br>
+      <br>
       Thanks for the help anyway. :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 03:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Change the variable names. Some names are known to not work. Tested and proven.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 04:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Actually, in an earlier version of the not-working one, I used the same variable names (fc and fs) as in the working one. It still didn't work then, but the variable names do work, because they're in the current working one. *reads that back and gets all googly-eyed* :S I will try changing the variable names, though. ANYthing to get this damn preset working. :hang:<br />
-      <br />
+      <p class="post-content">Actually, in an earlier version of the not-working one, I used the same variable names (fc and fs) as in the working one. It still didn't work then, but the variable names do work, because they're in the current working one. *reads that back and gets all googly-eyed* :S I will try changing the variable names, though. ANYthing to get this damn preset working. :hang:<br>
+      <br>
       Why is it I always ask these questions that don't really get resolved? Bad luck? Idiocy? What do you think? :p</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 01:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br />
-      <br />
-      Anything you're up to with that, I don't really see how it's going to be a beauty...<br />
-      <br />
+      <p class="post-content">Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br>
+      <br>
+      Anything you're up to with that, I don't really see how it's going to be a beauty...<br>
+      <br>
       Can you tell me what it's supposed to be like? I thought it's one of those fake 1-axis 3d rotation of a plane.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 01:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Oh and clinical, the only thing that may make sin(x) and cos(y) different each frame is the fact that you assign new values to them, but I still don't think that it will be different.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 05:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Nic01</i><br />
+        <i>Originally posted by Nic01</i><br>
         <b>Change the variable names. Some names are known to not work. Tested and proven.</b>
-      </blockquote>can you name a few?<br />
-      i fail to understand the reason why some varible names dont work<br />
+      </blockquote>can you name a few?<br>
+      i fail to understand the reason why some varible names dont work<br>
       :weird: :confused:
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 12:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">AVS is using them, so you can't. Don't know of any, but I have come across them messing up presets before.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 22:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">not those, others. wierd ones like "spdx" (outta the blue, don't ask) don't work in SOME scopes, but work in others. very odd indeed. if you've checked your math and your syntax a hundred and seventeen times over and it still doesn't work the way it's supposed to...find where the errors start and change the name of the variable. nine times out of ten it'll work like a charm</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br></p>
 
       <p class="post-time small text-muted">23rd March 2003 21:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Nic01</i><br />
-        <b>Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br />
-        <br />
-        Anything you're up to with that, I don't really see how it's going to be a beauty...<br />
-        <br />
+        <i>Originally posted by Nic01</i><br>
+        <b>Just actually tried the 1st DM, and I wonder to myself : How in the world are you going to use that DM?<br>
+        <br>
+        Anything you're up to with that, I don't really see how it's going to be a beauty...<br>
+        <br>
         Can you tell me what it's supposed to be like? I thought it's one of those fake 1-axis 3d rotation of a plane.</b>
       </blockquote>Actually, even I'm not quite sure what it's <u>supposed</u> to be. It's one of those presets that you'll hate if you don't like intensely "flashy" presets. I used a couple bass spins, a scatter, that dm, and a dynamic distance modifier (in case you didn't know, I'm not really "about" technically impressive presets). My friends and I think it looks pretty neat, and that's really all I care about. :) I'll try changing the variable names tonight, thanks for the help everyone.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">24th March 2003 00:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">"Actually, even I'm not quite sure what it's supposed to be."<br />
-      <br />
+      <p class="post-content">"Actually, even I'm not quite sure what it's supposed to be."<br>
+      <br>
       when you do a preset...please, please, please, please, please have a point in mind...thank you........</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br></p>
 
       <p class="post-time small text-muted">24th March 2003 01:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">I usually don't have a point in mind, but knows what kind of DM it needs and knows what is good and what is bad.<br />
-      You just gotta have that little voice inside guiding you. (okay, most of you will probably think I'm insane after that little sentence)<br />
-      <br />
-      I think my 7th pack will be rather based on objectives though<br />
-      <br />
+      <p class="post-content">I usually don't have a point in mind, but knows what kind of DM it needs and knows what is good and what is bad.<br>
+      You just gotta have that little voice inside guiding you. (okay, most of you will probably think I'm insane after that little sentence)<br>
+      <br>
+      I think my 7th pack will be rather based on objectives though<br>
+      <br>
       Okay, time to stop changing topics...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p>
 
       <p class="post-time small text-muted">24th March 2003 04:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">As a matter of fact the simplest variable I know which doesn't work is 'ch', weird though why it wouldn't work. Another weird thing is that the variable 'b' (which is used for beat detection) is only set at the start of a frame, and can have any value you like between then. Odd.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Clinical</span><br></p>
 
       <p class="post-time small text-muted">25th March 2003 15:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Atero</i><br />
+        <i>Originally posted by Atero</i><br>
         <b>when you do a preset...please, please, please, please, please have a point in mind...thank you........</b>
-      </blockquote>Forget it. Some of my best presets had no point when I created them. Maybe it's not your style, but ordered chaos works fine for some people. :p<br />
-      <br />
+      </blockquote>Forget it. Some of my best presets had no point when I created them. Maybe it's not your style, but ordered chaos works fine for some people. :p<br>
+      <br>
       Anyway, I think I've solved the problem: AVS hates me. I tried changing the variable names to several different things... nothing. I tried rearranging the equations... nothing. I wonder if this has something to do with the fact that I created the original preset in WA2 and am running it in WA3... nah...
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">3rd April 2003 20:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I've noticed that some of my code with variables beginning with c have broken and been fine when i have removed the offending variable.. hence i use q for a counter and not c.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

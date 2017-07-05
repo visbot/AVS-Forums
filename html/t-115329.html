@@ -1,487 +1,367 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="3D dinamic movements" />
-
-  <title>3D dinamic movements - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">3D dinamic movements</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115329">3D dinamic movements</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
-
-      <p class="post-time small text-muted">23rd November 2002 21:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>3D dinamic movements</strong><br />
-      I finaly decided to try and learn how to make 'reall' 3D dynamic movements.<br />
-      This is my very first try:<br />
-      init:<br />
-      sp=0.1<br />
-      <br />
-      frame:<br />
-      <br />
-      kx=kx+tx*sp;ky=ky+ty*sp;kz=kz+tz*sp;<br />
-      sx=sin(kx);sy=sin(ky);sz=sin(kz);<br />
-      cx=cos(kx);cy=cos(ky);cz=cos(kz);<br />
-      kx2=kx2+tx2*sp;ky2=ky2+ty2*sp;kz2=kz2+tz2*sp;<br />
-      sx2=sin(kx2);sy2=sin(ky2);sz2=sin(kz2);<br />
-      cx2=cos(kx2);cy2=cos(ky2);cz2=cos(kz2);<br />
-      <br />
-      beat:<br />
-      tx=rand(201)/100-1;ty=rand(201)/100-1;tz=rand(201)/100-1;<br />
-      tx2=rand(201)/100-1;ty2=rand(201)/100-1;tz2=rand(201)/100-1;<br />
-      <br />
-      pixel:<br />
-      <br />
-      x1=x;y1=y;z1=1;<br />
-      y2=y1*cx-z1*sx;z2=y1*sx+z1*cx;<br />
-      x2=z2*sy+x1*cy;z3=z2*cy-x1*sy;<br />
-      x3=x2*cz-y2*sz;y3=y2*cz+x2*sz;<br />
-      <br />
-      k1=above(x3,y3)*z3;<br />
-      k2=above(y3,z3)*x3;<br />
-      k3=above(z3,x3)*y3;<br />
-      k=min(min(k1,k2),k3);<br />
-      x1=if(equal(k,k1),x3,if(equal(k,k2),y3,z3));<br />
-      y1=if(equal(k,k1),y3,if(equal(k,k2),z3,x3));<br />
-      z1=if(equal(k,k1),z3,if(equal(k,k2),x3,y3));<br />
-      <br />
-      y2=y1*cx2-z1*sx2;z2=y1*sx2+z1*cx2;<br />
-      x2=z2*sy2+x1*cy2;z3=z2*cy2-x1*sy2;<br />
-      x3=x2*cz2-y2*sz2;y3=y2*cz2+x2*sz2;<br />
-      z=1/(1+z3/1.5);x=x*z;y=y*z;alpha=1/z<br />
-      <br />
-      Based on looking at other peoples code and my expirience on coding 3D scopes I figured this is what I schould do:<br />
-      <br />
-      1. Make a single plane move around in 3D.<br />
-      2. Make some condition (k1,k2,k3,k) that will cutt this xy plane and make different parts of it be xy,yz or xz.<br />
-      3. Rottate the whole thing in 3D.<br />
-      <br />
-      Now I know did something wrong here becouse it looks like crap.<br />
-      Could someone tell me where I had gone wrong? Could someone explain how to define condition so that xy,yz and xz planes are placed where I want them to be?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
-
-      <p class="post-time small text-muted">23rd November 2002 21:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">First, what you are doing is raytracing... for every point on the DM grid, you trace a line from the camera ******ds and see where it intersects with some piece of 3D geometry.<br />
-      The situation is like this:<br /></p>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="3D dinamic movements"><title>3D dinamic movements - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">3D dinamic movements</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=115329">3D dinamic movements</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">nixa</span><br></p><p class="post-time small text-muted">23rd November 2002 21:35 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>3D dinamic movements</strong><br>I finaly decided to try and learn how to make 'reall' 3D dynamic movements.<br>This is my very first try:<br>init:<br>sp=0.1<br><br>frame:<br><br>kx=kx+tx*sp;ky=ky+ty*sp;kz=kz+tz*sp;<br>sx=sin(kx);sy=sin(ky);sz=sin(kz);<br>cx=cos(kx);cy=cos(ky);cz=cos(kz);<br>kx2=kx2+tx2*sp;ky2=ky2+ty2*sp;kz2=kz2+tz2*sp;<br>sx2=sin(kx2);sy2=sin(ky2);sz2=sin(kz2);<br>cx2=cos(kx2);cy2=cos(ky2);cz2=cos(kz2);<br><br>beat:<br>tx=rand(201)/100-1;ty=rand(201)/100-1;tz=rand(201)/100-1;<br>tx2=rand(201)/100-1;ty2=rand(201)/100-1;tz2=rand(201)/100-1;<br><br>pixel:<br><br>x1=x;y1=y;z1=1;<br>y2=y1*cx-z1*sx;z2=y1*sx+z1*cx;<br>x2=z2*sy+x1*cy;z3=z2*cy-x1*sy;<br>x3=x2*cz-y2*sz;y3=y2*cz+x2*sz;<br><br>k1=above(x3,y3)*z3;<br>k2=above(y3,z3)*x3;<br>k3=above(z3,x3)*y3;<br>k=min(min(k1,k2),k3);<br>x1=if(equal(k,k1),x3,if(equal(k,k2),y3,z3));<br>y1=if(equal(k,k1),y3,if(equal(k,k2),z3,x3));<br>z1=if(equal(k,k1),z3,if(equal(k,k2),x3,y3));<br><br>y2=y1*cx2-z1*sx2;z2=y1*sx2+z1*cx2;<br>x2=z2*sy2+x1*cy2;z3=z2*cy2-x1*sy2;<br>x3=x2*cz2-y2*sz2;y3=y2*cz2+x2*sz2;<br>z=1/(1+z3/1.5);x=x*z;y=y*z;alpha=1/z<br><br>Based on looking at other peoples code and my expirience on coding 3D scopes I figured this is what I schould do:<br><br>1. Make a single plane move around in 3D.<br>2. Make some condition (k1,k2,k3,k) that will cutt this xy plane and make different parts of it be xy,yz or xz.<br>3. Rottate the whole thing in 3D.<br><br>Now I know did something wrong here becouse it looks like crap.<br>Could someone tell me where I had gone wrong? Could someone explain how to define condition so that xy,yz and xz planes are placed where I want them to be?</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p><p class="post-time small text-muted">23rd November 2002 21:55 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">First, what you are doing is raytracing... for every point on the DM grid, you trace a line from the camera ******ds and see where it intersects with some piece of 3D geometry.<br>The situation is like this:<br></p><pre>
+<code><br>        _-<br>      _-|<br>    _-  |   /¯¯¯\<br>eye*_...|..x obj )  x = intersection<br>     -_ |   \___/<br>       -|<br>        ¯-<br>        ^<br>    projection<br>      plane<br></code>
+</pre><br>
+      Imagine that the DM grid is in the projection plane, with the eye behind it. By connecting the eye with every point on the DM grid, you get a viewing 'pyramid' of rays. A ray is uniquely described by its point of origin, and a vector that points in the direction of the ray.<br>
+      <br>
+      If the eye is at (0,0,0) and the projection plane is the plane z=1, then all the rays start at the origin, and have vector:<br>
+      (x,y,1). For most raytracing calculations such as lighting, this vector has to be normalized (length=1), but we don't need that for regular 3D DMs.<br>
+      <br>
+      We call the direction vector of the ray (dx,dy,dz). The origin is (ox,oy,oz). So the points on the ray can be written as (k*dx+ox, k*dy+oy, k*dz+oz) where k is a real number. To find the intersection point of the ray with an object, you fill in these coordinates in the equation of the shape, and then solve for 'k'. Then you fill in 'k' in your ray equation to get the intersection point's coordinates.<br>
+      <br>
+      Now, to achieve rotation, we simply rotate the viewing pyramid around the eye. This gives you realistic camera behaviour, because the objects in the world don't move, only the camera. Note that you need different order of rotations: first around the z-axis, then x-axis, then y-axis. To visualise why, follow the following movements... it's easiest if you're sitting on a rotating chair:<br>
+      - look straight forward<br>
+      - Z: tilt your head sideways (as if reading a smiley)<br>
+      - X: look up while tilted<br>
+      - Y: now rotate yourself left/right (easy on a rotating chair)<br>
+      <br>
+      This is the only correct way because we're rotating around the worlds X,Y,Z axes and not local X,Y,Z axes. For example if we were to first rotate left 90° (Y), the world's X would lie in front of us.<br>
+      <br>
+      Now we will raytrace the plane x+y = 1<br>
+      <br>
+      We fill in general expression for a point on the ray and isolate 'k':<br>
       <pre>
-<code><br />        _-<br />      _-|<br />    _-  |   /¯¯¯\<br />eye*_...|..x obj )  x = intersection<br />     -_ |   \___/<br />       -|<br />        ¯-<br />        ^<br />    projection<br />      plane<br /></code>
-</pre><br />
-      Imagine that the DM grid is in the projection plane, with the eye behind it. By connecting the eye with every point on the DM grid, you get a viewing 'pyramid' of rays. A ray is uniquely described by its point of origin, and a vector that points in the direction of the ray.<br />
-      <br />
-      If the eye is at (0,0,0) and the projection plane is the plane z=1, then all the rays start at the origin, and have vector:<br />
-      (x,y,1). For most raytracing calculations such as lighting, this vector has to be normalized (length=1), but we don't need that for regular 3D DMs.<br />
-      <br />
-      We call the direction vector of the ray (dx,dy,dz). The origin is (ox,oy,oz). So the points on the ray can be written as (k*dx+ox, k*dy+oy, k*dz+oz) where k is a real number. To find the intersection point of the ray with an object, you fill in these coordinates in the equation of the shape, and then solve for 'k'. Then you fill in 'k' in your ray equation to get the intersection point's coordinates.<br />
-      <br />
-      Now, to achieve rotation, we simply rotate the viewing pyramid around the eye. This gives you realistic camera behaviour, because the objects in the world don't move, only the camera. Note that you need different order of rotations: first around the z-axis, then x-axis, then y-axis. To visualise why, follow the following movements... it's easiest if you're sitting on a rotating chair:<br />
-      - look straight forward<br />
-      - Z: tilt your head sideways (as if reading a smiley)<br />
-      - X: look up while tilted<br />
-      - Y: now rotate yourself left/right (easy on a rotating chair)<br />
-      <br />
-      This is the only correct way because we're rotating around the worlds X,Y,Z axes and not local X,Y,Z axes. For example if we were to first rotate left 90° (Y), the world's X would lie in front of us.<br />
-      <br />
-      Now we will raytrace the plane x+y = 1<br />
-      <br />
-      We fill in general expression for a point on the ray and isolate 'k':<br />
-      <pre>
-<code><br />         x    +    y     =  1<br />&lt;=&gt;   k*dx+ox + k*dy+oy  =  1<br />&lt;=&gt;   (dx + dy)*k        =  1 - ox - oy<br />&lt;=&gt;             k        = <u> 1 - ox - oy*</u><br />                              dx + dy<br /></code>
-</pre><br />
-      Now we have the intersection point at:<br />
-      (k*dx+ox, k*dy+oy, k*dz+oz)<br />
-      <br />
+<code><br>         x    +    y     =  1<br>&lt;=&gt;   k*dx+ox + k*dy+oy  =  1<br>&lt;=&gt;   (dx + dy)*k        =  1 - ox - oy<br>&lt;=&gt;             k        = <u> 1 - ox - oy*</u><br>                              dx + dy<br></code>
+</pre><br>
+      Now we have the intersection point at:<br>
+      (k*dx+ox, k*dy+oy, k*dz+oz)<br>
+      <br>
       You can calculate the texture coordinates (x,y) from these. Note that, because only the camera moves, not the object, you never have to adjust your calculated coordinates.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">23rd November 2002 22:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Nice, UCD, can I use that post in my AVS resources pack?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">23rd November 2002 23:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Thanx a lot Unconed that was really helpfull :)<br />
-      Ok so to see if I understood all of this:<br />
-      (ox,oy,oz) are the coordinates of the camera and the starting points for the rays.<br />
-      (dx,dy,dz) define the ray vector (something like numbers next to i and j in my 2D highschool vector math) and are used to define the object.<br />
+      <p class="post-content">Thanx a lot Unconed that was really helpfull :)<br>
+      Ok so to see if I understood all of this:<br>
+      (ox,oy,oz) are the coordinates of the camera and the starting points for the rays.<br>
+      (dx,dy,dz) define the ray vector (something like numbers next to i and j in my 2D highschool vector math) and are used to define the object.<br>
       Than I just rotate the camera, calculate k and (x,y,z) by the given formulas and project that to 2D. :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">24th November 2002 20:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Cool I did it. :)<br />
+      <p class="post-content">Cool I did it. :)<br>
       Now all I need to know is how to make 2 or more planes cut each other at some angle and how to make some parts of planes seethrough and some not and I can make some cerious 3D presets. :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 01:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">In order to have several shapes, you can either have multiple DM's and blend them together, or if your objects are solid, you can calculate multiple k's and use some function on them (usually the smallest positive 'k').<br />
-      <br />
+      <p class="post-content">In order to have several shapes, you can either have multiple DM's and blend them together, or if your objects are solid, you can calculate multiple k's and use some function on them (usually the smallest positive 'k').<br>
+      <br>
       You can use alpha to make parts transparent or dark (fog).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 04:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Major milestone: I actually get it now and have used it successfully! :) w00t! To celebrate, I'll show the preset in which I used it (it's the sequel to Hall of Sound from NDD2). Not bad, eh?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 05:22 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Oh there's one thing I forgot to mention... the calculation can result in a negative 'k', which means the intersection point lies behind the camera. You should usually discard these points, unless they are what you need.<br />
-      <br />
-      For example, if you raytrace the plane x=1 with the camera at (0,0,0), you will get an imaginary plane x=-1. However, if the camera moves closer to the real plane, the imaginary plane will come closer too.<br /></p>
+      <p class="post-content">Oh there's one thing I forgot to mention... the calculation can result in a negative 'k', which means the intersection point lies behind the camera. You should usually discard these points, unless they are what you need.<br>
+      <br>
+      For example, if you raytrace the plane x=1 with the camera at (0,0,0), you will get an imaginary plane x=-1. However, if the camera moves closer to the real plane, the imaginary plane will come closer too.<br></p>
       <pre>
-<code><br />_ _ _ _ _ _ x _ _ _ _ _ _ _ _ _ _  imaginary plane<br />           /<br />          /<br />         /<br />    eye *<br />       . \<br />      .   \<br />    _.     \_                      real plane<br />¯¯¯¯x¯¯¯¯¯¯¯x¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯<br /><br /></code>
-</pre><br />
-      <br />
-      <br />
-      By the way uNDefineD: your code is slightly incorrect... you have:<br />
-      <br />
-      x=x1/(1+z1); y=y1/(1+z1);<br />
-      <br />
+<code><br>_ _ _ _ _ _ x _ _ _ _ _ _ _ _ _ _  imaginary plane<br>           /<br>          /<br>         /<br>    eye *<br>       . \<br>      .   \<br>    _.     \_                      real plane<br>¯¯¯¯x¯¯¯¯¯¯¯x¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯<br><br></code>
+</pre><br>
+      <br>
+      <br>
+      By the way uNDefineD: your code is slightly incorrect... you have:<br>
+      <br>
+      x=x1/(1+z1); y=y1/(1+z1);<br>
+      <br>
       This is wrong, because your intersection points (x1,y1) are already your texture coordinates. Of course in this case, because you are raytracing the plane z=1, you're just doing x=x1/2;y=y1/2. You don't need to do any perspective projecting, just use some kind of mapping (planar, spherical, cylindrical) to texture your object.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 05:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Negative values for k are only used with refraction and reflection, where imaginary images and real images can form simultaneously.<br />
-      <br />
-      Undefined:<br />
-      Instead of<br /></p>
+      <p class="post-content">Negative values for k are only used with refraction and reflection, where imaginary images and real images can form simultaneously.<br>
+      <br>
+      Undefined:<br>
+      Instead of<br></p>
       <pre>
-<code><br />dx1=x;dy1=y;dz1=1;<br />dx2=dx1; dy2=dy1*xs+dz1*xc; dz2=dy1*xc-dz1*xs;<br />dx3=dx2*ys+dz2*yc; dy3=dy2; dz3=dx2*yc-dz2*ys;<br />dx4=dx3*zs+dy3*zc; dy4=dx3*zc-dy3*zs; dz4=dz3;<br /></code>
-</pre><br />
-      <br />
-      use<br />
-      <br />
+<code><br>dx1=x;dy1=y;dz1=1;<br>dx2=dx1; dy2=dy1*xs+dz1*xc; dz2=dy1*xc-dz1*xs;<br>dx3=dx2*ys+dz2*yc; dy3=dy2; dz3=dx2*yc-dz2*ys;<br>dx4=dx3*zs+dy3*zc; dy4=dx3*zc-dy3*zs; dz4=dz3;<br></code>
+</pre><br>
+      <br>
+      use<br>
+      <br>
       <pre>
-<code><br />dx=x;dy=y;dz=1;<br />tdy=dy*xs+dz*xc; tdz=dy*xc-dz*xs;<br />tdx=dx*ys+tdz*yc; dz=dx*yc-tdz*ys;<br />dx=tdx*zs+tdy*zc; dy=tdx*zc-tdy*zs;<br /></code>
-</pre><br />
-      <br />
+<code><br>dx=x;dy=y;dz=1;<br>tdy=dy*xs+dz*xc; tdz=dy*xc-dz*xs;<br>tdx=dx*ys+tdz*yc; dz=dx*yc-tdz*ys;<br>dx=tdx*zs+tdy*zc; dy=tdx*zc-tdy*zs;<br></code>
+</pre><br>
+      <br>
       It's cleaner and only uses 3 extra variables for the matrix.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 06:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Taken on board. Thanks Zev. :)<br />
-      <br />
+      <p class="post-content">Taken on board. Thanks Zev. :)<br>
+      <br>
       UC: Sorry but would you mind telling me what the hell that means?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 07:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I feel so ignored :cry: ;)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 11:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Weeee.. I made a road crossing 3D dm. It was done before but I made it this time and I like it. :)<br />
+      <p class="post-content">Weeee.. I made a road crossing 3D dm. It was done before but I made it this time and I like it. :)<br>
       Is there a way to blend the adges? I tried whith alpha=if(bor(bor(equal(k1,k2),equal(k2,k3)),equal(k1,k3)),0,alpha); but it didnt work..</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 12:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">nixa: Unfortunately, you can't do that using alpha, in fact you'll be hard pressed to do it at all. You can either do it using an SSC setup (if complexity permits), or you just deal with it. Personally I learn to ignore it, because it's not like you're always staring at the edges. (I, for example, usually find myself staring at the code and saying to myself, "How the hell does he do it..." :)) EDIT: You could set the grid size to say, 128x128, but it's out of the question unless it's on a bloody good system.<br />
-      <br />
+      <p class="post-content">nixa: Unfortunately, you can't do that using alpha, in fact you'll be hard pressed to do it at all. You can either do it using an SSC setup (if complexity permits), or you just deal with it. Personally I learn to ignore it, because it's not like you're always staring at the edges. (I, for example, usually find myself staring at the code and saying to myself, "How the hell does he do it..." :)) EDIT: You could set the grid size to say, 128x128, but it's out of the question unless it's on a bloody good system.<br>
+      <br>
       BTW, the second example was really great. I found that you can get interesting effects by switching max() and min() around in the k= statement.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 16:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yeah, my experience with BOR is that it's a shitty excuse for a shitty excuse for a function. For every frame, once BOR is satisfyed ONCE, it returns 1 for the rest of the frame....<br />
-      <br />
+      <p class="post-content">Yeah, my experience with BOR is that it's a shitty excuse for a shitty excuse for a function. For every frame, once BOR is satisfyed ONCE, it returns 1 for the rest of the frame....<br>
+      <br>
       BTW, if you're wondering why I feel so ignored (which you should be, but you're not...I feel so ignored :cry: ), UnConeD, can I use that post in my AVS resources pack?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 19:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">I thought of this during my geography class today and its a resoult of me not being interested about south american climate. Replace the alpha blend in dm of raytracing 2 preset whith it.<br />
-      <br />
-      a1=min(max(2/sqrt(x*x+y*y),0),1);<br />
-      a2=below(abs(k1/k2-1),0.1)+below(abs(k2/k3-1),0.1)+below(abs(k3/k1-1),0.1);<br />
-      alpha=if(a2,0,a1);<br />
-      <br />
+      <p class="post-content">I thought of this during my geography class today and its a resoult of me not being interested about south american climate. Replace the alpha blend in dm of raytracing 2 preset whith it.<br>
+      <br>
+      a1=min(max(2/sqrt(x*x+y*y),0),1);<br>
+      a2=below(abs(k1/k2-1),0.1)+below(abs(k2/k3-1),0.1)+below(abs(k3/k1-1),0.1);<br>
+      alpha=if(a2,0,a1);<br>
+      <br>
       Anyway this does blend the edges but the problem is that it also blends the ones that dont show. I am sure someone could think of a way to go around that..</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">uNDefineD</span><br></p>
 
       <p class="post-time small text-muted">25th November 2002 22:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">UC, don't worry, I think I've got it figured out. The intersection points are (x1,y1) and the texture coords are whatever goes into x= and y=, right? So since I'm not raytracing multiple values for k, all I need is the IPs, not an if() statement. So here's the updated version, along with a dynamic origin point.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p>
 
       <p class="post-time small text-muted">26th November 2002 04:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The most effective method I can think of, is to track the last point's texture co-ords and see if the current point's co-ords are more than (some certain threshold, like 2) units away, if they are, alpha blend the point out. This should help 'hide' ugly edges. Also, another method is to use a projection texture mapping system, ask UnConeD how to do this :D:D he seems proficient in doing that ;).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">26th November 2002 16:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero: I didn't reply because you already know the answer :P</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">26th November 2002 17:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Well, I just don't feel comfortable using someone elses material without asking them...one of those things I REALLY hate when people do it to me. Which is why I asked :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">20th January 2003 23:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">(this is some stuff I just wrote up for nixa, I guess I might as well post it here for everyone... the attachment shows the situation).<br />
-      <br />
-      The goal here is to create a sphere with a tunnel in it. Or mathematically, a sphere with a cylinder subtracted from it.<br />
-      <br />
-      <br />
-      The equation for a sphere around the origin is:<br />
-      <br />
-      <font face="courier new">x^2 + y^2 + z^2 = R^2</font><br />
-      <br />
-      with R being the radius<br />
-      <br />
-      To raytrace, we replace each component x,y,z with the equation for the ray (k*dx+ox,k*dy+oy,k*dz+oz):<br />
-      <br />
-      <font face="courier new">(k*dx+ox)^2 + (k*dy+oy)^2 + (k*dz+oz)^2 = R^2</font><br />
-      <br />
-      Now you work out the brackets and separate everything by 'k':<br />
-      <br />
-      <font face="courier new">(dx^2 + dy^2 + dz^2)*k^2 + 2*(dx*ox+dy*oy+dz*oz)*k + (ox^2 + oy^2 + oz^2 - R^2) = 0</font><br />
-      <br />
-      This is a quadratic (second power) equation in 'k', which we can write shorthard as:<br />
-      <br />
-      <font face="courier new">ak^2 + bk + c = 0</font><br />
-      <br />
-      We know from math that the solution can be found from the discriminant:<br />
-      D = b^2 - 4*a*c<br />
-      <br />
-      so that:<br />
-      <br />
-      <font face="courier new">k = (-b - sqrt(D)) / (2*a)<br />
-      k = (-b + sqrt(D)) / (2*a)</font><br />
-      <br />
-      Because this is a quadratic equation, there are two solutions.<br />
-      This is logical, because when you draw a line through a sphere, it has to intersect in two points, or none (or two identical points when it's tangent).<br />
-      In the second case, 'd' will be negative, so its squareroot will not exist. This means that the ray does not intersect the sphere (this is only possible if we are outside the sphere).<br />
-      The best approach is to use sqrt(abs(d)) and set alpha to 0 when d &lt; 0. This results in the least amount of ugly edges around the sphere.<br />
-      <br />
-      Once you've found 'k', you can find the intersection point from one of the k's:<br />
-      <br />
-      <font face="courier new">px = k*dx + ox;<br />
-      py = k*dy + oy;<br />
-      pz = k*dz + oz;</font><br />
-      (px,py,pz)<br />
-      <br />
-      Depending on which k you choose, you will have the point at the back or at the front of the sphere.<br />
-      <br />
-      To find the correct (x,y) pair to map onto the sphere, you can use:<br />
-      <br />
-      <font face="courier new"><br />
-      x = atan2(pz,px)/(2*pi); (pi is 3.1415...)<br />
-      y = asin(py/R)*2/pi; (R is the radius of the sphere)<br /></font><br />
-      <br />
-      Things to note:<br />
-      - The sphere is always around the origin, it is only the camera/ray that moves<br />
-      - If the camera is inside the sphere, one of the k's will be negative (behind the camera) and should not be used<br />
-      <br />
-      ------------<br />
-      <br />
-      Now to make your tunnel, here's how I would do it...<br />
-      <br />
-      Because the sphere and cylinder (tunnel) have front and backsides, a simple k=min(k1,k2) won't do (where k1 and k2 are the k's found by raytracing the sphere and cylinder).<br />
-      <br />
-      So I suggest you raytrace the sphere first and calculate the px,pz coordinates of the intersection point (the cylinder lies on the y-axis). You then check sqrt(sqr(px)+sqr(pz)). If it it smaller than the radius of the cylinder, you re-raytrace this point, but with the cylinder equation.<br />
-      The idea is like taking an apple and removing the hard center (which you don't eat) without cutting it into pieces.<br />
-      <br />
-      Finally, you will need to make sure the tunnel is only as long as the sphere:<br /></p>
+      <p class="post-content">(this is some stuff I just wrote up for nixa, I guess I might as well post it here for everyone... the attachment shows the situation).<br>
+      <br>
+      The goal here is to create a sphere with a tunnel in it. Or mathematically, a sphere with a cylinder subtracted from it.<br>
+      <br>
+      <br>
+      The equation for a sphere around the origin is:<br>
+      <br>
+      <font face="courier new">x^2 + y^2 + z^2 = R^2</font><br>
+      <br>
+      with R being the radius<br>
+      <br>
+      To raytrace, we replace each component x,y,z with the equation for the ray (k*dx+ox,k*dy+oy,k*dz+oz):<br>
+      <br>
+      <font face="courier new">(k*dx+ox)^2 + (k*dy+oy)^2 + (k*dz+oz)^2 = R^2</font><br>
+      <br>
+      Now you work out the brackets and separate everything by 'k':<br>
+      <br>
+      <font face="courier new">(dx^2 + dy^2 + dz^2)*k^2 + 2*(dx*ox+dy*oy+dz*oz)*k + (ox^2 + oy^2 + oz^2 - R^2) = 0</font><br>
+      <br>
+      This is a quadratic (second power) equation in 'k', which we can write shorthard as:<br>
+      <br>
+      <font face="courier new">ak^2 + bk + c = 0</font><br>
+      <br>
+      We know from math that the solution can be found from the discriminant:<br>
+      D = b^2 - 4*a*c<br>
+      <br>
+      so that:<br>
+      <br>
+      <font face="courier new">k = (-b - sqrt(D)) / (2*a)<br>
+      k = (-b + sqrt(D)) / (2*a)</font><br>
+      <br>
+      Because this is a quadratic equation, there are two solutions.<br>
+      This is logical, because when you draw a line through a sphere, it has to intersect in two points, or none (or two identical points when it's tangent).<br>
+      In the second case, 'd' will be negative, so its squareroot will not exist. This means that the ray does not intersect the sphere (this is only possible if we are outside the sphere).<br>
+      The best approach is to use sqrt(abs(d)) and set alpha to 0 when d &lt; 0. This results in the least amount of ugly edges around the sphere.<br>
+      <br>
+      Once you've found 'k', you can find the intersection point from one of the k's:<br>
+      <br>
+      <font face="courier new">px = k*dx + ox;<br>
+      py = k*dy + oy;<br>
+      pz = k*dz + oz;</font><br>
+      (px,py,pz)<br>
+      <br>
+      Depending on which k you choose, you will have the point at the back or at the front of the sphere.<br>
+      <br>
+      To find the correct (x,y) pair to map onto the sphere, you can use:<br>
+      <br>
+      <font face="courier new"><br>
+      x = atan2(pz,px)/(2*pi); (pi is 3.1415...)<br>
+      y = asin(py/R)*2/pi; (R is the radius of the sphere)<br></font><br>
+      <br>
+      Things to note:<br>
+      - The sphere is always around the origin, it is only the camera/ray that moves<br>
+      - If the camera is inside the sphere, one of the k's will be negative (behind the camera) and should not be used<br>
+      <br>
+      ------------<br>
+      <br>
+      Now to make your tunnel, here's how I would do it...<br>
+      <br>
+      Because the sphere and cylinder (tunnel) have front and backsides, a simple k=min(k1,k2) won't do (where k1 and k2 are the k's found by raytracing the sphere and cylinder).<br>
+      <br>
+      So I suggest you raytrace the sphere first and calculate the px,pz coordinates of the intersection point (the cylinder lies on the y-axis). You then check sqrt(sqr(px)+sqr(pz)). If it it smaller than the radius of the cylinder, you re-raytrace this point, but with the cylinder equation.<br>
+      The idea is like taking an apple and removing the hard center (which you don't eat) without cutting it into pieces.<br>
+      <br>
+      Finally, you will need to make sure the tunnel is only as long as the sphere:<br></p>
       <pre>
-<code> <br />    .     . &lt;- if the points on the sphere lie within this cylinder, retrace them<br />    |-----|<br />    .     .<br />   _.     ._     ___________<br />  / |     | \               |<br /> /  |     |  \              |<br />|   |     |   |             |<br />|   |     |   |             |<br /> \  |     |  /              |   if the resulting cylinder point is outside<br />  \_|     |_/    ___________|   the sphere (check the y coordinate), then you set alpha to 0.<br />    .     .<br />    .     .<br />    .     .<br />    .     .<br /></code>
-</pre><br />
-      <br />
-      Attachment shows:<br />
-      1) the situation as it is (no combinations)<br />
-      2) min operation on k1,k2<br />
-      3) max operation on k1,k2<br />
-      --<br />
-      4) raytracing a sphere<br />
+<code> <br>    .     . &lt;- if the points on the sphere lie within this cylinder, retrace them<br>    |-----|<br>    .     .<br>   _.     ._     ___________<br>  / |     | \               |<br> /  |     |  \              |<br>|   |     |   |             |<br>|   |     |   |             |<br> \  |     |  /              |   if the resulting cylinder point is outside<br>  \_|     |_/    ___________|   the sphere (check the y coordinate), then you set alpha to 0.<br>    .     .<br>    .     .<br>    .     .<br>    .     .<br></code>
+</pre><br>
+      <br>
+      Attachment shows:<br>
+      1) the situation as it is (no combinations)<br>
+      2) min operation on k1,k2<br>
+      3) max operation on k1,k2<br>
+      --<br>
+      4) raytracing a sphere<br>
       5) retracing only the points inside the cylinder's volume (notice the rightmost red point has shifted into the shaft, now in the correct position)
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">20th January 2003 23:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Very good explanation UnConeD. I actually somewhat understand the process now. One small mistake though. A ray can go through none, <b>one</b>, or two points on the sphere. It will only go through one point when the ray is tangent to the sphere. This isn't a special case, though, because the two points that you find out will just be the same.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">21st January 2003 01:20 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">anub: thanks, I updated it (and fixed a typo)... I knew about d == 0, but I didn't include it because it doesn't matter much in AVS anyway.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">22nd January 2003 20:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I tried to make the tunnel inside a sphere preset acording to Unconeds instructions but had some problems. I figured out how to make a cylinder and a sphere whith same ox,oy,oz and how to make them viseable at all time (see sphere or tunnel preset) but i had problems whith intersection. I limited and inverted(it schould show the inner side) the cylinder in 2nd preset.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">nixa</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">nixa</span><br></p>
 
       <p class="post-time small text-muted">22nd January 2003 23:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I fixed the problem, it was just a typo. I used k variable before it was calculated. Silly me :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">23rd January 2003 00:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">that sucks. I hate when I do something stupid like that. It can take forever figuring it out too.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

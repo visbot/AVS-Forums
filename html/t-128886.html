@@ -1,190 +1,121 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Surface fading" />
-
-  <title>Surface fading - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">Surface fading</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128886">Surface fading</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
-
-      <p class="post-time small text-muted">18th March 2003 11:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Surface fading</strong><br />
-      I got a question.<br />
-      <br />
-      How to make a surface fade in the distance?<br />
-      <br />
-      I use the following code to make a surface:<br /></p>
-      <pre>
-<code><br />d=d/((y*2.2+3)*2)<br /></code>
-</pre><br />
-      <br />
-      Now this works perfectly, but if i make the last 2 bigger (for example 5) it gets a little messy in the further parts of the surface.<br />
-      <br />
-      Is there an easy way to make a sort of fade or smog in that distance? Any help would be greatly appreciated,<br />
-      <br />
-      Thanks in advance,<br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Surface fading"><title>Surface fading - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">Surface fading</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=128886">Surface fading</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Deamon</span><br></p><p class="post-time small text-muted">18th March 2003 11:47 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Surface fading</strong><br>I got a question.<br><br>How to make a surface fade in the distance?<br><br>I use the following code to make a surface:<br></p><pre>
+<code><br>d=d/((y*2.2+3)*2)<br></code>
+</pre><br>
+      <br>
+      Now this works perfectly, but if i make the last 2 bigger (for example 5) it gets a little messy in the further parts of the surface.<br>
+      <br>
+      Is there an easy way to make a sort of fade or smog in that distance? Any help would be greatly appreciated,<br>
+      <br>
+      Thanks in advance,<br>
+      <br>
       Deamon
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 12:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">You want to use alpha blending. Search the forums to figure out how.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br></p>
 
       <p class="post-time small text-muted">18th March 2003 15:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">ok, I will. Thank you.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 05:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">finished?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">19th March 2003 22:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">wtf are you talking about, shreyas....the thread was ended, don't drag it out</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">20th March 2003 10:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">ok, since something about movement is started, i wanted to ask a question, but didnt want to start a new thread for it, because it is probably stupid.<br />
-      in static movment for polar coord d=0..1. then how does d=-d work.<br />
+      <p class="post-content">ok, since something about movement is started, i wanted to ask a question, but didnt want to start a new thread for it, because it is probably stupid.<br>
+      in static movment for polar coord d=0..1. then how does d=-d work.<br>
       does avs convert polar into rectangular coords?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">20th March 2003 12:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">It reverses the distance from the center of the screen for each pixel. This effectively rotates it about the origin(I believe).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">21st March 2003 08:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">so id d=-1 then does avs convert it into rect coords so:<br />
-      x=sin(r)*d;<br />
-      =sin(r)*-1<br />
-      y=cos(r)*d;<br />
-      =cos(r)*-1;<br />
+      <p class="post-content">so id d=-1 then does avs convert it into rect coords so:<br>
+      x=sin(r)*d;<br>
+      =sin(r)*-1<br>
+      y=cos(r)*d;<br>
+      =cos(r)*-1;<br>
       i think this will rotate the thing, otherwise how can distance be negative?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br></p>
 
       <p class="post-time small text-muted">21st March 2003 15:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Arg, my reply didn't post. :mad:<br />
-      <br />
+      <p class="post-content">Arg, my reply didn't post. :mad:<br>
+      <br>
       Imagine a series of lines all going through origin (d=0). Each point on the screen is identified a distance down the line. When d is negative, it goes down the line in the opposite direction.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">21st March 2003 20:15 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Shreyas: ALWAYS start a new thread if it's about something else. Adding stuff to non-related threads makes the forum harder to search.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">22nd March 2003 05:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">ok, I will remember</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

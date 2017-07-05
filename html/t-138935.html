@@ -1,632 +1,445 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="OpenAVS (You have a better name?)" />
-
-  <title>OpenAVS (You have a better name?) - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">OpenAVS (You have a better name?)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138935">OpenAVS (You have a better name?)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
-
-      <p class="post-time small text-muted">13th June 2003 23:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>OpenAVS (You have a better name?)</strong><br />
-      Ok, so i have been coding for a few days now on a language system similar to the one used in avs, and so far, i have one that accepts variable declerations, and does math n'such. I am going to hopefully add in the ability to write custom functions, and possibly look up pre-written functions this weekend. If anyone has any ideas on a name for this project, it would be greately appreciated, as I was thinking of posting my code on sourceforge.net soon (all you coders best get in gear, and help me ;) ). I have some ideas of my own on how i would like to do the designing of presets etc.. in the new version, but am very open to suggestions. In the spirit of open source, i am also very happy to share around what i have written. Right now I am coding for the xmms system, but am writing it in a way that seperates core plugin code and pretty visualizer code in two seperate modules, that way we can hopefully have an easy time porting it to winders (yet another reason that i need some other developers on board with me). For the actual visualizer code, I was thinking that SDL would do a very nice job of rendering, and being free/portable. If anyone is interested, working in some OpenGL stuff would be a heck of a lot of fun too :)<br />
-      <br />
-      Let me know if you are interested, cuz im gunna need help with this one :)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Wiser87</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 01:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">err... wrong forum (or sub-forum, or whatever...). This should go on the main AVS forum...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">mikm</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 02:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">i don't think you can use AVS in the name- copyright issues, plus it sounds cheap</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 02:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Did you write your own parser or use a generator? Is the code interpreted or compiled? Please post more details ;).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 08:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Well, ive been coding a pascal compiler from scratch for a side project, and to take up less time, i used flex/bison to do quicker generaton of the language rules, and lexical analysis. Worked out pretty well :) I hear there are ports for the winders, so if all goes well, this should be a damn portable project :)<br />
-      <br />
-      I was thinking of compiling to an intermediate code format - still to be devised of course - but that would run a heck of a lot quicker than interpreting every time it loads any ideas UCD? :D<br />
-      <br />
-      Currently it is very very interpreted... doesnt even translate into any sort of icode... so its way un-optimised, and needs some work... but i dont think that its going to be anything too major to get goin well.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 14:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">i thought of the names openvis or openviz, but actually both names were used for different projects already. coincidently openviz is an application from <a href="http://http://help.avs.com/OpenViz/news/ov_23.asp" target="_blank">avs.com</a>.<br />
-      <br />
-      well there's been a lot of talk about this before and it never resulted in anything. so i'm hoping your doing better, although i can't judge if pascal is optimal for this task. other programming languages might ease cross-development, and i'd love to see osx, linux and windows supported, maybe even (Open)BeOS. many other operating systems might have better multimedia-capabilities than windows. iirc, <a href="http://jheriko.deviantart.com" target="_blank">jheriko</a> was also interested in working on something like this. my suggestion is -since you sounded like you want to make it an open project- that you team up and register the project at <a href="http://www.sourceforge.net" target="_blank">sourceforge</a>. this might attract other people as well to work on it. but then it really needs a name. of course it would be nice if this new visualization plugin would be in a way compatible to avs. i don't know about the legal situation here, but then again nullsoft built in that svp loader, which plays sonique visualizations, <a href="http://www.sonique.com" target="_blank">sonique</a> is a product from lycos.<br />
-      <br />
-      so, back to the name issue. remember that this can be anything (i.e. 'dog', 'house' etc.), it doesnt need to have this close association to the name of avs. if you still prefer this, think of OpenVS, OpenAV or IVS (independent vs)... whatever.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">OpenVL - Open Visualization Language</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 21:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">OpenVL sounds waaaaaaaaay to much like OpenGL.FreeVIS sounds nice to me.<br />
-      <a href="http://www.google.com/search?q=freevis&amp;ie=UTF-8&amp;oe=UTF-8&amp;hl=ro&amp;lr=" target="_blank">http://www.google.com/search?q=freev...TF-8&amp;hl=ro&amp;lr=</a></p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
-
-      <p class="post-time small text-muted">14th June 2003 22:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Yeah, i like the sound of freevis a lot :)<br />
-      <br />
-      The pascal thingie was just a pascal compiler that i was working o as practice in writing lexers/parsers/compilers in c/c++. This one has a lot more avs syntax like syntax, and is still written in c/c++, but hasn't taken nearly as long as i wrote it with flex and bison. Well, if no one has any objections, should we go with FreeVIS?<br />
-      <br />
-      <br />
-      <br />
-      edit:<br />
-      damn, i didnt click the link before i wrote that... does that mean that FreeVIS is out?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
-
-      <p class="post-time small text-muted">15th June 2003 00:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">NO way ! Its an eye clinic.We are eye doctors ! Plus,i dont think they have copyright on FreeVIS.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
-
-      <p class="post-time small text-muted">15th June 2003 02:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Maybe we should taunt them and have a big eye as our logo? :D<br />
-      <br />
-      Well, i've run into a block. I can add in set functions like abs() etc... but im having a lot of trouble thinking of a way to store user functions. Any one have any ideas?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
-
-      <p class="post-time small text-muted">15th June 2003 03:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Use a call(functionname,param0,param1,...) method.<br />
-      <br />
-      And store functions like:<br /></p>
-      <pre>
-<code><br />function fName, pVar0, pVar1, ...<br /><br />end function<br /></code>
-</pre><br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OpenAVS (You have a better name?)"><title>OpenAVS (You have a better name?) - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-137.html">AVS Presets</a></li><li class="active">OpenAVS (You have a better name?)</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=138935">OpenAVS (You have a better name?)</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p><p class="post-time small text-muted">13th June 2003 23:47 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>OpenAVS (You have a better name?)</strong><br>Ok, so i have been coding for a few days now on a language system similar to the one used in avs, and so far, i have one that accepts variable declerations, and does math n'such. I am going to hopefully add in the ability to write custom functions, and possibly look up pre-written functions this weekend. If anyone has any ideas on a name for this project, it would be greately appreciated, as I was thinking of posting my code on sourceforge.net soon (all you coders best get in gear, and help me ;) ). I have some ideas of my own on how i would like to do the designing of presets etc.. in the new version, but am very open to suggestions. In the spirit of open source, i am also very happy to share around what i have written. Right now I am coding for the xmms system, but am writing it in a way that seperates core plugin code and pretty visualizer code in two seperate modules, that way we can hopefully have an easy time porting it to winders (yet another reason that i need some other developers on board with me). For the actual visualizer code, I was thinking that SDL would do a very nice job of rendering, and being free/portable. If anyone is interested, working in some OpenGL stuff would be a heck of a lot of fun too :)<br><br>Let me know if you are interested, cuz im gunna need help with this one :)</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Wiser87</span><br></p><p class="post-time small text-muted">14th June 2003 01:46 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">err... wrong forum (or sub-forum, or whatever...). This should go on the main AVS forum...</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">mikm</span><br></p><p class="post-time small text-muted">14th June 2003 02:30 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">i don't think you can use AVS in the name- copyright issues, plus it sounds cheap</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p><p class="post-time small text-muted">14th June 2003 02:55 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Did you write your own parser or use a generator? Is the code interpreted or compiled? Please post more details ;).</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p><p class="post-time small text-muted">14th June 2003 08:59 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Well, ive been coding a pascal compiler from scratch for a side project, and to take up less time, i used flex/bison to do quicker generaton of the language rules, and lexical analysis. Worked out pretty well :) I hear there are ports for the winders, so if all goes well, this should be a damn portable project :)<br><br>I was thinking of compiling to an intermediate code format - still to be devised of course - but that would run a heck of a lot quicker than interpreting every time it loads any ideas UCD? :D<br><br>Currently it is very very interpreted... doesnt even translate into any sort of icode... so its way un-optimised, and needs some work... but i dont think that its going to be anything too major to get goin well.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p><p class="post-time small text-muted">14th June 2003 14:28 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">i thought of the names openvis or openviz, but actually both names were used for different projects already. coincidently openviz is an application from <a href="http://http://help.avs.com/OpenViz/news/ov_23.asp" target="_blank">avs.com</a>.<br><br>well there's been a lot of talk about this before and it never resulted in anything. so i'm hoping your doing better, although i can't judge if pascal is optimal for this task. other programming languages might ease cross-development, and i'd love to see osx, linux and windows supported, maybe even (Open)BeOS. many other operating systems might have better multimedia-capabilities than windows. iirc, <a href="http://jheriko.deviantart.com" target="_blank">jheriko</a> was also interested in working on something like this. my suggestion is -since you sounded like you want to make it an open project- that you team up and register the project at <a href="http://www.sourceforge.net" target="_blank">sourceforge</a>. this might attract other people as well to work on it. but then it really needs a name. of course it would be nice if this new visualization plugin would be in a way compatible to avs. i don't know about the legal situation here, but then again nullsoft built in that svp loader, which plays sonique visualizations, <a href="http://www.sonique.com" target="_blank">sonique</a> is a product from lycos.<br><br>so, back to the name issue. remember that this can be anything (i.e. 'dog', 'house' etc.), it doesnt need to have this close association to the name of avs. if you still prefer this, think of OpenVS, OpenAV or IVS (independent vs)... whatever.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p><p class="post-time small text-muted">14th June 2003 14:48 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">OpenVL - Open Visualization Language</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br></p><p class="post-time small text-muted">14th June 2003 21:50 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">OpenVL sounds waaaaaaaaay to much like OpenGL.FreeVIS sounds nice to me.<br><a href="http://www.google.com/search?q=freevis&amp;ie=UTF-8&amp;oe=UTF-8&amp;hl=ro&amp;lr=" target="_blank">http://www.google.com/search?q=freev...TF-8&amp;hl=ro&amp;lr=</a></p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p><p class="post-time small text-muted">14th June 2003 22:49 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Yeah, i like the sound of freevis a lot :)<br><br>The pascal thingie was just a pascal compiler that i was working o as practice in writing lexers/parsers/compilers in c/c++. This one has a lot more avs syntax like syntax, and is still written in c/c++, but hasn't taken nearly as long as i wrote it with flex and bison. Well, if no one has any objections, should we go with FreeVIS?<br><br><br><br>edit:<br>damn, i didnt click the link before i wrote that... does that mean that FreeVIS is out?</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br></p><p class="post-time small text-muted">15th June 2003 00:11 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">NO way ! Its an eye clinic.We are eye doctors ! Plus,i dont think they have copyright on FreeVIS.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p><p class="post-time small text-muted">15th June 2003 02:52 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Maybe we should taunt them and have a big eye as our logo? :D<br><br>Well, i've run into a block. I can add in set functions like abs() etc... but im having a lot of trouble thinking of a way to store user functions. Any one have any ideas?</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p><p class="post-time small text-muted">15th June 2003 03:29 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Use a call(functionname,param0,param1,...) method.<br><br>And store functions like:<br></p><pre>
+<code><br>function fName, pVar0, pVar1, ...<br><br>end function<br></code>
+</pre><br>
+      <br>
       And you might want to have init,perframe,onbeat, and perpoint as functions too.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 04:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">yeah, i was wondering what the data structure would look like though. do you think that a linked list would work? i'm expecting that some sort of frame work for developing functions in c/c++ will be done too...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 13:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">How easy would everything be if Nullsoft would just give the source for AVS to us, and make it all open source...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 13:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Phaze1987</i><br />
+        <i>Originally posted by Phaze1987</i><br>
         <b>i dont think they have copyright on FreeVIS.</b>
       </blockquote>copyright and intellectual property are two pairs of shoes.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 13:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">FreeVis is a registered Trademark in Germany and is owned by LASIK Zentren GmbH, Mannheim. In the US there's a trademark FreeVision owned by CCCNetwork Systems Group Limited.<br />
-      <br />
+      <p class="post-content">FreeVis is a registered Trademark in Germany and is owned by LASIK Zentren GmbH, Mannheim. In the US there's a trademark FreeVision owned by CCCNetwork Systems Group Limited.<br>
+      <br>
       Hope that helps..</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 13:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">mannheim, my birthplace :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 14:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Well I'm there from time to time. A Friend of mine lives there. But mhhh I think we're going off topic ;)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 15:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">How 'bout "FUTURE VIS" or "GRAND VIS"??:D</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 17:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Grand VIS sounds like porn.FutureVIS sounds pretty nice.<br />
+      <p class="post-content">Grand VIS sounds like porn.FutureVIS sounds pretty nice.<br>
       Suggestion : EyeDlite . Sounds like crap...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">NemoOrange</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">NemoOrange</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 20:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">How about something like "Dilate"<br />
-      <br />
-      v. intr.<br />
-      To become wider or larger; expand.<br />
-      To speak or write at great length on a subject; expatiate<br />
-      <br />
+      <p class="post-content">How about something like "Dilate"<br>
+      <br>
+      v. intr.<br>
+      To become wider or larger; expand.<br>
+      To speak or write at great length on a subject; expatiate<br>
+      <br>
       stuff like "OpenViz" or "FreeFL" sounds boring.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Phaze1987</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 21:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Dilate? o_O Sounds spooky,it might attract people.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">15th June 2003 21:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">yeah, i like the sound of dilate :) as long as someone makes some sort of awesome preset involving an eye when its done...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 06:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Dilate sounds nice to me too.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 08:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">OpenVL!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 08:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Dilate sounds nice, but where's the connection to visualization?<br />
-      <br />
+      <p class="post-content">Dilate sounds nice, but where's the connection to visualization?<br>
+      <br>
       And for the preset: If Dilate will be at least as powerful as AVS then an awesome preset with an eye, shouldn't be the problem ;)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 08:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">i like it, sounds less boring than any abbreviation<br />
-      <br /></p>
+      <p class="post-content">i like it, sounds less boring than any abbreviation<br>
+      <br></p>
 
       <blockquote>
-        <i>Originally posted by mquadrat</i><br />
+        <i>Originally posted by mquadrat</i><br>
         <b>Dilate sounds nice, but where's the connection to visualization?</b>
       </blockquote>same for geiss, tripex... :) it's about what we make out of it
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">mquadrat</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 09:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Mhh you're right.. Then I'm voting YES for Dilate.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 09:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Dilate gives an classy impression, i vote for that :D And i agree that all those "openvis" "futurevis" "grandvis" "supervis" etc. those sound boring and rather childish...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 10:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Allright so its decided is it? DILATE!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 10:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">moltarx: you should get this registered at <a href="http://www.sourceforge.net" target="_blank">sourceforge</a> then</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Shock Value</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 14:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Dilate sounds good to me.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 15:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">So approximately how much time would it take till we get to see "Dilate"??</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 16:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Who knows, ill register it tonight, and hopefully get somewhere with coding support for user functions in the language part of it... but we still have the whole visualization part of it to go :)<br />
-      <br />
+      <p class="post-content">Who knows, ill register it tonight, and hopefully get somewhere with coding support for user functions in the language part of it... but we still have the whole visualization part of it to go :)<br>
+      <br>
       Its just me right now (that i know of) and any help would definitly speed up development :D Ill post the url of the sf.net project once i get it registered, so anyone that wants to can pull down the code, and start work :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 18:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">I'm already building a vis though :rolleyes:. It'll just won't get worked on any further until I finish exams.<br />
-      <br />
-      Might as well build one big, decent compiler rather. I can make it output assembly (and thus be as fast as any regular code) rather than be interpreted. Think about how it is layed out:<br />
-      - Is it typed or untyped?<br />
-      - Support for objects?<br />
-      - Extensible?<br />
+      <p class="post-content">I'm already building a vis though :rolleyes:. It'll just won't get worked on any further until I finish exams.<br>
+      <br>
+      Might as well build one big, decent compiler rather. I can make it output assembly (and thus be as fast as any regular code) rather than be interpreted. Think about how it is layed out:<br>
+      - Is it typed or untyped?<br>
+      - Support for objects?<br>
+      - Extensible?<br>
       - Event-driven or linear?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 21:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Are you going to have it generate assembly only for the routines that do math type functions? or just have it spit out a shared object or the like?<br />
-      <br />
+      <p class="post-content">Are you going to have it generate assembly only for the routines that do math type functions? or just have it spit out a shared object or the like?<br>
+      <br>
       Also, what were you going to use for rendering your vis? I was going to try and go for a cross platform type thing, and use sdl to render, as that has been built for linux, winders etc. I thought that if we did it that way, we might be able to bring some new people into the community that were forced to oogle at presets made until then :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 22:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Currently using OpenGL in Windows, but I'm thinking of switching to SDL. I'll see, first I have to get a prototype working ;);<br />
+      <p class="post-content">Currently using OpenGL in Windows, but I'm thinking of switching to SDL. I'll see, first I have to get a prototype working ;);<br>
       I intend to make it compile completely to assembly.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">16th June 2003 22:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">well, if you are interested in someone to help you code on it, im happy to scrap what i have, and help with yours, otherwise, ill probably just work on this one :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">2nd August 2003 09:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ok, I finally got my lazy ass around to registering the project on sourceforge. It's currently in review, and I should hear from them sometime on Monday about whether or not it was accepted.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">4th August 2003 16:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">There we have it :) <a href="https://sourceforge.net/projects/dilate/" target="_blank">https://sourceforge.net/projects/dilate/</a><br />
-      <br />
+      <p class="post-content">There we have it :) <a href="https://sourceforge.net/projects/dilate/" target="_blank">https://sourceforge.net/projects/dilate/</a><br>
+      <br>
       Im going to commit the code for the assembler (for the virtual machine) that I have already, although, I'm going to stop work on that for now, and design the virtual machine. If anyone is interested in helping out, get setup on sf.net, and send me an email :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">4th August 2003 23:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">posted the link in the vjforums. what about an osx version?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">5th August 2003 07:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Could be doable if we get someone coding that knows osx. I'm goin for compatibility and standards with what im coding, so hopefully porting it wouldn't be too bad.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">13th August 2003 21:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i think the official dilate discussion has moved <a href="http://vjforums.com/showthread.php?threadid=3473" target="_blank">here</a></p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">elcapjtk</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">elcapjtk</span><br></p>
 
       <p class="post-time small text-muted">14th August 2003 04:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">VisNG :)<br />
-      <br />
+      <p class="post-content">VisNG :)<br>
+      <br>
       Visualizations THE NEXT GENERATION!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">14th August 2003 16:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">uh...the name has been decided before.Dilate.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">15th August 2003 21:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">This seems like a great project.. I'd love to contribute, unfortunately I have no good development environment at the moment... this computer is far too crappy and lacks any tools or the space to install such tools. I should have my old machine back soon though.. then i might be able to lend a hand. I have no real knowledge at all of compilers and parsers, I made a really shit command line interpreter once but thats about it. However I have a pretty fair knowledge of 3d programming and opengl. I've made lots of small 3d side projects before.. 3d rendering in qbasic several spinning cubes, particle systems and other such basic pap in opengl and endless vb and gdi crap too.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">22nd August 2003 01:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Well, I would love to have some extra help! :)<br />
-      <br />
-      Currently the project has changed course a bit, and im working on developing a virtual machine... dont ask me if this is the best route to go, but it does seem to be the most fun :) Maybe I should split the two projects apart, and focus solely on the visualizer &gt;.&lt;<br />
-      <br />
-      Anyway, I am going to need help later on building visualization portion of the virtual machine bits... I havn't really posted any information on the architechure that I have sort of planned for this thing, but if anyone wants to start chatting on the sf.net forums for dilate, we could probably start to work thing out there :)<br />
-      <br />
-      Anyway, currently I have it all building in Linux, but would like to move towards having it be cross platform, so any help from windows developers would be very much appreciated!<br />
-      <br />
-      sf.net forums for dilate:<br />
-      <a href="http://sourceforge.net/forum/?group_id=87119" target="_blank">http://sourceforge.net/forum/?group_id=87119</a><br />
-      <br />
+      <p class="post-content">Well, I would love to have some extra help! :)<br>
+      <br>
+      Currently the project has changed course a bit, and im working on developing a virtual machine... dont ask me if this is the best route to go, but it does seem to be the most fun :) Maybe I should split the two projects apart, and focus solely on the visualizer &gt;.&lt;<br>
+      <br>
+      Anyway, I am going to need help later on building visualization portion of the virtual machine bits... I havn't really posted any information on the architechure that I have sort of planned for this thing, but if anyone wants to start chatting on the sf.net forums for dilate, we could probably start to work thing out there :)<br>
+      <br>
+      Anyway, currently I have it all building in Linux, but would like to move towards having it be cross platform, so any help from windows developers would be very much appreciated!<br>
+      <br>
+      sf.net forums for dilate:<br>
+      <a href="http://sourceforge.net/forum/?group_id=87119" target="_blank">http://sourceforge.net/forum/?group_id=87119</a><br>
+      <br>
       We also have the ability to setup a mailing list if that works better for anyone.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">22nd August 2003 04:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Hmm.. don't think I can help much... all I know is Win32 and OpenGL.. everything else is very much a blur.<br />
-      <br />
+      <p class="post-content">Hmm.. don't think I can help much... all I know is Win32 and OpenGL.. everything else is very much a blur.<br>
+      <br>
       Developing for Linux? Is this a wise idea.. your target audience is going to be about .1% that of a Windows based vis.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">22nd August 2003 07:01 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Well, like I said, I'm looking to make this a cross platform thing, which is why I was looking for some Win32 developers to help out with getting it running in windows. I'm not using any linux specific libraries right now, so it should compile just fine in windows.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
       <p class="post-time small text-muted">22nd August 2003 16:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Well, I'm beginning to realize that this virtual machine project is more of a personal thing, that I would like to do, and isn't necessarily going to make the development of dilate go any quicker. So I found the ferite language parser, which looks pretty awesome, and very flexible. We could use that as the language parser for the preset, as it has a fairly small footprint, and just develop the interface to the various mp3 players out there seperatly. Sound ok?<br />
-      <br />
-      btw, Ferite is cross platform, so as long as we use something like SDL to do the windowing, we should be able to keep everything but the interface to the various players cross platform :)<br />
-      <br />
+      <p class="post-content">Well, I'm beginning to realize that this virtual machine project is more of a personal thing, that I would like to do, and isn't necessarily going to make the development of dilate go any quicker. So I found the ferite language parser, which looks pretty awesome, and very flexible. We could use that as the language parser for the preset, as it has a fairly small footprint, and just develop the interface to the various mp3 players out there seperatly. Sound ok?<br>
+      <br>
+      btw, Ferite is cross platform, so as long as we use something like SDL to do the windowing, we should be able to keep everything but the interface to the various players cross platform :)<br>
+      <br>
       <a href="http://sf.net/projects/ferite" target="_blank">http://sf.net/projects/ferite</a></p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">23rd August 2003 08:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Quote:</p>
-      <hr />
-      definitely wrong, there's quite a lot free vj-tools for linux.<br />
-      <br />
+      <hr>
+      definitely wrong, there's quite a lot free vj-tools for linux.<br>
+      <br>
       i hope developing it for linux will ease porting it to osx.
 
       <table cellpadding="6" cellspacing="0" border="0" width="100%">
         <tr>
           <td class="alt2">
-            <hr />
-            <i>Originally posted by jheriko</i><br />
+            <hr>
+            <i>Originally posted by jheriko</i><br>
             <b>Developing for Linux? Is this a wise idea.. your target audience is going to be about .1% that of a Windows based vis.</b>
-            <hr />
+            <hr>
           </td>
         </tr>
-      </table><br />
+      </table><br>
 
       <div class="post">
-        <p class="post-meta"><span class="post-author text-primary">moltarx</span><br /></p>
+        <p class="post-meta"><span class="post-author text-primary">moltarx</span><br></p>
 
         <p class="post-time small text-muted">24th August 2003 01:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-        <p class="post-content">Actually, it should make it very easy :)<br />
-        <br />
+        <p class="post-content">Actually, it should make it very easy :)<br>
+        <br>
         I started developing ferite-sdl bindings, and the work is going fairly well. The thing that you might be interested in knowing is that ferite will build for osx, and so does sdl. This way, it should be pretty easy to port. Also, I just got an ibook, so I expect to be doing some work on porting it to osx ;)</p>
       </div>
-      <hr />
+      <hr>
 
       <div class="footer">
         <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
       </div>
-    </div><!-- Put JavaScript here -->
+    </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-  </div>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></div></body></html>

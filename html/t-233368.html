@@ -1,346 +1,235 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="parsing $(title) strings" />
-
-  <title>parsing $(title) strings - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">parsing $(title) strings</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=233368">parsing $(title) strings</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
-
-      <p class="post-time small text-muted">17th December 2005 07:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>parsing $(title) strings</strong><br />
-      Let's say my title has delimeters in it, example, using "-" as a delimeter below.<br />
-      <br />
-      Bob - Elvis Presley - Hound Dog<br />
-      <br />
-      I want to put each field in a seperate text renderer, so it displays in AVS like this.<br />
-      <br />
-      Bob<br />
-      Elvis Presley<br />
-      Hound Dog<br />
-      <br />
-      Anyone got any ideas on how to do this?<br />
-      <br />
-      --toq</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
-
-      <p class="post-time small text-muted">17th December 2005 12:56 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">I don't think AVS has any kind of multi-line text support, or did you mean play song - show title, play next song move 1 space down? if so i think you'd have to use a counter of some sort so it'd be ...<br />
-      <br />
-      Frame: counter=counter+0.01 // the greater the number the quicker it should go.<br />
-      Point: x=counter*$(title)&amp;if(title,vartrue,varfalse);<br />
-      <br />
-      But I'm not entirely sure if AVS has any kind of support for using $(title) in the actual superscopes or anything ...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
-
-      <p class="post-time small text-muted">17th December 2005 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">That would be useful. What I do sometimes is draw Render-Text, and save that to a buffer, etc..</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
-
-      <p class="post-time small text-muted">18th December 2005 03:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Yah I think superscope support was what I was asking about, like load $(title) as a superscope variable, then each delimeter would split the title into 3 more variables.<br />
-      <br />
-      I'm dumb with AVS, but hopefully this can make some sense.<br /></p>
-      <pre>
-<code>Bob</code>-ElvisPresley-HoundDog<br /> ^------^---------------^---------&gt;&gt;Variable1<br />      L---------------|---------&gt;&gt;Variable2<br />      L---------&gt;&gt;variable3<br />
-</pre>So the contents of $(title) variable gets rendered into the superscope. Superscope looks for the "-" delimeter, then passes whats in between the "-" delimeter to 3 different render&gt;text effects<br />
-      <br />
-      Render&gt;text&gt;Variable1<br />
-      Render&gt;text&gt;Variable2<br />
-      Render&gt;text&gt;Variable3<br />
-      <br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="parsing $(title) strings"><title>parsing $(title) strings - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">parsing $(title) strings</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=233368">parsing $(title) strings</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">toqer</span><br></p><p class="post-time small text-muted">17th December 2005 07:23 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>parsing $(title) strings</strong><br>Let's say my title has delimeters in it, example, using "-" as a delimeter below.<br><br>Bob - Elvis Presley - Hound Dog<br><br>I want to put each field in a seperate text renderer, so it displays in AVS like this.<br><br>Bob<br>Elvis Presley<br>Hound Dog<br><br>Anyone got any ideas on how to do this?<br><br>--toq</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br></p><p class="post-time small text-muted">17th December 2005 12:56 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">I don't think AVS has any kind of multi-line text support, or did you mean play song - show title, play next song move 1 space down? if so i think you'd have to use a counter of some sort so it'd be ...<br><br>Frame: counter=counter+0.01 // the greater the number the quicker it should go.<br>Point: x=counter*$(title)&amp;if(title,vartrue,varfalse);<br><br>But I'm not entirely sure if AVS has any kind of support for using $(title) in the actual superscopes or anything ...</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p><p class="post-time small text-muted">17th December 2005 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">That would be useful. What I do sometimes is draw Render-Text, and save that to a buffer, etc..</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">toqer</span><br></p><p class="post-time small text-muted">18th December 2005 03:30 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Yah I think superscope support was what I was asking about, like load $(title) as a superscope variable, then each delimeter would split the title into 3 more variables.<br><br>I'm dumb with AVS, but hopefully this can make some sense.<br></p><pre>
+<code>Bob</code>-ElvisPresley-HoundDog<br> ^------^---------------^---------&gt;&gt;Variable1<br>      L---------------|---------&gt;&gt;Variable2<br>      L---------&gt;&gt;variable3<br>
+</pre>So the contents of $(title) variable gets rendered into the superscope. Superscope looks for the "-" delimeter, then passes whats in between the "-" delimeter to 3 different render&gt;text effects<br>
+      <br>
+      Render&gt;text&gt;Variable1<br>
+      Render&gt;text&gt;Variable2<br>
+      Render&gt;text&gt;Variable3<br>
+      <br>
       (btw this is for my karaoke purposes) This way I can display the singers name, the song title, and the artist on 3 different lines in AVS while the singer is singing.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">fastingaciu</span><br></p>
 
       <p class="post-time small text-muted">18th December 2005 04:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">this is exactly what t0qer sad.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">toqer</span><br></p>
 
       <p class="post-time small text-muted">18th December 2005 05:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Not even close fasting, but looking at your example will let me use the correct terminology.<br />
-      <br />
-      I've attatched poo.zip, it's nothing near what I need, but maybe a brief explanation of what i'm using it for will help.<br />
-      <br />
-      <br />
-      I overlay AVS behind karaoke lyrics. There's a nice timer that shows the singer how long until their song ends (lower left corner) then 2 render text's to display the $(title), but the way i'm displaying the $(title) is sort of messy. Stuff goes off screen, I have to do weird stuff, it's no good.<br />
-      <br />
-      Ok, here's what I need again, with better terminology.<br />
-      <br />
-      I want the contents of $(title) to go into a reg00<br />
-      <br />
-      Reg00 string is read till it hits a "-", everything up to "-" goes into Reg01<br />
-      <br />
-      Reg00 is read again, everything from the first "-" delimeter to the second "-" delimeter is put into reg01<br />
-      <br />
-      reg00 is read a third time, everything after the second "-" delimeter is put into reg03<br />
-      <br />
-      So to recap.<br />
-      <br />
-      "-" is a delimeter, THINK DATABASES<br />
-      <br />
-      Reg00 = $(title)<br />
-      Reg01 = Text up to the first "-" delimeter<br />
-      Reg02 = Text from the first "-" to the second "-" delimeter<br />
-      Reg03 = All text after the second "-" delimeter<br />
-      <br />
-      Is this something that can be done in a superscope at all?<br />
-      <br />
+      <p class="post-content">Not even close fasting, but looking at your example will let me use the correct terminology.<br>
+      <br>
+      I've attatched poo.zip, it's nothing near what I need, but maybe a brief explanation of what i'm using it for will help.<br>
+      <br>
+      <br>
+      I overlay AVS behind karaoke lyrics. There's a nice timer that shows the singer how long until their song ends (lower left corner) then 2 render text's to display the $(title), but the way i'm displaying the $(title) is sort of messy. Stuff goes off screen, I have to do weird stuff, it's no good.<br>
+      <br>
+      Ok, here's what I need again, with better terminology.<br>
+      <br>
+      I want the contents of $(title) to go into a reg00<br>
+      <br>
+      Reg00 string is read till it hits a "-", everything up to "-" goes into Reg01<br>
+      <br>
+      Reg00 is read again, everything from the first "-" delimeter to the second "-" delimeter is put into reg01<br>
+      <br>
+      reg00 is read a third time, everything after the second "-" delimeter is put into reg03<br>
+      <br>
+      So to recap.<br>
+      <br>
+      "-" is a delimeter, THINK DATABASES<br>
+      <br>
+      Reg00 = $(title)<br>
+      Reg01 = Text up to the first "-" delimeter<br>
+      Reg02 = Text from the first "-" to the second "-" delimeter<br>
+      Reg03 = All text after the second "-" delimeter<br>
+      <br>
+      Is this something that can be done in a superscope at all?<br>
+      <br>
       --toq</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br></p>
 
       <p class="post-time small text-muted">18th December 2005 06:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I don't think so sorry, but maybe with a dynamic movement! :D Just apply the same principles through the dm as the ssc. :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">toqer</span><br></p>
 
       <p class="post-time small text-muted">18th December 2005 07:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I know yall hate "Can you do it for me cause I don't know wtf i'm doing" but could you do it for me matt?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br></p>
 
       <p class="post-time small text-muted">18th December 2005 12:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">I might as well save you some time here...<br />
-      <br />
-      You cant do what you are asking in AVS. The text support is very poor, the $(title) support was only added in the latest version and all it does is display the song title directly in a render/text.<br />
-      <br />
-      - You cannot retrieve the song title/artist/number/albumn/etc... independantly<br />
-      - You cannot put text into variables<br />
-      - You cannot perform any processing on text<br />
-      <br />
+      <p class="post-content">I might as well save you some time here...<br>
+      <br>
+      You cant do what you are asking in AVS. The text support is very poor, the $(title) support was only added in the latest version and all it does is display the song title directly in a render/text.<br>
+      <br>
+      - You cannot retrieve the song title/artist/number/albumn/etc... independantly<br>
+      - You cannot put text into variables<br>
+      - You cannot perform any processing on text<br>
+      <br>
       Sorry, render/text is one of the worst things about AVS</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br></p>
 
       <p class="post-time small text-muted">19th December 2005 21:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Agreed.<br />
-      <br />
-      Still, as with most AVS limitations, there may be a way around it. It may require some trickiness, though.<br />
-      <br />
-      For example, my first idea is to consider using the time() function to get the length of the song, which can be used to determine which song is being played. Then you can code Effect Lists, one for each song, each with as many Render/Text objects you need to display the appropriate information for each song, exactly the way you want it.<br />
-      <br />
-      It's a bit of a cheat, really, but the approach might work.<br />
-      <br />
+      <p class="post-content">Agreed.<br>
+      <br>
+      Still, as with most AVS limitations, there may be a way around it. It may require some trickiness, though.<br>
+      <br>
+      For example, my first idea is to consider using the time() function to get the length of the song, which can be used to determine which song is being played. Then you can code Effect Lists, one for each song, each with as many Render/Text objects you need to display the appropriate information for each song, exactly the way you want it.<br>
+      <br>
+      It's a bit of a cheat, really, but the approach might work.<br>
+      <br>
       If you have more than just a few songs, though, this is going to be really tedious. Also, you're likely to have problems if you have two songs that are the same length!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br></p>
 
       <p class="post-time small text-muted">19th December 2005 21:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">That technique assumes a fixed playlist as well, a more concrete solution would be producing an APE... but we've had the old text2 discussion before and nothing has come of it</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 01:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Text2? Linky please...<br />
-      <br />
+      <p class="post-content">Text2? Linky please...<br>
+      <br>
       I know, I can't find it...sry.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 12:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by PAK-9</i><br />
+        <i>Originally posted by PAK-9</i><br>
         <b>..nothing has come of it</b>
       </blockquote>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 13:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">It's still a decent idea...Even if it collapsed.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">toqer</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 17:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Coding for each song would be impossible, at least the way I use AVS for my karaoke shows. Bummer $(title) can't be parsed, I can settle with what I have for now. Thanks for setting me straight on this guys.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 17:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">The main reason why Text2 hasn't been created yet is mainly because text is pixel-based.<br />
-      AVS mainly runs in small resolutions, so the size of the text often exceeds the AVS window.<br />
-      Also, the position of the text in a preset is resolution-dependent, so there's no telling what the position of the text will be at the user's end.<br />
-      Overall: Text and AVS simply don't match very well.<br />
-      <br />
-      If anyone feels like creating Text2 go ahead, but realize that it won't be used (shouldn't be used) as much in the first place.<br />
-      <br />
-      Toqer:<br />
+      <p class="post-content">The main reason why Text2 hasn't been created yet is mainly because text is pixel-based.<br>
+      AVS mainly runs in small resolutions, so the size of the text often exceeds the AVS window.<br>
+      Also, the position of the text in a preset is resolution-dependent, so there's no telling what the position of the text will be at the user's end.<br>
+      Overall: Text and AVS simply don't match very well.<br>
+      <br>
+      If anyone feels like creating Text2 go ahead, but realize that it won't be used (shouldn't be used) as much in the first place.<br>
+      <br>
+      Toqer:<br>
       Perhaps there is a way to get the song info from winamp itself instead of from AVS, and create a small app that has the AVS overlay color as background and shows the text in the beamer's resolution instead of in AVS's resolution (stated you're using overlay mode of course)?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">toqer</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">toqer</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 21:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">This is how i'm using it now,<br />
-      <br />
-      <a href="http://www.7bamboo.com/albums/album09/avstitle.png" target="_blank">http://www.7bamboo.com/albums/album09/avstitle.png</a><br />
-      <br />
-      Title is at the top, little countdown timer in the lower left corner to let singers know how long till their song is over. (D singing crazy)<br />
-      <br />
-      Not all fonts are bitmap, Postscript and Truetype are both vector fonts.<br />
-      <br />
-      Creating an app? Heh, I can't code anything, unless you like atari basic.<br />
-      <a href="http://www.7bamboo.com/albums/album09/woowoosound.png" target="_blank">http://www.7bamboo.com/albums/album09/woowoosound.png</a><br />
-      <br />
+      <p class="post-content">This is how i'm using it now,<br>
+      <br>
+      <a href="http://www.7bamboo.com/albums/album09/avstitle.png" target="_blank">http://www.7bamboo.com/albums/album09/avstitle.png</a><br>
+      <br>
+      Title is at the top, little countdown timer in the lower left corner to let singers know how long till their song is over. (D singing crazy)<br>
+      <br>
+      Not all fonts are bitmap, Postscript and Truetype are both vector fonts.<br>
+      <br>
+      Creating an app? Heh, I can't code anything, unless you like atari basic.<br>
+      <a href="http://www.7bamboo.com/albums/album09/woowoosound.png" target="_blank">http://www.7bamboo.com/albums/album09/woowoosound.png</a><br>
+      <br>
       Creating an app is an ok solution, but I already scale the karaoke screen to fit IRC text on the bottom, and don't wish to scale it any further, also I have it set to be always on top (in case an annoying little popup from a website happens to wander over on that monitor if im surfing) So between those two points, it would just be better if it was built into AVS.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">20th December 2005 23:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Sorry if I was unclear about the text size.. What I meant was that the <u>size</u> of the characters is pixel-based. Of course there are different fonttypes.<br />
+      <p class="post-content">Sorry if I was unclear about the text size.. What I meant was that the <u>size</u> of the characters is pixel-based. Of course there are different fonttypes.<br>
       What I meant was that you can't, for instance, code a character to be 1/100 of the screenwidth.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">21st December 2005 16:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The reason it hasnt been made is because its not worth the time needed to make it... its not hard... its just a lot of time and effort to make a user friendly and powerful text replacement.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JFASI</span><br></p>
 
       <p class="post-time small text-muted">21st December 2005 17:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">User friendly can be a pain...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

@@ -1,483 +1,395 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Newbie Picture II Question" />
-
-  <title>Newbie Picture II Question - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Newbie Picture II Question</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=125731">Newbie Picture II Question</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">psyduck2</span><br /></p>
-
-      <p class="post-time small text-muted">20th February 2003 09:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Newbie Picture II Question</strong><br />
-      Hi this is my first post so i want to say hi to everyone. i did alot of downloading, way too impressed to not get into this myself! I know how to use openGL pretty well (i did a 3d city for a school assignment) but AVS seems totally different. i hope my knowledge can be transfered over :-)<br />
-      <br />
-      Anyways, im just experimenting with different precoded effects and so im using Picture II and I have a set of images that i want to change with the tempo. I tried doing x2 on Picture II with other images but they are simulatenously on screen. How do i "turn off" one picture and then turn on another? I think i want to do a trans fade to black between each new picture. Thanks for any help in advance.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
-
-      <p class="post-time small text-muted">20th February 2003 10:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">If it's only two pictures then you could use a buffer save &amp; a alpha blending dynamic movement...<br />
-      <br />
-      The effect tree would look like:<br />
-      <br />
-      Render / Picture II (picture1)<br />
-      Buffer Save (save buffer 1)<br />
-      Render / Picture II (picture2)<br />
-      Trans / Dynamic Movement<br />
-      <br />
-      <br />
-      Now select Buffer 1 as the source of the dynamice movement, then check "No movement, only blending".<br />
-      <br />
-      add the code:<br /></p>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Newbie Picture II Question"><title>Newbie Picture II Question - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">Newbie Picture II Question</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=125731">Newbie Picture II Question</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">psyduck2</span><br></p><p class="post-time small text-muted">20th February 2003 09:03 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Newbie Picture II Question</strong><br>Hi this is my first post so i want to say hi to everyone. i did alot of downloading, way too impressed to not get into this myself! I know how to use openGL pretty well (i did a 3d city for a school assignment) but AVS seems totally different. i hope my knowledge can be transfered over :-)<br><br>Anyways, im just experimenting with different precoded effects and so im using Picture II and I have a set of images that i want to change with the tempo. I tried doing x2 on Picture II with other images but they are simulatenously on screen. How do i "turn off" one picture and then turn on another? I think i want to do a trans fade to black between each new picture. Thanks for any help in advance.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p><p class="post-time small text-muted">20th February 2003 10:35 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">If it's only two pictures then you could use a buffer save &amp; a alpha blending dynamic movement...<br><br>The effect tree would look like:<br><br>Render / Picture II (picture1)<br>Buffer Save (save buffer 1)<br>Render / Picture II (picture2)<br>Trans / Dynamic Movement<br><br><br>Now select Buffer 1 as the source of the dynamice movement, then check "No movement, only blending".<br><br>add the code:<br></p><pre>
+<code><br>t=t+0.05 ;<br>a=sin(t)+0.5<br></code>
+</pre><br>
+      to the frame section of the dynamic movement<br>
+      <br>
+      and put:<br>
       <pre>
-<code><br />t=t+0.05 ;<br />a=sin(t)+0.5<br /></code>
-</pre><br />
-      to the frame section of the dynamic movement<br />
-      <br />
-      and put:<br />
-      <pre>
-<code><br />alpha=a<br /></code>
-</pre><br />
-      <br />
-      into the pixel section of the dm.<br />
-      <br />
-      <br />
-      <br />
-      Here i'll attach the preset for you. Just put two picture's into the picture Render II's.<br />
-      <br />
-      <br />
+<code><br>alpha=a<br></code>
+</pre><br>
+      <br>
+      into the pixel section of the dm.<br>
+      <br>
+      <br>
+      <br>
+      Here i'll attach the preset for you. Just put two picture's into the picture Render II's.<br>
+      <br>
+      <br>
       btw. Using multiple images would require some more work, but im a bit lazy now, and im pretty sure someone can do it better than me :)
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br></p>
 
       <p class="post-time small text-muted">20th February 2003 10:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Maybe the Slideshow APE would be the right thing for you.<br />
+      <p class="post-content">Maybe the Slideshow APE would be the right thing for you.<br>
       To find it look at the <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?s=&amp;threadid=90097" target="_blank">APE Thread</a></p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">psyduck2</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">psyduck2</span><br></p>
 
       <p class="post-time small text-muted">20th February 2003 12:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Awesome... heheh, this is cool. nearly immediate feedback from tuggumi the great and magic.. ill do it both ways to learn more. Thanks.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br></p>
 
       <p class="post-time small text-muted">20th February 2003 12:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">/me likes Newbies willing to learn <a href="http://www.htwm.de/mkrause1/polymorph/forum/images/smiles/icon_lol.gif" target="_blank">http://www.htwm.de/mkrause1/polymorp...s/icon_lol.gif</a><br />
-      <br />
+      <p class="post-content">/me likes Newbies willing to learn <a href="http://www.htwm.de/mkrause1/polymorph/forum/images/smiles/icon_lol.gif" target="_blank">http://www.htwm.de/mkrause1/polymorp...s/icon_lol.gif</a><br>
+      <br>
       Hope to see some weird presets in near future then! ;)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">20th February 2003 12:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yeah, Me too and i bet rest of the regular forum members also enjoy seeing a newbie that makes a good post &amp; is willing to learn.<br />
-      <br />
+      <p class="post-content">Yeah, Me too and i bet rest of the regular forum members also enjoy seeing a newbie that makes a good post &amp; is willing to learn.<br>
+      <br>
       But what's so great about me ha? Im just a regular guy with waaaay too much free time in his hands... jeez i don't even know how to do real 3D... :blah:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br></p>
 
       <p class="post-time small text-muted">20th February 2003 13:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Tuggummi</i><br />
+        <i>Originally posted by Tuggummi</i><br>
         <b>But what's so great about me ha?</b>
       </blockquote>You're having this Terriffic moving <font size="3"><b>T</b></font> in your Avatar, thats why the Juniors are so impressed by you! <a href="http://www.htwm.de/mkrause1/polymorph/forum/images/smiles/icon_lol.gif" target="_blank">http://www.htwm.de/mkrause1/polymorp...s/icon_lol.gif</a>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">22nd February 2003 05:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">The slideshow APE is buggy and only runs once. It's also really slow and a nuicance to use. (this is a hint to some of you APE techies to program a new one...)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br></p>
 
       <p class="post-time small text-muted">22nd February 2003 05:34 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i really dont like using pictures in avs, it defeats the object of creating an effect using the things in avs for me.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 01:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I agree with you raz. The point of avs is to recreate the effect w/o pictures. pictures should only be used in texer, or sometimes for a small logo.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 03:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Erm...not really. I saw a really good starship effect created with Render/Picture a while back...can't remember what it was, but it was REALLY well done. It didn't turn or anything, but god did it look better than any SSC I've ever seen...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 03:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yes, but if someone could make a starship SSC as good, then it would be even better since it could turn and would better react to music. I consider reactivity a bit more important than looks once you get to a certain point.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 06:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>Avatars</strong><br /></p>
+      <p class="post-content"><strong>Avatars</strong><br></p>
 
       <blockquote>
-        <i>Originally posted by Magic.X</i><br />
+        <i>Originally posted by Magic.X</i><br>
         <b>You're having this Terriffic moving <font size="3"><b>T</b></font> in your Avatar, thats why the Juniors are so impressed by you! <a href="http://www.htwm.de/mkrause1/polymorph/forum/images/smiles/icon_lol.gif" target="_blank">http://www.htwm.de/mkrause1/polymorp...s/icon_lol.gif</a></b>
       </blockquote>This is totally non-related to the topic, but Avatar is also a Hindi word which means physical forms. In Hindu mythology, the god vishnu took many 'human avatars' and come to earth from the land of the gods :)
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 06:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>Solution Available</strong><br />
-      psyduck2: Here's the solution if you want to fade in-out of three pictures:<br />
-      I am bored to explain but here's the avs file.<br />
-      Just add your pictures in the three effect lists.<br />
-      Make sure the 'speed' constant is same in all the three dm's<br />
-      <br />
+      <p class="post-content"><strong>Solution Available</strong><br>
+      psyduck2: Here's the solution if you want to fade in-out of three pictures:<br>
+      I am bored to explain but here's the avs file.<br>
+      Just add your pictures in the three effect lists.<br>
+      Make sure the 'speed' constant is same in all the three dm's<br>
+      <br>
       Shreyas</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 19:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Anubis: My point was you COULDN'T. SSC only does so much. It doesn't have anti-aliasing, and it's damn near impossible to draw something "perfectly." Think back to the days of Mario Kart 64. They used pictures instead of wireframes for the characters because it was so much easier to make it look good. You can't do that in AVS, but you can't make SSC's look as good as pictures, either. The effect created in that starship preset was a view from the back, which was perfect for that preset.<br />
+      <p class="post-content">Anubis: My point was you COULDN'T. SSC only does so much. It doesn't have anti-aliasing, and it's damn near impossible to draw something "perfectly." Think back to the days of Mario Kart 64. They used pictures instead of wireframes for the characters because it was so much easier to make it look good. You can't do that in AVS, but you can't make SSC's look as good as pictures, either. The effect created in that starship preset was a view from the back, which was perfect for that preset.<br>
       You've got a real problem with "if it's easy to use it's LAME", Anubis...I get the feeling that if there was a fire in your hotel and you were in the lobby, you'd get up to the top floor and take the fire escape there, just to prove that you're better than everybody else.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 20:10 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero i really dont get that analogy, i personally agree with both of you. It would look good and better than any scope blah blah but i still wouldnt give as much respect out to it if it was made out of a picture. I mean i hate using pictures, tho only pictures in the 15 releasable presets ive made are 1 for texer and that picture of homer i used for my donuts preset. Please lets not start an argument over this though, either you use pictures in a preset or you dont, theres no point bickering over why ones better than the other. Its the preset that matters not the picture.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">23rd February 2003 21:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero, if it can be done in a SSC and look reasonably well <b>and</b> be music reactive then I would use a SSC. Sometimes it is pointless to use a SSC and a picture will suffice. I don't care which way is easier/harder - I just want the best results. I love music reactivity(hence my love for avs) and would rather have this than perfect graphics. For example, I would rather have Raz change his homer simpson picture to a SSC so that homer can move after the donuts, but in a preset such as UnConeD's Wolfenstein preset it would be pointless to make the walls with SSC's when the picture works perfectly and doesn't need to react.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>Pictures in ssc</strong><br />
-      I think making complex ictures in ssc's is almost imposiible. you will have to use n=w*h to make a fullscreen picture using ssc's.<br />
+      <p class="post-content"><strong>Pictures in ssc</strong><br>
+      I think making complex ictures in ssc's is almost imposiible. you will have to use n=w*h to make a fullscreen picture using ssc's.<br>
       the other soultion is to use a dm to move the icture loaded. it will be slow but you cant sit and code colours in ssc's to that extent!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">If the entire picture is needed then I say use the picture, but if you can break it down into just a few necessary parts that can be done decently with SSC's then I would use SSC's to do it.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>originally posted by Raz_001</i><br />
+        <i>originally posted by Raz_001</i><br>
         i really dont like using pictures in avs, it defeats the object of creating an effect using the things in avs for me.
-        <hr />
+        <hr>
       </blockquote>
     </div>
-    <hr />
+    <hr>
     Quote:
 
     <table cellpadding="6" cellspacing="0" border="0" width="100%">
       <tr>
         <td class="alt2">
-          <hr />
-          <i>originally posted by anubis2003</i><br />
-          I agree with you raz. The point of avs is to recreate the effect w/o pictures. pictures should only be used in texer, or sometimes for a small logo.<br />
-          <br />
-          <br />
-          riiiiight...<br />
-          <br />
-          <br />
+          <hr>
+          <i>originally posted by anubis2003</i><br>
+          I agree with you raz. The point of avs is to recreate the effect w/o pictures. pictures should only be used in texer, or sometimes for a small logo.<br>
+          <br>
+          <br>
+          riiiiight...<br>
+          <br>
+          <br>
           There goes <b>both</b> downloads my Bitmapped II is going to get :igor:
         </td>
       </tr>
-    </table><br />
+    </table><br>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">shreyas_potnis</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>OK</strong><br />
+      <p class="post-content"><strong>OK</strong><br>
       Tugummi: But sometimes it becomes almost impossible to do complex images in AVS. You cant get what exactly you want.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">heh, dont worry tuggummi ill download, im just saying id much prefer not to use a picture, id go massively out of my way if its possible (and i know how to do it) to replace a picture with scope(s)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Raz, you're just saying that, because i have a <b>Terriffic moving T Avatar</b> :igor:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Raz</span><br></p>
 
       <p class="post-time small text-muted">24th February 2003 06:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">lol<br />
-      WELL MY AVATAR HAS!!!!!...................<br />
-      <br />
+      <p class="post-content">lol<br>
+      WELL MY AVATAR HAS!!!!!...................<br>
+      <br>
       <font size="1">my name</font></p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Jaheckelsafar</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 00:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Better than mine. :wierd:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 02:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">My avatar have...<br />
-      <br />
-      Well, something you made...<br />
-      <br />
-      Might as well create a simple avatar for meself.<br />
-      <br />
+      <p class="post-content">My avatar have...<br>
+      <br>
+      Well, something you made...<br>
+      <br>
+      Might as well create a simple avatar for meself.<br>
+      <br>
       As for the "Terrific T". I believe a good amount of us can recreate it in AVS.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">anubis2003</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 02:30 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yeah, in 2D at least. I would have trouble with the 3-D, because I'm still struggling with textured objects like the T in 3-D.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 06:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yeah well Atero already did make a preset out of my avatar :D And it was supacool 3D!<br />
-      <br />
+      <p class="post-content">Yeah well Atero already did make a preset out of my avatar :D And it was supacool 3D!<br>
+      <br>
       Look for Forward Flow 2.0 and you'll find it there. I don't have it with me right now...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 07:42 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Pictures? No Pictures?? Whats th point of this discussion?<br />
-      If you're making an SSC moving and looking good it's :up:<br />
-      <br />
-      But why shouldnt a Picture combined with a good DM as look as an SSC?<br />
-      <br />
+      <p class="post-content">Pictures? No Pictures?? Whats th point of this discussion?<br>
+      If you're making an SSC moving and looking good it's :up:<br>
+      <br>
+      But why shouldnt a Picture combined with a good DM as look as an SSC?<br>
+      <br>
       I'm using Picures as well as AVI's and combining AVI's, SSC's and DM's can look really great! (would post an example but it would be 3 Megs large)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 07:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">which is the only reason you should shy away from using avis and bmps. but now with picture II - which is faster than picture I and mopre useable anyway - you can use gifs and jpegs...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 11:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Atero: it DOESN'T do png, gif or jpeg. I explained it in the release notes which you obviously read attentively :p.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Magic.X</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 11:24 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">[Topic APE]<br />
-      So you see, it's not that peopel start bugging you because they <i>hav'nt</i> the release notes, they are simply too <b>lazy</b> to read them!<br />
+      <p class="post-content">[Topic APE]<br>
+      So you see, it's not that peopel start bugging you because they <i>hav'nt</i> the release notes, they are simply too <b>lazy</b> to read them!<br>
       :p</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 11:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Well i don't mind if Picture II doesn't support any other than bmp, you know a zip packed bmp is almost the same size as a zip packed jpg :igor:<br />
-      <br />
+      <p class="post-content">Well i don't mind if Picture II doesn't support any other than bmp, you know a zip packed bmp is almost the same size as a zip packed jpg :igor:<br>
+      <br>
       But i love the bilinear filtering in it! It just makes it worth using pictures in the first place.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">legohead</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">legohead</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 21:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Awww come on unconed - wheres the postscript interpreter, .gif and .swf loader???<br />
+      <p class="post-content">Awww come on unconed - wheres the postscript interpreter, .gif and .swf loader???<br>
       Just kidding. Its a damn good little ape.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">25th February 2003 23:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">I didn't read the release notes - I never do unless I have troubles, and since I haven't used your APE much (and when I do it's with .bmp's cos I'm to lazy to get jpegs) I haven't had time to develop such problems. Besides, I distinctly remember you telling me you'd gotten .gif and .jpg support in #finnish-flash....</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

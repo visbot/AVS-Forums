@@ -1,129 +1,32 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="UnConeD - Seismogrid ..color edit" />
-
-  <title>UnConeD - Seismogrid ..color edit - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-137.html">AVS Presets</a></li>
-
-      <li class="active">UnConeD - Seismogrid ..color edit</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=276875">UnConeD - Seismogrid ..color edit</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Koogle</span><br /></p>
-
-      <p class="post-time small text-muted">3rd September 2007 17:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>UnConeD - Seismogrid ..color edit</strong><br />
-      just wondering if anyone knows how I could UnConeD - Seismogrid so the viz colors only stay in the blue color range like so<br />
-      <br />
-      <a href="http://img113.imageshack.us/my.php?image=capture5sx5.jpg" target="_blank"></a><a href="http://img113.imageshack.us/img113/1029/capture5sx5.th.jpg" target="_blank">http://img113.imageshack.us/img113/1...ure5sx5.th.jpg</a><br />
-      <br />
-      did find this in the avs but don't understand the names..<br />
-      <br />
-      Â£ colorcode;<br />
-      dy=(py-oy);<br />
-      k=max(0,.03-dy*.3);l=max(0,dy*.1+.03);<br />
-      vg=(red*2+.08);vb=(red*1.5+k*2);vr=(red*2.5+l*2);<br />
-      d=min(1,max(0,((sqr(hx-hcx)+sqr(hy-hcy))-hip*2.7+1)));<br />
-      vvr=hur+d*(hvr-hur);<br />
-      vvg=hug+d*(hvg-hug);<br />
-      vvb=hub+d*(hvb-hub);<br />
-      red=vr*vvr+vg*vvg+vb*vvb;<br />
-      green=vr*vvb+vg*vvr+vb*vvg;<br />
-      blue=vr*vvg+vg*vvb+vb*vvr;<br />
-      <br />
-      gx=if(below(gx,g-1),gx+1,0);<br />
-      gy=if(equal(gx,0),gy+1,gy);<br />
-      <br />
-      skip=below(red+green+blue,0);</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">J.Melo</span><br /></p>
-
-      <p class="post-time small text-muted">3rd September 2007 22:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">It might be a good idea to post the full image instead of the thumbnail <a href="http://img113.imageshack.us/img113/1029/capture5sx5.jpg" target="_blank">http://img113.imageshack.us/img113/1029/capture5sx5.jpg</a><br />
-      <br />
-      Replace all that color code in the texer II with this:</p>
-      <pre>
-<code>Â£ colorcode;<br />dy=(py-oy);<br />k=max(0,.03-dy*.3);l=max(0,dy*.1+.03);<br />vg=(red*2+.08);vr=(red*2.5+l*2);<br />d=min(1,max(0,((sqr(hx-hcx)+sqr(hy-hcy))-hip*2.7+1)));<br />red=vg*0.5;<br />green=vr;<br />blue=vr*0.5+vg;<br /><br />gx=if(below(gx,g-1),gx+1,0);<br />gy=if(equal(gx,0),gy+1,gy);<br /><br />skip=below(red+green+blue,0);</code>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="UnConeD - Seismogrid ..color edit"><title>UnConeD - Seismogrid ..color edit - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-137.html">AVS Presets</a></li><li class="active">UnConeD - Seismogrid ..color edit</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=276875">UnConeD - Seismogrid ..color edit</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Koogle</span><br></p><p class="post-time small text-muted">3rd September 2007 17:14 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>UnConeD - Seismogrid ..color edit</strong><br>just wondering if anyone knows how I could UnConeD - Seismogrid so the viz colors only stay in the blue color range like so<br><br><a href="http://img113.imageshack.us/my.php?image=capture5sx5.jpg" target="_blank"></a><a href="http://img113.imageshack.us/img113/1029/capture5sx5.th.jpg" target="_blank">http://img113.imageshack.us/img113/1...ure5sx5.th.jpg</a><br><br>did find this in the avs but don't understand the names..<br><br>Â£ colorcode;<br>dy=(py-oy);<br>k=max(0,.03-dy*.3);l=max(0,dy*.1+.03);<br>vg=(red*2+.08);vb=(red*1.5+k*2);vr=(red*2.5+l*2);<br>d=min(1,max(0,((sqr(hx-hcx)+sqr(hy-hcy))-hip*2.7+1)));<br>vvr=hur+d*(hvr-hur);<br>vvg=hug+d*(hvg-hug);<br>vvb=hub+d*(hvb-hub);<br>red=vr*vvr+vg*vvg+vb*vvb;<br>green=vr*vvb+vg*vvr+vb*vvg;<br>blue=vr*vvg+vg*vvb+vb*vvr;<br><br>gx=if(below(gx,g-1),gx+1,0);<br>gy=if(equal(gx,0),gy+1,gy);<br><br>skip=below(red+green+blue,0);</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">J.Melo</span><br></p><p class="post-time small text-muted">3rd September 2007 22:58 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">It might be a good idea to post the full image instead of the thumbnail <a href="http://img113.imageshack.us/img113/1029/capture5sx5.jpg" target="_blank">http://img113.imageshack.us/img113/1029/capture5sx5.jpg</a><br><br>Replace all that color code in the texer II with this:</p><pre>
+<code>Â£ colorcode;<br>dy=(py-oy);<br>k=max(0,.03-dy*.3);l=max(0,dy*.1+.03);<br>vg=(red*2+.08);vr=(red*2.5+l*2);<br>d=min(1,max(0,((sqr(hx-hcx)+sqr(hy-hcy))-hip*2.7+1)));<br>red=vg*0.5;<br>green=vr;<br>blue=vr*0.5+vg;<br><br>gx=if(below(gx,g-1),gx+1,0);<br>gy=if(equal(gx,0),gy+1,gy);<br><br>skip=below(red+green+blue,0);</code>
 </pre>And change the hue value of the clear screen to something nice like 140.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Koogle</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Koogle</span><br></p>
 
       <p class="post-time small text-muted">4th September 2007 12:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">thanks man that works nicely.. do you think there could be any othe mods to it like a user controlled camera?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">J.Melo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">J.Melo</span><br></p>
 
       <p class="post-time small text-muted">4th September 2007 12:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">User controlled camera...huh. That would be fairly easy. You can make the x rotation and y rotation planes proportional to getkbmouse(0) and getkbmouse(1). I'll post something later, but I have to go to school now.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

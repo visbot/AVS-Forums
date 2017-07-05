@@ -1,619 +1,540 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cockos Happy AVS" />
-
-  <title>Cockos Happy AVS - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Cockos Happy AVS</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=321482">Cockos Happy AVS</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
-
-      <p class="post-time small text-muted">7th August 2010 18:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Cockos Happy AVS</strong><br />
-      Hello everybody,<br />
-      <br />
-      We've done some modifications to the version of AVS that is on nullsoft.com, and merged back into it our own modified version of EEL (that we use for Jesusonic, REAPER, etc).<br />
-      <br />
-      The current build is here: <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br />
-      <br />
-      We will definitely open source this version soon, but the important differences are:<br />
-      <br />
-      1) Variables can be longer in length (16 characters)<br />
-      <br />
-      2) You can use a newer syntax for if(), below(), assign(), etc.<br />
-      <br />
-      For example, instead of:<br />
-      <br /></p>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Cockos Happy AVS"><title>Cockos Happy AVS - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">Cockos Happy AVS</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=321482">Cockos Happy AVS</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">justin</span><br></p><p class="post-time small text-muted">7th August 2010 18:18 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Cockos Happy AVS</strong><br>Hello everybody,<br><br>We've done some modifications to the version of AVS that is on nullsoft.com, and merged back into it our own modified version of EEL (that we use for Jesusonic, REAPER, etc).<br><br>The current build is here: <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br><br>We will definitely open source this version soon, but the important differences are:<br><br>1) Variables can be longer in length (16 characters)<br><br>2) You can use a newer syntax for if(), below(), assign(), etc.<br><br>For example, instead of:<br><br></p><pre>
+<code><br>if (above(x,0),assign(y,3),0);<br>or<br>if (above(x,0),assign(y,3),assign(y,4));<br>or <br>if (above(x,0),exec2(assign(y,3),assign(z,2)),assign(y,4));<br></code>
+</pre><br>
+      <br>
+      You can do:<br>
+      <br>
       <pre>
-<code><br />if (above(x,0),assign(y,3),0);<br />or<br />if (above(x,0),assign(y,3),assign(y,4));<br />or <br />if (above(x,0),exec2(assign(y,3),assign(z,2)),assign(y,4));<br /></code>
-</pre><br />
-      <br />
-      You can do:<br />
-      <br />
-      <pre>
-<code><br />x &gt; 0 ? y=3;<br />or<br />x &gt; 0 ? y=3 : y=4;<br />or<br />x &gt; 0 ? ( y = 3; z = 2; ) : y=4;<br /></code>
-</pre><br />
-      <br />
-      3) Instead of megabuf(x+y) or gmegabuf(x) you can just use x[y] or gmem[x].<br />
-      <br />
-      <br />
-      There are other changes -- for more information on the new syntax, see:<br />
-      <br />
-      <a href="http://www.reaper.fm/sdk/js/js.php#js_basic" target="_blank">http://www.reaper.fm/sdk/js/js.php#js_basic</a><br />
-      <br />
-      (most "advanced functions" are JS only, except loop(), while(), freembuf(), memcpy(), and memset()).<br />
-      <br />
-      I know AVS may be somewhat stagnant at this point, but hopefully this might help get some life back into it.<br />
-      <br />
-      If anybody finds this useful let me know...<br />
-      <br />
+<code><br>x &gt; 0 ? y=3;<br>or<br>x &gt; 0 ? y=3 : y=4;<br>or<br>x &gt; 0 ? ( y = 3; z = 2; ) : y=4;<br></code>
+</pre><br>
+      <br>
+      3) Instead of megabuf(x+y) or gmegabuf(x) you can just use x[y] or gmem[x].<br>
+      <br>
+      <br>
+      There are other changes -- for more information on the new syntax, see:<br>
+      <br>
+      <a href="http://www.reaper.fm/sdk/js/js.php#js_basic" target="_blank">http://www.reaper.fm/sdk/js/js.php#js_basic</a><br>
+      <br>
+      (most "advanced functions" are JS only, except loop(), while(), freembuf(), memcpy(), and memset()).<br>
+      <br>
+      I know AVS may be somewhat stagnant at this point, but hopefully this might help get some life back into it.<br>
+      <br>
+      If anybody finds this useful let me know...<br>
+      <br>
       -Justin
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">QOAL</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">QOAL</span><br></p>
 
       <p class="post-time small text-muted">7th August 2010 20:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Justin, you are a legend.<br />
-      <br />
-      The new syntax looks miles better! (Code will actually be human readable now :))<br />
-      <br />
-      Thank you for releasing an updated AVS after such a long time.<br />
-      There isn't many people left (here at least) now, but who knows who'll turn up now, for a look.<br />
-      <br />
-      <font size="1">(Looking at the file name, I was thankful to see it wasn't a prank visualisation of some <a href="http://en.wikipedia.org/wiki/Chavs" target="_blank"><u>chavs</u></a> when I ran it.)</font><br />
-      <br />
-      I'll go play with it now.<br />
-      <br />
+      <p class="post-content">Justin, you are a legend.<br>
+      <br>
+      The new syntax looks miles better! (Code will actually be human readable now :))<br>
+      <br>
+      Thank you for releasing an updated AVS after such a long time.<br>
+      There isn't many people left (here at least) now, but who knows who'll turn up now, for a look.<br>
+      <br>
+      <font size="1">(Looking at the file name, I was thankful to see it wasn't a prank visualisation of some <a href="http://en.wikipedia.org/wiki/Chavs" target="_blank"><u>chavs</u></a> when I ran it.)</font><br>
+      <br>
+      I'll go play with it now.<br>
+      <br>
       Cheers!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">JaVS_v2.5</span><br></p>
 
       <p class="post-time small text-muted">8th August 2010 07:27 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">nice... i feel like writing a c program now :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">9th August 2010 13:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Wow, I certainly didn't expect this anymore.<br />
-      Thanks a lot!<br />
-      I really hope this was what we needed to get more artists active.<br />
-      <br />
-      Qoal already mentioned that the code will be humanly readable, which is a big plus.<br />
+      <p class="post-content">Wow, I certainly didn't expect this anymore.<br>
+      Thanks a lot!<br>
+      I really hope this was what we needed to get more artists active.<br>
+      <br>
+      Qoal already mentioned that the code will be humanly readable, which is a big plus.<br>
       several people have said that the sourcecode was very hard to read and, because of that, even harder to improve. How's that for this version?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">11th August 2010 09:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">unexpected behavior:<br />
-      The rand() function should only give integers.<br />
-      Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br />
-      <br />
+      <p class="post-content">unexpected behavior:<br>
+      The rand() function should only give integers.<br>
+      Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br>
+      <br>
       Or is this intended?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">justin</span><br></p>
 
       <p class="post-time small text-muted">12th August 2010 19:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <small>Originally posted by Warrior of the Light</small><br />
-        unexpected behavior:<br />
-        The rand() function should only give integers.<br />
-        Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br />
-        <br />
+        <small>Originally posted by Warrior of the Light</small><br>
+        unexpected behavior:<br>
+        The rand() function should only give integers.<br>
+        Example: rand(2) should only result in 0 or 1, but is now somewhere between 0 and 1.9[..]99.<br>
+        <br>
         Or is this intended?
-      </blockquote>Thanks, will fix this in a new build later today.<br />
-      <br />
+      </blockquote>Thanks, will fix this in a new build later today.<br>
+      <br>
       -Justin
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">15th August 2010 01:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Thank you so much for keeping it alive. I really love AVS, and it is a true understatement to say I really appreciate all the work that has gone into it's development and the development of the presets.<br />
-      <br />
-      Unfortunately I'm not very well informed on the technical end of things, but does this help stability on newer operating systems? XP was really good for AVS, but then Vista and 7 were bad for me. I'm currently running 64-bit windows 7 ultimate, and I get better stability on Windows 7's "XP Mode" than 7 without it. Hopefully playing with this new version will be better.<br />
-      <br />
+      <p class="post-content">Thank you so much for keeping it alive. I really love AVS, and it is a true understatement to say I really appreciate all the work that has gone into it's development and the development of the presets.<br>
+      <br>
+      Unfortunately I'm not very well informed on the technical end of things, but does this help stability on newer operating systems? XP was really good for AVS, but then Vista and 7 were bad for me. I'm currently running 64-bit windows 7 ultimate, and I get better stability on Windows 7's "XP Mode" than 7 without it. Hopefully playing with this new version will be better.<br>
+      <br>
       Either way, thank you very much for all the work you've done.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">15th August 2010 17:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">In fact, it hasn't crashed on me at all this far (keeping my fingers crossed) on XP pro (32bits)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">15th August 2010 17:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">HEY! I figured it out! (or maybe someone else did first and I didn't read about it)<br />
-      <br />
-      My problem even with this new version was that AVS refused to stay fullscreen more than a second or two.<br />
-      <br />
-      My solution is to tell the computer to automatically disable Windows Aero each time I open Winamp. This works on my version of windows (7 Ultimate x64). I'm hoping other Aero versions of 7 and Vista have the same ability.<br />
-      <br />
-      1.) Right click on the shortcut that one uses to open Winamp.<br />
-      2.) Click properties.<br />
-      3.) Click the compatibility tab.<br />
-      4.) Click/check the "Disable desktop composition" checkbox.<br />
-      5.) Click the Apply button.<br />
-      6.) Click ok.<br />
-      <br />
-      As a result of this procedure, Aero will automatically become disabled when you open winamp, but will also automatically re-enable itself each time you exit Winamp. While Winamp runs without Aero, AVS works very well just like on XP, if not better.<br />
-      <br />
+      <p class="post-content">HEY! I figured it out! (or maybe someone else did first and I didn't read about it)<br>
+      <br>
+      My problem even with this new version was that AVS refused to stay fullscreen more than a second or two.<br>
+      <br>
+      My solution is to tell the computer to automatically disable Windows Aero each time I open Winamp. This works on my version of windows (7 Ultimate x64). I'm hoping other Aero versions of 7 and Vista have the same ability.<br>
+      <br>
+      1.) Right click on the shortcut that one uses to open Winamp.<br>
+      2.) Click properties.<br>
+      3.) Click the compatibility tab.<br>
+      4.) Click/check the "Disable desktop composition" checkbox.<br>
+      5.) Click the Apply button.<br>
+      6.) Click ok.<br>
+      <br>
+      As a result of this procedure, Aero will automatically become disabled when you open winamp, but will also automatically re-enable itself each time you exit Winamp. While Winamp runs without Aero, AVS works very well just like on XP, if not better.<br>
+      <br>
       Thanks again for releasing "Cockos Happy AVS"!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">InCUbuS-94</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">InCUbuS-94</span><br></p>
 
       <p class="post-time small text-muted">24th August 2010 09:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Looks like interesting, i'll check out now ;)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">24th August 2010 10:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">-have you thought about including <a href="http://www.vidvox.net/phpBB2/viewtopic.php?t=4354&amp;sid=e7109b4e0f88d9b0751f622d8cf31953" target="_blank">bigfug freeframe streaming</a> into the official avs build?<br />
-      <br />
-      -have you thought about reworking the UI of the avs editor? there are several mods available already (<a href="http://visbot.net/tools" target="_blank">visbot</a>, <a href="http://micro-d.deviantart.com/gallery/#/d2ccvfv" target="_blank">micro.d</a> and serveral privately kept mods).<br />
-      <br />
-      all of these mods have one thing in common: they have been created because the official UI is pretty limited and old-fashioned. personally, i prefer a larger window with a big avs window docked into the editor. i also prefer buttons over menus - the latter can act slowly when performing avs live, with buttons you can switch much faster through the settings.<br />
-      <br />
-      i acknowledge, that my prefered avs editor (from the <a href="http://files.whyeye.org/img/myavs20080626-2.png" target="_blank">visbot mod</a>) has one big disadvantage: it requires a rather huge desktop resolution. but i think this could be solved through a cleverly made, resizable editor window. certain elements of the editor like the treeview on the left and the text fields should resize with the entire window size, which -i think- is not possible when using the resize APE.<br />
-      <br />
+      <p class="post-content">-have you thought about including <a href="http://www.vidvox.net/phpBB2/viewtopic.php?t=4354&amp;sid=e7109b4e0f88d9b0751f622d8cf31953" target="_blank">bigfug freeframe streaming</a> into the official avs build?<br>
+      <br>
+      -have you thought about reworking the UI of the avs editor? there are several mods available already (<a href="http://visbot.net/tools" target="_blank">visbot</a>, <a href="http://micro-d.deviantart.com/gallery/#/d2ccvfv" target="_blank">micro.d</a> and serveral privately kept mods).<br>
+      <br>
+      all of these mods have one thing in common: they have been created because the official UI is pretty limited and old-fashioned. personally, i prefer a larger window with a big avs window docked into the editor. i also prefer buttons over menus - the latter can act slowly when performing avs live, with buttons you can switch much faster through the settings.<br>
+      <br>
+      i acknowledge, that my prefered avs editor (from the <a href="http://files.whyeye.org/img/myavs20080626-2.png" target="_blank">visbot mod</a>) has one big disadvantage: it requires a rather huge desktop resolution. but i think this could be solved through a cleverly made, resizable editor window. certain elements of the editor like the treeview on the left and the text fields should resize with the entire window size, which -i think- is not possible when using the resize APE.<br>
+      <br>
       though this might never happen, as it's too much work, i think the best thing would be to have the avs editor as an OSD. it makes good sense to run avs in fullscreen, so why not allow editing and navigation (selection of presets etc.) in fullscreen? milkdrop and many other visualization tools offer this already.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">24th August 2010 23:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Where can I get that visbot mod? I use 1920x1200, so resolution won't be a problem.<br />
-      <br />
+      <p class="post-content">Where can I get that visbot mod? I use 1920x1200, so resolution won't be a problem.<br>
+      <br>
       The only resolution problem I have is keeping the fps up. I can go native fullscreen with a reasonably smooth frame rate (20-60 fps) but usually only with pixel doubling checked. Since my last post, I have had a couple crashes, but I was told it may be because of some old APEs. Overall, I really like this release. Making presets is a little easier now.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">25th August 2010 14:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"><a href="http://visbot.net/tools" target="_blank">http://visbot.net/tools</a> (<a href="http://files.whyeye.org/img/myavs20080626-2.png" target="_blank">screenshot</a>)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">26th August 2010 01:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanks, I'll give it a try. :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br></p>
 
       <p class="post-time small text-muted">31st August 2010 04:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Thanks for the updated version of avs :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">31st August 2010 13:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i've attached the resource file for avsmod, in case somebody wants to use it when compiling the current sourcecode</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">drlava</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">drlava</span><br></p>
 
       <p class="post-time small text-muted">7th September 2010 17:57 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Hi Justin, a friend and I have recently made updates and fixes to the released AVS code, mostly related to the LASER compiler switch. Maybe we can combine this with your updates for the new source release?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">[Ishan]</span><br></p>
 
       <p class="post-time small text-muted">10th September 2010 19:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">whoa! an updated version? really? :) I just came across the forums for old time's sake.. and I find good news! The syntax seems better... maybe those glorious AVSing days will return!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">11th September 2010 15:40 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">It's funny, all these years and really, no one has come up with any program like it, except maybe Milkdrop which I don't feel is as versatile in terms of the different types of visualizations one can make.<br />
-      <br />
+      <p class="post-content">It's funny, all these years and really, no one has come up with any program like it, except maybe Milkdrop which I don't feel is as versatile in terms of the different types of visualizations one can make.<br>
+      <br>
       Long live AVS!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">micro.D</span><br></p>
 
       <p class="post-time small text-muted">22nd September 2010 00:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">wowow! that syntax is just awesome!<br />
-      well yathosho has the point. i'm using avs for vj-ing and the original editor is not the best for using it live. so i've made my version.<br />
+      <p class="post-content">wowow! that syntax is just awesome!<br>
+      well yathosho has the point. i'm using avs for vj-ing and the original editor is not the best for using it live. so i've made my version.<br>
       only problem i have with it that it freezes after 2 presets (i mean it loads happily the initial preset then i can load another one and then when i want to load yet another one it freezes). interesting that winamp continues to work but it won't respond when i want to close it (or stop avs).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">11th October 2010 21:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">amazingly eeltrans.ape seems to work with both 2.83 (from winamp 5.56) and 2.9 (from here, fetched 2010-10-10)<br />
-      <br />
-      the new EEL should still be able to interpret eeltrans's output<br />
-      I didn't test all of the new EEL features, so some of those might still break, but I'm quite optimistic that they don't :)<br />
-      <br />
-      some more testing revealed that the new EEL is a bitch and silently ignores errors. should be fixed<br />
-      <br />
-      eeltrans features that might still be helpful even with the better EEL:<br />
-      - C-style #define macros<br />
-      - compatibility with older avs versions :) (that is, provided you don't use the new EEL features)<br />
-      <br />
-      the irony is that eeltrans contains hackery at a much lower level and yet works, while aperesize breaks<br />
+      <p class="post-content">amazingly eeltrans.ape seems to work with both 2.83 (from winamp 5.56) and 2.9 (from here, fetched 2010-10-10)<br>
+      <br>
+      the new EEL should still be able to interpret eeltrans's output<br>
+      I didn't test all of the new EEL features, so some of those might still break, but I'm quite optimistic that they don't :)<br>
+      <br>
+      some more testing revealed that the new EEL is a bitch and silently ignores errors. should be fixed<br>
+      <br>
+      eeltrans features that might still be helpful even with the better EEL:<br>
+      - C-style #define macros<br>
+      - compatibility with older avs versions :) (that is, provided you don't use the new EEL features)<br>
+      <br>
+      the irony is that eeltrans contains hackery at a much lower level and yet works, while aperesize breaks<br>
       I might look into fixing it later, but I neither promise that I do nor that I'll fix it.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">14th October 2010 17:58 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Sorry Justin, but this is too little very too late. For majority of the people AVS was not about the code, it was the freedom of doing hundreds of different kind of presets with only minor changes to the effects. I personally left AVS because anything original you could accomplish was through very heavy coding.<br />
-      <br />
+      <p class="post-content">Sorry Justin, but this is too little very too late. For majority of the people AVS was not about the code, it was the freedom of doing hundreds of different kind of presets with only minor changes to the effects. I personally left AVS because anything original you could accomplish was through very heavy coding.<br>
+      <br>
       You want to revive avs? Make it more user friendly, notice that user friendly does not mean "dumbing down", I never understood fully any of the code I wrote and I did some pretty complicated stuff, that was because I learned from other members of the community, I copied their code, I shaped it, I molded it, I made it fit my preset. That is what AVS was for me, I hope that is what it can be in the future.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">15th October 2010 03:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Perhaps that would make quite a revival. Really all I ever knew how to do was steal other people's code and trial-and-error it (I guess the in thing to say would be "remix") until I found something I liked, and I really never submitted any packs or presets because of how shamelessly "ripped" they were. [I also had a lot of fun adding images to many existing presets too.] If I understood more about it, I might be more willing to create more of my own stuff and possibly contribute.<br />
-      <br />
+      <p class="post-content">Perhaps that would make quite a revival. Really all I ever knew how to do was steal other people's code and trial-and-error it (I guess the in thing to say would be "remix") until I found something I liked, and I really never submitted any packs or presets because of how shamelessly "ripped" they were. [I also had a lot of fun adding images to many existing presets too.] If I understood more about it, I might be more willing to create more of my own stuff and possibly contribute.<br>
+      <br>
       I wouldn't go as far as too little too late, because every step to making things more human friendly is significant, regardless of how long it takes. Art (including mediums) can often be an evolution rather than a revolution.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">15th October 2010 09:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">you can't even really trial-and-error anymore now, since it simply ignores pieces with errors and goes on with the next, without showing you the error</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">radian</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">radian</span><br></p>
 
       <p class="post-time small text-muted">22nd October 2010 14:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">The one thing I really want in AVS : change presets by receiving MIDI prg changes instead of (as well as) using hotkeys.<br />
-      <br />
+      <p class="post-content">The one thing I really want in AVS : change presets by receiving MIDI prg changes instead of (as well as) using hotkeys.<br>
+      <br>
       Any chance of seeing something like <a href="http://createdigitalnoise.com/viewtopic.php?p=9736#9736" target="_blank">this</a> added, Cockos?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">27th October 2010 00:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">This could be done with an APE. no need for a change in AVS itself<br />
-      <br />
+      <p class="post-content">This could be done with an APE. no need for a change in AVS itself<br>
+      <br>
       though it would probably be easier with some kind of api to mess with the current preset etc</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">8th November 2010 14:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">@justin: are you even reading the feedback? would be good to let us know :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">swingdjted</span><br></p>
 
       <p class="post-time small text-muted">9th November 2010 05:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">In the last 5 years, he his account shows 3 posts, two of which are in this thread - I'd say that's giving a lot more attention than normal. I'm just glad he was willing to release the updated software.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">6th January 2011 18:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">i've put together a new version of avsmod, based on chavs. same <a href="http://files.whyeye.org/img/myavs20080626-2.png" target="_blank">interface</a> as previous mods, plus correct version resource for the dll.<br />
-      <br />
+      <p class="post-content">i've put together a new version of avsmod, based on chavs. same <a href="http://files.whyeye.org/img/myavs20080626-2.png" target="_blank">interface</a> as previous mods, plus correct version resource for the dll.<br>
+      <br>
       get it <a href="http://visbot.net/files/vis_avsmod-0.5.5.zip" target="_blank">here</a>!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">6th January 2011 20:07 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">you should really modify aperesize instead, so it resizes dynamically :)<br />
-      that way you also don't have to patch again for each new binary release.<br />
-      <br />
+      <p class="post-content">you should really modify aperesize instead, so it resizes dynamically :)<br>
+      that way you also don't have to patch again for each new binary release.<br>
+      <br>
       I can explain you the code if you want, too</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">justin</span><br></p>
 
       <p class="post-time small text-muted">3rd January 2013 15:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br />
-      <br />
-      <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br />
-      <br />
-      and the code:<br />
-      <br />
-      <a href="http://1014.org/shiz/code/chavs.zip" target="_blank">http://1014.org/shiz/code/chavs.zip</a><br />
-      <br />
-      (the code now includes the required bits from WDL, too, so no need to git clone anything).<br />
-      <br />
+      <p class="post-content">Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br>
+      <br>
+      <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br>
+      <br>
+      and the code:<br>
+      <br>
+      <a href="http://1014.org/shiz/code/chavs.zip" target="_blank">http://1014.org/shiz/code/chavs.zip</a><br>
+      <br>
+      (the code now includes the required bits from WDL, too, so no need to git clone anything).<br>
+      <br>
       This should fix the rand() bug, and also updates to even newer EEL-compilation, which has some fancy stuff such as basic code optimization.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br></p>
 
       <p class="post-time small text-muted">3rd January 2013 16:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">oh the irony of two v2.91 on the same day.<br />
-      <br />
-      as i've been looking into fixing things from your 2.9 and just put up <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?p=2905846#post2905846" target="_blank">this</a> 20mins before you (as trying to get something stable in the distribution again).<br />
-      <br />
-      were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br />
-      <br />
+      <p class="post-content">oh the irony of two v2.91 on the same day.<br>
+      <br>
+      as i've been looking into fixing things from your 2.9 and just put up <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?p=2905846#post2905846" target="_blank">this</a> 20mins before you (as trying to get something stable in the distribution again).<br>
+      <br>
+      were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br>
+      <br>
       -daz</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">justin</span><br></p>
 
       <p class="post-time small text-muted">3rd January 2013 18:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <small>Originally posted by DrO</small><br />
-        oh the irony of two v2.91 on the same day.<br />
-        <br />
-        as i've been looking into fixing things from your 2.9 and just put up <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?p=2905846#post2905846" target="_blank">this</a> 20mins before you (as trying to get something stable in the distribution again).<br />
-        <br />
-        were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br />
-        <br />
+        <small>Originally posted by DrO</small><br>
+        oh the irony of two v2.91 on the same day.<br>
+        <br>
+        as i've been looking into fixing things from your 2.9 and just put up <a href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?p=2905846#post2905846" target="_blank">this</a> 20mins before you (as trying to get something stable in the distribution again).<br>
+        <br>
+        were there any code changes on your side in the last 2 weeks? as that's within the time scale of when i pulled down the code from git.<br>
+        <br>
         -daz
-      </blockquote>Hah, bizarre!<br />
-      <br />
-      I actually intended to do this two days ago, but that ended up getting derailed...<br />
-      <br />
-      As far as recent changes to code goes, EEL2 hasn't changed recently, so you should be fine there, but avs_eelif.cpp has been updated:<br />
+      </blockquote>Hah, bizarre!<br>
+      <br>
+      I actually intended to do this two days ago, but that ended up getting derailed...<br>
+      <br>
+      As far as recent changes to code goes, EEL2 hasn't changed recently, so you should be fine there, but avs_eelif.cpp has been updated:<br>
       <pre>
-<code><br /> void AVS_EEL_IF_resetvars(NSEEL_VMCTX ctx)<br /> {<br />   NSEEL_VM_freeRAM(ctx);<br />-  NSEEL_VM_resetvars(ctx);<br />+  NSEEL_VM_remove_all_nonreg_vars(ctx);<br /> }<br /></code>
-</pre><br />
-      <br />
-      (NSEEL_VM_resetvars() is no longer defined so old chavs.zip shouldn't compile against the newer EEL versions). There are also changes to NSEEL_addfunctionex() lines in that file, but they aren't critical (just some casts removed).<br />
-      <br />
-      <br />
-      ---<br />
-      <br />
-      Also, I forgot to mention, also new in the latest CHAVS is support for functions, see:<br />
-      <br />
+<code><br> void AVS_EEL_IF_resetvars(NSEEL_VMCTX ctx)<br> {<br>   NSEEL_VM_freeRAM(ctx);<br>-  NSEEL_VM_resetvars(ctx);<br>+  NSEEL_VM_remove_all_nonreg_vars(ctx);<br> }<br></code>
+</pre><br>
+      <br>
+      (NSEEL_VM_resetvars() is no longer defined so old chavs.zip shouldn't compile against the newer EEL versions). There are also changes to NSEEL_addfunctionex() lines in that file, but they aren't critical (just some casts removed).<br>
+      <br>
+      <br>
+      ---<br>
+      <br>
+      Also, I forgot to mention, also new in the latest CHAVS is support for functions, see:<br>
+      <br>
       <a href="http://www.reaper.fm/sdk/js/js.php#js_userfunc" target="_blank">http://www.reaper.fm/sdk/js/js.php#js_userfunc</a>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">DrO</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">DrO</span><br></p>
 
       <p class="post-time small text-muted">3rd January 2013 18:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">i know that feeling well, heh.<br />
-      <br />
-      rightio, will sort out a diff from my 2.91 against things and roll out a test 2.92 in a day or so in order to get us back on an even footing with all of the changes (as 2 x v2.91 isn't going to help with the fragmentation of things as is).<br />
-      <br />
+      <p class="post-content">i know that feeling well, heh.<br>
+      <br>
+      rightio, will sort out a diff from my 2.91 against things and roll out a test 2.92 in a day or so in order to get us back on an even footing with all of the changes (as 2 x v2.91 isn't going to help with the fragmentation of things as is).<br>
+      <br>
       -daz</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Yathosho</span><br></p>
 
       <p class="post-time small text-muted">29th January 2013 22:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <small>Originally posted by TomyLobo</small><br />
-        you should really modify aperesize instead, so it resizes dynamically :)<br />
-        that way you also don't have to patch again for each new binary release.<br />
-        <br />
+        <small>Originally posted by TomyLobo</small><br>
+        you should really modify aperesize instead, so it resizes dynamically :)<br>
+        that way you also don't have to patch again for each new binary release.<br>
+        <br>
         I can explain you the code if you want, too
       </blockquote>actually, that sounds good. talk on #avs?
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">30th January 2013 23:33 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">that offer is 2 years old, i'm not even sure i have the source anymore or that i understand it any better than you would</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">drivetheory</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">drivetheory</span><br></p>
 
       <p class="post-time small text-muted">2nd March 2013 18:21 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Quote:</p>
-      <hr />
-      <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br />
-      vis_chavs.dll<br />
-      MD5: b7adf0e8f6c63c8c5160f8190255860e<br />
-      <br />
-      shows as "Advanced Visualzation Studio v.2.81b [vis_chavs.dll]" inside winamp and is giving me a CTD when ever i try to run it in Winamp 5.63...<br />
-      <br />
-      vis_chavsmod-2.9_avsmod-0.5.5.dll still works perfectly fine for me but the new one listed above doesn't<br />
-      <br />
+      <hr>
+      <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br>
+      vis_chavs.dll<br>
+      MD5: b7adf0e8f6c63c8c5160f8190255860e<br>
+      <br>
+      shows as "Advanced Visualzation Studio v.2.81b [vis_chavs.dll]" inside winamp and is giving me a CTD when ever i try to run it in Winamp 5.63...<br>
+      <br>
+      vis_chavsmod-2.9_avsmod-0.5.5.dll still works perfectly fine for me but the new one listed above doesn't<br>
+      <br>
       anyone else having this problem?
 
       <table cellpadding="6" cellspacing="0" border="0" width="100%">
         <tr>
           <td class="alt2">
-            <hr />
-            Originally Posted by <strong>justin</strong> (Post 2905850) Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br />
-            <br />
-            <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br />
-            <br />
-            and the code:<br />
-            <br />
-            <a href="http://1014.org/shiz/code/chavs.zip" target="_blank">http://1014.org/shiz/code/chavs.zip</a><br />
-            <br />
-            (the code now includes the required bits from WDL, too, so no need to git clone anything).<br />
-            <br />
+            <hr>
+            Originally Posted by <strong>justin</strong> (Post 2905850) Oops, sorry I forgot to update CHAVS. Here are new builds (v2.91):<br>
+            <br>
+            <a href="http://1014.org/shiz/vis_chavs.dll" target="_blank">http://1014.org/shiz/vis_chavs.dll</a><br>
+            <br>
+            and the code:<br>
+            <br>
+            <a href="http://1014.org/shiz/code/chavs.zip" target="_blank">http://1014.org/shiz/code/chavs.zip</a><br>
+            <br>
+            (the code now includes the required bits from WDL, too, so no need to git clone anything).<br>
+            <br>
             This should fix the rand() bug, and also updates to even newer EEL-compilation, which has some fancy stuff such as basic code optimization.
-            <hr />
+            <hr>
           </td>
         </tr>
-      </table><br />
+      </table><br>
 
       <div class="post">
-        <p class="post-meta"><span class="post-author text-primary">drivetheory</span><br /></p>
+        <p class="post-meta"><span class="post-author text-primary">drivetheory</span><br></p>
 
         <p class="post-time small text-muted">23rd April 2013 04:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
         <p class="post-content">The problem i was having with vis_chavs.dll it seems was caused by the box for "SMP support" (AVS Editor -&gt; Settings -&gt; Display) being checkmarked</p>
       </div>
-      <hr />
+      <hr>
 
       <div class="footer">
         <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
       </div>
-    </div><!-- Put JavaScript here -->
+    </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-  </div>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></div></body></html>

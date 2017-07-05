@@ -1,242 +1,157 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS Speedups" />
-
-  <title>AVS Speedups - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">AVS Speedups</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100489">AVS Speedups</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
-
-      <p class="post-time small text-muted">19th August 2002 17:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>AVS Speedups</strong><br />
-      Hey AVS GMs, I was wondering what common codes speedups can be used to increase framerates? I know a couple, such as doing as many calculations as possible in the per-frame section, and not dividing by a constant (multiply by inverse instead), but I'm sure that there are more out there.<br />
-      <br />
-      For example, which is faster?<br />
-      <br />
-      a=if(above(abs(a),1),a-2*sign(a),a);<br />
-      <br />
-      or<br />
-      <br />
-      a=if(above(a,1),a-2,a);<br />
-      a=if(below(a,-1),a+2,a);</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
-
-      <p class="post-time small text-muted">19th August 2002 18:49 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Instead of just caching constants, isolate constant expressions and store those:<br />
-      <br />
-      instead of<br /></p>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AVS Speedups"><title>AVS Speedups - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">AVS Speedups</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=100489">AVS Speedups</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br></p><p class="post-time small text-muted">19th August 2002 17:44 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>AVS Speedups</strong><br>Hey AVS GMs, I was wondering what common codes speedups can be used to increase framerates? I know a couple, such as doing as many calculations as possible in the per-frame section, and not dividing by a constant (multiply by inverse instead), but I'm sure that there are more out there.<br><br>For example, which is faster?<br><br>a=if(above(abs(a),1),a-2*sign(a),a);<br><br>or<br><br>a=if(above(a,1),a-2,a);<br>a=if(below(a,-1),a+2,a);</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p><p class="post-time small text-muted">19th August 2002 18:49 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Instead of just caching constants, isolate constant expressions and store those:<br><br>instead of<br></p><pre>
+<code>frame:<br>angle=angle+0.01;<br><br>point:<br>foo=sin(angle)*bar;</code>
+</pre><br>
+      use:<br>
       <pre>
-<code>frame:<br />angle=angle+0.01;<br /><br />point:<br />foo=sin(angle)*bar;</code>
-</pre><br />
-      use:<br />
-      <pre>
-<code>frame:<br />angle=angle+0.01;<br />sa=sin(angle);<br />point:<br />foo=sa*bar;</code>
+<code>frame:<br>angle=angle+0.01;<br>sa=sin(angle);<br>point:<br>foo=sa*bar;</code>
 </pre>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br></p>
 
       <p class="post-time small text-muted">19th August 2002 20:28 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">I do not know if this is relevant as AVS has big problems with the assigning of lots of variables but as in any normal programming practice assign a variable instead of doing more calaculations.<br />
-      <br />
-      Take steve's latest pack number 5 and look at Anemone.<br />
-      In the SSC part per_pixel part<br />
-      <br />
-      u=i*n%(n+1)-1;x1=pow(i,.8);<br />
-      x3=if(equal(u,1),px1,if(equal(u,2),px2,if(equal(u,3),px3,if(equal(u,4),px4,px))))*x1;<br />
-      y2=if(equal(u,1),py1,if(equal(u,2),py2,if(equal(u,3),py3,if(equal(u,4),py4,py))))*x1;<br />
-      x1=if(equal(u,1),pz1,if(equal(u,2),pz2,if(equal(u,3),pz3,if(equal(u,4),pz4,pz))))*x1+1.3;<br />
-      x1=if(below(x1,0.1),0,1/x1);<br />
-      <br />
-      Now if you have enough variables then I would change thsi to the following.<br />
-      <br />
-      u=i*n%(n+1)-1;<br />
-      x1=pow(i,.8);<br />
-      ue1 = equal(u,1);<br />
-      ue2= equal(u,2);<br />
-      ue3 = equal(u,3);<br />
-      ue4 = equal(u,4);<br />
-      x3=if(ue1,px1,if(ue2,px2,if(ue3,px3,if(ue4,px4,px))))*x1;<br />
-      y2=if(ue1,py1,if(ue2,py2,if(ue3,py3,if(ue4,py4,py))))*x1;<br />
-      x1=if(ue1,pz1,if(ue2,pz2,if(ue3,pz3,if(ue4,pz4,pz))))*x1+1.3;<br />
-      x1=if(below(x1,0.1),0,1/x1);<br />
-      <br />
-      This is not the greatest example as it only uses a simple compare but of it was equal(u%4,1) or something it would probably save a lot of time.<br />
-      <br />
-      It would probably save a little time though with all the extra work stuff in the per_pixel the CPU has to do.<br />
-      <br />
+      <p class="post-content">I do not know if this is relevant as AVS has big problems with the assigning of lots of variables but as in any normal programming practice assign a variable instead of doing more calaculations.<br>
+      <br>
+      Take steve's latest pack number 5 and look at Anemone.<br>
+      In the SSC part per_pixel part<br>
+      <br>
+      u=i*n%(n+1)-1;x1=pow(i,.8);<br>
+      x3=if(equal(u,1),px1,if(equal(u,2),px2,if(equal(u,3),px3,if(equal(u,4),px4,px))))*x1;<br>
+      y2=if(equal(u,1),py1,if(equal(u,2),py2,if(equal(u,3),py3,if(equal(u,4),py4,py))))*x1;<br>
+      x1=if(equal(u,1),pz1,if(equal(u,2),pz2,if(equal(u,3),pz3,if(equal(u,4),pz4,pz))))*x1+1.3;<br>
+      x1=if(below(x1,0.1),0,1/x1);<br>
+      <br>
+      Now if you have enough variables then I would change thsi to the following.<br>
+      <br>
+      u=i*n%(n+1)-1;<br>
+      x1=pow(i,.8);<br>
+      ue1 = equal(u,1);<br>
+      ue2= equal(u,2);<br>
+      ue3 = equal(u,3);<br>
+      ue4 = equal(u,4);<br>
+      x3=if(ue1,px1,if(ue2,px2,if(ue3,px3,if(ue4,px4,px))))*x1;<br>
+      y2=if(ue1,py1,if(ue2,py2,if(ue3,py3,if(ue4,py4,py))))*x1;<br>
+      x1=if(ue1,pz1,if(ue2,pz2,if(ue3,pz3,if(ue4,pz4,pz))))*x1+1.3;<br>
+      x1=if(below(x1,0.1),0,1/x1);<br>
+      <br>
+      This is not the greatest example as it only uses a simple compare but of it was equal(u%4,1) or something it would probably save a lot of time.<br>
+      <br>
+      It would probably save a little time though with all the extra work stuff in the per_pixel the CPU has to do.<br>
+      <br>
       Hope it helps.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Rovastar</span><br></p>
 
       <p class="post-time small text-muted">19th August 2002 21:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Also "if" 's are normally bad news too. Use min and max instead a lot quicker.<br />
-      <br />
-      Another of UnConeD's lines...Speeder 3d<br />
-      <br />
-      alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
-      <br />
-      I think can be improved.<br />
-      <br />
-      The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
-      <br />
-      and I think you can do something with the other part too. Need to think about it a bit more.<br />
-      <br />
+      <p class="post-content">Also "if" 's are normally bad news too. Use min and max instead a lot quicker.<br>
+      <br>
+      Another of UnConeD's lines...Speeder 3d<br>
+      <br>
+      alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br>
+      <br>
+      I think can be improved.<br>
+      <br>
+      The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br>
+      <br>
+      and I think you can do something with the other part too. Need to think about it a bit more.<br>
+      <br>
       But these are just examples.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Nic01</span><br></p>
 
       <p class="post-time small text-muted">19th August 2002 22:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">There's also one way that Atero use (And work).<br />
-      Here's an example line :<br />
-      <br />
-      (This uses point-by-point assignment)<br />
-      <br />
-      x1=(if(equal(p,1)+equal(p,4)+equal(p,5)+equal(p,6)+equal(p,9)+equal(p,10)+equal(p,15)+equal(p,16),1,0)-0.5);<br />
-      <br />
-      Instead of using nested ifs, all the points that have the same positions (When one point need to have more than 2 lines connected to it, like in a cube) are all listed as condition, connected using +, and then the location is given.<br />
-      <br />
+      <p class="post-content">There's also one way that Atero use (And work).<br>
+      Here's an example line :<br>
+      <br>
+      (This uses point-by-point assignment)<br>
+      <br>
+      x1=(if(equal(p,1)+equal(p,4)+equal(p,5)+equal(p,6)+equal(p,9)+equal(p,10)+equal(p,15)+equal(p,16),1,0)-0.5);<br>
+      <br>
+      Instead of using nested ifs, all the points that have the same positions (When one point need to have more than 2 lines connected to it, like in a cube) are all listed as condition, connected using +, and then the location is given.<br>
+      <br>
       (Note : I didn't tell Atero that I post this.. Hopefully he didn't mind :) )</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">KeatonMill</span><br></p>
 
       <p class="post-time small text-muted">19th August 2002 22:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by Rovastar</i><br />
-        <b><br />
-        alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br />
-        <br />
-        I think can be improved.<br />
-        <br />
-        The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br />
-        <br />
+        <i>Originally posted by Rovastar</i><br>
+        <b><br>
+        alpha=if(above(alpha,1),1,if(below(alpha,0),0,alpha));<br>
+        <br>
+        I think can be improved.<br>
+        <br>
+        The if(below(alpha,0),0,alpha) can be, I think, just max(alpha,0).<br>
+        <br>
         and I think you can do something with the other part too. Need to think about it a bit more.</b>
-      </blockquote>I think the easiest way (with mins and maxes, anyway) is<br />
+      </blockquote>I think the easiest way (with mins and maxes, anyway) is<br>
       <pre>
-<code><br />alpha=min(max(alpha,0),1);<br /></code>
-</pre><br />
-      <br />
-      Also, in that version, since alpha is only referenced once, you could actually put the expression that determines alpha in there. So, for Speeder3K it would be<br />
-      <br />
+<code><br>alpha=min(max(alpha,0),1);<br></code>
+</pre><br>
+      <br>
+      Also, in that version, since alpha is only referenced once, you could actually put the expression that determines alpha in there. So, for Speeder3K it would be<br>
+      <br>
       <pre>
-<code><br />alpha=min(max(1.2-d*.25,0),1);<br /></code>
+<code><br>alpha=min(max(1.2-d*.25,0),1);<br></code>
 </pre>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p>
 
       <p class="post-time small text-muted">19th August 2002 22:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Dang I guess I totally missed that glaring inefficiency... when you're busy trying to get the whole thing to work, details aren't exactly the first priority ;).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">23rd August 2002 04:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">There's a discussion of AVS speedups in &lt;plug style="shameless"&gt; AVS Primer (available on DeviantART, DeskMod, and Winamp.com) &lt;/plug&gt;</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p>
 
       <p class="post-time small text-muted">23rd August 2002 08:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">An interesting thing to note is that when using IF statements, boolean logic can be turned into algabra:<br />
-      <br />
-      A AND B = A * B<br />
-      A OR B = A + B<br />
-      (A AND B) OR (C AND D) = A * B + C * D<br />
-      (A OR B) AND (C OR D) = (A + B) * (C + D)<br />
+      <p class="post-content">An interesting thing to note is that when using IF statements, boolean logic can be turned into algabra:<br>
+      <br>
+      A AND B = A * B<br>
+      A OR B = A + B<br>
+      (A AND B) OR (C AND D) = A * B + C * D<br>
+      (A OR B) AND (C OR D) = (A + B) * (C + D)<br>
       A XOR B = (A + B) - (A * B)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

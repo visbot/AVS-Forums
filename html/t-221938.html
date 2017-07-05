@@ -1,232 +1,84 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Working Logic?" />
-
-  <title>Working Logic? - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-139.html">AVS Troubleshooting</a></li>
-
-      <li class="active">Working Logic?</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=221938">Working Logic?</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 03:39 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Working Logic?</strong><br />
-      Is it just me or is the If, Above and Below functions broken? I've tried multiple tests to see if they work and it appears that they make no change whatsoever to anything.<br />
-      <br />
-      I may be using them wrong but...<br />
-      <br />
-      init: m=0;n=800<br />
-      <br />
-      beat: if(0,m=.99,m=-.99)<br />
-      perpoint: x=m; y=m<br />
-      <br />
-      then the moment i get a beat in the music, the point should move to the bottom right, (or if the documentation's reversed the top left) but it does neither. Can anyone tell me what i'm doing wrong?<br />
-      <br />
-      thanks</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 04:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">either a) avs is not registering beats or b) there's something wonky with your code. for one, you don't need to render 800 points, and if nothing's showing up at all with that, you're probably rendering lines. try reinstalling winamp and see if that helps.<br />
-      <br />
-      btw, +y is bottom, +x is right, so the point ought to move to the top left.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 06:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">I had just left it on what it defaulted to for the spiral, even when i put it in the frame code, or the point code, i can't make it evaluate the above functions. I have winamp on two machines, neither of which can successfully use it. Though both are using AVS 2.81b.<br />
-      <br />
-      But your saying that my code should is correct for the if statement right?</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 11:47 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">beat: if(0,m=.99,m=-.99)<br />
-      <br />
-      you shouldnt expect that to work. I wouldnt, in ANY programming language. wspecially evallib with its simple and consistent syntax.<br />
-      <br />
-      read the expression help. PROPERLY.<br />
-      <br />
-      above() below() or equals() return 1 if the expression they represent is true and 0 if false. so above(2,3) is 0, below(5,6) is 1 etc... ifs first parameter determines the code path. 1 it executes the then parameter, 0 and it executes the else parameter.<br />
-      <br />
-      try looking at other presets if you find the expression help hard.<br />
-      <br />
-      look at your current code and your if statement is always comparing zero. so it always runs the else path. which is an invalid block of code anyway. so it does nothing.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 17:23 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">... I know how to program. I know what they do, i read the help MULTIPLE times. My problem is... it runs NEITHER command. My question was that if anyone else was having a problem with IF not working, or if my syntax was wrong, but you have confirmed that my syntax is right to make the true value trigger...</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
-
-      <p class="post-time small text-muted">20th July 2005 18:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">First: <b>YOUR CODE <u>IS</u> WRONG!</b><br />
-      <br />
-      as jheriko already said: if you're really using this code:</p>
-
-      <blockquote>
-        <i>Originally posted by SkarlathAmon</i><br />
-        <b>init: m=0;n=800<br />
-        beat: if(0,m=.99,m=-.99)<br />
-        perpoint: x=m; y=m</b>
-      </blockquote>in AVS it simply won't work. Cause it's not AVS syntax!<br />
-      <br />
-      <br />
-      btw: if there is code in the beat box, it'll only be executed whenever AVS detects a beat.<br />
-      So, if you want to have a point jump to the opposite corner whenever there is a beat, just do that:<br />
-      <pre>
-<code><font size="3">init: m=0; n=<b>1</b>; <font size="2">&lt;- you only need one single point (as you said yourself)</font> <br /><br />frame: m=.99;<br /><br />beat: m=-.99;<br /><br />perpoint: x=m; y=m</font></code>
-</pre>now your point will be in the opposite corner whenever there is a beat.<br />
-      <br />
-      <br />
-      If you still want to use the if() function <font size="1">(though it would be pretty stupid, cause we already found a much faster and simpler solution)</font>, then do the following:<br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Working Logic?"><title>Working Logic? - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-139.html">AVS Troubleshooting</a></li><li class="active">Working Logic?</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=221938">Working Logic?</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br></p><p class="post-time small text-muted">20th July 2005 03:39 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Working Logic?</strong><br>Is it just me or is the If, Above and Below functions broken? I've tried multiple tests to see if they work and it appears that they make no change whatsoever to anything.<br><br>I may be using them wrong but...<br><br>init: m=0;n=800<br><br>beat: if(0,m=.99,m=-.99)<br>perpoint: x=m; y=m<br><br>then the moment i get a beat in the music, the point should move to the bottom right, (or if the documentation's reversed the top left) but it does neither. Can anyone tell me what i'm doing wrong?<br><br>thanks</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p><p class="post-time small text-muted">20th July 2005 04:50 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">either a) avs is not registering beats or b) there's something wonky with your code. for one, you don't need to render 800 points, and if nothing's showing up at all with that, you're probably rendering lines. try reinstalling winamp and see if that helps.<br><br>btw, +y is bottom, +x is right, so the point ought to move to the top left.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br></p><p class="post-time small text-muted">20th July 2005 06:41 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">I had just left it on what it defaulted to for the spiral, even when i put it in the frame code, or the point code, i can't make it evaluate the above functions. I have winamp on two machines, neither of which can successfully use it. Though both are using AVS 2.81b.<br><br>But your saying that my code should is correct for the if statement right?</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p><p class="post-time small text-muted">20th July 2005 11:47 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">beat: if(0,m=.99,m=-.99)<br><br>you shouldnt expect that to work. I wouldnt, in ANY programming language. wspecially evallib with its simple and consistent syntax.<br><br>read the expression help. PROPERLY.<br><br>above() below() or equals() return 1 if the expression they represent is true and 0 if false. so above(2,3) is 0, below(5,6) is 1 etc... ifs first parameter determines the code path. 1 it executes the then parameter, 0 and it executes the else parameter.<br><br>try looking at other presets if you find the expression help hard.<br><br>look at your current code and your if statement is always comparing zero. so it always runs the else path. which is an invalid block of code anyway. so it does nothing.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br></p><p class="post-time small text-muted">20th July 2005 17:23 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">... I know how to program. I know what they do, i read the help MULTIPLE times. My problem is... it runs NEITHER command. My question was that if anyone else was having a problem with IF not working, or if my syntax was wrong, but you have confirmed that my syntax is right to make the true value trigger...</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">^..^</span><br></p><p class="post-time small text-muted">20th July 2005 18:09 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">First: <b>YOUR CODE <u>IS</u> WRONG!</b><br><br>as jheriko already said: if you're really using this code:</p><blockquote><i>Originally posted by SkarlathAmon</i><br><b>init: m=0;n=800<br>beat: if(0,m=.99,m=-.99)<br>perpoint: x=m; y=m</b></blockquote>in AVS it simply won't work. Cause it's not AVS syntax!<br><br><br>btw: if there is code in the beat box, it'll only be executed whenever AVS detects a beat.<br>So, if you want to have a point jump to the opposite corner whenever there is a beat, just do that:<br><pre>
+<code><font size="3">init: m=0; n=<b>1</b>; <font size="2">&lt;- you only need one single point (as you said yourself)</font> <br><br>frame: m=.99;<br><br>beat: m=-.99;<br><br>perpoint: x=m; y=m</font></code>
+</pre>now your point will be in the opposite corner whenever there is a beat.<br>
+      <br>
+      <br>
+      If you still want to use the if() function <font size="1">(though it would be pretty stupid, cause we already found a much faster and simpler solution)</font>, then do the following:<br>
       <pre>
 <code><font size="3"> if( b , assign(m,-.99) , assign(m,.99) )  </font></code>
-</pre><br />
-      'b' is a variable used by AVS which is either 1 <font size="1">(if there currently is a beat)</font><br />
-      or 0 <font size="1">(when there isn't a beat)</font>.<br />
-      And what assign() does, should be pretty obvious.<br />
-      <br />
-      Now, as long as b has the value 1 the if-function processes the code in the middle-part: assign(m,-.99). Otherwise (if b has the value 0) the last part of the code will be processed: assign(m,0.99).<br />
-      <br />
-      <br />
+</pre><br>
+      'b' is a variable used by AVS which is either 1 <font size="1">(if there currently is a beat)</font><br>
+      or 0 <font size="1">(when there isn't a beat)</font>.<br>
+      And what assign() does, should be pretty obvious.<br>
+      <br>
+      Now, as long as b has the value 1 the if-function processes the code in the middle-part: assign(m,-.99). Otherwise (if b has the value 0) the last part of the code will be processed: assign(m,0.99).<br>
+      <br>
+      <br>
       wow, guess that is enough explanation...
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">PAK-9</span><br></p>
 
       <p class="post-time small text-muted">20th July 2005 21:48 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">/Lights flamethrower</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br></p>
 
       <p class="post-time small text-muted">20th July 2005 21:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">hehe...<br />
+      <p class="post-content">hehe...<br>
       but wait pak! The very last ultimatum hasn't run out yet!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">SkarlathAmon</span><br></p>
 
       <p class="post-time small text-muted">21st July 2005 07:37 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>Thanks :D</strong><br />
-      Ah and that was my problem, not using assign. it was my understanding that = did the same thing, but i guess i was wrong.<br />
-      <br />
+      <p class="post-content"><strong>Thanks :D</strong><br>
+      Ah and that was my problem, not using assign. it was my understanding that = did the same thing, but i guess i was wrong.<br>
+      <br>
       thanks</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br></p>
 
       <p class="post-time small text-muted">21st July 2005 17:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">no prob...<br />
-      <br />
+      <p class="post-content">no prob...<br>
+      <br>
       and don't forget that the if(<b>0</b>... part doesn't do what you wanted it to either!</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">StevenRoy</span><br></p>
 
       <p class="post-time small text-muted">22nd July 2005 03:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">The major difference between = and assign() is that the former doesn't work inside functions, such as if(). However, you can just as easily use = if you rearrange the equation a little. (Yes, if() is a function. It's like the ?: operator in C and Java and other languages.)<br />
-      <br />
+      <p class="post-content">The major difference between = and assign() is that the former doesn't work inside functions, such as if(). However, you can just as easily use = if you rearrange the equation a little. (Yes, if() is a function. It's like the ?: operator in C and Java and other languages.)<br>
+      <br>
       For example, the following three lines are equivalent:</p>
       <pre>
-<code>if(b,assign(m,-.99),assign(m,.99));<br />assign(m,if(b,-.99,.99));<br />m=if(b,-.99,.99);</code>
+<code>if(b,assign(m,-.99),assign(m,.99));<br>assign(m,if(b,-.99,.99));<br>m=if(b,-.99,.99);</code>
 </pre>Of course, if you're using the "b" variable to determine when there's a beat, it's usually a good idea to consider dividing the code into the "frame" and "beat" sections. There's a good example of this posted by ^..^ about five posts ago.
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

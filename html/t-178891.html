@@ -1,323 +1,190 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Count function" />
-
-  <title>Count function - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-138.html">AVS Wishlist</a></li>
-
-      <li class="active">Count function</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=178891">Count function</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
-
-      <p class="post-time small text-muted">4th May 2004 11:36 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Count function</strong><br />
-      How about adding a count(#) function where # is a certain number of seconds or frames that it counts up to before reseting to 0 and starting again.<br />
-      Seems do-able just not sure what you'd use it for.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Raz</span><br /></p>
-
-      <p class="post-time small text-muted">4th May 2004 12:05 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Frame or beat section, frame for the number of frames per second, or fps, shown at the bottom of the editor, beat for beats:<br />
-      t=t+0.05;<br />
-      0.05 is just an example, just stick in a number however much you want it to go up by each beat or frame.<br />
-      <br />
-      Frame section:<br />
-      t=if(above(t,1),0,t);<br />
-      1 can be however much you want it to go up to. 0 Being wherever you want it to go back to when it gets to 1 or whatever you put in.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
-
-      <p class="post-time small text-muted">4th May 2004 12:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">thanks</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br /></p>
-
-      <p class="post-time small text-muted">6th May 2004 01:19 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">You could also use:<br />
-      t=t+0.05;<br />
-      t=t*below(t,1.05);</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
-
-      <p class="post-time small text-muted">6th May 2004 06:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">hmf, as long as everyone is giving their opinion, here is mine :p<br />
-      <br />
-      counter=if(above(counter,resetingpoint),0,counter+value)<br />
-      <br />
-      That is the basic idea in it, you can use that in the beat or in the frame box.<br />
-      <br />
-      As for making it seconds... well i have no clean and easy solution but i guess that this <b>*might*</b> work. (use in the frame section)<br />
-      <br />
-      now=gettime(0) ; fps=1/(now-last) ; last=now ;<br />
-      second=1/fps ;<br />
-      <br />
-      Then just use the counter :)<br />
-      <br />
-      counter=if(above(counter,resetingpoint),0,counter+second)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
-
-      <p class="post-time small text-muted">6th May 2004 08:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">not quite correct, tug. and REALLY complicated (why use fps when you need seconds? :))<br />
-      <br /></p>
-      <pre>
-<code><br />last=now;                                       // save time index of the last frame<br />now=gettime(0);                                 // get new time index<br />seconds=now-last;                               // and calculate the difference<br />counter=if(above(counter,resettingpoint),       // if counter&gt;your defined maximum value then<br />  counter-resettingpoint                        //  subtract that maximum value from the counter<br />,                                               // otherwise<br />  counter                                       //  leave it unchanged<br />)+seconds                                       // after the if, add the difference from above to it<br /></code>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Count function"><title>Count function - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-138.html">AVS Wishlist</a></li><li class="active">Count function</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=178891">Count function</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p><p class="post-time small text-muted">4th May 2004 11:36 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Count function</strong><br>How about adding a count(#) function where # is a certain number of seconds or frames that it counts up to before reseting to 0 and starting again.<br>Seems do-able just not sure what you'd use it for.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Raz</span><br></p><p class="post-time small text-muted">4th May 2004 12:05 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Frame or beat section, frame for the number of frames per second, or fps, shown at the bottom of the editor, beat for beats:<br>t=t+0.05;<br>0.05 is just an example, just stick in a number however much you want it to go up by each beat or frame.<br><br>Frame section:<br>t=if(above(t,1),0,t);<br>1 can be however much you want it to go up to. 0 Being wherever you want it to go back to when it gets to 1 or whatever you put in.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p><p class="post-time small text-muted">4th May 2004 12:08 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">thanks</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">hungryskull</span><br></p><p class="post-time small text-muted">6th May 2004 01:19 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">You could also use:<br>t=t+0.05;<br>t=t*below(t,1.05);</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p><p class="post-time small text-muted">6th May 2004 06:04 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">hmf, as long as everyone is giving their opinion, here is mine :p<br><br>counter=if(above(counter,resetingpoint),0,counter+value)<br><br>That is the basic idea in it, you can use that in the beat or in the frame box.<br><br>As for making it seconds... well i have no clean and easy solution but i guess that this <b>*might*</b> work. (use in the frame section)<br><br>now=gettime(0) ; fps=1/(now-last) ; last=now ;<br>second=1/fps ;<br><br>Then just use the counter :)<br><br>counter=if(above(counter,resetingpoint),0,counter+second)</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p><p class="post-time small text-muted">6th May 2004 08:50 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">not quite correct, tug. and REALLY complicated (why use fps when you need seconds? :))<br><br></p><pre>
+<code><br>last=now;                                       // save time index of the last frame<br>now=gettime(0);                                 // get new time index<br>seconds=now-last;                               // and calculate the difference<br>counter=if(above(counter,resettingpoint),       // if counter&gt;your defined maximum value then<br>  counter-resettingpoint                        //  subtract that maximum value from the counter<br>,                                               // otherwise<br>  counter                                       //  leave it unchanged<br>)+seconds                                       // after the if, add the difference from above to it<br></code>
 </pre>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">6th May 2004 09:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Just thinking it my way :p<br />
-      <br />
+      <p class="post-content">Just thinking it my way :p<br>
+      <br>
       value=value+1/fps , would be value=1 after 1 second i think :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">6th May 2004 09:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">value=value+seconds is also value=1 after 1 second :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">6th May 2004 10:25 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Yup i realize that now :p</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">dirkdeftly</span><br></p>
 
       <p class="post-time small text-muted">9th May 2004 19:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">on a slightly related subject, can we either get a new function mod(var,mod) that supports floats or extend the var%mod operator to not cast integers?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">10th May 2004 11:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">i just got another idea that i actually think people could use and instead of posting a new thread i'll just stick it here: a contrast ape or even intergrated into avs that (obviously) increases the contrast of a preset using a slider, very simple and i would find useful.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">10th May 2004 11:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Why not use an adjustable effectlist with a white clearscreen in it?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">10th May 2004 12:53 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">For one, it makes it too bright and i know this can be fixed with fast brightness but all that would slow your preset down. For some people that means a lot.<br />
-      <br />
+      <p class="post-content">For one, it makes it too bright and i know this can be fixed with fast brightness but all that would slow your preset down. For some people that means a lot.<br>
+      <br>
       what the crap am i on about...</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">11th May 2004 07:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">How about color modifier? Can't you use that? :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">11th May 2004 11:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">If i knew how to, yes, but i don't so no.<br />
+      <p class="post-content">If i knew how to, yes, but i don't so no.<br>
       But even if i could you would still have to agree that a contrast ape would save you a lot of time on writing code (due to the fact that there wouldn't be any) and make things much more simple.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">12th May 2004 07:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yeah i used to do that a lot too, thinking...<br />
-      But everytime i said my thoughts out loud i was shot down for my stupid ideas :hang:<br />
-      And so will be most likely this too.<br />
-      <br />
-      I don't know this for sure, but i think you can change the contrast and brightness just by multiplying or adding/subtracting from the red, green &amp; blue values.<br />
-      Example:<br />
-      red=red*2 ;<br />
-      green=green*2 ;<br />
-      blue=blue*2<br />
-      <br />
-      2x brightness<br />
+      <p class="post-content">Yeah i used to do that a lot too, thinking...<br>
+      But everytime i said my thoughts out loud i was shot down for my stupid ideas :hang:<br>
+      And so will be most likely this too.<br>
+      <br>
+      I don't know this for sure, but i think you can change the contrast and brightness just by multiplying or adding/subtracting from the red, green &amp; blue values.<br>
+      Example:<br>
+      red=red*2 ;<br>
+      green=green*2 ;<br>
+      blue=blue*2<br>
+      <br>
+      2x brightness<br>
       oh and you might turn off that "calculate every frame" box if your CMo doesn't calculate anything dynamicly.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">hungryskull</span><br></p>
 
       <p class="post-time small text-muted">13th May 2004 01:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Yes, multiplying adjust the brightness.<br />
+      <p class="post-content">Yes, multiplying adjust the brightness.<br>
       And I think it is possible to do contrast in a colour modifier. I just tried to create one and it kinda worked.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">TomyLobo</span><br></p>
 
       <p class="post-time small text-muted">13th May 2004 06:11 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">with color modifiers, you can do anything you normally do with a gamma ramp. it's the same thing.<br />
-      hope that helps you :)<br />
-      color modifier (as i understand it) creates a so called "gamma ramp", which is basically 3 arrays (one for R, G and B)of bytes with indices ranging from 0 to 255. Let's call these arrays RGamma[0..255], GGamma[0..255] and BGamma[0..255]. In a color modifier you can write to these arrays by modifying 'red', 'green' and 'blue' in the 'level' part of the Color Modifier(they are in the range from 0 to 1 there)<br />
+      <p class="post-content">with color modifiers, you can do anything you normally do with a gamma ramp. it's the same thing.<br>
+      hope that helps you :)<br>
+      color modifier (as i understand it) creates a so called "gamma ramp", which is basically 3 arrays (one for R, G and B)of bytes with indices ranging from 0 to 255. Let's call these arrays RGamma[0..255], GGamma[0..255] and BGamma[0..255]. In a color modifier you can write to these arrays by modifying 'red', 'green' and 'blue' in the 'level' part of the Color Modifier(they are in the range from 0 to 1 there)<br>
       The color modifier then splits every pixel into its red, green and blue components and looks into the red, green and blue Gamma Ramps respectively to get the new value for each channel.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">22nd May 2004 12:46 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">no that doesn't help me at all.<br />
+      <p class="post-content">no that doesn't help me at all.<br>
       Just a quick question though, how old are all you people?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">24th May 2004 10:13 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Now that's a hardly relevant question... "How old are you?" The heck you are trying to gain with that knowledge?</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">24th May 2004 23:52 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">because i'm only 16, i don't know that much maths and stuff. I just wanted to know how old everyone here is so i can see where i'm at compared to everyone else</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">25th May 2004 06:44 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Well, intelligence isn't related to age as i've come to witness around here, but there is another thing called wisdom which only comes through experience ;)<br />
-      <br />
+      <p class="post-content">Well, intelligence isn't related to age as i've come to witness around here, but there is another thing called wisdom which only comes through experience ;)<br>
+      <br>
       Take for example Nic01, i think he just turned 15 and he knows about ten times more math than me and im 21, so knowing about math or something technical does not depend on age.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Mr_Nudge</span><br></p>
 
       <p class="post-time small text-muted">28th May 2004 01:41 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">well 10 points to Nic01</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

@@ -1,326 +1,195 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AVS joystick control" />
-
-  <title>AVS joystick control - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">AVS joystick control</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=217575">AVS joystick control</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
-
-      <p class="post-time small text-muted">31st May 2005 12:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>AVS joystick control</strong><br />
-      A short while ago I came across winstick. A program to control your winamp with a joystick.<br />
-      I saw it mimicks keyboard keys, which gave me the idea it could be used to control AVS.<br />
-      I have worked out a little scheme, a list how to set it up and a test.avs. Klique <a href="http://www.daandirk.nl/controlavs" target="_blank">here</a>.<br />
-      <br />
-      I hope at least some of you have a gamepad.<br />
-      Well, check it out and tell me what you think.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
-
-      <p class="post-time small text-muted">31st May 2005 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">with open source avs we might be able to add a good joystick/gamepad support which would eliminate the need to share the keyboard with winamp</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
-
-      <p class="post-time small text-muted">1st June 2005 10:59 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">I tend to believe that priority on open source AVS is and should not be joystick input. For real multi-tasking however it seem inevitable. One should be able to type and control AVS with a joystick at the same time<br />
-      <br />
-      Until it happens the keyboard still has plenty of keys left. Maybe not enough to use whole a second controller, but one could give up some winamp hotkeys.<br />
-      <br />
-      For now it works.<br />
-      I wonder however if any AVS-user has either a logitech dual action or sidewinder.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
-
-      <p class="post-time small text-muted">1st June 2005 11:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">I only recommended it because it has the look of a 10 minute job (not literally... read 'only needs small code changes') and would be very useful for making avs games. (the main thing always putting me off is the bad keyb support)</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
-
-      <p class="post-time small text-muted">1st June 2005 12:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">The highly responsive keyboard is annoying.<br />
-      <br />
-      You made me think and here is an improvement.<br />
-      <br />
-      q1=band(q2,(getkbmouse(79)));<br />
-      q2=bnot(getkbmouse(79));<br />
-      if(equal(q1, 1), assign(q3, q3+1), 0);<br />
-      reg01=(q3|0)&amp;1;<br />
-      <br />
-      Now reg01 goes on and off by pressing o.<br />
-      <br />
-      I've worked it out in the new example file, which can be found <a href="http://www.daandirk.nl/controlavs" target="_blank">here</a>.<br />
-      <br />
-      Thanks for making me think.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
-
-      <p class="post-time small text-muted">1st June 2005 19:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">my method:<br /></p>
-      <pre>
-<code><br /><b>frame</b><br />mc=getkbmouse(3); //mc=mouseclick<br />mcpulse=if(equal(mcold,mcnew),0,if(equal(mcold,0),1,0)); <br />// enabled only 1 frame on mouseclick<br /><br />mcold=var;<br />var=if(equal(mc,0),mcpulse,1); //var is only used as temp<br />mcnew=var;<br /><br />mcswitch=if(mcpulse,bnot(mcswitch),mcswitch);<br />reg02=mcswitch;<br /></code>
-</pre><br />
-      <br />
-      I used this in Oil Grease Is Not Black in Preset Pack 2.<br />
-      I wanted to attach it, but you can't attach presets in edit mode anymore. I hate doubleposting so I'll post a link to PP2 instead..<br />
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AVS joystick control"><title>AVS joystick control - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">AVS joystick control</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=217575">AVS joystick control</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p><p class="post-time small text-muted">31st May 2005 12:14 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>AVS joystick control</strong><br>A short while ago I came across winstick. A program to control your winamp with a joystick.<br>I saw it mimicks keyboard keys, which gave me the idea it could be used to control AVS.<br>I have worked out a little scheme, a list how to set it up and a test.avs. Klique <a href="http://www.daandirk.nl/controlavs" target="_blank">here</a>.<br><br>I hope at least some of you have a gamepad.<br>Well, check it out and tell me what you think.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p><p class="post-time small text-muted">31st May 2005 23:29 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">with open source avs we might be able to add a good joystick/gamepad support which would eliminate the need to share the keyboard with winamp</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p><p class="post-time small text-muted">1st June 2005 10:59 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">I tend to believe that priority on open source AVS is and should not be joystick input. For real multi-tasking however it seem inevitable. One should be able to type and control AVS with a joystick at the same time<br><br>Until it happens the keyboard still has plenty of keys left. Maybe not enough to use whole a second controller, but one could give up some winamp hotkeys.<br><br>For now it works.<br>I wonder however if any AVS-user has either a logitech dual action or sidewinder.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p><p class="post-time small text-muted">1st June 2005 11:50 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">I only recommended it because it has the look of a 10 minute job (not literally... read 'only needs small code changes') and would be very useful for making avs games. (the main thing always putting me off is the bad keyb support)</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p><p class="post-time small text-muted">1st June 2005 12:55 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">The highly responsive keyboard is annoying.<br><br>You made me think and here is an improvement.<br><br>q1=band(q2,(getkbmouse(79)));<br>q2=bnot(getkbmouse(79));<br>if(equal(q1, 1), assign(q3, q3+1), 0);<br>reg01=(q3|0)&amp;1;<br><br>Now reg01 goes on and off by pressing o.<br><br>I've worked it out in the new example file, which can be found <a href="http://www.daandirk.nl/controlavs" target="_blank">here</a>.<br><br>Thanks for making me think.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p><p class="post-time small text-muted">1st June 2005 19:00 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">my method:<br></p><pre>
+<code><br><b>frame</b><br>mc=getkbmouse(3); //mc=mouseclick<br>mcpulse=if(equal(mcold,mcnew),0,if(equal(mcold,0),1,0)); <br>// enabled only 1 frame on mouseclick<br><br>mcold=var;<br>var=if(equal(mc,0),mcpulse,1); //var is only used as temp<br>mcnew=var;<br><br>mcswitch=if(mcpulse,bnot(mcswitch),mcswitch);<br>reg02=mcswitch;<br></code>
+</pre><br>
+      <br>
+      I used this in Oil Grease Is Not Black in Preset Pack 2.<br>
+      I wanted to attach it, but you can't attach presets in edit mode anymore. I hate doubleposting so I'll post a link to PP2 instead..<br>
       <a href="http://www.deviantart.com/download/12533150/" target="_blank">http://www.deviantart.com/download/12533150/</a>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">1st June 2005 23:18 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">i normally stick with something simpler like this:<br />
-      <br /></p>
+      <p class="post-content">i normally stick with something simpler like this:<br>
+      <br></p>
       <pre>
-<code><br />oldg=g;<br />g=getkbmouse(akeynum);<br />pressedonce=below(oldg,g);<br /></code>
-</pre><br />
-      <br />
-      pressedonce is 1 the frame that the user first pushes the key down and is otherwise 0.<br />
-      <br />
-      also for doing time independant moves (i.e. a quake style camera walk) use:<br />
+<code><br>oldg=g;<br>g=getkbmouse(akeynum);<br>pressedonce=below(oldg,g);<br></code>
+</pre><br>
+      <br>
+      pressedonce is 1 the frame that the user first pushes the key down and is otherwise 0.<br>
+      <br>
+      also for doing time independant moves (i.e. a quake style camera walk) use:<br>
       <pre>
-<code><br />dt=gettime(lasttime);<br />lasttime=gettime(0);<br />pos=pos+dt*(getkeybmouse(keyplus)-getkeybmouse(keyminus));<br /></code>
-</pre><br />
-      <br />
+<code><br>dt=gettime(lasttime);<br>lasttime=gettime(0);<br>pos=pos+dt*(getkeybmouse(keyplus)-getkeybmouse(keyminus));<br></code>
+</pre><br>
+      <br>
       again, short and sweet :)
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Warrior of the Light</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 08:12 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content"></p>
 
       <blockquote>
-        <i>Originally posted by jheriko</i><br />
-        <b>i normally stick with something simpler like this:</b><br />
-        <br />
+        <i>Originally posted by jheriko</i><br>
+        <b>i normally stick with something simpler like this:</b><br>
+        <br>
         <pre>
-<code><br />oldg=g;<br />g=getkbmouse(akeynum);<br />pressedonce=below(oldg,g);<br /></code>
+<code><br>oldg=g;<br>g=getkbmouse(akeynum);<br>pressedonce=below(oldg,g);<br></code>
 </pre>
       </blockquote>why didn't I think of that!
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">^..^</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">^..^</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 11:31 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">wouldn't this even be a bit faster:<br /></p>
+      <p class="post-content">wouldn't this even be a bit faster:<br></p>
       <pre>
-<code>pressedonce=band(getkbmouse(3),stopit);<br />stopit=bnot(getkbmouse(3));</code>
-</pre>? 'pressedonce' is 1 during the frame you press the key, from the following frame on it's 0 again.<br />
-      <br />
+<code>pressedonce=band(getkbmouse(3),stopit);<br>stopit=bnot(getkbmouse(3));</code>
+</pre>? 'pressedonce' is 1 during the frame you press the key, from the following frame on it's 0 again.<br>
+      <br>
       Well, atleast that's what i always use...
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 12:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Its debateable which would be faster (I'd guess at mine by a few clock cycles), but the difference would be slim anyway.<br />
-      <br />
-      2 assignments + 2 getkbmouse + band + bnot<br />
-      against<br />
-      3 assignments + 1 getkbmouse + below<br />
-      <br />
+      <p class="post-content">Its debateable which would be faster (I'd guess at mine by a few clock cycles), but the difference would be slim anyway.<br>
+      <br>
+      2 assignments + 2 getkbmouse + band + bnot<br>
+      against<br>
+      3 assignments + 1 getkbmouse + below<br>
+      <br>
       speed isnt that much of an issue... i just wanted to point out a tidier solution rather than a faster one. none of this code is particularly slow or time critical.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 12:35 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content"><strong>counter</strong><br />
+      <p class="post-content"><strong>counter</strong><br>
       So a on/off switch could be this counter with an &amp;1 added to it.</p>
       <pre>
-<code>oldg=g;<br />g=getkbmouse(number);<br />counter=if(below(oldg,g), counter+1, counter);<br />reg03=counter&amp;1;</code>
+<code>oldg=g;<br>g=getkbmouse(number);<br>counter=if(below(oldg,g), counter+1, counter);<br>reg03=counter&amp;1;</code>
 </pre>or
       <pre>
-<code>counter=if(band(getkbmouse(number),g), counter+1, counter);<br />g=bnot(getkbmouse(number));<br />reg04=counter&amp;1;</code>
+<code>counter=if(band(getkbmouse(number),g), counter+1, counter);<br>g=bnot(getkbmouse(number));<br>reg04=counter&amp;1;</code>
 </pre>Nice. Or are there even better ways to do this?
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 12:51 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Avoid using those ifs when you dont need to.<br />
-      <br />
-      counter = if(below(oldg,g),counter+1,counter);<br />
-      <br />
-      could be<br />
-      <br />
-      counter = counter + below(oldg,g);<br />
-      <br />
-      which is better as it avoids the if which is slower than the + anyway, so dodging the + with if isnt a speed boost.<br />
-      <br />
-      Whats the &amp; 1 for? you want it to toggle from 0 to 1?<br />
-      <br />
-      I'm not sure if its faster but I think it is tidier to use:<br />
-      <br /></p>
+      <p class="post-content">Avoid using those ifs when you dont need to.<br>
+      <br>
+      counter = if(below(oldg,g),counter+1,counter);<br>
+      <br>
+      could be<br>
+      <br>
+      counter = counter + below(oldg,g);<br>
+      <br>
+      which is better as it avoids the if which is slower than the + anyway, so dodging the + with if isnt a speed boost.<br>
+      <br>
+      Whats the &amp; 1 for? you want it to toggle from 0 to 1?<br>
+      <br>
+      I'm not sure if its faster but I think it is tidier to use:<br>
+      <br></p>
       <pre>
-<code><br />oldg=g;g=getkbmouse(number);<br />counter = (counter + below(oldg,g))%2;<br /></code>
-</pre><br />
-      <br />
-      I'm not sure but I think &amp; and | are pretty slow 'cos of rounding to int, likewise %, floor etc. The %2 can be replaced by &amp;1 if it is faster...<br />
-      <br />
-      The other thing is that this can be expanded to 'toggle' between 0,1,2 or 0,1,2,3 and so on, by changing the final %2 for %3 or %4 etc... very useful for complicated menus.<br />
-      <br />
-      The most comprehensive menu I have released on a preset is on this one:<br />
-      <br />
-      <a href="http://www.deviantart.com/deviation/13908660/" target="_blank">http://www.deviantart.com/deviation/13908660/</a><br />
-      <br />
+<code><br>oldg=g;g=getkbmouse(number);<br>counter = (counter + below(oldg,g))%2;<br></code>
+</pre><br>
+      <br>
+      I'm not sure but I think &amp; and | are pretty slow 'cos of rounding to int, likewise %, floor etc. The %2 can be replaced by &amp;1 if it is faster...<br>
+      <br>
+      The other thing is that this can be expanded to 'toggle' between 0,1,2 or 0,1,2,3 and so on, by changing the final %2 for %3 or %4 etc... very useful for complicated menus.<br>
+      <br>
+      The most comprehensive menu I have released on a preset is on this one:<br>
+      <br>
+      <a href="http://www.deviantart.com/deviation/13908660/" target="_blank">http://www.deviantart.com/deviation/13908660/</a><br>
+      <br>
       Although its prolly full of bad coding practice, as all presets are, it shows some of this in use, like the color switchers and click buttons etc.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p>
 
       <p class="post-time small text-muted">2nd June 2005 13:16 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Thanks for the +-instead-of-if tip. Never looked at it from this angle.<br /></p>
+      <p class="post-content">Thanks for the +-instead-of-if tip. Never looked at it from this angle.<br></p>
 
       <blockquote>
         Whats the &amp; 1 for? you want it to toggle from 0 to 1?
-      </blockquote>Yes, that was the idea.<br />
-      I'm not sure either, but the difference between | &amp; and % seems negliable (and the numbers used are integers already, I'd guess that it shouldn't take long to recognise). The extended 'toggle' is an advantage, though.<br />
-      <br />
+      </blockquote>Yes, that was the idea.<br>
+      I'm not sure either, but the difference between | &amp; and % seems negliable (and the numbers used are integers already, I'd guess that it shouldn't take long to recognise). The extended 'toggle' is an advantage, though.<br>
+      <br>
       I was thinking about making something like a menu for the joystick control, so you'd see what you're doin, your example will be a great help. :)
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p>
 
       <p class="post-time small text-muted">18th August 2005 17:02 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">A menu is rather irritating actually, so I dismissed it.<br />
-      <br />
-      <br />
-      Made <a href="http://www.daandirk.nl/uploads/180/Boktor_action__graphics_is_a_game.avi" target="_blank">a little avi</a> in which i use my gamepad.<br />
-      Except for reencoding it to 3ivX, it's all AVS.<br />
-      <br />
-      <br />
+      <p class="post-content">A menu is rather irritating actually, so I dismissed it.<br>
+      <br>
+      <br>
+      Made <a href="http://www.daandirk.nl/uploads/180/Boktor_action__graphics_is_a_game.avi" target="_blank">a little avi</a> in which i use my gamepad.<br>
+      Except for reencoding it to 3ivX, it's all AVS.<br>
+      <br>
+      <br>
       Reactions appreciated.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">14th September 2005 17:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">firstly. the video is huge.<br />
-      <br />
-      secondly. why not post the avs preset and ape or whatever?<br />
-      <br />
-      I'll give you another reply in 3 minutes when i have finished downloading your huge video.<br />
-      <br />
-      --------<br />
-      <br />
-      It uses Winstick? Thats so useful... a prerequisite for an avs preset that can be nicely wrapped into an installer .exe and requires no effort from the user. Joystick presets are the way to go!!! ¬<br />
-      <br />
+      <p class="post-content">firstly. the video is huge.<br>
+      <br>
+      secondly. why not post the avs preset and ape or whatever?<br>
+      <br>
+      I'll give you another reply in 3 minutes when i have finished downloading your huge video.<br>
+      <br>
+      --------<br>
+      <br>
+      It uses Winstick? Thats so useful... a prerequisite for an avs preset that can be nicely wrapped into an installer .exe and requires no effort from the user. Joystick presets are the way to go!!! ¬<br>
+      <br>
       Seriously though, its pretty cool, but for reasons outlined above, not practical for an avs pack. I guess its awesome for VJ'ing though.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Boktor</span><br></p>
 
       <p class="post-time small text-muted">14th September 2005 20:04 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">Thanks for your comment.<br /></p>
+      <p class="post-content">Thanks for your comment.<br></p>
 
       <blockquote>
-        <i>Originally posted by jheriko</i><br />
+        <i>Originally posted by jheriko</i><br>
         <b>firstly. the video is huge.</b>
-      </blockquote>Depends on your definition of small/huge, for a video file it's not that big.<br />
+      </blockquote>Depends on your definition of small/huge, for a video file it's not that big.<br>
 
       <blockquote>
         <b>secondly. why not post the avs preset and ape or whatever?</b>
@@ -328,56 +197,54 @@
 
       <blockquote>
         <b>It uses Winstick? Thats so useful... a prerequisite for an avs preset that can be nicely wrapped into an installer .exe and requires no effort from the user. Joystick presets are the way to go!!! ¬</b>
-      </blockquote>You should work on your irony skills.<br />
-      But indeed an installer would be nice.<br />
+      </blockquote>You should work on your irony skills.<br>
+      But indeed an installer would be nice.<br>
       I don't think it's impossible.
 
       <blockquote>
         <b>Seriously though, its pretty cool, but for reasons outlined above, not practical for an avs pack.</b>
-      </blockquote>I agree for now.<br />
-      <br />
-      Though, the xbox360 will get a gamepad controlled <a href="http://blogs.guardian.co.uk/games/archives/2005/07/05/jeff_minter_vs_xbox_360_how_microsoft_bought_the_light_synth_vision.html" target="_blank">visualizer</a>, called <a href="http://www.llamasoft.co.uk/neon.php" target="_blank">lightsynth</a>, which might change things.<br />
-      I guess you don't want to download there <a href="http://www.llamasoft.co.uk/neon-movies.php" target="_blank">videos</a>.<br />
+      </blockquote>I agree for now.<br>
+      <br>
+      Though, the xbox360 will get a gamepad controlled <a href="http://blogs.guardian.co.uk/games/archives/2005/07/05/jeff_minter_vs_xbox_360_how_microsoft_bought_the_light_synth_vision.html" target="_blank">visualizer</a>, called <a href="http://www.llamasoft.co.uk/neon.php" target="_blank">lightsynth</a>, which might change things.<br>
+      I guess you don't want to download there <a href="http://www.llamasoft.co.uk/neon-movies.php" target="_blank">videos</a>.<br>
 
       <blockquote>
         <b>I guess its awesome for VJ'ing though.</b>
       </blockquote>It is. It's very pleasant.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">jheriko</span><br></p>
 
       <p class="post-time small text-muted">25th September 2005 03:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">yeah. glad you appreciated the humour and didnt take offense :)<br />
-      <br />
-      any file &gt; 500k is huge on dialup<br />
-      <br />
-      i'm on 1meg and that took a long time to dl. and for that short a video... that is pretty huge, and not even at a justifyable quality.<br />
-      <br />
-      i have videos of episodes of tv series that big or smaller :) and not just cartoons.<br />
-      <br />
+      <p class="post-content">yeah. glad you appreciated the humour and didnt take offense :)<br>
+      <br>
+      any file &gt; 500k is huge on dialup<br>
+      <br>
+      i'm on 1meg and that took a long time to dl. and for that short a video... that is pretty huge, and not even at a justifyable quality.<br>
+      <br>
+      i have videos of episodes of tv series that big or smaller :) and not just cartoons.<br>
+      <br>
       anyway, this does look cool. its just a shame there isnt inbuilt joystick control... if avs was really open we could add it :)</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">MaTTFURY</span><br></p>
 
       <p class="post-time small text-muted">25th September 2005 07:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">another improvement for avs! mpeg's/other types of non-M$ video file formats!!! :D</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>

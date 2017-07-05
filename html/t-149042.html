@@ -1,256 +1,20 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trans / Color Modifer freakyness (justin?)" />
-
-  <title>Trans / Color Modifer freakyness (justin?) - AVS Forums</title>
-  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script>
-  <!-- Bootstrap core CSS -->
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-</head>
-
-<body style="display:none">
-  <div class="container">
-    <div class="row">
-        <div class="dropdown pull-right">
-          <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-            Change style
-            <span class="caret"></span>
-          </button>
-          <ul id="css-select" class="dropdown-menu" role="menu">
-            <li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Bootswatch</li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li>
-            <li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li>
-          </ul>
-        </div>
-    </div>
-
-    <ol class="breadcrumb">
-      <li><a href="../index.html" class="glyphicon glyphicon-home"></a></li>
-
-      <li><a href="f-85.html">AVS</a></li>
-
-      <li class="active">Trans / Color Modifer freakyness (justin?)</li>
-    </ol>
-
-    <p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=149042">Trans / Color Modifer freakyness (justin?)</a></p><br />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
-
-      <p class="post-time small text-muted">13th September 2003 16:03 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content"><strong>Trans / Color Modifer freakyness (justin?)</strong><br />
-      I'm still trying to wrap my head around trans color modifier. It's obviously not a per-pixel code evaluator, because that should be dead-slow, and the CMo* isn't.<br />
-      <br />
-      Here's where the problems start...<br />
-      <br />
-      <b>Example 'Solarization'</b> (this is a chrome filter btw)<br />
-      red=(min(1,red*2)-red)*2;<br />
-      green=red; blue=red;<br />
-      <br />
-      If we view this piece as something that gets executed like in a superscope, then the result is incorrect. The final two statements cause red to equal green and blue, so the result would be a grayscale image. But it isn't.<br />
-      <br />
-      So here's what I think the CMo does...<br />
-      <br />
-      The init, frame and beat codes are run like any other component, though are only really useful if you use "recompute every frame".<br />
-      <br />
-      The level code is run 256 times once, with a 256-shades grayscale ramp as the input. In the beginning of the code, red=green=blue. So the input/output has nothing to do with the pixels in the image, but rather defines a general transformation for colors.<br />
-      <br />
-      The output is a 256-color palette, which can be seen as 3 color maps which each operate only inside their own channel: one for red, one for green, one for blue.<br />
-      <br />
-      Imagine a colormap APE where there are 3 gradients rather than one, but the first gradient is limited to pure red colors, the second gradient to pure green colors, the third to pure blue colors.<br />
-      Per pixel, the color is split into channels: red, green, blue.<br />
-      Each is used as an index into one of the colormaps (red for the first, green for the second, blue for the last). The values in the Rgb channels are replaced by their respective mappings in their gradient.<br />
-      Then the result is assembled back into a pixel and written out.<br />
-      <br />
-      So that explains why the solarization code works. If the input is RGB(150,150,150), it will first calculate the solarization of the red component. That's 210. Then it sets the same value for the green and blue component. The output is RGB(210,210,210).<br />
-      If we do this for every grayscale input, the three channels of the output pallete will contain the solarized version of their value.<br />
-      <br />
-      By applying these 3 solarization maps to an RGB pixel, we get a per-channel solarized version.<br />
-      <br />
-      So what is the use of mixing channel inputs, e.g. using something like 'green=red+.5'? It won't work as a channel shifter, it simply results in 'use the same colormap for the red channel as for the green channel, except add .5 brightness to it aswell'.<br />
-      <br />
-      (*) I suggest CMa for color map, CMo for color modifier ;).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
-
-      <p class="post-time small text-muted">13th September 2003 16:45 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">That's right, it just creates three tables in one pass, each table a remap for each channel. The reason you can't do full channel mixing is that the table that you would need to generate for that would be rather large.<br />
-      <br />
-      Now, you could do it with reduced precision and interpolation, but I'm not sure that would be terribly useful.<br />
-      <br />
-      Anyway, so yeah it just goes through the loop, each time setting<br />
-      red, green, and blue from 0.0 to 1.0. Then you can modify what<br />
-      the output for each of those channels are.<br />
-      <br />
-      So you think we should rename it to Channel Modifier or Color Map<br />
-      or something?<br />
-      <br />
-      -Justin</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">UnConeD</span><br /></p>
-
-      <p class="post-time small text-muted">13th September 2003 16:50 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Hm? You don't seem to know this... Color Map already exists, it's an APE I made with similar functionality to Color Modifier, except it's not code driven, and uses only one index for lookup. <a href="http://www.deviantart.com/deviation/2459801/" target="_blank">Get it here</a>.<br />
-      <br />
-      Have you missed out on other APE goodies too, like Texer, Convolution (by Tom Holden), Multiplier, Channel Shift, ... ? Couldn't immediately find links for them, but you can get most of my APEs by downloading Whacko AVS V and VI (though you should keep the more recent colormap above).</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">justin</span><br /></p>
-
-      <p class="post-time small text-muted">13th September 2003 16:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">No I have seen it (it's nice, too)... I just meant, hmm, maybe we should rename modifier... Anyway I'm gonna update 270pre soon with a bunch of little fixes, hehe.<br />
-      <br />
-      BTW, I can't seem to duplicate old presets with Trans / Movement crashing (someone mentioned this in the other thread)... Any idea?<br />
-      <br />
-      -Justin</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br /></p>
-
-      <p class="post-time small text-muted">15th September 2003 19:08 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">How about making it work in HSV (as well as RGB)? Then it could be used to rotate colours.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br /></p>
-
-      <p class="post-time small text-muted">15th September 2003 20:06 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">that is good idea... tho' it would be slow</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Deamon</span><br /></p>
-
-      <p class="post-time small text-muted">15th September 2003 21:32 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Maybe it's possible to have a selection box wether you want to use HSV or not, just like Rectangular coords in the DM. That would only cost speed if you really want to use HSV, not if you're only planning on using the RGB abilities.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
-
-      <p class="post-time small text-muted">15th September 2003 23:38 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">i doubt that it would make any different on speed whether you coded in the hsl-rgb convert, or avs had it done in the background. Its still the same algorithm.<br />
-      <br />
-      Whats more.. if you want to edit according to hsl, and not just change them, you would need to first convery the three rgb tables into hue lum and sat. Then fuxr them around.. then change them back to rgb.<br />
-      <br />
-      like rgb-hsl &gt; (your code) &gt; hsl-rgb<br />
-      <br />
-      very fucking slow indeedy</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
-
-      <p class="post-time small text-muted">16th September 2003 00:26 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Wellll. heres a nice, but not very useful colormod thingo.<br />
-      <br />
-      Uses the hsl-rgb alg. to make a neeto dynamic clear screen (ala shreyas' APE). Hue shifts on beat, and lum and sat are 'pumped' using smoothened out getspec stuff.<br />
-      <br />
-      Because its not mapped to the original rgb values in any way, all the code is dont per frame, so its nice and speedy.</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">sidd</span><br /></p>
-
-      <p class="post-time small text-muted">16th September 2003 00:54 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">XP<br />
-      how silly ive been<br />
-      <br />
-      Editing with hsl can be done very easily.<br />
-      like i said before, you do</p>
-
-      <blockquote>
-        rgb-hsl (your code) hsl-rgb.
-      </blockquote>What i didnt think of was that the input rgb is 3 equal maps. Or other words, one greyscale map.<br />
-      So the initial rgb-hsl alg. can be simplified to:<br />
-      <br />
-      hue1=0; sat1=0; lum1=red;<br />
-      <br />
-      as hue is unused, saturation is greyscale, and lum is the level (can be any of red green or blue).<br />
-      <br />
-      the you can change around hsl all you like:<br />
-      even do stuff like hue=sin(hue)+lum<br />
-      Here's a nifty eg, its a bit slower.. but still ok.
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Jaak</span><br /></p>
-
-      <p class="post-time small text-muted">16th September 2003 05:09 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">Yea, the code is waay too big tho'</p>
-    </div>
-    <hr />
-
-    <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br /></p>
-
-      <p class="post-time small text-muted">16th September 2003 07:00 <abbr title="Coordinated Universal Time">UTC</abbr></p>
-
-      <p class="post-content">One main problem though is you CAN'T do HSL with a proper image, as you would need to pull data from other levels, like you can't use</p>
-      <pre>
-<code>red=(red+green+blue)/3;<br />blue=(red+green+blue)/3;<br />green=(red+green+blue)/3;</code>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Trans / Color Modifer freakyness (justin?)"><title>Trans / Color Modifer freakyness (justin?) - AVS Forums</title><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-53539506-7','auto');ga('send','pageview');</script><link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]--></head><body style="display:none"><div class="container"><div class="row"><div class="dropdown pull-right"><button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Change style <span class="caret"></span></button><ul id="css-select" class="dropdown-menu" role="menu"><li><a href="#" rel="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">Default</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Bootswatch</li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/amelia/bootstrap.min.css">Amelia</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">Cerulean</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css">Cosmo</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css">Cyborg</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">Flatly</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/journal/bootstrap.min.css">Journal</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css">Readable</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/simplex/bootstrap.min.css">Simplex</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css">Slate</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css">Spacelab</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">United</a></li><li><a href="#" rel="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css">Yeti</a></li></ul></div></div><ol class="breadcrumb"><li><a href="../index.html" class="glyphicon glyphicon-home"></a></li><li><a href="f-85.html">AVS</a></li><li class="active">Trans / Color Modifer freakyness (justin?)</li></ol><p class="lead text-muted">Archive: <a title="Try the Internet Archive" target="_blank" href="http://web.archive.org/web/*/forums.winamp.com/showthread.php?t=149042">Trans / Color Modifer freakyness (justin?)</a></p><br><div class="post"><p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p><p class="post-time small text-muted">13th September 2003 16:03 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content"><strong>Trans / Color Modifer freakyness (justin?)</strong><br>I'm still trying to wrap my head around trans color modifier. It's obviously not a per-pixel code evaluator, because that should be dead-slow, and the CMo* isn't.<br><br>Here's where the problems start...<br><br><b>Example 'Solarization'</b> (this is a chrome filter btw)<br>red=(min(1,red*2)-red)*2;<br>green=red; blue=red;<br><br>If we view this piece as something that gets executed like in a superscope, then the result is incorrect. The final two statements cause red to equal green and blue, so the result would be a grayscale image. But it isn't.<br><br>So here's what I think the CMo does...<br><br>The init, frame and beat codes are run like any other component, though are only really useful if you use "recompute every frame".<br><br>The level code is run 256 times once, with a 256-shades grayscale ramp as the input. In the beginning of the code, red=green=blue. So the input/output has nothing to do with the pixels in the image, but rather defines a general transformation for colors.<br><br>The output is a 256-color palette, which can be seen as 3 color maps which each operate only inside their own channel: one for red, one for green, one for blue.<br><br>Imagine a colormap APE where there are 3 gradients rather than one, but the first gradient is limited to pure red colors, the second gradient to pure green colors, the third to pure blue colors.<br>Per pixel, the color is split into channels: red, green, blue.<br>Each is used as an index into one of the colormaps (red for the first, green for the second, blue for the last). The values in the Rgb channels are replaced by their respective mappings in their gradient.<br>Then the result is assembled back into a pixel and written out.<br><br>So that explains why the solarization code works. If the input is RGB(150,150,150), it will first calculate the solarization of the red component. That's 210. Then it sets the same value for the green and blue component. The output is RGB(210,210,210).<br>If we do this for every grayscale input, the three channels of the output pallete will contain the solarized version of their value.<br><br>By applying these 3 solarization maps to an RGB pixel, we get a per-channel solarized version.<br><br>So what is the use of mixing channel inputs, e.g. using something like 'green=red+.5'? It won't work as a channel shifter, it simply results in 'use the same colormap for the red channel as for the green channel, except add .5 brightness to it aswell'.<br><br>(*) I suggest CMa for color map, CMo for color modifier ;).</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">justin</span><br></p><p class="post-time small text-muted">13th September 2003 16:45 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">That's right, it just creates three tables in one pass, each table a remap for each channel. The reason you can't do full channel mixing is that the table that you would need to generate for that would be rather large.<br><br>Now, you could do it with reduced precision and interpolation, but I'm not sure that would be terribly useful.<br><br>Anyway, so yeah it just goes through the loop, each time setting<br>red, green, and blue from 0.0 to 1.0. Then you can modify what<br>the output for each of those channels are.<br><br>So you think we should rename it to Channel Modifier or Color Map<br>or something?<br><br>-Justin</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">UnConeD</span><br></p><p class="post-time small text-muted">13th September 2003 16:50 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Hm? You don't seem to know this... Color Map already exists, it's an APE I made with similar functionality to Color Modifier, except it's not code driven, and uses only one index for lookup. <a href="http://www.deviantart.com/deviation/2459801/" target="_blank">Get it here</a>.<br><br>Have you missed out on other APE goodies too, like Texer, Convolution (by Tom Holden), Multiplier, Channel Shift, ... ? Couldn't immediately find links for them, but you can get most of my APEs by downloading Whacko AVS V and VI (though you should keep the more recent colormap above).</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">justin</span><br></p><p class="post-time small text-muted">13th September 2003 16:54 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">No I have seen it (it's nice, too)... I just meant, hmm, maybe we should rename modifier... Anyway I'm gonna update 270pre soon with a bunch of little fixes, hehe.<br><br>BTW, I can't seem to duplicate old presets with Trans / Movement crashing (someone mentioned this in the other thread)... Any idea?<br><br>-Justin</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br></p><p class="post-time small text-muted">15th September 2003 19:08 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">How about making it work in HSV (as well as RGB)? Then it could be used to rotate colours.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Jaak</span><br></p><p class="post-time small text-muted">15th September 2003 20:06 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">that is good idea... tho' it would be slow</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Deamon</span><br></p><p class="post-time small text-muted">15th September 2003 21:32 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Maybe it's possible to have a selection box wether you want to use HSV or not, just like Rectangular coords in the DM. That would only cost speed if you really want to use HSV, not if you're only planning on using the RGB abilities.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">sidd</span><br></p><p class="post-time small text-muted">15th September 2003 23:38 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">i doubt that it would make any different on speed whether you coded in the hsl-rgb convert, or avs had it done in the background. Its still the same algorithm.<br><br>Whats more.. if you want to edit according to hsl, and not just change them, you would need to first convery the three rgb tables into hue lum and sat. Then fuxr them around.. then change them back to rgb.<br><br>like rgb-hsl &gt; (your code) &gt; hsl-rgb<br><br>very fucking slow indeedy</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">sidd</span><br></p><p class="post-time small text-muted">16th September 2003 00:26 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Wellll. heres a nice, but not very useful colormod thingo.<br><br>Uses the hsl-rgb alg. to make a neeto dynamic clear screen (ala shreyas' APE). Hue shifts on beat, and lum and sat are 'pumped' using smoothened out getspec stuff.<br><br>Because its not mapped to the original rgb values in any way, all the code is dont per frame, so its nice and speedy.</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">sidd</span><br></p><p class="post-time small text-muted">16th September 2003 00:54 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">XP<br>how silly ive been<br><br>Editing with hsl can be done very easily.<br>like i said before, you do</p><blockquote>rgb-hsl (your code) hsl-rgb.</blockquote>What i didnt think of was that the input rgb is 3 equal maps. Or other words, one greyscale map.<br>So the initial rgb-hsl alg. can be simplified to:<br><br>hue1=0; sat1=0; lum1=red;<br><br>as hue is unused, saturation is greyscale, and lum is the level (can be any of red green or blue).<br><br>the you can change around hsl all you like:<br>even do stuff like hue=sin(hue)+lum<br>Here's a nifty eg, its a bit slower.. but still ok.</div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Jaak</span><br></p><p class="post-time small text-muted">16th September 2003 05:09 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">Yea, the code is waay too big tho'</p></div><hr><div class="post"><p class="post-meta"><span class="post-author text-primary">Zevensoft</span><br></p><p class="post-time small text-muted">16th September 2003 07:00 <abbr title="Coordinated Universal Time">UTC</abbr></p><p class="post-content">One main problem though is you CAN'T do HSL with a proper image, as you would need to pull data from other levels, like you can't use</p><pre>
+<code>red=(red+green+blue)/3;<br>blue=(red+green+blue)/3;<br>green=(red+green+blue)/3;</code>
 </pre>to make grayscale.
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br></p>
 
       <p class="post-time small text-muted">16th September 2003 09:55 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Ah, forget the whole idea. I now think it would be extreeemely slow. Sorry, I was thinking of Colorfade (which of course works differently).</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">17th September 2003 07:29 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
@@ -258,45 +22,43 @@
 
       <blockquote>
         <pre>
-<code><br />red=(red+green+blue)/3;<br />blue=(red+green+blue)/3;<br />green=(red+green+blue)/3;<br /></code>
+<code><br>red=(red+green+blue)/3;<br>blue=(red+green+blue)/3;<br>green=(red+green+blue)/3;<br></code>
 </pre>
-      </blockquote>Hmm, haven't tested this myself, but what about if you save the variables first? like:<br />
-      <br />
+      </blockquote>Hmm, haven't tested this myself, but what about if you save the variables first? like:<br>
+      <br>
       <pre>
-<code><br />rgb=(red+green+blue)/3 ;<br />red=rgb ;<br />green=rgb ;<br />blue=rgb<br /></code>
-</pre><br />
-      <br />
+<code><br>rgb=(red+green+blue)/3 ;<br>red=rgb ;<br>green=rgb ;<br>blue=rgb<br></code>
+</pre><br>
+      <br>
       Would that create a grayscale image?
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">gaekwad2</span><br></p>
 
       <p class="post-time small text-muted">17th September 2003 09:14 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
-      <p class="post-content">No.<br />
-      <br />
+      <p class="post-content">No.<br>
+      <br>
       As explained above Cmod consists of 3 seperate maps for each channel. Therefore you can't mix colours with it.</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="post">
-      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br /></p>
+      <p class="post-meta"><span class="post-author text-primary">Tuggummi</span><br></p>
 
       <p class="post-time small text-muted">17th September 2003 09:17 <abbr title="Coordinated Universal Time">UTC</abbr></p>
 
       <p class="post-content">Hmm... aah, yes. How stupid of me :hang:</p>
     </div>
-    <hr />
+    <hr>
 
     <div class="footer">
       <p class="text-muted small">Fork me on <a href="https://github.com/visbot/AVS-Forums/">GitHub</a></p>
     </div>
-  </div><!-- Put JavaScript here -->
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/jquery.cookie.min.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
-</body>
-</html>
+  <script type="text/javascript" src="../js/scripts.js"></script></body></html>
